@@ -295,7 +295,7 @@ def emit_assessments(assessments: list[dict], out_dir: Path) -> None:
         array = "ARRAY[" + ",".join(f"'{item}'::uuid" for item in ids) + "]"
         values.append("(" + ",".join([
             f"'{eid(assessment['code'])}'::uuid", "'est2'", text_literal(assessment["title"]), "3600", array,
-            "true", "'full_review'", "3", "true", "true" if assessment["type"] == "full_exam" else "false",
+            "true", "'full_review'", "1", "true", "true" if assessment["type"] == "full_exam" else "false",
             text_literal(assessment["type"]), text_literal(assessment["code"]),
         ]) + ")")
     sql = f"""begin;
