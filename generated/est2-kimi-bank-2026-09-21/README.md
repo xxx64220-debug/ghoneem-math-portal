@@ -2,7 +2,7 @@
 
 Generated from the user-supplied `Kimi_Agent_Math PDF Question Bank(4).zip`.
 
-- 1,127 unique EST II questions: 853 multiple-choice and 274 numeric-response
+- 1,127 unique EST II questions: 853 multiple-choice and 274 grid-in response
 - 1,102 EST I-overlap questions, with a normalized-stem duplicate guard
 - 230 questions with preserved graph, diagram, or table assets
 - 10 curriculum lesson practices, 10 quizzes, and 5 full exams

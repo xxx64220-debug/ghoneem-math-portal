@@ -105,10 +105,10 @@ def parse_questions(path: Path) -> list[dict]:
         if not stem or len(choices) not in (0, 4, 5):
             continue
         answer = keys[code]
-        question_type = "mcq" if choices and re.fullmatch(r"[A-EF-GHJK]", answer) else "numeric"
+        question_type = "mcq" if choices and re.fullmatch(r"[A-EF-GHJK]", answer) else "grid_in"
         if choices and question_type != "mcq":
             continue
-        if question_type == "numeric" and choices:
+        if question_type == "grid_in" and choices:
             continue
         questions.append({
             "code": code,
@@ -344,7 +344,7 @@ def main() -> None:
     emit_assessments(assessments, args.out)
     report = {
         "parsed": len(parsed), "unique_est2": len(unique), "est1_common": len(est1),
-        "mcq": sum(q["type"] == "mcq" for q in unique), "numeric": sum(q["type"] == "numeric" for q in unique),
+        "mcq": sum(q["type"] == "mcq" for q in unique), "grid_in": sum(q["type"] == "grid_in" for q in unique),
         "visual": sum(q["has_visual"] for q in unique), "lessons": Counter(q["lesson"] for q in unique),
         "assessments": [{"code": a["code"], "type": a["type"], "questions": len(a["questions"]), "visuals": sum(q["has_visual"] for q in a["questions"])} for a in assessments],
     }
