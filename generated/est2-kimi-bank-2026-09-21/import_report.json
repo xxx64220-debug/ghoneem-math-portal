@@ -1,0 +1,172 @@
+{
+  "parsed": 1130,
+  "unique_est2": 1127,
+  "est1_common": 1102,
+  "mcq": 853,
+  "numeric": 274,
+  "visual": 230,
+  "lessons": {
+    "Plane Geometry, Measurement & Transformations": 120,
+    "Statistics, Probability & Data Analysis": 201,
+    "Polynomials & Quadratic Functions": 69,
+    "Algebra Foundations, Equations & Inequalities": 193,
+    "Triangles, Trigonometry & Similarity": 154,
+    "Coordinate Geometry, Circles & Conics": 122,
+    "Solid Geometry & Volume": 84,
+    "Rational, Radical, Exponential & Logarithmic Functions": 70,
+    "Sequences, Complex Numbers & Advanced Algebra": 48,
+    "Functions, Transformations & Graphs": 66
+  },
+  "assessments": [
+    {
+      "code": "EST2-L01",
+      "type": "lesson_exam",
+      "questions": 40,
+      "visuals": 0
+    },
+    {
+      "code": "EST2-Q01",
+      "type": "quiz",
+      "questions": 40,
+      "visuals": 0
+    },
+    {
+      "code": "EST2-L02",
+      "type": "lesson_exam",
+      "questions": 40,
+      "visuals": 6
+    },
+    {
+      "code": "EST2-Q02",
+      "type": "quiz",
+      "questions": 40,
+      "visuals": 6
+    },
+    {
+      "code": "EST2-L03",
+      "type": "lesson_exam",
+      "questions": 40,
+      "visuals": 0
+    },
+    {
+      "code": "EST2-Q03",
+      "type": "quiz",
+      "questions": 40,
+      "visuals": 0
+    },
+    {
+      "code": "EST2-L04",
+      "type": "lesson_exam",
+      "questions": 40,
+      "visuals": 3
+    },
+    {
+      "code": "EST2-Q04",
+      "type": "quiz",
+      "questions": 40,
+      "visuals": 3
+    },
+    {
+      "code": "EST2-L05",
+      "type": "lesson_exam",
+      "questions": 40,
+      "visuals": 1
+    },
+    {
+      "code": "EST2-Q05",
+      "type": "quiz",
+      "questions": 40,
+      "visuals": 1
+    },
+    {
+      "code": "EST2-L06",
+      "type": "lesson_exam",
+      "questions": 40,
+      "visuals": 21
+    },
+    {
+      "code": "EST2-Q06",
+      "type": "quiz",
+      "questions": 40,
+      "visuals": 8
+    },
+    {
+      "code": "EST2-L07",
+      "type": "lesson_exam",
+      "questions": 40,
+      "visuals": 40
+    },
+    {
+      "code": "EST2-Q07",
+      "type": "quiz",
+      "questions": 40,
+      "visuals": 8
+    },
+    {
+      "code": "EST2-L08",
+      "type": "lesson_exam",
+      "questions": 40,
+      "visuals": 28
+    },
+    {
+      "code": "EST2-Q08",
+      "type": "quiz",
+      "questions": 40,
+      "visuals": 8
+    },
+    {
+      "code": "EST2-L09",
+      "type": "lesson_exam",
+      "questions": 40,
+      "visuals": 18
+    },
+    {
+      "code": "EST2-Q09",
+      "type": "quiz",
+      "questions": 40,
+      "visuals": 14
+    },
+    {
+      "code": "EST2-L10",
+      "type": "lesson_exam",
+      "questions": 40,
+      "visuals": 40
+    },
+    {
+      "code": "EST2-Q10",
+      "type": "quiz",
+      "questions": 40,
+      "visuals": 8
+    },
+    {
+      "code": "EST2-F01",
+      "type": "full_exam",
+      "questions": 40,
+      "visuals": 11
+    },
+    {
+      "code": "EST2-F02",
+      "type": "full_exam",
+      "questions": 40,
+      "visuals": 11
+    },
+    {
+      "code": "EST2-F03",
+      "type": "full_exam",
+      "questions": 40,
+      "visuals": 8
+    },
+    {
+      "code": "EST2-F04",
+      "type": "full_exam",
+      "questions": 40,
+      "visuals": 10
+    },
+    {
+      "code": "EST2-F05",
+      "type": "full_exam",
+      "questions": 40,
+      "visuals": 9
+    }
+  ]
+}
