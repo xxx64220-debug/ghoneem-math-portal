@@ -149,6 +149,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 @media(max-width:600px){.rev .ans{flex-direction:column;gap:8px}.rev{padding:18px 14px}.dash-panel{padding:20px 16px}.stem{font-size:16px}}
 .practice-mode{display:flex;flex-direction:column;gap:6px;font-size:14px;max-width:100%}.practice-mode select{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:white;max-width:100%}.exam-row{gap:16px;flex-wrap:wrap}.stem,.choice-text{line-height:1.75;overflow-wrap:anywhere}.fig{max-width:100%;overflow-x:auto}.fig img{max-width:100%;height:auto}@media(max-width:640px){.exam-row>div:first-child{flex-basis:100%!important}.practice-mode{flex:1;min-width:160px}#clock{font-size:16px;white-space:nowrap}}
 .assessment-tools{display:flex;justify-content:flex-end;margin:10px 0 16px}.assessment-tools label{display:flex;gap:9px;align-items:center;color:var(--muted);font-size:14px}.assessment-tools select{font:inherit;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:#fff}.back-to-top{position:fixed;right:18px;bottom:20px;z-index:60;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;box-shadow:0 6px 22px #14243e40;font-weight:700;opacity:0;transform:translateY(12px);pointer-events:none;transition:.2s}.back-to-top.show{opacity:1;transform:none;pointer-events:auto}
+.dashboard-search{margin:-8px 0 22px}.dashboard-search label{display:block;font-size:14px;font-weight:600;color:var(--navy);margin-bottom:7px}.dashboard-search input{display:block;width:min(100%,530px);min-height:46px;padding:10px 14px;font:inherit;border:1px solid var(--line);border-radius:9px;background:#fff;color:var(--ink)}.dashboard-search input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}.search-results .dash-heading{margin-bottom:12px}.search-results h3{font-size:17px;color:var(--navy);margin:24px 0 10px}.search-results .exam-row:last-child{margin-bottom:0}.search-history{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:12px 0;border-bottom:1px solid var(--line)}.search-history strong{color:var(--navy)}
 @media(max-width:600px){.wrap{padding-left:14px;padding-right:14px}.chooser,.list{padding-left:14px;padding-right:14px}header.top{position:static}header.top .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}.brand{grid-column:1/-1;max-width:none}.track-chip{min-width:0;overflow-wrap:anywhere}.btn,.btn-ghost,.student-tab{min-height:44px}.runbar{top:0}.runbar .wrap{height:auto;min-height:58px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px;gap:8px}.runbar .saving{order:3;flex:1 0 100%;min-height:18px}.runbar .btn,.runbar .btn-ghost{padding:9px 12px}.palette{gap:7px}.pal{width:38px;height:38px}.nav>.btn-ghost{flex:1}.nav>.saving{order:4;flex:1 0 100%;text-align:center}.assessment-tools{justify-content:stretch}.assessment-tools label,.assessment-tools select{width:100%}.exam-row>.btn{width:100%}.back-to-top{right:12px;bottom:12px}}
 </style>
 <link rel="stylesheet" href="/daily-challenge.css">
@@ -323,7 +324,7 @@ function renderTracks() {
 // Student dashboard: progress, assessment categories, complete history and lesson priorities.
 const ASSESSMENTS={lesson_exam:'Lesson exams',quiz:'Quizzes',full_exam:'Full exams'};
 const PRIORITIES={focus:['Focus first','Review the lesson, then work through another assigned assessment.'],practice:['Keep practising','Revisit mistakes and practise the question types you missed.'],strong:['Strong','Keep this lesson fresh with occasional mixed practice.'],more_evidence:['More practice needed to assess','Complete more questions before relying on a lesson rating.'],not_started:['Not assessed yet','Complete an assigned assessment to see your progress.']};
-let DASH={view:'overview',exams:[],history:[],lessons:[],summary:{},mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyType:'all',historyPage:0,examSort:'title'};
+let DASH={view:'overview',exams:[],history:[],lessons:[],summary:{},mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyType:'all',historyPage:0,examSort:'title',searchTerm:''};
 let dashboardRequest=0;
 const dateText=t=>t?new Date(t).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'}):'—';
 const percentText=v=>v==null?'—':`${v}%`;
@@ -338,18 +339,23 @@ async function openTrack(t){
   if(request!==dashboardRequest)return;
   if(!ok)throw new Error(friendly(json.error));
   DAILY_DRAFT={};DRILL_DRAFT={};
-  DASH={...DASH,view:'daily',daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyPage:0,historyType:'all',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],summary:json.dashboard?.summary||{}};
+  DASH={...DASH,view:'daily',daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyPage:0,historyType:'all',searchTerm:'',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],summary:json.dashboard?.summary||{}};
   paintDashboard();
   refreshDaily();
  }catch(e){if(request===dashboardRequest){$('examList').innerHTML=`<div class="dash-empty" role="alert">${esc(e.message)}<br><button class="btn" id="retryDashboard">Try again</button></div>`;$('retryDashboard').onclick=()=>openTrack(t);}}
 }
-function setDashboardView(view){DASH.view=view;DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();if(view==='drill'&&!DASH.drill)refreshDrill();}
+function setDashboardView(view){DASH.view=view;DASH.searchTerm='';DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();if(view==='drill'&&!DASH.drill)refreshDrill();}
 function paintDashboard(){
  const tabs=[['daily','Daily practice'],['mistakes','Mistake notebook'],['drill','Weak-topic drill'],['overview','My progress'],['lesson_exam','Lesson exams'],['quiz','Quizzes'],['full_exam','Full exams'],['history','Exam history'],['focus','Lesson focus']];
- $('examList').innerHTML=`<nav class="student-tabs" aria-label="Student dashboard">${tabs.map(([id,name])=>`<button class="student-tab ${DASH.view===id?'active':''}" data-view="${id}" aria-current="${DASH.view===id?'page':'false'}">${name}${ASSESSMENTS[id]?` <span>${DASH.exams.filter(e=>e.assessment_type===id).length}</span>`:''}</button>`).join('')}</nav><div id="dashboardContent" aria-live="polite"></div>`;
+ $('examList').innerHTML=`<nav class="student-tabs" aria-label="Student dashboard">${tabs.map(([id,name])=>`<button class="student-tab ${!DASH.searchTerm&&DASH.view===id?'active':''}" data-view="${id}" aria-current="${!DASH.searchTerm&&DASH.view===id?'page':'false'}">${name}${ASSESSMENTS[id]?` <span>${DASH.exams.filter(e=>e.assessment_type===id).length}</span>`:''}</button>`).join('')}</nav><div class="dashboard-search"><label for="dashboardSearch">Find an exam or lesson</label><input type="search" id="dashboardSearch" autocomplete="off" placeholder="Search exams, results, or lessons" value="${esc(DASH.searchTerm||'')}"></div><div id="dashboardContent" aria-live="polite"></div>`;
  document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setDashboardView(b.dataset.view));
+ $('dashboardSearch').oninput=e=>{DASH.searchTerm=e.target.value;document.querySelectorAll('[data-view]').forEach(b=>{const active=!DASH.searchTerm.trim()&&b.dataset.view===DASH.view;b.classList.toggle('active',active);b.setAttribute('aria-current',active?'page':'false');});paintDashboardContent();};
+ paintDashboardContent();
+}
+function paintDashboardContent(){
  const content=$('dashboardContent');
- if(DASH.view==='daily')content.innerHTML=dailyPanel();
+ if(DASH.searchTerm?.trim())content.innerHTML=searchSection();
+ else if(DASH.view==='daily')content.innerHTML=dailyPanel();
  else if(DASH.view==='mistakes')content.innerHTML=mistakesPanel();
  else if(DASH.view==='drill')content.innerHTML=drillPanel();
  else if(DASH.view==='overview')content.innerHTML=dashboardOverview();
@@ -358,9 +364,17 @@ function paintDashboard(){
  else if(DASH.view==='history')content.innerHTML=historySection();
  else content.innerHTML=focusSection();
  wireDashboard();
- if(DASH.view==='daily')wireDaily();
- if(DASH.view==='mistakes')wireMistakes();
- if(DASH.view==='drill')wireDrill();
+ if(!DASH.searchTerm?.trim()&&DASH.view==='daily')wireDaily();
+ if(!DASH.searchTerm?.trim()&&DASH.view==='mistakes')wireMistakes();
+ if(!DASH.searchTerm?.trim()&&DASH.view==='drill')wireDrill();
+}
+function searchSection(){
+ const term=DASH.searchTerm.trim().toLocaleLowerCase();
+ const exams=DASH.exams.filter(e=>`${e.title} ${ASSESSMENTS[e.assessment_type]||''}`.toLocaleLowerCase().includes(term));
+ const results=DASH.history.filter(h=>`${h.title} ${ASSESSMENTS[h.assessment_type]||''}`.toLocaleLowerCase().includes(term));
+ const lessons=DASH.lessons.filter(l=>l.lesson.toLocaleLowerCase().includes(term));
+ const total=exams.length+results.length+lessons.length;
+ return `<section class="dash-panel search-results"><div class="dash-heading"><h2>Search results</h2><span class="dash-note">${total} match${total===1?'':'es'}</span></div>${!total?'<div class="dash-empty">No matching exams, results, or lessons in this track.</div>':''}${exams.length?`<h3>Assigned exams (${exams.length})</h3>${exams.map(e=>{const first=DASH.exams.find(m=>m.exam_set_code&&m.exam_set_code===e.exam_set_code&&m.module_number===1);return assessmentRow(e,e.module_number===2&&first&&!moduleState(first).done);}).join('')}`:''}${results.length?`<h3>Past results (${results.length})</h3>${results.slice(0,20).map(h=>`<div class="search-history"><span><strong>${esc(h.title)}</strong><span class="history-detail">${dateText(h.submitted_at)} · ${h.score==null?'Awaiting grading':`${h.score}/${h.total}`}</span></span><button class="btn-ghost" data-review="${esc(h.id)}">${h.review_open?'Review':'View score'}</button></div>`).join('')}${results.length>20?'<p class="dash-note">Showing the first 20 results. Use Exam history for all attempts.</p>':''}`:''}${lessons.length?`<h3>Lesson focus (${lessons.length})</h3><div class="lesson-grid">${lessons.map(l=>lessonCard(l,true)).join('')}</div>`:''}</section>`;
 }
 function dashboardOverview(){
  const s=DASH.summary,live=DASH.exams.filter(e=>e.last?.status==='in_progress');
@@ -378,12 +392,12 @@ function scoreTrend(){
  if(!rows.length)return '<div class="dash-empty">Your score trend will appear after your first completed assessment.</div>';
  return `<div class="score-trend" aria-label="Recent assessment scores">${rows.map(h=>`<button class="trend-column" data-review="${h.id}" aria-label="${esc(h.title)}, attempt ${h.attempt_no}, ${h.percent}%"><span class="trend-value">${h.percent}%</span><span class="trend-track"><i style="height:${Math.max(2,Math.min(100,h.percent))}%"></i></span><span class="trend-label">${esc(new Date(h.submitted_at).toLocaleDateString(undefined,{day:'numeric',month:'short'}))}</span></button>`).join('')}</div>`;
 }
-function assessmentRow(e){
+function assessmentRow(e,locked=false){
  const a=e.last,live=a?.status==='in_progress',done=a&&!live;
- const label=live?'Resume':done?'Review':'Start';
+ const label=live?'Resume':done?'Review':locked?'Complete Module 1':'Start';
  const practice=e.assessment_type==='lesson_exam';
  const score=done?`<span class="badge done">${a.score == null ? 'Awaiting grading' : a.score+'/'+a.total}</span>`:'';
- return `<div class="exam-row"><div style="flex:1;min-width:170px"><h3>${esc(e.title)}</h3><div class="meta">${e.questions} questions · ${live&&a.untimed?'No time limit':Math.round(e.duration_seconds/60)+' min'}${practice?' · Repeatable':''}${!e.open&&!live?' · Not open':''}${done?' · Completed':''}</div></div>${score}${practice&&!live&&e.open?`<label class="practice-mode">Timer<select data-timer="${e.id}" aria-label="Timer for ${esc(e.title)}"><option value="untimed">No time limit</option><option value="timed">Timed (${Math.round(e.duration_seconds/60)} min)</option></select></label>`:''}<button class="btn" ${done?`data-review="${a.id}"`:`data-start="${e.id}"`} ${!done&&!live&&!e.open?'disabled':''}>${label}</button>${done&&(practice||e.retake_available)&&e.open?`<button class="btn" data-start="${e.id}">${practice?'Practice again':'Start retake'}</button>`:''}</div>`;
+ return `<div class="exam-row"><div style="flex:1;min-width:170px"><h3>${esc(e.title)}</h3><div class="meta">${e.questions} questions · ${live&&a.untimed?'No time limit':Math.round(e.duration_seconds/60)+' min'}${practice?' · Repeatable':''}${!e.open&&!live?' · Not open':''}${done?' · Completed':''}</div></div>${score}${practice&&!live&&e.open?`<label class="practice-mode">Timer<select data-timer="${e.id}" aria-label="Timer for ${esc(e.title)}"><option value="untimed">No time limit</option><option value="timed">Timed (${Math.round(e.duration_seconds/60)} min)</option></select></label>`:''}<button class="btn" ${done?`data-review="${a.id}"`:`data-start="${e.id}"`} ${(!done&&!live&&locked)||(!done&&!live&&!e.open)?'disabled':''}>${label}</button>${done&&(practice||e.retake_available)&&e.open?`<button class="btn" data-start="${e.id}">${practice?'Practice again':'Start retake'}</button>`:''}</div>`;
 }
 function assessmentSection(type){
  const rows=DASH.exams.filter(e=>e.assessment_type===type).sort((a,b)=>DASH.examSort==='questions'?b.questions-a.questions:DASH.examSort==='status'?Number(b.open)-Number(a.open)||String(a.title).localeCompare(String(b.title)):String(a.title).localeCompare(String(b.title),undefined,{numeric:true,sensitivity:'base'}));

@@ -7,7 +7,7 @@ async function refreshMistakes() {
   if (!track || DASH.mistakesLoading) return;
   DASH.mistakesLoading = true;
   DASH.mistakesError = '';
-  if (DASH.view === 'mistakes') paintDashboard();
+  if (DASH.view === 'mistakes' && !DASH.searchTerm?.trim()) paintDashboardContent();
   try {
     const {ok,json} = await fn('daily-challenge', {qs:`?track=${encodeURIComponent(track)}&view=notebook&offset=${DASH.mistakePage*25}`});
     if (!ok) throw new Error(friendly(json.error));
@@ -18,7 +18,7 @@ async function refreshMistakes() {
     if (ST.track?.id === track) DASH.mistakesError = error.message;
   } finally {
     DASH.mistakesLoading = false;
-    if (ST.track?.id === track && DASH.view === 'mistakes') paintDashboard();
+    if (ST.track?.id === track && DASH.view === 'mistakes' && !DASH.searchTerm?.trim()) paintDashboardContent();
   }
 }
 
@@ -61,7 +61,7 @@ function wireMistakes() {
       const state=await fn('daily-challenge',{qs:`?track=${encodeURIComponent(track)}&view=notebook&offset=${DASH.mistakePage*25}`});
       if(!state.ok)throw new Error(friendly(state.json.error));
       DASH.mistakes=state.json;
-      if(DASH.view==='mistakes')paintDashboard();
+      if(DASH.view==='mistakes'&&!DASH.searchTerm?.trim())paintDashboardContent();
     }catch(error){button.disabled=false;button.insertAdjacentHTML('afterend',`<p role="alert">${esc(error.message)}</p>`);}
   }));
 }
@@ -71,8 +71,8 @@ async function refreshDrill(){
   const track=ST.track?.id;if(!track)return;
   try{const {ok,json}=await fn('daily-challenge',{qs:`?track=${encodeURIComponent(track)}&view=drill`});
     if(!ok)throw new Error(friendly(json.error));if(ST.track?.id!==track)return;
-    DASH.drill=json;DASH.drillError='';if(DASH.view==='drill')paintDashboard();
-  }catch(error){if(ST.track?.id===track){DASH.drillError=error.message;if(DASH.view==='drill')paintDashboard();}}
+    DASH.drill=json;DASH.drillError='';if(DASH.view==='drill'&&!DASH.searchTerm?.trim())paintDashboardContent();
+  }catch(error){if(ST.track?.id===track){DASH.drillError=error.message;if(DASH.view==='drill'&&!DASH.searchTerm?.trim())paintDashboardContent();}}
 }
 function drillPanel(){
   const d=DASH.drill;
@@ -118,11 +118,11 @@ async function refreshDaily() {
     json.receivedAt = Date.now();
     DASH.daily = json;
     DASH.dailyError = '';
-    if (DASH.view === 'daily') paintDashboard();
+    if (DASH.view === 'daily' && !DASH.searchTerm?.trim()) paintDashboardContent();
   } catch (error) {
     if (ST.track?.id === track) {
       DASH.dailyError = error.message;
-      if (DASH.view === 'daily') paintDashboard();
+      if (DASH.view === 'daily' && !DASH.searchTerm?.trim()) paintDashboardContent();
     }
   }
 }
@@ -227,7 +227,7 @@ function tickDailyStreak() {
   if (remaining.seconds === 0 && !DAILY_REFRESHING && !DAILY_BUSY) {
     DAILY_REFRESHING=true;
     DAILY_DRAFT={}; DASH.daily=null;
-    if (DASH.view==='daily') paintDashboard();
+    if (DASH.view==='daily' && !DASH.searchTerm?.trim()) paintDashboardContent();
     refreshDaily().finally(() => { DAILY_REFRESHING=false; });
   }
 }
