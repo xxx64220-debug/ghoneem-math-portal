@@ -1,0 +1,20 @@
+[functions.me-tracks]
+verify_jwt = false
+
+[functions.start-attempt]
+verify_jwt = false
+
+[functions.submit-attempt]
+verify_jwt = false
+
+[functions.attempt-review]
+verify_jwt = false
+
+[functions.grant-retake]
+verify_jwt = false
+
+[functions.admin-users]
+verify_jwt = false
+
+[functions.enrollments]
+verify_jwt = false

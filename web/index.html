@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exam Portal — Abdelrahman Ghoneem</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14243E; --navy-2:#1D3155; --gold:#C9A227; --gold-soft:#F3E8C4;
+  --paper:#FBFAF7; --line:#E2E0D9; --ink:#171A1F; --muted:#6B7280;
+  --ok:#1F7A4D; --bad:#B0342C;
+  --accent:var(--gold);            /* overwritten per track */
+  --r:10px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.55 Inter,system-ui,sans-serif;
+     -webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:700;letter-spacing:-.01em;color:var(--navy)}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2.5px solid var(--accent);outline-offset:2px}
+input{font:inherit;padding:11px 13px;border:1px solid var(--line);border-radius:var(--r);
+      background:#fff;width:100%}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.hidden{display:none !important}
+
+.btn{background:var(--navy);color:#fff;padding:11px 20px;border-radius:var(--r);font-weight:600}
+.btn:hover{background:var(--navy-2)}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn-ghost{border:1px solid var(--line);background:#fff;padding:9px 16px;border-radius:var(--r);font-weight:500}
+.btn-ghost:hover{border-color:var(--navy)}
+.btn-accent{background:var(--accent);color:var(--navy)}
+
+/* ---------- masthead ---------- */
+header.top{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:20}
+header.top .wrap{display:flex;align-items:center;gap:16px;height:62px}
+.brand{font-family:Fraunces,serif;font-weight:700;color:var(--navy);font-size:17px}
+.brand span{display:block;font:500 10.5px/1 'IBM Plex Mono',monospace;color:var(--muted);
+            letter-spacing:.14em;margin-top:3px}
+.spacer{flex:1}
+.track-chip{font:500 12px/1 'IBM Plex Mono',monospace;letter-spacing:.1em;padding:7px 11px;
+            border-radius:99px;background:var(--gold-soft);color:var(--navy)}
+
+/* ---------- login ---------- */
+.login{max-width:380px;margin:11vh auto;padding:0 20px}
+.login h1{font-size:31px;margin-bottom:6px}
+.login p.sub{color:var(--muted);margin-bottom:26px;font-size:14.5px}
+.field{margin-bottom:13px}
+.field label{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:5px}
+.err{color:var(--bad);font-size:14px;margin-top:12px;min-height:20px}
+
+/* ---------- track chooser: the signature ---------- */
+.chooser{padding:52px 20px 70px}
+.chooser h1{font-size:33px;margin-bottom:5px}
+.chooser .sub{color:var(--muted);margin-bottom:32px}
+.tracks{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr))}
+.track-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:26px 24px 22px;text-align:left;overflow:hidden;transition:transform .18s,box-shadow .18s}
+.track-card::before{content:"";position:absolute;inset:0 auto 0 0;width:7px;background:var(--tc)}
+.track-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px -14px rgba(20,36,62,.35)}
+.track-card .code{font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.2em;color:var(--muted)}
+.track-card h2{font-size:27px;margin:9px 0 3px}
+.track-card .meta{color:var(--muted);font-size:14px}
+.track-card .go{margin-top:18px;font-weight:600;color:var(--navy)}
+.track-card .go::after{content:" →"}
+
+/* ---------- exam list ---------- */
+.list{padding:38px 20px 70px}
+.exam-row{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--r);padding:17px 20px;margin-bottom:11px}
+.exam-row h3{font-size:17px}
+.exam-row .meta{font-size:13.5px;color:var(--muted);margin-top:3px}
+.badge{font:500 11px/1 'IBM Plex Mono',monospace;letter-spacing:.08em;padding:5px 9px;
+  border-radius:5px;background:#F1F0EC;color:var(--muted)}
+.badge.done{background:#E7F2EC;color:var(--ok)}
+
+/* ---------- exam runner ---------- */
+.runbar{position:sticky;top:62px;z-index:15;background:#fff;border-bottom:1px solid var(--line)}
+.runbar .wrap{display:flex;align-items:center;gap:14px;height:54px}
+.clock{font:500 20px/1 'IBM Plex Mono',monospace;color:var(--navy);font-variant-numeric:tabular-nums}
+.clock.warn{color:var(--bad)}
+.saving{font-size:12.5px;color:var(--muted);min-width:64px}
+
+.palette{display:flex;flex-wrap:wrap;gap:6px;padding:16px 0 4px}
+.pal{width:34px;height:34px;border-radius:7px;border:1px solid var(--line);background:#fff;
+  font:500 13px/1 'IBM Plex Mono',monospace;color:var(--muted)}
+.pal.answered{background:var(--navy);border-color:var(--navy);color:#fff}
+.pal.current{outline:2.5px solid var(--accent);outline-offset:1px}
+.pal.flagged::after{content:"";position:absolute;margin:-15px 0 0 11px;width:6px;height:6px;
+  border-radius:50%;background:var(--gold)}
+
+.qcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 26px 22px;margin:14px 0}
+.qhead{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
+.qnum{font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.16em;color:var(--muted)}
+.stem{font-size:17px;line-height:1.6;margin-bottom:18px}
+.choice{display:flex;gap:12px;align-items:flex-start;width:100%;text-align:left;padding:13px 15px;
+  border:1px solid var(--line);border-radius:var(--r);background:#fff;margin-bottom:9px}
+.choice:hover{border-color:var(--navy)}
+.choice.sel{border-color:var(--navy);background:#F5F7FA;box-shadow:inset 0 0 0 1px var(--navy)}
+.choice .k{font:600 13px/1.5 'IBM Plex Mono',monospace;color:var(--muted);flex:none;width:18px}
+.choice.sel .k{color:var(--navy)}
+.gridin{max-width:230px}
+.gridin-hint{font-size:12.5px;color:var(--muted);margin-top:7px}
+.nav{display:flex;gap:10px;align-items:center;margin:18px 0 60px}
+
+.fig{margin:4px 0 18px;overflow-x:auto}
+.fig svg{max-width:100%;height:auto;display:block}
+.fig-table table{border-collapse:collapse;font-size:14.5px}
+.fig-table th,.fig-table td{border:1px solid var(--line);padding:7px 12px;text-align:center}
+.fig-table th{background:#F4F5F7;font-weight:600;color:var(--navy)}
+
+/* ---------- review ---------- */
+.score{background:var(--navy);color:#fff;border-radius:16px;padding:30px 28px;margin:26px 0 20px}
+.score .big{font-family:Fraunces,serif;font-size:47px;line-height:1;color:#fff}
+.score .lbl{font:500 11.5px/1 'IBM Plex Mono',monospace;letter-spacing:.18em;
+  color:var(--gold-soft);margin-bottom:11px}
+.score .raw{color:#C9D2E0;margin-top:9px;font-size:14.5px}
+.rev{background:#fff;border:1px solid var(--line);border-left:5px solid var(--line);
+  border-radius:var(--r);padding:20px 22px;margin-bottom:11px}
+.rev.right{border-left-color:var(--ok)}
+.rev.wrong{border-left-color:var(--bad)}
+.rev .tag{font:600 11px/1 'IBM Plex Mono',monospace;letter-spacing:.13em}
+.rev.right .tag{color:var(--ok)} .rev.wrong .tag{color:var(--bad)}
+.rev .ans{margin-top:11px;font-size:14.5px}
+.rev .exp{margin-top:11px;padding-top:13px;border-top:1px solid var(--line);
+  font-size:14.5px;color:#39404B}
+.locked{background:var(--gold-soft);border-radius:var(--r);padding:17px 19px;font-size:14.5px}
+
+footer.pg{border-top:1px solid var(--line);padding:19px 0;text-align:center;
+  font-size:12.5px;color:var(--muted)}
+footer.pg b{color:var(--navy)}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+@media (max-width:600px){.qcard{padding:20px 17px}.score .big{font-size:38px}}
+body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-row{flex-wrap:wrap}.gridin{font-size:20px}.fig-table{overflow-x:auto}@media(max-width:600px){header.top .wrap{height:auto;min-height:65px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}.brand{max-width:180px}.exam-row{gap:12px}.login{margin-top:10vh}}
+.student-tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:26px;border-bottom:1px solid var(--line);padding-bottom:10px}.student-tab{padding:12px 16px;border-radius:8px;white-space:nowrap;font-size:15px;color:var(--muted)}.student-tab.active{background:var(--navy);color:white;font-weight:600}.student-tab span{font-size:12px;opacity:.8;margin-left:3px}.dashboard-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}.dash-stat{background:var(--navy);color:white;border-radius:12px;padding:20px;border-top:3px solid var(--gold)}.dash-stat span{display:block;color:#dce3ee;font-size:14px}.dash-stat strong{font-size:34px;font-family:Fraunces,Georgia,serif;display:block;margin-top:7px}.dashboard-columns{display:grid;grid-template-columns:1fr 1fr;gap:20px}.dash-panel{background:white;border:1px solid var(--line);padding:24px;border-radius:12px;margin-bottom:22px;min-width:0}.dash-panel h2{font:600 23px Fraunces,Georgia,serif;color:var(--navy);margin-bottom:12px}.dash-heading{display:flex;gap:12px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}.dash-link{color:var(--navy);font-size:14px;text-decoration:underline;text-underline-offset:4px}.dash-note{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:14px}.dash-empty{padding:25px 10px;color:var(--muted);line-height:1.7}.dash-notice{padding:16px 20px;border-left:4px solid var(--gold);background:#f5edce;font-size:15px;margin-bottom:22px}.score-trend{display:flex;gap:12px;height:200px;align-items:stretch;margin:20px 0}.trend-column{display:flex;flex:1;min-width:0;align-items:center;flex-direction:column;gap:6px}.trend-value{font-size:14px;font-weight:600;color:var(--navy)}.trend-track{height:140px;width:100%;max-width:40px;background:#edf0f5;display:flex;align-items:flex-end;border-radius:5px;overflow:hidden}.trend-track i{display:block;background:var(--navy);width:100%;border-top:4px solid var(--gold)}.trend-label{font-size:12px;color:var(--muted);white-space:nowrap}.lesson-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}.lesson-card{border:1px solid var(--line);border-left:4px solid #8d98a8;border-radius:9px;padding:18px;margin-bottom:12px}.lesson-card.focus{border-left-color:#b0342c}.lesson-card.practice{border-left-color:#ad810a}.lesson-card.strong{border-left-color:#1f7a4d}.lesson-card-top{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}.lesson-card h3{font-size:16px;color:var(--navy);line-height:1.5;flex:1;min-width:130px}.priority-label{font-size:13px;font-weight:600;border-radius:5px;padding:4px 7px;background:#edf0f5}.focus .priority-label{background:#fbeceb;color:#94241e}.practice .priority-label{background:#fbf3d9;color:#745600}.strong .priority-label{background:#e7f2ec;color:#1a633f}.lesson-score{display:flex;align-items:baseline;gap:10px;margin-top:16px}.lesson-score strong{font-size:24px;color:var(--navy)}.lesson-score span,.lesson-card p{font-size:14px;color:var(--muted);line-height:1.6}.lesson-meter{height:7px;background:#edf0f5;border-radius:4px;overflow:hidden;margin:10px 0}.lesson-meter i{height:100%;display:block;background:var(--navy)}.priority-guide{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;margin:16px 0}.history-filter{font-size:14px;display:flex;gap:10px;align-items:center}.history-filter select{padding:9px;border:1px solid var(--line);border-radius:7px;background:white;font:inherit}.student-table{overflow-x:auto}.student-table table{width:100%;border-collapse:collapse;font-size:14px;text-align:left}.student-table th{padding:13px 12px;background:var(--navy);color:white;white-space:nowrap}.student-table td{padding:15px 12px;border-bottom:1px solid var(--line)}.history-detail{display:block;font-size:13px;color:var(--muted);margin-top:4px}.history-pager{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:16px;font-size:14px}.dash-panel .exam-row:last-child{margin-bottom:0}.list{max-width:1200px!important}@media(max-width:850px){.dashboard-columns{grid-template-columns:1fr}.dashboard-stats{grid-template-columns:repeat(2,1fr)}.lesson-grid{grid-template-columns:1fr}}@media(max-width:500px){.dash-panel{padding:18px 14px}.dashboard-stats{gap:10px}.dash-stat{padding:16px 12px}.dash-stat strong{font-size:28px}.student-tab{padding:10px 12px}.score-trend{gap:6px}.trend-label{font-size:12px;white-space:normal}.lesson-card{padding:14px}.history-pager{flex-wrap:wrap}}
+
+.rev.excluded{border-left-color:#8793a3;background:#f2f4f7}.rev.excluded .tag{color:#48576b}
+.full-exam-intro{margin:0 0 18px}.full-exam-intro h2{margin:0 0 5px}.full-exam-intro p{margin:0;color:var(--muted)}.exam-pair{margin-bottom:16px}.module-row{padding-left:0;padding-right:0}.module-row:last-child{border-bottom:0}.pair-score{text-align:right}.pair-score span{display:block;color:var(--muted);font-size:13px}.pair-score strong{font-size:22px;color:var(--navy)}
+
+.stem,.choice-text,.review-choice>span,.rev .exp{white-space:pre-line;overflow-wrap:anywhere;line-height:1.75}
+.choice-text,.review-choice>span{min-width:0}.choice{line-height:1.65;min-height:48px}
+.review-choices{display:grid;gap:12px;margin-top:18px}.review-choice{display:flex;gap:12px;align-items:baseline;padding:10px 12px;background:#f6f8fa;border-radius:6px}.review-choice>b{flex:0 0 22px}
+.rev .ans{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:20px;line-height:1.7}.rev .ans>div{overflow-wrap:anywhere;min-width:0}.rev .exp{margin-top:18px;padding-top:18px}
+.katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden;padding:5px 0}
+.dash-panel,.qcard,.rev{min-width:0}.nav,.dash-heading{flex-wrap:wrap;gap:12px}
+@media(max-width:600px){.rev .ans{flex-direction:column;gap:8px}.rev{padding:18px 14px}.dash-panel{padding:20px 16px}.stem{font-size:16px}}
+.practice-mode{display:flex;flex-direction:column;gap:6px;font-size:14px;max-width:100%}.practice-mode select{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:white;max-width:100%}.exam-row{gap:16px;flex-wrap:wrap}.stem,.choice-text{line-height:1.75;overflow-wrap:anywhere}.fig{max-width:100%;overflow-x:auto}.fig img{max-width:100%;height:auto}@media(max-width:640px){.exam-row>div:first-child{flex-basis:100%!important}.practice-mode{flex:1;min-width:160px}#clock{font-size:16px;white-space:nowrap}}
+.assessment-tools{display:flex;justify-content:flex-end;margin:10px 0 16px}.assessment-tools label{display:flex;gap:9px;align-items:center;color:var(--muted);font-size:14px}.assessment-tools select{font:inherit;padding:9px 11px;border:1px solid var(--line);border-radius:8px;background:#fff}.back-to-top{position:fixed;right:18px;bottom:20px;z-index:60;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;box-shadow:0 6px 22px #14243e40;font-weight:700;opacity:0;transform:translateY(12px);pointer-events:none;transition:.2s}.back-to-top.show{opacity:1;transform:none;pointer-events:auto}
+@media(max-width:600px){.wrap{padding-left:14px;padding-right:14px}.chooser,.list{padding-left:14px;padding-right:14px}header.top{position:static}header.top .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}.brand{grid-column:1/-1;max-width:none}.track-chip{min-width:0;overflow-wrap:anywhere}.btn,.btn-ghost,.student-tab{min-height:44px}.runbar{top:0}.runbar .wrap{height:auto;min-height:58px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px;gap:8px}.runbar .saving{order:3;flex:1 0 100%;min-height:18px}.runbar .btn,.runbar .btn-ghost{padding:9px 12px}.palette{gap:7px}.pal{width:38px;height:38px}.nav>.btn-ghost{flex:1}.nav>.saving{order:4;flex:1 0 100%;text-align:center}.assessment-tools{justify-content:stretch}.assessment-tools label,.assessment-tools select{width:100%}.exam-row>.btn{width:100%}.back-to-top{right:12px;bottom:12px}}
+</style>
+<link rel="stylesheet" href="/daily-challenge.css">
+</head>
+<body>
+
+<header class="top hidden" id="top">
+  <div class="wrap">
+    <div class="brand">Abdelrahman Ghoneem<span>EXAM PORTAL</span></div>
+    <div class="spacer"></div>
+    <span class="track-chip hidden" id="chip"></span>
+    <button class="btn-ghost hidden" id="switchBtn">Switch track</button>
+    <button class="btn-ghost" id="outBtn">Sign out</button>
+  </div>
+</header>
+
+<!-- LOGIN -->
+<section id="vLogin" class="login">
+  <h1>Sign in</h1>
+  <p class="sub">Use the username and password your instructor gave you.</p>
+  <div class="field"><label for="u">Username or email</label><input id="u" autocomplete="username" spellcheck="false"></div>
+  <div class="field"><label for="p">Password</label><input id="p" type="password" autocomplete="current-password"></div>
+  <button class="btn" id="inBtn" style="width:100%;margin-top:8px">Sign in</button>
+  <div class="err" id="loginErr" role="alert"></div><a href="/admin.html" style="display:block;margin-top:20px;color:var(--navy)">Instructor console →</a>
+</section>
+
+<!-- TRACK CHOOSER -->
+<section id="vTracks" class="wrap chooser hidden">
+  <h1>Choose your track</h1>
+  <p class="sub">You are enrolled in the tracks below. Each keeps its own exams and results.</p>
+  <div class="tracks" id="trackGrid"></div>
+</section>
+
+<!-- EXAM LIST -->
+<section id="vList" class="wrap list hidden">
+  <h1 id="listTitle">Exams</h1>
+  <p class="sub" style="color:var(--muted);margin:5px 0 24px" id="listSub"></p>
+  <div id="examList"></div>
+</section>
+
+<!-- RUNNER -->
+<div id="vRun" class="hidden">
+  <div class="runbar"><div class="wrap">
+    <span class="clock" id="clock">--:--</span>
+    <span class="saving" id="saving"></span>
+    <div class="spacer"></div>
+    <button class="btn-ghost" id="flagBtn">Flag</button>
+    <button class="btn btn-accent" id="finishBtn">Submit exam</button>
+  </div></div>
+  <div class="wrap">
+    <div class="palette" id="palette"></div>
+    <div class="qcard" id="qcard"></div>
+    <div class="nav">
+      <button class="btn-ghost" id="prevBtn">Previous</button>
+      <button class="btn-ghost" id="nextBtn">Next</button>
+      <div class="spacer"></div>
+      <span class="saving" id="progress"></span>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEW -->
+<section id="vReview" class="wrap hidden" style="padding-bottom:70px"></section>
+
+<footer class="pg"><b>Abdelrahman Ghoneem</b> &nbsp;|&nbsp; 01116004434</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js"></script>
+<script src="/daily-challenge.js"></script>
+<script>
+/* ============================ CONFIG ============================ */
+const SB_URL = 'https://wfhurjyouemahvkcfkdz.supabase.co';
+const SB_KEY = 'sb_publishable_FIUSELOTsAQaH8dQ6oF-ow_CcISJV5-';
+const EMAIL_DOMAIN = 'students.ghoneem-math.com';
+/* ================================================================ */
+
+const sb = supabase.createClient(SB_URL, SB_KEY);
+const fnBase = SB_URL + '/functions/v1';
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+let ST = { tracks: [], track: null, run: null, idx: 0, flags: new Set(), timer: null };
+
+/* ---- call an Edge Function with the caller's JWT ---- */
+async function fn(name, { method = 'GET', body = null, qs = '', headers = {} } = {}) {
+  const { data: { session } } = await sb.auth.getSession();
+  if (!session) { show('vLogin'); throw new Error('signed_out'); }
+  const res = await fetch(`${fnBase}/${name}${qs}`, {
+    method,
+    headers: { 'Authorization': `Bearer ${session.access_token}`,
+               'Content-Type': 'application/json', 'apikey': SB_KEY, ...headers },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  const json = await res.json().catch(() => ({}));
+  return { ok: res.ok, status: res.status, json };
+}
+
+function show(id) {
+  ['vLogin','vTracks','vList','vRun','vReview'].forEach(v => $(v).classList.toggle('hidden', v !== id));
+  $('top').classList.toggle('hidden', id === 'vLogin');
+  $('switchBtn').classList.toggle('hidden', !(ST.tracks.length > 1 && id !== 'vTracks'));
+  $('chip').classList.toggle('hidden', !ST.track || id === 'vTracks');
+  window.scrollTo(0, 0);
+}
+function math(el) {
+  if (window.renderMathInElement) renderMathInElement(el, {
+    delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}],
+    throwOnError: false,
+  });
+}
+const FRIENDLY = {
+  device_limit_reached: 'Three devices are already signed in. Ask your instructor to revoke an old device.',
+  device_revoked: 'This device was revoked. Contact your instructor.',
+  rate_limit_exceeded: 'Please wait a minute before trying again.',
+  invalid_login_credentials: 'That username and password do not match.',
+  attempt_limit_reached: 'You have already used your attempt on this exam. Ask your instructor for a retake.',
+  previous_module_required: 'Complete Module 1 before starting Module 2.',
+  not_assigned_or_window_closed: 'This exam is not open for you right now.',
+  not_enrolled_in_track: 'You are not enrolled in this track.',
+  exam_not_published: 'This exam has not been released yet.',
+  account_suspended: 'This account is suspended. Contact your instructor.',
+};
+const friendly = k => FRIENDLY[k] || 'Something went wrong. Try again, or tell your instructor what you were doing.';
+
+/* ============================ AUTH ============================ */
+$('inBtn').onclick = async () => {
+  const u = $('u').value.trim().toLowerCase(), p = $('p').value;
+  if (!u || !p) { $('loginErr').textContent = 'Enter your username and password.'; return; }
+  $('inBtn').disabled = true; $('loginErr').textContent = '';
+  const email = u.includes('@') ? u : `${u}@${EMAIL_DOMAIN}`;
+  const { error } = await sb.auth.signInWithPassword({ email, password: p });
+  $('inBtn').disabled = false;
+  if (error) { $('loginErr').textContent = friendly('invalid_login_credentials'); return; }
+  boot();
+};
+$('p').onkeydown = e => { if (e.key === 'Enter') $('inBtn').click(); };
+$('outBtn').onclick = async () => { await sb.auth.signOut(); location.reload(); };
+$('switchBtn').onclick = () => { if(ST.run){alert('Finish your current exam before switching tracks.');return;} ST.track = null; renderTracks(); show('vTracks'); };
+
+/* ======================== TRACK CHOOSER ======================== */
+async function boot() {
+  const { ok, json } = await fn('me-tracks');
+  if (!ok) { show('vLogin'); $('loginErr').textContent = friendly(json.error); return; }
+  if(json.role==='admin'||json.role==='instructor'){ location.href='/admin.html'; return; }
+  ST.tracks = json.tracks || [];
+  if (ST.tracks.length === 0) {
+    show('vTracks');
+    $('trackGrid').innerHTML = `<p style="color:var(--muted)">No tracks are assigned to your account yet.
+      Ask your instructor to enrol you in SAT or EST.</p>`;
+    return;
+  }
+  if (ST.tracks.length === 1) return openTrack(ST.tracks[0]);
+  renderTracks(); show('vTracks');
+}
+function renderTracks() {
+  $('trackGrid').innerHTML = ST.tracks.map((t, i) => {
+    const accent = (t.theme && t.theme.accent) || '#C9A227';
+    return `<button class="track-card" data-i="${i}" style="--tc:${esc(accent)}">
+      <div class="code">${esc((t.theme && t.theme.label) || t.id.toUpperCase())}</div>
+      <h2>${esc(t.name)}</h2>
+      <div class="meta">${t.exams_available} exam${t.exams_available === 1 ? '' : 's'} available
+        &nbsp;·&nbsp; ${t.attempts_done} taken</div>
+      <div class="go">Open</div></button>`;
+  }).join('');
+  $('trackGrid').querySelectorAll('.track-card').forEach(b =>
+    b.onclick = () => openTrack(ST.tracks[+b.dataset.i]));
+}
+
+/* ========================== EXAM LIST ========================== */
+// Student dashboard: progress, assessment categories, complete history and lesson priorities.
+const ASSESSMENTS={lesson_exam:'Lesson exams',quiz:'Quizzes',full_exam:'Full exams'};
+const PRIORITIES={focus:['Focus first','Review the lesson, then work through another assigned assessment.'],practice:['Keep practising','Revisit mistakes and practise the question types you missed.'],strong:['Strong','Keep this lesson fresh with occasional mixed practice.'],more_evidence:['More practice needed to assess','Complete more questions before relying on a lesson rating.'],not_started:['Not assessed yet','Complete an assigned assessment to see your progress.']};
+let DASH={view:'overview',exams:[],history:[],lessons:[],summary:{},mistakes:null,mistakesError:'',mistakesLoading:false,historyType:'all',historyPage:0,examSort:'title'};
+let dashboardRequest=0;
+const dateText=t=>t?new Date(t).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'}):'—';
+const percentText=v=>v==null?'—':`${v}%`;
+async function openTrack(t){
+ const request=++dashboardRequest;
+ ST.track=t;document.documentElement.style.setProperty('--accent',t.theme?.accent||'#C9A227');
+ $('chip').textContent=t.theme?.label||t.id.toUpperCase();$('listTitle').textContent=t.name;
+ $('listSub').textContent='Your assessments, progress, and next steps.';
+ show('vList');$('examList').innerHTML='<p class="dash-empty" role="status">Loading your progress…</p>';
+ try{
+  const {ok,json}=await fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}`});
+  if(request!==dashboardRequest)return;
+  if(!ok)throw new Error(friendly(json.error));
+  DAILY_DRAFT={};
+  DASH={...DASH,view:'daily',daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,historyPage:0,historyType:'all',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],summary:json.dashboard?.summary||{}};
+  paintDashboard();
+  refreshDaily();
+ }catch(e){if(request===dashboardRequest){$('examList').innerHTML=`<div class="dash-empty" role="alert">${esc(e.message)}<br><button class="btn" id="retryDashboard">Try again</button></div>`;$('retryDashboard').onclick=()=>openTrack(t);}}
+}
+function setDashboardView(view){DASH.view=view;DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();}
+function paintDashboard(){
+ const tabs=[['daily','Daily practice'],['mistakes','Wrong answers'],['overview','My progress'],['lesson_exam','Lesson exams'],['quiz','Quizzes'],['full_exam','Full exams'],['history','Exam history'],['focus','Lesson focus']];
+ $('examList').innerHTML=`<nav class="student-tabs" aria-label="Student dashboard">${tabs.map(([id,name])=>`<button class="student-tab ${DASH.view===id?'active':''}" data-view="${id}" aria-current="${DASH.view===id?'page':'false'}">${name}${ASSESSMENTS[id]?` <span>${DASH.exams.filter(e=>e.assessment_type===id).length}</span>`:''}</button>`).join('')}</nav><div id="dashboardContent" aria-live="polite"></div>`;
+ document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setDashboardView(b.dataset.view));
+ const content=$('dashboardContent');
+ if(DASH.view==='daily')content.innerHTML=dailyPanel();
+ else if(DASH.view==='mistakes')content.innerHTML=mistakesPanel();
+ else if(DASH.view==='overview')content.innerHTML=dashboardOverview();
+ else if(DASH.view==='full_exam')content.innerHTML=fullExamSection();
+ else if(ASSESSMENTS[DASH.view])content.innerHTML=assessmentSection(DASH.view);
+ else if(DASH.view==='history')content.innerHTML=historySection();
+ else content.innerHTML=focusSection();
+ wireDashboard();
+ if(DASH.view==='daily')wireDaily();
+ if(DASH.view==='mistakes')wireMistakes();
+}
+function dashboardOverview(){
+ const s=DASH.summary,live=DASH.exams.filter(e=>e.last?.status==='in_progress');
+ const available=DASH.exams.filter(e=>e.open&&(!e.last||e.retake_available));
+ const priorities=DASH.lessons.filter(l=>['focus','practice'].includes(l.priority)).slice(0,3);
+ return `<div class="dashboard-stats"><div class="dash-stat"><span>Completed attempts</span><strong>${s.completed||0}</strong></div><div class="dash-stat"><span>Average score</span><strong>${percentText(s.average_percent)}</strong></div><div class="dash-stat"><span>Best score</span><strong>${percentText(s.best_percent)}</strong></div><div class="dash-stat"><span>Lessons to focus on</span><strong>${s.lessons_to_focus||0}</strong></div></div>
+ ${live.length?`<section class="dash-panel"><h2>Continue your exam</h2>${live.map(assessmentRow).join('')}</section>`:''}
+ <div class="dashboard-columns"><section class="dash-panel"><div class="dash-heading"><h2>Your score trend</h2><button class="dash-link" data-go="history">All results →</button></div>${scoreTrend()}<p class="dash-note">Raw scores as percentages. Different assessments vary in difficulty; retakes are included.</p></section>
+ <section class="dash-panel"><div class="dash-heading"><h2>What to work on next</h2><button class="dash-link" data-go="focus">All lessons →</button></div>${priorities.length?priorities.map(l=>lessonCard(l,true)).join(''):`<div class="dash-empty">${!s.completed?'Complete your first assessment to get personal lesson priorities.':DASH.lessons.some(l=>l.priority==='strong')?'Your assessed lessons are looking strong. Keep practising and check the full lesson list.':'More reviewed questions are needed before we can identify your priorities.'}</div>`}</section></div>
+ ${s.review_pending?`<p class="dash-notice">${s.review_pending} completed assessment${s.review_pending===1?' has':'s have'} review pending. Their lesson breakdown will appear when your instructor releases the answers.</p>`:''}
+ <section class="dash-panel"><h2>Ready to take</h2>${available.length?available.slice(0,5).map(assessmentRow).join(''):'<p class="dash-empty">No new assessments are open right now. You can review your history or check the assessment tabs.</p>'}</section>`;
+}
+function scoreTrend(){
+ const rows=DASH.history.filter(h=>h.percent!=null).slice(0,8).reverse();
+ if(!rows.length)return '<div class="dash-empty">Your score trend will appear after your first completed assessment.</div>';
+ return `<div class="score-trend" aria-label="Recent assessment scores">${rows.map(h=>`<button class="trend-column" data-review="${h.id}" aria-label="${esc(h.title)}, attempt ${h.attempt_no}, ${h.percent}%"><span class="trend-value">${h.percent}%</span><span class="trend-track"><i style="height:${Math.max(2,Math.min(100,h.percent))}%"></i></span><span class="trend-label">${esc(new Date(h.submitted_at).toLocaleDateString(undefined,{day:'numeric',month:'short'}))}</span></button>`).join('')}</div>`;
+}
+function assessmentRow(e){
+ const a=e.last,live=a?.status==='in_progress',done=a&&!live;
+ const label=live?'Resume':done?'Review':'Start';
+ const practice=e.assessment_type==='lesson_exam';
+ const score=done?`<span class="badge done">${a.score == null ? 'Awaiting grading' : a.score+'/'+a.total}</span>`:'';
+ return `<div class="exam-row"><div style="flex:1;min-width:170px"><h3>${esc(e.title)}</h3><div class="meta">${e.questions} questions · ${live&&a.untimed?'No time limit':Math.round(e.duration_seconds/60)+' min'}${practice?' · Repeatable':''}${!e.open&&!live?' · Not open':''}${done?' · Completed':''}</div></div>${score}${practice&&!live&&e.open?`<label class="practice-mode">Timer<select data-timer="${e.id}" aria-label="Timer for ${esc(e.title)}"><option value="untimed">No time limit</option><option value="timed">Timed (${Math.round(e.duration_seconds/60)} min)</option></select></label>`:''}<button class="btn" ${done?`data-review="${a.id}"`:`data-start="${e.id}"`} ${!done&&!live&&!e.open?'disabled':''}>${label}</button>${done&&(practice||e.retake_available)&&e.open?`<button class="btn" data-start="${e.id}">${practice?'Practice again':'Start retake'}</button>`:''}</div>`;
+}
+function assessmentSection(type){
+ const rows=DASH.exams.filter(e=>e.assessment_type===type).sort((a,b)=>DASH.examSort==='questions'?b.questions-a.questions:DASH.examSort==='status'?Number(b.open)-Number(a.open)||String(a.title).localeCompare(String(b.title)):String(a.title).localeCompare(String(b.title),undefined,{numeric:true,sensitivity:'base'}));
+ return `<section class="dash-panel"><div class="dash-heading"><h2>${ASSESSMENTS[type]}</h2><span class="dash-note">${rows.length} assigned</span></div><p class="dash-note">${type==='lesson_exam'?'Assessments focused on individual lessons.':type==='quiz'?'Short checks of what you have learned.':'Longer papers covering several lessons.'} ${type==='lesson_exam'?'Repeat as often as you like. Choose timed practice or no time limit before starting. Every attempt is saved.':'One attempt per assessment unless your instructor grants a retake.'}</p><div class="assessment-tools"><label>Sort <select id="assessmentSort"><option value="title" ${DASH.examSort==='title'?'selected':''}>Title A–Z</option><option value="status" ${DASH.examSort==='status'?'selected':''}>Available first</option><option value="questions" ${DASH.examSort==='questions'?'selected':''}>Most questions</option></select></label></div>${rows.length?rows.map(assessmentRow).join(''):`<div class="dash-empty">No ${ASSESSMENTS[type].toLowerCase()} are assigned yet.</div>`}</section>`;
+}
+function moduleState(e){
+ const a=e?.last,live=a?.status==='in_progress',done=a&&!live;
+ return {a,live,done,label:live?'Resume':done?'Review':'Start'};
+}
+function fullExamSection(){
+ const modules=DASH.exams.filter(e=>e.assessment_type==='full_exam');
+ if(ST.track?.id==='est')return `<div class="full-exam-intro"><h2>EST Math 1 practice exams</h2><p>Full practice papers contain 50 questions with one 75-minute timer. Calculators are allowed throughout. Question Bank Practice papers contain 15 Foundational Algebra, 15 Data Analysis and Probability, 15 Advanced Algebra and Functions, and 5 Geometry and Trigonometry questions.</p><p class="dash-note">Your raw score and worked answers appear after submission. Questions may also appear in lesson practice and quizzes.</p></div><section class="dash-panel"><h2>Full exams</h2>${modules.length?modules.map(assessmentRow).join(''):'<div class="dash-empty">No full exams are assigned yet.</div>'}</section>`;
+ const singles=modules.filter(e=>!e.exam_set_code);
+ const pairs=[...new Set(modules.filter(e=>e.exam_set_code).map(e=>e.exam_set_code))].map(code=>({code,rows:modules.filter(e=>e.exam_set_code===code).sort((a,b)=>a.module_number-b.module_number)}));
+ const pairHtml=pairs.map(({rows})=>{
+  const m1=rows[0],m2=rows[1],s1=moduleState(m1),s2=moduleState(m2);
+  const complete=s1.done&&s2.done&&s1.a.score!=null&&s2.a.score!=null;
+  const title=(m1?.title||'SAT Practice Exam').replace(/\s+[—-]\s+Module\s+1$/i,'');
+  const combined=complete?`${s1.a.score+s2.a.score}/${s1.a.total+s2.a.total}`:'—';
+  const row=(e,s,locked)=>`<div class="exam-row module-row"><div style="flex:1;min-width:170px"><h3>Module ${e.module_number}</h3><div class="meta">${e.questions} questions · 35 min${locked?' · Complete Module 1 first':''}</div></div>${s.done?`<span class="badge done">${s.a.score==null?'Awaiting grading':s.a.score+'/'+s.a.total}</span>`:''}<button class="btn" ${s.done?`data-review="${s.a.id}"`:`data-start="${e.id}"`} ${locked||(!s.done&&!s.live&&!e.open)?'disabled':''}>${s.label}</button></div>`;
+  return `<article class="dash-panel exam-pair"><div class="dash-heading"><div><h2>${esc(title)}</h2><p class="dash-note">2 modules · 22 questions each · 35 minutes per module</p></div><div class="pair-score"><span>Combined</span><strong>${combined}</strong></div></div>${row(m1,s1,false)}${row(m2,s2,!s1.done)}</article>`;
+ }).join('');
+ return `<div class="full-exam-intro"><h2>SAT practice exams</h2><p>Each exam has two separately timed 35-minute modules. Complete Module 1 to unlock Module 2; your combined result is out of 44.</p></div>${pairHtml}${singles.length?`<section class="dash-panel"><h2>Other full exams</h2>${singles.map(assessmentRow).join('')}</section>`:''}${!pairs.length&&!singles.length?'<div class="dash-empty">No full exams are assigned yet.</div>':''}`;
+}
+function historySection(){
+ const rows=DASH.history.filter(h=>DASH.historyType==='all'||h.assessment_type===DASH.historyType);
+ const pages=Math.max(1,Math.ceil(rows.length/10));DASH.historyPage=Math.min(DASH.historyPage,pages-1);
+ const slice=rows.slice(DASH.historyPage*10,DASH.historyPage*10+10);
+ return `<section class="dash-panel"><div class="dash-heading"><h2>Exam history</h2><label class="history-filter">Show <select id="historyFilter">${[['all','All assessments'],...Object.entries(ASSESSMENTS)].map(([id,name])=>`<option value="${id}" ${DASH.historyType===id?'selected':''}>${name}</option>`).join('')}</select></label></div><p class="dash-note">Every completed attempt, including retakes and expired exams.</p>${slice.length?`<div class="student-table"><table><thead><tr><th>Assessment</th><th>Type</th><th>Date</th><th>Attempt</th><th>Score</th><th>Time</th><th></th></tr></thead><tbody>${slice.map(h=>`<tr><td><b>${esc(h.title)}</b>${h.status==='expired'?'<span class="history-detail">Time expired</span>':''}</td><td>${ASSESSMENTS[h.assessment_type]||'Lesson exams'}</td><td>${dateText(h.submitted_at)}</td><td>${h.attempt_no}</td><td><b>${h.score == null ? 'Awaiting grading' : h.score+'/'+h.total}</b><span class="history-detail">${percentText(h.percent)}${h.scaled_score!=null?' · scaled '+h.scaled_score:''}</span></td><td>${Math.floor((h.time_used||0)/60)}m ${(h.time_used||0)%60}s</td><td><button class="btn-ghost" data-review="${h.id}">${h.review_open?'Review':'View score'}</button>${!h.review_open?`<span class="history-detail">${h.review_unlocks_at?'Answers open '+dateText(h.review_unlocks_at):'Review pending'}</span>`:''}</td></tr>`).join('')}</tbody></table></div><div class="history-pager"><button class="btn-ghost" id="historyPrev" ${DASH.historyPage===0?'disabled':''}>Previous</button><span>Page ${DASH.historyPage+1} of ${pages} · ${rows.length} attempts</span><button class="btn-ghost" id="historyNext" ${DASH.historyPage>=pages-1?'disabled':''}>Next</button></div>`:'<div class="dash-empty">No completed attempts in this category yet.</div>'}</section>`;
+}
+function lessonCard(l,compact=false){
+ const [label,advice]=PRIORITIES[l.priority]||PRIORITIES.not_started;
+ return `<article class="lesson-card ${esc(l.priority)}"><div class="lesson-card-top"><h3>${esc(l.lesson)}</h3><span class="priority-label">${label}</span></div><div class="lesson-score"><strong>${percentText(l.percent)}</strong><span>${l.correct}/${l.seen} distinct questions correct</span></div><div class="lesson-meter" role="meter" aria-label="${esc(l.lesson)} accuracy" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${l.percent||0}"><i style="width:${l.percent||0}%"></i></div>${!compact?`<p>${advice}</p>${l.last_practiced?`<span class="dash-note">Last reviewed practice: ${dateText(l.last_practiced)}</span>`:''}`:''}</article>`;
+}
+function focusSection(){
+ return `<section class="dash-panel"><h2>Lesson focus</h2><p class="dash-note">Based on your latest reviewed result for each question. Repeating the same question does not increase the evidence count.</p><div class="priority-guide"><span><b>Focus first</b> · below 60%</span><span><b>Keep practising</b> · 60–79%</span><span><b>Strong</b> · 80% and above</span></div><p class="dash-note">A rating needs at least 3 distinct reviewed questions. These are practice indicators, not predicted exam scores.</p>${DASH.lessons.length?`<div class="lesson-grid">${DASH.lessons.map(l=>lessonCard(l)).join('')}</div>`:'<div class="dash-empty">Your lesson list will appear when your instructor assigns an assessment.</div>'}</section>`;
+}
+function wireDashboard(){
+ document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>setDashboardView(b.dataset.go));
+ document.querySelectorAll('[data-review]').forEach(b=>b.onclick=()=>openReview(b.dataset.review));
+ document.querySelectorAll('[data-start]').forEach(b=>b.onclick=async()=>{b.disabled=true;try{await startExam(b.dataset.start,document.querySelector(`[data-timer="${b.dataset.start}"]`)?.value==='untimed');}finally{b.disabled=false;}});
+ if($('historyFilter'))$('historyFilter').onchange=e=>{DASH.historyType=e.target.value;DASH.historyPage=0;paintDashboard();};
+ if($('assessmentSort'))$('assessmentSort').onchange=e=>{DASH.examSort=e.target.value;paintDashboard();};
+ if($('historyPrev'))$('historyPrev').onclick=()=>{DASH.historyPage--;paintDashboard();};
+ if($('historyNext'))$('historyNext').onclick=()=>{DASH.historyPage++;paintDashboard();};
+}
+
+
+/* ========================== EXAM RUNNER ========================== */
+async function startExam(examId, untimed=false) {
+  const { ok, json } = await fn('start-attempt', { method: 'POST', body: { exam_id: examId, untimed } });
+  if (!ok) { alert(friendly(json.error)); return openTrack(ST.track); }
+  json.exam.id=examId;
+  ST.run = json; ST.idx = 0; ST.flags = new Set();
+  // Server time is authoritative; measure the offset once and count from it.
+  ST.skew = new Date(json.attempt.server_now).getTime() - Date.now();
+  restorePending(); startClock(); renderPalette(); renderQ(); show('vRun');
+}
+
+function startClock() {
+  clearInterval(ST.timer);
+  if(ST.run.attempt.deadline_at==='infinity'){ $('clock').textContent='No time limit';$('clock').classList.remove('warn');return; }
+  const dl = new Date(ST.run.attempt.deadline_at).getTime();
+  const tick = () => {
+    const left = Math.floor((dl - (Date.now() + ST.skew)) / 1000);
+    if (left <= 0) { clearInterval(ST.timer); $('clock').textContent = '00:00'; return submitExam(true); }
+    const h = Math.floor(left / 3600), m = Math.floor(left % 3600 / 60), s = left % 60;
+    $('clock').textContent = (h ? h + ':' : '') + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+    $('clock').classList.toggle('warn', left < 300);
+  };
+  tick(); ST.timer = setInterval(tick, 1000);
+}
+
+function renderPalette() {
+  const qs = ST.run.questions;
+  $('palette').innerHTML = qs.map((q, i) =>
+    `<button class="pal ${q.response != null && q.response !== '' ? 'answered' : ''}
+      ${i === ST.idx ? 'current' : ''} ${ST.flags.has(q.id) ? 'flagged' : ''}"
+      data-i="${i}" style="position:relative">${i + 1}</button>`).join('');
+  $('palette').querySelectorAll('.pal').forEach(b =>
+    b.onclick = () => { captureInput(); ST.idx = +b.dataset.i; renderQ(); renderPalette(); });
+  const done = qs.filter(q => q.response != null && q.response !== '').length;
+  $('progress').textContent = `${done} of ${qs.length} answered`;
+}
+
+function renderQ() {
+  const q = ST.run.questions[ST.idx];
+  let body;
+  if (q.type === 'mcq') {
+    body = (q.choices || []).map(c => `<button class="choice ${q.response === c.key ? 'sel' : ''}"
+      data-k="${esc(c.key)}"><span class="k">${esc(c.key)}</span><span class="choice-text">${esc(c.text)}</span></button>`).join('');
+  } else {
+    body = `<input class="gridin" id="gin" inputmode="text" autocomplete="off"
+      placeholder="Your answer" value="${esc(q.response ?? '')}">
+      <div class="gridin-hint">Fractions and decimals are both accepted — 3/4 or 0.75.</div>`;
+  }
+  $('qcard').innerHTML = `<div class="qhead"><span class="qnum">QUESTION ${ST.idx + 1}</span>
+    <span class="qnum" style="color:var(--accent)">${esc(q.topic || '')}</span></div>
+    <div class="stem">${esc(q.stem)}</div>${figure(q.assets)}${body}`;
+  math($('qcard'));
+
+  $('qcard').querySelectorAll('.choice').forEach(b =>
+    b.onclick = () => save(q, b.dataset.k));
+  const gin = $('gin');
+  if (gin) {
+    gin.oninput = () => save(q, gin.value.trim());
+  }
+  $('prevBtn').disabled = ST.idx === 0;
+  $('nextBtn').disabled = ST.idx === ST.run.questions.length - 1;
+  $('flagBtn').textContent = ST.flags.has(q.id) ? 'Unflag' : 'Flag';
+}
+
+/* Lane A — the answer goes straight to Postgres under RLS. No function call,
+   so autosave never waits on a cold start. The policy refuses it the moment
+   the attempt is submitted or past its deadline. */
+const pending = new Map();
+let flushing = null, submitting = false;
+function pendingKey(){return 'ghoneem-answers-'+ST.run.attempt.id;}
+function persistPending(){try{localStorage.setItem(pendingKey(),JSON.stringify([...pending]));}catch{}}
+function restorePending(){
+ pending.clear();
+ try{for(const [id,value] of JSON.parse(localStorage.getItem(pendingKey())||'[]')){
+ const q=ST.run.questions.find(q=>q.id===id);if(q){q.response=value;pending.set(id,value);}}}catch{}
+ flushAnswers();
+}
+function captureInput(){const input=$('gin');if(input&&ST.run)save(ST.run.questions[ST.idx],input.value.trim());}
+function save(q,value){
+ if(submitting||!ST.run||q.response===value)return;
+ q.response=value;pending.set(q.id,value);persistPending();renderPalette();
+ if(q.type==='mcq')renderQ();
+ $('saving').textContent='Saving…';flushAnswers();
+}
+async function flushAnswers(){
+ if(flushing)return flushing;
+ if(!ST.run||!pending.size)return true;
+ flushing=(async()=>{
+  while(pending.size){
+   const [id,value]=pending.entries().next().value;
+   try{
+    const {error}=await sb.from('attempt_answers').upsert({attempt_id:ST.run.attempt.id,question_id:id,response:value===''?null:value},{onConflict:'attempt_id,question_id'});
+    if(error)throw error;
+    if(pending.get(id)===value)pending.delete(id);persistPending();
+   }catch{$('saving').textContent='Not synced — retrying when connected';return false;}
+  }
+  $('saving').textContent='All answers saved';return true;
+ })();
+ try{return await flushing;}finally{flushing=null;}
+}
+setInterval(()=>{if(ST.run&&!submitting&&!$('vRun').classList.contains('hidden'))flushAnswers();},10000);
+window.addEventListener('online',()=>flushAnswers());
+
+$('prevBtn').onclick = () => { if (ST.idx > 0) { captureInput(); ST.idx--; renderQ(); renderPalette(); } };
+$('nextBtn').onclick = () => { if (ST.idx < ST.run.questions.length - 1) { captureInput(); ST.idx++; renderQ(); renderPalette(); } };
+$('flagBtn').onclick = () => {
+  const id = ST.run.questions[ST.idx].id;
+  ST.flags.has(id) ? ST.flags.delete(id) : ST.flags.add(id);
+  renderQ(); renderPalette();
+};
+$('finishBtn').onclick = () => submitExam(false);
+
+async function submitExam(auto) {
+ if(submitting||!ST.run)return;
+ captureInput();
+ const blank=ST.run.questions.filter(q=>q.response==null||q.response==='').length;
+ if(!auto&&!confirm(blank?`${blank} question(s) are blank. Submit your exam?`:'Submit your exam? You cannot change answers afterwards.'))return;
+ submitting=true;$('finishBtn').disabled=true;$('finishBtn').textContent='Submitting…';
+ try{
+  const saved=await flushAnswers();
+  if(!saved&&!auto){alert('Some answers have not synced. Keep this page open and reconnect before submitting.');return;}
+  const {ok,status,json}=await fn('submit-attempt',{method:'POST',body:{attempt_id:ST.run.attempt.id},headers:{'Idempotency-Key':ST.run.attempt.id}});
+  if(ok||(status===409&&json.result)){
+   const current=DASH.exams.find(e=>e.id===ST.run.exam.id);
+   const next=current?.exam_set_code?DASH.exams.find(e=>e.exam_set_code===current.exam_set_code&&e.module_number===current.module_number+1):null;
+   clearInterval(ST.timer);pending.clear();persistPending();paintReview(ok?json:json.result,next?.id||null);ST.run=null;
+  }else{alert(friendly(json.error));}
+ }catch{$('saving').textContent='Submission not confirmed. Reconnect and press Submit again.';}
+ finally{submitting=false;$('finishBtn').disabled=false;$('finishBtn').textContent='Submit exam';}
+}
+
+/* ============================ REVIEW ============================ */
+async function openReview(attemptId) {
+  const { ok, json } = await fn('attempt-review',
+    { qs: `?attempt_id=${encodeURIComponent(attemptId)}` });
+  if (ok) return paintReview(json);
+  alert(friendly(json.error));
+}
+
+function paintReview(r,nextExamId=null) {
+  const s = r.attempt || r.score || {};
+  const scaled = s.scaled_score, raw = s.score, total = s.total;
+  let html = `<div class="score">
+      <div class="lbl">${esc((r.exam && r.exam.title) || 'RESULT')}</div>
+      <div class="big">${scaled != null ? scaled : (raw != null ? raw + '/' + total : 'Awaiting grading')}</div>
+      <div class="raw">${scaled != null && raw != null ? `${raw} of ${total} correct` : ''}
+        ${s.status === 'expired' ? ' · time expired' : ''}</div></div>`;
+
+  const excluded=(r.items||[]).filter(it=>it.correct?.void).length;
+  if(excluded)html+=`<div class="locked">${r.items.length} questions were presented. ${excluded} defective questions are excluded; your score is based on ${total} valid questions.</div>`;
+  if (!r.review_open) {
+    html += `<div class="locked">${raw == null ? '<b>Submission saved.</b> Awaiting a verified answer key; your answers are recorded and no mark has been assigned.' : '<b>Answers open later.</b> Your score is recorded.'}
+      ${s.review_unlocks_at?`Worked answers unlock on ${esc(new Date(s.review_unlocks_at).toLocaleString())}.`:'Your instructor controls when worked answers are released.'}</div>`;
+  } else {
+    html += (r.items || []).map((it, i) => `<div class="rev ${it.correct?.void ? 'excluded' : it.is_correct ? 'right' : 'wrong'}">
+      <span class="tag">${i + 1} · ${it.correct?.void ? 'EXCLUDED FROM SCORING' : it.is_correct ? 'CORRECT' : 'INCORRECT'}</span>
+      <div class="stem" style="margin:9px 0 0;font-size:16px">${esc(it.stem)}</div>
+      ${figure(it.assets)}
+      ${it.type==='mcq'?`<div class="review-choices">${(it.choices||[]).map(c=>`<div class="review-choice"><b>${esc(c.key)}.</b><span>${esc(c.text)}</span></div>`).join('')}</div>`:''}
+      <div class="ans"><div><b>Your answer:</b> ${esc(fmt(it.response)) || '<i>blank</i>'}</div><div><b>Correct:</b> ${esc(fmt(it.correct))}</div></div>
+      ${it.explanation ? `<div class="exp">${esc(it.explanation)}</div>` : ''}</div>`).join('');
+  }
+  html += `<div class="nav" style="margin-top:22px">${nextExamId?'<button class="btn" id="nextModuleBtn">Start Module 2</button>':''}<button class="btn" id="backBtn">Back to exams</button></div>`;
+  $('vReview').innerHTML = html;
+  math($('vReview'));
+  $('backBtn').onclick = () => openTrack(ST.track);
+  if($('nextModuleBtn'))$('nextModuleBtn').onclick=()=>startExam(nextExamId);
+  show('vReview');
+}
+/* ---------------- figure rendering ----------------
+   Questions carry either a `figspec` (a drawing spec: parallel lines,
+   transversals and labelled angle arcs) or `html` (a data table).
+   Both come from your own bank through the service-role importer, never
+   from a student, so the table markup is injected rather than escaped.
+
+   NOTE ON SCALE: these specs are schematic. Bank items 0 and 5 share
+   identical coordinates but read 61 deg and 74 deg, so the drawing is a
+   template and the label is authoritative — same as the printed SAT,
+   where figures are not drawn to scale. */
+function ent(t) {
+  const d = document.createElement('textarea');
+  d.innerHTML = String(t ?? '');
+  return d.value;
+}
+function drawFig(spec) {
+  const H = spec.h || 230, W = 360;
+  let o = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="figure">`;
+  for (const L of (spec.lines || [])) {
+    o += `<line x1="${L[0]}" y1="${L[1]}" x2="${L[2]}" y2="${L[3]}"
+            stroke="var(--navy)" stroke-width="1.8" stroke-linecap="round"/>`;
+    if (L.length >= 7 && L[4]) {
+      o += `<text x="${L[5]}" y="${L[6]}" font-size="13" font-style="italic"
+              fill="var(--navy)">${esc(ent(L[4]))}</text>`;
+    }
+  }
+  for (const A of (spec.arcs || [])) {
+    const [cx, cy, d1x, d1y, d2x, d2y] = A;
+    const t = A.length > 6 ? ent(A[6]) : '';
+    const r = A.length > 7 ? A[7] : 26;
+    const sx = cx + r * d1x, sy = cy + r * d1y;
+    const ex = cx + r * d2x, ey = cy + r * d2y;
+    const sweep = (d1x * d2y - d1y * d2x) > 0 ? 1 : 0;
+    o += `<path d="M ${sx.toFixed(2)} ${sy.toFixed(2)} A ${r} ${r} 0 0 ${sweep}
+            ${ex.toFixed(2)} ${ey.toFixed(2)}" fill="none"
+            stroke="var(--gold)" stroke-width="1.6"/>`;
+    let bx = d1x + d2x, by = d1y + d2y;
+    let m = Math.hypot(bx, by);
+    if (m < 1e-6) { bx = -d1y; by = d1x; m = 1; }
+    bx /= m; by /= m;
+    o += `<text x="${(cx + (r + 15) * bx).toFixed(1)}" y="${(cy + (r + 15) * by).toFixed(1)}"
+            font-size="12.5" fill="var(--navy)" text-anchor="middle"
+            dominant-baseline="middle">${esc(t)}</text>`;
+  }
+  if (spec.extra) o += cleanMarkup(ent(spec.extra));
+  return o + '</svg>';
+}
+function cleanMarkup(markup){
+ const doc=new DOMParser().parseFromString(markup,'text/html');
+ const tags=new Set('svg g path line rect circle ellipse polygon polyline text tspan defs marker table thead tbody tr th td caption colgroup col div span p br b i strong em sup sub'.split(' '));
+ const attrs=new Set('viewBox xmlns d x y x1 y1 x2 y2 cx cy r rx ry width height points fill stroke stroke-width transform text-anchor dominant-baseline font-size font-style colspan rowspan scope role aria-label'.toLowerCase().split(' '));
+ for(const el of [...doc.body.querySelectorAll('*')]){
+  if(!tags.has(el.localName)){el.remove();continue;}
+  for(const a of [...el.attributes])if(!attrs.has(a.name.toLowerCase())||/url\s*\(|javascript:/i.test(a.value))el.removeAttribute(a.name);
+ }
+ return doc.body.innerHTML;
+}
+function figure(a) {
+  if (!a) return '';
+  let out = '';
+  const figures=Array.isArray(a.figure)?a.figure:[a.figure];
+  for(const src of figures){if(typeof src==='string'&&(/^(https:\/\/)/.test(src)||/^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\s]+$/.test(src)))out+=`<div class="fig"><img src="${esc(src)}" alt="${esc(a.figure_caption||'Question diagram')}" style="max-width:100%;height:auto"></div>`;}
+  if (a.figspec) out += `<div class="fig">${cleanMarkup(drawFig(a.figspec))}</div>`;
+  if (a.html)    out += `<div class="fig fig-table">${cleanMarkup(ent(a.html))}</div>`;
+  if(a.svg) out+=`<div class="fig">${cleanMarkup(a.svg)}</div>`;
+  if(a.image&&/^https:\/\//.test(a.image))out+=`<div class="fig"><img src="${esc(a.image)}" alt="${esc(a.image_alt || 'Question diagram')}" style="max-width:100%;height:auto"></div>`;
+  if((a.source_question||a.source_code) && a.image && /^https:\/\//.test(a.image))out+=`<p style="margin:8px 0 18px;font-size:14px"><a href="${esc(a.image)}" target="_blank" rel="noopener">${a.source_question?'Enlarge original question':'Enlarge diagram'}</a></p>`;
+  if(a.source_code)out+=`<p class="dash-note">Source: ${esc(a.source_document||'Question bank')} · ${esc(a.source_code)}</p>`;
+  if(a.source_question) {
+    const links=[['instructions','Paper instructions'],['reference','Formula reference']].filter(([key])=>typeof a[key]==='string'&&/^https:\/\//.test(a[key])).map(([key,label])=>`<a href="${esc(a[key])}" target="_blank" rel="noopener">${label}</a>`);
+    out+=`<p style="font-size:14px;margin:10px 0 18px">${links.join(' · ')}</p>`;
+  }
+  return out;
+}
+const fmt = v => v?.void ? 'Excluded from scoring' : Array.isArray(v) ? v.join('  or  ') : (v == null ? '' : String(v));
+
+/* ============================= INIT ============================= */
+window.addEventListener('beforeunload', e => {
+  if (ST.run && !$('vRun').classList.contains('hidden')) { e.preventDefault(); e.returnValue = ''; }
+});
+(async () => {
+  const { data: { session } } = await sb.auth.getSession();
+  session ? boot() : show('vLogin');
+})();
+</script>
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+<script>
+const topButton=document.getElementById('backToTop');
+const updateTopButton=()=>topButton.classList.toggle('show',window.scrollY>420);
+window.addEventListener('scroll',updateTopButton,{passive:true});
+topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+</script>
+</body>
+</html>

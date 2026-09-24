@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 230" width="360" height="230">
+<rect width="360" height="230" fill="#fff"/>
+<line x1="120" y1="30" x2="120" y2="205" stroke="#14243E" stroke-width="1.8"/>
+<text x="126" y="24" font-size="13" font-style="italic" fill="#14243E">r</text>
+<line x1="220" y1="30" x2="220" y2="205" stroke="#14243E" stroke-width="1.8"/>
+<text x="226" y="24" font-size="13" font-style="italic" fill="#14243E">s</text>
+<line x1="75" y1="176" x2="259" y2="70" stroke="#14243E" stroke-width="1.8"/>
+<text x="266" y="63" font-size="13" font-style="italic" fill="#14243E">t</text>
+<path d="M 91.42 166.50 A 33 33 0 0 0 120.00 183.00" fill="none" stroke="#C9A227" stroke-width="1.6"/>
+<text x="96.0" y="191.6" font-size="12.5" fill="#14243E" text-anchor="middle" dominant-baseline="middle">x°</text>
+<path d="M 220.00 59.00 A 33 33 0 0 0 191.42 108.50" fill="none" stroke="#C9A227" stroke-width="1.6"/>
+<text x="178.4" y="68.0" font-size="12.5" fill="#14243E" text-anchor="middle" dominant-baseline="middle">y°</text>
+</svg>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 230" width="360" height="230">
+<rect width="360" height="230" fill="#fff"/>
+<line x1="30" y1="70" x2="330" y2="70" stroke="#14243E" stroke-width="1.8"/>
+<text x="338" y="75" font-size="13" font-style="italic" fill="#14243E">l</text>
+<line x1="30" y1="160" x2="330" y2="160" stroke="#14243E" stroke-width="1.8"/>
+<text x="338" y="165" font-size="13" font-style="italic" fill="#14243E">m</text>
+<line x1="134" y1="33" x2="249" y2="198" stroke="#14243E" stroke-width="1.8"/>
+<text x="256" y="206" font-size="13" font-style="italic" fill="#14243E">k</text>
+<path d="M 142.78 45.43 A 30 30 0 0 0 130.00 70.00" fill="none" stroke="#C9A227" stroke-width="1.6"/>
+<text x="120.1" y="49.2" font-size="12.5" fill="#14243E" text-anchor="middle" dominant-baseline="middle">x°</text>
+<path d="M 247.11 194.40 A 42 42 0 0 1 181.00 160.00" fill="none" stroke="#C9A227" stroke-width="1.6"/>
+<text x="196.7" y="210.6" font-size="12.5" fill="#14243E" text-anchor="middle" dominant-baseline="middle">111°</text>
+</svg>

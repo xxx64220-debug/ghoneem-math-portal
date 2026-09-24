@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 235" width="360" height="235">
+<rect width="360" height="235" fill="#fff"/>
+<line x1="130" y1="25" x2="130" y2="210" stroke="#14243E" stroke-width="1.8"/>
+<text x="136" y="20" font-size="13" font-style="italic" fill="#14243E">r</text>
+<line x1="240" y1="25" x2="240" y2="210" stroke="#14243E" stroke-width="1.8"/>
+<text x="246" y="20" font-size="13" font-style="italic" fill="#14243E">s</text>
+<line x1="89" y1="51" x2="277" y2="183" stroke="#14243E" stroke-width="1.8"/>
+<text x="80" y="44" font-size="13" font-style="italic" fill="#14243E">k</text>
+<path d="M 130.00 46.00 A 34 34 0 0 1 157.85 99.52" fill="none" stroke="#C9A227" stroke-width="1.6"/>
+<text x="173.5" y="57.4" font-size="12.5" fill="#14243E" text-anchor="middle" dominant-baseline="middle">w°</text>
+<path d="M 157.85 99.52 A 34 34 0 0 1 130.00 114.00" fill="none" stroke="#C9A227" stroke-width="1.6"/>
+<text x="152.6" y="123.5" font-size="12.5" fill="#14243E" text-anchor="middle" dominant-baseline="middle">x°</text>
+<path d="M 240.00 124.00 A 33 33 0 0 0 212.97 138.06" fill="none" stroke="#C9A227" stroke-width="1.6"/>
+<text x="217.8" y="114.4" font-size="12.5" fill="#14243E" text-anchor="middle" dominant-baseline="middle">y°</text>
+<path d="M 212.15 137.48 A 34 34 0 0 0 240.00 191.00" fill="none" stroke="#C9A227" stroke-width="1.6"/>
+<text x="196.5" y="179.6" font-size="12.5" fill="#14243E" text-anchor="middle" dominant-baseline="middle">z°</text>
+</svg>

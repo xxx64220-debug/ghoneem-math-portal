@@ -1,0 +1,104 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+function setup(file){
+ const nodes=new Map();function node(id){if(!nodes.has(id))nodes.set(id,{id,value:'',textContent:'',innerHTML:'',disabled:false,style:{},classList:{toggle(){},contains(){return true},remove(){},add(){}},querySelectorAll(){return[]},close(){},showModal(){}});return nodes.get(id);}
+ const ctx={console,Map,Set,Date,JSON,Promise,Number,String,Array,Object,Math,Error,RegExp,URL,Blob,TextEncoder,crypto:require('node:crypto').webcrypto,
+ setInterval(){return 1},clearInterval(){},setTimeout(){},clearTimeout(){},location:{reload(){},href:''},alert(){},confirm(){return true},
+ localStorage:{setItem(){},getItem(){return null}},document:{getElementById:node,querySelectorAll(){return[]},documentElement:{style:{setProperty(){}}}},window:{addEventListener(){},scrollTo(){}},
+ supabase:{createClient(){return {auth:{async getSession(){return {data:{session:null}}},async getUser(){return {data:{user:null}}}}}}}};
+ vm.createContext(ctx);const code=fs.readFileSync(file,'utf8').split('<script>')[1].split('</script>')[0];new vm.Script(code).runInContext(ctx);return ctx;
+}
+(async()=>{
+ const c=setup('web/index.html'),a=setup('web/admin.html');
+ a.testQuestions=[{id:'q-ready',track_id:'est',topic:'Linear equations',stem:'FA 001 — Solve the original question',type:'mcq',assets:{source_code:'FA 001'}}];
+ a.testSource=[{id:'topic:FA 001',track_id:'est',source_document:'Topics PDF',source_code:'FA 001',source_page:2,source_section:'Foundational Algebra',review_status:'ready',question_id:'q-ready',duplicate_of:null},{id:'clean:MIX 024',track_id:'est',source_document:'Clean PDF',source_code:'MIX 024',source_page:400,source_section:'Mixed',review_status:'incomplete',question_id:null,duplicate_of:null}];
+ vm.runInContext("ST.track='est';sourceStatus=s=>s==='ready'?'Ready in question bank':'Needs review';getRows=async table=>table==='questions'?testQuestions:table==='est_source_review'?testSource:[];sb.from=table=>({select(){return this},order(){return this},limit:async()=>({data:testSource,error:null})});",a);
+ await vm.runInContext('bank()',a);
+ assert.match(a.document.getElementById('view').innerHTML,/2 PDF source entries · 1 verified/);
+ a.document.getElementById('bankScope').value='source';a.document.getElementById('bankScope').onchange();
+ const sourceBank=a.document.getElementById('bankTable').innerHTML;
+ assert.match(sourceBank,/FA 001/);assert.match(sourceBank,/data-bank-select="q-ready"/);assert.match(sourceBank,/MIX 024/);
+ assert.doesNotMatch(sourceBank,/data-bank-select="null"/);
+ let attempts=0;
+ c.testUpsert=async()=>{attempts++;return {error:attempts===1?new Error('offline'):null}};
+ vm.runInContext("sb.from=()=>({upsert:testUpsert});ST.run={attempt:{id:'test'},questions:[{id:'q1',type:'grid_in',response:'4'}]};pending.set('q1','4');",c);
+ assert.equal(await vm.runInContext('flushAnswers()',c),false);
+ assert.equal(vm.runInContext('pending.size',c),1,'offline answer retained');
+ assert.equal(await vm.runInContext('flushAnswers()',c),true);
+ assert.equal(vm.runInContext('pending.size',c),0,'retry clears only saved answer');
+ let release; c.testUpsert=()=>new Promise(r=>{release=r});
+ vm.runInContext("pending.set('q1','5');",c);
+ const running=vm.runInContext('flushAnswers()',c);
+ vm.runInContext("pending.set('q1','6');",c);
+ release({error:null}); await new Promise(r=>setImmediate(r));
+ assert.equal(vm.runInContext("pending.get('q1')",c),'6','in-flight response cannot discard newer answer');
+ release({error:null});await running;assert.equal(vm.runInContext('pending.size',c),0);
+ vm.runInContext(`DASH={view:'overview',exams:[{id:'lesson',title:'Algebra lesson',assessment_type:'lesson_exam',questions:3,duration_seconds:600,open:true},{id:'quiz',title:'Quick quiz',assessment_type:'quiz',questions:3,duration_seconds:180,open:true}],history:[],lessons:[],summary:{},historyType:'all',historyPage:0};`,c);
+ assert.match(vm.runInContext("assessmentSection('lesson_exam')",c),/Algebra lesson/);
+ assert.doesNotMatch(vm.runInContext("assessmentSection('lesson_exam')",c),/Quick quiz/);
+ vm.runInContext("ST.track={id:'est'};DASH.exams.push({id:'est-full',title:'EST Math 1 — Question Bank Practice 01',assessment_type:'full_exam',questions:50,duration_seconds:4500,open:true});",c);
+ const estFull=vm.runInContext('fullExamSection()',c);
+ assert.match(estFull,/EST Math 1 practice exams/);
+ assert.match(estFull,/50 questions · 75 min/);
+ assert.match(estFull,/15 Foundational Algebra/);
+ assert.doesNotMatch(estFull,/SAT practice exams|35-minute modules/);
+ vm.runInContext("ST.track={id:'sat'}",c);
+ assert.match(vm.runInContext('fullExamSection()',c),/SAT practice exams/);
+ assert.match(vm.runInContext("assessmentSection('quiz')",c),/Quick quiz/);
+ assert.match(vm.runInContext('dashboardOverview()',c),/first completed assessment/);
+ vm.runInContext(`DASH.history=Array.from({length:12},(_,i)=>({id:'a'+i,title:'Exam '+i,assessment_type:i%2?'quiz':'lesson_exam',percent:50,score:1,total:2,attempt_no:1,status:'graded',submitted_at:'2026-09-08T10:00:00Z',review_open:false}));`,c);
+ assert.match(vm.runInContext('historySection()',c),/Page 1 of 2/);
+ vm.runInContext("DASH.historyType='quiz';DASH.historyPage=0;",c);
+ assert.match(vm.runInContext('historySection()',c),/6 attempts/);
+ assert.doesNotMatch(vm.runInContext('historySection()',c),/data-review="a0"/);
+ assert.match(vm.runInContext("lessonCard({lesson:'<script>bad</script>',priority:'focus',percent:33,seen:3,correct:1})",c),/&lt;script&gt;/);
+ vm.runInContext("DASH.historyType='all';DASH.history=[{id:'pending',title:'March paper',assessment_type:'full_exam',score:null,total:50,percent:null,status:'submitted',attempt_no:1,submitted_at:'2026-09-09T12:00:00Z',review_open:false}];",c);
+ assert.match(vm.runInContext('historySection()',c),/Awaiting grading/);
+ assert.doesNotMatch(vm.runInContext('historySection()',c),/null\/50/);
+ assert.match(vm.runInContext("figure({source_question:5,image:'https://example.com/q05.png',reference:'https://example.com/reference.png',image_alt:'Original question 5'})",c),/Enlarge original question/);
+ assert.match(vm.runInContext("figure({source_question:5,image:'https://example.com/q05.png',reference:'https://example.com/reference.png'})",c),/Formula reference/);
+ assert.doesNotMatch(vm.runInContext("figure({source_question:5,image:'javascript:bad',reference:'javascript:bad'})",c),/javascript:/);
+ vm.runInContext(`paintReview({attempt:{score:47,total:48,status:'graded'},review_open:true,items:[{correct:{void:true},is_correct:null,explanation:'Source defect excluded.'},{correct:{void:true},is_correct:null,explanation:'Source defect excluded.'},{correct:['B','D'],is_correct:true,explanation:'Either answer is valid.'}]});`,c);
+ const reviewed=c.document.getElementById('vReview').innerHTML;
+ assert.match(reviewed,/EXCLUDED FROM SCORING/);
+ assert.match(reviewed,/2 defective questions are excluded/);
+ assert.match(reviewed,/B  or  D/);
+ assert.doesNotMatch(reviewed,/INCORRECT|\[object Object\]/);
+ // Account removal UI must be admin-only, escape names and require confirmation.
+ a.deleteCalls=[];
+ a.testRoster=[{user_id:'student-id',full_name:'<student>',email:'student@example.invalid',role:'student',tracks:'est',status:'active'},{user_id:'admin-id',full_name:'Admin',email:'admin@example.invalid',role:'admin',tracks:'est',status:'active'}];
+ vm.runInContext("ST.me={id:'admin-id',role:'admin'};ST.track='est';getRows=async()=>testRoster;",a);
+ await vm.runInContext('students()',a);
+ assert.match(a.document.getElementById('view').innerHTML,/data-delete-user="student-id"/);
+ assert.doesNotMatch(a.document.getElementById('view').innerHTML,/data-delete-user="admin-id"/);
+ vm.runInContext("dialog=(title,body,save)=>{testDialog={title,body,save}};fn=async(name,opts)=>{deleteCalls.push({name,opts});return {ok:true,json:{deleted:true}}};deleteAccount(testRoster[0]);",a);
+ assert.match(a.testDialog.body,/&lt;student&gt;/);
+ a.document.getElementById('deleteEmail').value='wrong@example.invalid';
+ await assert.rejects(a.testDialog.save(),/exact sign-in email/);assert.equal(a.deleteCalls.length,0);
+ a.document.getElementById('deleteEmail').value='student@example.invalid';await a.testDialog.save();
+ assert.equal(a.deleteCalls[0].name,'admin-delete-user');assert.equal(a.deleteCalls[0].opts.body.user_id,'student-id');
+ vm.runInContext("ST.me.role='instructor'",a);await vm.runInContext('students()',a);
+ assert.doesNotMatch(a.document.getElementById('view').innerHTML,/data-delete-user/);
+ assert.match(vm.runInContext("figure({figure:'data:image/png;base64,YQ=='})",c),/data:image\/png;base64/);
+ assert.doesNotMatch(vm.runInContext("figure({figure:'javascript:alert(1)'})",c),/javascript:/);
+ // Untimed practice must not schedule auto-submit; repeat controls remain lesson-only.
+ c.clockIntervals=0;c.setInterval=()=>{c.clockIntervals++;return 1};
+ vm.runInContext("ST.run={attempt:{deadline_at:'infinity'}};startClock()",c);
+ assert.equal(c.document.getElementById('clock').textContent,'No time limit');
+ assert.equal(c.clockIntervals,0,'untimed mode must not schedule a countdown');
+ const repeatRow=vm.runInContext("assessmentRow({id:'lesson-repeat',title:'Lesson',assessment_type:'lesson_exam',duration_seconds:600,questions:2,open:true,last:{id:'done',status:'graded',score:1,total:2}})",c);
+ assert.match(repeatRow,/Practice again/);assert.match(repeatRow,/No time limit/);assert.match(repeatRow,/Timed \(10 min\)/);
+ const fullRow=vm.runInContext("assessmentRow({id:'full',title:'Full',assessment_type:'full_exam',duration_seconds:600,questions:2,open:true,last:{id:'done',status:'graded',score:1,total:2}})",c);
+ assert.doesNotMatch(fullRow,/Practice again|No time limit/);
+ new vm.Script(fs.readFileSync('web/instructor-practice.js','utf8')).runInContext(a);
+ a.teacherQuestions=[{id:'tq',stem:'Solve 2x = 8',type:'mcq',choices:[{key:'A',text:'4'},{key:'B',text:'8'}]}];
+ a.teacherKeys=[{question_id:'tq',correct:'A',explanation:'Divide both sides by 2.'}];
+ vm.runInContext("sb.from=table=>({select(){return this},in:async()=>({data:table==='questions'?teacherQuestions:teacherKeys,error:null})})",a);
+ await vm.runInContext("openTeachingExam({title:'Teaching test',question_ids:['tq']})",a);
+ assert.match(a.document.getElementById('editor').innerHTML,/No time limit/);
+ assert.doesNotMatch(a.document.getElementById('editor').innerHTML,/Divide both sides/);
+ a.document.getElementById('teachReveal').onclick();
+ assert.match(a.document.getElementById('editor').innerHTML,/Divide both sides/);
+ a.document.getElementById('teachRestart').onclick();
+ assert.doesNotMatch(a.document.getElementById('editor').innerHTML,/Divide both sides/);
+ console.log('PASS: clients initialize, EST source archive is integrated into the selectable question bank, autosave preserves changes, assessment categories stay separate, history filters/page counts work, and lesson titles are escaped.');
+})().catch(e=>{console.error(e);process.exitCode=1});

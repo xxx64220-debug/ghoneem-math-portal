@@ -12,6 +12,7 @@ join public.question_keys k on k.question_id=q.id
 where dp.quiz_completed_at is not null
   and not public.answer_matches(q.type, dp.answers->q.id::text, k.correct)
   and public.staff_can_touch_track(dp.track_id);
+
 alter view public.daily_quiz_mistakes set (security_invoker=true);
 revoke all on public.daily_quiz_mistakes from anon;
 grant select on public.daily_quiz_mistakes to authenticated;

@@ -1,0 +1,3 @@
+[
+  {"topic":"Linear equations","difficulty":"easy","type":"mcq","stem":"If 3x + 2 = 14, what is x?","choices":[{"key":"A","text":"2"},{"key":"B","text":"4"},{"key":"C","text":"6"},{"key":"D","text":"12"}],"correct":"B","explanation":"Subtract 2 to get 3x = 12, then divide by 3: x = 4.","assets":{}}
+]

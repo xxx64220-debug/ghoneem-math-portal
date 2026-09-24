@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Instructor Console — Abdelrahman Ghoneem</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#14243E;--navy2:#1D3155;--gold:#C9A227;--gold-soft:#F3E8C4;
+ --paper:#FBFAF7;--line:#E2E0D9;--ink:#171A1F;--muted:#6B7280;
+ --ok:#1F7A4D;--bad:#B0342C;--warn:#B4761F;--r:9px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:400 15px/1.5 Inter,system-ui,sans-serif;
+ -webkit-font-smoothing:antialiased}
+h1,h2{font-family:Fraunces,Georgia,serif;color:var(--navy);letter-spacing:-.01em}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:2.5px solid var(--gold);outline-offset:2px}
+input,select{font:inherit;padding:9px 11px;border:1px solid var(--line);border-radius:var(--r);background:#fff;width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.hidden{display:none!important}
+.btn{background:var(--navy);color:#fff;padding:9px 17px;border-radius:var(--r);font-weight:600}
+.btn:hover{background:var(--navy2)} .btn[disabled]{opacity:.45;cursor:not-allowed}
+.btn-sm{padding:6px 11px;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:7px;font-weight:500}
+.btn-sm:hover{border-color:var(--navy)}
+
+header.top{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+header.top .wrap{display:flex;align-items:center;gap:14px;height:60px}
+.brand{font-family:Fraunces,serif;font-weight:700;color:var(--navy);font-size:16px}
+.brand span{display:block;font:500 10px/1 'IBM Plex Mono',monospace;color:var(--muted);letter-spacing:.15em;margin-top:3px}
+.sp{flex:1}
+nav.tabs{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:60px;z-index:19}
+nav.tabs .wrap{display:flex;gap:2px;overflow-x:auto}
+.tab{padding:12px 15px;font-weight:500;color:var(--muted);border-bottom:2.5px solid transparent;white-space:nowrap}
+.tab.on{color:var(--navy);border-bottom-color:var(--gold);font-weight:600}
+
+.login{max-width:370px;margin:12vh auto;padding:0 20px}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:12.5px;font-weight:600;color:var(--muted);margin-bottom:5px}
+.err{color:var(--bad);font-size:14px;margin-top:10px;min-height:20px}
+
+main{padding:26px 0 70px}
+.head{display:flex;align-items:baseline;gap:12px;margin-bottom:14px;flex-wrap:wrap}
+.head h2{font-size:21px} .head .sp{flex:1}
+.hint{color:var(--muted);font-size:13.5px}
+
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);
+ border-radius:var(--r);overflow:hidden;font-size:14px}
+th{background:var(--navy);color:#fff;text-align:left;padding:9px 11px;font-size:12px;
+ font-weight:600;letter-spacing:.03em;white-space:nowrap}
+td{padding:9px 11px;border-top:1px solid var(--line);vertical-align:middle}
+tr:nth-child(even) td{background:#F8F9FB}
+.num{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums}
+.pill{display:inline-block;font:500 11px/1 'IBM Plex Mono',monospace;padding:4px 8px;border-radius:5px;background:#F1F0EC;color:var(--muted)}
+.pill.ok{background:#E7F2EC;color:var(--ok)} .pill.bad{background:#FBECEB;color:var(--bad)}
+.pill.warn{background:#FBF3E3;color:var(--warn)}
+.control-bar{display:flex;gap:10px;align-items:end;flex-wrap:wrap;margin:0 0 16px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:10px}
+.control-bar .field{margin:0;min-width:150px;flex:1}.control-bar .field.search{flex:2;min-width:220px}
+.back-to-top{position:fixed;right:18px;bottom:20px;z-index:60;width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;box-shadow:0 6px 22px #14243e40;font-weight:700;opacity:0;transform:translateY(12px);pointer-events:none;transition:.2s}
+.back-to-top.show{opacity:1;transform:none;pointer-events:auto}.back-to-top:hover{background:var(--navy2)}
+.bar{height:7px;background:var(--line);border-radius:4px;overflow:hidden;min-width:70px}
+.bar i{display:block;height:100%;background:var(--navy)}
+.bar i.low{background:var(--bad)} .bar i.mid{background:var(--gold)}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.stat .k{font:500 10.5px/1 'IBM Plex Mono',monospace;letter-spacing:.14em;color:var(--muted)}
+.stat .v{font-family:Fraunces,serif;font-size:29px;color:var(--navy);margin-top:7px;line-height:1}
+.msg{padding:10px 13px;border-radius:var(--r);font-size:14px;margin-bottom:12px}
+.msg.ok{background:#E7F2EC;color:var(--ok)} .msg.bad{background:#FBECEB;color:var(--bad)}
+.empty{color:var(--muted);padding:22px;text-align:center;background:#fff;border:1px dashed var(--line);border-radius:var(--r)}
+footer.pg{border-top:1px solid var(--line);padding:18px 0;text-align:center;font-size:12.5px;color:var(--muted)}
+footer.pg b{color:var(--navy)}
+@media(max-width:640px){table{font-size:13px}th,td{padding:7px 8px}}
+body{font-size:16px}.field label,.hint,.btn-sm,th,.pill,.stat .k{font-size:14px}.table-wrap{overflow-x:auto}.brand span{font-size:12px}textarea{width:100%;font:inherit;border:1px solid var(--line);border-radius:8px;padding:10px;min-height:100px}dialog{margin:auto;border:1px solid var(--line);border-radius:14px;padding:26px;width:min(760px,94vw);max-height:90vh;overflow:auto}dialog::backdrop{background:#14243e99}dialog h2{margin-bottom:20px}dialog .actions{display:flex;gap:10px;margin-top:20px}label.check{display:flex;align-items:center;gap:10px;padding:7px}label.check input{width:auto}.question-select{max-height:280px;overflow:auto;border:1px solid var(--line);border-radius:8px}.question-select label{border-bottom:1px solid var(--line);font-size:14px}#view>table{display:block;overflow-x:auto}a{color:var(--navy)}@media(max-width:640px){header.top .wrap{height:auto;min-height:70px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}nav.tabs{position:static}.brand{max-width:170px}.wrap{padding-left:14px;padding-right:14px}}
+
+.danger{color:#a42620;border-color:#b83b34}.btn.danger{background:#a42620;color:#fff;border-color:#a42620}.delete-warning{line-height:1.7;margin:16px 0 22px;overflow-wrap:anywhere}dialog{max-width:calc(100vw - 28px);max-height:calc(100dvh - 32px);overflow:auto}.actions,.head{flex-wrap:wrap;gap:12px}td .btn-sm{margin:4px 4px 4px 0}.field{margin-bottom:18px}.field label{display:block;margin-bottom:7px}textarea{line-height:1.7}td{line-height:1.6}.stem,.exp{white-space:pre-line;overflow-wrap:anywhere}
+
+main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{width:100%;max-width:100%;overflow-x:auto;margin-bottom:20px}.table-wrap table{min-width:640px}header.top .wrap{height:auto;min-height:76px;padding-top:12px;padding-bottom:12px}header.top{position:static}nav.tabs{position:sticky;top:0}nav.tabs .wrap{padding-top:4px;padding-bottom:4px}.brand{line-height:1.35}.brand span{line-height:1.4}.stat .k{line-height:1.5;letter-spacing:.06em}.stat .v{line-height:1.2}.msg{line-height:1.75;padding:16px}.dash-link{text-decoration:underline;font-weight:600}.actions{display:flex}.teaching-question{line-height:1.75;margin:22px 0;white-space:pre-line;overflow-wrap:anywhere}.teaching-options{display:grid;gap:12px}.teaching-options button{text-align:left;border:1px solid var(--line);border-radius:8px;padding:14px;line-height:1.6}.teaching-options button.selected{border:2px solid var(--navy);background:#edf1f7}.teaching-answer{padding:18px;background:#e7f2ec;margin-top:20px;line-height:1.75;white-space:pre-line}.fig{max-width:100%;overflow-x:auto;margin:18px 0}.fig img,.fig svg{max-width:100%;height:auto}.katex-display{overflow-x:auto;overflow-y:hidden}#editor.teaching{width:min(960px,94vw)}
+@media(max-width:640px){header.top .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px}.brand{grid-column:1/-1;max-width:none;font-size:18px}.brand span{font-size:12px;letter-spacing:.08em}.sp{display:none}#trackSel{min-width:0!important;width:100%!important}#outBtn{min-height:44px}.tab{padding:12px;font-size:14px;min-height:48px}nav.tabs .wrap{padding-left:8px;padding-right:8px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{padding:16px 12px}.stat .k{font-size:12px}.stat .v{font-size:28px}.head h2{font-size:23px}.btn,.btn-sm{min-height:44px}.card,dialog{padding:18px}.table-wrap th,.table-wrap td{padding:12px;line-height:1.6}.table-wrap{border-radius:9px}.teaching-options button{padding:14px}.teaching .actions button{flex:1}.grid .field{min-width:0}}
+@media(max-width:640px){.control-bar{display:grid;grid-template-columns:minmax(0,1fr);padding:12px}.control-bar .field,.control-bar .field.search{min-width:0;width:100%}.control-bar>.btn{width:100%}.head{align-items:flex-start}.head>.btn,.head>.btn-sm{flex:1 1 150px}.question-select{max-height:45vh}dialog{width:calc(100vw - 16px);max-width:none;padding:16px}.back-to-top{right:12px;bottom:12px}.actions>.btn,.actions>.btn-sm{flex:1 1 130px}}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="top hidden" id="top"><div class="wrap">
+  <div class="brand">Abdelrahman Ghoneem<span>INSTRUCTOR CONSOLE</span></div>
+  <div class="sp"></div>
+  <select id="trackSel" style="width:auto;min-width:130px"></select>
+  <button class="btn-sm" id="outBtn">Sign out</button>
+</div></header>
+
+<nav class="tabs hidden" id="tabs"><div class="wrap">
+  <button class="tab on" data-v="overview">Overview</button>
+  <button class="tab" data-v="students">Students</button>
+  <button class="tab" data-v="results">Results</button>
+  <button class="tab" data-v="lessons">Weak lessons</button>
+  <button class="tab" data-v="questions">Hardest questions</button>
+  <button class="tab" data-v="exams">Exams & assignments</button><button class="tab" data-v="bank">Question bank</button><button class="tab" data-v="groups">Groups</button><button class="tab" data-v="devices">Devices</button><button class="tab" data-v="audit">Audit log</button>
+</div></nav>
+
+<section id="vLogin" class="login">
+  <h1 style="font-size:28px;margin-bottom:5px">Instructor sign in</h1>
+  <p class="hint" style="margin-bottom:22px">Staff accounts only.</p>
+  <div class="field"><label for="em">Email</label><input id="em" autocomplete="username"></div>
+  <div class="field"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password"></div>
+  <button class="btn" id="inBtn" style="width:100%;margin-top:6px">Sign in</button>
+  <div class="err" id="loginErr" role="alert"></div><a href="/" style="display:block;margin-top:20px">Student sign in →</a>
+</section>
+
+<main class="wrap hidden" id="app"><div id="view"></div></main>
+<footer class="pg"><b>Abdelrahman Ghoneem</b> &nbsp;|&nbsp; 01116004434</footer>
+<button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
+
+<dialog id="editor"></dialog>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js"></script>
+<script>
+/* ============================ CONFIG ============================ */
+const SB_URL = 'https://wfhurjyouemahvkcfkdz.supabase.co';
+const SB_KEY = 'sb_publishable_FIUSELOTsAQaH8dQ6oF-ow_CcISJV5-';
+const EMAIL_DOMAIN = 'students.ghoneem-math.com';
+/* ================================================================ */
+
+const sb = supabase.createClient(SB_URL, SB_KEY);
+const fnBase = SB_URL + '/functions/v1';
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let ST = { view:'overview', track:'', tracks:[], me:null };
+const sortText=(a,b)=>String(a??'').localeCompare(String(b??''),undefined,{numeric:true,sensitivity:'base'});
+
+async function fn(name, { method='POST', body=null } = {}) {
+  const { data:{ session } } = await sb.auth.getSession();
+  if (!session) { show(false); throw new Error('signed_out'); }
+  const res = await fetch(`${fnBase}/${name}`, { method,
+    headers:{ Authorization:`Bearer ${session.access_token}`,
+              'Content-Type':'application/json', apikey:SB_KEY },
+    body: body ? JSON.stringify(body) : undefined });
+  return { ok:res.ok, status:res.status, json: await res.json().catch(()=>({})) };
+}
+/* Reads go direct: admin and instructor read policies already scope these
+   views correctly, so the dashboard needs no extra endpoints. */
+const q = (v) => sb.from(v).select('*').throwOnError();
+
+function show(inApp){
+  $('vLogin').classList.toggle('hidden', inApp);
+  $('app').classList.toggle('hidden', !inApp);
+  $('top').classList.toggle('hidden', !inApp);
+  $('tabs').classList.toggle('hidden', !inApp);
+}
+function bar(p){
+  const c = p < 50 ? 'low' : p < 75 ? 'mid' : '';
+  return `<div class="bar"><i class="${c}" style="width:${Math.max(2,p||0)}%"></i></div>`;
+}
+const pct = p => p==null ? '—' : p+'%';
+const when = t => t ? new Date(t).toLocaleDateString(undefined,{day:'numeric',month:'short'}) : '—';
+
+/* ---------------- auth ---------------- */
+$('inBtn').onclick = async () => {
+  $('inBtn').disabled = true; $('loginErr').textContent = '';
+  const { error } = await sb.auth.signInWithPassword({ email:$('em').value.trim(), password:$('pw').value });
+  $('inBtn').disabled = false;
+  if (error) { $('loginErr').textContent = 'Those details did not work.'; return; }
+  boot();
+};
+$('pw').onkeydown = e => { if (e.key==='Enter') $('inBtn').click(); };
+$('outBtn').onclick = async () => { await sb.auth.signOut(); location.reload(); };
+
+async function boot(){
+  const { data:{ user } } = await sb.auth.getUser();
+  if(!user){show(false);return;}
+  const { data:prof } = await sb.from('profiles').select('id,full_name,role,status').eq('id',user.id).single();
+  if (!prof || prof.status!=='active' || (prof.role !== 'admin' && prof.role !== 'instructor')) {
+    $('loginErr').textContent = 'This console is for staff accounts only.';
+    await sb.auth.signOut(); return;
+  }
+  ST.me = prof;
+  const { data:tr } = await sb.from('tracks').select('id,name').order('id');
+  ST.tracks = tr || [];
+  $('trackSel').innerHTML = `<option value="">All tracks</option>` +
+    ST.tracks.map(t=>`<option value="${t.id}">${esc(t.name)}</option>`).join('');
+  $('trackSel').onchange = e => { ST.track = e.target.value; render(); };
+  document.querySelectorAll('.tab').forEach(b => b.onclick = () => {
+    ST.view = b.dataset.v;
+    document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on', x===b));
+    render();
+  });
+  show(true); render();
+}
+
+/* ---------------- views ---------------- */
+async function render(){
+  $('view').innerHTML = `<p class="hint">Loading…</p>`;
+  try { await ({ overview, students, results, lessons, questions, exams, bank, groups, devices, audit })[ST.view](); }
+  catch (e) { $('view').innerHTML = `<div class="msg bad">Could not load: ${esc(e.message||e)}</div>`; }
+}
+const trackFilter = (b) => ST.track ? b.eq('track_id', ST.track) : b;
+
+async function overview(){
+  const [{data:r},{data:f},{data:x}] = await Promise.all([
+    q('roster').eq('role','student'), trackFilter(q('results_feed')), trackFilter(q('exam_overview'))]);
+  const done = (f||[]).length;
+  const avg = done ? Math.round((f||[]).reduce((s,a)=>s+(a.percent||0),0)/done) : null;
+  const unassigned = (x||[]).filter(e=>e.is_published && Number(e.assignments)===0 && !/Demo/.test(e.title)).length;
+  $('view').innerHTML = `
+    <div class="head"><h2>Overview</h2></div>
+    <div class="grid" style="margin-bottom:20px">
+      <div class="stat"><div class="k">STUDENTS</div><div class="v">${(r||[]).length}</div></div>
+      <div class="stat"><div class="k">COMPLETED ATTEMPTS</div><div class="v">${done}</div></div>
+      <div class="stat"><div class="k">AVERAGE</div><div class="v">${avg==null?'—':avg+'%'}</div></div>
+      <div class="stat"><div class="k">EXAMS LIVE</div><div class="v">${(x||[]).filter(e=>e.is_published).length}</div></div>
+    </div>
+    ${unassigned ? `<div class="msg bad">${unassigned} published exam(s) have no assignment — students cannot see them. Open <button class="dash-link" onclick="ST.view='exams';document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.v==='exams'));render()">Exams & assignments</button> to assign them.</div>`:''}
+    <div class="head"><h2 style="font-size:17px">Latest results</h2></div>
+    ${tableResults((f||[]).slice(0,8))}`;
+}
+
+function tableResults(rows){
+  if (!rows.length) return `<div class="empty">No exams have been sat yet.</div>`;
+  return `<div class="table-wrap"><table><tr><th>Student</th><th>Exam</th><th>Score</th><th></th><th>Scaled</th><th>When</th></tr>` +
+    rows.map(a=>`<tr>
+      <td>${esc(a.full_name)}</td><td>${esc(a.exam)}</td>
+      <td class="num">${a.score == null ? 'Awaiting grading' : a.score+'/'+a.total}</td>
+      <td style="width:110px">${bar(a.percent)}</td>
+      <td class="num">${a.scaled_score ?? '<span class="hint">—</span>'}</td>
+      <td class="hint">${when(a.submitted_at)}${a.status==='expired'?' <span class="pill warn">TIME OUT</span>':''}</td>
+    </tr>`).join('') + `</table></div>`;
+}
+
+async function students(){
+  const { data:r } = await q('roster').eq('role','student').order('full_name');
+  $('view').innerHTML = `
+    <div class="head"><h2>Students</h2><div class="sp"></div>
+      <button class="btn" id="addBtn">Add student</button></div>
+    <div id="addBox" class="card hidden">
+      <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr))">
+        <div class="field"><label>Username</label><input id="nU" placeholder="omar.h"></div>
+        <div class="field"><label>Full name</label><input id="nN" placeholder="Omar Hassan"></div>
+        <div class="field"><label>Password</label><input id="nP" placeholder="at least 8 characters"></div>
+        <div class="field"><label>Tracks</label>
+          <select id="nT">${ST.tracks.map(t=>`<option value="${t.id}">${esc(t.name)}</option>`).join('')}
+            <option value="__all">Both tracks</option></select></div>
+      </div>
+      <div id="addMsg"></div>
+      <button class="btn" id="saveBtn">Create account</button>
+      <button class="btn-sm" id="cancelBtn">Cancel</button>
+    </div>
+    ${(r||[]).length ? wrapTable(`<table>
+      <tr><th>Name</th><th>Sign-in</th><th>Tracks</th><th>Exams</th><th>Last active</th><th>Status</th></tr>` +
+      r.map(s=>`<tr><td>${esc(s.full_name)}</td>
+        <td class="num hint">${esc((s.email||'').split('@')[0])}</td>
+        <td><span class="pill">${esc(s.tracks)}</span></td>
+        <td class="num">${s.exams_taken}</td>
+        <td class="hint">${when(s.last_active)}</td>
+        <td>${s.status==='active'?'<span class="pill ok">ACTIVE</span>':'<span class="pill bad">'+esc(s.status.toUpperCase())+'</span>'}</td>
+      </tr>`).join('') + `</table>`)
+    : `<div class="empty">No students yet. Use <b>Add student</b> above.</div>`}`;
+
+  $('addBtn').onclick = () => $('addBox').classList.remove('hidden');
+  $('cancelBtn').onclick = () => $('addBox').classList.add('hidden');
+  $('saveBtn').onclick = async () => {
+    const tsel = $('nT').value;
+    const tracks = tsel === '__all' ? ST.tracks.map(t=>t.id) : [tsel];
+    $('saveBtn').disabled = true;
+    const { ok, json } = await fn('admin-users', { body:{
+      username:$('nU').value.trim(), full_name:$('nN').value.trim(),
+      password:$('nP').value, tracks }});
+    $('saveBtn').disabled = false;
+    $('addMsg').innerHTML = ok
+      ? `<div class="msg ok">Created <b>${esc(json.username)}</b>. They sign in with that username and the password you set.</div>`
+      : `<div class="msg bad">${esc(json.error||'Could not create the account.')}</div>`;
+    if (ok) { $('nU').value=$('nN').value=$('nP').value=''; setTimeout(students, 1200); }
+  };
+}
+
+async function results(){
+  const { data:f } = await trackFilter(q('results_feed')).order('submitted_at',{ascending:false});
+  $('view').innerHTML = `
+    <div class="head"><h2>Results</h2><div class="sp"></div>
+      <button class="btn-sm" id="csvBtn">Export CSV</button></div>
+    <p class="hint" style="margin-bottom:12px">A scaled 200–800 score appears only on full-length papers.
+      Lesson drills show the raw mark, because scaling a 15-question quiz to an SAT score would be misleading.</p>
+    ${wrapTable(tableRetake(f||[]))}`;
+  $('csvBtn').onclick = () => csv(f||[], 'results');
+  document.querySelectorAll('[data-retake]').forEach(b => b.onclick = () => retake(b.dataset.retake, b.dataset.exam, b.dataset.title, b.dataset.who));
+}
+function tableRetake(rows){
+  if (!rows.length) return `<div class="empty">No exams have been sat yet.</div>`;
+  return `<table><tr><th>Student</th><th>Exam</th><th>Score</th><th></th><th>Scaled</th><th>Time</th><th>When</th><th></th></tr>` +
+   rows.map(a=>`<tr>
+     <td>${esc(a.full_name)}</td><td>${esc(a.exam)}</td>
+     <td class="num">${a.score == null ? 'Awaiting grading' : a.score+'/'+a.total}</td><td style="width:100px">${bar(a.percent)}</td>
+     <td class="num">${a.scaled_score ?? '<span class="hint">—</span>'}</td>
+     <td class="num hint">${Math.round((a.time_used||0)/60)}m</td>
+     <td class="hint">${when(a.submitted_at)}</td>
+     <td><button class="btn-sm" data-retake="${a.user_id}" data-exam="${a.exam_id}" data-title="${esc(a.exam)}" data-who="${esc(a.full_name)}">Retake</button></td>
+   </tr>`).join('') + `</table>`;
+}
+async function retake(userId, examId, examTitle, who){
+  const reason = prompt(`Grant ${who} a second attempt at "${examTitle}"?\n\nReason (recorded in the audit log):`);
+  if (!reason) return;
+  const days=prompt('Retake expires in how many days?','7');if(days===null)return;
+  if(!Number.isFinite(+days)||+days<=0){alert('Enter a positive number of days.');return;}
+  const { ok, json } = await fn('grant-retake', { body:{ user_id:userId, exam_id:examId, reason, expires_at:new Date(Date.now()+Number(days)*86400000).toISOString() } });
+  alert(ok ? `Retake granted to ${who}.` : (json.error || 'Could not grant the retake.'));
+}
+
+async function lessons(){
+  const { data:d } = await trackFilter(q('student_by_lesson'));
+  const rows = (d||[]).filter(r=>r.questions_seen>=2);
+  $('view').innerHTML = `
+    <div class="head"><h2>Weak lessons</h2><div class="sp"></div>
+      <button class="btn-sm" id="csvBtn">Export CSV</button></div>
+    <p class="hint" style="margin-bottom:12px">Per student, weakest first. Shown once a student has seen at least two questions in a lesson.</p>
+    ${rows.length ? `<table><tr><th>Student</th><th>Lesson</th><th>Correct</th><th></th></tr>` +
+      rows.map(r=>`<tr><td>${esc(r.full_name)}</td><td>${esc(r.lesson)}</td>
+        <td class="num">${r.correct}/${r.questions_seen}</td>
+        <td style="width:130px">${bar(r.percent)}</td></tr>`).join('') + `</table>`
+      : `<div class="empty">Not enough attempts yet.</div>`}`;
+  $('csvBtn').onclick = () => csv(rows, 'weak-lessons');
+}
+
+async function questions(){
+  const d = await getRows('question_difficulty',true);
+  const rows = d||[];
+  $('view').innerHTML = `
+    <div class="head"><h2>Hardest questions</h2><div class="sp"></div>
+      <button class="btn-sm" id="pdfBtn">Export PDF</button>
+      <button class="btn-sm" id="csvBtn">Export CSV</button></div>
+    <p class="hint" style="margin-bottom:12px">Ranked by lowest real student success rate. Assigned quizzes, daily quizzes, lesson exams and full exams are combined; attempts are shown so small samples stay visible.</p>
+    ${rows.length ? wrapTable(`<table><tr><th>Rank</th><th>Source</th><th>Lesson</th><th>Question</th><th>Attempts</th><th>Correct</th><th>Wrong</th><th>Success</th></tr>` +
+      rows.map(r=>`<tr><td class="num">#${r.rank}</td><td><span class="pill">${esc(r.sources)}</span></td><td>${esc(r.lesson)}</td><td class="hint">${esc(r.stem)}</td>
+        <td class="num">${r.answered_by}</td><td class="num">${r.got_it_right}</td><td class="num">${r.got_it_wrong}</td>
+        <td class="num" style="min-width:130px"><b>${Number(r.percent_correct).toFixed(1)}%</b>${bar(r.percent_correct)}</td></tr>`).join('') + `</table>`)
+      : `<div class="empty">No completed answers yet.</div>`}`;
+  $('csvBtn').onclick = () => csv(rows.map(r=>({rank:r.rank,source:r.sources,track:r.track_id,lesson:r.lesson,question_id:r.question_id,question:r.stem,attempts:r.answered_by,correct:r.got_it_right,wrong:r.got_it_wrong,success_rate:`${Number(r.percent_correct).toFixed(1)}%`})), 'hardest-questions');
+  $('pdfBtn').onclick = () => questionPdf(rows);
+}
+
+async function exams(){
+  const { data:e } = await trackFilter(q('exam_overview'));
+  $('view').innerHTML = `
+    <div class="head"><h2>Exams</h2></div>
+    ${(e||[]).length ? `<table><tr><th>Track</th><th>Exam</th><th>Qs</th><th>Min</th><th>Scoring</th><th>Assigned</th><th>Taken</th><th>Live</th></tr>` +
+      e.map(x=>`<tr><td><span class="pill">${esc(x.track_id.toUpperCase())}</span></td>
+        <td>${esc(x.title)}</td><td class="num">${x.questions}</td><td class="num">${x.minutes}</td>
+        <td>${x.is_full_length?'<span class="pill ok">SCALED</span>':'<span class="pill">RAW</span>'}</td>
+        <td>${x.assignments? '<span class="pill ok">YES</span>'
+              : (/Demo/.test(x.title)?'<span class="pill">HIDDEN</span>':'<span class="pill bad">NOT VISIBLE</span>')}</td>
+        <td class="num">${x.attempts_taken}</td>
+        <td>${x.is_published?'<span class="pill ok">YES</span>':'<span class="pill">DRAFT</span>'}</td>
+      </tr>`).join('') + `</table>`
+      : `<div class="empty">No exams built yet.</div>`}
+    <p class="hint" style="margin-top:14px">Exams are built from the SQL editor:
+      <span class="num">select * from public.new_exam_per_lesson('sat', 15, 25);</span> for lesson drills, or
+      <span class="num">select public.new_full_length('sat', 'SAT Mock 1', 44, 70);</span> for a scored full paper.</p>`;
+}
+
+function csv(rows, name){
+  if (!rows.length) return;
+  const cols = Object.keys(rows[0]);
+  const cell = v => `"${String(v ?? '').replace(/^[=+@-]/,x=>"'"+x).replace(/"/g,'""')}"`;
+  const body = '\ufeff' + [cols.join(',')].concat(rows.map(r => cols.map(c => cell(r[c])).join(','))).join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([body], {type:'text/csv'}));
+  a.download = `${name}-${new Date().toISOString().slice(0,10)}.csv`;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+function questionPdf(rows){
+  if (!rows.length) return alert('There are no completed answers to export yet.');
+  const track = ST.track ? ST.track.toUpperCase() : 'ALL TRACKS';
+  const generated = new Date().toLocaleString();
+  const report = window.open('', '_blank');
+  if (!report) return alert('Allow pop-ups for this site, then choose Export PDF again.');
+  const body = rows.map(r=>`<tr><td>#${r.rank}</td><td>${esc(r.sources)}</td><td>${esc(r.lesson)}</td><td>${esc(r.stem)}</td><td>${r.answered_by}</td><td>${r.got_it_right}</td><td>${r.got_it_wrong}</td><td><b>${Number(r.percent_correct).toFixed(1)}%</b></td></tr>`).join('');
+  report.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>Hardest Questions — ${esc(track)}</title><style>
+    @page{size:A4 landscape;margin:12mm}*{box-sizing:border-box}body{font:11px/1.4 Arial,sans-serif;color:#171a1f;margin:0}h1{font:700 24px Georgia,serif;color:#14243e;margin:0 0 4px}.meta{color:#5f6672;margin-bottom:14px}.actions{margin-bottom:14px}button{padding:8px 12px;border:1px solid #bbb;border-radius:6px;background:#fff}table{width:100%;border-collapse:collapse;table-layout:fixed}th{background:#14243e;color:#fff;text-align:left;padding:7px 6px}td{padding:7px 6px;border-bottom:1px solid #ddd;vertical-align:top;overflow-wrap:anywhere}th:nth-child(1){width:5%}th:nth-child(2){width:11%}th:nth-child(3){width:13%}th:nth-child(4){width:42%}th:nth-child(n+5){width:7%}tr{break-inside:avoid}@media print{.actions{display:none}}
+  </style></head><body><div class="actions"><button onclick="window.print()">Print / Save as PDF</button></div><h1>Hardest Questions</h1><div class="meta">${esc(track)} · Ranked by lowest success rate · Generated ${esc(generated)}</div><table><thead><tr><th>Rank</th><th>Source</th><th>Lesson</th><th>Question</th><th>Attempts</th><th>Correct</th><th>Wrong</th><th>Success</th></tr></thead><tbody>${body}</tbody></table></body></html>`);
+  report.document.close();
+  setTimeout(() => report.print(), 300);
+}
+
+// Staff authoring uses server-authorized transactions; reads remain under RLS.
+async function mutation(action,data){const r=await fn('staff-console',{body:{action,data}});if(!r.ok)throw new Error(r.json.error||'Could not save');return r.json;}
+const field=(id,label,value='',type='text')=>`<div class="field"><label for="${id}">${label}</label><input id="${id}" type="${type}" value="${esc(value)}"></div>`;
+const area=(id,label,value='')=>`<div class="field"><label for="${id}">${label}</label><textarea id="${id}" rows="4">${esc(value)}</textarea></div>`;
+const select=(id,label,options,value='')=>`<div class="field"><label for="${id}">${label}</label><select id="${id}">${options.map(([v,t])=>`<option value="${esc(v)}" ${String(v)===String(value)?'selected':''}>${esc(t)}</option>`).join('')}</select></div>`;
+const tracks=()=>ST.tracks.map(t=>[t.id,t.name]);
+const val=id=>$(id).value.trim();
+const jval=id=>val(id)?JSON.parse(val(id)):null;
+function dialog(title,body,onSave,button='Save'){
+ $('editor').innerHTML=`<form id="editForm"><h2>${title}</h2>${body}<div id="editError" class="err" role="alert"></div><div class="actions"><button class="btn" id="editSave">${button}</button><button class="btn-sm" type="button" id="editCancel">Cancel</button></div></form>`;
+ $('editCancel').onclick=()=>$('editor').close();
+ $('editForm').onsubmit=async e=>{e.preventDefault();$('editSave').disabled=true;$('editError').textContent='';try{await onSave();$('editor').close();await render();}catch(e){$('editError').textContent=e.message;}finally{$('editSave').disabled=false;}};
+ $('editor').showModal();
+}
+async function getRows(table,track=false,columns='*',orderBy=''){
+ const pageSize=1000,rows=[];
+ for(let from=0;;from+=pageSize){
+  let b=sb.from(table).select(columns);
+  if(track&&ST.track)b=b.eq('track_id',ST.track);
+  if(orderBy)b=b.order(orderBy,{ascending:true});
+  const {data,error}=await b.range(from,from+pageSize-1);
+  if(error)throw error;
+  rows.push(...(data||[]));
+  if(!data||data.length<pageSize)break;
+ }
+ return rows;
+}
+const wrapTable=html=>`<div class="table-wrap">${html}</div>`;
+async function bank(){
+ const rows=await getRows('questions',true);
+ let source=[];
+ if(ST.track==='est'){
+  source=await getRows('est_source_review',true,'id,track_id,source_document,source_code,source_page,source_section,review_status,question_id,duplicate_of','source_code');
+ }
+ const byId=new Map(rows.map(x=>[x.id,x])),ready=source.filter(x=>x.question_id&&byId.has(x.question_id)),chosen=new Set();
+ const held=rows.filter(x=>x.assets?.release_hold_reason).length;
+ $('view').innerHTML=`<div class="head"><h2>Question bank</h2><span class="hint">${rows.length} questions · ${rows.length-held} ready · ${held} held for review${source.length?` · ${source.length} PDF source entries`:''}</span><div class="sp"></div><button class="btn-sm" id="importQ">Import JSON</button><button class="btn" id="newQ">Add question</button></div><p class="hint" style="margin-bottom:16px">${source.length?'The source archive is part of the question bank. Ready entries can be selected for an exam; incomplete, duplicate and ambiguous entries remain visible with their hold reason.':'Original diagrams and tables stay attached to each question. Questions used in published exams are protected from editing.'}</p><div class="control-bar"><div class="field"><label for="bankScope">Data</label><select id="bankScope"><option value="questions">Question bank (${rows.length})</option>${source.length?`<option value="source" selected>PDF source archive (${source.length})</option>`:''}</select></div><div class="field search"><label for="qSearch">Search</label><input id="qSearch" placeholder="Code, topic or question"></div><div class="field" id="sourceFilterField"><label for="sourceFilter">Source status</label><select id="sourceFilter"><option value="">All statuses</option><option value="ready">Ready in question bank</option><option value="review">Needs review</option></select></div><div class="field" id="bankStatusField"><label for="bankStatus">Release status</label><select id="bankStatus"><option value="">All questions</option><option value="ready">Ready / released</option><option value="review">Held for review</option></select></div><div class="field"><label for="bankSort">Sort by</label><select id="bankSort"><option value="topic">Topic A–Z</option><option value="code">Source code</option><option value="type">Answer type</option><option value="difficulty">Difficulty</option></select></div><button class="btn" id="examFromBank" disabled>Create exam from selected</button></div><p id="bankCount" class="hint" style="margin-bottom:12px"></p><div id="bankTable"></div>`;
+ if(source.length)$('view').innerHTML=$('view').innerHTML.replace(`${source.length} PDF source entries`,`${source.length} PDF source entries · ${ready.length} verified`);
+ const refreshSelected=()=>{const b=$('examFromBank');b.disabled=!chosen.size;b.textContent=chosen.size?`Create exam (${chosen.size})`:'Create exam from selected';};
+ const bindChecks=()=>{document.querySelectorAll('[data-bank-select]').forEach(b=>{b.checked=chosen.has(b.dataset.bankSelect);b.onchange=()=>{b.checked?chosen.add(b.dataset.bankSelect):chosen.delete(b.dataset.bankSelect);refreshSelected();};});};
+ const paint=()=>{
+  const needle=val('qSearch').toLowerCase(),scope=val('bankScope');
+  $('sourceFilterField').style.display=scope==='source'?'':'none';
+  $('bankStatusField').style.display=scope==='questions'?'':'none';
+  if(scope==='source'){
+   const status=val('sourceFilter'),sort=val('bankSort'),filtered=source.filter(x=>{const isReady=!!(x.question_id&&byId.has(x.question_id));return(!status||(status==='ready'?isReady:!isReady))&&[x.source_code,x.source_section,x.source_document,byId.get(x.question_id)?.topic].join(' ').toLowerCase().includes(needle);}).sort((a,b)=>sort==='code'?sortText(a.source_code,b.source_code):sortText(byId.get(a.question_id)?.topic||a.source_section,byId.get(b.question_id)?.topic||b.source_section));
+   $('bankCount').textContent=`${filtered.length} source entries shown · ${filtered.filter(x=>x.question_id&&byId.has(x.question_id)).length} ready to use`;
+   if(filtered.length>300)$('bankCount').textContent+=' · first 300 displayed — search to narrow';
+   $('bankTable').innerHTML=wrapTable(`<table><thead><tr><th>Select</th><th>Code</th><th>PDF / page</th><th>Status</th><th>Topic</th><th>Actions</th></tr></thead><tbody>${filtered.slice(0,300).map(x=>{const qx=byId.get(x.question_id),isReady=!!qx;return`<tr><td>${isReady?`<input type="checkbox" aria-label="Select ${esc(x.source_code)}" data-bank-select="${qx.id}">`:''}</td><td><b>${esc(x.source_code)}</b></td><td>${esc(x.source_document)} · ${x.source_page}</td><td><span class="pill ${isReady?'ok':'warn'}">${esc(sourceStatus(x.review_status))}</span>${x.duplicate_of?`<div class="hint">${esc(x.duplicate_of)}</div>`:''}</td><td>${esc(qx?.topic||x.source_section||'—')}</td><td><button class="btn-sm" data-source-id="${esc(x.id)}">View source</button>${isReady?` <button class="btn-sm" data-edit-q="${qx.id}">Edit bank question</button>`:''}</td></tr>`}).join('')}</tbody></table>`);
+   document.querySelectorAll('[data-source-id]').forEach(b=>b.onclick=()=>openSourceEntry(b.dataset.sourceId));
+  }else{
+   const sort=val('bankSort'),status=val('bankStatus'),filtered=rows.filter(x=>(!status||(status==='review'?!!x.assets?.release_hold_reason:!x.assets?.release_hold_reason))&&[x.topic,x.stem,x.assets?.source_code,x.assets?.source_question_id,x.assets?.release_hold_reason].join(' ').toLowerCase().includes(needle)).sort((a,b)=>sort==='code'?sortText(a.assets?.source_code||a.assets?.source_question_id,b.assets?.source_code||b.assets?.source_question_id):sort==='type'?sortText(a.type,b.type)||sortText(a.topic,b.topic):sort==='difficulty'?sortText(a.difficulty,b.difficulty)||sortText(a.topic,b.topic):sortText(a.topic,b.topic)||sortText(a.stem,b.stem));
+   $('bankCount').textContent=`${filtered.length} questions shown · ${filtered.filter(x=>x.assets?.release_hold_reason).length} held`;
+   if(filtered.length>300)$('bankCount').textContent+=' · first 300 displayed — search to narrow';
+   $('bankTable').innerHTML=wrapTable(`<table><thead><tr><th>Select</th><th>Code</th><th>Topic</th><th>Question</th><th>Type</th><th>Status</th><th></th></tr></thead><tbody>${filtered.slice(0,300).map(x=>`<tr><td>${x.assets?.release_hold_reason?'':`<input type="checkbox" aria-label="Select question" data-bank-select="${x.id}">`}</td><td>${esc(x.assets?.source_code||x.assets?.source_question_id||'—')}</td><td>${esc(x.topic)}</td><td>${esc(x.stem.slice(0,150))}</td><td>${esc(x.type)}</td><td><span class="pill ${x.assets?.release_hold_reason?'warn':'ok'}" title="${esc(x.assets?.release_hold_reason||'Ready to use')}">${x.assets?.release_hold_reason?'Needs review':'Ready'}</span></td><td><button class="btn-sm" data-edit-q="${x.id}">Edit</button></td></tr>`).join('')}</tbody></table>`);
+  }
+  document.querySelectorAll('[data-edit-q]').forEach(b=>b.onclick=()=>editQuestion(rows.find(x=>x.id===b.dataset.editQ)));bindChecks();refreshSelected();
+ };
+ $('qSearch').oninput=paint;$('bankScope').onchange=paint;$('sourceFilter').onchange=paint;$('bankStatus').onchange=paint;$('bankSort').onchange=paint;$('newQ').onclick=()=>editQuestion();$('importQ').onclick=importQuestions;$('examFromBank').onclick=()=>editExam({},[...chosen]);paint();
+}
+async function editQuestion(x={}){
+ let key={};if(x.id){const {data,error}=await sb.from('question_keys').select('*').eq('question_id',x.id).single();if(error){alert(error.message);return;}key=data;}
+ dialog(x.id?'Edit question':'Add question',select('qt','Track',tracks(),x.track_id||ST.track)+field('qtopic','Topic',x.topic)+select('qtype','Answer type',[['mcq','Multiple choice'],['grid_in','Student response']],x.type)+select('qd','Difficulty',[['easy','Easy'],['medium','Medium'],['hard','Hard']],x.difficulty||'medium')+area('qstem','Question',x.stem)+area('qchoices','Choices — one per line, in display order',(x.choices||[]).map(c=>c.text).join('\n'))+field('qcorrect','Correct answer — choice letter, or accepted numeric answers separated by ;',key.correct?.void?'Excluded from scoring':Array.isArray(key.correct)?key.correct.join('; '):key.correct)+area('qexplain','Worked explanation',key.explanation)+area('qassets','Diagrams and tables (assets JSON; optional)',JSON.stringify(x.assets||{})),async()=>{
+ const type=val('qtype');const choices=val('qchoices').split('\n').filter(Boolean).map((text,i)=>({key:String.fromCharCode(65+i),text}));
+ await mutation('question.save',{id:x.id,track_id:val('qt'),topic:val('qtopic'),type,difficulty:val('qd'),stem:val('qstem'),choices:type==='mcq'?choices:[],correct:type==='mcq'?val('qcorrect').toUpperCase():val('qcorrect').split(';').map(x=>x.trim()),explanation:val('qexplain'),assets:jval('qassets')||{}});
+ });if(x.id)$('qt').disabled=true;
+}
+function importQuestions(){
+ dialog('Import a question bank',select('it','Track',tracks(),ST.track)+`<p class="hint">Upload a JSON array with up to 500 questions. Each needs stem, type, correct, and choices for multiple choice. Optional: topic, difficulty, explanation, assets. All questions are checked before any are imported.</p><a href="/question-bank-example.json" download>Download an example</a><div class="field" style="margin-top:16px"><label for="ifile">Question-bank file</label><input id="ifile" type="file" accept=".json,application/json" required></div>`,async()=>{
+ const file=$('ifile').files[0];if(!file)throw new Error('Choose a file.');if(file.size>5000000)throw new Error('File must be below 5 MB.');const body=JSON.parse(await file.text());await mutation('question.import',{track_id:val('it'),questions:Array.isArray(body)?body:body.questions});
+ },'Validate & import');
+}
+async function exams(){
+ // Load every exam the signed-in staff member is authorized to manage.  The
+ // page-level track selector below is deliberately independent from the
+ // dashboard's global filter so a previously selected track cannot make a
+ // complete catalogue look empty.
+ const rows=await getRows('exams'),assignments=await getRows('assignments');
+ const categoryName={lesson_exam:'Lesson exam',quiz:'Quiz',full_exam:'Full exam'};
+ $('view').innerHTML=`<div class="head"><h2>Exams & assignments</h2><span class="hint">${rows.length} exams available to you</span><div class="sp"></div><button class="btn" id="newExam">Create exam</button></div><div class="control-bar"><div class="field"><label for="examTrack">Track</label><select id="examTrack"><option value="">All tracks</option>${ST.tracks.map(t=>`<option value="${esc(t.id)}" ${ST.track===t.id?'selected':''}>${esc(t.name)}</option>`).join('')}</select></div><div class="field search"><label for="examSearch">Search exams</label><input id="examSearch" placeholder="Exam title"></div><div class="field"><label for="examType">Category</label><select id="examType"><option value="">All categories</option><option value="lesson_exam">Lesson exams</option><option value="quiz">Quizzes</option><option value="full_exam">Full exams</option></select></div><div class="field"><label for="examStatus">Availability</label><select id="examStatus"><option value="">All exams</option><option value="live">Published</option><option value="draft">Draft</option><option value="assigned">Assigned</option><option value="unassigned">Not assigned</option></select></div><div class="field"><label for="examSort">Sort by</label><select id="examSort"><option value="title">Title A–Z</option><option value="track">Track then title</option><option value="category">Category then title</option><option value="questions_desc">Most questions</option><option value="newest">Newest created</option></select></div></div><p id="examCount" class="hint" style="margin-bottom:12px"></p><div id="examTable"></div><p class="hint" style="margin-top:16px">Publish an exam and assign it to a student or group. A closing time delays worked answers until the window ends. EST is calculator-allowed throughout. Full papers use raw marks until an exact score conversion is provided.</p>`;
+ const paint=()=>{const track=val('examTrack'),needle=val('examSearch').toLowerCase(),type=val('examType'),status=val('examStatus'),sort=val('examSort');const shown=rows.filter(x=>{const n=assignments.filter(a=>a.exam_id===x.id).length;return(!track||x.track_id===track)&&x.title.toLowerCase().includes(needle)&&(!type||x.assessment_type===type)&&(!status||(status==='live'?x.is_published:status==='draft'?!x.is_published:status==='assigned'?n>0:n===0));}).sort((a,b)=>sort==='track'?sortText(a.track_id,b.track_id)||sortText(a.title,b.title):sort==='category'?sortText(categoryName[a.assessment_type],categoryName[b.assessment_type])||sortText(a.title,b.title):sort==='questions_desc'?b.question_ids.length-a.question_ids.length:sort==='newest'?sortText(b.created_at,a.created_at):sortText(a.title,b.title));$('examCount').textContent=`${shown.length} of ${rows.length} exams shown`;$('examTable').innerHTML=wrapTable(`<table><thead><tr><th>Track</th><th>Exam</th><th>Category</th><th>Questions</th><th>Minutes</th><th>Assignments</th><th>Status</th><th>Actions</th></tr></thead><tbody>${shown.map(x=>`<tr><td>${esc(x.track_id.toUpperCase())}</td><td>${esc(x.title)}</td><td><select aria-label="Category for ${esc(x.title)}" data-classify="${x.id}">${Object.entries(categoryName).map(([v,t])=>`<option value="${v}" ${x.assessment_type===v?'selected':''}>${t}</option>`).join('')}</select></td><td>${x.question_ids.length}</td><td>${Math.round(x.duration_seconds/60)}</td><td>${assignments.filter(a=>a.exam_id===x.id).length}</td><td><span class="pill ${x.is_published?'ok':''}">${x.is_published?'Published':'Draft'}</span></td><td><button class="btn-sm" data-ex-practice="${x.id}">Teach / practise — no timer</button> <button class="btn-sm" data-ex-edit="${x.id}">Edit</button> <button class="btn-sm" data-ex-assign="${x.id}">Assign</button> <button class="btn-sm" data-ex-pub="${x.id}">${x.is_published?'Unpublish':'Publish'}</button> <button class="btn-sm" data-ex-release="${x.id}">Release review</button></td></tr>`).join('')}</tbody></table>`);bind();};
+ const bind=()=>{
+ $('newExam').onclick=()=>editExam();
+ document.querySelectorAll('[data-ex-practice]').forEach(b=>b.onclick=()=>openTeachingExam(rows.find(x=>x.id===b.dataset.exPractice)));
+ document.querySelectorAll('[data-classify]').forEach(b=>b.onchange=async()=>{b.disabled=true;try{await mutation('exam.classify',{id:b.dataset.classify,assessment_type:b.value});}catch(e){alert(e.message);await render();}finally{b.disabled=false;}});
+ document.querySelectorAll('[data-ex-edit]').forEach(b=>b.onclick=()=>editExam(rows.find(x=>x.id===b.dataset.exEdit)));
+ document.querySelectorAll('[data-ex-assign]').forEach(b=>b.onclick=()=>assignExam(rows.find(x=>x.id===b.dataset.exAssign),assignments));
+ document.querySelectorAll('[data-ex-pub]').forEach(b=>b.onclick=async()=>{try{const x=rows.find(x=>x.id===b.dataset.exPub);await mutation('exam.save',{id:x.id,is_published:!x.is_published});await render();}catch(e){alert(e.message);}});
+ document.querySelectorAll('[data-ex-release]').forEach(b=>b.onclick=async()=>{if(!confirm('Release worked answers for completed attempts?'))return;try{await mutation('review.release',{exam_id:b.dataset.exRelease});await render();}catch(e){alert(e.message);}});
+ };
+ $('examTrack').onchange=paint;$('examSearch').oninput=paint;$('examType').onchange=paint;$('examStatus').onchange=paint;$('examSort').onchange=paint;paint();
+}
+async function editExam(x={},initialQuestionIds=[]){
+ const questions=await getRows('questions');
+ dialog(x.id?'Edit exam':'Create exam',select('et','Track',tracks(),x.track_id||ST.track)+field('etitle','Exam title',x.title)+field('emins','Duration in minutes',x.duration_seconds?x.duration_seconds/60:25,'number')+select('ereview','Review policy',[['full_review','Full answers after submission or window close'],['score_only','Score only'],['instructor_release','Release answers manually']],x.review_policy)+select('etype','Assessment category',[['lesson_exam','Lesson exam'],['quiz','Quiz'],['full_exam','Full exam']],x.assessment_type||(x.is_full_length?'full_exam':'lesson_exam'))+area('emap','Exact raw-to-scaled conversion (optional JSON)',x.scoring_map?JSON.stringify(x.scoring_map):'')+`<div class="field"><label for="efilter">Find questions</label><input id="efilter" placeholder="Topic or question text"></div><p id="eselected" class="hint"></p><div class="question-select" id="eqs"></div>`,async()=>{
+ await mutation('exam.save',{id:x.id,track_id:val('et'),title:val('etitle'),duration_seconds:Math.round(Number(val('emins'))*60),question_ids:[...selected],is_full_length:val('etype')==='full_exam',assessment_type:val('etype'),scoring_map:jval('emap'),review_policy:val('ereview'),is_published:x.is_published||false});
+ });
+ let selected=new Set((x.question_ids&&x.question_ids.length)?x.question_ids:initialQuestionIds);
+ const paint=()=>{
+  const needle=val('efilter').toLowerCase();
+  const matches=questions.filter(q=>q.track_id===val('et')&&(q.topic+' '+q.stem).toLowerCase().includes(needle));
+  const visible=[...matches].sort((a,b)=>Number(selected.has(b.id))-Number(selected.has(a.id))).slice(0,250);
+  $('eqs').innerHTML=visible.map(q=>`<label class="check"><input type="checkbox" data-qid="${q.id}" ${selected.has(q.id)?'checked':''}><span><b>${esc(q.topic)}</b> · ${esc(q.stem.slice(0,180))}</span></label>`).join('');
+  const note=matches.length>visible.length?` · showing ${visible.length} of ${matches.length}; search to narrow`:'';
+  $('eselected').textContent=selected.size+' questions selected'+note;
+  $('eqs').querySelectorAll('input').forEach(b=>b.onchange=()=>{b.checked?selected.add(b.dataset.qid):selected.delete(b.dataset.qid);paint();});
+ };
+ $('et').onchange=()=>{selected.clear();paint();};$('efilter').oninput=paint;if(x.id)$('et').disabled=true;paint();
+}
+async function assignExam(ex,assignments){
+ const [roster,gs]=await Promise.all([getRows('roster'),getRows('groups')]);
+ const options=[...gs.filter(g=>g.track_id===ex.track_id).map(g=>['g:'+g.id,'Group: '+g.name]),...roster.filter(r=>r.role==='student'&&r.tracks.split(', ').includes(ex.track_id)).map(r=>['u:'+r.user_id,'Student: '+(r.full_name||r.email)])];
+ if(!options.length){alert('Enrol a student or create a group in this track first.');return;}
+ const existing=assignments.filter(a=>a.exam_id===ex.id);
+ dialog('Assign '+esc(ex.title),select('atarget','Assign to',options)+field('aopen','Opens at (your local time)','','datetime-local')+field('aclose','Closes at (your local time; optional)','','datetime-local')+`<p class="hint">Leave times blank for a self-paced assignment. ${existing.length} assignment(s) already exist for this exam.</p>`,async()=>{
+ const [type,id]=val('atarget').split(':');await mutation('assignment.save',{exam_id:ex.id,user_id:type==='u'?id:null,group_id:type==='g'?id:null,open_at:val('aopen')?new Date(val('aopen')).toISOString():null,close_at:val('aclose')?new Date(val('aclose')).toISOString():null});
+ },'Assign exam');
+}
+async function students(){
+ const all=await getRows('roster'),rows=ST.track?all.filter(x=>x.tracks.split(', ').includes(ST.track)):all;
+ $('view').innerHTML=`<div class="head"><h2>Accounts</h2><div class="sp"></div>${ST.me.role==='admin'?'<button class="btn" id="addAccount">Create account</button>':''}</div>${wrapTable(`<table><thead><tr><th>Name</th><th>Sign-in email</th><th>Role</th><th>Tracks</th><th>Status</th><th></th></tr></thead><tbody>${rows.map(x=>`<tr><td>${esc(x.full_name||'Unnamed student')}</td><td>${esc(x.email)}</td><td>${esc(x.role)}</td><td>${esc(x.tracks)}</td><td>${esc(x.status)}</td><td>${ST.me.role==='admin'?`<button class="btn-sm" data-user="${x.user_id}">Manage</button> ${x.role!=='admin'&&x.user_id!==ST.me.id?`<button class="btn-sm danger" data-delete-user="${x.user_id}">Delete</button>`:''}`:''}</td></tr>`).join('')}</tbody></table>`)}`;
+ if($('addAccount'))$('addAccount').onclick=()=>dialog('Create account',field('uname','Username or email')+field('ufull','Full name')+field('upass','Initial password (at least 8 characters)','','password')+select('urole','Role',[['student','Student'],['instructor','Instructor'],['admin','Admin']])+`<p class="hint">Student enrollment</p>`+ST.tracks.map(t=>`<label class="check"><input type="checkbox" data-enroll="${t.id}">${esc(t.name)}</label>`).join(''),async()=>{
+ const u=val('uname'),selected=[...document.querySelectorAll('[data-enroll]:checked')].map(b=>b.dataset.enroll);const res=await fn('admin-users',{body:{username:u.includes('@')?'':u,email:u.includes('@')?u:undefined,full_name:val('ufull'),password:$('upass').value,role:val('urole'),tracks:val('urole')==='student'?selected:[]}});if(!res.ok)throw new Error(res.json.error);if(val('urole')==='instructor'&&selected.length)await mutation('instructor.tracks',{id:res.json.user_id,tracks:selected});
+ },'Create account');
+ document.querySelectorAll('[data-user]').forEach(b=>b.onclick=()=>manageUser(rows.find(x=>x.user_id===b.dataset.user)));
+ document.querySelectorAll('[data-delete-user]').forEach(b=>b.onclick=()=>deleteAccount(rows.find(x=>x.user_id===b.dataset.deleteUser)));
+}
+function deleteAccount(u){
+ if(ST.me.role!=='admin'||u.role==='admin'||u.user_id===ST.me.id)return;
+ dialog('Delete account',`<p class="delete-warning">Permanently delete <b>${esc(u.full_name||u.email)}</b> (${esc(u.email)})? This removes their sign-in, exam attempts, results, enrollments and daily progress. This cannot be undone. Published exams and question-bank content are kept.</p>`+field('deleteEmail','Type the exact sign-in email to confirm'),async()=>{
+  if(val('deleteEmail')!==u.email)throw new Error('Enter the exact sign-in email shown above.');
+  const r=await fn('admin-delete-user',{body:{user_id:u.user_id,confirmation:val('deleteEmail')}});
+  if(!r.ok){const messages={admin_required:'Only active administrators can delete accounts.',protected_account:'Administrator accounts cannot be deleted.',confirmation_mismatch:'The confirmation email does not match.',user_not_found:'This account no longer exists.'};throw new Error(messages[r.json.error]||'Unable to delete this account. Refresh and try again.');}
+ },'Permanently delete account');
+ $('editSave').classList.add('danger');
+}
+async function manageUser(u){
+ dialog('Manage account',field('mname','Full name',u.full_name)+select('mrole','Role',[['student','Student'],['instructor','Instructor'],['admin','Admin']],u.role)+select('mstatus','Status',[['active','Active'],['suspended','Suspended']],u.status)+`<p class="hint">Track access</p>`+ST.tracks.map(t=>`<label class="check"><input type="checkbox" data-track="${t.id}" ${u.tracks.split(', ').includes(t.id)?'checked':''}>${esc(t.name)}</label>`).join(''),async()=>{
+ await mutation('user.update',{id:u.user_id,full_name:val('mname'),role:val('mrole'),status:val('mstatus')});
+ const sels=[...document.querySelectorAll('[data-track]')];
+ if(val('mrole')==='instructor')await mutation('instructor.tracks',{id:u.user_id,tracks:sels.filter(b=>b.checked).map(b=>b.dataset.track)});
+ else if(val('mrole')==='student')for(const b of sels)await mutation('enrollment.save',{user_id:u.user_id,track_id:b.dataset.track,status:b.checked?'active':'paused'});
+ });
+ if(u.role==='instructor'){const {data}=await q('instructor_tracks').eq('user_id',u.user_id);document.querySelectorAll('[data-track]').forEach(b=>b.checked=(data||[]).some(t=>t.track_id===b.dataset.track));}
+}
+async function groups(){
+ const rows=await getRows('groups',true),roster=await getRows('roster'),members=await getRows('group_members');
+ $('view').innerHTML=`<div class="head"><h2>Groups</h2><div class="sp"></div><button class="btn" id="newGroup">Create group</button></div>${wrapTable(`<table><tr><th>Group</th><th>Track</th><th>Members</th><th></th></tr>${rows.map(g=>`<tr><td>${esc(g.name)}</td><td>${esc(g.track_id)}</td><td>${members.filter(m=>m.group_id===g.id).length}</td><td><button class="btn-sm" data-group="${g.id}">Manage</button></td></tr>`).join('')}</table>`)}`;
+ const edit=(g={})=>{dialog(g.id?'Manage group':'Create group',field('gname','Group name',g.name)+select('gtrack','Track',tracks(),g.track_id||ST.track)+(ST.me.role==='admin'?select('ginstructor','Instructor',[['','Unassigned'],...roster.filter(r=>r.role==='instructor').map(r=>[r.user_id,r.full_name])],g.instructor_id):'')+`<div id="gmembers"></div>`,async()=>{await mutation('group.save',{id:g.id,name:val('gname'),track_id:val('gtrack'),instructor_id:$('ginstructor')?val('ginstructor'):ST.me.id,user_ids:[...document.querySelectorAll('[data-member]:checked')].map(b=>b.dataset.member)});});const paint=()=>{$('gmembers').innerHTML=roster.filter(r=>r.role==='student'&&r.tracks.split(', ').includes(val('gtrack'))).map(r=>`<label class="check"><input type="checkbox" data-member="${r.user_id}" ${members.some(m=>m.group_id===g.id&&m.user_id===r.user_id)?'checked':''}>${esc(r.full_name||r.email)}</label>`).join('');};$('gtrack').onchange=paint;if(g.id)$('gtrack').disabled=true;paint();};
+ $('newGroup').onclick=()=>edit();document.querySelectorAll('[data-group]').forEach(b=>b.onclick=()=>edit(rows.find(g=>g.id===b.dataset.group)));
+}
+async function devices(){
+ if(ST.me.role!=='admin'){$('view').innerHTML='<div class="empty">Device management is available to administrators.</div>';return;}
+ const [rows,users]=await Promise.all([getRows('device_sessions'),getRows('roster')]);
+ $('view').innerHTML=`<div class="head"><h2>Devices</h2></div><p class="hint" style="margin-bottom:16px">Up to three active sign-ins per account. Revocation blocks that session from exams and answer saves.</p>${wrapTable(`<table><tr><th>Account</th><th>Device</th><th>Last seen</th><th></th></tr>${rows.map(d=>`<tr><td>${esc(users.find(u=>u.user_id===d.user_id)?.email||d.user_id)}</td><td>${esc(d.user_agent.slice(0,110))}</td><td>${esc(new Date(d.last_seen).toLocaleString())}</td><td>${d.revoked_at?'Revoked':`<button class="btn-sm" data-revoke="${d.id}">Revoke</button>`}</td></tr>`).join('')}</table>`)}`;
+ document.querySelectorAll('[data-revoke]').forEach(b=>b.onclick=async()=>{if(!confirm('Revoke access from this device?'))return;try{await mutation('device.revoke',{id:b.dataset.revoke});await render();}catch(e){alert(e.message);}});
+}
+async function audit(){
+ if(ST.me.role!=='admin'){$('view').innerHTML='<div class="empty">Audit logs are available to administrators.</div>';return;}
+ const {data:rows}=await q('audit_log').order('at',{ascending:false}).limit(300);
+ $('view').innerHTML=`<div class="head"><h2>Audit log</h2><div class="sp"></div><button class="btn-sm" id="auditCsv">Export CSV</button></div>${wrapTable(`<table><tr><th>Time</th><th>Action</th><th>Actor</th><th>Target</th></tr>${rows.map(a=>`<tr><td>${esc(new Date(a.at).toLocaleString())}</td><td>${esc(a.action)}</td><td class="hint">${esc(a.actor_id)}</td><td class="hint">${esc(a.target_id)}</td></tr>`).join('')}</table>`)}`;$('auditCsv').onclick=()=>csv(rows,'audit-log');
+}
+
+(async () => {
+  const { data:{ session } } = await sb.auth.getSession();
+  session ? boot() : show(false);
+})();
+const topButton=$('backToTop');
+const updateTopButton=()=>topButton.classList.toggle('show',window.scrollY>420);
+window.addEventListener('scroll',updateTopButton,{passive:true});
+topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+</script>
+<script src="/est-source-review.js"></script>
+<script src="/instructor-practice.js"></script>
+</body>
+</html>
