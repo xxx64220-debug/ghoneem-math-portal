@@ -374,7 +374,7 @@ function searchSection(){
  const results=DASH.history.filter(h=>`${h.title} ${ASSESSMENTS[h.assessment_type]||''}`.toLocaleLowerCase().includes(term));
  const lessons=DASH.lessons.filter(l=>l.lesson.toLocaleLowerCase().includes(term));
  const total=exams.length+results.length+lessons.length;
- return `<section class="dash-panel search-results"><div class="dash-heading"><h2>Search results</h2><span class="dash-note">${total} match${total===1?'':'es'}</span></div>${!total?'<div class="dash-empty">No matching exams, results, or lessons in this track.</div>':''}${exams.length?`<h3>Assigned exams (${exams.length})</h3>${exams.map(e=>{const first=DASH.exams.find(m=>m.exam_set_code&&m.exam_set_code===e.exam_set_code&&m.module_number===1);return assessmentRow(e,e.module_number===2&&first&&!moduleState(first).done);}).join('')}`:''}${results.length?`<h3>Past results (${results.length})</h3>${results.slice(0,20).map(h=>`<div class="search-history"><span><strong>${esc(h.title)}</strong><span class="history-detail">${dateText(h.submitted_at)} · ${h.score==null?'Awaiting grading':`${h.score}/${h.total}`}</span></span><button class="btn-ghost" data-review="${esc(h.id)}">${h.review_open?'Review':'View score'}</button></div>`).join('')}${results.length>20?'<p class="dash-note">Showing the first 20 results. Use Exam history for all attempts.</p>':''}`:''}${lessons.length?`<h3>Lesson focus (${lessons.length})</h3><div class="lesson-grid">${lessons.map(l=>lessonCard(l,true)).join('')}</div>`:''}</section>`;
+ return `<section class="dash-panel search-results"><div class="dash-heading"><h2>Search results</h2><span class="dash-note">${total} match${total===1?'':'es'}</span></div>${!total?'<div class="dash-empty">No matching exams, results, or lessons in this track.</div>':''}${exams.length?`<h3>Assigned exams (${exams.length})</h3>${exams.map(e=>{const first=DASH.exams.find(m=>m.exam_set_code&&m.exam_set_code===e.exam_set_code&&m.module_number===1);return assessmentRow(e,{locked:e.module_number===2&&first&&!moduleState(first).done});}).join('')}`:''}${results.length?`<h3>Past results (${results.length})</h3>${results.slice(0,20).map(h=>`<div class="search-history"><span><strong>${esc(h.title)}</strong><span class="history-detail">${dateText(h.submitted_at)} · ${h.score==null?'Awaiting grading':`${h.score}/${h.total}`}</span></span><button class="btn-ghost" data-review="${esc(h.id)}">${h.review_open?'Review':'View score'}</button></div>`).join('')}${results.length>20?'<p class="dash-note">Showing the first 20 results. Use Exam history for all attempts.</p>':''}`:''}${lessons.length?`<h3>Lesson focus (${lessons.length})</h3><div class="lesson-grid">${lessons.map(l=>lessonCard(l,true)).join('')}</div>`:''}</section>`;
 }
 function dashboardOverview(){
  const s=DASH.summary,live=DASH.exams.filter(e=>e.last?.status==='in_progress');
@@ -392,8 +392,9 @@ function scoreTrend(){
  if(!rows.length)return '<div class="dash-empty">Your score trend will appear after your first completed assessment.</div>';
  return `<div class="score-trend" aria-label="Recent assessment scores">${rows.map(h=>`<button class="trend-column" data-review="${h.id}" aria-label="${esc(h.title)}, attempt ${h.attempt_no}, ${h.percent}%"><span class="trend-value">${h.percent}%</span><span class="trend-track"><i style="height:${Math.max(2,Math.min(100,h.percent))}%"></i></span><span class="trend-label">${esc(new Date(h.submitted_at).toLocaleDateString(undefined,{day:'numeric',month:'short'}))}</span></button>`).join('')}</div>`;
 }
-function assessmentRow(e,locked=false){
+function assessmentRow(e,options={}){
  const a=e.last,live=a?.status==='in_progress',done=a&&!live;
+ const locked=options?.locked===true;
  const label=live?'Resume':done?'Review':locked?'Complete Module 1':'Start';
  const practice=e.assessment_type==='lesson_exam';
  const score=done?`<span class="badge done">${a.score == null ? 'Awaiting grading' : a.score+'/'+a.total}</span>`:'';

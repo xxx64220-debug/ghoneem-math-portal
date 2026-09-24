@@ -54,6 +54,12 @@ function setup(file){
  vm.runInContext("DASH.exams.push({id:'quiz',title:'Quick quiz',assessment_type:'quiz',questions:3,duration_seconds:180,open:true})",c);
  assert.match(vm.runInContext("assessmentSection('quiz')",c),/Quick quiz/);
  assert.match(vm.runInContext('dashboardOverview()',c),/first completed assessment/);
+ vm.runInContext("ST.track={id:'est_english'};DASH.exams=Array.from({length:3},(_,i)=>({id:'eng-q'+(i+1),title:'EST English quick quiz '+(i+1),assessment_type:'quiz',questions:5,duration_seconds:480,open:true}));",c);
+ const englishQuizzes=vm.runInContext("assessmentSection('quiz')",c);
+ assert.doesNotMatch(englishQuizzes,/Complete Module 1|disabled/,'later English quizzes must not inherit their list index as a module lock');
+ for(let i=1;i<=3;i++)assert.match(englishQuizzes,new RegExp(`data-start="eng-q${i}"[^>]*>Start<\\/button>`));
+ const englishOverview=vm.runInContext('dashboardOverview()',c);
+ assert.doesNotMatch(englishOverview,/Complete Module 1|disabled/,'overview must also show unlocked English quizzes');
  vm.runInContext("DASH.exams=[{id:'est2-full',title:'EST II Math Level 2 — Full Practice Exam 01',assessment_type:'full_exam',questions:40,duration_seconds:3600,open:true},{id:'algebra',title:'Algebra check',assessment_type:'quiz',questions:5,duration_seconds:600,open:true}];DASH.lessons=[{lesson:'Functions & graphs',priority:'focus',percent:40,seen:5,correct:2}];DASH.history=[{id:'old',title:'Older algebra mock',assessment_type:'full_exam',score:17,total:40,submitted_at:'2026-09-20T00:00:00Z'}];DASH.searchTerm='est ii';",c);
  assert.match(vm.runInContext('searchSection()',c),/EST II Math Level 2/);
  assert.doesNotMatch(vm.runInContext('searchSection()',c),/Algebra check|Older algebra mock|Functions &amp; graphs/);
