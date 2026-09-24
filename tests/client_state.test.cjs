@@ -109,5 +109,12 @@ function setup(file){
  assert.match(a.document.getElementById('editor').innerHTML,/Divide both sides/);
  a.document.getElementById('teachRestart').onclick();
  assert.doesNotMatch(a.document.getElementById('editor').innerHTML,/Divide both sides/);
+ // New group assignments use current membership; track who never started.
+ a.progressRows={roster:[{user_id:'u1',full_name:'Student One'},{user_id:'u2',full_name:'<Student Two>'}],group_members:[{group_id:'g1',user_id:'u1'},{group_id:'g1',user_id:'u2'}],attempts:[{user_id:'u1',exam_id:'exam1',status:'in_progress',started_at:'2026-09-24T10:00:00Z'}]};
+ vm.runInContext("getRows=async(table)=>progressRows[table]||[]",a);
+ await vm.runInContext("assignmentProgress({id:'exam1',title:'Math practice'},[{exam_id:'exam1',group_id:'g1',close_at:'2026-10-01T20:00:00Z'}])",a);
+ assert.match(a.document.getElementById('editor').innerHTML,/Not started/);
+ assert.match(a.document.getElementById('editor').innerHTML,/In progress/);
+ assert.match(a.document.getElementById('editor').innerHTML,/&lt;Student Two&gt;/);
  console.log('PASS: clients initialize, EST source archive is integrated into the selectable question bank, autosave preserves changes, assessment categories stay separate, history filters/page counts work, and lesson titles are escaped.');
 })().catch(e=>{console.error(e);process.exitCode=1});

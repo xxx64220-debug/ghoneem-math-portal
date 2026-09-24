@@ -410,11 +410,12 @@ function dialog(title,body,onSave,button='Save'){
  $('editForm').onsubmit=async e=>{e.preventDefault();$('editSave').disabled=true;$('editError').textContent='';try{await onSave();$('editor').close();await render();}catch(e){$('editError').textContent=e.message;}finally{$('editSave').disabled=false;}};
  $('editor').showModal();
 }
-async function getRows(table,track=false,columns='*',orderBy=''){
+async function getRows(table,track=false,columns='*',orderBy='',eqField='',eqValue=''){
  const pageSize=1000,rows=[];
  for(let from=0;;from+=pageSize){
   let b=sb.from(table).select(columns);
   if(track&&ST.track)b=b.eq('track_id',ST.track);
+  if(eqField)b=b.eq(eqField,eqValue);
   if(orderBy)b=b.order(orderBy,{ascending:true});
   const {data,error}=await b.range(from,from+pageSize-1);
   if(error)throw error;
@@ -476,13 +477,14 @@ async function exams(){
  const rows=await getRows('exams'),assignments=await getRows('assignments');
  const categoryName={lesson_exam:'Lesson exam',quiz:'Quiz',full_exam:'Full exam'};
  $('view').innerHTML=`<div class="head"><h2>Exams & assignments</h2><span class="hint">${rows.length} exams available to you</span><div class="sp"></div><button class="btn" id="newExam">Create exam</button></div><div class="control-bar"><div class="field"><label for="examTrack">Track</label><select id="examTrack"><option value="">All tracks</option>${ST.tracks.map(t=>`<option value="${esc(t.id)}" ${ST.track===t.id?'selected':''}>${esc(t.name)}</option>`).join('')}</select></div><div class="field search"><label for="examSearch">Search exams</label><input id="examSearch" placeholder="Exam title"></div><div class="field"><label for="examType">Category</label><select id="examType"><option value="">All categories</option><option value="lesson_exam">Lesson exams</option><option value="quiz">Quizzes</option><option value="full_exam">Full exams</option></select></div><div class="field"><label for="examStatus">Availability</label><select id="examStatus"><option value="">All exams</option><option value="live">Published</option><option value="draft">Draft</option><option value="assigned">Assigned</option><option value="unassigned">Not assigned</option></select></div><div class="field"><label for="examSort">Sort by</label><select id="examSort"><option value="title">Title A–Z</option><option value="track">Track then title</option><option value="category">Category then title</option><option value="questions_desc">Most questions</option><option value="newest">Newest created</option></select></div></div><p id="examCount" class="hint" style="margin-bottom:12px"></p><div id="examTable"></div><p class="hint" style="margin-top:16px">Publish an exam and assign it to a student or group. A closing time delays worked answers until the window ends. EST is calculator-allowed throughout. Full papers use raw marks until an exact score conversion is provided.</p>`;
- const paint=()=>{const track=val('examTrack'),needle=val('examSearch').toLowerCase(),type=val('examType'),status=val('examStatus'),sort=val('examSort');const shown=rows.filter(x=>{const n=assignments.filter(a=>a.exam_id===x.id).length;return(!track||x.track_id===track)&&x.title.toLowerCase().includes(needle)&&(!type||x.assessment_type===type)&&(!status||(status==='live'?x.is_published:status==='draft'?!x.is_published:status==='assigned'?n>0:n===0));}).sort((a,b)=>sort==='track'?sortText(a.track_id,b.track_id)||sortText(a.title,b.title):sort==='category'?sortText(categoryName[a.assessment_type],categoryName[b.assessment_type])||sortText(a.title,b.title):sort==='questions_desc'?b.question_ids.length-a.question_ids.length:sort==='newest'?sortText(b.created_at,a.created_at):sortText(a.title,b.title));$('examCount').textContent=`${shown.length} of ${rows.length} exams shown`;$('examTable').innerHTML=wrapTable(`<table><thead><tr><th>Track</th><th>Exam</th><th>Category</th><th>Questions</th><th>Minutes</th><th>Assignments</th><th>Status</th><th>Actions</th></tr></thead><tbody>${shown.map(x=>`<tr><td>${esc(x.track_id.toUpperCase())}</td><td>${esc(x.title)}</td><td><select aria-label="Category for ${esc(x.title)}" data-classify="${x.id}">${Object.entries(categoryName).map(([v,t])=>`<option value="${v}" ${x.assessment_type===v?'selected':''}>${t}</option>`).join('')}</select></td><td>${x.question_ids.length}</td><td>${Math.round(x.duration_seconds/60)}</td><td>${assignments.filter(a=>a.exam_id===x.id).length}</td><td><span class="pill ${x.is_published?'ok':''}">${x.is_published?'Published':'Draft'}</span></td><td><button class="btn-sm" data-ex-practice="${x.id}">Teach / practise — no timer</button> <button class="btn-sm" data-ex-edit="${x.id}">Edit</button> <button class="btn-sm" data-ex-assign="${x.id}">Assign</button> <button class="btn-sm" data-ex-pub="${x.id}">${x.is_published?'Unpublish':'Publish'}</button> <button class="btn-sm" data-ex-release="${x.id}">Release review</button></td></tr>`).join('')}</tbody></table>`);bind();};
+ const paint=()=>{const track=val('examTrack'),needle=val('examSearch').toLowerCase(),type=val('examType'),status=val('examStatus'),sort=val('examSort');const shown=rows.filter(x=>{const n=assignments.filter(a=>a.exam_id===x.id).length;return(!track||x.track_id===track)&&x.title.toLowerCase().includes(needle)&&(!type||x.assessment_type===type)&&(!status||(status==='live'?x.is_published:status==='draft'?!x.is_published:status==='assigned'?n>0:n===0));}).sort((a,b)=>sort==='track'?sortText(a.track_id,b.track_id)||sortText(a.title,b.title):sort==='category'?sortText(categoryName[a.assessment_type],categoryName[b.assessment_type])||sortText(a.title,b.title):sort==='questions_desc'?b.question_ids.length-a.question_ids.length:sort==='newest'?sortText(b.created_at,a.created_at):sortText(a.title,b.title));$('examCount').textContent=`${shown.length} of ${rows.length} exams shown`;$('examTable').innerHTML=wrapTable(`<table><thead><tr><th>Track</th><th>Exam</th><th>Category</th><th>Questions</th><th>Minutes</th><th>Assignments</th><th>Status</th><th>Actions</th></tr></thead><tbody>${shown.map(x=>`<tr><td>${esc(x.track_id.toUpperCase())}</td><td>${esc(x.title)}</td><td><select aria-label="Category for ${esc(x.title)}" data-classify="${x.id}">${Object.entries(categoryName).map(([v,t])=>`<option value="${v}" ${x.assessment_type===v?'selected':''}>${t}</option>`).join('')}</select></td><td>${x.question_ids.length}</td><td>${Math.round(x.duration_seconds/60)}</td><td>${assignments.filter(a=>a.exam_id===x.id).length}</td><td><span class="pill ${x.is_published?'ok':''}">${x.is_published?'Published':'Draft'}</span></td><td><button class="btn-sm" data-ex-practice="${x.id}">Teach / practise — no timer</button> <button class="btn-sm" data-ex-edit="${x.id}">Edit</button> <button class="btn-sm" data-ex-assign="${x.id}">Assign</button> <button class="btn-sm" data-ex-progress="${x.id}">Progress</button> <button class="btn-sm" data-ex-pub="${x.id}">${x.is_published?'Unpublish':'Publish'}</button> <button class="btn-sm" data-ex-release="${x.id}">Release review</button></td></tr>`).join('')}</tbody></table>`);bind();};
  const bind=()=>{
  $('newExam').onclick=()=>editExam();
  document.querySelectorAll('[data-ex-practice]').forEach(b=>b.onclick=()=>openTeachingExam(rows.find(x=>x.id===b.dataset.exPractice)));
  document.querySelectorAll('[data-classify]').forEach(b=>b.onchange=async()=>{b.disabled=true;try{await mutation('exam.classify',{id:b.dataset.classify,assessment_type:b.value});}catch(e){alert(e.message);await render();}finally{b.disabled=false;}});
  document.querySelectorAll('[data-ex-edit]').forEach(b=>b.onclick=()=>editExam(rows.find(x=>x.id===b.dataset.exEdit)));
  document.querySelectorAll('[data-ex-assign]').forEach(b=>b.onclick=()=>assignExam(rows.find(x=>x.id===b.dataset.exAssign),assignments));
+ document.querySelectorAll('[data-ex-progress]').forEach(b=>b.onclick=()=>assignmentProgress(rows.find(x=>x.id===b.dataset.exProgress),assignments));
  document.querySelectorAll('[data-ex-pub]').forEach(b=>b.onclick=async()=>{try{const x=rows.find(x=>x.id===b.dataset.exPub);await mutation('exam.save',{id:x.id,is_published:!x.is_published});await render();}catch(e){alert(e.message);}});
  document.querySelectorAll('[data-ex-release]').forEach(b=>b.onclick=async()=>{if(!confirm('Release worked answers for completed attempts?'))return;try{await mutation('review.release',{exam_id:b.dataset.exRelease});await render();}catch(e){alert(e.message);}});
  };
@@ -513,6 +515,30 @@ async function assignExam(ex,assignments){
  dialog('Assign '+esc(ex.title),select('atarget','Assign to',options)+field('aopen','Opens at (your local time)','','datetime-local')+field('aclose','Closes at (your local time; optional)','','datetime-local')+`<p class="hint">Leave times blank for a self-paced assignment. ${existing.length} assignment(s) already exist for this exam.</p>`,async()=>{
  const [type,id]=val('atarget').split(':');await mutation('assignment.save',{exam_id:ex.id,user_id:type==='u'?id:null,group_id:type==='g'?id:null,open_at:val('aopen')?new Date(val('aopen')).toISOString():null,close_at:val('aclose')?new Date(val('aclose')).toISOString():null});
  },'Assign exam');
+}
+async function assignmentProgress(ex,assignments){
+ const relevant=assignments.filter(a=>a.exam_id===ex.id);
+ const [roster,members,attempts]=await Promise.all([getRows('roster'),getRows('group_members'),getRows('attempts',false,'user_id,exam_id,status,started_at,submitted_at','','exam_id',ex.id)]);
+ const people=new Map(roster.map(r=>[r.user_id,r]));
+ const entries=new Map();
+ for(const assignment of relevant){
+  const ids=assignment.user_id?[assignment.user_id]:members.filter(m=>m.group_id===assignment.group_id).map(m=>m.user_id);
+  for(const id of ids){if(!people.has(id))continue;const list=entries.get(id)||[];list.push(assignment);entries.set(id,list);}
+ }
+ const attemptByUser=new Map();
+ for(const attempt of attempts.filter(a=>a.exam_id===ex.id)){
+  const prior=attemptByUser.get(attempt.user_id);
+  if(!prior||new Date(attempt.started_at)>new Date(prior.started_at))attemptByUser.set(attempt.user_id,attempt);
+ }
+ const order={'Not started':0,'In progress':1,'Completed':2};
+ const rows=[...entries].map(([id,as])=>{
+  const a=attemptByUser.get(id);
+  const state=!a?'Not started':a.status==='in_progress'?'In progress':'Completed';
+  const close=as.map(x=>x.close_at).filter(Boolean).sort()[0];
+  return {name:people.get(id).full_name||people.get(id).email,state,close};
+ }).sort((a,b)=>order[a.state]-order[b.state]||sortText(a.name,b.name));
+ $('editor').innerHTML=`<h2>Assignment progress · ${esc(ex.title)}</h2><p class="hint" style="margin-bottom:14px">Current group members and directly assigned students. Starts on this exam count, including retakes.</p>${rows.length?wrapTable(`<table><thead><tr><th>Student</th><th>Status</th><th>Deadline</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.name)}</td><td><span class="pill ${r.state==='Completed'?'ok':r.state==='Not started'?'warn':''}">${r.state}</span></td><td>${r.close?esc(new Date(r.close).toLocaleString()):'No deadline'}</td></tr>`).join('')}</tbody></table>`):'<div class="empty">This exam has no current assigned students.</div>'}<div class="actions"><button class="btn-sm" id="progressClose">Close</button></div>`;
+ $('progressClose').onclick=()=>$('editor').close();$('editor').showModal();
 }
 async function students(){
  const all=await getRows('roster'),rows=ST.track?all.filter(x=>x.tracks.split(', ').includes(ST.track)):all;
