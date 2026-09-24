@@ -195,6 +195,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
     <span class="clock" id="clock">--:--</span>
     <span class="saving" id="saving"></span>
     <div class="spacer"></div>
+    <a class="btn-ghost hidden" id="satDesmos" href="https://www.desmos.com/testing/collegeboard/graphing" target="_blank" rel="noopener noreferrer" aria-label="Open official SAT Desmos graphing calculator in a new tab">SAT Desmos ↗</a>
     <button class="btn-ghost" id="flagBtn">Flag</button>
     <button class="btn btn-accent" id="finishBtn">Submit exam</button>
   </div></div>
@@ -269,6 +270,8 @@ const FRIENDLY = {
   not_enrolled_in_track: 'You are not enrolled in this track.',
   exam_not_published: 'This exam has not been released yet.',
   account_suspended: 'This account is suspended. Contact your instructor.',
+  not_enough_topic_history: 'Complete at least three questions in a topic first, then we can identify your weakest topics.',
+  not_enough_drill_questions: 'There are not enough ready questions in those topics yet. Try your mistake notebook for now.',
 };
 const friendly = k => FRIENDLY[k] || 'Something went wrong. Try again, or tell your instructor what you were doing.';
 
@@ -320,7 +323,7 @@ function renderTracks() {
 // Student dashboard: progress, assessment categories, complete history and lesson priorities.
 const ASSESSMENTS={lesson_exam:'Lesson exams',quiz:'Quizzes',full_exam:'Full exams'};
 const PRIORITIES={focus:['Focus first','Review the lesson, then work through another assigned assessment.'],practice:['Keep practising','Revisit mistakes and practise the question types you missed.'],strong:['Strong','Keep this lesson fresh with occasional mixed practice.'],more_evidence:['More practice needed to assess','Complete more questions before relying on a lesson rating.'],not_started:['Not assessed yet','Complete an assigned assessment to see your progress.']};
-let DASH={view:'overview',exams:[],history:[],lessons:[],summary:{},mistakes:null,mistakesError:'',mistakesLoading:false,historyType:'all',historyPage:0,examSort:'title'};
+let DASH={view:'overview',exams:[],history:[],lessons:[],summary:{},mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyType:'all',historyPage:0,examSort:'title'};
 let dashboardRequest=0;
 const dateText=t=>t?new Date(t).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'}):'—';
 const percentText=v=>v==null?'—':`${v}%`;
@@ -334,20 +337,21 @@ async function openTrack(t){
   const {ok,json}=await fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}`});
   if(request!==dashboardRequest)return;
   if(!ok)throw new Error(friendly(json.error));
-  DAILY_DRAFT={};
-  DASH={...DASH,view:'daily',daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,historyPage:0,historyType:'all',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],summary:json.dashboard?.summary||{}};
+  DAILY_DRAFT={};DRILL_DRAFT={};
+  DASH={...DASH,view:'daily',daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyPage:0,historyType:'all',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],summary:json.dashboard?.summary||{}};
   paintDashboard();
   refreshDaily();
  }catch(e){if(request===dashboardRequest){$('examList').innerHTML=`<div class="dash-empty" role="alert">${esc(e.message)}<br><button class="btn" id="retryDashboard">Try again</button></div>`;$('retryDashboard').onclick=()=>openTrack(t);}}
 }
-function setDashboardView(view){DASH.view=view;DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();}
+function setDashboardView(view){DASH.view=view;DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();if(view==='drill'&&!DASH.drill)refreshDrill();}
 function paintDashboard(){
- const tabs=[['daily','Daily practice'],['mistakes','Wrong answers'],['overview','My progress'],['lesson_exam','Lesson exams'],['quiz','Quizzes'],['full_exam','Full exams'],['history','Exam history'],['focus','Lesson focus']];
+ const tabs=[['daily','Daily practice'],['mistakes','Mistake notebook'],['drill','Weak-topic drill'],['overview','My progress'],['lesson_exam','Lesson exams'],['quiz','Quizzes'],['full_exam','Full exams'],['history','Exam history'],['focus','Lesson focus']];
  $('examList').innerHTML=`<nav class="student-tabs" aria-label="Student dashboard">${tabs.map(([id,name])=>`<button class="student-tab ${DASH.view===id?'active':''}" data-view="${id}" aria-current="${DASH.view===id?'page':'false'}">${name}${ASSESSMENTS[id]?` <span>${DASH.exams.filter(e=>e.assessment_type===id).length}</span>`:''}</button>`).join('')}</nav><div id="dashboardContent" aria-live="polite"></div>`;
  document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setDashboardView(b.dataset.view));
  const content=$('dashboardContent');
  if(DASH.view==='daily')content.innerHTML=dailyPanel();
  else if(DASH.view==='mistakes')content.innerHTML=mistakesPanel();
+ else if(DASH.view==='drill')content.innerHTML=drillPanel();
  else if(DASH.view==='overview')content.innerHTML=dashboardOverview();
  else if(DASH.view==='full_exam')content.innerHTML=fullExamSection();
  else if(ASSESSMENTS[DASH.view])content.innerHTML=assessmentSection(DASH.view);
@@ -356,6 +360,7 @@ function paintDashboard(){
  wireDashboard();
  if(DASH.view==='daily')wireDaily();
  if(DASH.view==='mistakes')wireMistakes();
+ if(DASH.view==='drill')wireDrill();
 }
 function dashboardOverview(){
  const s=DASH.summary,live=DASH.exams.filter(e=>e.last?.status==='in_progress');
@@ -444,6 +449,7 @@ async function startExam(examId, untimed=false) {
   if (!ok) { alert(friendly(json.error)); return openTrack(ST.track); }
   json.exam.id=examId;
   ST.run = json; ST.idx = 0; ST.flags = new Set();
+  $('satDesmos').classList.toggle('hidden',json.exam.track_id!=='sat');
   // Server time is authoritative; measure the offset once and count from it.
   ST.skew = new Date(json.attempt.server_now).getTime() - Date.now();
   restorePending(); startClock(); renderPalette(); renderQ(); show('vRun');

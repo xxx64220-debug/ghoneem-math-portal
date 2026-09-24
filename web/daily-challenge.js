@@ -9,10 +9,11 @@ async function refreshMistakes() {
   DASH.mistakesError = '';
   if (DASH.view === 'mistakes') paintDashboard();
   try {
-    const {ok,json} = await fn('daily-challenge', {qs:`?track=${encodeURIComponent(track)}&view=mistakes`});
+    const {ok,json} = await fn('daily-challenge', {qs:`?track=${encodeURIComponent(track)}&view=notebook&offset=${DASH.mistakePage*25}`});
     if (!ok) throw new Error(friendly(json.error));
     if (ST.track?.id !== track) return;
     DASH.mistakes = json;
+    if(json.remaining>0&&!json.items?.length&&DASH.mistakePage>0){DASH.mistakePage--;DASH.mistakesLoading=false;return refreshMistakes();}
   } catch (error) {
     if (ST.track?.id === track) DASH.mistakesError = error.message;
   } finally {
@@ -23,24 +24,87 @@ async function refreshMistakes() {
 
 function mistakesPanel() {
   if (DASH.mistakesLoading || (!DASH.mistakes && !DASH.mistakesError))
-    return '<section class="dash-panel"><h2>Wrong answers</h2><p class="dash-empty" role="status">Loading your quiz mistakes…</p></section>';
+    return '<section class="dash-panel"><h2>Mistake notebook</h2><p class="dash-empty" role="status">Loading your mistakes…</p></section>';
   if (DASH.mistakesError)
-    return `<section class="dash-panel"><h2>Wrong answers</h2><p class="dash-empty" role="alert">${esc(DASH.mistakesError)}</p><button class="btn" data-mistakes-retry>Try again</button></section>`;
+    return `<section class="dash-panel"><h2>Mistake notebook</h2><p class="dash-empty" role="alert">${esc(DASH.mistakesError)}</p><button class="btn" data-mistakes-retry>Try again</button></section>`;
   const items = DASH.mistakes?.items || [];
+  const mastered=Object.values(DASH.notebookFeedback||{}).find(value=>value.mastered);
   const cards = items.map((item,index) => {
-    const options = (item.choices||[]).map(choice => {
-      const classes = [choice.key===item.correct?'is-correct':'',choice.key===item.submitted?'is-submitted':''].filter(Boolean).join(' ');
-      return `<li class="mistake-choice ${classes}"><b>${esc(choice.key)}.</b> ${esc(choice.text)}${choice.key===item.correct?' <span>Correct</span>':''}${choice.key===item.submitted&&choice.key!==item.correct?' <span>Your answer</span>':''}</li>`;
-    }).join('');
-    return `<article class="mistake-card"><div class="dash-heading"><p class="mistake-meta">${esc(item.topic||'Math')} · ${new Date(item.date+'T12:00:00').toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'})}</p><span class="daily-tag">Mistake ${index+1}</span></div><h3>${esc(item.stem)}</h3>${typeof renderAssets==='function'?renderAssets(item.assets):''}<ul class="mistake-choices">${options}</ul><div class="mistake-explanation"><b>Worked answer</b><p>${esc(item.explanation||'No explanation is available yet.')}</p></div></article>`;
+    const feedback=DASH.notebookFeedback?.[item.id];
+    const choices=(item.choices||[]).map(c=>`<label class="daily-option"><input type="radio" name="notebook-${esc(item.id)}" value="${esc(c.key)}"><span><b>${esc(c.key)}.</b> ${esc(c.text)}</span></label>`).join('');
+    return `<article class="mistake-card"><div class="dash-heading"><p class="mistake-meta">${esc(item.topic||'Practice question')}</p><span class="daily-tag">${item.streak}/2 correct in a row</span></div><h3>${esc(item.stem)}</h3>${typeof renderAssets==='function'?renderAssets(item.assets):''}<div class="daily-options">${item.type==='mcq'?choices:`<label class="field">Your answer<input class="gridin" data-notebook-text="${esc(item.id)}" autocomplete="off"></label>`}</div><button class="btn" data-notebook-submit="${esc(item.id)}">Check answer</button>${feedback?`<div class="mistake-explanation" role="status"><b>${feedback.correct?'Correct':'Try again'}</b><p>${esc(feedback.explanation||'')}</p><p>${feedback.mastered?'Mastered — two correct in a row.':`${feedback.streak}/2 correct in a row`}</p></div>`:''}</article>`;
   }).join('');
-  return `<section class="dash-panel"><div class="dash-heading"><div><h2>Wrong answers</h2><p class="dash-note">Every question missed in the five-question daily quiz. Older mistakes stay here so you can review them again.</p></div><span class="daily-tag">${items.length} total</span></div>${items.length?cards:'<div class="dash-empty">No wrong quiz answers yet. Keep going!</div>'}</section>`;
+  const pages=Math.max(1,Math.ceil((DASH.mistakes.remaining||0)/25));
+  return `<section class="dash-panel"><div class="dash-heading"><div><h2>Mistake notebook</h2><p class="dash-note">Wrong answers from reviewed exams and daily quizzes. Answer each one correctly twice in a row to master it; a wrong try resets the count.</p></div><span class="daily-tag">${DASH.mistakes.remaining} to practise · ${DASH.mistakes.mastered} mastered</span></div>${mastered?`<p class="dash-notice" role="status">Question mastered — two correct answers in a row. ${esc(mastered.explanation||'')}</p>`:''}${items.length?cards:'<div class="dash-empty">No mistakes to practise right now.</div>'}${pages>1?`<div class="history-pager"><button class="btn-ghost" data-notebook-page="prev" ${DASH.mistakePage===0?'disabled':''}>Previous</button><span>Page ${DASH.mistakePage+1} of ${pages}</span><button class="btn-ghost" data-notebook-page="next" ${DASH.mistakePage>=pages-1?'disabled':''}>Next</button></div>`:''}</section>`;
 }
 
 function wireMistakes() {
+  document.querySelectorAll('[data-notebook-page]').forEach(button=>button.addEventListener('click',()=>{
+    DASH.mistakePage+=button.dataset.notebookPage==='next'?1:-1;
+    DASH.notebookFeedback={};DASH.mistakes=null;refreshMistakes();
+  }));
   document.querySelector('[data-mistakes-retry]')?.addEventListener('click', () => {
     DASH.mistakesError='';
     refreshMistakes();
+  });
+  document.querySelectorAll('[data-notebook-submit]').forEach(button=>button.addEventListener('click',async()=>{
+    const id=button.dataset.notebookSubmit, item=DASH.mistakes?.items?.find(q=>q.id===id);
+    const answer=item?.type==='mcq'?document.querySelector(`input[name="notebook-${id}"]:checked`)?.value:document.querySelector(`[data-notebook-text="${id}"]`)?.value?.trim();
+    if(!answer){button.insertAdjacentHTML('afterend','<p role="alert">Choose or enter an answer first.</p>');return;}
+    button.disabled=true;
+    try{
+      const track=ST.track.id;
+      const {ok,json}=await fn('daily-challenge',{method:'POST',body:{track,action:'notebook_answer',question_id:id,answer}});
+      if(!ok)throw new Error(friendly(json.error));
+      if(ST.track?.id!==track)return;
+      DASH.notebookFeedback={ [id]:json };
+      const state=await fn('daily-challenge',{qs:`?track=${encodeURIComponent(track)}&view=notebook&offset=${DASH.mistakePage*25}`});
+      if(!state.ok)throw new Error(friendly(state.json.error));
+      DASH.mistakes=state.json;
+      if(DASH.view==='mistakes')paintDashboard();
+    }catch(error){button.disabled=false;button.insertAdjacentHTML('afterend',`<p role="alert">${esc(error.message)}</p>`);}
+  }));
+}
+
+let DRILL_DRAFT={};
+async function refreshDrill(){
+  const track=ST.track?.id;if(!track)return;
+  try{const {ok,json}=await fn('daily-challenge',{qs:`?track=${encodeURIComponent(track)}&view=drill`});
+    if(!ok)throw new Error(friendly(json.error));if(ST.track?.id!==track)return;
+    DASH.drill=json;DASH.drillError='';if(DASH.view==='drill')paintDashboard();
+  }catch(error){if(ST.track?.id===track){DASH.drillError=error.message;if(DASH.view==='drill')paintDashboard();}}
+}
+function drillPanel(){
+  const d=DASH.drill;
+  if(!d)return `<section class="dash-panel"><h2>Weak-topic drill</h2><p class="dash-empty" role="status">${esc(DASH.drillError||'Loading your drill…')}</p>${DASH.drillError?'<button class="btn" data-drill-retry>Try again</button>':''}</section>`;
+  const qs=d.questions||[];
+  const cards=qs.map((q,i)=>{
+    const selected=d.completed?q.submitted:DRILL_DRAFT[q.id];
+    const options=(q.choices||[]).map(c=>`<label class="daily-option"><input type="radio" name="drill-${esc(q.id)}" value="${esc(c.key)}" data-drill-answer="${esc(q.id)}" ${selected===c.key?'checked':''} ${d.completed?'disabled':''}><span><b>${esc(c.key)}.</b> ${esc(c.text)}</span></label>`).join('');
+    const feedback=d.completed?`<div class="daily-solution ${selected===q.answer?'right':'wrong'}"><b>${selected===q.answer?'Correct':`Correct answer: ${esc(q.answer)}`}</b><p>${esc(q.explanation||'')}</p></div>`:'';
+    return `<fieldset class="daily-question"><legend><span class="daily-number">${i+1}</span> <span class="daily-stem">${esc(q.stem)}</span></legend><p class="dash-note">${esc(q.topic)}</p>${typeof renderAssets==='function'?renderAssets(q.assets):''}<div class="daily-options">${q.type==='mcq'?options:`<label class="field">Your answer<input class="gridin" data-drill-text="${esc(q.id)}" value="${esc(selected||'')}" ${d.completed?'disabled':''}></label>`}</div>${feedback}</fieldset>`;
+  }).join('');
+  return `<section class="dash-panel"><h2>Weak-topic drill</h2><p class="dash-note">An untimed set from your three lowest assessed topics. Your answers are graded together when you submit.</p>${d.drill_id?`<p class="dash-note">Topics: ${(d.topics||[]).map(esc).join(' · ')}</p>${d.completed?`<p class="dash-notice" role="status">${d.score}/${qs.length} correct. Review below, then start another set.</p>`:''}${cards}${d.completed?'<button class="btn" data-drill-start>Build another drill</button>':'<button class="btn" data-drill-submit>Submit drill</button><p id="drill-message" role="status"></p>'}`:'<button class="btn" data-drill-start>Build 15–18 questions</button><p id="drill-message" role="status"></p>'}</section>`;
+}
+function wireDrill(){
+  document.querySelector('[data-drill-retry]')?.addEventListener('click',refreshDrill);
+  document.querySelectorAll('[data-drill-answer]').forEach(input=>input.addEventListener('change',event=>DRILL_DRAFT[event.target.dataset.drillAnswer]=event.target.value));
+  document.querySelectorAll('[data-drill-text]').forEach(input=>input.addEventListener('input',event=>DRILL_DRAFT[event.target.dataset.drillText]=event.target.value.trim()));
+  document.querySelector('[data-drill-start]')?.addEventListener('click',async event=>{
+    const button=event.currentTarget;button.disabled=true;
+    try{const track=ST.track.id;const {ok,json}=await fn('daily-challenge',{method:'POST',body:{track,action:'drill_start'}});
+      if(!ok)throw new Error(friendly(json.error));if(ST.track?.id!==track)return;
+      DRILL_DRAFT={};DASH.drill=json;paintDashboard();
+    }catch(error){button.disabled=false;const msg=document.getElementById('drill-message');if(msg)msg.textContent=error.message;}
+  });
+  document.querySelector('[data-drill-submit]')?.addEventListener('click',async event=>{
+    const d=DASH.drill, qs=d?.questions||[];
+    if(qs.some(q=>!DRILL_DRAFT[q.id])){document.getElementById('drill-message').textContent='Answer every question before submitting.';return;}
+    const button=event.currentTarget;button.disabled=true;
+    try{const track=ST.track.id;const {ok,json}=await fn('daily-challenge',{method:'POST',body:{track,action:'drill_submit',drill_id:d.drill_id,answers:Object.fromEntries(qs.map(q=>[q.id,DRILL_DRAFT[q.id]]))}});
+      if(!ok)throw new Error(friendly(json.error));if(ST.track?.id!==track)return;
+      DASH.drill=json;DRILL_DRAFT={};paintDashboard();
+    }catch(error){button.disabled=false;const msg=document.getElementById('drill-message');if(msg)msg.textContent=error.message;}
   });
 }
 
@@ -106,7 +170,7 @@ function dailyPanel() {
     const chosen = completed ? q.answer?.submitted : DAILY_DRAFT[q.id];
     const options = (q.choices||[]).map(c => `<label class="daily-option"><input type="radio" name="daily-${esc(q.id)}" value="${esc(c.key)}" data-daily-answer="${esc(q.id)}" ${chosen===c.key?'checked':''} ${completed?'disabled':''}><span><b>${esc(c.key)}.</b> ${esc(c.text)}</span></label>`).join('');
     const result = completed ? `<div class="daily-solution ${chosen===q.answer?.correct?'right':'wrong'}"><b>${chosen===q.answer?.correct?'Correct':'Correct answer: '+esc(q.answer?.correct||'—')}</b><p>${esc(q.answer?.explanation||'')}</p></div>` : '';
-    return `<fieldset class="daily-question"><legend><span class="daily-number">${i+1}</span> <span class="daily-stem">${esc(q.stem)}</span></legend><p class="dash-note">${esc(q.topic||'Math')}</p>${typeof renderAssets==='function'?renderAssets(q.assets):''}<div class="daily-options">${options}</div>${result}</fieldset>`;
+    return `<fieldset class="daily-question"><legend><span class="daily-number">${i+1}</span> <span class="daily-stem">${esc(q.stem)}</span></legend><p class="dash-note">${esc(q.topic||'Practice')}</p>${typeof renderAssets==='function'?renderAssets(q.assets):''}<div class="daily-options">${options}</div>${result}</fieldset>`;
   }).join('');
   const board = (d.leaderboard||[]).map(row => `<tr ${row.rank===d.rank?'class="my-rank"':''}><td>${row.rank}</td><td>${esc(row.name)}</td><td>${row.points}</td><td>${row.completed}</td></tr>`).join('');
   return `<div class="daily-top"><div><h2>Today's practice</h2><p>${new Date(d.date+'T12:00:00').toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long',timeZone:'Africa/Cairo'})} · New questions every day at ${next} Cairo time</p></div><div class="daily-points"><strong>${d.points_total}</strong><span>total points · rank ${d.rank||'—'}</span></div></div>

@@ -60,6 +60,9 @@ tr:nth-child(even) td{background:#F8F9FB}
 .bar{height:7px;background:var(--line);border-radius:4px;overflow:hidden;min-width:70px}
 .bar i{display:block;height:100%;background:var(--navy)}
 .bar i.low{background:var(--bad)} .bar i.mid{background:var(--gold)}
+.heatmap th:first-child,.heatmap td:first-child{position:sticky;left:0;z-index:1;background:#fff;min-width:160px}.heatmap th:first-child{z-index:2;background:var(--navy)}
+.heatmap th{max-width:150px;white-space:normal;min-width:105px}.heatmap td{text-align:center;min-width:105px}
+.heatmap .heat-low{background:#fbeceb;color:#862d28}.heatmap .heat-mid{background:#fbf3e3;color:#795011}.heatmap .heat-high{background:#e7f2ec;color:#17613e}
 
 .card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px}
 .grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
@@ -97,7 +100,7 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
   <button class="tab on" data-v="overview">Overview</button>
   <button class="tab" data-v="students">Students</button>
   <button class="tab" data-v="results">Results</button>
-  <button class="tab" data-v="lessons">Weak lessons</button>
+  <button class="tab" data-v="lessons">Class heatmap</button>
   <button class="tab" data-v="questions">Hardest questions</button>
   <button class="tab" data-v="exams">Exams & assignments</button><button class="tab" data-v="bank">Question bank</button><button class="tab" data-v="groups">Groups</button><button class="tab" data-v="devices">Devices</button><button class="tab" data-v="audit">Audit log</button>
 </div></nav>
@@ -308,16 +311,25 @@ async function retake(userId, examId, examTitle, who){
 }
 
 async function lessons(){
-  const { data:d } = await trackFilter(q('student_by_lesson'));
+  const d=await getRows('student_by_lesson',true);
   const rows = (d||[]).filter(r=>r.questions_seen>=2);
+  const topics=[...new Set(rows.map(r=>r.lesson))].sort((a,b)=>{
+    const rate=t=>{const rr=rows.filter(r=>r.lesson===t);return rr.reduce((n,r)=>n+Number(r.correct),0)/rr.reduce((n,r)=>n+Number(r.questions_seen),0)};
+    return rate(a)-rate(b)||sortText(a,b);
+  });
+  const students=[...new Map(rows.map(r=>[r.user_id,[r.user_id,r.full_name]])).values()].sort((a,b)=>sortText(a[1],b[1]));
+  const lookup=new Map(rows.map(r=>[r.user_id+'|'+r.lesson,r]));
+  const heat=students.length?wrapTable(`<table class="heatmap"><thead><tr><th>Student</th>${topics.map(t=>`<th>${esc(t)}</th>`).join('')}</tr></thead><tbody>${students.map(([id,name])=>`<tr><td>${esc(name)}</td>${topics.map(t=>{const x=lookup.get(id+'|'+t);return x?`<td class="${x.percent<50?'heat-low':x.percent<75?'heat-mid':'heat-high'}" title="${x.correct}/${x.questions_seen} correct">${x.percent}% <small>(${x.questions_seen})</small></td>`:'<td class="hint">—</td>';}).join('')}</tr>`).join('')}</tbody></table>`):'<div class="empty">Not enough attempts yet.</div>';
   $('view').innerHTML = `
-    <div class="head"><h2>Weak lessons</h2><div class="sp"></div>
+    <div class="head"><h2>Class topic heatmap</h2><div class="sp"></div>
       <button class="btn-sm" id="csvBtn">Export CSV</button></div>
-    <p class="hint" style="margin-bottom:12px">Per student, weakest first. Shown once a student has seen at least two questions in a lesson.</p>
-    ${rows.length ? `<table><tr><th>Student</th><th>Lesson</th><th>Correct</th><th></th></tr>` +
+    <p class="hint" style="margin-bottom:12px">Topics run from weakest to strongest across the class. Each cell shows accuracy and question count; — means fewer than two attempts. Scroll sideways on a phone.</p>
+    ${heat}
+    <h2 style="font-size:19px;margin:24px 0 12px">Student detail</h2>
+    ${rows.length ? wrapTable(`<table><tr><th>Student</th><th>Lesson</th><th>Correct</th><th></th></tr>` +
       rows.map(r=>`<tr><td>${esc(r.full_name)}</td><td>${esc(r.lesson)}</td>
         <td class="num">${r.correct}/${r.questions_seen}</td>
-        <td style="width:130px">${bar(r.percent)}</td></tr>`).join('') + `</table>`
+        <td style="width:130px">${bar(r.percent)}</td></tr>`).join('') + `</table>`)
       : `<div class="empty">Not enough attempts yet.</div>`}`;
   $('csvBtn').onclick = () => csv(rows, 'weak-lessons');
 }
@@ -329,13 +341,13 @@ async function questions(){
     <div class="head"><h2>Hardest questions</h2><div class="sp"></div>
       <button class="btn-sm" id="pdfBtn">Export PDF</button>
       <button class="btn-sm" id="csvBtn">Export CSV</button></div>
-    <p class="hint" style="margin-bottom:12px">Ranked by lowest real student success rate. Assigned quizzes, daily quizzes, lesson exams and full exams are combined; attempts are shown so small samples stay visible.</p>
-    ${rows.length ? wrapTable(`<table><tr><th>Rank</th><th>Source</th><th>Lesson</th><th>Question</th><th>Attempts</th><th>Correct</th><th>Wrong</th><th>Success</th></tr>` +
+    <p class="hint" style="margin-bottom:12px">Ranked by real student success rate. Review key flags mean at least 10 attempts and under 20% correct; they are prompts for a human check, not proof of a bad answer key.</p>
+    ${rows.length ? wrapTable(`<table><tr><th>Rank</th><th>Source</th><th>Lesson</th><th>Question</th><th>Attempts</th><th>Correct</th><th>Wrong</th><th>Success</th><th>Check</th></tr>` +
       rows.map(r=>`<tr><td class="num">#${r.rank}</td><td><span class="pill">${esc(r.sources)}</span></td><td>${esc(r.lesson)}</td><td class="hint">${esc(r.stem)}</td>
         <td class="num">${r.answered_by}</td><td class="num">${r.got_it_right}</td><td class="num">${r.got_it_wrong}</td>
-        <td class="num" style="min-width:130px"><b>${Number(r.percent_correct).toFixed(1)}%</b>${bar(r.percent_correct)}</td></tr>`).join('') + `</table>`)
+        <td class="num" style="min-width:130px"><b>${Number(r.percent_correct).toFixed(1)}%</b>${bar(r.percent_correct)}</td><td>${Number(r.answered_by)>=10&&Number(r.percent_correct)<20?'<span class="pill warn">Review key</span>':'—'}</td></tr>`).join('') + `</table>`)
       : `<div class="empty">No completed answers yet.</div>`}`;
-  $('csvBtn').onclick = () => csv(rows.map(r=>({rank:r.rank,source:r.sources,track:r.track_id,lesson:r.lesson,question_id:r.question_id,question:r.stem,attempts:r.answered_by,correct:r.got_it_right,wrong:r.got_it_wrong,success_rate:`${Number(r.percent_correct).toFixed(1)}%`})), 'hardest-questions');
+  $('csvBtn').onclick = () => csv(rows.map(r=>({rank:r.rank,source:r.sources,track:r.track_id,lesson:r.lesson,question_id:r.question_id,question:r.stem,attempts:r.answered_by,correct:r.got_it_right,wrong:r.got_it_wrong,success_rate:`${Number(r.percent_correct).toFixed(1)}%`,review_key:Number(r.answered_by)>=10&&Number(r.percent_correct)<20})), 'hardest-questions');
   $('pdfBtn').onclick = () => questionPdf(rows);
 }
 
