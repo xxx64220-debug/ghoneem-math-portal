@@ -41,8 +41,17 @@ function setup(file){
  assert.match(estFull,/50 questions · 75 min/);
  assert.match(estFull,/15 Foundational Algebra/);
  assert.doesNotMatch(estFull,/SAT practice exams|35-minute modules/);
+ vm.runInContext("ST.track={id:'est2'};DASH.exams=[{id:'est2-full',title:'EST II Math Level 2 — Full Practice Exam 01',assessment_type:'full_exam',exam_set_code:'EST2-F01',questions:40,duration_seconds:3600,open:true}];",c);
+ const est2Full=vm.runInContext('fullExamSection()',c);
+ assert.match(est2Full,/EST Math 2 practice exams/);
+ assert.match(est2Full,/EST II Math Level 2/);
+ assert.match(est2Full,/40 questions · 60 min/);
+ assert.doesNotMatch(est2Full,/SAT practice exams|Module 2/);
  vm.runInContext("ST.track={id:'sat'}",c);
+ vm.runInContext("DASH.exams=[{id:'sat-unpaired',title:'SAT Practice Exam — Module 1',assessment_type:'full_exam',exam_set_code:'SAT-01',module_number:1,questions:22,duration_seconds:2100,open:true}]",c);
+ assert.match(vm.runInContext('fullExamSection()',c),/Other full exams/);
  assert.match(vm.runInContext('fullExamSection()',c),/SAT practice exams/);
+ vm.runInContext("DASH.exams.push({id:'quiz',title:'Quick quiz',assessment_type:'quiz',questions:3,duration_seconds:180,open:true})",c);
  assert.match(vm.runInContext("assessmentSection('quiz')",c),/Quick quiz/);
  assert.match(vm.runInContext('dashboardOverview()',c),/first completed assessment/);
  vm.runInContext(`DASH.history=Array.from({length:12},(_,i)=>({id:'a'+i,title:'Exam '+i,assessment_type:i%2?'quiz':'lesson_exam',percent:50,score:1,total:2,attempt_no:1,status:'graded',submitted_at:'2026-09-08T10:00:00Z',review_open:false}));`,c);

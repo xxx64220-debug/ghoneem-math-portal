@@ -390,9 +390,20 @@ function moduleState(e){
 }
 function fullExamSection(){
  const modules=DASH.exams.filter(e=>e.assessment_type==='full_exam');
- if(ST.track?.id==='est')return `<div class="full-exam-intro"><h2>EST Math 1 practice exams</h2><p>Full practice papers contain 50 questions with one 75-minute timer. Calculators are allowed throughout. Question Bank Practice papers contain 15 Foundational Algebra, 15 Data Analysis and Probability, 15 Advanced Algebra and Functions, and 5 Geometry and Trigonometry questions.</p><p class="dash-note">Your raw score and worked answers appear after submission. Questions may also appear in lesson practice and quizzes.</p></div><section class="dash-panel"><h2>Full exams</h2>${modules.length?modules.map(assessmentRow).join(''):'<div class="dash-empty">No full exams are assigned yet.</div>'}</section>`;
+ if(ST.track?.id==='est'||ST.track?.id==='est2'){
+  const est2=ST.track.id==='est2';
+  const intro=est2
+   ? '<div class="full-exam-intro"><h2>EST Math 2 practice exams</h2><p>Each full practice paper contains 40 questions with one 60-minute timer. Calculators are allowed throughout.</p><p class="dash-note">Your raw score and worked answers appear after submission. Questions may also appear in lesson practice and quizzes.</p></div>'
+   : '<div class="full-exam-intro"><h2>EST Math 1 practice exams</h2><p>Full practice papers contain 50 questions with one 75-minute timer. Calculators are allowed throughout. Question Bank Practice papers contain 15 Foundational Algebra, 15 Data Analysis and Probability, 15 Advanced Algebra and Functions, and 5 Geometry and Trigonometry questions.</p><p class="dash-note">Your raw score and worked answers appear after submission. Questions may also appear in lesson practice and quizzes.</p></div>';
+  return `${intro}<section class="dash-panel"><h2>Full exams</h2>${modules.length?modules.map(assessmentRow).join(''):'<div class="dash-empty">No full exams are assigned yet.</div>'}</section>`;
+ }
  const singles=modules.filter(e=>!e.exam_set_code);
- const pairs=[...new Set(modules.filter(e=>e.exam_set_code).map(e=>e.exam_set_code))].map(code=>({code,rows:modules.filter(e=>e.exam_set_code===code).sort((a,b)=>a.module_number-b.module_number)}));
+ const pairs=[];
+ [...new Set(modules.filter(e=>e.exam_set_code).map(e=>e.exam_set_code))].forEach(code=>{
+  const rows=modules.filter(e=>e.exam_set_code===code).sort((a,b)=>(a.module_number||0)-(b.module_number||0));
+  if(rows.length>=2){pairs.push({code,rows:rows.slice(0,2)});singles.push(...rows.slice(2));}
+  else singles.push(...rows);
+ });
  const pairHtml=pairs.map(({rows})=>{
   const m1=rows[0],m2=rows[1],s1=moduleState(m1),s2=moduleState(m2);
   const complete=s1.done&&s2.done&&s1.a.score!=null&&s2.a.score!=null;
