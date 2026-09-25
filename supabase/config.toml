@@ -18,3 +18,7 @@ verify_jwt = false
 
 [functions.enrollments]
 verify_jwt = false
+
+# Authenticated user requests use requireUser; scheduled dispatch uses a private worker credential.
+[functions.portal-notifications]
+verify_jwt = false

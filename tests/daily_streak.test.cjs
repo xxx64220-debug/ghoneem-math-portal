@@ -1,7 +1,7 @@
 const {readFileSync}=require('node:fs');
 const vm=require('node:vm');
 const assert=require('node:assert/strict');
-const context={ST:{track:{id:'est',theme:{label:'EST'}}},DASH:{mistakes:{items:[],remaining:0,mastered:0},mistakesLoading:false,mistakesError:'',notebookFeedback:{},drill:{drill_id:null,questions:[]}},esc:s=>String(s).replaceAll('<','&lt;'),renderAssets:()=>'',setInterval:()=>{},document:{addEventListener:()=>{}},Date,console};
+const context={ST:{track:{id:'est',theme:{label:'EST'}}},DASH:{mistakes:{items:[],remaining:0,mastered:0},mistakesLoading:false,mistakesError:'',notebookFeedback:{},drill:{drill_id:null,questions:[]}},esc:s=>String(s).replaceAll('<','&lt;'),figure:()=>'',setInterval:()=>{},document:{addEventListener:()=>{}},Date,console};
 vm.createContext(context);
 vm.runInContext(readFileSync('web/daily-challenge.js','utf8'),context);
 const d={track:'est',completed:false,server_now:'2026-09-14T20:00:00Z',reset_at:'2026-09-14T21:00:00Z',receivedAt:1000,streak:{current:3,longest:14,week:[{date:'2026-09-14',completed:false,today:true}]}};
