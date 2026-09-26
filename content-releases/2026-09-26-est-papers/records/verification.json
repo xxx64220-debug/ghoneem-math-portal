@@ -1,0 +1,21 @@
+{
+  "verified_at": "2026-09-26",
+  "project": "wfhurjyouemahvkcfkdz",
+  "est1": {
+    "expected": 327,
+    "present": 327,
+    "exact_verified": 327,
+    "est1_total": 2903,
+    "est2_total": 1545
+  },
+  "est2": {
+    "imported": 418,
+    "withheld": 32,
+    "duplicate_copies_skipped": 50
+  },
+  "duplicates": {
+    "existing_est1_questions_checked": 2576,
+    "similarity_candidates_reviewed": 13,
+    "confirmed_matches": 0
+  }
+}
