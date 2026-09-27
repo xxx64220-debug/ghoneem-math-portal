@@ -28,6 +28,8 @@ the remaining regression scripts run after it is installed.
   September release manifest and its question, review and exam import SQL.
 - `tests/est_march_key.py` needs
   `content/est-march-2026/worked-answer-key.json`.
+- `tests/fair_exam_keys.sql` needs the imported 50-question March 2026 exam
+  with ID `67a68471-59b3-5bf1-8a80-21ce851bef5f`.
 - `tests/est_source_review.test.cjs` needs the September archive JSON and the
   built `dist/` image tree.
 

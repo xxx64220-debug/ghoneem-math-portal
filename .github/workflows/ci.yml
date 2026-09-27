@@ -162,7 +162,6 @@ jobs:
           psql -v ON_ERROR_STOP=1 -f supabase/sql/portal_upgrade.sql
           for test in \
             tests/daily_streak.sql \
-            tests/fair_exam_keys.sql \
             tests/pending_grading.sql \
             tests/student_progress.sql \
             tests/untimed_lessons.sql \
@@ -174,6 +173,11 @@ jobs:
             echo "Running $test"
             psql -v ON_ERROR_STOP=1 -f "$test"
           done
+          if [ "$(psql -tAc "select exists(select 1 from public.exams where id='67a68471-59b3-5bf1-8a80-21ce851bef5f')")" = "t" ]; then
+            psql -v ON_ERROR_STOP=1 -f tests/fair_exam_keys.sql
+          else
+            echo "SKIP: tests/fair_exam_keys.sql needs the imported 50-question March 2026 exam fixture."
+          fi
 
       - name: Run EST release database gates when source fixtures exist
         shell: bash
