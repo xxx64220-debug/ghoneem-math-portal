@@ -137,8 +137,6 @@ jobs:
           done
           for support_sql in \
             supabase/sql/est_source_review.sql \
-            supabase/sql/fair_exam_keys.sql \
-            supabase/sql/pending_exam_grading.sql \
             supabase/sql/daily_streak_update.sql \
             supabase/sql/repeatable_untimed_lessons.sql; do
             psql -v ON_ERROR_STOP=1 -f "$support_sql"
@@ -160,6 +158,8 @@ jobs:
             psql -v ON_ERROR_STOP=1 -f "$test"
           done
           psql -v ON_ERROR_STOP=1 -f supabase/sql/portal_upgrade.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/sql/fair_exam_keys.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/sql/pending_exam_grading.sql
           for test in \
             tests/daily_streak.sql \
             tests/pending_grading.sql \
