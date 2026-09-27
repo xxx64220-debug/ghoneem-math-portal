@@ -8,7 +8,11 @@ source fixtures are present.
 The database job creates a fresh `portal_ci` PostgreSQL 16 service for each
 run. It applies the local-only Auth shim, schema migrations and SQL support
 scripts, then runs the RLS, adversarial, grading, progress, notification and
-upgrade regression scripts with `ON_ERROR_STOP`. The database service password
+upgrade regression scripts with `ON_ERROR_STOP`. `tests/ci_schema_compat.sql`
+adds the `assessment_type` column expected by later SQL but missing from the
+checked-in migration chain; it is applied only to the disposable CI database.
+The checked-in SAT staging bank is likewise imported only into that database
+so migration 011 can run. The database service password
 is a workflow-local test value; it is not a repository or Supabase secret.
 No Supabase URL, API key, service-role key, or production credential is read or
 required. The workflow does not deploy, publish, or connect to any external
@@ -36,11 +40,7 @@ installs `pg_cron` and schedules a recurring database job, behavior provided by
 the hosted Supabase environment. The standalone notification scheduler also
 needs hosted `pg_cron` and `pg_net`, and is not applied. No browser end-to-end
 test or deployed Edge Function test runs here; those need a browser session or
-hosted Supabase services and credentials. Migrations
-`011_sat_partitions_and_module_pairs.sql` and
-`20260920_ranked_question_success.sql` are not applied: both assume an
-`exams.assessment_type` column that is absent from the checked-in migration
-chain, and 011 also needs imported SAT bank rows. The workflow prints this skip
-explicitly. Keep them out of the clean-database job until those schema and data
-prerequisites are represented in versioned source. Database behavior is checked
+hosted Supabase services and credentials. The compatibility prelude makes the
+missing `assessment_type` prerequisite explicit instead of changing production
+migrations or relying on hosted credentials. Database behavior is checked
 against the isolated PostgreSQL service instead.

@@ -111,19 +111,25 @@ jobs:
             supabase/migrations/006_import_legacy_sat.sql \
             supabase/migrations/007_exam_builder.sql \
             supabase/migrations/008_scoring_and_reporting.sql \
-            supabase/migrations/009_deployment_hardening.sql \
-            supabase/migrations/012_admin_delete_user.sql; do
+            supabase/migrations/009_deployment_hardening.sql; do
             psql -v ON_ERROR_STOP=1 -f "$migration"
           done
+
+          # Reproduce a hosted schema prerequisite omitted from versioned DDL;
+          # both this prelude and the bank import run only in portal_ci.
+          psql -v ON_ERROR_STOP=1 -f tests/ci_schema_compat.sql
+          psql -v ON_ERROR_STOP=1 -c "select * from public.legacy_import(false)"
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/011_sat_partitions_and_module_pairs.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/012_admin_delete_user.sql
 
           # These tables are created by support SQL rather than a migration,
           # but later checked-in migrations depend on daily_progress.
           psql -v ON_ERROR_STOP=1 -f supabase/sql/daily_challenge.sql
-          echo "SKIP: migration 011 and 20260920_ranked_question_success.sql need exams.assessment_type, absent from the checked-in schema migrations."
 
           for migration in \
             supabase/migrations/20260919_daily_quiz_mistake_reporting.sql \
             supabase/migrations/20260920_daily_quiz_verified_pdf_pool.sql \
+            supabase/migrations/20260920_ranked_question_success.sql \
             supabase/migrations/20260920_student_daily_quiz_mistakes.sql \
             supabase/migrations/20260924_exam_readiness_practice.sql \
             supabase/migrations/20260924_drill_published_pool.sql \
