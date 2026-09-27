@@ -35,6 +35,7 @@ jobs:
             tests/daily_streak.test.cjs \
             tests/exam_builder.test.cjs \
             tests/final_revision.test.cjs \
+            tests/revision_formulas.test.cjs \
             tests/portal_notifications.test.cjs \
             tests/practice_figures.test.cjs
 
