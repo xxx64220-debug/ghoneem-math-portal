@@ -11,7 +11,7 @@ const REVISION_FORMULA_TRACKS = {
       'Bluebook provides an embedded calculator and a reference sheet during Math. Desmos is available in the testing app; practise choosing when graphing helps and when algebra is quicker.',
       'Desmos angle mode matters: choose degrees for degree questions; use radians for radian questions. Graphing can check solutions, intersections, vertices, regression and inequalities.'
     ],
-    lessons: ['Linear functions and systems','Inequalities and absolute value','Quadratics and polynomials','Functions and transformations','Exponents, radicals and growth','Ratios, percentages and unit conversion','Statistics and data analysis','Probability and conditional probability','Geometry and triangles','Trigonometry','Circles','Area, volume and scale']
+    lessons: ['Linear functions and systems','Inequalities and absolute value','Quadratics and polynomials','Functions and transformations','Exponents, radicals and growth','Ratios, percentages and unit conversion','Statistics and data analysis','Probability and conditional probability','Geometry and triangles','Trigonometry','Circles','Area and perimeter','Volume and surface area']
   },
   est: {
     title: 'EST Math I',
@@ -21,7 +21,7 @@ const REVISION_FORMULA_TRACKS = {
       'The lessons below organize the supplied EST mind maps and revision notes by topic. Topic coverage in a revision guide does not by itself establish official question weighting.',
       'For multi-step unit problems, keep units visible on every line. Convert first, then calculate; a correct number with the wrong unit is not a complete answer.'
     ],
-    lessons: ['Triangles and similarity','Trigonometry','Angles and polygons','Area and perimeter','Volume and surface area','Circles','Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics','Functions and domain','Polynomial division and remainder','Complex numbers','Exponents and special products','Percentages and interest','Ratio, proportion and rates','Sequences','Statistics and data','Probability and counting','Unit conversions']
+    lessons: ['Triangles and similarity','Trigonometry','Angles and polygons','Area and perimeter','Volume and surface area','Circles','Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics and polynomials','Functions and transformations','Polynomial division and remainder','Complex numbers','Exponents and special products','Percentages and interest','Ratio, proportion and rates','Sequences','Statistics and data analysis','Probability and conditional probability','Unit conversions']
   },
   est2: {
     title: 'EST Math II',
@@ -31,7 +31,7 @@ const REVISION_FORMULA_TRACKS = {
       'This track includes advanced extensions such as polynomial behavior, complex arithmetic, inverse functions, logarithm rules, counting restrictions and non-right-triangle trigonometry.',
       'Some conventions (for example, quartiles for a short data set) can differ by course or calculator. Use the convention stated in the question or by your instructor.'
     ],
-    lessons: ['Triangles and similarity','Trigonometry and trig graphs','Angles and polygons','Area and perimeter','Volume and surface area','Circles and power of a point','Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics','Functions, inverses and asymptotes','Polynomial division and remainder','Complex numbers','Exponents and special products','Logarithms and exponentials','Percentages and interest','Ratio, proportion and rates','Sequences','Statistics and data','Probability, permutations and combinations','Unit conversions']
+    lessons: ['Triangles and similarity','Trigonometry and trig graphs','Angles and polygons','Area and perimeter','Volume and surface area','Circles and power of a point','Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics and polynomials','Functions, inverses and asymptotes','Polynomial division and remainder','Complex numbers','Exponents and special products','Logarithms and exponentials','Percentages and interest','Ratio, proportion and rates','Sequences','Statistics and data analysis','Probability, permutations and combinations','Unit conversions']
   }
 };
 
@@ -77,7 +77,7 @@ const REVISION_FORMULA_LESSONS = {
     notes: 'Sort before finding the median or quartiles. The median is less affected by extreme values than the mean. Box plots summarize min, Q₁, median, Q₃ and max. Check the quartile convention stated by the question or course.', visual: 'boxplot'
   },
   'Probability and conditional probability': {
-    formulas: ['P(A) = favourable outcomes / all equally likely outcomes, with 0 ≤ P(A) ≤ 1. Complement: P(not A) = 1 − P(A).', 'Addition rule: P(A or B) = P(A) + P(B) − P(A and B). For mutually exclusive events, the overlap is 0.', 'Multiplication rule: P(A and B) = P(A)P(B | A). For independent events, this becomes P(A)P(B).', 'Conditional probability: P(A | B) = P(A and B) / P(B), provided P(B) > 0. At least one = 1 − P(none).'],
+    formulas: ['P(A) = favourable outcomes / all equally likely outcomes, with 0 ≤ P(A) ≤ 1. Complement: P(not A) = 1 − P(A).', 'Addition rule: P(A or B) = P(A) + P(B) − P(A and B). For mutually exclusive events, the overlap is 0.', 'Multiplication rule: P(A and B) = P(A)P(B | A). For independent events, this becomes P(A)P(B).', 'Conditional probability: P(A | B) = P(A and B) / P(B), provided P(B) > 0. At least one = 1 − P(none).', 'Counting: n! arrangements of n distinct objects; n!/(k₁!k₂!…) when objects repeat. nPr = n!/(n − r)!; nCr = n!/[r!(n − r)!].'],
     example: 'If 30 of 70 males passed, then P(pass | male) = 30/70. The denominator is the male total because “male” is the given group.',
     notes: 'Without replacement, update the total and category counts after each draw. “AND” is not automatically multiplication of independent probabilities; use the conditional multiplication rule. “OR” requires subtracting an overlap unless the events cannot happen together.', visual: 'tree'
   },
