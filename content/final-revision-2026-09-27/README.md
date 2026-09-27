@@ -37,3 +37,17 @@ Tables enable RLS and explicitly deny anonymous/authenticated direct access. RPC
 - The checkout's older client-state harness initially failed on its pre-existing missing `renderQuestionMath` dependency; the repository's current harness is preserved when synchronising changes.
 
 Formulas and lesson-rule notes are intentionally outside this questions-only release.
+
+## Focused collections
+
+Priority revision is the default collection, combining 204 distinct questions across 116 ideas. Its categories overlap:
+
+- **Must know:** 88 representative questions for 88 explicitly selected core lesson/idea pairs. The easier reviewed representative is preferred when several questions teach the same skill.
+- **Most repeated ideas:** 110 questions across 22 lesson/idea pairs, each represented by at least four different questions in this reviewed 378-question bank. Exam reuse is not counted. This is bank frequency, not official SAT/EST frequency or a prediction.
+- **Unique approaches:** 32 manually selected questions across 32 ideas, with concise method takeaways shown after checking an answer. The set contains 1 easy, 2 medium and 29 hard questions.
+
+Focused sets select only one question per lesson/idea pair and cap their size at the number of eligible ideas. The full revision bank and mistake retries retain question-level selection. Programme, source, lesson and difficulty filters still apply.
+
+`focus.json` records collection membership and reviewed-bank counts; `focus-audit.json` provides totals. Apply `content-releases/2026-09-27-revision-focus-schema.sql`, then `focus-release.sql`, then deploy the updated Edge Function and frontend. The release checks all existing fingerprints before updating revision metadata. It does not edit question content or answer keys.
+
+`tests/revision_focus.sql` is a rollback-only integration gate for counts, distinct ideas, filters, small-set caps, state persistence, and hiding method hints until an answer is checked. The JavaScript test adds collection navigation and feedback rendering checks.

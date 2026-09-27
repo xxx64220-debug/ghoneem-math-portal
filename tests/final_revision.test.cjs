@@ -3,10 +3,19 @@ const ctx={console,ST:{track:{id:'est'}},DASH:{view:'revision'},esc:s=>String(s?
 vm.createContext(ctx);vm.runInContext(fs.readFileSync('web/final-revision.js','utf8'),ctx);
 const run=s=>vm.runInContext(s,ctx);
 run("resetRevision('est');REV.data={items:[{id:'a',lesson:'Linear equations',idea:'Solving',source:'est',programmes:['est','sat'],difficulty:'easy'},{id:'b',lesson:'Statistics',idea:'Sampling',source:'sat',programmes:['sat'],difficulty:'hard'}]}");
+assert.equal(run('REV.collection'),'priority');
+run("REV.data.items[0].focus={collections:['must_know','repeated'],bank_occurrences:4};REV.data.items[1].focus={collections:['unique'],bank_occurrences:1}");
 assert.equal(run('revisionRows().length'),1);
 run("REV.scope='both'");assert.equal(run('revisionRows().length'),2);
 run("REV.source='sat'");assert.equal(run('revisionRows()[0].id'),'b');
 assert.match(run('revisionPanel()'),/Final revision/);
+assert.match(run('revisionPanel()'),/data-revision-collection="priority" aria-pressed="true"/);
+run("REV.source='both';REV.collection='repeated'");
+assert.equal(run('revisionRows().length'),1);
+assert.match(run('revisionPanel()'),/4 in reviewed bank/);
+run("REV.collection='unique'");assert.equal(run('revisionRows()[0].id'),'b');
+run("REV.collection='all';REV.data.items.push({id:'c',lesson:'Other',idea:'Other',source:'est',programmes:['est'],difficulty:'medium'})");
+assert.equal(run('revisionRows().length'),3);
 assert.match(run('revisionText(String.raw`$\\\\frac{1}{2}$`)'),/\\frac/);
 assert.match(run("revisionText('Admission costs $8.50 for each student and $12 for each adult.','sat')"),/revision-currency/);
 assert.equal(run("revisionText('$9x+4=67$','sat')"),'$9x+4=67$');
@@ -14,6 +23,10 @@ run("REV.session={id:'s',questions:[{id:'q',lesson:'Polynomials',idea:'Roots',di
 assert.match(run('revisionSessionPanel()'),/Set complete: 1\/1 correct/);
 assert.match(run('revisionSessionPanel()'),/10 or 16/);
 assert.doesNotMatch(run('revisionSessionPanel()'),/Retry mistakes/);
+run("REV.session.questions[0].focus={takeaway:'PRIVATE HINT'}");
+assert.doesNotMatch(run('revisionSessionPanel()'),/PRIVATE HINT/);
+run("REV.session.questions[0].feedback.takeaway='Consider both roots.'");
+assert.match(run('revisionSessionPanel()'),/Key idea:<\/strong> Consider both roots/);
 // A delayed old-track reply cannot contaminate the newly selected track.
 (async()=>{
  let release;ctx.fn=()=>new Promise(r=>release=r);

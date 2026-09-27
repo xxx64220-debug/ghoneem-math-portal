@@ -9,7 +9,7 @@ Deno.serve(serve(async (req) => {
   if (!["catalogue", "start", "answer", "state"].includes(body.action)) throw new ApiError("invalid_action", 400);
   const { data, error } = await admin().rpc("final_revision", {
     p_user: me.id, p_track: body.track, p_action: body.action,
-    p_options: Object.fromEntries(["session", "question", "answer", "scope", "source", "difficulty", "lesson", "count", "retry"]
+    p_options: Object.fromEntries(["collection", "session", "question", "answer", "scope", "source", "difficulty", "lesson", "count", "retry"]
       .filter(key => body[key] !== undefined).map(key => [key, body[key]])),
   });
   if (error) throw sqlError(error);

@@ -1,0 +1,144 @@
+{
+  "must_know": {
+    "questions": 88,
+    "ideas": 88,
+    "difficulty": {
+      "medium": 49,
+      "easy": 33,
+      "hard": 6
+    }
+  },
+  "repeated": {
+    "questions": 110,
+    "ideas": 22,
+    "difficulty": {
+      "easy": 57,
+      "medium": 48,
+      "hard": 5
+    }
+  },
+  "unique": {
+    "questions": 32,
+    "ideas": 32,
+    "difficulty": {
+      "medium": 2,
+      "hard": 29,
+      "easy": 1
+    }
+  },
+  "priority_questions": 204,
+  "priority_ideas": 116,
+  "frequency_basis": "Distinct reviewed questions in the 378-item revision release, grouped by exact lesson and idea; no official exam-frequency claim.",
+  "frequent_ideas": [
+    {
+      "lesson": "Graphs and data interpretation",
+      "idea": "Reading and comparing data",
+      "questions": 12
+    },
+    {
+      "lesson": "Percentages",
+      "idea": "Percentages from charts and tables",
+      "questions": 8
+    },
+    {
+      "lesson": "Area and volume",
+      "idea": "Area of basic plane figures",
+      "questions": 6
+    },
+    {
+      "lesson": "Linear systems",
+      "idea": "Two-variable word problems",
+      "questions": 5
+    },
+    {
+      "lesson": "Percentages",
+      "idea": "Multistep percentages",
+      "questions": 5
+    },
+    {
+      "lesson": "Function composition and inverses",
+      "idea": "Composing functions",
+      "questions": 5
+    },
+    {
+      "lesson": "Linear equations",
+      "idea": "Equivalent expressions from an equation",
+      "questions": 5
+    },
+    {
+      "lesson": "Linear systems",
+      "idea": "Elimination and substitution",
+      "questions": 5
+    },
+    {
+      "lesson": "Angles, triangles and similarity",
+      "idea": "Interior and exterior angles",
+      "questions": 5
+    },
+    {
+      "lesson": "Exponents and radicals",
+      "idea": "Equations with a common base",
+      "questions": 5
+    },
+    {
+      "lesson": "Lines and linear models",
+      "idea": "Interpreting and evaluating linear models",
+      "questions": 5
+    },
+    {
+      "lesson": "Linear inequalities",
+      "idea": "Solving and testing inequalities",
+      "questions": 4
+    },
+    {
+      "lesson": "Quadratics",
+      "idea": "Sum and product of roots",
+      "questions": 4
+    },
+    {
+      "lesson": "Polynomials",
+      "idea": "Expanding and comparing coefficients",
+      "questions": 4
+    },
+    {
+      "lesson": "Quadratics",
+      "idea": "Axis of symmetry",
+      "questions": 4
+    },
+    {
+      "lesson": "Functions and graphs",
+      "idea": "Evaluating functions",
+      "questions": 4
+    },
+    {
+      "lesson": "Lines and linear models",
+      "idea": "Parallel and perpendicular lines",
+      "questions": 4
+    },
+    {
+      "lesson": "Polynomials",
+      "idea": "Roots and zero-product property",
+      "questions": 4
+    },
+    {
+      "lesson": "Lines and linear models",
+      "idea": "Slope from equations, points and graphs",
+      "questions": 4
+    },
+    {
+      "lesson": "Linear equations",
+      "idea": "Solving equations with fractions",
+      "questions": 4
+    },
+    {
+      "lesson": "Area and volume",
+      "idea": "Volume formulas",
+      "questions": 4
+    },
+    {
+      "lesson": "Area and volume",
+      "idea": "Length, area and volume scale factors",
+      "questions": 4
+    }
+  ]
+}
