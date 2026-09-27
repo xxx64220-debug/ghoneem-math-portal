@@ -110,13 +110,13 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 
 <nav class="tabs hidden" id="tabs"><div class="wrap">
   <button class="tab on" data-v="overview">Overview</button>
-  <button class="tab" data-v="quizAdmin">Daily quizzes</button><button class="tab" data-v="revisionAdmin">Final revision</button><button class="tab" data-v="reportsAdmin">Reports</button>
+  <button class="tab" data-v="quizAdmin">Daily quizzes</button><button class="tab" data-v="revisionAdmin">Final revision</button><button class="tab" data-v="reportsAdmin">Reports</button><button class="tab" data-v="integrityAdmin">Exam activity</button>
   <button class="tab" data-v="students">Students</button>
   <button class="tab" data-v="results">Results</button>
   <button class="tab" data-v="lessons">Class heatmap</button>
   <button class="tab" data-v="questions">Hardest questions</button>
   <button class="tab" data-v="exams">Exams & assignments</button><button class="tab" data-v="bank">Question bank</button><button class="tab" data-v="groups">Groups</button><button class="tab" data-v="devices">Devices</button><button class="tab" data-v="audit">Audit log</button><button class="tab" data-v="notifications">Notifications</button>
-</div><div class="wrap admin-section-nav"><label for="adminSection">Go to section</label><select id="adminSection"><optgroup label="Teaching"><option value="overview">Overview</option><option value="quizAdmin">Daily quizzes</option><option value="revisionAdmin">Final revision</option><option value="reportsAdmin">Reports</option><option value="exams">Exams &amp; assignments</option><option value="bank">Question bank</option></optgroup><optgroup label="Students"><option value="students">Students</option><option value="results">Results</option><option value="lessons">Class heatmap</option><option value="questions">Hardest questions</option><option value="groups">Groups</option></optgroup><optgroup label="Settings"><option value="devices">Devices</option><option value="audit">Audit log</option><option value="notifications">Notifications</option></optgroup></select></div></nav>
+</div><div class="wrap admin-section-nav"><label for="adminSection">Go to section</label><select id="adminSection"><optgroup label="Teaching"><option value="overview">Overview</option><option value="quizAdmin">Daily quizzes</option><option value="revisionAdmin">Final revision</option><option value="reportsAdmin">Reports</option><option value="integrityAdmin">Exam activity</option><option value="exams">Exams &amp; assignments</option><option value="bank">Question bank</option></optgroup><optgroup label="Students"><option value="students">Students</option><option value="results">Results</option><option value="lessons">Class heatmap</option><option value="questions">Hardest questions</option><option value="groups">Groups</option></optgroup><optgroup label="Settings"><option value="devices">Devices</option><option value="audit">Audit log</option><option value="notifications">Notifications</option></optgroup></select></div></nav>
 
 <section id="vLogin" class="login">
   <h1 style="font-size:28px;margin-bottom:5px">Instructor sign in</h1>
@@ -230,7 +230,7 @@ async function notifications(){
 async function render(){
   syncAdminNavigation();
   $('view').innerHTML = `<p class="hint">Loading…</p>`;
-  try { await ({ overview, students, results, lessons, questions, exams, bank, groups, devices, audit, notifications, quizAdmin, revisionAdmin, reportsAdmin })[ST.view](); }
+  try { await ({ overview, students, results, lessons, questions, exams, bank, groups, devices, audit, notifications, quizAdmin, revisionAdmin, reportsAdmin, integrityAdmin })[ST.view](); }
   catch (e) { $('view').innerHTML = `<div class="msg bad">Could not load: ${esc(e.message||e)}</div>`; }
 }
 const trackFilter = (b) => ST.track ? b.eq('track_id', ST.track) : b;
@@ -616,5 +616,6 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 <script src="/instructor-practice.js"></script>
 <script src="/exam-builder.js"></script>
 <script src="/admin-controls.js"></script>
+<script src="/admin-exam-activity.js"></script>
 </body>
 </html>

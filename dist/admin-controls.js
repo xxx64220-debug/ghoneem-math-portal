@@ -11,7 +11,7 @@ function selectControlTrack(id){
 }
 function controlsTrackReady(title){
  const tracks=controlTracks();if(tracks.some(t=>t.id===ST.track))return true;
- $('view').innerHTML=`<div class="head"><h2>${esc(title)}</h2></div><section class="card controls-card"><h3>Choose a track</h3><p>${tracks.length?'Open a track to manage its '+(ST.view==='revisionAdmin'?'revision questions and visibility':ST.view==='quizAdmin'?'daily quiz questions and scores':'student reports')+'.':'No supported tracks are available for this account.'}</p><div class="control-actions" aria-label="Choose a track">${tracks.map(t=>`<button type="button" class="btn" data-control-track="${esc(t.id)}">${esc(t.name)}</button>`).join('')}</div></section>`;
+ $('view').innerHTML=`<div class="head"><h2>${esc(title)}</h2></div><section class="card controls-card"><h3>Choose a track</h3><p>${tracks.length?'Open a track to manage its '+(ST.view==='revisionAdmin'?'revision questions and visibility':ST.view==='quizAdmin'?'daily quiz questions and scores':ST.view==='integrityAdmin'?'exam activity':'student reports')+'.':'No supported tracks are available for this account.'}</p><div class="control-actions" aria-label="Choose a track">${tracks.map(t=>`<button type="button" class="btn" data-control-track="${esc(t.id)}">${esc(t.name)}</button>`).join('')}</div></section>`;
  return false;
 }
 async function revisionAdmin(){

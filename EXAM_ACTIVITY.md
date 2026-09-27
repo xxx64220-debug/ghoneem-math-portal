@@ -1,0 +1,13 @@
+# Exam activity review
+
+Enabled for student timed assigned quizzes and full exams. Lessons, revision, daily practice and instructor teaching mode are excluded. Students see a notice before working. The Exam activity admin section shows browser-reported page opens, departures and returns, with a detailed timeline and separate server receipt times. Teachers must consider permitted formula resources, app switches, phone locks and connectivity before drawing conclusions.
+
+This is a deterrent and a review aid, not secure proctoring. A client can suppress, forge or lose these events. No data and no reported departures are not proof of an honest attempt. A second device, camera, screenshot or external assistant cannot be reliably prevented by this website. No webcam, microphone, other-page URL, clipboard content or screen recording is collected. No automatic score penalty or forced submission is added.
+
+The existing portal already supports per-attempt shuffling, server deadlines, limited attempts with instructor-granted retakes, and review release policies. These remain configurable per exam; no existing exam settings or scores were bulk-changed. For a supervised assessment, use a timed assignment window and instructor release of answers. Formula links may create legitimate departures; built-in calculator iframe focus does not trigger visibility events.
+
+The client stores a bounded retry queue in tab-scoped session storage, sends at most 20 events per request and retries while open/online. Browser/app termination can prevent delivery. Timestamps use the existing server clock offset but are still untrusted client reports. The API accepts delayed delivery for up to 24 hours after completion/deadline and validates event time bounds. There is a limit of 1,000 stored events per attempt. Monitoring failures never hold up answer saves or submission.
+
+Apply `supabase/sql/exam_activity.sql`, deploy the `exam-activity` function with JWT verification and the shared HTTP authorization helper, and publish the matching web/dist files. The table and RPC are service-role-only, with RLS enabled and actor ownership/role/track/group checks. Events cascade-delete with their attempt/account. No answers or new device identifiers are returned by this API.
+
+Validation: `tests/exam_activity.sql` uses a disposable track and rolls back all writes. It checks ownership, role and group permissions, timestamp bounds, idempotency, unchanged attempt marks and lesson exclusion. `tests/exam_activity.test.cjs` checks visibility events, exclusion, duplicate suppression, retries and stopping. Existing client/control regressions also run. No real phone/background delivery claim is made: this browser signal is best effort by design.

@@ -210,6 +210,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 
 <!-- RUNNER -->
 <div id="vRun" class="hidden">
+<p id="examActivityNotice" class="dash-notice" hidden role="status" style="max-width:1120px;margin:16px auto;padding:16px"></p>
   <div class="runbar"><div class="wrap">
     <span class="clock" id="clock">--:--</span>
     <span class="saving" id="saving"></span>
@@ -496,7 +497,7 @@ async function startExam(examId, untimed=false) {
   $('satDesmos').classList.toggle('hidden',json.exam.track_id!=='sat');
   // Server time is authoritative; measure the offset once and count from it.
   ST.skew = new Date(json.attempt.server_now).getTime() - Date.now();
-  restorePending(); startClock(); renderPalette(); renderQ(); show('vRun');
+  restorePending(); startClock(); renderPalette(); renderQ(); show('vRun');if(typeof startExamActivity==='function')startExamActivity(json);
 }
 
 function startClock() {
@@ -614,7 +615,7 @@ async function submitExam(auto) {
   if(ok||(status===409&&json.result)){
    const current=DASH.exams.find(e=>e.id===ST.run.exam.id);
    const next=current?.exam_set_code?DASH.exams.find(e=>e.exam_set_code===current.exam_set_code&&e.module_number===current.module_number+1):null;
-   clearInterval(ST.timer);pending.clear();persistPending();paintReview(ok?json:json.result,next?.id||null);ST.run=null;
+   if(typeof stopExamActivity==='function')stopExamActivity();clearInterval(ST.timer);pending.clear();persistPending();paintReview(ok?json:json.result,next?.id||null);ST.run=null;
   }else{alert(friendly(json.error));}
  }catch{$('saving').textContent='Submission not confirmed. Reconnect and press Submit again.';}
  finally{submitting=false;$('finishBtn').disabled=false;$('finishBtn').textContent='Submit exam';}
@@ -752,5 +753,6 @@ window.addEventListener('scroll',updateTopButton,{passive:true});
 topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 </script>
 <script src="/portal-controls.js"></script>
+<script src="/exam-activity.js"></script>
 </body>
 </html>
