@@ -10,4 +10,10 @@ The isolated `portal_push_*` tables and the `portal-notifications` function belo
 
 Apply `supabase/sql/portal_notifications.sql`, privately provision one VAPID keypair and worker secret in `portal_push_config`, deploy the function, then apply `supabase/sql/portal_notification_schedule.sql`. Preserve the same signing key for existing subscriptions. Never package configuration rows into web assets.
 
-Validation: client and inline-script syntax; service-worker tests for safe taps, offline fallback, and untouched API calls; live encryption generation in the deployed runtime without sending; transactional database tests for access, no historical backlog, queue deduplication and claims; HTTP checks for unauthenticated and invalid-worker rejection; scheduled dispatcher check. Actual notification display must be confirmed on an opted-in phone using **Send me a test**.
+## Validation and rollout gate
+
+The repository's GitHub Actions run 36319653668 passed at commit `3242d1bbb46d745cd356d128d60558c0f80c637e`. Its JavaScript/Python job ran `tests/portal_notifications.test.cjs` (service-worker behavior), and its isolated PostgreSQL job ran `tests/portal_notifications.sql` (notification storage access, queue deduplication, claims, opt-out cleanup, and no historical backlog).
+
+That CI run does not deploy the Edge Function, apply or execute `portal_notification_schedule.sql`, test the deployed worker credential, or send a push to a phone. No production VAPID keypair, scheduler secret, active cron job, or real device receipt is established by the repository or this run. The `worker-check` action exercises Web Push request/encryption generation without sending; it does not establish provider acceptance or device delivery. Treat HTTP rejection checks, deployed worker checks, and scheduler verification as deployment checks unless their execution evidence is recorded separately.
+
+Final device check: on the opted-in phone, sign in to the portal, open **Notifications**, and tap **Send me a test**. Put the portal in the background and confirm the notification appears on that phone; tap it and confirm the portal opens or focuses without navigating an already open exam. GitHub cannot establish this device-side result.
