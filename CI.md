@@ -17,6 +17,9 @@ No Supabase URL, API key, service-role key, or production credential is read or
 required. The workflow does not deploy, publish, or connect to any external
 database.
 
+The baseline RLS and adversarial scripts run before the upgrade answer guard;
+the remaining regression scripts run after it is installed.
+
 ## Checks that remain conditional or outside CI
 
 - `tests/est_bank_2026.py` and `tests/est_bank_2026.sql` need

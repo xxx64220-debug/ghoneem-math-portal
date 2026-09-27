@@ -95,12 +95,12 @@ begin
             '[{"key":"A","text":"5"},{"key":"B","text":"10"}]') returning id into qc;
   insert into public.question_keys values (qc, '"A"', 'Ten percent of fifty is five.');
 
-  insert into public.exams(track_id, title, duration_seconds, question_ids, is_published)
-    values ('sat','TEST SAT exam', 3600, array[qa,qb], true) returning id into e_sat;
-  insert into public.exams(track_id, title, duration_seconds, question_ids, is_published)
-    values ('est','TEST EST exam', 3600, array[qc],    true) returning id into e_est;
-  insert into public.exams(track_id, title, duration_seconds, question_ids, is_published)
-    values ('sat','TEST SAT short', 60, array[qa],     true) returning id into e_short;
+  insert into public.exams(track_id, title, duration_seconds, question_ids, is_published, assessment_type)
+    values ('sat','TEST SAT exam', 3600, array[qa,qb], true, 'full_exam') returning id into e_sat;
+  insert into public.exams(track_id, title, duration_seconds, question_ids, is_published, assessment_type)
+    values ('est','TEST EST exam', 3600, array[qc],    true, 'full_exam') returning id into e_est;
+  insert into public.exams(track_id, title, duration_seconds, question_ids, is_published, assessment_type)
+    values ('sat','TEST SAT short', 60, array[qa],     true, 'lesson_exam') returning id into e_short;
 
   insert into public.assignments(exam_id, group_id) values
     (e_sat, g_sat), (e_est, g_est), (e_short, g_sat);
@@ -248,6 +248,7 @@ do $$
 declare u uuid := public.tid('s15'); e uuid; a public.attempts%rowtype; g public.attempts%rowtype;
 begin
   e := public.new_exam('sat', 'TEST full length', 2, 60, null, true, true, 'skip', true);
+  update public.exams set scoring_map='{"0":200,"1":500,"2":800}'::jsonb where id=e;
   insert into public.assignments(exam_id, user_id) values (e, u);
   a := public.start_attempt(e, u);
   insert into public.attempt_answers(attempt_id, question_id, response)
