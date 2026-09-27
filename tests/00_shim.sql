@@ -12,6 +12,13 @@ create table if not exists auth.users (
   email varchar(255) unique
 );
 
+-- Portal session validation uses this hosted Auth table; keep only the fields
+-- read by the SQL helper and create no production sessions in CI.
+create table if not exists auth.sessions (
+  id uuid primary key,
+  user_id uuid not null references auth.users(id) on delete cascade
+);
+
 create or replace function auth.uid() returns uuid
 language sql stable as $$
   select nullif(current_setting('request.jwt.claims', true)::jsonb ->> 'sub','')::uuid;
