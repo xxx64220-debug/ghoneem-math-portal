@@ -143,7 +143,6 @@ jobs:
             supabase/sql/repeatable_untimed_lessons.sql; do
             psql -v ON_ERROR_STOP=1 -f "$support_sql"
           done
-          psql -v ON_ERROR_STOP=1 -c "drop view if exists public.roster"
           for support_sql in supabase/sql/portal_access.sql supabase/sql/portal_scope.sql supabase/sql/portal_notifications.sql; do
             psql -v ON_ERROR_STOP=1 -f "$support_sql"
           done
