@@ -1,0 +1,12 @@
+[
+  {
+    "id": "3fcffd28-79e2-5c71-a16e-7feed6cea12a",
+    "source_code": "EST2-L2-DEC2020-Q43",
+    "reason": "Pure-imaginary classification depends on whether zero is excluded; request an explicit nonzero condition."
+  },
+  {
+    "id": "a09e0903-8ebd-52f0-b370-f1024d0a7960",
+    "source_code": "EST2-L2-DEC2020-Q27",
+    "reason": "The parabola axis is not specified; the solution assumes a vertical axis."
+  }
+]

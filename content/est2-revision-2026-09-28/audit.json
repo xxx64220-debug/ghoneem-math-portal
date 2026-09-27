@@ -1,0 +1,137 @@
+{
+  "questions": 416,
+  "ideas": 289,
+  "sources": {
+    "EST II - Math Level 1 - December 2020.pdf": 44,
+    "EST II - Math Level 1 - June 2021.pdf": 47,
+    "EST II - Math Level 2 - June 2021.pdf": 44,
+    "EST 2 Math Level 1 - Test Sample 4.pdf": 48,
+    "EST II - Math Level 1 - October 2021.pdf": 47,
+    "EST II - Math Level 2 - May 2021.pdf": 47,
+    "EST II - Math Level 1 - May 2021.pdf": 46,
+    "EST II - Math Level 2 - December 2020.pdf": 47,
+    "EST II - Math Level 2 - October 2020.pdf": 46
+  },
+  "levels": {
+    "easy": 226,
+    "hard": 108,
+    "medium": 82
+  },
+  "collections": {
+    "must_know": 174,
+    "repeated": 111,
+    "unique": 57
+  },
+  "lessons": {
+    "Absolute value": {
+      "questions": 10,
+      "ideas": 6
+    },
+    "Circles": {
+      "questions": 19,
+      "ideas": 16
+    },
+    "Complex numbers": {
+      "questions": 10,
+      "ideas": 4
+    },
+    "Conic sections": {
+      "questions": 6,
+      "ideas": 6
+    },
+    "Coordinate geometry and lines": {
+      "questions": 27,
+      "ideas": 16
+    },
+    "Counting methods": {
+      "questions": 8,
+      "ideas": 8
+    },
+    "Exponential models": {
+      "questions": 12,
+      "ideas": 9
+    },
+    "Exponents and radicals": {
+      "questions": 18,
+      "ideas": 14
+    },
+    "Functions and transformations": {
+      "questions": 28,
+      "ideas": 20
+    },
+    "Graphs and models": {
+      "questions": 4,
+      "ideas": 4
+    },
+    "Inequalities": {
+      "questions": 7,
+      "ideas": 6
+    },
+    "Limits and continuity": {
+      "questions": 7,
+      "ideas": 7
+    },
+    "Linear equations and systems": {
+      "questions": 12,
+      "ideas": 7
+    },
+    "Logarithms": {
+      "questions": 9,
+      "ideas": 5
+    },
+    "Matrices": {
+      "questions": 7,
+      "ideas": 6
+    },
+    "Number properties": {
+      "questions": 2,
+      "ideas": 2
+    },
+    "Plane geometry and angles": {
+      "questions": 32,
+      "ideas": 22
+    },
+    "Probability": {
+      "questions": 13,
+      "ideas": 6
+    },
+    "Quadratics and polynomials": {
+      "questions": 47,
+      "ideas": 37
+    },
+    "Rational functions and equations": {
+      "questions": 17,
+      "ideas": 9
+    },
+    "Ratios, percentages and rates": {
+      "questions": 12,
+      "ideas": 12
+    },
+    "Sequences and series": {
+      "questions": 10,
+      "ideas": 4
+    },
+    "Statistics": {
+      "questions": 19,
+      "ideas": 13
+    },
+    "Three-dimensional geometry": {
+      "questions": 19,
+      "ideas": 11
+    },
+    "Triangles and trigonometry": {
+      "questions": 30,
+      "ideas": 23
+    },
+    "Trigonometric functions and identities": {
+      "questions": 29,
+      "ideas": 14
+    },
+    "Vectors": {
+      "questions": 2,
+      "ideas": 2
+    }
+  },
+  "source_images_verified": 418,
+  "excluded": 2
+}

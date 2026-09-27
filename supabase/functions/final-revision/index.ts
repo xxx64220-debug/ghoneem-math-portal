@@ -5,7 +5,7 @@ Deno.serve(serve(async (req) => {
   const me = await requireUser(req);
   if (me.role !== "student") throw new ApiError("student_account_required", 403);
   const body = await req.json().catch(() => null);
-  if (!body || !["sat", "est"].includes(body.track)) throw new ApiError("invalid_track", 400);
+  if (!body || !["sat", "est", "est2"].includes(body.track)) throw new ApiError("invalid_track", 400);
   if (!["catalogue", "start", "answer", "state"].includes(body.action)) throw new ApiError("invalid_action", 400);
   const { data, error } = await admin().rpc("final_revision", {
     p_user: me.id, p_track: body.track, p_action: body.action,
