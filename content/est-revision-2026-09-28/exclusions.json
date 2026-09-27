@@ -1,0 +1,61 @@
+{
+  "90914900-05cd-51b0-b0ac-7ba63518b645": {
+    "reason": "Fourth-root identity needs its real-domain condition clarified at x=0.",
+    "source": "EST_I_Math_Questions_by_Topic-2.pdf",
+    "reference": "AAF 060"
+  },
+  "97cd2607-7c66-55be-8adc-611878a85b80": {
+    "reason": "Integers a,b,c are not required to be in lowest terms, so bc is not unique.",
+    "source": "EST_I_Math_Questions_by_Topic-2.pdf",
+    "reference": "AAF 068"
+  },
+  "67f79e3d-29aa-538f-a4da-f9f6fc1edbc7": {
+    "reason": "Selection of cards versus assignment to named friends is ambiguous.",
+    "source": "EST_I_Math_Questions_by_Topic-2.pdf",
+    "reference": "DAP 008"
+  },
+  "87cebb7f-6196-5b45-a190-0d42204b471c": {
+    "reason": "Annual change and total two-year percentage change are not distinguished.",
+    "source": "EST_I_Math_Questions_by_Topic-2.pdf",
+    "reference": "DAP 037"
+  },
+  "756766cb-80b1-5643-91a9-dee54bc64f4b": {
+    "reason": "The intended distribution-shape claim is not determined uniquely by this box plot.",
+    "source": "EST_I_Math_Questions_by_Topic-2.pdf",
+    "reference": "DAP 073"
+  },
+  "2954a4b9-033f-5827-94e8-c447193bf3af": {
+    "reason": "Duplicate of GTC 012; retain the clearer midpoint solution.",
+    "source": "EST_I_Math_Questions_by_Topic-2.pdf",
+    "reference": "GT 007"
+  },
+  "fdc2bf1d-4925-5626-a6c9-766d369f56d5": {
+    "reason": "Duplicate of AAF 030 with reordered choices; counted only once.",
+    "source": "Math_Question_Bank_Ghoneem_Clean.pdf",
+    "reference": "PSD 033"
+  },
+  "be507dd8-d608-59a3-970e-10e05284131b": {
+    "reason": "Printed Honda revenue is malformed and no offered answer matches the literal value.",
+    "source": "EST I Math March 2026",
+    "reference": 4
+  },
+  "689f1353-4282-5515-9773-bb6259838a84": {
+    "reason": "Multiplying three success probabilities requires an independence assumption absent from the prompt.",
+    "source": "EST I Math March 2026",
+    "reference": 6
+  },
+  "25341cd9-57d3-529c-bd83-36eae2d1f3a7": {
+    "reason": "Two answer choices are valid; omitted from single-answer revision.",
+    "source": "EST I Math March 2026",
+    "reference": 23
+  },
+  "d734bf83-7cbd-5bd2-b857-db3656c5018d": {
+    "reason": "Printed points give slope -11.5, absent from the answer choices.",
+    "source": "EST I Math March 2026",
+    "reference": 35
+  },
+  "b74a7035-6a5d-5e36-b526-1ea412b9a92e": {
+    "reference": "HOA 074",
+    "reason": "Exact problem duplicate of AAF 009; counted only once."
+  }
+}

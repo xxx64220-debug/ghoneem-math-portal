@@ -1,0 +1,404 @@
+{
+  "questions": 530,
+  "previous_est_questions": 254,
+  "added": 276,
+  "ideas": 239,
+  "lessons": [
+    {
+      "lesson": "Absolute value",
+      "questions": 18,
+      "ideas": 10,
+      "difficulty": {
+        "easy": 6,
+        "hard": 4,
+        "medium": 8
+      }
+    },
+    {
+      "lesson": "Angles, triangles and similarity",
+      "questions": 13,
+      "ideas": 7,
+      "difficulty": {
+        "easy": 3,
+        "medium": 9,
+        "hard": 1
+      }
+    },
+    {
+      "lesson": "Area and volume",
+      "questions": 9,
+      "ideas": 8,
+      "difficulty": {
+        "hard": 6,
+        "easy": 2,
+        "medium": 1
+      }
+    },
+    {
+      "lesson": "Circles",
+      "questions": 12,
+      "ideas": 11,
+      "difficulty": {
+        "hard": 4,
+        "medium": 7,
+        "easy": 1
+      }
+    },
+    {
+      "lesson": "Complex numbers",
+      "questions": 7,
+      "ideas": 2,
+      "difficulty": {
+        "medium": 5,
+        "easy": 1,
+        "hard": 1
+      }
+    },
+    {
+      "lesson": "Coordinate geometry",
+      "questions": 7,
+      "ideas": 5,
+      "difficulty": {
+        "easy": 5,
+        "medium": 2
+      }
+    },
+    {
+      "lesson": "Counting methods",
+      "questions": 6,
+      "ideas": 4,
+      "difficulty": {
+        "medium": 5,
+        "easy": 1
+      }
+    },
+    {
+      "lesson": "Exponential models",
+      "questions": 8,
+      "ideas": 6,
+      "difficulty": {
+        "easy": 2,
+        "medium": 5,
+        "hard": 1
+      }
+    },
+    {
+      "lesson": "Exponents and radicals",
+      "questions": 21,
+      "ideas": 11,
+      "difficulty": {
+        "medium": 15,
+        "easy": 3,
+        "hard": 3
+      }
+    },
+    {
+      "lesson": "Expressions and number properties",
+      "questions": 4,
+      "ideas": 2,
+      "difficulty": {
+        "hard": 3,
+        "medium": 1
+      }
+    },
+    {
+      "lesson": "Function composition and inverses",
+      "questions": 16,
+      "ideas": 4,
+      "difficulty": {
+        "hard": 2,
+        "medium": 13,
+        "easy": 1
+      }
+    },
+    {
+      "lesson": "Functions and graphs",
+      "questions": 10,
+      "ideas": 5,
+      "difficulty": {
+        "easy": 6,
+        "medium": 3,
+        "hard": 1
+      }
+    },
+    {
+      "lesson": "Graphs and data interpretation",
+      "questions": 14,
+      "ideas": 2,
+      "difficulty": {
+        "easy": 14
+      }
+    },
+    {
+      "lesson": "Linear equations",
+      "questions": 33,
+      "ideas": 8,
+      "difficulty": {
+        "easy": 21,
+        "medium": 12
+      }
+    },
+    {
+      "lesson": "Linear inequalities",
+      "questions": 25,
+      "ideas": 10,
+      "difficulty": {
+        "easy": 7,
+        "medium": 14,
+        "hard": 4
+      }
+    },
+    {
+      "lesson": "Linear systems",
+      "questions": 24,
+      "ideas": 9,
+      "difficulty": {
+        "medium": 18,
+        "easy": 2,
+        "hard": 4
+      }
+    },
+    {
+      "lesson": "Lines and linear models",
+      "questions": 53,
+      "ideas": 18,
+      "difficulty": {
+        "easy": 14,
+        "hard": 6,
+        "medium": 33
+      }
+    },
+    {
+      "lesson": "Logarithms",
+      "questions": 1,
+      "ideas": 1,
+      "difficulty": {
+        "hard": 1
+      }
+    },
+    {
+      "lesson": "Nonlinear systems",
+      "questions": 5,
+      "ideas": 3,
+      "difficulty": {
+        "medium": 4,
+        "hard": 1
+      }
+    },
+    {
+      "lesson": "Percentages",
+      "questions": 36,
+      "ideas": 11,
+      "difficulty": {
+        "medium": 21,
+        "hard": 3,
+        "easy": 12
+      }
+    },
+    {
+      "lesson": "Polynomials",
+      "questions": 30,
+      "ideas": 15,
+      "difficulty": {
+        "medium": 22,
+        "easy": 3,
+        "hard": 5
+      }
+    },
+    {
+      "lesson": "Probability",
+      "questions": 19,
+      "ideas": 8,
+      "difficulty": {
+        "easy": 7,
+        "medium": 8,
+        "hard": 4
+      }
+    },
+    {
+      "lesson": "Quadratic inequalities",
+      "questions": 3,
+      "ideas": 3,
+      "difficulty": {
+        "medium": 2,
+        "hard": 1
+      }
+    },
+    {
+      "lesson": "Quadratics",
+      "questions": 43,
+      "ideas": 22,
+      "difficulty": {
+        "easy": 16,
+        "medium": 20,
+        "hard": 7
+      }
+    },
+    {
+      "lesson": "Rational expressions and equations",
+      "questions": 18,
+      "ideas": 10,
+      "difficulty": {
+        "medium": 10,
+        "hard": 5,
+        "easy": 3
+      }
+    },
+    {
+      "lesson": "Ratios, rates and units",
+      "questions": 29,
+      "ideas": 11,
+      "difficulty": {
+        "easy": 20,
+        "hard": 3,
+        "medium": 6
+      }
+    },
+    {
+      "lesson": "Rearranging formulas",
+      "questions": 6,
+      "ideas": 3,
+      "difficulty": {
+        "medium": 5,
+        "hard": 1
+      }
+    },
+    {
+      "lesson": "Right triangles and trigonometry",
+      "questions": 15,
+      "ideas": 7,
+      "difficulty": {
+        "easy": 7,
+        "hard": 5,
+        "medium": 3
+      }
+    },
+    {
+      "lesson": "Scatterplots and models",
+      "questions": 7,
+      "ideas": 5,
+      "difficulty": {
+        "medium": 6,
+        "easy": 1
+      }
+    },
+    {
+      "lesson": "Sequences",
+      "questions": 2,
+      "ideas": 2,
+      "difficulty": {
+        "medium": 1,
+        "easy": 1
+      }
+    },
+    {
+      "lesson": "Statistical inference",
+      "questions": 2,
+      "ideas": 1,
+      "difficulty": {
+        "medium": 2
+      }
+    },
+    {
+      "lesson": "Statistics",
+      "questions": 25,
+      "ideas": 11,
+      "difficulty": {
+        "easy": 9,
+        "hard": 2,
+        "medium": 14
+      }
+    },
+    {
+      "lesson": "Variation",
+      "questions": 9,
+      "ideas": 4,
+      "difficulty": {
+        "medium": 5,
+        "easy": 4
+      }
+    }
+  ],
+  "sources": {
+    "EST_I_Math_Questions_by_Topic-2.pdf": 235,
+    "EST Math — May 2026": 50,
+    "EST I Math — December 2024": 46,
+    "EST I Math March 2026": 46,
+    "Math_Question_Bank_Ghoneem_Clean.pdf": 153
+  },
+  "difficulty": {
+    "medium": 280,
+    "easy": 172,
+    "hard": 78
+  },
+  "collections": {
+    "must_know": 321,
+    "repeated": 249,
+    "unique": 51
+  },
+  "priority": 390,
+  "excluded": 12,
+  "sparse_lessons": [
+    {
+      "lesson": "Complex numbers",
+      "questions": 7,
+      "ideas": 2,
+      "difficulty": {
+        "medium": 5,
+        "easy": 1,
+        "hard": 1
+      }
+    },
+    {
+      "lesson": "Expressions and number properties",
+      "questions": 4,
+      "ideas": 2,
+      "difficulty": {
+        "hard": 3,
+        "medium": 1
+      }
+    },
+    {
+      "lesson": "Graphs and data interpretation",
+      "questions": 14,
+      "ideas": 2,
+      "difficulty": {
+        "easy": 14
+      }
+    },
+    {
+      "lesson": "Logarithms",
+      "questions": 1,
+      "ideas": 1,
+      "difficulty": {
+        "hard": 1
+      }
+    },
+    {
+      "lesson": "Quadratic inequalities",
+      "questions": 3,
+      "ideas": 3,
+      "difficulty": {
+        "medium": 2,
+        "hard": 1
+      }
+    },
+    {
+      "lesson": "Sequences",
+      "questions": 2,
+      "ideas": 2,
+      "difficulty": {
+        "medium": 1,
+        "easy": 1
+      }
+    },
+    {
+      "lesson": "Statistical inference",
+      "questions": 2,
+      "ideas": 1,
+      "difficulty": {
+        "medium": 2
+      }
+    }
+  ]
+}

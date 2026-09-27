@@ -1,0 +1,14 @@
+[
+  {
+    "id": "234fb49d-42d5-58b8-a248-7116d39e0b91",
+    "before": "5190012b4128a242bf297c9f76b00b9c",
+    "after": "95170157f3cd7192e97c586264f4e97e",
+    "explanation": "From −1/(2x − 1) = √3, we get 2x − 1 = −1/√3. Multiplying by 3 gives 6x = 3 − 3/√3 = 3 − √3, which is choice A."
+  },
+  {
+    "id": "0cbfc70e-50ea-5fdc-9a2d-f8119fc9b5cb",
+    "before": "6177a61bcdf6ce8902c645f05d8955ca",
+    "after": "490dea3ce043e01e036099a36fe849e7",
+    "stem": "Which of the inequalities below represents the shaded region in the figure?"
+  }
+]

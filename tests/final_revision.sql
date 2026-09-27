@@ -8,7 +8,7 @@ begin
  select id into u2 from public.profiles where role='student' and status='active' and public.is_enrolled(id,'est') and id<>u order by id limit 1;
  if u is null or u2 is null then raise exception 'two_eligible_test_students_required'; end if;
  d:=public.final_revision(u,'est','catalogue');
- assert jsonb_array_length(d->'items')=378,'catalogue count';
+ assert jsonb_array_length(d->'items')=530,'catalogue count';
  assert not exists(select 1 from jsonb_array_elements(d->'items') q where q ?| array['correct','answer','explanation','stem']),'catalogue key leak';
  s:=public.final_revision(u,'est','start','{"count":20,"scope":"both","source":"both","difficulty":"mixed"}');
  sid:=(s->>'id')::uuid;
@@ -17,7 +17,7 @@ begin
  assert (select count(*) from jsonb_array_elements(s->'questions') q where q->>'difficulty'='easy')=6,'easy quota';
  assert (select count(*) from jsonb_array_elements(s->'questions') q where q->>'difficulty'='medium')=8,'medium quota';
  assert (select count(*) from jsonb_array_elements(s->'questions') q where q->>'difficulty'='hard')=6,'hard quota';
- assert (select count(distinct q->>'source') from jsonb_array_elements(s->'questions') q)=2,'mixed sources';
+ assert (select count(distinct q->>'source') from jsonb_array_elements(s->'questions') q)=1,'EST-only sources';
  assert not exists(select 1 from jsonb_array_elements(s->'questions') q where q ?| array['correct','explanation'] or q->'feedback'<>'null'::jsonb),'preanswer key leak';
  begin perform public.final_revision(u2,'est','state',jsonb_build_object('session',sid));raise exception 'owner check missing';
  exception when others then if sqlerrm<>'revision_session_not_found' then raise;end if;end;
@@ -44,7 +44,7 @@ begin
  s:=public.final_revision(u,'est','start',jsonb_build_object('count',20,'retry',sid));
  assert jsonb_array_length(s->'questions')=1 and s->'questions'->0->>'id'=firstq->>'id','retry does not contain exact mistake';
  s:=public.final_revision(u,'est','start','{"count":10,"scope":"sat","source":"sat","difficulty":"easy","lesson":"Area and volume"}');
- assert not exists(select 1 from jsonb_array_elements(s->'questions') q where q->>'source'<>'sat' or q->>'difficulty'<>'easy' or q->>'lesson'<>'Area and volume'),'filters';
+ assert not exists(select 1 from jsonb_array_elements(s->'questions') q where q->>'source'<>'est' or q->>'difficulty'<>'easy' or q->>'lesson'<>'Area and volume'),'filters';
  assert public.answer_matches('grid_in','"0.5"','"1/2"'),'fraction equivalence';
  assert public.answer_matches('grid_in','"16"','["10","16"]'),'multiple valid roots';
  assert not has_function_privilege('authenticated','public.final_revision(uuid,text,text,jsonb)','execute'),'public RPC';

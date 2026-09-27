@@ -1,4 +1,4 @@
--- Requires the reviewed 378-question release. Leaves no student progress behind.
+-- Requires the reviewed 530-question release. Leaves no student progress behind.
 begin;
 set local role service_role;
 do $$
@@ -8,9 +8,9 @@ begin
  assert u is not null,'eligible student required';
  d:=public.final_revision(u,'est','catalogue');
  assert not exists(select 1 from jsonb_array_elements(d->'items') x where x->'focus' ? 'takeaway'),'catalogue hint leak';
- assert (select count(*) from jsonb_array_elements(d->'items') x where x#>'{focus,collections}' ? 'must_know')=88,'must know count';
- assert (select count(*) from jsonb_array_elements(d->'items') x where x#>'{focus,collections}' ? 'repeated')=110,'repeated count';
- assert (select count(*) from jsonb_array_elements(d->'items') x where x#>'{focus,collections}' ? 'unique')=32,'unique count';
+ assert (select count(*) from jsonb_array_elements(d->'items') x where x#>'{focus,collections}' ? 'must_know')=321,'must know count';
+ assert (select count(*) from jsonb_array_elements(d->'items') x where x#>'{focus,collections}' ? 'repeated')=249,'repeated count';
+ assert (select count(*) from jsonb_array_elements(d->'items') x where x#>'{focus,collections}' ? 'unique')=51,'unique count';
  foreach c in array array['priority','must_know','repeated','unique'] loop
   s:=public.final_revision(u,'est','start',jsonb_build_object('collection',c,'count',20,'scope','both'));
   assert s->>'collection'=c,'collection not persisted';
@@ -34,7 +34,7 @@ begin
  s:=public.final_revision(u,'est','start',jsonb_build_object('collection','repeated','count',20,'scope','both','lesson',lesson_));
  assert jsonb_array_length(s->'questions')=1,'focused lesson not capped';
  s:=public.final_revision(u,'est','start','{"collection":"priority","scope":"sat","source":"sat","difficulty":"easy"}');
- assert not exists(select 1 from jsonb_array_elements(s->'questions') x where x->>'source'<>'sat' or x->>'difficulty'<>'easy' or not (x->'programmes' ? 'sat')),'focused filters';
+ assert not exists(select 1 from jsonb_array_elements(s->'questions') x where x->>'source'<>'est' or x->>'difficulty'<>'easy' or not (x->'programmes' ? 'est')),'focused filters';
  begin perform public.final_revision(u,'est','start','{"collection":"invalid"}');raise exception 'invalid collection accepted';
  exception when others then if sqlerrm<>'invalid_revision_filter' then raise;end if;end;
 end $$;
