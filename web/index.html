@@ -158,6 +158,8 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 @media(max-width:900px){.revision-filters,.revision-lessons{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.revision-filters,.revision-lessons{grid-template-columns:1fr}.revision-start .btn,.revision-start .btn-ghost{width:100%}.revision-question .stem{font-size:16px}}
 .revision-filters.est-only{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:560px){.revision-filters.est-only{grid-template-columns:1fr}}
 .revision-collections{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 16px}.revision-collections .selected{background:var(--navy);color:white;border-color:var(--navy)}.revision-collections button{font-size:14px;min-height:44px}
+
+.formula-panel .formula-layout{display:grid;grid-template-columns:minmax(190px,260px) minmax(0,1fr);gap:22px;align-items:start;margin:22px 0}.formula-lesson-list{display:grid;gap:7px;max-height:70vh;overflow:auto;position:sticky;top:14px}.formula-lesson-link{width:100%;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--navy);font:inherit;line-height:1.4}.formula-lesson-link:hover,.formula-lesson-link:focus-visible{border-color:var(--gold);outline:2px solid #c9a22740}.formula-lesson-link.selected{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:600}.formula-lesson{min-width:0;border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:10px;padding:22px;line-height:1.75}.formula-lesson h3{font:600 23px Fraunces,Georgia,serif;color:var(--navy);margin:0 0 12px}.formula-lesson h4{font-size:16px;color:var(--navy);margin:22px 0 8px}.formula-list,.formula-course-notes ul{padding-left:22px}.formula-list li,.formula-course-notes li{margin:0 0 12px;line-height:1.75}.formula-diagram{border:1px solid var(--line);border-radius:8px;background:#fbfcfd;padding:12px;margin:12px 0 20px;overflow-x:auto}.formula-diagram svg{display:block;width:min(100%,560px);height:auto;margin:auto}.formula-diagram text{font:14px Arial,sans-serif;fill:#334155}.formula-course-notes{padding:14px 16px;border-left:4px solid var(--gold);background:#fff9e7;margin:16px 0;line-height:1.7}.formula-course-notes summary{cursor:pointer;font-weight:600;color:var(--navy)}.formula-provenance{margin-top:22px;border-top:1px solid var(--line);padding-top:12px}.formula-panel .review-menu{display:flex;gap:8px;flex-wrap:wrap}@media(max-width:760px){.formula-panel .formula-layout{grid-template-columns:1fr}.formula-lesson-list{position:static;max-height:260px;grid-template-columns:repeat(2,minmax(0,1fr))}.formula-lesson{padding:17px}}@media(max-width:480px){.formula-lesson-list{grid-template-columns:1fr}.formula-lesson{padding:14px}}
 </style>
 <link rel="stylesheet" href="/daily-challenge.css">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -238,6 +240,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js"></script>
 <script src="/daily-challenge.js"></script>
+<script src="/revision-formulas.js"></script>
 <script src="/final-revision.js"></script>
 <script>
 /* ============================ CONFIG ============================ */
