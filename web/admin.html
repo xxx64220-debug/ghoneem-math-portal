@@ -83,6 +83,7 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 @media(max-width:640px){header.top .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px}.brand{grid-column:1/-1;max-width:none;font-size:18px}.brand span{font-size:12px;letter-spacing:.08em}.sp{display:none}#trackSel{min-width:0!important;width:100%!important}#outBtn{min-height:44px}.tab{padding:12px;font-size:14px;min-height:48px}nav.tabs .wrap{padding-left:8px;padding-right:8px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{padding:16px 12px}.stat .k{font-size:12px}.stat .v{font-size:28px}.head h2{font-size:23px}.btn,.btn-sm{min-height:44px}.card,dialog{padding:18px}.table-wrap th,.table-wrap td{padding:12px;line-height:1.6}.table-wrap{border-radius:9px}.teaching-options button{padding:14px}.teaching .actions button{flex:1}.grid .field{min-width:0}}
 @media(max-width:640px){.control-bar{display:grid;grid-template-columns:minmax(0,1fr);padding:12px}.control-bar .field,.control-bar .field.search{min-width:0;width:100%}.control-bar>.btn{width:100%}.head{align-items:flex-start}.head>.btn,.head>.btn-sm{flex:1 1 150px}.question-select{max-height:45vh}dialog{width:calc(100vw - 16px);max-width:none;padding:16px}.back-to-top{right:12px;bottom:12px}.actions>.btn,.actions>.btn-sm{flex:1 1 130px}}
 </style>
+<link rel="stylesheet" href="/exam-builder.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
@@ -519,23 +520,6 @@ async function exams(){
  };
  $('examTrack').onchange=paint;$('examSearch').oninput=paint;$('examType').onchange=paint;$('examStatus').onchange=paint;$('examSort').onchange=paint;paint();
 }
-async function editExam(x={},initialQuestionIds=[]){
- const questions=await getRows('questions');
- dialog(x.id?'Edit exam':'Create exam',select('et','Track',tracks(),x.track_id||ST.track)+field('etitle','Exam title',x.title)+field('emins','Duration in minutes',x.duration_seconds?x.duration_seconds/60:25,'number')+select('ereview','Review policy',[['full_review','Full answers after submission or window close'],['score_only','Score only'],['instructor_release','Release answers manually']],x.review_policy)+select('etype','Assessment category',[['lesson_exam','Lesson exam'],['quiz','Quiz'],['full_exam','Full exam']],x.assessment_type||(x.is_full_length?'full_exam':'lesson_exam'))+area('emap','Exact raw-to-scaled conversion (optional JSON)',x.scoring_map?JSON.stringify(x.scoring_map):'')+`<div class="field"><label for="efilter">Find questions</label><input id="efilter" placeholder="Topic or question text"></div><p id="eselected" class="hint"></p><div class="question-select" id="eqs"></div>`,async()=>{
- await mutation('exam.save',{id:x.id,track_id:val('et'),title:val('etitle'),duration_seconds:Math.round(Number(val('emins'))*60),question_ids:[...selected],is_full_length:val('etype')==='full_exam',assessment_type:val('etype'),scoring_map:jval('emap'),review_policy:val('ereview'),is_published:x.is_published||false});
- });
- let selected=new Set((x.question_ids&&x.question_ids.length)?x.question_ids:initialQuestionIds);
- const paint=()=>{
-  const needle=val('efilter').toLowerCase();
-  const matches=questions.filter(q=>q.track_id===val('et')&&(q.topic+' '+q.stem).toLowerCase().includes(needle));
-  const visible=[...matches].sort((a,b)=>Number(selected.has(b.id))-Number(selected.has(a.id))).slice(0,250);
-  $('eqs').innerHTML=visible.map(q=>`<label class="check"><input type="checkbox" data-qid="${q.id}" ${selected.has(q.id)?'checked':''}><span><b>${esc(q.topic)}</b> · ${esc(q.stem.slice(0,180))}</span></label>`).join('');
-  const note=matches.length>visible.length?` · showing ${visible.length} of ${matches.length}; search to narrow`:'';
-  $('eselected').textContent=selected.size+' questions selected'+note;
-  $('eqs').querySelectorAll('input').forEach(b=>b.onchange=()=>{b.checked?selected.add(b.dataset.qid):selected.delete(b.dataset.qid);paint();});
- };
- $('et').onchange=()=>{selected.clear();paint();};$('efilter').oninput=paint;if(x.id)$('et').disabled=true;paint();
-}
 async function assignExam(ex,assignments){
  const [roster,gs]=await Promise.all([getRows('roster'),getRows('groups')]);
  const options=[...gs.filter(g=>g.track_id===ex.track_id).map(g=>['g:'+g.id,'Group: '+g.name]),...roster.filter(r=>r.role==='student'&&r.tracks.split(', ').includes(ex.track_id)).map(r=>['u:'+r.user_id,'Student: '+(r.full_name||r.email)])];
@@ -625,5 +609,6 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 </script>
 <script src="/est-source-review.js"></script>
 <script src="/instructor-practice.js"></script>
+<script src="/exam-builder.js"></script>
 </body>
 </html>

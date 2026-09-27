@@ -1,0 +1,182 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  javascript-and-python:
+    name: JavaScript and Python checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run built-in JavaScript regression tests
+        run: |
+          node --test \
+            tests/admin_question_reports.test.cjs \
+            tests/client_state.test.cjs \
+            tests/cors.test.cjs \
+            tests/daily_streak.test.cjs \
+            tests/exam_builder.test.cjs \
+            tests/portal_notifications.test.cjs \
+            tests/practice_figures.test.cjs
+
+      - name: Run source archive UI regression when its checked-in inputs exist
+        run: |
+          if [ -f content/est-september-2026/review-archive.json ] && [ -d dist ]; then
+            node tests/est_source_review.test.cjs
+          else
+            echo "SKIP: tests/est_source_review.test.cjs needs content/est-september-2026/review-archive.json and dist/."
+          fi
+
+      - name: Compile Python sources
+        run: |
+          python -m compileall -q scripts tests content-releases
+          if [ -d content ]; then python -m compileall -q content; fi
+
+      - name: Run EST release arithmetic and content checks when source data exists
+        run: |
+          if [ -f content/est-banks-2026/reviewed-bank.json ]; then
+            python tests/est_bank_2026.py
+          else
+            echo "SKIP: tests/est_bank_2026.py needs content/est-banks-2026/reviewed-bank.json."
+          fi
+          if [ -f content/est-march-2026/worked-answer-key.json ]; then
+            python tests/est_march_key.py
+          else
+            echo "SKIP: tests/est_march_key.py needs content/est-march-2026/worked-answer-key.json."
+          fi
+          if [ -f content/est-september-2026/release-bank.json ] && [ -d dist ]; then
+            python tests/est_september_2026.py
+          else
+            echo "SKIP: tests/est_september_2026.py needs content/est-september-2026/release-bank.json and dist/."
+          fi
+
+  postgres:
+    name: Isolated PostgreSQL checks
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: portal_ci
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: portal_ci_only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d portal_ci"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    env:
+      PGHOST: 127.0.0.1
+      PGPORT: 5432
+      PGDATABASE: portal_ci
+      PGUSER: postgres
+      PGPASSWORD: portal_ci_only
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build a disposable local schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          psql -v ON_ERROR_STOP=1 -f tests/00_shim.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/000_preflight.sql
+          for migration in \
+            supabase/migrations/001_schema.sql \
+            supabase/migrations/002_functions.sql \
+            supabase/migrations/003_policies.sql \
+            supabase/migrations/004_seed.sql \
+            supabase/migrations/005_function_hardening.sql \
+            supabase/migrations/006a_bank_staging.sql \
+            supabase/migrations/006b_bank_load.sql \
+            supabase/migrations/006_import_legacy_sat.sql \
+            supabase/migrations/007_exam_builder.sql \
+            supabase/migrations/008_scoring_and_reporting.sql \
+            supabase/migrations/009_deployment_hardening.sql \
+            supabase/migrations/011_sat_partitions_and_module_pairs.sql \
+            supabase/migrations/012_admin_delete_user.sql \
+            supabase/migrations/20260919_daily_quiz_mistake_reporting.sql \
+            supabase/migrations/20260920_daily_quiz_verified_pdf_pool.sql \
+            supabase/migrations/20260920_ranked_question_success.sql \
+            supabase/migrations/20260920_student_daily_quiz_mistakes.sql \
+            supabase/migrations/20260924_drill_published_pool.sql \
+            supabase/migrations/20260924_drill_submit_aliases.sql \
+            supabase/migrations/20260924_exam_readiness_practice.sql \
+            supabase/migrations/20260924_notebook_paging.sql \
+            supabase/migrations/20260924_practice_fk_indexes.sql \
+            supabase/migrations/20260924_prevent_duplicate_assignments.sql; do
+            psql -v ON_ERROR_STOP=1 -f "$migration"
+          done
+          for support_sql in \
+            supabase/sql/portal_upgrade.sql \
+            supabase/sql/student_progress.sql \
+            supabase/sql/est_source_review.sql \
+            supabase/sql/fair_exam_keys.sql \
+            supabase/sql/pending_exam_grading.sql \
+            supabase/sql/daily_challenge.sql \
+            supabase/sql/daily_streak_update.sql \
+            supabase/sql/repeatable_untimed_lessons.sql \
+            supabase/sql/portal_scope.sql \
+            supabase/sql/portal_notifications.sql; do
+            psql -v ON_ERROR_STOP=1 -f "$support_sql"
+          done
+
+      - name: Run database regression tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          for test in \
+            tests/rls_test.sql \
+            tests/adversarial_test.sql \
+            tests/daily_streak.sql \
+            tests/fair_exam_keys.sql \
+            tests/pending_grading.sql \
+            tests/student_progress.sql \
+            tests/untimed_lessons.sql \
+            tests/admin_delete_user.sql \
+            tests/portal_notifications.sql \
+            tests/upgrade_acceptance.sql \
+            tests/upgrade_adversarial.sql \
+            tests/upgrade_extra.sql; do
+            echo "Running $test"
+            psql -v ON_ERROR_STOP=1 -f "$test"
+          done
+
+      - name: Run EST release database gates when source fixtures exist
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -f content/est-banks-2026/import-draft.sql ] && [ -f content/est-banks-2026/reviewed-bank.json ]; then
+            psql -v ON_ERROR_STOP=1 -f content/est-banks-2026/import-draft.sql
+            psql -v ON_ERROR_STOP=1 -f tests/est_bank_2026.sql
+          else
+            echo "SKIP: tests/est_bank_2026.sql needs the EST bank import and reviewed-bank source fixture."
+          fi
+          if [ -f content/est-september-2026/import-questions-1.sql ] && [ -f content/est-september-2026/release-bank.json ]; then
+            for import in content/est-september-2026/import-questions-*.sql content/est-september-2026/import-review-*.sql content/est-september-2026/import-exams.sql; do
+              [ -f "$import" ] || continue
+              psql -v ON_ERROR_STOP=1 -f "$import"
+            done
+            psql -v ON_ERROR_STOP=1 -f tests/est_september_2026.sql
+          else
+            echo "SKIP: tests/est_september_2026.sql needs the September release import SQL and release-bank source fixture."
+          fi
