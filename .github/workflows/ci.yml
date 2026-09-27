@@ -125,9 +125,9 @@ jobs:
             supabase/migrations/20260919_daily_quiz_mistake_reporting.sql \
             supabase/migrations/20260920_daily_quiz_verified_pdf_pool.sql \
             supabase/migrations/20260920_student_daily_quiz_mistakes.sql \
+            supabase/migrations/20260924_exam_readiness_practice.sql \
             supabase/migrations/20260924_drill_published_pool.sql \
             supabase/migrations/20260924_drill_submit_aliases.sql \
-            supabase/migrations/20260924_exam_readiness_practice.sql \
             supabase/migrations/20260924_notebook_paging.sql \
             supabase/migrations/20260924_practice_fk_indexes.sql \
             supabase/migrations/20260924_prevent_duplicate_assignments.sql; do
