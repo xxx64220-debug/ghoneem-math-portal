@@ -6,7 +6,7 @@ const REV_COLLECTIONS={
  unique:['Unique approaches','Selected questions with distinctive methods, shortcuts and nonroutine twists.'],
  all:['Full revision bank','Every available question in the revision bank.']
 };
-let REV={track:null,data:null,session:null,index:0,loading:false,busy:false,error:'',scope:'both',source:'both',lesson:'',level:'mixed',collection:'priority',draft:''};
+let REV={track:null,data:null,session:null,index:0,loading:false,busy:false,error:'',mode:'questions',formulaLesson:'',scope:'both',source:'both',lesson:'',level:'mixed',collection:'priority',draft:''};
 function revisionText(text,source,format){
  const value=esc(String(text??'').replace(/\\{2}(?=[a-zA-Z])/g,'\\'));
  const currency='<span class="revision-currency">$</span>';
@@ -17,7 +17,7 @@ function revisionFigure(assets){
  // Wrap their currency signs after the existing markup sanitizer runs.
  return figure(assets).replace(/(<div class="fig fig-table">)([\s\S]*?)(<\/div>)/g,(_,open,body,close)=>open+body.replace(/\$(?=\d)/g,'<span class="revision-currency">$</span>')+close);
 }
-function resetRevision(track){REV={track,data:null,session:null,index:0,loading:false,busy:false,error:'',scope:track,source:['est','est2'].includes(track)?track:'both',lesson:'',level:'mixed',collection:'priority',draft:''};}
+function resetRevision(track){REV={track,data:null,session:null,index:0,loading:false,busy:false,error:'',mode:'questions',formulaLesson:'',scope:track,source:['est','est2'].includes(track)?track:'both',lesson:'',level:'mixed',collection:'priority',draft:''};}
 function revisionPaint(){if(DASH.view==='revision'&&!DASH.searchTerm?.trim())paintDashboardContent();}
 async function revisionRequest(action,extra={}){
  const track=ST.track?.id,current=REV;
@@ -40,6 +40,7 @@ function revisionCollections(){return `<nav class="revision-collections" aria-la
 function revisionPanel(){
  if(REV.loading||(!REV.data&&!REV.error))return '<section class="dash-panel"><h2>Final revision</h2><p role="status">Loading revision questions…</p></section>';
  if(!REV.data)return `<section class="dash-panel"><h2>Final revision</h2><p role="alert">${esc(REV.error)}</p><button class="btn" data-revision-refresh>Try again</button></section>`;
+ if(REV.mode==='formulas')return revisionFormulaPanel();
  if(REV.session)return revisionSessionPanel();
  const rows=revisionRows(),lessons=[...new Set(rows.map(q=>q.lesson))].sort();
  const selected=rows.filter(q=>!REV.lesson||q.lesson===REV.lesson),ideaCount=new Set(selected.map(q=>q.lesson+'|'+q.idea)).size;
@@ -91,3 +92,4 @@ function wireRevision(){
   catch(e){if(REV===current)REV.error=e.message;}finally{if(REV===current){REV.busy=false;revisionPaint();}}
  });
 }
+
