@@ -1,9 +1,9 @@
 begin;
 do $$
-declare u uuid; s uuid; j uuid; n int;
+declare u uuid:=gen_random_uuid(); s uuid; j uuid; n int;
 begin
- select id into u from public.profiles where role='student' and status='active' limit 1;
- if u is null then raise exception 'test needs an existing active student';end if;
+ insert into auth.users(id,email) values(u,u::text||'@notifications.test');
+ insert into public.profiles(id,role,status) values(u,'student','active');
  insert into public.portal_push_subscriptions(user_id,endpoint,p256dh,auth,origin)
  values(u,'https://fcm.googleapis.com/fcm/send/rollback-only','test','test','https://math.portal.ghoneem.com') returning id into s;
  perform public.portal_push_collect();
