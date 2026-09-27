@@ -230,7 +230,10 @@ begin
 
   -- ---------- 21c. read cohort question analytics ----------
   perform public.test_login(me);
-  select count(*) into n from public.question_difficulty;
+  begin
+    select count(*) into n from public.question_difficulty;
+  exception when insufficient_privilege then n := 0;
+  end;
   reset role;
   perform public.adv('student reads question analytics', n = 0, 'rows=' || n);
 
