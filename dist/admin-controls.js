@@ -4,7 +4,16 @@ async function portalControl(action,data={}){
  if(!response.ok)throw new Error(controlError(response.json.error));return response.json;
 }
 function controlError(tag){return ({choose_track:'Choose a track at the top first.',select_at_least_five_questions:'Select at least five questions.',quiz_pool_needs_five_valid_questions:'This selection needs at least five eligible multiple-choice questions.',selected_question_unavailable:'One selected question is no longer available. Reload the list and choose again.',questions_need_review:'A selected question changed after review. Check it before releasing.',reset_confirmation_required:'Type RESET to confirm.',admin_required:'Only the administrator can reset student scores.'})[tag]||tag||'Could not save. Please try again.';}
-function controlsTrackReady(title){if(ST.track)return true;$('view').innerHTML=`<div class="head"><h2>${esc(title)}</h2></div><p class="msg">Choose a track above to manage this section.</p>`;return false;}
+function controlTracks(){return ST.tracks.filter(t=>ST.view!=='revisionAdmin'||['sat','est','est2'].includes(t.id));}
+function selectControlTrack(id){
+ if(!controlTracks().some(t=>t.id===id))return;
+ ST.track=id;$('trackSel').value=id;render();
+}
+function controlsTrackReady(title){
+ const tracks=controlTracks();if(tracks.some(t=>t.id===ST.track))return true;
+ $('view').innerHTML=`<div class="head"><h2>${esc(title)}</h2></div><section class="card controls-card"><h3>Choose a track</h3><p>${tracks.length?'Open a track to manage its '+(ST.view==='revisionAdmin'?'revision questions and visibility':ST.view==='quizAdmin'?'daily quiz questions and scores':'student reports')+'.':'No supported tracks are available for this account.'}</p><div class="control-actions" aria-label="Choose a track">${tracks.map(t=>`<button type="button" class="btn" data-control-track="${esc(t.id)}">${esc(t.name)}</button>`).join('')}</div></section>`;
+ return false;
+}
 async function revisionAdmin(){
  if(!controlsTrackReady('Final revision'))return;
  if(!['sat','est','est2'].includes(ST.track)){$('view').innerHTML='<p class="msg">Final revision is available for the mathematics tracks.</p>';return;}
@@ -55,4 +64,4 @@ function syncAdminNavigation(){
 }
 document.getElementById('adminSection')?.addEventListener('change',event=>{ST.view=event.target.value;syncAdminNavigation();render();});
 
-document.addEventListener('click',event=>{const b=event.target.closest?.('[data-control-preview]');if(b){event.preventDefault();openTeachingExam({title:'Question preview',question_ids:[b.dataset.controlPreview]});}});
+document.addEventListener('click',event=>{const track=event.target.closest?.('[data-control-track]');if(track){selectControlTrack(track.dataset.controlTrack);return;}const b=event.target.closest?.('[data-control-preview]');if(b){event.preventDefault();openTeachingExam({title:'Question preview',question_ids:[b.dataset.controlPreview]});}});
