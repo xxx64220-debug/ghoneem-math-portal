@@ -38,8 +38,8 @@ function setup(file){
  vm.runInContext("ST.track={id:'est'};DASH.exams.push({id:'est-full',title:'EST Math 1 — Question Bank Practice 01',assessment_type:'full_exam',questions:50,duration_seconds:4500,open:true});",c);
  const estFull=vm.runInContext('fullExamSection()',c);
  assert.match(estFull,/EST Math 1 practice exams/);
- assert.match(estFull,/50 questions · 75 min/);
- assert.match(estFull,/15 Foundational Algebra/);
+ assert.match(estFull,/50 multiple-choice questions · 75 minutes/);
+ assert.match(estFull,/Balanced Mock 01–20: topics and percentages/);
  assert.doesNotMatch(estFull,/SAT practice exams|35-minute modules/);
  vm.runInContext("ST.track={id:'est2'};DASH.exams=[{id:'est2-full',title:'EST II Math Level 2 — Full Practice Exam 01',assessment_type:'full_exam',exam_set_code:'EST2-F01',questions:40,duration_seconds:3600,open:true}];",c);
  const est2Full=vm.runInContext('fullExamSection()',c);

@@ -34,6 +34,7 @@ jobs:
             tests/cors.test.cjs \
             tests/daily_streak.test.cjs \
             tests/exam_builder.test.cjs \
+            tests/final_revision.test.cjs \
             tests/portal_notifications.test.cjs \
             tests/practice_figures.test.cjs
 
@@ -198,3 +199,4 @@ jobs:
           else
             echo "SKIP: tests/est_september_2026.sql needs the September release import SQL and release-bank source fixture."
           fi
+

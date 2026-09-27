@@ -1,0 +1,404 @@
+{
+  "questions": 378,
+  "sources": {
+    "est": 254,
+    "sat": 124
+  },
+  "difficulty": {
+    "medium": 174,
+    "easy": 131,
+    "hard": 73
+  },
+  "lessons": 30,
+  "ideas": 208,
+  "coverage": [
+    {
+      "lesson": "Absolute value",
+      "questions": 9,
+      "ideas": [
+        "Graph transformations",
+        "Intercepts of absolute value graphs",
+        "Interpreting absolute value inequalities",
+        "Maximum under an absolute value constraint",
+        "Nested absolute value equations",
+        "No-solution conditions",
+        "Solving absolute value equations"
+      ]
+    },
+    {
+      "lesson": "Angles, triangles and similarity",
+      "questions": 18,
+      "ideas": [
+        "Angle relationships",
+        "Angle-angle similarity",
+        "Congruent triangles and corresponding sides",
+        "Interior and exterior angles",
+        "Multistep angle reasoning",
+        "Parallelogram angles",
+        "Proving lines parallel",
+        "Segment addition",
+        "Similar triangles and parallel lines",
+        "Similarity with multiple constraints"
+      ]
+    },
+    {
+      "lesson": "Area and volume",
+      "questions": 20,
+      "ideas": [
+        "Area from coordinates",
+        "Area of basic plane figures",
+        "Cross-section area",
+        "Length, area and volume scale factors",
+        "Pyramid surface area and height",
+        "Square area from a diagonal",
+        "Volume formulas",
+        "Volume with side-length ratios"
+      ]
+    },
+    {
+      "lesson": "Circles",
+      "questions": 21,
+      "ideas": [
+        "Arc length",
+        "Center and radius from an equation",
+        "Circle equations with parameters",
+        "Circumference and whole-number constraints",
+        "Distance and completing the square",
+        "Extreme coordinates on a circle",
+        "Inscribed angles and arcs",
+        "Points inside, on and outside a circle",
+        "Radians and degrees",
+        "Radius and diameter",
+        "Radius from coordinates",
+        "Sector area and circle equations",
+        "Semicircle arcs and circumference"
+      ]
+    },
+    {
+      "lesson": "Complex numbers",
+      "questions": 2,
+      "ideas": [
+        "Conjugates and division"
+      ]
+    },
+    {
+      "lesson": "Counting methods",
+      "questions": 2,
+      "ideas": [
+        "Combinations",
+        "Systematic counting"
+      ]
+    },
+    {
+      "lesson": "Exponential models",
+      "questions": 10,
+      "ideas": [
+        "Annual compound interest",
+        "Compound growth",
+        "Interpreting growth factor and initial value",
+        "Present value and monthly compounding",
+        "Range and number of intercepts",
+        "Reading intercepts from equivalent forms",
+        "Time intervals in growth and decay",
+        "Unknown constants from two points"
+      ]
+    },
+    {
+      "lesson": "Exponents and radicals",
+      "questions": 11,
+      "ideas": [
+        "Comparing fractional exponents",
+        "Equations with a common base",
+        "Evaluating radicals",
+        "Exponent rules and substitution",
+        "Products of radicals",
+        "Simplifying radicals"
+      ]
+    },
+    {
+      "lesson": "Expressions and number properties",
+      "questions": 2,
+      "ideas": [
+        "Reasoning about signs and magnitudes"
+      ]
+    },
+    {
+      "lesson": "Function composition and inverses",
+      "questions": 8,
+      "ideas": [
+        "Composing functions",
+        "Finding and evaluating inverses"
+      ]
+    },
+    {
+      "lesson": "Functions and graphs",
+      "questions": 6,
+      "ideas": [
+        "Evaluating functions",
+        "Transforming known function values",
+        "Vertical translations"
+      ]
+    },
+    {
+      "lesson": "Graphs and data interpretation",
+      "questions": 14,
+      "ideas": [
+        "Reading a frequency graph",
+        "Reading and comparing data",
+        "Selecting data and finding a mean"
+      ]
+    },
+    {
+      "lesson": "Linear equations",
+      "questions": 19,
+      "ideas": [
+        "Building a linear equation",
+        "Equivalent expressions from an equation",
+        "Mixture models",
+        "No-solution conditions",
+        "Solving equations with fractions",
+        "Solving for a parameter",
+        "Solving linear equations",
+        "Translating word problems",
+        "Unique-solution conditions"
+      ]
+    },
+    {
+      "lesson": "Linear inequalities",
+      "questions": 16,
+      "ideas": [
+        "Compound inequalities and integer solutions",
+        "Feasible regions and quadrants",
+        "Maximum whole-number solutions",
+        "Modelling constraints",
+        "Optimising under two constraints",
+        "Regions and systems of inequalities",
+        "Solving and testing inequalities",
+        "Testing an ordered pair"
+      ]
+    },
+    {
+      "lesson": "Linear systems",
+      "questions": 18,
+      "ideas": [
+        "Elimination and substitution",
+        "Elimination with parameters",
+        "Infinitely many solutions",
+        "Infinitely many solutions with parameters",
+        "No-solution conditions",
+        "Parameter systems and uniqueness",
+        "Substitution",
+        "Two-variable word problems"
+      ]
+    },
+    {
+      "lesson": "Lines and linear models",
+      "questions": 40,
+      "ideas": [
+        "Average rate of change",
+        "Building a linear cost or score model",
+        "Change in distance from a graph",
+        "Collinear points",
+        "Comparing linear costs",
+        "Constructing models with parameters",
+        "Evaluating a linear model",
+        "Finding an intercept",
+        "Interpreting an intercept",
+        "Interpreting and evaluating linear models",
+        "Interpreting slope and intercept",
+        "Linear models from data",
+        "Parallel and perpendicular lines",
+        "Perpendicular lines with extra constraints",
+        "Perpendicular slope",
+        "Slope from equations, points and graphs",
+        "Slope with unknown coordinates",
+        "Unknown coefficients from a point",
+        "Unknown inputs in linear tables",
+        "Vertical lines and undefined slope"
+      ]
+    },
+    {
+      "lesson": "Nonlinear systems",
+      "questions": 4,
+      "ideas": [
+        "Intersections and quadrants",
+        "Line and circle intersections",
+        "Line and parabola intersections"
+      ]
+    },
+    {
+      "lesson": "Percentages",
+      "questions": 23,
+      "ideas": [
+        "Multistep percentages",
+        "Percent as a multiplier",
+        "Percent increase and decrease",
+        "Percent increase versus growth factor",
+        "Percent of a percent",
+        "Percentage enlargement and scale",
+        "Percentages from charts and tables",
+        "Reverse percentages",
+        "Successive percentage changes"
+      ]
+    },
+    {
+      "lesson": "Polynomials",
+      "questions": 20,
+      "ideas": [
+        "Coefficient sums through substitution",
+        "Coefficients in products",
+        "Combining like terms",
+        "Expanding and comparing coefficients",
+        "Factor theorem",
+        "Factoring a perfect square",
+        "Factoring expressions",
+        "Factoring with unknown coefficients",
+        "Remainder theorem",
+        "Remainder theorem with a nonmonic divisor",
+        "Roots and zero-product property"
+      ]
+    },
+    {
+      "lesson": "Probability",
+      "questions": 11,
+      "ideas": [
+        "Conditional probability",
+        "Expected frequency",
+        "Favourable outcomes and sample spaces",
+        "Sampling without replacement",
+        "Two-dice sample space",
+        "Union and overlapping events"
+      ]
+    },
+    {
+      "lesson": "Quadratic inequalities",
+      "questions": 1,
+      "ideas": [
+        "Sign of a quadratic"
+      ]
+    },
+    {
+      "lesson": "Quadratics",
+      "questions": 24,
+      "ideas": [
+        "Axis of symmetry",
+        "Axis of symmetry from roots",
+        "Completing the square and checking claims",
+        "Connecting a parabola to geometry",
+        "Constructing a quadratic from points",
+        "Discriminant with integer parameters",
+        "Function values and multiple inputs",
+        "Quadratic formula",
+        "Range and minimum value",
+        "Reading a parabola graph",
+        "Solving a height model",
+        "Solving by factoring",
+        "Sum and product of roots",
+        "Sum and product word problems",
+        "Vertex form",
+        "Vertex form and unknown coefficients",
+        "Vertex from factored form"
+      ]
+    },
+    {
+      "lesson": "Rational expressions and equations",
+      "questions": 9,
+      "ideas": [
+        "Comparing coefficients in rational identities",
+        "Excluded values",
+        "Range restrictions",
+        "Simplifying complex fractions",
+        "Simplifying rational expressions",
+        "Solving rational equations"
+      ]
+    },
+    {
+      "lesson": "Ratios, rates and units",
+      "questions": 15,
+      "ideas": [
+        "Converting area units",
+        "Length and speed unit conversion",
+        "Multistep work and pay rates",
+        "Part-to-part and part-to-whole ratios",
+        "Part-to-whole ratios and unit rates",
+        "Rates and unit conversion",
+        "Rates with variables and unit conversion",
+        "Ratios after adding members",
+        "Speed, distance and changing travel time",
+        "Work rate and time conversion"
+      ]
+    },
+    {
+      "lesson": "Rearranging formulas",
+      "questions": 4,
+      "ideas": [
+        "Isolating a variable in a radical formula",
+        "Isolating a variable with multiple powers",
+        "Substitution in a radical formula"
+      ]
+    },
+    {
+      "lesson": "Right triangles and trigonometry",
+      "questions": 15,
+      "ideas": [
+        "Complementary angles in radians",
+        "Complementary-angle identities",
+        "Pythagorean theorem",
+        "Similarity and Pythagorean constraints",
+        "Similarity and trigonometry together",
+        "Sine and cosine ratios",
+        "Sine ratio",
+        "Special right triangles",
+        "Triangle area using sine"
+      ]
+    },
+    {
+      "lesson": "Scatterplots and models",
+      "questions": 8,
+      "ideas": [
+        "Correlation versus causation",
+        "Equation of a best-fit line",
+        "Predictions from a best-fit line",
+        "Residuals: observed versus predicted",
+        "Slope of a best-fit line"
+      ]
+    },
+    {
+      "lesson": "Statistical inference",
+      "questions": 6,
+      "ideas": [
+        "Effect of increasing sample size",
+        "Finding a margin of error",
+        "Interpreting an estimate interval",
+        "Random assignment and causal inference",
+        "Sample size and margin of error"
+      ]
+    },
+    {
+      "lesson": "Statistics",
+      "questions": 17,
+      "ideas": [
+        "Combining mean, median and range",
+        "Comparing mean, median and mode",
+        "Comparing standard deviation",
+        "Effect of removing an extreme value",
+        "Mean and missing values",
+        "Mean from graphs and tables",
+        "Median and mode",
+        "Quartiles and interquartile range",
+        "Reading a median from a box plot",
+        "Weighted mean"
+      ]
+    },
+    {
+      "lesson": "Variation",
+      "questions": 5,
+      "ideas": [
+        "Direct proportionality",
+        "Direct variation with powers",
+        "Inverse variation",
+        "Inverse-square variation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4893 @@
+[
+  {
+    "id": "00b95126-e20b-5874-9cdf-5e521e1f0f04",
+    "source": "est",
+    "source_code": "AAF 058",
+    "lesson": "Exponents and radicals",
+    "idea": "Simplifying radicals",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "4e3dc2fe258afd4548711ee288b344f5"
+  },
+  {
+    "id": "016c3282-6338-5f41-adb8-bf518964f869",
+    "source": "est",
+    "source_code": "DAP 068",
+    "lesson": "Scatterplots and models",
+    "idea": "Residuals: observed versus predicted",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ed58162eb6fa5e07e509d9389c9c5774"
+  },
+  {
+    "id": "02356ac9-1bbe-5edb-bfdb-e944a15afb12",
+    "source": "est",
+    "source_code": "FA 039",
+    "lesson": "Linear inequalities",
+    "idea": "Solving and testing inequalities",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a38f55746f58e7ac55ca263bff9db6c2"
+  },
+  {
+    "id": "034f4fb8-74f6-5e61-974d-78bb2b5b0da5",
+    "source": "est",
+    "source_code": "PSD 011",
+    "lesson": "Ratios, rates and units",
+    "idea": "Part-to-whole ratios and unit rates",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6c9741d279d67fc8f0624ca8019e9c8d"
+  },
+  {
+    "id": "03601fa8-c9c9-5638-8897-8bbb86669445",
+    "source": "est",
+    "source_code": "FA 054",
+    "lesson": "Lines and linear models",
+    "idea": "Interpreting slope and intercept",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3f7a9942a588814eac8e8927a20aff6d"
+  },
+  {
+    "id": "03e59cec-06cd-5381-88ba-55d5aa24e47c",
+    "source": "est",
+    "source_code": "HOA 006",
+    "lesson": "Lines and linear models",
+    "idea": "Slope with unknown coordinates",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9272f2b53beedadd81430d1c03643aa2"
+  },
+  {
+    "id": "04b9f396-e79e-5cb8-b2ce-a5f07ad754e4",
+    "source": "est",
+    "source_code": "AAF 039",
+    "lesson": "Quadratics",
+    "idea": "Sum and product of roots",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "19861b7c7bb75f66b42adb4116bd5c2b"
+  },
+  {
+    "id": "04be0054-500f-5350-b592-51e254d5e781",
+    "source": "est",
+    "source_code": "FA 070",
+    "lesson": "Linear systems",
+    "idea": "Two-variable word problems",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b0b670d1f710336f7e51ab4187fbcab1"
+  },
+  {
+    "id": "0548f714-8291-5f58-8376-5cb635981f47",
+    "source": "est",
+    "source_code": "DAP 044",
+    "lesson": "Percentages",
+    "idea": "Multistep percentages",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "26c685b951c1078064ee2f7e2056debd"
+  },
+  {
+    "id": "0577ad03-033b-5ec9-a541-55a7cdf4d93c",
+    "source": "est",
+    "source_code": "PSD 001",
+    "lesson": "Variation",
+    "idea": "Inverse-square variation",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "0c5d75b3242fa07484b8d663b1350072"
+  },
+  {
+    "id": "058c6b55-fed1-5016-884a-9a523163c4d9",
+    "source": "est",
+    "source_code": "DAP 022",
+    "lesson": "Statistics",
+    "idea": "Quartiles and interquartile range",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d0f70d8833e7ed418b91a34b34b36283"
+  },
+  {
+    "id": "06425acd-66b1-52cc-ae20-8f25158f1735",
+    "source": "est",
+    "source_code": "FA 077",
+    "lesson": "Linear equations",
+    "idea": "Building a linear equation",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "96f5947b3b00f8a31696f3ef0e8fc3db"
+  },
+  {
+    "id": "0750b96d-174c-5957-8049-7b8f33312460",
+    "source": "est",
+    "source_code": "FA 059",
+    "lesson": "Polynomials",
+    "idea": "Expanding and comparing coefficients",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b05be7e3720a6c9fe3d6cd4696ad63b8"
+  },
+  {
+    "id": "07779610-2dd2-5d50-b2e7-7f8b4b30a7a7",
+    "source": "est",
+    "source_code": "DAP 013",
+    "lesson": "Ratios, rates and units",
+    "idea": "Multistep work and pay rates",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f99484bc9a62a09333e6e74489270fc9"
+  },
+  {
+    "id": "0925bb94-9e4d-50c3-b5fb-c8ade4ff1386",
+    "source": "est",
+    "source_code": "DAP 033",
+    "lesson": "Statistics",
+    "idea": "Comparing mean, median and mode",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9c95254eaae6a6c869a87a9efac89c29"
+  },
+  {
+    "id": "0d1610df-2ffc-5a6e-a793-671b0513f37f",
+    "source": "est",
+    "source_code": "FA 075",
+    "lesson": "Linear systems",
+    "idea": "Two-variable word problems",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ccbd1ccb8f5867c484faa2ec44fb7c29"
+  },
+  {
+    "id": "0eb213c2-a947-58c2-b9c1-b7c7c2bebe77",
+    "source": "est",
+    "source_code": "GT 001",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Special right triangles",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "adbd54fba979ef227ad400b28c5e1d59"
+  },
+  {
+    "id": "0f40726b-1397-5461-b7e0-7980f4b40bd9",
+    "source": "est",
+    "source_code": "AAF 053",
+    "lesson": "Quadratics",
+    "idea": "Axis of symmetry",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6eb3d0911f151dfaac91f81b7750b082"
+  },
+  {
+    "id": "0f4f82f5-f03a-5549-acf2-0dd61fa9faf5",
+    "source": "est",
+    "source_code": "FA 014",
+    "lesson": "Lines and linear models",
+    "idea": "Interpreting slope and intercept",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d2cda8a5c94f76de727aa6de3cb91d7d"
+  },
+  {
+    "id": "0f808148-2950-5c6c-b3de-637ce88d6c56",
+    "source": "est",
+    "source_code": "AAF 050",
+    "lesson": "Quadratics",
+    "idea": "Reading a parabola graph",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "83f5d150e88df43ff58f46e610c01a76"
+  },
+  {
+    "id": "0fc5cd33-336f-5d79-9847-8c3e9e40d173",
+    "source": "est",
+    "source_code": "AAF 071",
+    "lesson": "Polynomials",
+    "idea": "Factoring expressions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a9b7c59cd70a81f68cffd88d7b85b16b"
+  },
+  {
+    "id": "11a1e605-fdee-5df7-8341-7f86e47321fd",
+    "source": "est",
+    "source_code": "AAF 063",
+    "lesson": "Rational expressions and equations",
+    "idea": "Simplifying rational expressions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "cbf39284a54b1bc10a80ac79cad3aaba"
+  },
+  {
+    "id": "1224ac52-4510-57c1-9a5f-8c0cacb01502",
+    "source": "est",
+    "source_code": "GT 006",
+    "lesson": "Area and volume",
+    "idea": "Area from coordinates",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6d3180f864ddeb2a5236734dc8020dc8"
+  },
+  {
+    "id": "12ae8dee-aa30-5359-9380-970aacd3e90c",
+    "source": "est",
+    "source_code": "DAP 039",
+    "lesson": "Percentages",
+    "idea": "Reverse percentages",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d8ac5bad2c46b913288e1f7653a4fcbc"
+  },
+  {
+    "id": "12f69774-0102-50ec-83b3-a28e4d04a047",
+    "source": "est",
+    "source_code": "FA 040",
+    "lesson": "Linear inequalities",
+    "idea": "Solving and testing inequalities",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "00931dcf78b18ced7f3014416b9b4909"
+  },
+  {
+    "id": "1326c086-b4e9-5d6b-acef-d8db4c5c6ba4",
+    "source": "est",
+    "source_code": "PSD 009",
+    "lesson": "Ratios, rates and units",
+    "idea": "Part-to-whole ratios and unit rates",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "4f669fd8862a8d0a718025f9cc6a32c9"
+  },
+  {
+    "id": "132a8052-5811-5b69-8502-b3834dff6527",
+    "source": "est",
+    "source_code": "AAF 016",
+    "lesson": "Functions and graphs",
+    "idea": "Evaluating functions",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f41b2843df1633dec88f82848982ba14"
+  },
+  {
+    "id": "154d45d6-34c7-5c42-8567-4193574b7436",
+    "source": "est",
+    "source_code": "DAP 014",
+    "lesson": "Percentages",
+    "idea": "Percentages from charts and tables",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "55552cdf4672898f649c1988997f8d06"
+  },
+  {
+    "id": "1578cec6-aa18-5b85-b957-5f718428c9dc",
+    "source": "est",
+    "source_code": "AAF 036",
+    "lesson": "Polynomials",
+    "idea": "Combining like terms",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "27006312955f89dc31b6d52992f7fd4c"
+  },
+  {
+    "id": "164376dd-7559-54c7-893d-385c2fb3a710",
+    "source": "est",
+    "source_code": "AAF 070",
+    "lesson": "Rearranging formulas",
+    "idea": "Isolating a variable in a radical formula",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "7fc917a23cc8e93c7c84fc6acf17c2f5"
+  },
+  {
+    "id": "16905e1d-26cd-5d58-b92c-3b2b3dfb7b21",
+    "source": "est",
+    "source_code": "FA 058",
+    "lesson": "Polynomials",
+    "idea": "Expanding and comparing coefficients",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "2809dca48088562d4a33803f08a93d0c"
+  },
+  {
+    "id": "16eb7c1f-a81f-5d70-a9c8-e153707927c0",
+    "source": "est",
+    "source_code": "DAP 003",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "73eeab2d9513dce9eb558a92e3d180dc"
+  },
+  {
+    "id": "191dae01-9ac9-5aea-907c-46d6b8fb3857",
+    "source": "est",
+    "source_code": "DAP 001",
+    "lesson": "Statistics",
+    "idea": "Mean and missing values",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3fdc4ccbdcba82a37b98fd9357f886d8"
+  },
+  {
+    "id": "1b44c959-54ba-55b2-9271-c48da29208ad",
+    "source": "est",
+    "source_code": "FA 030",
+    "lesson": "Lines and linear models",
+    "idea": "Parallel and perpendicular lines",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "03d5ed19d487906d29c90085fd0ebcb7"
+  },
+  {
+    "id": "1c5532ae-a588-5192-9607-aaf78f437c83",
+    "source": "est",
+    "source_code": "FA 055",
+    "lesson": "Lines and linear models",
+    "idea": "Parallel and perpendicular lines",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "20eafeb1eb552c3d36ba7757c3b70508"
+  },
+  {
+    "id": "1d1852a3-a842-55a8-abf6-7bbad2cd65da",
+    "source": "est",
+    "source_code": "FA 026",
+    "lesson": "Linear equations",
+    "idea": "No-solution conditions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6a92c2d50ee4f8ab8ad447817e36d783"
+  },
+  {
+    "id": "1dce879c-64fb-5c10-8d79-5892cb9b7602",
+    "source": "est",
+    "source_code": "AAF 021",
+    "lesson": "Polynomials",
+    "idea": "Roots and zero-product property",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f731f0aedac566371bcea9d96ac44cda"
+  },
+  {
+    "id": "1eab2836-30b8-57b6-8496-b9cd04665db8",
+    "source": "est",
+    "source_code": "FA 049",
+    "lesson": "Lines and linear models",
+    "idea": "Linear models from data",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "20d19c4ad5e00551374bf14e5f4c9b3b"
+  },
+  {
+    "id": "1ebaae07-19c0-5d8f-a4eb-eb9ac17bc25c",
+    "source": "est",
+    "source_code": "DAP 065",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ae28d0664d45b4540bbd0d7e10f2e45a"
+  },
+  {
+    "id": "1f971151-3fb3-5649-a765-0a4b2430e9f7",
+    "source": "est",
+    "source_code": "PAM 023",
+    "lesson": "Quadratics",
+    "idea": "Vertex from factored form",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "0f59acc0feef5a78d0c2516b51c862f2"
+  },
+  {
+    "id": "211db957-bb1a-5ae6-88fa-e0b7cb08f842",
+    "source": "est",
+    "source_code": "FA 033",
+    "lesson": "Lines and linear models",
+    "idea": "Perpendicular lines with extra constraints",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c6a6118c8f92f39c78588fd54a589af0"
+  },
+  {
+    "id": "22ac9be5-6406-5b0c-9545-5d0fedf681aa",
+    "source": "est",
+    "source_code": "FA 017",
+    "lesson": "Expressions and number properties",
+    "idea": "Reasoning about signs and magnitudes",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "7dbea176b784600c0a57cbc650fec40c"
+  },
+  {
+    "id": "2359a574-5638-53fe-a073-3dfccb2a16a9",
+    "source": "est",
+    "source_code": "GTC 002",
+    "lesson": "Circles",
+    "idea": "Sector area and circle equations",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "99c371463a03fdfbfc973d0657d42551"
+  },
+  {
+    "id": "25245654-bc79-528e-8acc-d92ed8b90da9",
+    "source": "est",
+    "source_code": "FA 042",
+    "lesson": "Linear inequalities",
+    "idea": "Compound inequalities and integer solutions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5c8fa227dd8ca8a53ea1a5d1430baba2"
+  },
+  {
+    "id": "27a6e453-b296-5a14-b806-26ecc3a93285",
+    "source": "est",
+    "source_code": "DAP 023",
+    "lesson": "Statistics",
+    "idea": "Quartiles and interquartile range",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "aebe9b46e230b7040ba3fec38a6a1ffd"
+  },
+  {
+    "id": "283a043f-5047-5093-9d99-35931dddf317",
+    "source": "est",
+    "source_code": "DAP 045",
+    "lesson": "Percentages",
+    "idea": "Percentages from charts and tables",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "2d2de83daa4879d6007e8299b0b92171"
+  },
+  {
+    "id": "28e991cc-3e14-5ddb-8059-62cbf5766b2b",
+    "source": "est",
+    "source_code": "AAF 037",
+    "lesson": "Polynomials",
+    "idea": "Remainder theorem with a nonmonic divisor",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "41991499f39b4f364099263056e59d50"
+  },
+  {
+    "id": "290ee5d2-bf45-5816-a056-15131246f322",
+    "source": "est",
+    "source_code": "AAF 018",
+    "lesson": "Function composition and inverses",
+    "idea": "Composing functions",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "87cc30092f271bac3c92141f582f395d"
+  },
+  {
+    "id": "294f45d5-b3c3-5268-86ef-2b78f4f27251",
+    "source": "est",
+    "source_code": "FA 031",
+    "lesson": "Lines and linear models",
+    "idea": "Parallel and perpendicular lines",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "61ed0f231c5ef2f2970c2455580d6d50"
+  },
+  {
+    "id": "2c28825d-4b7a-574d-8e85-b423c4eb517d",
+    "source": "est",
+    "source_code": "DAP 040",
+    "lesson": "Percentages",
+    "idea": "Percent increase and decrease",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "63a59218da70b2de24a4bf0fd2b765e1"
+  },
+  {
+    "id": "2d42335c-1f88-5e8e-aa0b-b8af3ee8d60a",
+    "source": "est",
+    "source_code": "AAF 027",
+    "lesson": "Function composition and inverses",
+    "idea": "Finding and evaluating inverses",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "6ca2a872d30783d5c176ecc0171b1157"
+  },
+  {
+    "id": "2debab8b-ac34-5c80-aad0-685873b65167",
+    "source": "est",
+    "source_code": "AAF 012",
+    "lesson": "Exponential models",
+    "idea": "Compound growth",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3bb019eba92e3b1d34a369b9f758fff5"
+  },
+  {
+    "id": "2e894efb-b2eb-5dfd-ae88-5d520f24e17c",
+    "source": "est",
+    "source_code": "AAF 045",
+    "lesson": "Quadratics",
+    "idea": "Function values and multiple inputs",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6dbf7e898d740a80c0bb82534010eb5e"
+  },
+  {
+    "id": "2eb80a28-0c15-5993-9a21-f5bec04e812a",
+    "source": "est",
+    "source_code": "FA 006",
+    "lesson": "Absolute value",
+    "idea": "Interpreting absolute value inequalities",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "c532d4e67efae2049bb15e8c7f49ee7e"
+  },
+  {
+    "id": "32f4ff6d-9d06-54f4-8e25-43f3223ebf96",
+    "source": "est",
+    "source_code": "FA 063",
+    "lesson": "Lines and linear models",
+    "idea": "Slope from equations, points and graphs",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "502da04ccf8d45ddc6e941250d596065"
+  },
+  {
+    "id": "33018364-ea64-5680-8039-fc2d147c7b47",
+    "source": "est",
+    "source_code": "HOA 044",
+    "lesson": "Linear inequalities",
+    "idea": "Optimising under two constraints",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f841d329b11341fc39b6f034ec5ece6d"
+  },
+  {
+    "id": "338022f0-909a-52f9-86aa-271e2719bad9",
+    "source": "est",
+    "source_code": "DAP 056",
+    "lesson": "Lines and linear models",
+    "idea": "Average rate of change",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "e7925a1906e2fe54cb8f8f9e8203f55a"
+  },
+  {
+    "id": "34b943f1-8655-5814-a258-8c35ed73ffbf",
+    "source": "est",
+    "source_code": "PSD 015",
+    "lesson": "Ratios, rates and units",
+    "idea": "Work rate and time conversion",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c923848bd50669b79e3cfacb8958865e"
+  },
+  {
+    "id": "35f661b5-2fa5-52e6-84a2-9fd321178e52",
+    "source": "est",
+    "source_code": "DAP 058",
+    "lesson": "Ratios, rates and units",
+    "idea": "Rates and unit conversion",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9f827d8e38765b0155877abbf123d2cf"
+  },
+  {
+    "id": "36278e2c-23dd-52c9-a36e-9a438161cbc7",
+    "source": "est",
+    "source_code": "DAP 027",
+    "lesson": "Percentages",
+    "idea": "Percentages from charts and tables",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "bbc49767f7a059177fffd742803c654f"
+  },
+  {
+    "id": "3788bb20-7efc-537c-9eda-fe3df4598bb8",
+    "source": "est",
+    "source_code": "AAF 059",
+    "lesson": "Exponents and radicals",
+    "idea": "Simplifying radicals",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "db1e92ac902d1a55158ed56017716875"
+  },
+  {
+    "id": "37eceae7-8a25-5306-a282-0173d3857637",
+    "source": "est",
+    "source_code": "DAP 038",
+    "lesson": "Percentages",
+    "idea": "Percentages from charts and tables",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "e285727d5cf1418f8f7f2202d5abbdf3"
+  },
+  {
+    "id": "381f8888-43e6-55b5-aeca-7b7d8ca54d1e",
+    "source": "est",
+    "source_code": "AAF 035",
+    "lesson": "Polynomials",
+    "idea": "Coefficients in products",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ce1ef8a41bc6449a5389a686901525fb"
+  },
+  {
+    "id": "3a646cc0-6cd5-53bf-8ef0-dc45c206e2a8",
+    "source": "est",
+    "source_code": "FA 011",
+    "lesson": "Rearranging formulas",
+    "idea": "Substitution in a radical formula",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b2d09b97ad84aee3f90a2454be9fb9cc"
+  },
+  {
+    "id": "3b342c1c-026c-52ee-b1ae-2bdbeb40f88b",
+    "source": "est",
+    "source_code": "DAP 032",
+    "lesson": "Statistics",
+    "idea": "Weighted mean",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3a3bddb963a20b5640fd87e470d7c2ab"
+  },
+  {
+    "id": "3f57bee0-936f-5399-a83b-ed0fef7b24b6",
+    "source": "est",
+    "source_code": "PSD 002",
+    "lesson": "Scatterplots and models",
+    "idea": "Correlation versus causation",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "0bd7d2fda44627473ee4edea7dd27f57"
+  },
+  {
+    "id": "3fc8fa17-dd54-5329-93a9-3c4f041f9fc5",
+    "source": "est",
+    "source_code": "FA 061",
+    "lesson": "Quadratics",
+    "idea": "Sum and product word problems",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b1bfd2a364b0aa1e9ea07f28fd7782e3"
+  },
+  {
+    "id": "40418291-9950-506e-be18-9b463d018938",
+    "source": "est",
+    "source_code": "FA 043",
+    "lesson": "Linear inequalities",
+    "idea": "Solving and testing inequalities",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "1f4e0b2bdb563096675856b4cf3de779"
+  },
+  {
+    "id": "4162fc07-b831-5d9a-98ec-9876220d1f8d",
+    "source": "est",
+    "source_code": "DAP 053",
+    "lesson": "Probability",
+    "idea": "Conditional probability",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "67f74e18a032c24cd3e2e485ba717e2d"
+  },
+  {
+    "id": "420a94b4-d7ea-515c-92cf-ec21b8444a36",
+    "source": "est",
+    "source_code": "DAP 030",
+    "lesson": "Statistics",
+    "idea": "Mean from graphs and tables",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "445e99902480f13a14651017563de5bd"
+  },
+  {
+    "id": "42f7f136-eb10-56c9-a710-2f0ea7a068d1",
+    "source": "est",
+    "source_code": "DAP 059",
+    "lesson": "Ratios, rates and units",
+    "idea": "Part-to-part and part-to-whole ratios",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9fc594ebb1baafc830fee3828f9d9f1c"
+  },
+  {
+    "id": "44244ce3-c07d-5a53-a423-52df588b1f04",
+    "source": "est",
+    "source_code": "AAF 042",
+    "lesson": "Quadratics",
+    "idea": "Sum and product of roots",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "fa918e6ecfbfe1a157b327a1850bd0a9"
+  },
+  {
+    "id": "4511af9e-9d42-5fcb-b337-d97a1ecbf09d",
+    "source": "est",
+    "source_code": "DAP 017",
+    "lesson": "Variation",
+    "idea": "Direct proportionality",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5339de498d6dad69cd599b4bfe913f70"
+  },
+  {
+    "id": "454ff7ac-1f23-5563-8acb-9a3c96f7829c",
+    "source": "est",
+    "source_code": "AAF 038",
+    "lesson": "Polynomials",
+    "idea": "Remainder theorem",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "1fb7fc208b0cf8b5aca6e63c9b5778b0"
+  },
+  {
+    "id": "463a9a18-db84-5c1f-9b62-bb8327fc74b8",
+    "source": "est",
+    "source_code": "AAF 006",
+    "lesson": "Function composition and inverses",
+    "idea": "Composing functions",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "8295ac74dbd3b1c5d42fa651a5740dc1"
+  },
+  {
+    "id": "46afad77-9cb2-5b5e-bc0e-23038d58e957",
+    "source": "est",
+    "source_code": "FA 022",
+    "lesson": "Linear equations",
+    "idea": "Solving equations with fractions",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f3e7c18dde1a8dbd8531a6836cfe6843"
+  },
+  {
+    "id": "47601b25-cfdb-5c21-8a52-b793ceab2a40",
+    "source": "est",
+    "source_code": "FA 050",
+    "lesson": "Lines and linear models",
+    "idea": "Unknown coefficients from a point",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5a2795476f3f64f970a700b1e22af2cc"
+  },
+  {
+    "id": "47bc951e-917c-54be-9f2f-a60542607622",
+    "source": "est",
+    "source_code": "GT 013",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Segment addition",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "2100fa07b44dd19c816d4da63ba5176f"
+  },
+  {
+    "id": "47e9698b-79f7-5985-be91-174b25ae7ef3",
+    "source": "est",
+    "source_code": "PAM 005",
+    "lesson": "Quadratics",
+    "idea": "Axis of symmetry from roots",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "4fc4ed265262609b7dffc118df468b45"
+  },
+  {
+    "id": "4aa4646b-477e-5077-9b0a-d4ba7e5b8b7e",
+    "source": "est",
+    "source_code": "DAP 046",
+    "lesson": "Percentages",
+    "idea": "Percentages from charts and tables",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "7fda371fff28e5bb21ad0105f89984d2"
+  },
+  {
+    "id": "4b359697-1bd7-5b7f-9699-e8a3336c1f1e",
+    "source": "est",
+    "source_code": "DAP 048",
+    "lesson": "Probability",
+    "idea": "Favourable outcomes and sample spaces",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "56d281548165da95c80d9d7b7ee27bfc"
+  },
+  {
+    "id": "4d37e42e-9f8b-5b95-b16a-f5296e27dec5",
+    "source": "est",
+    "source_code": "FA 029",
+    "lesson": "Lines and linear models",
+    "idea": "Collinear points",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "06ceb0a1fa5432570140ff20345fc1fb"
+  },
+  {
+    "id": "4d97630e-78e7-53f7-8566-8273688654a8",
+    "source": "est",
+    "source_code": "FA 057",
+    "lesson": "Lines and linear models",
+    "idea": "Parallel and perpendicular lines",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "4dc1319a1eb15220881633e5f29e7a33"
+  },
+  {
+    "id": "4e5d0e24-836e-5e18-85af-6868807dc27e",
+    "source": "est",
+    "source_code": "DAP 049",
+    "lesson": "Probability",
+    "idea": "Union and overlapping events",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "25748df3136ec331d622713a1af6c778"
+  },
+  {
+    "id": "4fb23f6c-a3f0-5916-9554-360494d5c0f9",
+    "source": "est",
+    "source_code": "AAF 005",
+    "lesson": "Complex numbers",
+    "idea": "Conjugates and division",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "29deb87d825032e4c35dd7bcc3fb2fb8"
+  },
+  {
+    "id": "511d1a1b-05fa-5ce3-958d-b2729c7bf782",
+    "source": "est",
+    "source_code": "AAF 047",
+    "lesson": "Quadratics",
+    "idea": "Axis of symmetry",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c88ba0417741afcaa7881f4206ac6178"
+  },
+  {
+    "id": "514b13c4-6ec9-597e-92c7-47a80e0fd03d",
+    "source": "est",
+    "source_code": "AAF 054",
+    "lesson": "Quadratics",
+    "idea": "Sum and product of roots",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3fc9fb8b6b2b37f71f1f28d18896a647"
+  },
+  {
+    "id": "52448d97-65dc-5d95-820a-3ed31f7e2779",
+    "source": "est",
+    "source_code": "PAM 018",
+    "lesson": "Polynomials",
+    "idea": "Factoring a perfect square",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "7df7752b729a70c2be263d3638398e20"
+  },
+  {
+    "id": "5305265c-807f-5efc-9b9e-bcd42ba5f2c1",
+    "source": "est",
+    "source_code": "AAF 041",
+    "lesson": "Quadratics",
+    "idea": "Solving by factoring",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "72d3aa294478bf0aaa8219131b68b831"
+  },
+  {
+    "id": "554ecd0b-373a-5ef3-a192-be41b6597ba2",
+    "source": "est",
+    "source_code": "AAF 026",
+    "lesson": "Function composition and inverses",
+    "idea": "Finding and evaluating inverses",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "eec013c584132b16724200cfa1d4d510"
+  },
+  {
+    "id": "557bd2ef-700b-5792-a2df-f95c81521f46",
+    "source": "est",
+    "source_code": "FA 051",
+    "lesson": "Linear equations",
+    "idea": "Equivalent expressions from an equation",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "4e35903af11c28afad4ff8eba2b4bd43"
+  },
+  {
+    "id": "56065962-17b2-516e-a4a2-9f58bb0f68ce",
+    "source": "est",
+    "source_code": "DAP 061",
+    "lesson": "Ratios, rates and units",
+    "idea": "Part-to-part and part-to-whole ratios",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "441b56d879c24b160af439b22528feb8"
+  },
+  {
+    "id": "5680c547-777b-5b04-ad55-20d01f9e18e0",
+    "source": "est",
+    "source_code": "DAP 069",
+    "lesson": "Scatterplots and models",
+    "idea": "Predictions from a best-fit line",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "64b0afeaea69cb1199b69d6708bb8667"
+  },
+  {
+    "id": "57566bc8-ae6c-5b3f-b90c-f9f6ee043eac",
+    "source": "est",
+    "source_code": "AAF 029",
+    "lesson": "Exponents and radicals",
+    "idea": "Exponent rules and substitution",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f4ea5b1101505a080119e40dd16fdf7e"
+  },
+  {
+    "id": "58e16fea-d98e-5b97-9402-02b99d3c7464",
+    "source": "est",
+    "source_code": "AAF 025",
+    "lesson": "Nonlinear systems",
+    "idea": "Intersections and quadrants",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6394872a55f7d527d77e772ac8467c15"
+  },
+  {
+    "id": "593e6bab-df95-5e53-8a0f-dc71bdb39871",
+    "source": "est",
+    "source_code": "DAP 067",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a4c806587c2ee2a3f28dbf694bfff4e4"
+  },
+  {
+    "id": "5a21e8b2-c644-5eb5-869e-21ee8f8e89a3",
+    "source": "est",
+    "source_code": "DAP 010",
+    "lesson": "Counting methods",
+    "idea": "Systematic counting",
+    "difficulty": "easy",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "efbfb4598026d7dd2d7d61803547f8f4"
+  },
+  {
+    "id": "5a705f1c-70bf-5ba5-89ab-f48904741b5b",
+    "source": "est",
+    "source_code": "DAP 043",
+    "lesson": "Percentages",
+    "idea": "Percent of a percent",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "0ba8bc938152dcbade7593b1723d1ef8"
+  },
+  {
+    "id": "5ad80534-a478-5ea9-a1c1-52819ecd60e6",
+    "source": "est",
+    "source_code": "GT 017",
+    "lesson": "Area and volume",
+    "idea": "Square area from a diagonal",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ae63edcb205b09d94f7066a5fec05e15"
+  },
+  {
+    "id": "5b500172-3958-5fc9-8bc2-b4e665f4ae70",
+    "source": "est",
+    "source_code": "DAP 041",
+    "lesson": "Percentages",
+    "idea": "Multistep percentages",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6c3a3eb862983958c45df3e58bbb639f"
+  },
+  {
+    "id": "5b63b5f6-3422-569a-9b26-4254e21d4970",
+    "source": "est",
+    "source_code": "DAP 052",
+    "lesson": "Probability",
+    "idea": "Sampling without replacement",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "e147fdc77a04acbc98d009c47cceb2f9"
+  },
+  {
+    "id": "5c5a06c2-47c0-581d-ab57-5266d13ce2e7",
+    "source": "est",
+    "source_code": "GTC 014",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Sine ratio",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "dc802a37d0c2ab3e87b7bac0646f75be"
+  },
+  {
+    "id": "5c9392df-6634-5759-b87a-1dd771ee5b1e",
+    "source": "est",
+    "source_code": "DAP 004",
+    "lesson": "Percentages",
+    "idea": "Percentages from charts and tables",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "bc74e1ecf0456189145e8027af1ab61b"
+  },
+  {
+    "id": "5ce6fb9b-9993-50e7-9069-8e79873ded47",
+    "source": "est",
+    "source_code": "FA 073",
+    "lesson": "Linear systems",
+    "idea": "Elimination and substitution",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "4c153ca1aac6a962ba9f82ba9f0e0508"
+  },
+  {
+    "id": "5e687a83-67ec-532d-85d0-c60b5037deea",
+    "source": "est",
+    "source_code": "FA 067",
+    "lesson": "Linear systems",
+    "idea": "Elimination and substitution",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f684b2089c7f8b41f0dd6e2240f3cff6"
+  },
+  {
+    "id": "608f1409-2a55-59e8-bcd3-75f2f263bf42",
+    "source": "est",
+    "source_code": "GT 021",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Interior and exterior angles",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "4405fa4ed61b520b947fc48019261364"
+  },
+  {
+    "id": "60dbff82-d8c8-5ece-9f18-00a367ea7b0c",
+    "source": "est",
+    "source_code": "FA 032",
+    "lesson": "Lines and linear models",
+    "idea": "Perpendicular lines with extra constraints",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "aa99d1a43262b7c893fab3100cc83ef1"
+  },
+  {
+    "id": "63b8ca35-68f9-5ea9-9584-302dbf6dd908",
+    "source": "est",
+    "source_code": "PSD 018",
+    "lesson": "Percentages",
+    "idea": "Successive percentage changes",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "aa78d1ed11b02f0c99f20c03b60a2df6"
+  },
+  {
+    "id": "6574b390-dfe4-5e0d-af07-d84c852308c3",
+    "source": "est",
+    "source_code": "DAP 012",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "425bb1ff1119c67dc8c1c4c628f88029"
+  },
+  {
+    "id": "65c0c188-8f25-59ee-9897-d1379567e89b",
+    "source": "est",
+    "source_code": "DAP 060",
+    "lesson": "Ratios, rates and units",
+    "idea": "Part-to-part and part-to-whole ratios",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "692041de663c4d7bf8b01371ddfb76a1"
+  },
+  {
+    "id": "660324a2-e053-55ea-87be-c15ed7a77bcc",
+    "source": "est",
+    "source_code": "AAF 049",
+    "lesson": "Quadratics",
+    "idea": "Range and minimum value",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9d3df8f818e7b94c3fc1847968928675"
+  },
+  {
+    "id": "6708257f-1eb6-5c6d-8ed1-b9cb317908e8",
+    "source": "est",
+    "source_code": "AAF 064",
+    "lesson": "Rational expressions and equations",
+    "idea": "Comparing coefficients in rational identities",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "7fafee5e36dffaeab2132de8a930e5cf"
+  },
+  {
+    "id": "67b76c11-12bf-5b7e-8cfd-cd52ad1338ba",
+    "source": "est",
+    "source_code": "FA 005",
+    "lesson": "Absolute value",
+    "idea": "Interpreting absolute value inequalities",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "86964c7cd748be9fc122cfb55b23e31b"
+  },
+  {
+    "id": "690fbb64-5cbb-5132-9102-1dce5bdecc51",
+    "source": "est",
+    "source_code": "AAF 013",
+    "lesson": "Polynomials",
+    "idea": "Factor theorem",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "e1df3fb550148209e4a989bac298f469"
+  },
+  {
+    "id": "6a1f631a-6320-5688-8fae-2f04082dba4b",
+    "source": "est",
+    "source_code": "DAP 070",
+    "lesson": "Scatterplots and models",
+    "idea": "Slope of a best-fit line",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "8e00db8aa722afea89df563702b6f2ea"
+  },
+  {
+    "id": "6bb1b3e6-d9c6-5cf7-921b-ed8d41b70d93",
+    "source": "est",
+    "source_code": "FA 024",
+    "lesson": "Linear equations",
+    "idea": "Building a linear equation",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c9b19a724d5bb289bf1d73de4f4ec239"
+  },
+  {
+    "id": "6c626425-5ebf-5b9f-b30b-a6c8a2cf22c0",
+    "source": "est",
+    "source_code": "HOA 036",
+    "lesson": "Lines and linear models",
+    "idea": "Building a linear cost or score model",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d58e2b30b2989fc39ec5abddb54aca90"
+  },
+  {
+    "id": "6eb15c1c-7859-5592-9d59-bd2984c743c6",
+    "source": "est",
+    "source_code": "DAP 021",
+    "lesson": "Lines and linear models",
+    "idea": "Interpreting an intercept",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "208ef0c51ac63c22fd652aadcd858d7e"
+  },
+  {
+    "id": "6f0e2c60-6525-5040-8467-71847ffbe34c",
+    "source": "est",
+    "source_code": "AAF 051",
+    "lesson": "Quadratics",
+    "idea": "Constructing a quadratic from points",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9fd037bab09fd314a77297977ad41835"
+  },
+  {
+    "id": "71b24e7e-ae7b-52eb-a378-f06d5b44d582",
+    "source": "est",
+    "source_code": "AAF 017",
+    "lesson": "Functions and graphs",
+    "idea": "Evaluating functions",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "32a4720dc6eace7dd708ac1da9df76d6"
+  },
+  {
+    "id": "7311e266-51b9-5a72-9bdc-32e276cfe47a",
+    "source": "est",
+    "source_code": "DAP 066",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b620d1d2e1510a8e38f8b502325cb6b7"
+  },
+  {
+    "id": "733b354d-242a-511d-a562-db0c1924581b",
+    "source": "est",
+    "source_code": "DAP 019",
+    "lesson": "Probability",
+    "idea": "Expected frequency",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "aee59ac2437709916707042994539f40"
+  },
+  {
+    "id": "74167503-624a-5e3b-9292-b3a56a05b138",
+    "source": "est",
+    "source_code": "AAF 044",
+    "lesson": "Functions and graphs",
+    "idea": "Evaluating functions",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "4b0c936983e38817fae92b5510a9dc6d"
+  },
+  {
+    "id": "7434a59a-7a56-5d5a-a3cb-7a7a429728eb",
+    "source": "est",
+    "source_code": "AAF 002",
+    "lesson": "Quadratics",
+    "idea": "Axis of symmetry",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "91e736e57590d04b8999c39b594a13b2"
+  },
+  {
+    "id": "7497aa28-e23f-5620-8e59-2d70ed02b03f",
+    "source": "est",
+    "source_code": "DAP 063",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "0f699c54c61fc31e970ee4dde67d43aa"
+  },
+  {
+    "id": "760a09ce-5923-53b3-8643-4736fbfb3197",
+    "source": "est",
+    "source_code": "AAF 015",
+    "lesson": "Function composition and inverses",
+    "idea": "Composing functions",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "dada2071a1764d513ccfe0f2d07006f0"
+  },
+  {
+    "id": "766728a0-81d3-5a7d-a111-eac0085c7eee",
+    "source": "est",
+    "source_code": "AAF 019",
+    "lesson": "Absolute value",
+    "idea": "Nested absolute value equations",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "97794ec2647a3045de224d57b086721b"
+  },
+  {
+    "id": "775334ae-0e01-59dd-8874-d9d9bdf7a50a",
+    "source": "est",
+    "source_code": "FA 025",
+    "lesson": "Linear inequalities",
+    "idea": "Maximum whole-number solutions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "17452532c4408149d1d338fda44677b2"
+  },
+  {
+    "id": "7864f08a-31db-5744-b13e-efe71f89f6e4",
+    "source": "est",
+    "source_code": "FA 019",
+    "lesson": "Linear equations",
+    "idea": "Solving equations with fractions",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "e0a350f0cc72dffaf8a326fe28abef03"
+  },
+  {
+    "id": "78adfb38-ba78-5d83-b95a-d28b2da5fb3b",
+    "source": "est",
+    "source_code": "FA 052",
+    "lesson": "Linear equations",
+    "idea": "Equivalent expressions from an equation",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a113ac8260cc7eb5f00b7fab105590d1"
+  },
+  {
+    "id": "797d7faf-4a3f-5e04-9bbe-afc9c521c1a1",
+    "source": "est",
+    "source_code": "FA 072",
+    "lesson": "Linear inequalities",
+    "idea": "Regions and systems of inequalities",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "e254bf2680fc74cf2086fd06b38b80d7"
+  },
+  {
+    "id": "7d36801e-f7f9-5bb5-836c-d3fa0d7de448",
+    "source": "est",
+    "source_code": "DAP 047",
+    "lesson": "Percentages",
+    "idea": "Percentages from charts and tables",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5bdd1b221df71e5dfa85807773f6a1e1"
+  },
+  {
+    "id": "8105e65e-218d-5711-9e17-2fc75f65ed5a",
+    "source": "est",
+    "source_code": "DAP 005",
+    "lesson": "Statistics",
+    "idea": "Reading a median from a box plot",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "8a56b1afda63b59fe1f07b8b28455e3a"
+  },
+  {
+    "id": "811ede34-fc13-5745-a08a-c5e5a6989fb8",
+    "source": "est",
+    "source_code": "DAP 075",
+    "lesson": "Percentages",
+    "idea": "Percentages from charts and tables",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f9928cfdee746a1cf68e124312c6c465"
+  },
+  {
+    "id": "8195192c-741e-5f51-802e-7bca50ab957f",
+    "source": "est",
+    "source_code": "FA 036",
+    "lesson": "Lines and linear models",
+    "idea": "Slope from equations, points and graphs",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "09ce55d0e7925e4990681c2db822db8d"
+  },
+  {
+    "id": "828ecc1d-9b5e-57c9-a0b0-0fb2bfc2482c",
+    "source": "est",
+    "source_code": "FA 078",
+    "lesson": "Lines and linear models",
+    "idea": "Vertical lines and undefined slope",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ca661e33d161fd901484b07837780f4d"
+  },
+  {
+    "id": "8298e4d7-7614-5d41-a9cc-fdad76cccc20",
+    "source": "est",
+    "source_code": "AAF 003",
+    "lesson": "Complex numbers",
+    "idea": "Conjugates and division",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "6c0c8b4dd5314f08d726612e2760e2d2"
+  },
+  {
+    "id": "829ebd5d-cf3a-5863-9d21-d200d5b604aa",
+    "source": "est",
+    "source_code": "FA 003",
+    "lesson": "Absolute value",
+    "idea": "Intercepts of absolute value graphs",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5e5789cf51b09119342479b37b39effb"
+  },
+  {
+    "id": "82cabbbe-098d-51f6-81fb-bcd142c716a3",
+    "source": "est",
+    "source_code": "AAF 069",
+    "lesson": "Rearranging formulas",
+    "idea": "Isolating a variable in a radical formula",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "2c87e3de93f1a7528465f409e9713c99"
+  },
+  {
+    "id": "846d5d06-7540-547f-8d93-d17030d95834",
+    "source": "est",
+    "source_code": "DAP 002",
+    "lesson": "Statistics",
+    "idea": "Mean and missing values",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b1b9f5f1b9db73bb07697a1329e9ea4d"
+  },
+  {
+    "id": "8539d688-f6e6-5a00-8298-0d0644fa042f",
+    "source": "est",
+    "source_code": "FA 071",
+    "lesson": "Linear systems",
+    "idea": "Elimination with parameters",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "2cb1fba530d3d9a3e8ab0c5eae20c092"
+  },
+  {
+    "id": "85e6d3ea-8ba1-525c-adaa-0863635ce1c8",
+    "source": "est",
+    "source_code": "HOA 043",
+    "lesson": "Lines and linear models",
+    "idea": "Slope with unknown coordinates",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "bfd2319f5ae72cdfb54a4d83179cc093"
+  },
+  {
+    "id": "86e4207c-3b9c-5d80-9c18-20bf75785de3",
+    "source": "est",
+    "source_code": "GT 005",
+    "lesson": "Circles",
+    "idea": "Radius from coordinates",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "619af5a4633d81b9f5c1789f3d6ed66d"
+  },
+  {
+    "id": "86f16b84-112c-5f0d-b1f1-86d3e104a6b4",
+    "source": "est",
+    "source_code": "FA 047",
+    "lesson": "Lines and linear models",
+    "idea": "Linear models from data",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5ca6cfdd0dfbc0a2516dbd12c152ff15"
+  },
+  {
+    "id": "871a0256-a89c-5464-8677-cae7db3baedf",
+    "source": "est",
+    "source_code": "GT 023",
+    "lesson": "Area and volume",
+    "idea": "Volume with side-length ratios",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f9c659c1cac53346c91fbd95be3cc580"
+  },
+  {
+    "id": "89bb602c-25c8-5f13-9633-475ac24d5219",
+    "source": "est",
+    "source_code": "AAF 073",
+    "lesson": "Rational expressions and equations",
+    "idea": "Excluded values",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f5a4ae1b72c0e9440a25fb9668714126"
+  },
+  {
+    "id": "8a02d032-611b-5915-833a-2ecd2b8cf87f",
+    "source": "est",
+    "source_code": "FA 038",
+    "lesson": "Linear inequalities",
+    "idea": "Compound inequalities and integer solutions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d589e9515b43fe7f63e695ea071492c4"
+  },
+  {
+    "id": "8a4b8128-ab2e-59cf-868a-850e37052070",
+    "source": "est",
+    "source_code": "GT 012",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Sine and cosine ratios",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6bd70de178ecba0fc2b4fc3596c0af11"
+  },
+  {
+    "id": "8c13bfbd-6c12-5b48-8508-a1a82d794621",
+    "source": "est",
+    "source_code": "AAF 010",
+    "lesson": "Exponents and radicals",
+    "idea": "Equations with a common base",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b57a256094ea424e4e252a8e3f69bf39"
+  },
+  {
+    "id": "8d819726-ee5b-5991-aaf4-7871176ae5c8",
+    "source": "est",
+    "source_code": "AAF 040",
+    "lesson": "Quadratics",
+    "idea": "Sum and product of roots",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "93a56fec28ac023ec50a6279202592b8"
+  },
+  {
+    "id": "8eaf2ded-c1dc-5410-ad1e-fd6d3d13d061",
+    "source": "est",
+    "source_code": "GT 002",
+    "lesson": "Circles",
+    "idea": "Points inside, on and outside a circle",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6fdce7b45ff4c8ff349341efccd05c01"
+  },
+  {
+    "id": "8fb6c4fd-e35b-50fe-9142-75e0aede3e13",
+    "source": "est",
+    "source_code": "FA 027",
+    "lesson": "Linear equations",
+    "idea": "Solving for a parameter",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6773ed5fe53c85886b47ed9dfed72dcb"
+  },
+  {
+    "id": "913a7ada-1781-5eaa-aa66-9f38c170bf6e",
+    "source": "est",
+    "source_code": "AAF 028",
+    "lesson": "Function composition and inverses",
+    "idea": "Finding and evaluating inverses",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "5d7616c788d54ee7c10a0af288513a14"
+  },
+  {
+    "id": "92548ac0-8965-5cbb-aa65-81978147112f",
+    "source": "est",
+    "source_code": "DAP 074",
+    "lesson": "Statistics",
+    "idea": "Median and mode",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "274251bdb5468ac640a679a2a3fb9d84"
+  },
+  {
+    "id": "94b4cf80-d688-5b32-b9ee-750cc4f18b6a",
+    "source": "est",
+    "source_code": "FA 002",
+    "lesson": "Absolute value",
+    "idea": "Solving absolute value equations",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9b09b6bc55aaeddf8c540dfa5a5e4d54"
+  },
+  {
+    "id": "94c44fac-5e46-59d3-a034-8a964f65a31e",
+    "source": "est",
+    "source_code": "FA 041",
+    "lesson": "Linear inequalities",
+    "idea": "Maximum whole-number solutions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "bd9e9fb072983c33e2b9e2c34d535096"
+  },
+  {
+    "id": "966e80b2-3df4-5767-b510-f3b379d8a42f",
+    "source": "est",
+    "source_code": "FA 015",
+    "lesson": "Lines and linear models",
+    "idea": "Interpreting slope and intercept",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "dbd66d02640a72bec5e0ad0ec29be17a"
+  },
+  {
+    "id": "983eb663-1c9c-553f-a1b9-a7c4bfcdad63",
+    "source": "est",
+    "source_code": "AAF 061",
+    "lesson": "Rational expressions and equations",
+    "idea": "Range restrictions",
+    "difficulty": "hard",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "b4a4a3793506f6b3e2ecb4289beb8a37"
+  },
+  {
+    "id": "98475a0e-23d0-5ab0-883d-5d341c0b9f9e",
+    "source": "est",
+    "source_code": "AAF 043",
+    "lesson": "Quadratics",
+    "idea": "Completing the square and checking claims",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ef3875b162b3111e5f36c68a8cca523a"
+  },
+  {
+    "id": "985d05c3-e1a8-5278-b359-ddd22ba633f3",
+    "source": "est",
+    "source_code": "PAM 002",
+    "lesson": "Exponents and radicals",
+    "idea": "Products of radicals",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "e63b6cd9c32bd3274dd3cb6164069da2"
+  },
+  {
+    "id": "98eaedae-7bce-5cf0-8f7b-4ffdd4b8635f",
+    "source": "est",
+    "source_code": "FA 035",
+    "lesson": "Lines and linear models",
+    "idea": "Unknown coefficients from a point",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "da58dbf483fcfb3cd113c880e587c109"
+  },
+  {
+    "id": "993e9759-4111-51d5-a202-b83ee5b67e1e",
+    "source": "est",
+    "source_code": "PSD 006",
+    "lesson": "Ratios, rates and units",
+    "idea": "Part-to-whole ratios and unit rates",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "238d21484cafea7f614d0192d37d0459"
+  },
+  {
+    "id": "9a0a8f91-3794-5ad8-95ba-96c6487a2244",
+    "source": "est",
+    "source_code": "FA 007",
+    "lesson": "Lines and linear models",
+    "idea": "Collinear points",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "fcd7e6b9fc3af06e9440fbc233a71f98"
+  },
+  {
+    "id": "9ab25793-e111-533f-b92e-84fabed3ad34",
+    "source": "est",
+    "source_code": "FA 074",
+    "lesson": "Linear systems",
+    "idea": "Elimination and substitution",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "1a28e129b6a4f2643163783a656b4411"
+  },
+  {
+    "id": "9cefe6e0-fe59-5930-a405-902c866c495d",
+    "source": "est",
+    "source_code": "DAP 034",
+    "lesson": "Statistics",
+    "idea": "Median and mode",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "eebb383dd4c57e7eab31248947054324"
+  },
+  {
+    "id": "a317599f-826c-5baa-b5d2-4482a1b73851",
+    "source": "est",
+    "source_code": "AAF 024",
+    "lesson": "Nonlinear systems",
+    "idea": "Line and parabola intersections",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "4e2fde0e44e73d9f208071b7f56476a3"
+  },
+  {
+    "id": "a4bb0f93-9a35-5184-a0f4-0a706d6d2ea5",
+    "source": "est",
+    "source_code": "DAP 055",
+    "lesson": "Probability",
+    "idea": "Sampling without replacement",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "23fc2f3a6960dc2c2e8a6d3721d5718d"
+  },
+  {
+    "id": "a5d3bed4-5dea-5cb5-93fa-2393fe67c4ea",
+    "source": "est",
+    "source_code": "AAF 001",
+    "lesson": "Absolute value",
+    "idea": "Graph transformations",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "aa1b340f5be150b3534a3b47031131b8"
+  },
+  {
+    "id": "a683472f-c368-577d-b2b7-470be3abc0cf",
+    "source": "est",
+    "source_code": "FA 034",
+    "lesson": "Lines and linear models",
+    "idea": "Slope from equations, points and graphs",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6139f1de8260cb09c2ac1296fdf6714d"
+  },
+  {
+    "id": "aa44e453-6444-51a3-91b6-b05a83782e22",
+    "source": "est",
+    "source_code": "DAP 020",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6bdbb2330d41b2c9c2815d042ce46d6d"
+  },
+  {
+    "id": "aa6395ca-7e4f-5891-a061-b4aa11705887",
+    "source": "est",
+    "source_code": "FA 010",
+    "lesson": "Linear inequalities",
+    "idea": "Compound inequalities and integer solutions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "eaf1632232e85b1e77ff2581c642c1ba"
+  },
+  {
+    "id": "aa757655-ff0f-560e-93a0-dbe188e78a3c",
+    "source": "est",
+    "source_code": "GT 010",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Interior and exterior angles",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d7d9b69d8f7fd3abcfb799a56ae9e699"
+  },
+  {
+    "id": "aad7ddee-978e-5fb1-b33c-a34667654c26",
+    "source": "est",
+    "source_code": "AAF 062",
+    "lesson": "Rational expressions and equations",
+    "idea": "Solving rational equations",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "7cfcc459140d2a86a467dbdde0b9dca4"
+  },
+  {
+    "id": "ab8f6934-0f96-5a61-ac99-47c0d13a8aa8",
+    "source": "est",
+    "source_code": "AAF 066",
+    "lesson": "Rational expressions and equations",
+    "idea": "Excluded values",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a2369bca5eaf15a29108b94d1479afbe"
+  },
+  {
+    "id": "ac398c33-3b73-5ff9-be53-59ff3e3653c1",
+    "source": "est",
+    "source_code": "DAP 050",
+    "lesson": "Probability",
+    "idea": "Favourable outcomes and sample spaces",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "4b59015e4e826bc342fdc374f6c8b76c"
+  },
+  {
+    "id": "ac3b4475-f7c2-5e13-9bfa-158fce6cb7ea",
+    "source": "est",
+    "source_code": "AAF 031",
+    "lesson": "Exponents and radicals",
+    "idea": "Evaluating radicals",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b04e861d099766569f7ab0f2e2b24bf9"
+  },
+  {
+    "id": "ac975101-c7f9-5a27-8085-c291291b7fd6",
+    "source": "est",
+    "source_code": "GT 016",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Special right triangles",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "805e317a57cfb2c7ef7af694fb090808"
+  },
+  {
+    "id": "ae132f85-6925-5adf-a4ea-359488796df0",
+    "source": "est",
+    "source_code": "GT 008",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Multistep angle reasoning",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f1c71cf946b58ca89abfc46c9e4c06d4"
+  },
+  {
+    "id": "af66f2c1-106f-5fac-a054-e627c8426ff4",
+    "source": "est",
+    "source_code": "GT 020",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Interior and exterior angles",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "cdab5dd50f380b5098c43e29e30942ff"
+  },
+  {
+    "id": "b0c1df30-8e39-5063-b6bc-0e21bb521681",
+    "source": "est",
+    "source_code": "DAP 009",
+    "lesson": "Counting methods",
+    "idea": "Combinations",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "4e180f4bae98745fa9cd8167b8b3893d"
+  },
+  {
+    "id": "b40d4977-ba21-57e5-96f2-d33988677f09",
+    "source": "est",
+    "source_code": "AAF 009",
+    "lesson": "Exponents and radicals",
+    "idea": "Equations with a common base",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "1801521d17b290ebe6231e2508a0b3b5"
+  },
+  {
+    "id": "b515a6ed-1c6f-5848-b2b4-12c02a5d4524",
+    "source": "est",
+    "source_code": "AAF 048",
+    "lesson": "Quadratics",
+    "idea": "Reading a parabola graph",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9c279e90dab6a5a860a37ad2a4cf3fac"
+  },
+  {
+    "id": "ba641902-5ac4-5ee9-abae-650aaf01b164",
+    "source": "est",
+    "source_code": "FA 037",
+    "lesson": "Lines and linear models",
+    "idea": "Finding an intercept",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ca111305e7877edf85b7a1ab4db4fdcf"
+  },
+  {
+    "id": "bc6f518c-cfaa-51d2-ae5e-55db0972b979",
+    "source": "est",
+    "source_code": "PAM 003",
+    "lesson": "Function composition and inverses",
+    "idea": "Composing functions",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "fb92c12479667b604126b83312faef50"
+  },
+  {
+    "id": "bccff428-b913-5ac1-bee2-261c2e9dc26d",
+    "source": "est",
+    "source_code": "DAP 026",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "07628428ae803c084670fcea22160c1d"
+  },
+  {
+    "id": "bdac0d01-9d34-561e-8bc4-b6f19c19885e",
+    "source": "est",
+    "source_code": "AAF 020",
+    "lesson": "Functions and graphs",
+    "idea": "Evaluating functions",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9a49d801eff3a58e0fdfa9bb6a19eed7"
+  },
+  {
+    "id": "beae4149-6fef-553d-af57-3c1498c23245",
+    "source": "est",
+    "source_code": "AAF 034",
+    "lesson": "Polynomials",
+    "idea": "Roots and zero-product property",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "82fa863e41674354961fc54f43b78809"
+  },
+  {
+    "id": "beccd2e4-c298-5365-ba58-41fc08d0348d",
+    "source": "est",
+    "source_code": "FA 062",
+    "lesson": "Ratios, rates and units",
+    "idea": "Speed, distance and changing travel time",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5007cc9b0ffd6a17e1bb7988617439dd"
+  },
+  {
+    "id": "befe0aa4-1087-52f8-811d-c19c5a89e6e8",
+    "source": "est",
+    "source_code": "DAP 016",
+    "lesson": "Variation",
+    "idea": "Direct variation with powers",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "7c14adaffbd00c8ce0072e64675de66d"
+  },
+  {
+    "id": "c116b77e-9b66-54f7-b489-3f24b323304d",
+    "source": "est",
+    "source_code": "AAF 032",
+    "lesson": "Rational expressions and equations",
+    "idea": "Comparing coefficients in rational identities",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b207e668589125619d7451755f3e669a"
+  },
+  {
+    "id": "c188d690-c014-542c-bc20-4e6fc4212dcd",
+    "source": "est",
+    "source_code": "GT 014",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Similar triangles and parallel lines",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "156959d74ff1fd35f013b78cfe24d6cb"
+  },
+  {
+    "id": "c38780ec-a284-5eac-a888-d22c5f60acd2",
+    "source": "est",
+    "source_code": "FA 046",
+    "lesson": "Lines and linear models",
+    "idea": "Evaluating a linear model",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "691bd738fdda9b4290596950f41b15b1"
+  },
+  {
+    "id": "c44aba20-7355-53e0-974f-3d867e685e9d",
+    "source": "est",
+    "source_code": "AAF 074",
+    "lesson": "Quadratics",
+    "idea": "Axis of symmetry",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "faebf3452d6d9849bb9d4828493314bd"
+  },
+  {
+    "id": "c48eb06d-2fc3-542c-9535-6450678ed75c",
+    "source": "est",
+    "source_code": "GT 003",
+    "lesson": "Circles",
+    "idea": "Radius from coordinates",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "de7a1e35e5adf547996e21dc5189fe7d"
+  },
+  {
+    "id": "c537a5fe-260a-538c-9b70-8d15c5c01908",
+    "source": "est",
+    "source_code": "FA 068",
+    "lesson": "Linear systems",
+    "idea": "Infinitely many solutions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "8b61444018048fb9b1a516782fea6295"
+  },
+  {
+    "id": "c68ff0b2-b7d8-59e7-adf7-281cb5efb159",
+    "source": "est",
+    "source_code": "FA 028",
+    "lesson": "Lines and linear models",
+    "idea": "Unknown inputs in linear tables",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c5275ce572d23208b0d54b344a24ce32"
+  },
+  {
+    "id": "c7385c1d-6814-5cab-9659-c5b48acc8dc2",
+    "source": "est",
+    "source_code": "DAP 007",
+    "lesson": "Exponential models",
+    "idea": "Annual compound interest",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6703513ba15fc0c8f3b094c6c2623e09"
+  },
+  {
+    "id": "c978af6f-d788-5408-8629-9acac6991210",
+    "source": "est",
+    "source_code": "AAF 033",
+    "lesson": "Polynomials",
+    "idea": "Remainder theorem with a nonmonic divisor",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "e5ebbc2a04c702d1a8126cb040005d20"
+  },
+  {
+    "id": "ca19170d-67a3-5fdc-a8c8-c75bed9f4da3",
+    "source": "est",
+    "source_code": "DAP 025",
+    "lesson": "Statistics",
+    "idea": "Mean from graphs and tables",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "281c455a3ded9c5723aa29f68ef62133"
+  },
+  {
+    "id": "caebf388-c464-552c-ae0f-a06a56c442b2",
+    "source": "est",
+    "source_code": "AAF 008",
+    "lesson": "Exponents and radicals",
+    "idea": "Equations with a common base",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "53c7473256ade2a2394de911b4849f1d"
+  },
+  {
+    "id": "cb72ec57-1580-59ff-9961-f1620ffcafcd",
+    "source": "est",
+    "source_code": "DAP 064",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "aa64a0f8c569d7154d01781818febb9a"
+  },
+  {
+    "id": "cc88985a-7d14-59ad-9a1c-fa84abbba7f4",
+    "source": "est",
+    "source_code": "FA 016",
+    "lesson": "Linear systems",
+    "idea": "Elimination and substitution",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b17a379e5d1c9fed04ab3dd523743818"
+  },
+  {
+    "id": "cc94e27c-f0d7-5103-ae10-59a3fc25096a",
+    "source": "est",
+    "source_code": "GT 004",
+    "lesson": "Circles",
+    "idea": "Inscribed angles and arcs",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5016d6dbb8db75f6bca14ed86887b79e"
+  },
+  {
+    "id": "cd410473-f82a-5bcf-8f9c-b093ea00f406",
+    "source": "est",
+    "source_code": "DAP 018",
+    "lesson": "Variation",
+    "idea": "Direct variation with powers",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "bcac9070e8d7ed20d52a2c2eb332f3da"
+  },
+  {
+    "id": "ce582c84-3556-51d4-804b-1358edf4fbd9",
+    "source": "est",
+    "source_code": "FA 008",
+    "lesson": "Lines and linear models",
+    "idea": "Comparing linear costs",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6e81a1b280701fc70856376bf03d7878"
+  },
+  {
+    "id": "cea33ea6-380c-5400-901a-c96a9f9e070a",
+    "source": "est",
+    "source_code": "FA 064",
+    "lesson": "Lines and linear models",
+    "idea": "Slope from equations, points and graphs",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "7a7706e2fb538fe5065a5b710c351cbd"
+  },
+  {
+    "id": "d09a84d5-b0fb-5020-9ad9-579565d4cb56",
+    "source": "est",
+    "source_code": "DAP 057",
+    "lesson": "Ratios, rates and units",
+    "idea": "Rates and unit conversion",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "eab9621753bbc32a258a77300442b5cc"
+  },
+  {
+    "id": "d10cf3b6-a7a8-5c32-90f4-bea57f3fef35",
+    "source": "est",
+    "source_code": "FA 053",
+    "lesson": "Linear equations",
+    "idea": "Equivalent expressions from an equation",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "91bf251b29ea40d38590f33ba5a2392e"
+  },
+  {
+    "id": "d1ba40d5-fde6-541c-ba84-f9e7e5cf63c4",
+    "source": "est",
+    "source_code": "DAP 036",
+    "lesson": "Percentages",
+    "idea": "Percent increase and decrease",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "2395e4cf03c6df4a5d18a75ab30d5765"
+  },
+  {
+    "id": "d2347322-5e52-5b18-89e1-dcf3358b6fa0",
+    "source": "est",
+    "source_code": "HOA 001",
+    "lesson": "Linear equations",
+    "idea": "Solving linear equations",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "90bd745f01d027757971e37e1a422258"
+  },
+  {
+    "id": "d2abd3dd-eb8e-5eaa-90f5-4c730a1ca5fd",
+    "source": "est",
+    "source_code": "DAP 062",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "aa03ab44e75ab2823577d2e78e647b26"
+  },
+  {
+    "id": "d2d3fbe3-05f0-58e5-933e-f199c0d93508",
+    "source": "est",
+    "source_code": "GT 015",
+    "lesson": "Area and volume",
+    "idea": "Cross-section area",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d04714c9ec7dbf1ce2e277fcba48df5e"
+  },
+  {
+    "id": "d2f07ab6-b8db-5344-9fc6-d37730fdd73c",
+    "source": "est",
+    "source_code": "FA 060",
+    "lesson": "Expressions and number properties",
+    "idea": "Reasoning about signs and magnitudes",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "04432ddbdca6be2e6727937e2300d4db"
+  },
+  {
+    "id": "d3677f33-aa01-5ca0-ad6b-60a1cc55ad7e",
+    "source": "est",
+    "source_code": "FA 013",
+    "lesson": "Linear inequalities",
+    "idea": "Regions and systems of inequalities",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "93e44da94f9c81e66cef34f31a1fd2fa"
+  },
+  {
+    "id": "d3f477dd-e9b4-5386-bcbe-80ed9f1b4a82",
+    "source": "est",
+    "source_code": "DAP 072",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "09d520346e22d79b4c96a29a19541e87"
+  },
+  {
+    "id": "d4c65797-9b46-5fca-8a58-c56cf74f434b",
+    "source": "est",
+    "source_code": "FA 004",
+    "lesson": "Absolute value",
+    "idea": "Maximum under an absolute value constraint",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d610768f8a1fa6675a096e2df0a7dfad"
+  },
+  {
+    "id": "d4d223f5-8588-52bf-aa97-dba2d1f7241f",
+    "source": "est",
+    "source_code": "FA 076",
+    "lesson": "Linear systems",
+    "idea": "Infinitely many solutions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "360eb3562fe4e265f7a575539b94f3da"
+  },
+  {
+    "id": "d62465e0-a101-5323-9a2f-c0115e40f574",
+    "source": "est",
+    "source_code": "FA 069",
+    "lesson": "Linear systems",
+    "idea": "Two-variable word problems",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "1e40a9f088ae9480654a6986f955801e"
+  },
+  {
+    "id": "d6a4b301-2160-5fc6-9b70-c7c2c2cb72b4",
+    "source": "est",
+    "source_code": "DAP 051",
+    "lesson": "Probability",
+    "idea": "Favourable outcomes and sample spaces",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ed123d4a7fd85ef8bd771deee8124865"
+  },
+  {
+    "id": "d94fea93-9820-5bb8-b44f-1198d0878eb3",
+    "source": "est",
+    "source_code": "AAF 007",
+    "lesson": "Function composition and inverses",
+    "idea": "Composing functions",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "6b3fb6e68643e888cf08f652a516d4e8"
+  },
+  {
+    "id": "dd4b2609-bf4e-5ac1-a62f-39d1583bc9db",
+    "source": "est",
+    "source_code": "GT 018",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Interior and exterior angles",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a6199968b0952d6b865c179a5d7aff45"
+  },
+  {
+    "id": "de018bc7-6758-55b4-8d5f-f4420483fe74",
+    "source": "est",
+    "source_code": "AAF 052",
+    "lesson": "Quadratics",
+    "idea": "Vertex form",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "789f6d0c7e8319c4a1d8893bd1f7d4b4"
+  },
+  {
+    "id": "de469239-dc0e-582a-af18-5dbafa20fd4f",
+    "source": "est",
+    "source_code": "DAP 024",
+    "lesson": "Variation",
+    "idea": "Inverse variation",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "fdae273aa35322dc5ddc5bb416f487dc"
+  },
+  {
+    "id": "de4e464d-7034-5328-bac7-dfeb43aed33d",
+    "source": "est",
+    "source_code": "FA 023",
+    "lesson": "Linear equations",
+    "idea": "Translating word problems",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "0fe6844aef894c2e264e6557878ddf28"
+  },
+  {
+    "id": "dee24327-9e38-51f4-8cf7-ecad054d5f75",
+    "source": "est",
+    "source_code": "PAM 012",
+    "lesson": "Functions and graphs",
+    "idea": "Transforming known function values",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5df790f2a223862618c4ba182e5d5529"
+  },
+  {
+    "id": "df06c4dd-410f-5998-9a55-6a8941fdbd1c",
+    "source": "est",
+    "source_code": "GT 019",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Similarity and trigonometry together",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "032b6ad7d8fbec65125a5f6c09f737b5"
+  },
+  {
+    "id": "df1c3ebd-c786-55fa-9598-3f1f08da3f29",
+    "source": "est",
+    "source_code": "FA 001",
+    "lesson": "Absolute value",
+    "idea": "Solving absolute value equations",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "93073d1f7bd4c50821bcde5a7d73230f"
+  },
+  {
+    "id": "e0a8d85a-a1af-57f5-9448-5f3de9547a4c",
+    "source": "est",
+    "source_code": "GTC 015",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Complementary-angle identities",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "53e857a612c3ee6f124dfd2be0887192"
+  },
+  {
+    "id": "e1699c70-957d-599e-89b5-e45f312e1130",
+    "source": "est",
+    "source_code": "DAP 006",
+    "lesson": "Exponential models",
+    "idea": "Present value and monthly compounding",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "718c6b2c28a7089aaebe56262bdcb4d3"
+  },
+  {
+    "id": "e25020c9-300c-5d81-b05e-b159d4f6d945",
+    "source": "est",
+    "source_code": "FA 009",
+    "lesson": "Rational expressions and equations",
+    "idea": "Simplifying complex fractions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "fdc63672596a376f3127b0e02650cc33"
+  },
+  {
+    "id": "e32043e0-3d31-5ad1-a0b6-7f44923acb9b",
+    "source": "est",
+    "source_code": "AAF 014",
+    "lesson": "Polynomials",
+    "idea": "Factoring expressions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "44d5f7da52c3d8f7469325f66e47b4bb"
+  },
+  {
+    "id": "e4da90d0-20bc-51ee-856c-55625f48d0b2",
+    "source": "est",
+    "source_code": "HOA 035",
+    "lesson": "Linear inequalities",
+    "idea": "Testing an ordered pair",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d6ba719769b234f243659e238face779"
+  },
+  {
+    "id": "e59ce1ca-10eb-5cd8-b38a-b54b8c1a574f",
+    "source": "est",
+    "source_code": "FA 056",
+    "lesson": "Percentages",
+    "idea": "Percent as a multiplier",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "27e21387985b55e0466281d2240c7fa1"
+  },
+  {
+    "id": "e5b77d19-68eb-57b1-a6a5-fa6196f690d8",
+    "source": "est",
+    "source_code": "AAF 055",
+    "lesson": "Quadratic inequalities",
+    "idea": "Sign of a quadratic",
+    "difficulty": "hard",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "b2f227c3fa68ef7da5a8746243f277e6"
+  },
+  {
+    "id": "e8d7c96b-9a3f-536a-8dc9-7548f841c259",
+    "source": "est",
+    "source_code": "GT 011",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Similarity and trigonometry together",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "8b15a3d3799a247223efa43afd8d22ce"
+  },
+  {
+    "id": "ea7741c7-68cb-5f2d-a109-e3ae999291c2",
+    "source": "est",
+    "source_code": "DAP 035",
+    "lesson": "Percentages",
+    "idea": "Percent increase and decrease",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d6559bfe146e8fda8fc1071f15a73bb6"
+  },
+  {
+    "id": "ea81ac68-1a66-5fb6-89b3-e3bc58333ee4",
+    "source": "est",
+    "source_code": "DAP 054",
+    "lesson": "Probability",
+    "idea": "Two-dice sample space",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "2ada5ac88df457790d5f3e6245d7b0b3"
+  },
+  {
+    "id": "ecb0917b-e523-5f1d-bcfc-df08bab797b7",
+    "source": "est",
+    "source_code": "FA 018",
+    "lesson": "Linear equations",
+    "idea": "Solving equations with fractions",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "21a6ec8acf1b47ae44453b24292fa52d"
+  },
+  {
+    "id": "eed2bb42-18d6-502a-a605-8bbc299eb33c",
+    "source": "est",
+    "source_code": "DAP 028",
+    "lesson": "Scatterplots and models",
+    "idea": "Predictions from a best-fit line",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "52b13b8f0802b5473566b4809b56ee88"
+  },
+  {
+    "id": "efa05289-0b96-53ac-9a6c-f78dbd848904",
+    "source": "est",
+    "source_code": "AAF 046",
+    "lesson": "Quadratics",
+    "idea": "Connecting a parabola to geometry",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "cb7e93309f351d64af0f749fa8e5f417"
+  },
+  {
+    "id": "f0fdb1f5-7e1f-5a4d-859b-80c47e1c9f48",
+    "source": "est",
+    "source_code": "GT 009",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Interior and exterior angles",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "70e3f323316eb609ab9f1257dfc23dac"
+  },
+  {
+    "id": "f1280694-369b-5b13-b1ca-a67c0b68a121",
+    "source": "est",
+    "source_code": "FA 021",
+    "lesson": "Linear equations",
+    "idea": "Solving equations with fractions",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "11b1de7bd0f3d80ea2da63ae14277799"
+  },
+  {
+    "id": "f20319a9-43a3-572b-9efc-46ac53d58013",
+    "source": "est",
+    "source_code": "HOA 002",
+    "lesson": "Lines and linear models",
+    "idea": "Building a linear cost or score model",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "289eadc5fb66b214cc4780f35557d205"
+  },
+  {
+    "id": "f42b2e10-4151-5135-9deb-122c7145b02f",
+    "source": "est",
+    "source_code": "FA 020",
+    "lesson": "Linear equations",
+    "idea": "Translating word problems",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "02a607320aaa9d0183a34cfbbfa22a8d"
+  },
+  {
+    "id": "f4dbe999-6636-5862-bdc8-08eb5a4e4b9a",
+    "source": "est",
+    "source_code": "FA 048",
+    "lesson": "Lines and linear models",
+    "idea": "Evaluating a linear model",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "41dd1d3b1c69372e2226950a5fb69f84"
+  },
+  {
+    "id": "f6d59c59-f9f3-5688-bfde-6d97d373f405",
+    "source": "est",
+    "source_code": "DAP 031",
+    "lesson": "Statistics",
+    "idea": "Mean from graphs and tables",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "07b9fadaa093f7955575f42bfa0601fb"
+  },
+  {
+    "id": "f7a4cf7b-92c2-5880-8031-058d259b7ddf",
+    "source": "est",
+    "source_code": "AAF 023",
+    "lesson": "Nonlinear systems",
+    "idea": "Line and parabola intersections",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "0eeef0c8e84fb605195fc8e37c23c757"
+  },
+  {
+    "id": "f8ac509d-4755-5ffc-a63b-c2b64e0ae634",
+    "source": "est",
+    "source_code": "AAF 011",
+    "lesson": "Exponents and radicals",
+    "idea": "Equations with a common base",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "18c7708fd4cf07e16971db6a71ad9a09"
+  },
+  {
+    "id": "f8e70b2e-a92f-5b29-9296-7d03892e0b88",
+    "source": "est",
+    "source_code": "FA 066",
+    "lesson": "Linear systems",
+    "idea": "Elimination and substitution",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "20f262381635530f165f7fc5f433d471"
+  },
+  {
+    "id": "fae41ea3-31ed-5cae-8b60-030c503f8fa0",
+    "source": "est",
+    "source_code": "DAP 029",
+    "lesson": "Statistics",
+    "idea": "Mean and missing values",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "82ff1189a2f6c69beb277e6f37a37075"
+  },
+  {
+    "id": "fdfcb3c3-295f-5bde-a5fa-de60f4917205",
+    "source": "est",
+    "source_code": "FA 065",
+    "lesson": "Linear systems",
+    "idea": "Parameter systems and uniqueness",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c4827fd25ba4fcde5441cbe57f926eef"
+  },
+  {
+    "id": "fe22ccc7-559c-5c50-b069-7f60ae8cc27f",
+    "source": "est",
+    "source_code": "FA 044",
+    "lesson": "Linear inequalities",
+    "idea": "Solving and testing inequalities",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "cc0bf81492e869e486db2e67ba75ae84"
+  },
+  {
+    "id": "fecf4f9f-acea-5772-964c-dd4f1f2f8f3d",
+    "source": "est",
+    "source_code": "DAP 071",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading and comparing data",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d5881f9b2ed7076218349431d22429c4"
+  },
+  {
+    "id": "ffd11fe2-ac61-5a51-bb1a-58f62841184e",
+    "source": "est",
+    "source_code": "PSD 010",
+    "lesson": "Ratios, rates and units",
+    "idea": "Ratios after adding members",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "70d5fe9b22fe423fff78c9bf92fd4dc7"
+  },
+  {
+    "id": "00ccf407-8f8d-40a9-847a-eb94d53c56fb",
+    "source": "sat",
+    "source_code": "0",
+    "lesson": "Statistics",
+    "idea": "Comparing standard deviation",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d8404c78c1ae8264fa5f905fbe377540"
+  },
+  {
+    "id": "03111129-aedd-4882-86fd-d3c221da8e2d",
+    "source": "sat",
+    "source_code": "CB-38c90632",
+    "lesson": "Rational expressions and equations",
+    "idea": "Comparing coefficients in rational identities",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "aaeef76c47e2d15f42b74eccc9204d59"
+  },
+  {
+    "id": "038d86a0-ab1f-4521-99c6-2cda7a2203fe",
+    "source": "sat",
+    "source_code": "CB-7bf77c19",
+    "lesson": "Exponential models",
+    "idea": "Reading intercepts from equivalent forms",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3dbf2490ba3275bd1cdf0029b3a1798a"
+  },
+  {
+    "id": "051225e2-9ae9-4b82-81b1-2bdb219d658e",
+    "source": "sat",
+    "source_code": "CB-1b96c116",
+    "lesson": "Ratios, rates and units",
+    "idea": "Converting area units",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "24a1e68b25ca325af1acfe4424bd3354"
+  },
+  {
+    "id": "0637bdbf-64c1-4192-84d8-d7912f169e2d",
+    "source": "sat",
+    "source_code": "CB-10e059a6",
+    "lesson": "Circles",
+    "idea": "Radians and degrees",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ca152869213283910d9bc530ef0740c7"
+  },
+  {
+    "id": "07a96e63-f67f-496b-98ca-8c2c2b8abeba",
+    "source": "sat",
+    "source_code": "CB-697b3954",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Congruent triangles and corresponding sides",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d8f2166b72c76814dc2e2136d71a4b30"
+  },
+  {
+    "id": "095032aa-23f9-498c-a60b-96e2a54c7280",
+    "source": "sat",
+    "source_code": "AUGPRED-M2-14",
+    "lesson": "Statistical inference",
+    "idea": "Finding a margin of error",
+    "difficulty": "easy",
+    "programmes": [
+      "sat"
+    ],
+    "fingerprint": "d5a7962ca5ebfdb868b734b57bceecda"
+  },
+  {
+    "id": "0b19538b-789d-4e1a-b349-09fc945af43f",
+    "source": "sat",
+    "source_code": "CB-124bc42b",
+    "lesson": "Area and volume",
+    "idea": "Area of basic plane figures",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ea71feb4018eed913d36e6e0cc772023"
+  },
+  {
+    "id": "0bc205c9-477e-441e-9bbd-63a2e1166022",
+    "source": "sat",
+    "source_code": "AUGINT2-M2-17",
+    "lesson": "Statistical inference",
+    "idea": "Interpreting an estimate interval",
+    "difficulty": "medium",
+    "programmes": [
+      "sat"
+    ],
+    "fingerprint": "ae1b712a110d372245129a7916cf2902"
+  },
+  {
+    "id": "0c63b704-3025-45e5-984e-43c3a93b4784",
+    "source": "sat",
+    "source_code": "CB-1dacfb94",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Similarity with multiple constraints",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6a0030a5c38253d7f48f0cf718d99e49"
+  },
+  {
+    "id": "0ca7a838-0c3b-4e29-9b9d-6ac3d7c6abcd",
+    "source": "sat",
+    "source_code": "CB-5acbdc30",
+    "lesson": "Exponential models",
+    "idea": "Interpreting growth factor and initial value",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "11d07b195940120b4254ec3283408619"
+  },
+  {
+    "id": "0d443c45-4d80-4b8a-832e-eb3ff69cb7a2",
+    "source": "sat",
+    "source_code": "CB-9f9112ab",
+    "lesson": "Circles",
+    "idea": "Radians and degrees",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5210206eaed6cca22052d72a25dda1ea"
+  },
+  {
+    "id": "0eb36aa1-d83c-4538-91e9-4e46631d6e38",
+    "source": "sat",
+    "source_code": "CB-00165291",
+    "lesson": "Polynomials",
+    "idea": "Factoring with unknown coefficients",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "e1089b6c199386b61c8ed20b44af6a96"
+  },
+  {
+    "id": "0fd1b56d-38c4-45bc-8455-905898c7364a",
+    "source": "sat",
+    "source_code": "13",
+    "lesson": "Circles",
+    "idea": "Radius and diameter",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "8d302da4adda2d4bf9c3e02e4b60412c"
+  },
+  {
+    "id": "0fd6f763-c80e-4ff3-91ec-ffabf34b6fb7",
+    "source": "sat",
+    "source_code": "CB-27f1db42",
+    "lesson": "Circles",
+    "idea": "Center and radius from an equation",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f7381c202bb9684bcd95c810dd083c4f"
+  },
+  {
+    "id": "11d6aeba-b397-458c-b8fa-c5b351b59fd0",
+    "source": "sat",
+    "source_code": "CB-0013adbd",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Proving lines parallel",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6c82e3f6461447f4a21df1fe592cd682"
+  },
+  {
+    "id": "1372284f-1a94-455e-8d46-fd06a50d3acd",
+    "source": "sat",
+    "source_code": "CB-0e926898",
+    "lesson": "Linear systems",
+    "idea": "Two-variable word problems",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c3e5f8d5d099a1c0c56674d53ced9e44"
+  },
+  {
+    "id": "192867b7-4fe1-4f04-9180-a58e6e3755d9",
+    "source": "sat",
+    "source_code": "CB-f6c18a66",
+    "lesson": "Statistics",
+    "idea": "Effect of removing an extreme value",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "da20cbd4442e2b6b4dabbfc051881fcd"
+  },
+  {
+    "id": "1b7589db-bcb0-44d8-a93a-5539af485550",
+    "source": "sat",
+    "source_code": "CB-1dc7e423",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Angle-angle similarity",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "58128cbbd4bedc8509df667d3a86446e"
+  },
+  {
+    "id": "22f2107b-8bcb-40bf-9039-e7f819481c57",
+    "source": "sat",
+    "source_code": "CB-71b74a44",
+    "lesson": "Exponential models",
+    "idea": "Interpreting growth factor and initial value",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a73d6677f5256c112d36e5fca49e7acc"
+  },
+  {
+    "id": "25d1b735-30c5-421a-9c9e-11af71ef171b",
+    "source": "sat",
+    "source_code": "CB-de799680",
+    "lesson": "Ratios, rates and units",
+    "idea": "Length and speed unit conversion",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c64659ada3ed7175c70c1ce4ab74b72b"
+  },
+  {
+    "id": "266a585f-4ad0-4e9c-9db3-8a2df3ebe2ac",
+    "source": "sat",
+    "source_code": "CB-6c67dd47",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Triangle area using sine",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "da5d9d0cf61f33ea4922028385bae318"
+  },
+  {
+    "id": "271823c4-e29a-458d-ad48-74281b9b9dad",
+    "source": "sat",
+    "source_code": "CB-da978ee6",
+    "lesson": "Statistical inference",
+    "idea": "Sample size and margin of error",
+    "difficulty": "hard",
+    "programmes": [
+      "sat"
+    ],
+    "fingerprint": "0bad74c9ee01455660eaa37b3283dcc0"
+  },
+  {
+    "id": "298d12cf-3407-4716-8262-4fe5fc5cd4f2",
+    "source": "sat",
+    "source_code": "AUGINT2-M1-19",
+    "lesson": "Circles",
+    "idea": "Semicircle arcs and circumference",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "02f207468e2901b7cd03c421fa909cd1"
+  },
+  {
+    "id": "2a3e249b-4330-460e-aea0-af43b28d59d3",
+    "source": "sat",
+    "source_code": "CB-44d67c6c",
+    "lesson": "Circles",
+    "idea": "Circle equations with parameters",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "39bb8162f6e1422047dbc4fcff5f0c1b"
+  },
+  {
+    "id": "2abb962a-2d6e-4cca-87d0-52dcb53d0b22",
+    "source": "sat",
+    "source_code": "CB-fc4a0d2a",
+    "lesson": "Lines and linear models",
+    "idea": "Interpreting and evaluating linear models",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3c9f7c3760c1eb1468a9ad4ffe820273"
+  },
+  {
+    "id": "2e4d7672-1664-4974-8355-695e4c37d1d4",
+    "source": "sat",
+    "source_code": "CB-d914abec",
+    "lesson": "Linear inequalities",
+    "idea": "Modelling constraints",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "119b60b71ba6d489a975ba5545c2c236"
+  },
+  {
+    "id": "2f25e048-a6e8-4970-9a99-4623249b6a95",
+    "source": "sat",
+    "source_code": "CB-2493c767",
+    "lesson": "Lines and linear models",
+    "idea": "Interpreting and evaluating linear models",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a3bfb76aab1a045bd3016d5cebc78e49"
+  },
+  {
+    "id": "3591a355-a6db-4adb-add8-88c0875d9e35",
+    "source": "sat",
+    "source_code": "CB-9a1f1941",
+    "lesson": "Absolute value",
+    "idea": "No-solution conditions",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "191b6b02478262f0eaa3cd21c3891ab6"
+  },
+  {
+    "id": "35bc47aa-38a7-4812-8e38-5911053f39f4",
+    "source": "sat",
+    "source_code": "CB-179edb12",
+    "lesson": "Area and volume",
+    "idea": "Volume formulas",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6bcfec3c6df475d4eb733ebf527887f5"
+  },
+  {
+    "id": "38ac2f4c-92cf-474d-b25d-ecd423db3758",
+    "source": "sat",
+    "source_code": "CB-e833de9a",
+    "lesson": "Nonlinear systems",
+    "idea": "Line and circle intersections",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "2eb1d46c6204a627c4d4b0532b88faeb"
+  },
+  {
+    "id": "393f7e8e-cb2a-40d1-babb-a5116b504981",
+    "source": "sat",
+    "source_code": "CB-73e1b793",
+    "lesson": "Area and volume",
+    "idea": "Length, area and volume scale factors",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "416a80d33b37521a70e695cc733238a3"
+  },
+  {
+    "id": "39a1add5-f195-47b3-bc96-fdaa147dab8d",
+    "source": "sat",
+    "source_code": "CB-4722abd2",
+    "lesson": "Lines and linear models",
+    "idea": "Perpendicular slope",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "11342a2cd9722cf66e9ba86abfce7431"
+  },
+  {
+    "id": "3b76b7aa-d323-419a-9ca9-27b466d00980",
+    "source": "sat",
+    "source_code": "CB-89ff6a0a",
+    "lesson": "Probability",
+    "idea": "Conditional probability",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3ba3c86806284d125cb65a34fa22640c"
+  },
+  {
+    "id": "3bf6b6c1-abea-41b3-8df4-b28f5ac46357",
+    "source": "sat",
+    "source_code": "CB-f3f06c3a",
+    "lesson": "Area and volume",
+    "idea": "Area of basic plane figures",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "4935d06b1c769674d93d3eb687f3a354"
+  },
+  {
+    "id": "3cb3a0a2-762d-4463-a938-25eb9a0cb493",
+    "source": "sat",
+    "source_code": "CB-b5d62bba",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Similarity with multiple constraints",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6d93c152eba8ce17b2b5bf55e6580809"
+  },
+  {
+    "id": "3cf0cf2a-8994-4303-bf95-62476fdc474c",
+    "source": "sat",
+    "source_code": "CB-149021da",
+    "lesson": "Circles",
+    "idea": "Arc length",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3fc92237446eeffb664334e8aa0c8441"
+  },
+  {
+    "id": "3d699cb1-09e8-4079-aab0-33e42d2bf97c",
+    "source": "sat",
+    "source_code": "CB-c4a9c94d",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Similarity and Pythagorean constraints",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "32adc7a75fb0c8f970d58303d552929f"
+  },
+  {
+    "id": "4008a822-d4af-4922-b1e8-2d9187d825bb",
+    "source": "sat",
+    "source_code": "CB-efc469c4",
+    "lesson": "Polynomials",
+    "idea": "Coefficient sums through substitution",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3d417b20cc9c7668f264bb4fb893fc41"
+  },
+  {
+    "id": "402a6a35-890f-440f-b6ac-48b378946ae0",
+    "source": "sat",
+    "source_code": "AUGPRED-M2-07",
+    "lesson": "Scatterplots and models",
+    "idea": "Equation of a best-fit line",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "89a87d04dcbe0b93aa9abce586eb60d4"
+  },
+  {
+    "id": "43570146-c30e-4cae-9151-146e6107beed",
+    "source": "sat",
+    "source_code": "CB-59813abf",
+    "lesson": "Linear systems",
+    "idea": "No-solution conditions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "470e1173110feb67374d610a7c8fb894"
+  },
+  {
+    "id": "43d8d987-eba1-4b70-90b5-08b9dd677972",
+    "source": "sat",
+    "source_code": "AUGPRED-M2-12",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Selecting data and finding a mean",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5acd457979b5094a71ce9ae4c962b69a"
+  },
+  {
+    "id": "448d9b31-38ea-4e25-bab8-f70953c436ed",
+    "source": "sat",
+    "source_code": "CB-5eb4918d",
+    "lesson": "Linear equations",
+    "idea": "Equivalent expressions from an equation",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "aa16187099c5db833abd89e397c28f10"
+  },
+  {
+    "id": "45cbab22-e83d-4268-9377-47e8247718f6",
+    "source": "sat",
+    "source_code": "CB-fe62f031",
+    "lesson": "Functions and graphs",
+    "idea": "Vertical translations",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "697d496db0ae89e9990d01219d42b368"
+  },
+  {
+    "id": "46e43fa6-fdc8-4b3d-b8ad-48b76e789e99",
+    "source": "sat",
+    "source_code": "CB-f01108a8",
+    "lesson": "Exponential models",
+    "idea": "Range and number of intercepts",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "293c66a4ca35f4d94dceec0929a97c1d"
+  },
+  {
+    "id": "49733e53-a575-4ad3-a702-47fee8d2f670",
+    "source": "sat",
+    "source_code": "CB-58b4c6f3",
+    "lesson": "Exponential models",
+    "idea": "Unknown constants from two points",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f470fc598acf9233b3924749407afbbf"
+  },
+  {
+    "id": "49f7388d-fa57-4c53-8042-813a82a1f8b4",
+    "source": "sat",
+    "source_code": "CB-3e1bd4e2",
+    "lesson": "Statistical inference",
+    "idea": "Finding a margin of error",
+    "difficulty": "easy",
+    "programmes": [
+      "sat"
+    ],
+    "fingerprint": "0bb9afd5a64320032bfedd948585d36a"
+  },
+  {
+    "id": "4a5f63ad-1d54-4312-940d-6da91ac3e3fd",
+    "source": "sat",
+    "source_code": "CB-a1e65979",
+    "lesson": "Quadratics",
+    "idea": "Vertex form and unknown coefficients",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "003a4b4d754946fe5843ce591a8c16d1"
+  },
+  {
+    "id": "4a8cccdb-f73e-4349-82af-e5c6a21efd9c",
+    "source": "sat",
+    "source_code": "CB-7bbfbe70",
+    "lesson": "Exponential models",
+    "idea": "Time intervals in growth and decay",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "60784355d34f00645b1cad7798154a7f"
+  },
+  {
+    "id": "4c7fafb6-7c64-46b8-950b-d87df6a13303",
+    "source": "sat",
+    "source_code": "CB-d4572f55",
+    "lesson": "Lines and linear models",
+    "idea": "Constructing models with parameters",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9159495786764a941a5240191bc4ada4"
+  },
+  {
+    "id": "4dc11923-841a-4880-8423-348603ae9258",
+    "source": "sat",
+    "source_code": "CB-55ea0659",
+    "lesson": "Linear equations",
+    "idea": "Unique-solution conditions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "e3541bd3d86ff613125e8d286d6806a0"
+  },
+  {
+    "id": "54e47358-3d01-4324-b640-625a41f2e58c",
+    "source": "sat",
+    "source_code": "CB-e3158182",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Complementary angles in radians",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5ea2026d308a34e879dbe07674f138b0"
+  },
+  {
+    "id": "5590805a-cb95-45b8-9d94-e48fbf75509f",
+    "source": "sat",
+    "source_code": "CB-91aa9aa9",
+    "lesson": "Polynomials",
+    "idea": "Combining like terms",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "05377c7ec10b60e6d74fc8513bd0ffd9"
+  },
+  {
+    "id": "5aa956f6-71f3-4451-bb47-9a605ca41fc5",
+    "source": "sat",
+    "source_code": "CB-9fdc4eaa",
+    "lesson": "Area and volume",
+    "idea": "Pyramid surface area and height",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a07ff5cd35d4a89866cc52a0e3ea5ad9"
+  },
+  {
+    "id": "5bc687bf-f7f7-44a5-822c-2b147b3a57d3",
+    "source": "sat",
+    "source_code": "CB-7ce2e728",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Similarity with multiple constraints",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "31c043fd63f052d6db5b061e56b9ecf0"
+  },
+  {
+    "id": "5ea1f9d2-64cf-44df-89c1-0e6e9edc67a0",
+    "source": "sat",
+    "source_code": "CB-0c490cd5",
+    "lesson": "Lines and linear models",
+    "idea": "Interpreting and evaluating linear models",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6b756cc330deb7fe5905371cff641259"
+  },
+  {
+    "id": "5fb5c8a7-1d61-482c-8e86-0ec2487898d7",
+    "source": "sat",
+    "source_code": "AUGPRED-M2-08",
+    "lesson": "Percentages",
+    "idea": "Multistep percentages",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "88473257c1483b5db371175e2d2f67e6"
+  },
+  {
+    "id": "5ff76614-b80e-49ba-b95a-3582df76377d",
+    "source": "sat",
+    "source_code": "AUGINT2-M2-08",
+    "lesson": "Statistics",
+    "idea": "Comparing standard deviation",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f2c631bc601ea8d30ad21807f92e65e8"
+  },
+  {
+    "id": "62e16547-0c7f-4874-aea0-d79a27c5a31d",
+    "source": "sat",
+    "source_code": "CB-4fb972f2",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Pythagorean theorem",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "af8dfe02d7d872c25eb080e07ac3219d"
+  },
+  {
+    "id": "63e87f96-ae26-42e2-8105-e77f5ca23a74",
+    "source": "sat",
+    "source_code": "CB-98818acf",
+    "lesson": "Percentages",
+    "idea": "Percent increase versus growth factor",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "916ba420a7ed1aca927aefc6859441d6"
+  },
+  {
+    "id": "641f6e73-b24d-4a91-bd96-f248b782f705",
+    "source": "sat",
+    "source_code": "CB-f389569d",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Special right triangles",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c84db668d7cd7f243a3f2cefcb2377db"
+  },
+  {
+    "id": "6698149a-8d77-4845-96c5-7954f812eecf",
+    "source": "sat",
+    "source_code": "CB-267f82b5",
+    "lesson": "Circles",
+    "idea": "Center and radius from an equation",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "7d6160c6c7af53c92b639531eb15c961"
+  },
+  {
+    "id": "67b052c9-8238-4bb5-9988-d63a0a3ff66f",
+    "source": "sat",
+    "source_code": "CB-c95686e9",
+    "lesson": "Quadratics",
+    "idea": "Solving a height model",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5da08835a051210898b9c7c6b82ac880"
+  },
+  {
+    "id": "69ef359d-c752-49d3-91cf-9c3363d755c4",
+    "source": "sat",
+    "source_code": "CB-46308566",
+    "lesson": "Quadratics",
+    "idea": "Discriminant with integer parameters",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "7a059ad30f614ec23dedb98fd8385c5b"
+  },
+  {
+    "id": "6b61b299-3f8a-4148-9553-f825c9a44f49",
+    "source": "sat",
+    "source_code": "CB-cab8f907",
+    "lesson": "Area and volume",
+    "idea": "Area of basic plane figures",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b0806bde783570adfbe3bd9736a5d303"
+  },
+  {
+    "id": "6fdeacbf-78ef-47db-aed7-680addb3b045",
+    "source": "sat",
+    "source_code": "CB-8493fd10",
+    "lesson": "Circles",
+    "idea": "Circle equations with parameters",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "974db880b744f89cf41d9ac2c2f1500b"
+  },
+  {
+    "id": "716fc782-1f4d-413d-8835-b0ed3d4ed13d",
+    "source": "sat",
+    "source_code": "CB-5da5c665",
+    "lesson": "Quadratics",
+    "idea": "Quadratic formula",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f530fa43b448c1f858445d1eb77193da"
+  },
+  {
+    "id": "751e9f47-4634-439f-9595-192921aaf98a",
+    "source": "sat",
+    "source_code": "CB-25cc5327",
+    "lesson": "Area and volume",
+    "idea": "Volume formulas",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9d2981f9386dba2da990483914ac331c"
+  },
+  {
+    "id": "780a98e9-5051-4547-9b22-cebe80fd9567",
+    "source": "sat",
+    "source_code": "CB-18ac8354",
+    "lesson": "Linear systems",
+    "idea": "Infinitely many solutions with parameters",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "859840db2a5dcc62f2981c69fa748b2b"
+  },
+  {
+    "id": "78d7ea98-943f-403d-9de5-137c9fa00513",
+    "source": "sat",
+    "source_code": "AUGPRED-M1-02",
+    "lesson": "Lines and linear models",
+    "idea": "Interpreting and evaluating linear models",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "6f5cbae1665cae08af19909abee66a3e"
+  },
+  {
+    "id": "7b6f4446-46e2-4a88-b0a9-3b3c30a562c1",
+    "source": "sat",
+    "source_code": "CB-30596346",
+    "lesson": "Polynomials",
+    "idea": "Roots and zero-product property",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "763d45f88962df0fd18bd5dc300bdd5d"
+  },
+  {
+    "id": "8176e03a-88e2-4c96-99da-e00cd09d8bc1",
+    "source": "sat",
+    "source_code": "CB-088bc84e",
+    "lesson": "Linear equations",
+    "idea": "Equivalent expressions from an equation",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f1899b83277fbe12d4d227df83aa0418"
+  },
+  {
+    "id": "8976a2cd-b736-4e73-9b18-4a5d600695a1",
+    "source": "sat",
+    "source_code": "AUGINT2-M1-09",
+    "lesson": "Scatterplots and models",
+    "idea": "Equation of a best-fit line",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "387bef6dbbf8736a127d7feeaee11dc9"
+  },
+  {
+    "id": "8e2bc3fd-2849-4c46-ba52-ada3580b5dfa",
+    "source": "sat",
+    "source_code": "73",
+    "lesson": "Area and volume",
+    "idea": "Length, area and volume scale factors",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c2bb9cf69fd6bf75c953cf57b627132f"
+  },
+  {
+    "id": "92e43989-657d-4a5f-8e78-734e17de507b",
+    "source": "sat",
+    "source_code": "CB-ea8bd66f",
+    "lesson": "Linear systems",
+    "idea": "Substitution",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "062cee631ed5bd7c5a465b0491462aa8"
+  },
+  {
+    "id": "9344b96b-353d-4636-832c-4abf004df356",
+    "source": "sat",
+    "source_code": "CB-2c3aefc9",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Similarity and Pythagorean constraints",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ff7a54a99d6c928a2c0c2b5ce73619d7"
+  },
+  {
+    "id": "96ea8fcd-367e-413f-9dea-7fdcfec5d917",
+    "source": "sat",
+    "source_code": "76",
+    "lesson": "Circles",
+    "idea": "Distance and completing the square",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "e8112ee59eca41f72f45e06d5a9c883c"
+  },
+  {
+    "id": "97131437-558f-44a3-824d-7a92e481b1a9",
+    "source": "sat",
+    "source_code": "CB-935f3403",
+    "lesson": "Lines and linear models",
+    "idea": "Interpreting and evaluating linear models",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "015cf3e01acdb87a92aee5e7528328a5"
+  },
+  {
+    "id": "977c9ef8-4e19-482f-b717-05184b05f1bc",
+    "source": "sat",
+    "source_code": "CB-a5ff1a96",
+    "lesson": "Circles",
+    "idea": "Center and radius from an equation",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "47bb288ac1da79f47375250c4e68eb2b"
+  },
+  {
+    "id": "98c2221e-b0b8-4278-bc46-51bfa972ff61",
+    "source": "sat",
+    "source_code": "AUGINT2-M1-20",
+    "lesson": "Percentages",
+    "idea": "Multistep percentages",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "519ec881a83369131de4b6a4345360a5"
+  },
+  {
+    "id": "9ad75486-3ad7-4400-8136-a0ab0eacfd67",
+    "source": "sat",
+    "source_code": "AUGINT2-M2-11",
+    "lesson": "Circles",
+    "idea": "Distance and completing the square",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ac3ac432be6bbae3ef703d9798550511"
+  },
+  {
+    "id": "9fbce199-fc1b-4759-8f24-a64e2e30d07a",
+    "source": "sat",
+    "source_code": "CB-2289b199",
+    "lesson": "Exponents and radicals",
+    "idea": "Comparing fractional exponents",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "da9c344f0ef9455c3c7be20a86f292ec"
+  },
+  {
+    "id": "a0d2291c-4e24-4379-b8e7-f839b39e6f76",
+    "source": "sat",
+    "source_code": "CB-e6c557f9",
+    "lesson": "Area and volume",
+    "idea": "Length, area and volume scale factors",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "02b101a3a5db56cf31f32951e2964c16"
+  },
+  {
+    "id": "a332556b-079e-4daa-bce3-0719649783b4",
+    "source": "sat",
+    "source_code": "CB-04887c7b",
+    "lesson": "Polynomials",
+    "idea": "Expanding and comparing coefficients",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "99d2de26ee38c953efc7a4e5cb422fe1"
+  },
+  {
+    "id": "a5ced89c-df8c-49ee-9d39-d714ecd1090b",
+    "source": "sat",
+    "source_code": "CB-107d0c62",
+    "lesson": "Linear equations",
+    "idea": "Mixture models",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3c966e8eaf6983873a82d95336e54cbc"
+  },
+  {
+    "id": "aca52424-d28d-4c80-8b58-2735d19fbd9b",
+    "source": "sat",
+    "source_code": "CB-559476f4",
+    "lesson": "Graphs and data interpretation",
+    "idea": "Reading a frequency graph",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d74355b0d037b022cc6361ca25c1947f"
+  },
+  {
+    "id": "ad03774d-acfd-446e-ba61-e03612f638e6",
+    "source": "sat",
+    "source_code": "CB-28ff3966",
+    "lesson": "Percentages",
+    "idea": "Percentage enlargement and scale",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5891d7803ba6e4bba657f546e4b7309f"
+  },
+  {
+    "id": "b72cf4be-f475-4d7e-83f1-b105ecfd44a2",
+    "source": "sat",
+    "source_code": "CB-408b39ea",
+    "lesson": "Circles",
+    "idea": "Extreme coordinates on a circle",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "415e418bfdcb257de6a2498b7c20007f"
+  },
+  {
+    "id": "b965449f-b841-4618-aa68-e4dffd391806",
+    "source": "sat",
+    "source_code": "CB-5e9b6079",
+    "lesson": "Linear systems",
+    "idea": "No-solution conditions",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a666a743550390167dadea2d2f12b0dc"
+  },
+  {
+    "id": "ba2e7966-c034-4869-b5d9-b4852819bba8",
+    "source": "sat",
+    "source_code": "CB-ffc39dc5",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Parallelogram angles",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "5f2fef48062ec9edd05180413d42ca5e"
+  },
+  {
+    "id": "bcedfe1d-546d-4b75-b89c-e25d678a8ada",
+    "source": "sat",
+    "source_code": "CB-42155bac",
+    "lesson": "Area and volume",
+    "idea": "Volume formulas",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "0e9eea37972060521d7f6ca5bfb024a6"
+  },
+  {
+    "id": "be727979-758c-473d-9317-c8e2d8a94f14",
+    "source": "sat",
+    "source_code": "CB-c8db0e19",
+    "lesson": "Rearranging formulas",
+    "idea": "Isolating a variable with multiple powers",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "20f0dd9aa4cb6694d969c03748d09610"
+  },
+  {
+    "id": "bed56c1b-9f9b-c349-7241-a58247b5f0f1",
+    "source": "sat",
+    "source_code": "92",
+    "lesson": "Circles",
+    "idea": "Circumference and whole-number constraints",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f8e2c70980995a1abe4d8a1bee846358"
+  },
+  {
+    "id": "c26399f9-06a9-4bf7-aaa2-a693d126fc2f",
+    "source": "sat",
+    "source_code": "CB-4c5ea142",
+    "lesson": "Ratios, rates and units",
+    "idea": "Rates with variables and unit conversion",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "bff9b90fa1c8e1a941357817fd067bd8"
+  },
+  {
+    "id": "c421f230-5d35-4543-a706-a1894b85a581",
+    "source": "sat",
+    "source_code": "CB-30aa51b7",
+    "lesson": "Area and volume",
+    "idea": "Area from coordinates",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a59d4c66c113bae99dddd03b8816b062"
+  },
+  {
+    "id": "c54ed0a0-1a89-4412-933e-c3100cee2c81",
+    "source": "sat",
+    "source_code": "CB-1b687ae3",
+    "lesson": "Area and volume",
+    "idea": "Area of basic plane figures",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "b25ba22b9eef7509c838225b6984cf12"
+  },
+  {
+    "id": "c84c81fa-33a2-463a-bfa4-f6a4cbb71406",
+    "source": "sat",
+    "source_code": "CB-11301fb6",
+    "lesson": "Circles",
+    "idea": "Radians and degrees",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "3cebef8227f0bae98b70624542936e3f"
+  },
+  {
+    "id": "cb6634f0-63bb-4765-8400-cedb063d3f22",
+    "source": "sat",
+    "source_code": "CB-2bab1399",
+    "lesson": "Statistical inference",
+    "idea": "Effect of increasing sample size",
+    "difficulty": "medium",
+    "programmes": [
+      "sat"
+    ],
+    "fingerprint": "6033dce02135c6aae4dbc50405018ee2"
+  },
+  {
+    "id": "cf19ee69-6c23-4d08-945d-69d6b12e8f10",
+    "source": "sat",
+    "source_code": "CB-6feae9c3",
+    "lesson": "Percentages",
+    "idea": "Percent increase versus growth factor",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "12947bcb65b7402b667f72c798ea57c3"
+  },
+  {
+    "id": "d30c794d-bb2e-4cfa-b941-d5be1cd4f34e",
+    "source": "sat",
+    "source_code": "CB-590d662d",
+    "lesson": "Lines and linear models",
+    "idea": "Change in distance from a graph",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ab83496ca63d9e987e5e1bef56fdcddb"
+  },
+  {
+    "id": "d7162016-55ff-4535-9c95-c304c85fc961",
+    "source": "sat",
+    "source_code": "CB-c8ab85ad",
+    "lesson": "Area and volume",
+    "idea": "Area of basic plane figures",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "06a050ef92fc60f46a886412d7c6c96b"
+  },
+  {
+    "id": "d7e75127-7330-b199-103b-c616ec5c01b8",
+    "source": "sat",
+    "source_code": "101",
+    "lesson": "Scatterplots and models",
+    "idea": "Predictions from a best-fit line",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "1c3638c5b9edf6fe5ad8995d9da40fc3"
+  },
+  {
+    "id": "dab7eb80-023b-471f-905c-6cad85047247",
+    "source": "sat",
+    "source_code": "CB-e8fd6d99",
+    "lesson": "Linear inequalities",
+    "idea": "Modelling constraints",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "d47f189535295df8a322f8d572807b8a"
+  },
+  {
+    "id": "de29e6f8-9acb-4308-bb96-05c8f153bcb9",
+    "source": "sat",
+    "source_code": "CB-de9148c4",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Pythagorean theorem",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "317fed89bbfd26754449fc4b6b50ced8"
+  },
+  {
+    "id": "e02dc006-502c-49ea-b56b-ba3396585ed3",
+    "source": "sat",
+    "source_code": "CB-cf2be18d",
+    "lesson": "Statistics",
+    "idea": "Combining mean, median and range",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a6e985a232e4b4369ea8c16ad751abc3"
+  },
+  {
+    "id": "e0986fe8-d805-4156-907b-46858009d141",
+    "source": "sat",
+    "source_code": "105",
+    "lesson": "Statistical inference",
+    "idea": "Random assignment and causal inference",
+    "difficulty": "medium",
+    "programmes": [
+      "sat"
+    ],
+    "fingerprint": "4cee0880f481cb72788666193bebb8cb"
+  },
+  {
+    "id": "e0ad9e65-d2b6-44d2-9d8e-6376d1176512",
+    "source": "sat",
+    "source_code": "CB-3cf2698e",
+    "lesson": "Exponential models",
+    "idea": "Time intervals in growth and decay",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a3ab1fe6080a71cd97839643cc053c5b"
+  },
+  {
+    "id": "e37be0e4-8f0f-4894-b49b-56e5f9c2e522",
+    "source": "sat",
+    "source_code": "CB-e89f63bf",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Angle relationships",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9685f48f435ba2620dd818ee785a928c"
+  },
+  {
+    "id": "e948f147-859e-43de-88fe-6f0c455ab80d",
+    "source": "sat",
+    "source_code": "CB-d12bca0a",
+    "lesson": "Circles",
+    "idea": "Distance and completing the square",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "93dd951203c2f6cad716f524a54df1ac"
+  },
+  {
+    "id": "e95f2674-046a-4eda-8f91-6089245c3cc6",
+    "source": "sat",
+    "source_code": "CB-8364487a",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Angle-angle similarity",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c3aaeadb26d90c0ffd948fb49a822745"
+  },
+  {
+    "id": "f55f42ec-392c-402f-9fce-25b3b2ddf114",
+    "source": "sat",
+    "source_code": "CB-4a141e77",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Angle relationships",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "f2cfb7f344adba67726c88256e554ec5"
+  },
+  {
+    "id": "f6051cbc-03c5-4473-b5f9-871aad9eb27c",
+    "source": "sat",
+    "source_code": "CB-1a2a0f59",
+    "lesson": "Lines and linear models",
+    "idea": "Constructing models with parameters",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "45923471e678256466f92696620bc626"
+  },
+  {
+    "id": "f68c08ab-28e6-443d-9ed8-5333aad9352d",
+    "source": "sat",
+    "source_code": "CB-6bd40794",
+    "lesson": "Polynomials",
+    "idea": "Roots and zero-product property",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "68eec31d923e452fc7b50fabf628de79"
+  },
+  {
+    "id": "f6c60c4d-b95f-4023-9b13-0480c77fd199",
+    "source": "sat",
+    "source_code": "CB-f8871ccd",
+    "lesson": "Polynomials",
+    "idea": "Expanding and comparing coefficients",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "c9bf756316c6d3312f3f5cab2dd67390"
+  },
+  {
+    "id": "f719dd4b-1d02-40c5-8789-b74f01d47c13",
+    "source": "sat",
+    "source_code": "CB-f6ca90cc",
+    "lesson": "Area and volume",
+    "idea": "Volume formulas",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "ef22c90f296632fd6d7ecb4c198c4b0c"
+  },
+  {
+    "id": "f8556180-9a9b-476d-b49a-e95d096bae67",
+    "source": "sat",
+    "source_code": "CB-f496d2c0",
+    "lesson": "Probability",
+    "idea": "Conditional probability",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "08c86f891008093581c85bda6f7e099b"
+  },
+  {
+    "id": "f8b9050e-3ce3-4795-b625-37aba068837c",
+    "source": "sat",
+    "source_code": "CB-30b1e186",
+    "lesson": "Linear inequalities",
+    "idea": "Feasible regions and quadrants",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "9aaef77edd0d1db2cd1754105392553a"
+  },
+  {
+    "id": "f97a78f5-fdd7-4ca6-afcd-1b550b3069e1",
+    "source": "sat",
+    "source_code": "CB-1fe41c6b",
+    "lesson": "Area and volume",
+    "idea": "Length, area and volume scale factors",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a7c56c3c6eb4596dafb02d0ebf67784e"
+  },
+  {
+    "id": "f9cd9a97-844f-4878-9649-639a08d20895",
+    "source": "sat",
+    "source_code": "CB-769b612d",
+    "lesson": "Exponents and radicals",
+    "idea": "Equations with a common base",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "965a01cd134d907b0439c51204498f46"
+  },
+  {
+    "id": "fb483b31-23ee-4af7-9133-2caa10059e0d",
+    "source": "sat",
+    "source_code": "CB-17049054",
+    "lesson": "Area and volume",
+    "idea": "Area of basic plane figures",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "8a698234731994d9ab55b603ef877efe"
+  },
+  {
+    "id": "fe4a3f12-d5fd-43da-b908-b5c96b07f877",
+    "source": "sat",
+    "source_code": "CB-340afb12",
+    "lesson": "Linear systems",
+    "idea": "Two-variable word problems",
+    "difficulty": "medium",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "a499f7a28420829ab05ccf4a7faae35b"
+  },
+  {
+    "id": "ff40d5b6-f011-4080-a033-4f085e2909b1",
+    "source": "sat",
+    "source_code": "CB-f8fa0cf0",
+    "lesson": "Linear equations",
+    "idea": "Solving linear equations",
+    "difficulty": "easy",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "026d8bc720fc9ca3e04ad90cd4bfff7e"
+  },
+  {
+    "id": "ff4244a6-c126-4ec0-b3e9-abec64aea225",
+    "source": "sat",
+    "source_code": "CB-98e02472",
+    "lesson": "Right triangles and trigonometry",
+    "idea": "Similarity and Pythagorean constraints",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "2845c855d1046f18861ce9c75f73ccbd"
+  },
+  {
+    "id": "ff5e1f90-396b-4c3c-bef5-3913e5bebd1b",
+    "source": "sat",
+    "source_code": "CB-8bb94668",
+    "lesson": "Percentages",
+    "idea": "Multistep percentages",
+    "difficulty": "hard",
+    "programmes": [
+      "sat",
+      "est"
+    ],
+    "fingerprint": "480fdba07e88bfb9dea7476a8181ca38"
+  }
+]

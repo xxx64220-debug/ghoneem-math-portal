@@ -1,0 +1,9 @@
+{
+  "additional_exclusions": {
+    "AAF 060": "Real-domain assumption is incomplete at x=0; omit.",
+    "DAP 008": "Selection versus assignment of cards is not explicit; omit.",
+    "DAP 073": "A box plot does not uniquely determine distribution shape; omit.",
+    "GT 007": "Worked explanation incorrectly calls the given parallelogram a rectangle; omit."
+  },
+  "exact_duplicates": []
+}
