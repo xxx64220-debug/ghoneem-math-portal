@@ -141,10 +141,11 @@ jobs:
             supabase/sql/fair_exam_keys.sql \
             supabase/sql/pending_exam_grading.sql \
             supabase/sql/daily_streak_update.sql \
-            supabase/sql/repeatable_untimed_lessons.sql \
-            supabase/sql/portal_access.sql \
-            supabase/sql/portal_scope.sql \
-            supabase/sql/portal_notifications.sql; do
+            supabase/sql/repeatable_untimed_lessons.sql; do
+            psql -v ON_ERROR_STOP=1 -f "$support_sql"
+          done
+          psql -v ON_ERROR_STOP=1 -c "drop view if exists public.roster"
+          for support_sql in supabase/sql/portal_access.sql supabase/sql/portal_scope.sql supabase/sql/portal_notifications.sql; do
             psql -v ON_ERROR_STOP=1 -f "$support_sql"
           done
 
