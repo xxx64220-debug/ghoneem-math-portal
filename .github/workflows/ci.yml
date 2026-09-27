@@ -152,6 +152,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # Grade functions expect this column from portal_upgrade, while the
+          # legacy adversarial test must run before its answer guard is added.
+          psql -v ON_ERROR_STOP=1 -c "alter table public.exams add column if not exists scoring_map jsonb"
           # These baseline tests assert pre-upgrade write behavior.
           for test in tests/rls_test.sql tests/adversarial_test.sql; do
             echo "Running $test"
