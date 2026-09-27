@@ -136,7 +136,6 @@ jobs:
             psql -v ON_ERROR_STOP=1 -f "$migration"
           done
           for support_sql in \
-            supabase/sql/portal_upgrade.sql \
             supabase/sql/est_source_review.sql \
             supabase/sql/fair_exam_keys.sql \
             supabase/sql/pending_exam_grading.sql \
@@ -153,9 +152,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          # These baseline tests assert pre-upgrade write behavior.
+          for test in tests/rls_test.sql tests/adversarial_test.sql; do
+            echo "Running $test"
+            psql -v ON_ERROR_STOP=1 -f "$test"
+          done
+          psql -v ON_ERROR_STOP=1 -f supabase/sql/portal_upgrade.sql
           for test in \
-            tests/rls_test.sql \
-            tests/adversarial_test.sql \
             tests/daily_streak.sql \
             tests/fair_exam_keys.sql \
             tests/pending_grading.sql \
