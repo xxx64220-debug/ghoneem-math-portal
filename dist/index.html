@@ -158,6 +158,38 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 @media(max-width:900px){.revision-filters,.revision-lessons{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.revision-filters,.revision-lessons{grid-template-columns:1fr}.revision-start .btn,.revision-start .btn-ghost{width:100%}.revision-question .stem{font-size:16px}}
 .revision-filters.est-only{grid-template-columns:repeat(2,minmax(0,1fr))}@media(max-width:560px){.revision-filters.est-only{grid-template-columns:1fr}}
 .revision-collections{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 16px}.revision-collections .selected{background:var(--navy);color:white;border-color:var(--navy)}.revision-collections button{font-size:14px;min-height:44px}
+
+ .formula-panel .formula-layout{display:grid;grid-template-columns:minmax(190px,250px) minmax(0,1fr);gap:22px;align-items:start;margin:22px 0}
+.formula-lesson-list{display:grid;gap:8px;max-height:70vh;overflow:auto;position:sticky;top:14px}
+.formula-lesson-link{width:100%;text-align:left;padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--navy);font:inherit;line-height:1.4}
+.formula-lesson-link:hover,.formula-lesson-link:focus-visible{border-color:var(--gold);outline:2px solid #c9a22760;outline-offset:2px}
+.formula-lesson-link.selected{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:650}
+.formula-lesson{min-width:0;border:1px solid var(--line);border-top:5px solid var(--gold);border-radius:10px;padding:24px;line-height:1.7;background:#fff}
+.formula-lesson h3{font:600 25px Fraunces,Georgia,serif;color:var(--navy);margin:0 0 18px}
+.formula-lesson h4{font-size:17px;line-height:1.35;color:var(--navy);margin:0 0 12px}
+.formula-key-point{padding:18px 20px;border:1px solid #b5d5df;border-left:6px solid #087c91;border-radius:8px;background:#edf6f8;margin:0 0 24px}
+.formula-key-point p{margin:6px 0 0;font-size:18px;line-height:1.6;font-weight:650;color:#14243e}
+.formula-section-label{display:inline-block;text-transform:uppercase;letter-spacing:.07em;font-size:13px;font-weight:750;color:#075e70}
+.formula-content-section,.formula-visual-section,.formula-example,.formula-notes{margin:24px 0 0}
+.formula-list{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.formula-list li{padding:14px 16px;margin:0;border:1px solid #d8e1eb;border-left:4px solid #526277;border-radius:7px;background:#f7f9fc;line-height:1.65;font-size:16px}
+.formula-example,.formula-notes{padding:17px 19px;border-radius:8px}
+.formula-example{background:#f2f6fb;border-left:5px solid #245b8f}
+.formula-notes{background:#fff8e7;border-left:5px solid #b28a08}
+.formula-example p,.formula-notes p{margin:0;font-size:16px;line-height:1.7}
+.formula-example p+p{margin-top:10px}.formula-note-list{padding-left:22px;margin:0}.formula-note-list li{padding-left:4px;margin:0 0 10px;font-size:16px;line-height:1.65}.formula-note-list li:last-child{margin-bottom:0}
+.formula-diagram-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.formula-diagram{min-width:0;margin:0;border:1px solid #d8e1eb;border-radius:8px;background:#fbfcfd;padding:12px;overflow:hidden}
+.formula-diagram svg{display:block;width:100%;height:auto;margin:auto}
+.formula-diagram text{font:14px Arial,sans-serif;fill:#334155}
+.formula-diagram figcaption{padding:9px 3px 1px;color:#334155;font-size:14px;line-height:1.5}
+.formula-course-notes{padding:14px 16px;border-left:4px solid var(--gold);background:#fff9e7;margin:16px 0;line-height:1.7}
+.formula-course-notes summary{cursor:pointer;font-weight:650;color:var(--navy)}
+.formula-course-notes li{margin:0 0 10px;line-height:1.65}
+.formula-provenance{margin-top:22px;border-top:1px solid var(--line);padding-top:12px}
+.formula-panel .review-menu{display:flex;gap:8px;flex-wrap:wrap}
+@media(max-width:760px){.formula-panel .formula-layout{grid-template-columns:1fr}.formula-lesson-list{position:static;max-height:240px;grid-template-columns:repeat(2,minmax(0,1fr))}.formula-lesson{padding:19px}}
+@media(max-width:560px){.formula-lesson-list{grid-template-columns:1fr}.formula-lesson{padding:16px}.formula-diagram-grid{grid-template-columns:1fr}.formula-key-point p{font-size:17px}}
 </style>
 <link rel="stylesheet" href="/daily-challenge.css">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -238,6 +270,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js"></script>
 <script src="/daily-challenge.js"></script>
+<script src="/revision-formulas.js"></script>
 <script src="/final-revision.js"></script>
 <script>
 /* ============================ CONFIG ============================ */
@@ -756,3 +789,4 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 <script src="/exam-activity.js"></script>
 </body>
 </html>
+
