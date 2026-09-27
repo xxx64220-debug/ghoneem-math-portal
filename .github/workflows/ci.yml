@@ -112,7 +112,15 @@ jobs:
             supabase/migrations/007_exam_builder.sql \
             supabase/migrations/008_scoring_and_reporting.sql \
             supabase/migrations/009_deployment_hardening.sql \
-            supabase/migrations/012_admin_delete_user.sql \
+            supabase/migrations/012_admin_delete_user.sql; do
+            psql -v ON_ERROR_STOP=1 -f "$migration"
+          done
+
+          # These tables are created by support SQL rather than a migration,
+          # but later checked-in migrations depend on daily_progress.
+          psql -v ON_ERROR_STOP=1 -f supabase/sql/daily_challenge.sql
+
+          for migration in \
             supabase/migrations/20260919_daily_quiz_mistake_reporting.sql \
             supabase/migrations/20260920_daily_quiz_verified_pdf_pool.sql \
             supabase/migrations/20260920_ranked_question_success.sql \
@@ -131,7 +139,6 @@ jobs:
             supabase/sql/est_source_review.sql \
             supabase/sql/fair_exam_keys.sql \
             supabase/sql/pending_exam_grading.sql \
-            supabase/sql/daily_challenge.sql \
             supabase/sql/daily_streak_update.sql \
             supabase/sql/repeatable_untimed_lessons.sql \
             supabase/sql/portal_scope.sql \
