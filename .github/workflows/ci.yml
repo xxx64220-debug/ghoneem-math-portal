@@ -119,11 +119,11 @@ jobs:
           # These tables are created by support SQL rather than a migration,
           # but later checked-in migrations depend on daily_progress.
           psql -v ON_ERROR_STOP=1 -f supabase/sql/daily_challenge.sql
+          echo "SKIP: migration 011 and 20260920_ranked_question_success.sql need exams.assessment_type, absent from the checked-in schema migrations."
 
           for migration in \
             supabase/migrations/20260919_daily_quiz_mistake_reporting.sql \
             supabase/migrations/20260920_daily_quiz_verified_pdf_pool.sql \
-            supabase/migrations/20260920_ranked_question_success.sql \
             supabase/migrations/20260920_student_daily_quiz_mistakes.sql \
             supabase/migrations/20260924_drill_published_pool.sql \
             supabase/migrations/20260924_drill_submit_aliases.sql \

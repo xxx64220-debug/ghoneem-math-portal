@@ -36,9 +36,11 @@ installs `pg_cron` and schedules a recurring database job, behavior provided by
 the hosted Supabase environment. The standalone notification scheduler also
 needs hosted `pg_cron` and `pg_net`, and is not applied. No browser end-to-end
 test or deployed Edge Function test runs here; those need a browser session or
-hosted Supabase services and credentials. Migration
-`011_sat_partitions_and_module_pairs.sql` is not applied: it assumes an
+hosted Supabase services and credentials. Migrations
+`011_sat_partitions_and_module_pairs.sql` and
+`20260920_ranked_question_success.sql` are not applied: both assume an
 `exams.assessment_type` column that is absent from the checked-in migration
-chain, as well as imported SAT bank rows. Keep it out of the clean-database job
-until those schema and data prerequisites are represented in versioned source.
-Database behavior is checked against the isolated PostgreSQL service instead.
+chain, and 011 also needs imported SAT bank rows. The workflow prints this skip
+explicitly. Keep them out of the clean-database job until those schema and data
+prerequisites are represented in versioned source. Database behavior is checked
+against the isolated PostgreSQL service instead.
