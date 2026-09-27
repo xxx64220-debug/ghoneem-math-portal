@@ -115,16 +115,12 @@ jobs:
             psql -v ON_ERROR_STOP=1 -f "$migration"
           done
 
-          # Reproduce a hosted schema prerequisite omitted from versioned DDL;
-          # both this prelude and the bank import run only in portal_ci.
-          psql -v ON_ERROR_STOP=1 -f tests/ci_schema_compat.sql
+          # Both scripts prepare the isolated database for dependent SQL.
+          psql -v ON_ERROR_STOP=1 -f supabase/sql/daily_challenge.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/sql/student_progress.sql
           psql -v ON_ERROR_STOP=1 -c "select * from public.legacy_import(false)"
           psql -v ON_ERROR_STOP=1 -f supabase/migrations/011_sat_partitions_and_module_pairs.sql
           psql -v ON_ERROR_STOP=1 -f supabase/migrations/012_admin_delete_user.sql
-
-          # These tables are created by support SQL rather than a migration,
-          # but later checked-in migrations depend on daily_progress.
-          psql -v ON_ERROR_STOP=1 -f supabase/sql/daily_challenge.sql
 
           for migration in \
             supabase/migrations/20260919_daily_quiz_mistake_reporting.sql \
@@ -141,7 +137,6 @@ jobs:
           done
           for support_sql in \
             supabase/sql/portal_upgrade.sql \
-            supabase/sql/student_progress.sql \
             supabase/sql/est_source_review.sql \
             supabase/sql/fair_exam_keys.sql \
             supabase/sql/pending_exam_grading.sql \
