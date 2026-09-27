@@ -3,6 +3,9 @@
 create extension if not exists pgcrypto;
 
 create schema if not exists auth;
+-- Migration 011 creates an internal trigger function in this schema. Supabase
+-- provisions it in hosted projects; create it explicitly in the scratch DB.
+create schema if not exists portal_private;
 
 create table if not exists auth.users (
   id    uuid primary key default gen_random_uuid(),
