@@ -7,11 +7,8 @@ source fixtures are present.
 
 The database job creates a fresh `portal_ci` PostgreSQL 16 service for each
 run. It applies the local-only Auth shim, schema migrations and SQL support
-scripts. The checked-in SAT staging bank is imported with the repository's
-legacy importer into this disposable database so the content migration can be
-validated; this command never connects to hosted Supabase. CI then runs the
-RLS, adversarial, grading, progress, notification and upgrade regression
-scripts with `ON_ERROR_STOP`. The database service password
+scripts, then runs the RLS, adversarial, grading, progress, notification and
+upgrade regression scripts with `ON_ERROR_STOP`. The database service password
 is a workflow-local test value; it is not a repository or Supabase secret.
 No Supabase URL, API key, service-role key, or production credential is read or
 required. The workflow does not deploy, publish, or connect to any external
@@ -39,5 +36,9 @@ installs `pg_cron` and schedules a recurring database job, behavior provided by
 the hosted Supabase environment. The standalone notification scheduler also
 needs hosted `pg_cron` and `pg_net`, and is not applied. No browser end-to-end
 test or deployed Edge Function test runs here; those need a browser session or
-hosted Supabase services and credentials. Database behavior is checked against
-the isolated PostgreSQL service instead.
+hosted Supabase services and credentials. Migration
+`011_sat_partitions_and_module_pairs.sql` is not applied: it assumes an
+`exams.assessment_type` column that is absent from the checked-in migration
+chain, as well as imported SAT bank rows. Keep it out of the clean-database job
+until those schema and data prerequisites are represented in versioned source.
+Database behavior is checked against the isolated PostgreSQL service instead.

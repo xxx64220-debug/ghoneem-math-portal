@@ -112,7 +112,6 @@ jobs:
             supabase/migrations/007_exam_builder.sql \
             supabase/migrations/008_scoring_and_reporting.sql \
             supabase/migrations/009_deployment_hardening.sql \
-            supabase/migrations/011_sat_partitions_and_module_pairs.sql \
             supabase/migrations/012_admin_delete_user.sql \
             supabase/migrations/20260919_daily_quiz_mistake_reporting.sql \
             supabase/migrations/20260920_daily_quiz_verified_pdf_pool.sql \
@@ -125,11 +124,6 @@ jobs:
             supabase/migrations/20260924_practice_fk_indexes.sql \
             supabase/migrations/20260924_prevent_duplicate_assignments.sql; do
             psql -v ON_ERROR_STOP=1 -f "$migration"
-            if [ "$migration" = "supabase/migrations/006_import_legacy_sat.sql" ]; then
-              # Load the checked-in staging bank only into this disposable DB;
-              # migration 011 expects the 352 imported SAT questions to exist.
-              psql -v ON_ERROR_STOP=1 -c "select * from public.legacy_import(false)"
-            fi
           done
           for support_sql in \
             supabase/sql/portal_upgrade.sql \
