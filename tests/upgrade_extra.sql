@@ -1,6 +1,6 @@
 -- Additional security and authoring regressions, within the caller's rollback transaction.
 do $$
-declare adm uuid:=public.tid('admin'); u uuid:=public.tid('both'); qid uuid; eid uuid; aid uuid; a attempts; j jsonb; j2 jsonb; msg text; cnt int; x uuid;
+declare adm uuid:=(select v from public.test_ids where k='admin'); u uuid:=(select v from public.test_ids where k='both'); qid uuid; eid uuid; aid uuid; a attempts; j jsonb; j2 jsonb; msg text; cnt int; x uuid;
 begin
  j=portal_admin(adm,'question.save','{"track_id":"est","topic":"QA","type":"grid_in","stem":"What is one half?","correct":["1/2","0.5"],"explanation":"Divide 1 by 2."}');
  qid=(j->'question_ids'->>0)::uuid;
