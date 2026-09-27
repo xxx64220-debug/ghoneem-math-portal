@@ -125,6 +125,11 @@ jobs:
             supabase/migrations/20260924_practice_fk_indexes.sql \
             supabase/migrations/20260924_prevent_duplicate_assignments.sql; do
             psql -v ON_ERROR_STOP=1 -f "$migration"
+            if [ "$migration" = "supabase/migrations/006_import_legacy_sat.sql" ]; then
+              # Load the checked-in staging bank only into this disposable DB;
+              # migration 011 expects the 352 imported SAT questions to exist.
+              psql -v ON_ERROR_STOP=1 -c "select * from public.legacy_import(false)"
+            fi
           done
           for support_sql in \
             supabase/sql/portal_upgrade.sql \
