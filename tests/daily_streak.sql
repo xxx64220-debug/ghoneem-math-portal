@@ -1,4 +1,23 @@
 -- Run inside a transaction and always ROLLBACK; no student fixtures persist.
+BEGIN;
+INSERT INTO questions(id,track_id,topic,difficulty,type,stem,choices,assets) VALUES
+ ('10000000-0000-0000-0000-000000000001','est','CI daily quiz','easy','mcq','CI daily quiz 1','[{"key":"A","text":"1"},{"key":"B","text":"2"},{"key":"C","text":"3"},{"key":"D","text":"4"}]','{"verified_release":"2026-09-14-batch-ci"}'),
+ ('10000000-0000-0000-0000-000000000002','est','CI daily quiz','easy','mcq','CI daily quiz 2','[{"key":"A","text":"1"},{"key":"B","text":"2"},{"key":"C","text":"3"},{"key":"D","text":"4"}]','{"verified_release":"2026-09-14-batch-ci"}'),
+ ('10000000-0000-0000-0000-000000000003','est','CI daily quiz','easy','mcq','CI daily quiz 3','[{"key":"A","text":"1"},{"key":"B","text":"2"},{"key":"C","text":"3"},{"key":"D","text":"4"}]','{"verified_release":"2026-09-14-batch-ci"}'),
+ ('10000000-0000-0000-0000-000000000004','est','CI daily quiz','easy','mcq','CI daily quiz 4','[{"key":"A","text":"1"},{"key":"B","text":"2"},{"key":"C","text":"3"},{"key":"D","text":"4"}]','{"verified_release":"2026-09-14-batch-ci"}'),
+ ('10000000-0000-0000-0000-000000000005','est','CI daily quiz','easy','mcq','CI daily quiz 5','[{"key":"A","text":"1"},{"key":"B","text":"2"},{"key":"C","text":"3"},{"key":"D","text":"4"}]','{"verified_release":"2026-09-14-batch-ci"}')
+ON CONFLICT(id) DO UPDATE SET track_id=excluded.track_id,topic=excluded.topic,difficulty=excluded.difficulty,
+ type=excluded.type,stem=excluded.stem,choices=excluded.choices,assets=excluded.assets;
+INSERT INTO question_keys(question_id,correct,explanation)
+SELECT id,'"A"'::jsonb,'CI fixture answer.' FROM questions
+WHERE id BETWEEN '10000000-0000-0000-0000-000000000001'::uuid AND '10000000-0000-0000-0000-000000000005'::uuid
+ON CONFLICT(question_id) DO UPDATE SET correct=excluded.correct,explanation=excluded.explanation;
+INSERT INTO daily_quizzes(track_id,day,question_ids)
+VALUES ('est',(now() at time zone 'Africa/Cairo')::date,ARRAY[
+ '10000000-0000-0000-0000-000000000001'::uuid,'10000000-0000-0000-0000-000000000002'::uuid,
+ '10000000-0000-0000-0000-000000000003'::uuid,'10000000-0000-0000-0000-000000000004'::uuid,
+ '10000000-0000-0000-0000-000000000005'::uuid])
+ON CONFLICT(track_id,day) DO UPDATE SET question_ids=excluded.question_ids;
 DO $$
 DECLARE u uuid; d date := (now() at time zone 'Africa/Cairo')::date; state jsonb; answers jsonb; points int;
 BEGIN
@@ -48,3 +67,4 @@ BEGIN
  ASSERT has_function_privilege('service_role','public.daily_state(uuid,text)','EXECUTE');
 END $$;
 SELECT 'PASS: streaks, gaps, history, checklist isolation, complete answers, repeat submission and access checks' AS result;
+ROLLBACK;
