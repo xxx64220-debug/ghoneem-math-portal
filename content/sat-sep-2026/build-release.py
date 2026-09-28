@@ -127,6 +127,6 @@ audit = {'source':'SAT Valley September 2026 predictions','sha256':source_sha,
                  {'n':19,'page':19,'reason':'Source angle diagram is required and its label relationships were not safely recoverable as a standalone question.'},
                  {'n':24,'page':24,'reason':'Defining g(x) equation is absent in the rendered page image; OCR alone cannot validate it.'}],
          'duplicate_sources':'The 15- and 16-page August International II PDFs are parallel copies of 44 prompts; 43 corrected/verified versions already exist in SAT, and the defective original M2 Q18 is absent. August Prep (44), MSET008 (50), and the 120 detected CB IDs in the 129-page packet already occur in the graded bank.',
-         'limitations':'The scanned 411-page SAT Panda book, two March PDFs, and 100-page Elite May PDF require page-by-page visual question and key review before any new graded import. Their contents have not been claimed verified by this release.'}
+         'limitations':'This September release excludes the 413-page SAT Panda book, both March PDFs, and the 100-page Elite May PDF. The March and Elite files now have separate audited intakes; the Panda exercise import remains outstanding.'}
 (DIR/'audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
 print('Built 21 verified question and revision rows; source SHA',source_sha)

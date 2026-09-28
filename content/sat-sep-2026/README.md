@@ -8,7 +8,7 @@ The 27-page SAT Valley September practice set supplied by Eng. Abdelrahman Ghone
 - The 44 August Prediction questions and all 50 MSET008 questions already appear in the SAT graded bank.
 - All 120 detectable question IDs in the 129-page College Board-style packet appear in the SAT bank. Some PDF pages are continuations of a preceding item's rationale.
 - None of the 21 September prompts matched a preexisting SAT source code or exact normalized stem. A second pass compared token overlap against all 918 existing SAT stems, and apparent nearest neighbors had different numbers, settings, or mathematical tasks. The SQL release checks source codes, exact normalized stems, and stable IDs again before inserting.
-- The image-heavy March US, March International, Elite May and 411-page SAT Panda PDFs are retained as attached source material. A page-by-page visual question, diagram and key review is still needed for these files. This release makes no claim that their questions have been added or verified.
+- The March International, March US, and Elite May files were subsequently audited in their own `content/sat-*` intakes. The 413-page SAT Panda workbook still needs a separate exercise-by-exercise intake.
 
 ## Held September questions
 
