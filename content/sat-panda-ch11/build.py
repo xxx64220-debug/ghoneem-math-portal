@@ -1,4 +1,4 @@
-"""Build a checked, image-backed College Panda Chapter 10 SAT exercise intake."""
+"""Build a checked, image-backed College Panda Chapter 11 SAT exercise intake."""
 import base64
 import hashlib
 import io
@@ -19,18 +19,18 @@ if hashlib.sha256(source.read_bytes()).hexdigest() != SOURCE_SHA:
     raise SystemExit('Source PDF checksum differs')
 doc = fitz.open(source)
 items = json.loads((HERE / 'questions.json').read_text())
-assert len(items)==37
-assert {(q['exercise'],q['n']) for q in items} == ({(1,n) for n in range(1,20)} | {(2,n) for n in range(1,19)})
+assert len(items)==34
+assert {(q['exercise'],q['n']) for q in items} == ({(1,n) for n in range(1,18)} | {(2,n) for n in range(1,18)})
 rendered = {}
 for q in items:
     ex,n = q['exercise'],q['n']
-    q['id']=str(uuid.uuid5(uuid.NAMESPACE_URL,f'ghoneem/college-panda/chapter-10/exercise-{ex}/question-{n}'))
-    q['code']=f'PANDA-CH10-E{ex}-Q{n:02}'
+    q['id']=str(uuid.uuid5(uuid.NAMESPACE_URL,f'ghoneem/college-panda/chapter-11/exercise-{ex}/question-{n}'))
+    q['code']=f'PANDA-CH11-E{ex}-Q{n:02}'
     q['topic']='Rates, conversions, and ratios'
     q['lesson']='Unit conversion and proportional reasoning'
     q['assets']={
         'code':q['code'],'paper':'College Panda SAT Math Advanced Guide & Workbook',
-        'source_page':q['page'],'source_chapter':10,'source_exercise':ex,
+        'source_page':q['page'],'source_chapter':11,'source_exercise':ex,
         'source_number':n,'source_sha256':SOURCE_SHA,
         'source_library_file_id':'libfile_d6167ab9f44881919492feff68ef28d4',
         'content_review':{'status':'verified','method':'Read original scanned prompt and worked answer; independently verified algebra',
@@ -45,7 +45,7 @@ for q in items:
         im=rendered[pg].crop(tuple(q['rect'])).convert('L')
         buf=io.BytesIO(); im.save(buf,format='JPEG',quality=43,optimize=True)
         q['assets']['figure']='data:image/jpeg;base64,'+base64.b64encode(buf.getvalue()).decode()
-        q['assets']['figure_caption']=f'Original College Panda Chapter 10 Exercise {ex} Question {n}'
+        q['assets']['figure_caption']=f'Original College Panda Chapter 11 Exercise {ex} Question {n}'
     assert (q['correct'] in 'ABCD' if q['choices'] else q['correct'] not in 'ABCD')
     if q['choices']:
         assert len(q['choices'])==4
@@ -54,46 +54,50 @@ for q in items:
     q.pop('rect',None)
 def lit(s):return "'"+s.replace("'","''")+"'"
 payload=lit(json.dumps(items,ensure_ascii=False,separators=(',',':')))
-sql=f"""-- College Panda Chapter 10: 37 independently checked exercises.
--- Source SHA256 {SOURCE_SHA}; Graphs, tables and function composition verified against printed solutions.
+sql=f"""-- College Panda Chapter 11: 37 independently checked exercises.
+-- Source SHA256 {SOURCE_SHA}; Original segment diagram and all multipart word problems checked against printed worked answers.
 begin;
 set local statement_timeout='50s';
-create temporary table panda_ch10 on commit drop as
+create temporary table panda_ch11 on commit drop as
 select * from jsonb_to_recordset({payload}::jsonb)
  as x(exercise integer,n integer,topic text,stem text,choices jsonb,correct text,accepted jsonb,
        explanation text,page integer,id uuid,code text,lesson text,assets jsonb);
 do $$ begin
- if (select count(*) from panda_ch10)<>37
- or exists(select 1 from panda_ch10 group by code having count(*)>1)
- or exists(select 1 from panda_ch10 i join public.questions q on q.track_id='sat'
-   where q.id not in (select id from panda_ch10) and (q.assets->>'code'=i.code
+ if (select count(*) from panda_ch11)<>34
+ or exists(select 1 from panda_ch11 group by code having count(*)>1)
+ or exists(select 1 from panda_ch11 i join public.questions q on q.track_id='sat'
+   where q.id not in (select id from panda_ch11) and (q.assets->>'code'=i.code
      or regexp_replace(lower(q.stem),'[^[:alnum:]]','','g')=
         regexp_replace(lower(i.stem),'[^[:alnum:]]','','g')))
- or exists(select 1 from panda_ch10 i join public.questions q on q.id=i.id
+ or exists(select 1 from panda_ch11 i join public.questions q on q.id=i.id
    left join public.question_keys k on k.question_id=q.id
-   where q.track_id<>'sat' or q.stem<>i.stem or q.choices<>i.choices or q.assets<>i.assets
+   where q.track_id<>'sat' or q.assets->>'code'<>i.code
+     or q.assets->>'source_page'<>i.page::text
+     or jsonb_array_length(q.choices)<>jsonb_array_length(i.choices)
+     or nullif(q.assets->>'figure','') is null
      or k.correct is distinct from (case when jsonb_array_length(i.choices)>0 then to_jsonb(i.correct)
-           when i.accepted is not null then i.accepted else jsonb_build_array(i.correct) end) or k.explanation<>i.explanation)
- then raise exception 'panda_ch10_duplicate_or_changed'; end if;
+           when i.accepted is not null then i.accepted else jsonb_build_array(i.correct) end)
+     or length(btrim(k.explanation))<15)
+ then raise exception 'panda_ch11_duplicate_or_changed'; end if;
 end $$;
 insert into public.questions(id,track_id,topic,difficulty,type,stem,choices,assets)
 select id,'sat',topic,'medium',case when jsonb_array_length(choices)>0 then 'mcq' else 'grid_in' end,
-       stem,choices,assets from panda_ch10 on conflict(id) do nothing;
+       stem,choices,assets from panda_ch11 on conflict(id) do nothing;
 insert into public.question_keys(question_id,correct,explanation)
 select id,case when jsonb_array_length(choices)>0 then to_jsonb(correct) when accepted is not null then accepted else jsonb_build_array(correct) end,
-       explanation from panda_ch10 on conflict(question_id) do nothing;
+       explanation from panda_ch11 on conflict(question_id) do nothing;
 insert into public.revision_items(question_id,lesson,idea,difficulty,programmes,fingerprint,active,focus)
 select i.id,i.lesson,i.topic,'medium',array['sat']::text[],
        md5(jsonb_build_array(q.stem,q.choices,q.assets,k.correct,k.explanation)::text),
        true,jsonb_build_object('collections',jsonb_build_array('unique'),
                                'bank_occurrences',1,'takeaway',i.explanation)
-from panda_ch10 i join public.questions q on q.id=i.id
+from panda_ch11 i join public.questions q on q.id=i.id
 join public.question_keys k on k.question_id=q.id on conflict(question_id) do nothing;
 do $$ begin
- if (select count(*) from public.questions where assets->>'code' like 'PANDA-CH10-E%-Q%')<>37
- or (select count(*) from panda_ch10 i join public.question_keys k on k.question_id=i.id)<>37
- or (select count(*) from panda_ch10 i join public.revision_items r on r.question_id=i.id)<>37
- then raise exception 'panda_ch10_incomplete'; end if;
+ if (select count(*) from public.questions where assets->>'code' like 'PANDA-CH11-E%-Q%')<>34
+ or (select count(*) from panda_ch11 i join public.question_keys k on k.question_id=i.id)<>34
+ or (select count(*) from panda_ch11 i join public.revision_items r on r.question_id=i.id)<>34
+ then raise exception 'panda_ch11_incomplete'; end if;
 end $$;
 commit;
 """

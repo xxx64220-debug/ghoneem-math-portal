@@ -30,7 +30,7 @@ for q in items:
     q['lesson']='Percent change and proportions'
     q['assets']={
         'code':q['code'],'paper':'College Panda SAT Math Advanced Guide & Workbook',
-        'source_page':q['page'],'source_chapter':5,'source_exercise':ex,
+        'source_page':q['page'],'source_chapter':8,'source_exercise':ex,
         'source_number':n,'source_sha256':SOURCE_SHA,
         'source_library_file_id':'libfile_d6167ab9f44881919492feff68ef28d4',
         'content_review':{'status':'verified','method':'Read original scanned prompt and worked answer; independently verified algebra',
