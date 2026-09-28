@@ -115,3 +115,23 @@ test('handwritten revision points are present in conversions, circles and triang
     assert.ok(html.includes(phrase), `triangle lesson is missing: ${phrase}`);
   }
 });
+
+test('separate formula rules and notes onto individual lines', () => {
+  context.ST.track.id = 'est';
+  context.REV.formulaLesson = 'Triangles and similarity';
+  let html = vm.runInContext('revisionFormulaPanel()', context);
+  const keyPoint = html.match(/<section class="formula-key-point"[\s\S]*?<\/section>/)?.[0] || '';
+  assert.ok((keyPoint.match(/<p>/g) || []).length >= 2, 'split rules in the highlighted main point');
+  assert.match(keyPoint, /<p>Area = ½bh\.<\/p>/);
+  assert.match(keyPoint, /<p>For a right triangle, a² \+ b² = c² with c the hypotenuse\.<\/p>/);
+  assert.equal(vm.runInContext("revisionFormulaRuleLines('First rule; second rule. Third rule.').length", context), 3);
+
+  context.REV.formulaLesson = 'Circles';
+  html = vm.runInContext('revisionFormulaPanel()', context);
+  const ruleList = html.match(/<ul class="formula-list">([\s\S]*?)<\/ul>/)?.[1] || '';
+  const noteList = html.match(/<ul class="formula-note-list">([\s\S]*?)<\/ul>/)?.[1] || '';
+  assert.ok((ruleList.match(/<li>/g) || []).length >= 8, 'circle formulas and angle rules each get their own row');
+  assert.ok((noteList.match(/<li>/g) || []).length >= 5, 'circle notes become separate note rows');
+  assert.ok((ruleList.match(/<li>/g) || []).length >= 8, 'semicolon-separated formula clauses become separate list rows');
+  assert.ok((noteList.match(/<li>/g) || []).length >= 5, 'semicolon-separated notes become separate list rows');
+});

@@ -236,6 +236,14 @@ function revisionFormulaEscape(value) {
   return String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 }
 
+// A single authored entry can contain several standalone rules separated by
+// semicolons or sentence stops. Render each as its own readable list row while
+// preserving commas used inside coordinates, units, and mathematical notation.
+function revisionFormulaRuleLines(value) {
+  return String(value ?? '').split(/;\s+|(?<=[.!?])\s+(?=[A-Z0-9−“])/).map(line => line.trim()).filter(Boolean)
+    .map(line => line.replace(/^([a-z]{2,})(?=\b)/, word => word[0].toUpperCase() + word.slice(1)));
+}
+
 function revisionFormulaPanel() {
   const course = REVISION_FORMULA_TRACKS[ST.track?.id];
   if (!course) return '<section class="dash-panel"><h2>Formula lessons</h2><p>Choose a SAT or EST track to view its lessons.</p></section>';
@@ -247,7 +255,10 @@ function revisionFormulaPanel() {
   const visualNames = lesson.visuals || (lesson.visual ? [lesson.visual] : []);
   const diagrams = visualNames.map(name => `<figure class="formula-diagram">${REVISION_FORMULA_SVG[name] || ''}<figcaption>${revisionFormulaEscape(REVISION_FORMULA_VISUAL_CAPTIONS[name] || '')}</figcaption></figure>`).join('');
   const [keyPoint, ...moreRules] = lesson.formulas;
+  const keyPointLines = revisionFormulaRuleLines(keyPoint);
+  const ruleLines = moreRules.flatMap(revisionFormulaRuleLines);
   const examples = Array.isArray(lesson.examples) ? lesson.examples : [lesson.example];
-  const notes = Array.isArray(lesson.notes) ? `<ul class="formula-note-list">${lesson.notes.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul>` : `<p>${revisionFormulaEscape(lesson.notes)}</p>`;
-  return `<section class="dash-panel revision-panel formula-panel"><div class="review-menu"><button class="btn-ghost" data-revision-main>← Main menu</button></div><div class="dash-heading"><h2>Formula lessons</h2><span class="revision-badge">${revisionFormulaEscape(course.title)}</span></div><p class="dash-note">${revisionFormulaEscape(course.intro)}</p><details class="formula-course-notes"><summary>Track notes and exam data</summary><ul>${facts}</ul></details><div class="formula-layout"><nav class="formula-lesson-list" aria-label="Formula lessons">${cards}</nav><article class="formula-lesson"><h3>${revisionFormulaEscape(selected)}</h3><section class="formula-key-point" aria-label="Main point"><span class="formula-section-label">Main point</span><p>${revisionFormulaEscape(keyPoint)}</p></section>${diagrams?`<section class="formula-visual-section"><h4>Visual guide</h4><div class="formula-diagram-grid">${diagrams}</div></section>`:''}<section class="formula-content-section"><h4>Rules and formulas</h4><ul class="formula-list">${moreRules.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul></section><section class="formula-example"><h4>Worked example</h4>${examples.map(item=>`<p>${revisionFormulaEscape(item)}</p>`).join('')}</section><section class="formula-notes"><h4>Notes and common traps</h4>${notes}</section><p class="dash-note formula-provenance">Prepared by Eng. Abdelrahman Ghoneem. Core lesson topics are organized from the supplied revision PDFs; added clarifications are written to state conditions and avoid ambiguous shorthand.</p></article></div><div class="review-menu"><button type="button" class="btn" data-formulas-to-questions>← Question practice</button></div></section>`;
+  const noteLines = (Array.isArray(lesson.notes) ? lesson.notes : [lesson.notes]).flatMap(revisionFormulaRuleLines);
+  const notes = `<ul class="formula-note-list">${noteLines.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul>`;
+  return `<section class="dash-panel revision-panel formula-panel"><div class="review-menu"><button class="btn-ghost" data-revision-main>← Main menu</button></div><div class="dash-heading"><h2>Formula lessons</h2><span class="revision-badge">${revisionFormulaEscape(course.title)}</span></div><p class="dash-note">${revisionFormulaEscape(course.intro)}</p><details class="formula-course-notes"><summary>Track notes and exam data</summary><ul>${facts}</ul></details><div class="formula-layout"><nav class="formula-lesson-list" aria-label="Formula lessons">${cards}</nav><article class="formula-lesson"><h3>${revisionFormulaEscape(selected)}</h3><section class="formula-key-point" aria-label="Main point"><span class="formula-section-label">Main point</span>${keyPointLines.map(item=>`<p>${revisionFormulaEscape(item)}</p>`).join('')}</section>${diagrams?`<section class="formula-visual-section"><h4>Visual guide</h4><div class="formula-diagram-grid">${diagrams}</div></section>`:''}<section class="formula-content-section"><h4>Rules and formulas</h4><ul class="formula-list">${ruleLines.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul></section><section class="formula-example"><h4>Worked example</h4>${examples.map(item=>`<p>${revisionFormulaEscape(item)}</p>`).join('')}</section><section class="formula-notes"><h4>Notes and common traps</h4>${notes}</section><p class="dash-note formula-provenance">Prepared by Eng. Abdelrahman Ghoneem. Core lesson topics are organized from the supplied revision PDFs; added clarifications are written to state conditions and avoid ambiguous shorthand.</p></article></div><div class="review-menu"><button type="button" class="btn" data-formulas-to-questions>← Question practice</button></div></section>`;
 }
