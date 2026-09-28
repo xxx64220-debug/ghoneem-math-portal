@@ -1,0 +1,497 @@
+[
+  {
+    "exercise": 1,
+    "n": 1,
+    "page": 40,
+    "rect": [
+      60,
+      140,
+      450,
+      340
+    ],
+    "stem": "What is the solution to $48=8/(-x)$?",
+    "choices": [],
+    "correct": "-1/6",
+    "explanation": "Multiply by −x to get −48x=8, so x=−1/6."
+  },
+  {
+    "exercise": 1,
+    "n": 2,
+    "page": 40,
+    "rect": [
+      60,
+      340,
+      450,
+      495
+    ],
+    "stem": "If $18+9x=54$, what is $2+x$?",
+    "choices": [],
+    "correct": "6",
+    "explanation": "Subtract 18 and divide by 9 to get x=4; then 2+x=6."
+  },
+  {
+    "exercise": 1,
+    "n": 3,
+    "page": 40,
+    "rect": [
+      60,
+      495,
+      450,
+      745
+    ],
+    "stem": "Which equation has the same solution as $9=-24+3x$?",
+    "choices": [
+      "$-3x=-15$",
+      "$3x=-15$",
+      "$-3x=-33$",
+      "$3x=-33$"
+    ],
+    "correct": "C",
+    "explanation": "The equation gives 3x=33. Multiplying by −1 yields −3x=−33."
+  },
+  {
+    "exercise": 1,
+    "n": 4,
+    "page": 40,
+    "rect": [
+      60,
+      745,
+      450,
+      940
+    ],
+    "stem": "If $3x-8=-23$, what is $6x-7$?",
+    "choices": [
+      "$-5$",
+      "$-21$",
+      "$-30$",
+      "$-37$"
+    ],
+    "correct": "D",
+    "explanation": "Solve 3x=−15 to get x=−5; then 6x−7=−37."
+  },
+  {
+    "exercise": 1,
+    "n": 5,
+    "page": 40,
+    "rect": [
+      60,
+      940,
+      450,
+      1150
+    ],
+    "stem": "What positive value of x solves $3(5-2x)(3+x)=0$?",
+    "choices": [],
+    "correct": "5/2",
+    "explanation": "The factors give x=5/2 or x=−3. The positive solution is 5/2."
+  },
+  {
+    "exercise": 1,
+    "n": 6,
+    "page": 40,
+    "rect": [
+      470,
+      140,
+      875,
+      400
+    ],
+    "stem": "What value of r solves $-3(r-9)+5(r-9)=-4$?",
+    "choices": [],
+    "correct": "7",
+    "explanation": "Combine factors: 2(r−9)=−4, giving r=7."
+  },
+  {
+    "exercise": 1,
+    "n": 8,
+    "page": 40,
+    "rect": [
+      470,
+      630,
+      875,
+      865
+    ],
+    "stem": "If $(12-x)/9=(12-x)/4$, between which pair is $12-x$?",
+    "choices": [
+      "−14 and −9",
+      "−8 and −4",
+      "−3 and 4",
+      "5 and 13"
+    ],
+    "correct": "C",
+    "explanation": "Cross multiplication forces 12−x=0, which lies between −3 and 4."
+  },
+  {
+    "exercise": 1,
+    "n": 9,
+    "page": 40,
+    "rect": [
+      470,
+      865,
+      875,
+      1140
+    ],
+    "stem": "What is the negative solution to $64x^2/36=64$?",
+    "choices": [],
+    "correct": "-6",
+    "explanation": "Multiply by 36/64 to obtain x²=36. The negative root is −6."
+  },
+  {
+    "exercise": 1,
+    "n": 10,
+    "page": 41,
+    "rect": [
+      70,
+      95,
+      460,
+      365
+    ],
+    "stem": "If $4/9=(8/3)m$, what is m?",
+    "choices": [
+      "$1/6$",
+      "$2/3$",
+      "$5/6$",
+      "6"
+    ],
+    "correct": "A",
+    "explanation": "Multiply 4/9 by 3/8 to obtain m=1/6."
+  },
+  {
+    "exercise": 1,
+    "n": 11,
+    "page": 41,
+    "rect": [
+      70,
+      365,
+      460,
+      620
+    ],
+    "stem": "If $y+2kx=kx^2+5$ and y=23 when x=3, what is k?",
+    "choices": [
+      "−6",
+      "3",
+      "6",
+      "9"
+    ],
+    "correct": "C",
+    "explanation": "Substitute x=3,y=23: 23+6k=9k+5, so k=6."
+  },
+  {
+    "exercise": 1,
+    "n": 12,
+    "page": 41,
+    "rect": [
+      70,
+      620,
+      460,
+      1070
+    ],
+    "stem": "If $f=p((1+j)^n-1)/j$ for positive f,j,n,p, which expression gives p?",
+    "choices": [
+      "$fj/[(1+j)^n-1]$",
+      "$[(1+j)^n-1]/(fj)$",
+      "$(f-j)/[(1+j)^n-1]$",
+      "$fj+1-(1+j)^n$"
+    ],
+    "correct": "A",
+    "explanation": "Multiply by j, then divide by (1+j)^n−1: p=fj/[(1+j)^n−1]."
+  },
+  {
+    "exercise": 1,
+    "n": 13,
+    "page": 41,
+    "rect": [
+      480,
+      95,
+      875,
+      365
+    ],
+    "stem": "If $m/(2n)=2$, what is $n/(2m)$?",
+    "choices": [
+      "$1/8$",
+      "$1/4$",
+      "$1/2$",
+      "1"
+    ],
+    "correct": "A",
+    "explanation": "m=4n, so n/(2m)=n/(8n)=1/8."
+  },
+  {
+    "exercise": 1,
+    "n": 14,
+    "page": 41,
+    "rect": [
+      480,
+      365,
+      875,
+      715
+    ],
+    "stem": "If $-4d=3e-h$, which equation gives d in terms of e and h?",
+    "choices": [
+      "$d=(-3e-h)/4$",
+      "$d=-3e/4-h$",
+      "$d=3e+h/4$",
+      "$d=(h-3e)/4$"
+    ],
+    "correct": "D",
+    "explanation": "Divide 3e−h by −4 to obtain (h−3e)/4."
+  },
+  {
+    "exercise": 1,
+    "n": 15,
+    "page": 41,
+    "rect": [
+      480,
+      715,
+      875,
+      940
+    ],
+    "stem": "If $x/6=(x+12)/42$, what is $6/x$?",
+    "choices": [
+      "$1/3$",
+      "2",
+      "3",
+      "6"
+    ],
+    "correct": "C",
+    "explanation": "Cross multiply to get 7x=x+12, so x=2 and 6/x=3."
+  },
+  {
+    "exercise": 1,
+    "n": 16,
+    "page": 41,
+    "rect": [
+      480,
+      940,
+      875,
+      1150
+    ],
+    "stem": "What value of n satisfies $(n-4)^2=(n+4)^2$?",
+    "choices": [],
+    "correct": "0",
+    "explanation": "Expand both sides and cancel n²+16: −8n=8n, so n=0."
+  },
+  {
+    "exercise": 1,
+    "n": 17,
+    "page": 42,
+    "rect": [
+      50,
+      90,
+      445,
+      375
+    ],
+    "stem": "For positive n, which choice is one solution of $\\sqrt{x^2-25}=n$?",
+    "choices": [
+      "$n+5$",
+      "$\\sqrt{n+25}$",
+      "$\\sqrt{n^2+5}$",
+      "$-\\sqrt{n^2+25}$"
+    ],
+    "correct": "D",
+    "explanation": "Squaring yields x²=n²+25, and the listed negative solution is −√(n²+25)."
+  },
+  {
+    "exercise": 1,
+    "n": 18,
+    "page": 42,
+    "rect": [
+      50,
+      375,
+      445,
+      635
+    ],
+    "stem": "If $3(x-2y)-3z=0$, which equation gives x in terms of y,z?",
+    "choices": [
+      "$(2y+3z)/3$",
+      "$2y+z$",
+      "$y+2z$",
+      "$6y+3z$"
+    ],
+    "correct": "B",
+    "explanation": "Divide by 3: x−2y−z=0, so x=2y+z."
+  },
+  {
+    "exercise": 1,
+    "n": 19,
+    "page": 42,
+    "rect": [
+      50,
+      635,
+      445,
+      1130
+    ],
+    "stem": "Cowling’s rule is $d=a(c+1)/24$, where d is child dosage, a adult dosage, and c child age. If d is half of a, what is c?",
+    "choices": [
+      "7",
+      "9",
+      "11",
+      "13"
+    ],
+    "correct": "C",
+    "explanation": "Set a/2=a(c+1)/24 and cancel a: 12=c+1, so c=11."
+  },
+  {
+    "exercise": 1,
+    "n": 20,
+    "page": 42,
+    "rect": [
+      465,
+      90,
+      875,
+      345
+    ],
+    "stem": "Which choice solves $(x^2-9)/(x-3)=0$?",
+    "choices": [
+      "3",
+      "$\\sqrt3$",
+      "$-\\sqrt3$",
+      "−3"
+    ],
+    "correct": "D",
+    "explanation": "The numerator is (x−3)(x+3). x=3 is excluded, leaving x=−3."
+  },
+  {
+    "exercise": 1,
+    "n": 21,
+    "page": 42,
+    "rect": [
+      465,
+      345,
+      875,
+      720
+    ],
+    "stem": "Positive G,L,P,T satisfy $T=2P\\sqrt{L/G}$. Which expression gives G?",
+    "choices": [
+      "$2PL/T^2$",
+      "$T^2/(4LP^2)$",
+      "$LT^2/(4P^2)$",
+      "$4LP^2/T^2$"
+    ],
+    "correct": "D",
+    "explanation": "Square both sides: T²=4P²L/G, so G=4LP²/T²."
+  },
+  {
+    "exercise": 1,
+    "n": 22,
+    "page": 42,
+    "rect": [
+      465,
+      720,
+      875,
+      1000
+    ],
+    "stem": "What is the negative solution to $x(x-7)+9(x-7)=0$?",
+    "choices": [],
+    "correct": "-9",
+    "explanation": "Factor (x−7)(x+9)=0. The negative solution is −9."
+  },
+  {
+    "exercise": 1,
+    "n": 23,
+    "page": 43,
+    "rect": [
+      75,
+      90,
+      465,
+      430
+    ],
+    "stem": "For positive x,y, if $x(y-2)=-y$, which equation gives y?",
+    "choices": [
+      "$y=x/(x-2)$",
+      "$y=x/(x+2)$",
+      "$y=2x/(x-1)$",
+      "$y=2x/(x+1)$"
+    ],
+    "correct": "D",
+    "explanation": "Expand and rearrange: xy+y=2x, so y=2x/(x+1)."
+  },
+  {
+    "exercise": 1,
+    "n": 24,
+    "page": 43,
+    "rect": [
+      75,
+      430,
+      465,
+      840
+    ],
+    "stem": "If $V=P(1-r)^t$ models car depreciation, which expression gives r in terms of V,P,t?",
+    "choices": [
+      "$1-\\sqrt[t]{V/P}$",
+      "$1+\\sqrt[t]{V/P}$",
+      "$\\sqrt[t]{V/P}-1$",
+      "$1-\\sqrt[t]{V}/P$"
+    ],
+    "correct": "A",
+    "explanation": "Divide by P, take the tth root and solve 1−r=(V/P)^(1/t)."
+  },
+  {
+    "exercise": 1,
+    "n": 25,
+    "page": 43,
+    "rect": [
+      75,
+      840,
+      465,
+      1150
+    ],
+    "stem": "If $4/(x^2-6x+9)=9$, which could be the value of x−3?",
+    "choices": [
+      "$2/3$",
+      "$3/2$",
+      "$7/3$",
+      "$9/2$"
+    ],
+    "correct": "A",
+    "explanation": "The denominator is (x−3)²=4/9, giving x−3=±2/3."
+  },
+  {
+    "exercise": 1,
+    "n": 26,
+    "page": 43,
+    "rect": [
+      480,
+      90,
+      875,
+      360
+    ],
+    "stem": "What x solves $\\sqrt{2x+8}-3\\sqrt{x-3}=0$?",
+    "choices": [],
+    "correct": "5",
+    "explanation": "After isolating and squaring, 2x+8=9(x−3), so x=5; it checks in the original equation."
+  },
+  {
+    "exercise": 1,
+    "n": 27,
+    "page": 43,
+    "rect": [
+      480,
+      360,
+      875,
+      680
+    ],
+    "stem": "If $x-c=x^2-c^2$ for positive c, which listed values solve it? I. c; II. −c; III. 1−c",
+    "choices": [
+      "I only",
+      "II only",
+      "I and III only",
+      "I, II, and III"
+    ],
+    "correct": "C",
+    "explanation": "Move terms and factor (x−c)(x+c−1)=0. Thus x=c or 1−c."
+  },
+  {
+    "exercise": 1,
+    "n": 28,
+    "page": 43,
+    "rect": [
+      480,
+      680,
+      875,
+      955
+    ],
+    "stem": "If $20-\\sqrt x=(2/3)\\sqrt x+10$ with x>0, what is x?",
+    "choices": [],
+    "correct": "36",
+    "explanation": "Rearrange to 10=(5/3)√x, so √x=6 and x=36."
+  }
+]
