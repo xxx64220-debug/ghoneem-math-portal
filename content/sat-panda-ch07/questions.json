@@ -1,0 +1,717 @@
+[
+  {
+    "exercise": 1,
+    "n": 1,
+    "page": 87,
+    "rect": [
+      79,
+      145,
+      465,
+      460
+    ],
+    "stem": "An aquarium water level w(x), in feet, x days after refill is $w(x)=100−3x$. What does the slope mean?",
+    "choices": [
+      "Decreases 3 feet each day",
+      "Increases 3 feet each day",
+      "Decreases 100 feet each day",
+      "Increases 100 feet each day"
+    ],
+    "correct": "A",
+    "explanation": "The slope −3 represents a decrease of 3 feet in water level per day."
+  },
+  {
+    "exercise": 1,
+    "n": 2,
+    "page": 87,
+    "rect": [
+      79,
+      467,
+      465,
+      813
+    ],
+    "stem": "Annie has B beginner puzzle sets and E intermediate sets, totaling 1,400 pieces. The equation is $36B+64E=1400$. How many more pieces does an intermediate set contain?",
+    "choices": [],
+    "correct": "28",
+    "explanation": "The per-set piece counts are 36 and 64, so the difference is 28."
+  },
+  {
+    "exercise": 1,
+    "n": 3,
+    "page": 87,
+    "rect": [
+      79,
+      825,
+      465,
+      1130
+    ],
+    "stem": "The total weight in ounces of a tray and x empty glasses is $f(x)=24+6x$. What is the weight of each empty glass?",
+    "choices": [
+      "4",
+      "6",
+      "12",
+      "24"
+    ],
+    "correct": "B",
+    "explanation": "The coefficient 6 ounces per glass is the weight of one empty glass."
+  },
+  {
+    "exercise": 1,
+    "n": 4,
+    "page": 87,
+    "rect": [
+      487,
+      145,
+      871,
+      435
+    ],
+    "stem": "The total 175 ounces of flour used for bagels and muffins is modeled by $4.8x+1.5y=175$, where x and y are bagels and muffins made. How many ounces of flour are used for one bagel?",
+    "choices": [],
+    "correct": "4.8",
+    "explanation": "The coefficient of the number of bagels is 4.8 ounces per bagel."
+  },
+  {
+    "exercise": 1,
+    "n": 5,
+    "page": 87,
+    "rect": [
+      487,
+      450,
+      871,
+      808
+    ],
+    "stem": "A team has 11 starting players and x backup players, each receiving 3 jerseys. In $3(x+11)=159$, what is $x+11$?",
+    "choices": [
+      "Number of backup players",
+      "Number of starting players",
+      "Number of players on the team",
+      "Number of jerseys bought for the starters"
+    ],
+    "correct": "C",
+    "explanation": "Adding backup and starting players gives the total number of players."
+  },
+  {
+    "exercise": 1,
+    "n": 6,
+    "page": 87,
+    "rect": [
+      487,
+      819,
+      871,
+      1145
+    ],
+    "stem": "The number y of juniper trees x years after 2010 is $y=177+42x$. What does the point (5,387) represent?",
+    "choices": [
+      "The number increased by 387 in 2015",
+      "The number increased by 387 from 2010 to 2015",
+      "There were 387 trees in 2005",
+      "There were 387 trees in 2015"
+    ],
+    "correct": "D",
+    "explanation": "Five years after 2010 is 2015, and y=387 is the number of trees then."
+  },
+  {
+    "exercise": 1,
+    "n": 7,
+    "page": 88,
+    "rect": [
+      70,
+      95,
+      445,
+      656
+    ],
+    "stem": "The source line shows monthly combinations of necklaces and bracelets made by 25 jewelers, with 300 bracelets if no necklaces are made. What is the maximum bracelets per jeweler?",
+    "choices": [
+      "10",
+      "12",
+      "21",
+      "30"
+    ],
+    "correct": "B",
+    "explanation": "At the bracelets intercept all 25 jewelers make 300 bracelets, or 12 each."
+  },
+  {
+    "exercise": 1,
+    "n": 8,
+    "page": 88,
+    "rect": [
+      70,
+      665,
+      445,
+      1054
+    ],
+    "stem": "An 80-ounce block of cheese is cut into x slices and y cubes: $0.6x+0.25y=80$. What does $0.6x$ represent?",
+    "choices": [
+      "Ounces in each cube",
+      "Ounces in each slice",
+      "Total ounces cut into cubes",
+      "Total ounces cut into slices"
+    ],
+    "correct": "D",
+    "explanation": "The amount per slice times the number of slices is the total amount cut into slices."
+  },
+  {
+    "exercise": 1,
+    "n": 9,
+    "page": 88,
+    "rect": [
+      473,
+      95,
+      860,
+      480
+    ],
+    "stem": "Carl used 12 gallons in a minivan and 17 in a campervan, traveling 590 miles: $12x+17y=590$. What is y?",
+    "choices": [
+      "Total campervan gallons",
+      "Total campervan miles",
+      "Campervan fuel efficiency, miles per gallon",
+      "Average efficiency of both vehicles"
+    ],
+    "correct": "C",
+    "explanation": "The term 17y is miles traveled in the campervan, so y is miles per gallon."
+  },
+  {
+    "exercise": 1,
+    "n": 10,
+    "page": 88,
+    "rect": [
+      473,
+      488,
+      860,
+      798
+    ],
+    "stem": "In a 585-photo album, 315 photos are color. The equation $6p+315=585$ uses p for the number of pages with black-and-white photos. What is $6p$?",
+    "choices": [
+      "Number of black-and-white photos",
+      "Number of photos on each page",
+      "Total number of pages",
+      "Total number of photos"
+    ],
+    "correct": "A",
+    "explanation": "Subtracting the 315 color photos leaves 6p black-and-white photos."
+  },
+  {
+    "exercise": 1,
+    "n": 11,
+    "page": 88,
+    "rect": [
+      473,
+      803,
+      860,
+      1140
+    ],
+    "stem": "The additional points Stacy needs after x rounds are $p(x)=52−4x$. What does $p(8)=20$ mean?",
+    "choices": [
+      "She collected 20 points in the first 8 rounds",
+      "It takes 8 rounds to collect the remaining 20 points",
+      "After 8 rounds she needs 20 more points to win",
+      "She collected 20 more points in round 8"
+    ],
+    "correct": "C",
+    "explanation": "The output p(8) is the points still needed after eight rounds."
+  },
+  {
+    "exercise": 1,
+    "n": 12,
+    "page": 89,
+    "rect": [
+      72,
+      91,
+      462,
+      642
+    ],
+    "stem": "The source graph models daily bakery profit y after x cakes are sold, crossing the y-axis at −600. What does the y-intercept represent?",
+    "choices": [
+      "Price of each cake",
+      "Cost of making each cake",
+      "Daily cost of running the bakery",
+      "Cost of cakes that could not be sold"
+    ],
+    "correct": "C",
+    "explanation": "At zero cakes sold, the fixed daily cost produces a loss of 600 dollars."
+  },
+  {
+    "exercise": 1,
+    "n": 13,
+    "page": 89,
+    "rect": [
+      72,
+      646,
+      462,
+      1140
+    ],
+    "stem": "A graph shows a train’s distance y from a depot in miles, x hours into its route, increasing linearly. What does the slope represent?",
+    "choices": [
+      "Train speed in miles per hour",
+      "Initial distance from depot",
+      "Total distance traveled after x hours",
+      "Total hours to finish"
+    ],
+    "correct": "A",
+    "explanation": "Distance change divided by time change is speed in miles per hour."
+  },
+  {
+    "exercise": 1,
+    "n": 14,
+    "page": 89,
+    "rect": [
+      482,
+      91,
+      863,
+      416
+    ],
+    "stem": "Room temperature T, in Fahrenheit, h hours after a heater starts is $T=56+5h$. How many degrees does it increase in 30 minutes?",
+    "choices": [],
+    "correct": "2.5",
+    "explanation": "The rate is 5 degrees per hour; in half an hour it rises 5/2=2.5 degrees."
+  },
+  {
+    "exercise": 1,
+    "n": 15,
+    "page": 89,
+    "rect": [
+      482,
+      426,
+      863,
+      898
+    ],
+    "stem": "Sugar s in teaspoons and honey h in teaspoons satisfy $s=10−2h$. What does 2 mean in context?",
+    "choices": [
+      "For each teaspoon honey, add two more teaspoons sugar",
+      "For each teaspoon honey, add two fewer teaspoons sugar",
+      "For each two teaspoons honey, add one more teaspoon sugar",
+      "For each two teaspoons honey, add one fewer teaspoon sugar"
+    ],
+    "correct": "B",
+    "explanation": "The slope −2 means each extra teaspoon of honey reduces sugar by two teaspoons."
+  },
+  {
+    "exercise": 1,
+    "n": 16,
+    "page": 90,
+    "rect": [
+      60,
+      90,
+      452,
+      655
+    ],
+    "stem": "The graph of total lawyer time y, in minutes, for x legal consultations passes through (0,60) and (6,540). What does its slope mean?",
+    "choices": [
+      "60 minutes reviewing the case",
+      "Each consultation lasted 60 minutes",
+      "80 minutes reviewing the case",
+      "Each consultation lasted 80 minutes"
+    ],
+    "correct": "D",
+    "explanation": "Slope (540−60)/6=80 minutes per legal consultation."
+  },
+  {
+    "exercise": 1,
+    "n": 17,
+    "page": 90,
+    "rect": [
+      60,
+      674,
+      452,
+      985
+    ],
+    "stem": "A web page with x images has load time in seconds $T(x)=(2x+9)/5$. How many seconds does each image add?",
+    "choices": [],
+    "correct": "2/5",
+    "explanation": "The coefficient of x is 2/5, or 0.4 seconds per image."
+  },
+  {
+    "exercise": 1,
+    "n": 18,
+    "page": 90,
+    "rect": [
+      470,
+      90,
+      863,
+      475
+    ],
+    "stem": "Jamil walked at 5 mph and ran at 9 mph for a total of 4 hours: $5t+9(4−t)=26$, with t the walking time. What does 4 represent?",
+    "choices": [
+      "Total miles run",
+      "Running speed",
+      "Total hours running",
+      "Total hours walking and running"
+    ],
+    "correct": "D",
+    "explanation": "The running time 4−t is total time minus walking time, so 4 is total hours."
+  },
+  {
+    "exercise": 1,
+    "n": 19,
+    "page": 90,
+    "rect": [
+      470,
+      495,
+      863,
+      810
+    ],
+    "stem": "Trapezoid area in square inches with height 7, bases 9 and x is $A=(7/2)(9+x)$. How much does area increase when x increases by 5?",
+    "choices": [],
+    "correct": "17.5",
+    "explanation": "The area changes by 7/2 square inches per added inch of base; five inches add 35/2=17.5."
+  },
+  {
+    "exercise": 2,
+    "n": 1,
+    "page": 91,
+    "rect": [
+      80,
+      142,
+      465,
+      718
+    ],
+    "stem": "The graph shows bakery profit y after x cakes are sold. What does the slope mean?",
+    "choices": [
+      "Price of each cake",
+      "Profit generated from each cake sold",
+      "Total daily profit",
+      "Cakes needed for 100 dollars profit"
+    ],
+    "correct": "B",
+    "explanation": "Slope is change in daily profit for each additional cake sold."
+  },
+  {
+    "exercise": 2,
+    "n": 2,
+    "page": 91,
+    "rect": [
+      80,
+      726,
+      465,
+      1160
+    ],
+    "stem": "Yogurt shelf life in days with x grams preservative is $f(x)=4+3x$. What does $f(4)=16$ mean?",
+    "choices": [
+      "With 4 grams, shelf life is about 16 days",
+      "With 16 grams, shelf life is about 4 days",
+      "4 grams increases shelf life by about 16 days",
+      "16 grams increases shelf life by about 4 days"
+    ],
+    "correct": "A",
+    "explanation": "At an input of 4 grams, the predicted shelf life is 16 days."
+  },
+  {
+    "exercise": 2,
+    "n": 3,
+    "page": 91,
+    "rect": [
+      485,
+      142,
+      870,
+      628
+    ],
+    "stem": "A tank had 204 gallons initially and 36 remain after x minutes: $204−4.2x=36$. What does 4.2 mean?",
+    "choices": [
+      "Percent decrease per minute",
+      "Water leaving in gallons per minute",
+      "Minutes per gallon decrease",
+      "Total decrease after x minutes"
+    ],
+    "correct": "B",
+    "explanation": "The coefficient 4.2 gives the rate of water loss in gallons per minute."
+  },
+  {
+    "exercise": 2,
+    "n": 4,
+    "page": 91,
+    "rect": [
+      485,
+      633,
+      870,
+      1030
+    ],
+    "stem": "Fish pounds a and shrimp pounds b earned a vendor 725 dollars: $12a+18b=725$. What does $18b$ mean?",
+    "choices": [
+      "Number of shrimp sold",
+      "Total weight of fish and shrimp",
+      "Total dollars earned for b pounds of shrimp",
+      "Dollars earned per pound of shrimp"
+    ],
+    "correct": "C",
+    "explanation": "Price per pound times shrimp pounds is total revenue from shrimp."
+  },
+  {
+    "exercise": 2,
+    "n": 5,
+    "page": 92,
+    "rect": [
+      76,
+      90,
+      465,
+      480
+    ],
+    "stem": "Notebooks x and binders y cost $2.50x+3.50y=200$. What does $(x,y)=(24,40)$ mean?",
+    "choices": [
+      "24 notebooks and 40 binders purchased",
+      "24 notebooks cost 40 dollars",
+      "40 notebooks and 24 binders purchased",
+      "40 notebooks cost 24 dollars"
+    ],
+    "correct": "A",
+    "explanation": "x counts notebooks and y counts binders; the ordered pair specifies 24 and 40."
+  },
+  {
+    "exercise": 2,
+    "n": 6,
+    "page": 92,
+    "rect": [
+      76,
+      498,
+      465,
+      865
+    ],
+    "stem": "A video tutorial site has subscribers $s(x)=500+200x$ with x videos. What does 500 mean?",
+    "choices": [
+      "500 new subscribers per video",
+      "Initially 500 videos",
+      "500 subscribers with zero videos",
+      "500 subscribers per 200 videos"
+    ],
+    "correct": "C",
+    "explanation": "The y-intercept s(0)=500 represents subscribers when no videos are available."
+  },
+  {
+    "exercise": 2,
+    "n": 7,
+    "page": 92,
+    "rect": [
+      482,
+      90,
+      871,
+      466
+    ],
+    "stem": "A desk discount gives price per desk $y=500−5x$ for x desks, 5≤x≤30. What does $(6,470)$ mean?",
+    "choices": [
+      "Six desks cost 470 dollars total",
+      "Six desks yield 470 dollars discount",
+      "Six desks cost 470 dollars each",
+      "470 desks yield 6 dollars discount"
+    ],
+    "correct": "C",
+    "explanation": "The output y is the price per desk, so buying six desks costs 470 dollars per desk."
+  },
+  {
+    "exercise": 2,
+    "n": 8,
+    "page": 92,
+    "rect": [
+      482,
+      474,
+      871,
+      940
+    ],
+    "stem": "A clinic treated 400 patients, including 127 treated by doctors: $21n+127=400$, with n patients per nurse practitioner. What is $21n$?",
+    "choices": [
+      "Number of nurse practitioners",
+      "Patients treated by nurse practitioners",
+      "Number of doctors",
+      "Difference between patients treated by nurses and doctors"
+    ],
+    "correct": "B",
+    "explanation": "Subtracting doctor-treated patients leaves the total treated by nurse practitioners."
+  },
+  {
+    "exercise": 2,
+    "n": 9,
+    "page": 93,
+    "rect": [
+      72,
+      90,
+      463,
+      720
+    ],
+    "stem": "A source graph shows combinations of small and large shipping packages, taking 10 and 15 minutes respectively, with intercepts (39,0) and (0,26). How many minutes k are available?",
+    "choices": [
+      "270",
+      "330",
+      "390",
+      "450"
+    ],
+    "correct": "C",
+    "explanation": "Either intercept gives total time: 39·10=26·15=390 minutes."
+  },
+  {
+    "exercise": 2,
+    "n": 10,
+    "page": 93,
+    "rect": [
+      72,
+      730,
+      463,
+      1108
+    ],
+    "stem": "A trail has a 7-mile level path and a 4-mile sloped path, traversed in 5 hours: $7x+4y=5$. What does y mean?",
+    "choices": [
+      "Total hours on sloped path",
+      "Speed on sloped path in mph",
+      "Average hours per mile on sloped path",
+      "Speed on level path in mph"
+    ],
+    "correct": "C",
+    "explanation": "Four miles times y hours per mile gives hours spent on the sloped path."
+  },
+  {
+    "exercise": 2,
+    "n": 11,
+    "page": 93,
+    "rect": [
+      485,
+      90,
+      871,
+      490
+    ],
+    "stem": "A banner shop sells 80 banners, earning x dollars on premade and y dollars on custom: $x/14+y/25=80$. What does 14 mean?",
+    "choices": [
+      "14 premade banners sold",
+      "14 dollars revenue per premade banner",
+      "14 custom banners sold",
+      "14 dollars revenue per custom banner"
+    ],
+    "correct": "B",
+    "explanation": "Premade revenue divided by 14 dollars per banner counts premade banners."
+  },
+  {
+    "exercise": 2,
+    "n": 12,
+    "page": 93,
+    "rect": [
+      485,
+      500,
+      871,
+      885
+    ],
+    "stem": "Hours until milk sours when held at t degrees Celsius are $h(t)=100−4t$. What does 4 mean?",
+    "choices": [
+      "An increase of 1°C makes it sour 4 hours sooner",
+      "An increase of 1°C makes 4 gallons sour 1 hour sooner",
+      "An increase of 4°C makes it sour 1 hour sooner",
+      "An increase of 4°C makes it sour 4 hours sooner"
+    ],
+    "correct": "A",
+    "explanation": "The slope −4 is four fewer hours until souring per degree Celsius increase."
+  },
+  {
+    "exercise": 2,
+    "n": 13,
+    "page": 93,
+    "rect": [
+      485,
+      892,
+      871,
+      1147
+    ],
+    "stem": "Tree height in inches t days after planting is $h(t)=3.5(t/50+2)$. How many inches does it grow each day?",
+    "choices": [
+      "0.02",
+      "0.07",
+      "1.75",
+      "3.5"
+    ],
+    "correct": "B",
+    "explanation": "Distribute 3.5: the coefficient of t is 3.5/50=0.07 inches per day."
+  },
+  {
+    "exercise": 2,
+    "n": 14,
+    "page": 94,
+    "rect": [
+      65,
+      90,
+      456,
+      414
+    ],
+    "stem": "Auction price with t seconds left is $p=900−10t$. What does 900 represent?",
+    "choices": [
+      "Starting auction price",
+      "Final auction price",
+      "Price increase per second",
+      "Duration of auction"
+    ],
+    "correct": "B",
+    "explanation": "When t=0 no time remains, so the price at the close is 900 dollars."
+  },
+  {
+    "exercise": 2,
+    "n": 15,
+    "page": 94,
+    "rect": [
+      65,
+      423,
+      456,
+      830
+    ],
+    "stem": "A teacher printed y sticker sheets of 7 stickers and gave x students 2 stickers each: $7y−32=2x$. What does 32 represent?",
+    "choices": [
+      "Total stickers given out",
+      "Sticker sheets remaining",
+      "Stickers printed beyond those given out",
+      "Total sticker sheets printed"
+    ],
+    "correct": "C",
+    "explanation": "Rearranging gives 7y=2x+32, so 32 stickers were printed beyond the number distributed."
+  },
+  {
+    "exercise": 2,
+    "n": 16,
+    "page": 94,
+    "rect": [
+      474,
+      90,
+      864,
+      445
+    ],
+    "stem": "A bank converts x U.S. dollars to y euros by $y=1.30x−1.50$. What does 1.50 mean?",
+    "choices": [
+      "A 1.50-euro conversion fee",
+      "A 1.50-dollar conversion fee",
+      "One dollar is worth 1.50 euros",
+      "One euro is worth 1.50 dollars"
+    ],
+    "correct": "A",
+    "explanation": "The output is euros, and 1.50 euros are deducted as a conversion fee."
+  },
+  {
+    "exercise": 2,
+    "n": 17,
+    "page": 94,
+    "rect": [
+      474,
+      465,
+      864,
+      755
+    ],
+    "stem": "Monthly plan cost for x minutes is $C(x)=0.07(x−180)+62.6$. How much does cost increase for 75 more minutes?",
+    "choices": [
+      "1.75",
+      "5.25",
+      "55.25",
+      "67.85"
+    ],
+    "correct": "B",
+    "explanation": "Multiply the rate 0.07 dollars per minute by 75 minutes to obtain 5.25 dollars."
+  },
+  {
+    "exercise": 2,
+    "n": 18,
+    "page": 94,
+    "rect": [
+      474,
+      770,
+      864,
+      1115
+    ],
+    "stem": "Shipment mailing cost for x pounds is $C(x)=1.5+2.5x$. A 10-dollar cost increase corresponds to how many added pounds?",
+    "choices": [
+      "2",
+      "2.5",
+      "4",
+      "5"
+    ],
+    "correct": "C",
+    "explanation": "Divide the cost increase by 2.5 dollars per pound: 10/2.5=4 pounds."
+  }
+]
