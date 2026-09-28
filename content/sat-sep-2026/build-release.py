@@ -1,6 +1,7 @@
-"""Build a guarded, repeatable SAT release from the checked September PDF.
+"""Build a guarded, repeatable release from the checked September transcription.
 
-The source PDF remains in this directory. Never derive keys from OCR alone.
+The original PDF remains in the user's attachment collection, not this repository.
+Never derive keys from OCR alone.
 """
 import json
 import uuid
