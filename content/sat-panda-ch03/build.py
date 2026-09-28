@@ -19,17 +19,17 @@ if hashlib.sha256(source.read_bytes()).hexdigest() != SOURCE_SHA:
     raise SystemExit('Source PDF checksum differs')
 doc = fitz.open(source)
 items = json.loads((HERE / 'questions.json').read_text())
-assert len(items)==27
-assert {(q['exercise'],q['n']) for q in items} == ({(1,n) for n in range(1,29)}-{(1,7)})
+assert len(items)==52
+assert {(q['exercise'],q['n']) for q in items} == (({(1,n) for n in range(1,29)}-{(1,7)}) | {(2,n) for n in range(1,26)})
 rendered = {}
 for q in items:
     ex,n = q['exercise'],q['n']
     q['id']=str(uuid.uuid5(uuid.NAMESPACE_URL,f'ghoneem/college-panda/chapter-3/exercise-{ex}/question-{n}'))
     q['code']=f'PANDA-CH03-E{ex}-Q{n:02}'
     q['topic']='Manipulating and solving equations'
-    q['lesson']=('Exponents and radicals' if n in (17,26,28) else
-                 'Rational expressions and equations' if n in (1,20,25) else
-                 'Quadratics' if n in (5,9,16,22,27) else 'Linear equations')
+    q['lesson']=('Exponents and radicals' if (ex,n) in ((1,17),(1,26),(1,28),(2,1),(2,8),(2,9),(2,18),(2,21),(2,22),(2,23),(2,25)) else
+                 'Rational expressions and equations' if (ex,n) in ((1,1),(1,20),(1,25),(2,7),(2,10),(2,11),(2,13),(2,17),(2,19),(2,20),(2,24)) else
+                 'Quadratics' if (ex,n) in ((1,5),(1,9),(1,16),(1,22),(1,27),(2,4),(2,16)) else 'Linear equations')
     q['assets']={
         'code':q['code'],'paper':'College Panda SAT Math Advanced Guide & Workbook',
         'source_page':q['page'],'source_chapter':3,'source_exercise':ex,
@@ -56,7 +56,7 @@ for q in items:
     q.pop('rect',None)
 def lit(s):return "'"+s.replace("'","''")+"'"
 payload=lit(json.dumps(items,ensure_ascii=False,separators=(',',':')))
-sql=f"""-- College Panda Chapter 3: 27 independently checked exercises.
+sql=f"""-- College Panda Chapter 3: 52 independently checked exercises.
 -- Source SHA256 {SOURCE_SHA}; Exercise 1 Q7 withheld because x²+3x+16=0 has no real solution.
 begin;
 set local statement_timeout='50s';
@@ -65,7 +65,7 @@ select * from jsonb_to_recordset({payload}::jsonb)
  as x(exercise integer,n integer,topic text,stem text,choices jsonb,correct text,
        explanation text,page integer,id uuid,code text,lesson text,assets jsonb);
 do $$ begin
- if (select count(*) from panda_ch03)<>27
+ if (select count(*) from panda_ch03)<>52
  or exists(select 1 from panda_ch03 group by code having count(*)>1)
  or exists(select 1 from panda_ch03 i join public.questions q on q.track_id='sat'
    where q.id not in (select id from panda_ch03) and (q.assets->>'code'=i.code
@@ -92,9 +92,9 @@ select i.id,i.lesson,i.topic,'medium',array['sat']::text[],
 from panda_ch03 i join public.questions q on q.id=i.id
 join public.question_keys k on k.question_id=q.id on conflict(question_id) do nothing;
 do $$ begin
- if (select count(*) from public.questions where assets->>'code' like 'PANDA-CH03-E%-Q%')<>27
- or (select count(*) from panda_ch03 i join public.question_keys k on k.question_id=i.id)<>27
- or (select count(*) from panda_ch03 i join public.revision_items r on r.question_id=i.id)<>27
+ if (select count(*) from public.questions where assets->>'code' like 'PANDA-CH03-E%-Q%')<>52
+ or (select count(*) from panda_ch03 i join public.question_keys k on k.question_id=i.id)<>52
+ or (select count(*) from panda_ch03 i join public.revision_items r on r.question_id=i.id)<>52
  then raise exception 'panda_ch03_incomplete'; end if;
 end $$;
 commit;
