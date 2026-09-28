@@ -182,6 +182,56 @@ const REVISION_FORMULA_LESSONS = {
   }
 };
 
+// Extra SAT practice ideas checked against the September 2026 source pages.
+// Each rule is a separate row in the lesson; the EST tracks retain their own scope.
+const REVISION_SAT_EXTRA_RULES = {
+  'Systems of equations': [
+    'For a dependent system, choose a free parameter r: set y = r and solve the remaining line for x.',
+    'For a line meeting a parabola exactly once, substitute the line into the parabola and set the resulting discriminant to zero.'
+  ],
+  'Inequalities and absolute value': [
+    'For three consecutive odd integers beginning at k, write k, k + 2, and k + 4 before translating the inequality.',
+    'After solving an inequality over the reals, enforce any required integer or parity condition on the final answer.'
+  ],
+  'Quadratics and polynomials': [
+    'Revenue = number sold × price per unit; if price falls linearly as sales rise, revenue is a quadratic.',
+    'For a proposed factor x + 3k, substitute x = −3k into the polynomial and solve for the allowed values of k.',
+    'For a polynomial with known distinct roots, make a sign chart using all roots and the sign of the leading coefficient.'
+  ],
+  'Functions and transformations': [
+    'For g(x) = a√(b − x), the endpoint occurs at x = b when a ≠ 0; the domain is x ≤ b.',
+    'A secant line between two points on a strictly convex exponential curve lies above the curve between those intersections.'
+  ],
+  'Exponents, radicals and growth': [
+    'In A·b^(cx), increasing x by Δ multiplies the output by b^(cΔ). A percent change over that interval is 100(b^(cΔ) − 1)%.',
+    'A rule stating growth by a factor of 8 per half unit of x can be written A·8^(2x); an increase of 1/2 raises the exponent by 1.'
+  ],
+  'Ratios, percentages and unit conversion': [
+    'To mix two concentrations, equate active amounts: first fraction × first volume + second fraction × second volume = target fraction × total volume.',
+    'When two parts of a ratio change by different percentages, multiply each original part by its own growth or decay factor before simplifying.',
+    'For chained percentages, convert each percentage to a decimal multiplier before combining quantities; 0.025% = 0.00025.'
+  ],
+  'Statistics and data analysis': [
+    'When removing data, recompute the mean from the new sum divided by the new count.',
+    'To compare standard deviations after deleting values, compare squared distances from the new mean; do not infer the size from the range alone.',
+    'An estimated population proportion with margin of error m percentage points gives a plausible interval from estimate − m to estimate + m; it does not predict an individual response.'
+  ],
+  'Geometry and triangles': [
+    'A rectangle inscribed in a circle has its diagonal equal to the circle diameter.',
+    'Two corresponding angles and one corresponding side establish triangle congruence; two sides and a nonincluded angle can be ambiguous.',
+    'For a right triangle with altitude from the right angle to the hypotenuse: altitude² = the product of the two hypotenuse segments.'
+  ],
+  'Trigonometry': [
+    'Angles differing by an integer multiple of 2π radians reach the same point on the unit circle.',
+    'On the unit circle, the y-coordinate of the endpoint at angle θ is sin θ.'
+  ],
+  'Volume and surface area': [
+    'For similar solids, a volume ratio of k³ corresponds to a length ratio k and a surface-area ratio k².',
+    'For a right square pyramid of base side s and vertical height h, slant height = √(h² + (s/2)²).',
+    'The total surface area of a right square pyramid is s² + 2s × slant height.'
+  ]
+};
+
 REVISION_FORMULA_LESSONS['Trigonometry and trig graphs'] = {
   ...REVISION_FORMULA_LESSONS.Trigonometry,
   notes: 'For y = A sin(Bx + C) + D or y = A cos(Bx + C) + D, amplitude = |A|, period = 2π/|B|, phase shift = −C/B and range = [D − |A|, D + |A|]. Tangent has period π/|B| and vertical asymptotes. Set calculator mode to match the angle units.'
@@ -256,7 +306,9 @@ function revisionFormulaPanel() {
   const diagrams = visualNames.map(name => `<figure class="formula-diagram">${REVISION_FORMULA_SVG[name] || ''}<figcaption>${revisionFormulaEscape(REVISION_FORMULA_VISUAL_CAPTIONS[name] || '')}</figcaption></figure>`).join('');
   const [keyPoint, ...moreRules] = lesson.formulas;
   const keyPointLines = revisionFormulaRuleLines(keyPoint);
-  const ruleLines = moreRules.flatMap(revisionFormulaRuleLines);
+  const ruleLines = moreRules.flatMap(revisionFormulaRuleLines).concat(
+    course === REVISION_FORMULA_TRACKS.sat ? (REVISION_SAT_EXTRA_RULES[selected] || []) : []
+  );
   const examples = Array.isArray(lesson.examples) ? lesson.examples : [lesson.example];
   const noteLines = (Array.isArray(lesson.notes) ? lesson.notes : [lesson.notes]).flatMap(revisionFormulaRuleLines);
   const notes = `<ul class="formula-note-list">${noteLines.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul>`;

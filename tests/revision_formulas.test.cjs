@@ -34,6 +34,18 @@ test('formula catalogue follows the selected track and does not expose another t
   assert.match(est2, /Logarithms and exponentials/);
 });
 
+test('September SAT ideas appear as separate rules only in the SAT lesson', () => {
+  context.ST.track.id = 'sat';
+  context.REV.formulaLesson = 'Statistics and data analysis';
+  const sat = vm.runInContext('revisionFormulaPanel()', context);
+  assert.match(sat, /When removing data, recompute the mean/);
+  assert.match(sat, /<li>To compare standard deviations after deleting values/);
+  assert.match(sat, /<li>An estimated population proportion with margin of error/);
+  context.ST.track.id = 'est';
+  const est = vm.runInContext('revisionFormulaPanel()', context);
+  assert.doesNotMatch(est, /When removing data, recompute the mean/);
+});
+
 test('lesson diagrams are self-contained SVG and lesson text is HTML-escaped', () => {
   context.ST.track.id = 'est';
   context.REV.formulaLesson = 'Unit conversions';
