@@ -88,10 +88,30 @@ test('statistics lesson keeps the source notes and shows accurate labeled data d
   assert.match(html, /Visual guide/);
   assert.match(html, /Smaller SD/);
   assert.match(html, /Larger SD/);
-  assert.match(html, /positive association/);
+  assert.match(html, /numbered axes/);
+  assert.match(html, /positive residual at study time five hours/);
   assert.match(html, /residual/);
   assert.match(html, /7  7  8  9/);
   assert.match(html, /1  1  2  2  6  6  6  8/);
   assert.match(html, /1  8/);
   assert.match(html, /2 \| 1 = 21°F/);
+});
+
+test('handwritten revision points are present in conversions, circles and triangles', () => {
+  context.ST.track.id = 'est';
+  context.REV.formulaLesson = 'Unit conversions';
+  let html = vm.runInContext('revisionFormulaPanel()', context);
+  for (const phrase of ['16 oz = 1 lb', '1 US gallon = 4 US quarts', '2000 lb = 1 US short ton', '1 m³ = (100 cm)³', 'conversion fraction direction', '°F = (9/5)°C + 32']) {
+    assert.ok(html.includes(phrase), `conversion lesson is missing: ${phrase}`);
+  }
+  context.REV.formulaLesson = 'Circles';
+  html = vm.runInContext('revisionFormulaPanel()', context);
+  for (const phrase of ['The diameter is the longest chord', 'A semicircle is 180°', 'major arc is greater than 180°', 'centre = (−D/2, −E/2)', 'Power of a point', 'far-minus-near arc DIFFERENCE']) {
+    assert.ok(html.includes(phrase), `circle lesson is missing: ${phrase}`);
+  }
+  context.REV.formulaLesson = 'Triangles and similarity';
+  html = vm.runInContext('revisionFormulaPanel()', context);
+  for (const phrase of ['two smallest sides is greater than the largest', 'greater → acute, equal → right, less → obtuse', 'altitude meets the opposite side at 90°', 'h² = pq', 'proportional SAS']) {
+    assert.ok(html.includes(phrase), `triangle lesson is missing: ${phrase}`);
+  }
 });
