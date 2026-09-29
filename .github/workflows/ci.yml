@@ -53,6 +53,13 @@ jobs:
           python -m compileall -q scripts tests content-releases
           if [ -d content ]; then python -m compileall -q content; fi
 
+      - name: Verify June remaining-record mathematics and guarded repairs offline
+        run: |
+          python tests/june_remaining_review.py
+          python tests/revision_contamination_review.py
+          npm ci --prefix tests/june-review-runtime --ignore-scripts --no-audit --no-fund
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/june_remaining_review_db.cjs
+
       - name: Run EST release arithmetic and content checks when source data exists
         run: |
           if [ -f content/est-banks-2026/reviewed-bank.json ]; then
@@ -205,4 +212,3 @@ jobs:
           else
             echo "SKIP: tests/est_september_2026.sql needs the September release import SQL and release-bank source fixture."
           fi
-

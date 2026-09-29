@@ -1,0 +1,187 @@
+3:1|D|3x=27 gives x=9, so 2x=18.
+3:2|A|3x≤5 gives x≤5/3; the greatest positive integer is 1.
+3:3|A|The inequalities give x<5 and x≥3; their intersection is [3,5).
+3:4|C||3x−5|=1 gives x=4/3 or 2. Only 2 is listed.
+3:5|BD|B holds for −11/3<x<−1, an infinite interval; D holds for every real x because an absolute value is nonnegative. A and C each have one solution. A single-answer D key is invalid; the existing explicitly multiple-valid-answer copy is sound.
+3:6|D|The first inequality requires x≥−3, while the second requires x<−10. No number satisfies both.
+4:7|C|With x≠2, cross-multiplication gives 6x+6=6x−12, a contradiction.
+4:8|B|40=2L−6 gives L=23; the smaller number is 40−23=17.
+4:9|B||−2+6|−8=4−8=−4.
+4:10|D|4x/100=2/5 gives x=10.
+4:11|B|2x−2=±6 gives x=4 or −2. The positive root is 4.
+4:12|A||3x−1|=1 gives x=0 or 2/3. Only 0 is listed.
+4:13|A|n<−7.5; the greatest integer allowed is −8.
+5:14|A|Subtract 2y, then divide by positive 6: x>(7−2y)/6.
+5:15|C|Cancel nonzero x: 1/(2y−1)=2/5. Thus 4y−2=5 and y=7/4.
+5:18|C|Let the larger number be L. Then x=0.75L and L−x=0.25L=30, so L=120 and x=90.
+5:19|B|Rent costs 1000x. Buying is cheaper when 150000<1000x, or x>150.
+6:22|B|A perpendicular to the vertical line x=3 is horizontal. Of the listed equations, only y=0 is horizontal.
+6:23|C|C rearranges to y=−(2/3)x−7/3, with negative slope; all other listed slopes are positive.
+7:24|C|Slope=(4−3)/(1+9)=1/10. Substituting (1,4) gives intercept 3.9.
+7:25|A|The perpendicular slope is −2. Through (1,0), y=−2(x−1)=−2x+2.
+7:26|A|The midpoint y-coordinate is (−5+11)/2=3.
+7:27|A|Slope=(−2−4)/(1+3)=−6/4=−1.5.
+7:28|A|Monthly cost equals fixed 300 plus 150 for each refrigerator: y=150x+300.
+7:29|A|A steady increase means a constant positive rate, represented by an increasing straight line.
+7:30|C|The original slope is 3/2. C has slope −2/3, its negative reciprocal.
+8:31|A|The magnitude of the vertical change is |−10−5|=15. The directed change from the first point to the second is −15; clarify that magnitude is requested.
+8:32|D|w=34−0.5d. Setting w=26 gives d=8/0.5=16 days.
+8:33|C|At y=0, x=2; at x=0, y=1/2. The slope is −1/4.
+8:34|C|The intercepts are (−8,0) and (0,6). Distance=√(64+36)=10.
+8:35|A|The source graph crosses (0,3) and (2,0), so y=−3x/2+3, equivalent to 3x+2y=6.
+9:36|A|Multiplying the first equation by −4 gives −8x+12y=−36, inconsistent with the second equation's 7.
+9:40|C|Substitute y=3x+1: 6x+2+4x=12, so x=1 and y=4.
+9:41|B|Both equations in B reduce to y=2x−3. Other pairs are distinct lines.
+10:42|D|2x+(x+2)=5 gives x=1 and y=3.
+10:43|B|The first and third lines intersect at x=0. The other x-coordinates are 3/(a+2) and 3/(a+4). Their sum is 1.6 at a=1, and is strictly decreasing for a>0, so this is unique.
+10:45|B|Divide by 6: 2x²+x−4=0. The quadratic formula gives (−1±√33)/4.
+10:46|D|Vieta gives sum 7 and product 4; their sum is 11.
+11:47|A|The upward parabola has vertex x=−3 and increases from that point onward.
+11:48|A|The midpoint of roots m and 2 is 7, so m=12. At x=7, y=3(−5)(5)=−75.
+11:49|C|x=−b/(2a)=−1; f(−1)=3. Negative leading coefficient makes this the maximum.
+11:51|D|Axis x=20/8=2.5.
+11:52|A|(x+5)²=4 gives x=−7 or −3. The greater is −3.
+11:53|C|x²−6x+7=(x−3)²−2.
+12:54|B|The source graph has vertex (−2,−3) and y-intercept 1, so f(x)=(x+2)²−3=x²+4x+1.
+12:56|C|The shared model is h(t)=−16t²+128t+320=−16(t−10)(t+2). The nonnegative ground time is 10 seconds.
+13:57|C|y=(x−5)²−24, so the vertex is (5,−24).
+13:58|C|Rearrange to x²−14x+2=0; the sum of roots is 14.
+13:62|B|The axis is t=7; the reflection of day 3 is day 11. Direct substitution gives p(3)=p(11)=33+k.
+14:63|C|Equating (x−2)² and (x−6)² gives h=4, k=4, so h+k=8.
+14:64|B|Volume=x(8−2x)(12−2x)=4x³−40x²+96x. V≥60 becomes x³−10x²+24x≥15, with physical domain 0<x<4.
+14:66|B|P(x)=(x−5)(x+4)(x+2)(3x+2). Only x−2 is not a factor; P(2)=−576.
+14:67|C|p(x)=(x−2)(x−3)(x+4); the negative root is −4 and its absolute value is 4.
+15:68|A|Matching x² gives a=8; matching constants gives b=−4. The x coefficient is 4a−3b=44, so k=−44.
+15:69|A|P(−1)=−3+2+m=m−1=0, so m=1.
+15:70|B|The cubic coefficient 3a+1 must vanish, so a=−1/3. A quadratic additionally requires b≠0; this does not change the necessary value of a.
+15:71|C|At a=1, the x³ coefficient is 4. Thus 4b=4 and b=1.
+15:72|A|The source graph crosses x=−1, touches x=2 and has y-intercept 4. Thus f(x)=(x+1)(x−2)².
+16:73|D|The source graph has zeros −2,1,3 and y-intercept 3. Hence f(x)=1/2(x+2)(x−1)(x−3).
+16:76|AD|Both A=x(x−3)(x+2) and D=(x+1)(x−3)(x+2) contain the required factors. The single-answer source is ambiguous.
+16:77|D|The leading term is −5x⁴: coefficient −5, degree 4, and both tails tend to −∞.
+17:78|C|The table gives f(x)=3−3x. Then f(−3)+f(3)=12−6=6.
+17:80|D|Slope=(15−5)/(7−2)=2. Thus a=5+2(5−2)=11 and 2a=22.
+17:82|C|g(1)=−3 and f(−3)=−27+9=−18.
+18:83|A|Solve y=3x−7 for x: x=(y+7)/3. Thus f inverse is (x+7)/3.
+18:84|A|y=(x−2)/(2x) implies x(1−2y)=2, so the inverse is 2/(1−2x), x≠1/2.
+18:87|D|The source downward parabola has vertex (−2,4), meeting y=3 at x=−3 and −1. Strictly above 3 gives (−3,−1), excluding endpoints.
+19:88|C|g(−4)=−5; h(−4)=−8−3(−5)=7.
+19:89|D|For real x, ln(exp(−5x))=−5x.
+19:91|D|The denominator vanishes at x=−7. The reciprocal term is never zero and tends to zero at infinity, so the horizontal asymptote is y=3 and the range excludes 3.
+19:93|D|f(a)=1.5a=6 gives a=4. Therefore f(10)=5+4=9.
+20:94|HOLD|The stated amount requires r=100((8950.95/6000)^(1/8)−1), approximately 5.13%. At 5%, the balance is 8864.73, not 8950.95. No listed rate satisfies the data; the source does not specify rounding the rate to a whole percent.
+20:95|C|A is exponential and rises from 9 to 27 between 11:00 and 11:30, a gain of 18. B is linear and gains 15 in that interval.
+20:97|B|2(x+2)=3(x+1) gives x=1, allowed since x≠−1,−2.
+20:98|D|Squaring gives x²+x−12=0, so x=3 or −4. Only 3 satisfies the original equation and x+1≥0.
+21:99|B|Squaring gives (x−2)(x+1)=0; the square root is nonnegative, excluding −1. x=0 also fails. Only II is valid.
+21:100|C|The common denominator is xy(x−8). The numerator is xy(y+12)+y(x−8)=xy²+13xy−8y. Domain: x≠0,8 and y≠0.
+21:103|B|P³=125y^(3/2)/27. Dividing by y^(3/2), with y>0, gives 125/27.
+21:104|A|3xy=4x²−2x−1, so y=(4x²−2x−1)/(3x). x=0 cannot satisfy the original equation.
+21:105|C|Combine p³q coefficients −7+4=−3; pq coefficients 6−8+7=5; constants 3+7=10.
+22:106|HOLD|Original total=30(15.8)+20(16.2)+10(17.2)=970. Removing 60 points and 3 students gives 910/57=15.964912..., or 16.0 to one decimal, not the keyed 15.9. None of the choices matches.
+22:109|D|Single tickets cost 168(242)=40656. Plan 1 costs 640+80(242)=20000, equal to Plan 2 and cheaper than singles.
+22:110|B|Simple interest=4500(0.02)(2)=180.
+23:111|C|0.05674 kg=56.74 g, rounding to 57 g.
+23:112|D|Increase=(34−20)/20×100=70%.
+23:113|D|Each book has 396 good pages. Total=396×230×5=455400.
+23:114|D|Monthly cost per Hyundai=134400/(14×12)=800.
+23:115|D|The shared annual revenues total 134400+85440+239400+117000=576240; 11% is 63386.40.
+23:116|B|Shared Jeep data: 19 vehicles cost 239400 per year. Monthly per vehicle=239400/(19×12)=1050; after 20% discount, 840.
+24:117|HOLD|The supplied proportional calculation is 9×26/1.2=195, but the premise equates 1.2 cubic meters with 9 gallons, which is not a valid volume conversion. The intended unit or quantity cannot be recovered from the source; retain the source and hold it.
+24:118|B|120/15=8 pages per minute.
+24:119|A|Original price=2000/0.70=2857.142857..., rounding to 2857 dollars.
+24:121|D|1.5×24×60×60=129600 seconds.
+24:122|D|Old unit price=3.25/120=13/480; new=3/108=1/36. Increase=1/1440 dollar per gram, or about 2.56%. Of the qualitative choices, almost the same is the only reasonable one; it did not decrease or double.
+25:123|B|Made shots=0.30n; three-pointers=0.10(0.30n)=0.03n.
+25:124|C|Speed reduction is 60 mph at 4 mph per second, requiring 15 seconds.
+25:127|D|Sum 1 through 44=44×45/2=990; triple minus 17=2953.
+25:128|A|0.30N=0.864×50=43.2, giving N=144.
+26:132|B|Diameter=12√2, so radius=6√2 and area=72π.
+26:133|D|x(x+3)=54 has positive root x=6. Then 2x+3=15=√225, length=9 and perimeter=30; all four statements hold.
+27:134|D|Perimeter=2r+rθ=12+6(40π/180)=12+4π/3≈16.19 cm.
+27:135|A|New center=(−2,−6), new radius=6, so (x+2)²+(y+6)²=36.
+27:138|B|cos²x=1−9/16=7/16; the acute angle has positive cosine √7/4.
+27:139|A|The first perimeter is 18+9√2; the second is 12+4√3. Total=30+9√2+4√3≈49.7.
+28:140|C|The wedge is 45/360=1/8 of a cylinder: volume=(1/8)π(6²)(2)=9π.
+28:142|B|x=76−71=5. Sorted data=2,5,7,9,18,35; Q1=5 and Q3=18, so IQR=13.
+28:143|A|Excluding median 8, lower-half median=6 and upper-half median=12; IQR=6.
+29:144|B|The median is the line inside the source box at 30 lb, not either box edge.
+29:145|A|The source point at x=9 lies at approximately y=28 versus fitted y=21, residual magnitude about 7, exceeding the other listed points.
+29:146|C|The twenties are 21,21,22,22,26,26,26,28; leaves are 1,1,2,2,6,6,6,8.
+30:147|A|Regularly spaced positions are systematic; sampling within each section is stratified; selection completely at random is simple random.
+30:148|A|Tight clustering around an upward line indicates strong positive correlation.
+30:149|C|Larger sundaes generally contain more calories; the other paired quantities either decrease together with elapsed use/melting or do not specify a relationship.
+30:150|A|There are four vowel occurrences A,A,I,E among seven letter occurrences, so probability=4/7.
+30:151|D|Only two A letters exist; after both are removed no A remains, so probability=0.
+30:152|D|After the first card, 3 of the remaining 11 have the same value. Probability=3/11.
+31:153|C|The samples show a higher proportion meeting the exercise threshold in A (80% versus 65%). C is the only choice reflecting this association; causes and sports preferences were not measured. Equal but unspecified margins do not establish statistical significance or average exercise hours.
+35:1|B|Ten of the twenty scores are ≤8. Thus x=50 and 2x=100.
+35:2|C|Nine sorted values have their median in position 5: 32.
+35:4|D|Lower half 1,2,5,5,6 has median 5; upper half 7,8,9,10,11 has median 9. IQR=4.
+35:5|B|New height=12(196.4)−11(192)=244.8 cm.
+36:6|HOLD|Original total=510 and new total=525, so the new person is 15 cm taller than the person who left. Possibilities are 175,185,195; the departing person is unspecified. A unique height cannot be inferred even though 185 is the only listed possibility.
+36:7|B|Successive frequency differences are 4,9,15,12,6,4. Weighted total=9+30+36+24+20=119; mean=119/50=2.38.
+36:8|B|(15k+8)/4=5 gives 15k=12 and k=0.8.
+36:9|D|The eleven known values sum to 41. Total must be 12×8=96, so x=55.
+36:11|D|After throwing away 10%, 90% remains: 12+20+4=36 books. Original total=36/0.9=40.
+37:14|C|Non-red marbles=5+2=7 out of 11; probability=7/11.
+37:16|B|Under independent daily attendance, probability=0.35⁴=0.01500625, rounding to 0.015. Independence and rounding must be present in a standalone stem.
+38:17|D|Males=250 and all respondents=470. Probability=25/47≈0.5319, closest to 0.53.
+38:18|D|For independent uniform spinners, 4 of the 12 products are odd (two odd choices on each spinner). Thus even probability=8/12=2/3.
+38:19|A|For independent shots with success probability 0.3 each, all-three probability=0.3³=0.027.
+38:21|A|Even outcomes have total 0.34+0.28=0.62; odd outcomes have probability 1−0.62=0.38.
+38:22|A|With uniform transfers, first salty probability=1/4. The bag then has 3 salty of 7, giving (1/4)(3/7)=3/28.
+39:24|C|Boys=101+60=161 out of 320 students. Probability=161/320=0.503125, closest to 0.503.
+39:25|C|Condition on locals: 101 boys among 101+125=226 locals. Probability=101/226≈0.447.
+39:27|C|Choose independently one physical marble of each color: 7×4×5=140.
+40:28|A|Outfits=5×4×2×3=120.
+40:29|D|All four-ball selections number C(10,4)=210. Exclude all three yellow plus one red: 7 ways. Result=203.
+40:32|B|PHARMACY has eight letters with two identical A letters; arrangements=8!/2!=20160.
+40:33|B|Glue the A letters into a block: 7! favorable arrangements out of 8!/2! total; probability=1/4.
+40:34|B|SCANNER has seven letters with two N letters: 7!/2!=2520.
+41:35|B|OFFICE has six letters with two F letters: 6!/2!=360.
+41:37|A|xy=20. At x=3, y=20/3 and y²=400/9≈44.44.
+41:38|A|AB=24; at A=−3, B=24/(−3)=−8.
+41:39|C|At a constant rate, 80 seconds permits 80×10/60=13 1/3 words; 13 whole words are completed.
+42:40|D|Ahmed's rate is 125 words/min; Malak's is 250. In 3.5 minutes she types 875 words.
+42:41|C|Cats:dogs:rabbits=12:16:15, total 43 parts. 172/43=4 animals per part, giving 64 dogs.
+42:42|B|Rewand receives (8/24)24000=8000 and retains 80%, or 6400.
+42:44|A|(2i+5)(i−1)=2i²+3i−5=−7+3i.
+43:45|B|As x tends to negative infinity, eˣ tends to zero, so f(x) tends to 15.
+43:46|B|g(x)=2 becomes x²+5x−6=(x+6)(x−1)=0. Of −6 and 1, only −6 is listed. The revised stem correctly asks for a listed preimage, not a globally defined quadratic inverse.
+43:47|C|For equally likely faces, 2,3,3,7 are prime: probability=4/6=(k−2)/6, giving k=6.
+44:48|A|The source chart values are 3,4,4,4,6,6,8. Median=4 and mode=4; difference=0.
+44:49|C|The ten heights sum to 180; mean=180/10=18 cm.
+44:50|D|Added heights must total 13(17)−10(18)=41. Only 10+15+16=41.
+44:51|C|Grade 11 failures=0.2(30)+0.5(24)=18. Grade 10 passes=0.75(28)+0.68(25)=38. Ratio=18:38=9:19.
+45:54|C|At x=8, prediction=6(8)+47.6=95.6.
+45:55|D|Total cost=20 shirts/day×70 days×10 dollars/shirt=14000 dollars.
+48:1|A|For x≠−1,0,1, clearing denominators gives 2x²=3(x²−1), hence x=±√3. Both are allowed and sum to zero.
+48:2|A|Cube x+1/x=5: x³+1/x³=5³−3(5)=110.
+48:5|C|Outside [−1,3], the equations give x=−2 and 4. Inside that interval the sum is 4, not 6. Root sum=2.
+48:6|B|The source prints 3^(x+2)−3^x=216. Factoring gives 8·3^x=216, so 3^x=27 and x=3.
+49:7|B|The source prints 2^a=3 and 3^b=8. Raising the first to b gives 2^(ab)=8=2³, so ab=3.
+49:10|C|Write f(u)=mu+c. Then f(2x+1)=2mx+m+c=6x+7 gives m=3,c=4; f(5)=19.
+49:11|D|Composing yields numerator (a²+b)x+b(a−2) over (a−2)x+b+4. Equality to x forces a−2=0. Thus a=2; the identity also requires b≠−4 to avoid a constant/undefined composition.
+50:12|C|Set 2x−1=3, giving x=2; then f(3)=4(2²)−2(2)=12.
+50:13|A|Oddness gives g(−3)=−7 and g(0)=0. Their sum is −7.
+50:16|C|For roots of x²−6x+4, r+s=6 and rs=4. Then r²+s²=36−8=28.
+51:17|A|4a+k=11 and a+k=−1 imply a=4,k=−5. Since a>0, the minimum is −5.
+51:18|C|The product of cubic roots is −6. Thus 1×2×r=−6 and r=−3.
+51:19|B|Discriminant k²−36=0 gives k=±6; k<0 selects −6.
+51:21|C|144=80+2xy gives xy=32.
+52:23|A|(4√3−3√3)/√3=1.
+52:26|C|The legs are 3k,4k with hypotenuse 5k=20. Thus legs=12,16 and area=96.
+53:27|C|Area fraction=12π/(36π)=1/3, so central angle=120°.
+53:28|B|cos(θ+10°)=sin(80°−θ). For acute θ the valid equality gives θ=80°−θ, hence θ=40°; the supplementary branch is impossible.
+53:29|B|Slant height=√(3²+4²)=5; lateral area=πrl=15π.
+53:31|B|Equilateral area=(√3/4)6²=9√3.
+54:32|C|Removed value=5(12)−4(9)=24.
+54:33|C|Sorted values must be a,b,12,13,13, with a+b=12. Unique mode forbids b=12. Maximum b=11 occurs with a=1, so 11 is achievable.
+54:36|B|Union=18+15−6=27. Neither=3 of 30, probability=1/10.
+54:37|C|C's rate=1/2−1/6−1/9=2/9 job/hour, so time=9/2=4.5 hours.
+55:38|C|Acid balance: 0.30(8)+0.80x=0.50(8+x). Thus 0.30x=1.6 and x=16/3.
+55:39|A|Total distance=120 km; time=60/30+60/60=3 hours. Average speed=40 km/h.
+55:40|C|S=2O and S−6=3(O−6) give O=12,S=24. Sum=36.
+55:41|B|Digits a+b=11 and 9(b−a)=27 give b−a=3, so a=4,b=7 and number=47.
+55:42|B|n(n+2)=168 gives (n−12)(n+14)=0. Positivity selects n=12.
