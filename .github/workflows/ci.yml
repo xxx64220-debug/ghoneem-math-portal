@@ -36,6 +36,7 @@ jobs:
             tests/daily_streak.test.cjs \
             tests/exam_builder.test.cjs \
             tests/final_revision.test.cjs \
+            tests/lesson_taxonomy.test.cjs \
             tests/revision_formulas.test.cjs \
             tests/portal_notifications.test.cjs \
             tests/practice_figures.test.cjs
@@ -212,3 +213,17 @@ jobs:
           else
             echo "SKIP: tests/est_september_2026.sql needs the September release import SQL and release-bank source fixture."
           fi
+
+      - name: Verify guarded lesson-taxonomy corrections in isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          psql -v ON_ERROR_STOP=1 -f content-releases/2026-09-27-final-revision-schema.sql
+          psql -v ON_ERROR_STOP=1 -f tests/lesson_taxonomy_corrections_fixture.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/20260929_lesson_taxonomy_corrections/apply.sql
+          psql -v ON_ERROR_STOP=1 -f tests/lesson_taxonomy_corrections.sql
+          if psql -v ON_ERROR_STOP=1 -f content-releases/20260929_lesson_taxonomy_corrections/apply.sql; then
+            echo "ERROR: lesson-taxonomy correction rerun was not rejected"
+            exit 1
+          fi
+          echo "PASS: lesson-taxonomy correction rerun was rejected"
