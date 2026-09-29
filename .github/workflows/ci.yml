@@ -162,7 +162,9 @@ jobs:
           psql -v ON_ERROR_STOP=1 -f supabase/sql/portal_upgrade.sql
           psql -v ON_ERROR_STOP=1 -f supabase/sql/fair_exam_keys.sql
           psql -v ON_ERROR_STOP=1 -f supabase/sql/pending_exam_grading.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/sql/numeric_range_keys.sql
           for test in \
+            tests/numeric_range_keys.sql \
             tests/daily_streak.sql \
             tests/pending_grading.sql \
             tests/student_progress.sql \
