@@ -133,6 +133,7 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 
 <dialog id="editor"></dialog>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js"></script>
+<script src="hardest-questions.js?v=20260929"></script>
 <script>
 /* ============================ CONFIG ============================ */
 const SB_URL = 'https://wfhurjyouemahvkcfkdz.supabase.co';
@@ -141,6 +142,8 @@ const EMAIL_DOMAIN = 'students.ghoneem-math.com';
 /* ================================================================ */
 
 const sb = supabase.createClient(SB_URL, SB_KEY);
+const hardestReport = HardestQuestions.create(sb);
+let hardestRequest = 0;
 const fnBase = SB_URL + '/functions/v1';
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -182,7 +185,7 @@ $('inBtn').onclick = async () => {
   boot();
 };
 $('pw').onkeydown = e => { if (e.key==='Enter') $('inBtn').click(); };
-$('outBtn').onclick = async () => { await window.portalNotificationsBeforeLogout?.(); await sb.auth.signOut(); location.reload(); };
+$('outBtn').onclick = async () => { hardestRequest++; hardestReport.clear(); await window.portalNotificationsBeforeLogout?.(); await sb.auth.signOut(); location.reload(); };
 
 async function boot(){
   const { data:{ user } } = await sb.auth.getUser();
@@ -228,6 +231,7 @@ async function notifications(){
 
 /* ---------------- views ---------------- */
 async function render(){
+  hardestRequest++; hardestReport.cancel();
   syncAdminNavigation();
   $('view').innerHTML = `<p class="hint">Loading…</p>`;
   try { await ({ overview, students, results, lessons, questions, exams, bank, groups, devices, audit, notifications, quizAdmin, revisionAdmin, reportsAdmin, integrityAdmin })[ST.view](); }
@@ -368,21 +372,66 @@ async function lessons(){
   $('csvBtn').onclick = () => csv(rows, 'weak-lessons');
 }
 
-async function questions(){
-  const d = await getRows('question_difficulty',true);
-  const rows = d||[];
+async function questions(offset=0,refresh=false){
+  const request=++hardestRequest;
+  const scope={user:ST.me.id,track:ST.track};
+  const current=()=>request===hardestRequest&&ST.view==='questions'&&ST.track===scope.track&&ST.me?.id===scope.user;
+  hardestReport.cancel();
   $('view').innerHTML = `
     <div class="head"><h2>Hardest questions</h2><div class="sp"></div>
+      <button class="btn-sm" id="hardRefresh">Refresh</button>
       <button class="btn-sm" id="pdfBtn">Export PDF</button>
       <button class="btn-sm" id="csvBtn">Export CSV</button></div>
-    <p class="hint" style="margin-bottom:12px">Ranked by real student success rate. Review key flags mean at least 10 attempts and under 20% correct; they are prompts for a human check, not proof of a bad answer key.</p>
-    ${rows.length ? wrapTable(`<table><tr><th>Rank</th><th>Source</th><th>Lesson</th><th>Question</th><th>Attempts</th><th>Correct</th><th>Wrong</th><th>Success</th><th>Check</th></tr>` +
-      rows.map(r=>`<tr><td class="num">#${r.rank}</td><td><span class="pill">${esc(r.sources)}</span></td><td>${esc(r.lesson)}</td><td class="hint">${esc(r.stem)}</td>
+    <p class="hint" style="margin-bottom:12px">Ranked within each track by real student success rate. Review key flags mean at least 10 attempts and under 20% correct; they are prompts for a human check, not proof of a bad answer key. Exports include all ranked questions for the selected track.</p>
+    <p id="hardStatus" class="hint" role="status" aria-live="polite">Loading questions…</p>
+    <div id="hardRows" aria-busy="true"></div>
+    <div class="head hidden" id="hardPaging">
+      <button class="btn-sm" id="hardPrev">Previous</button>
+      <span id="hardPageLabel" class="hint"></span>
+      <button class="btn-sm" id="hardNext">Next</button></div>`;
+  $('pdfBtn').disabled=$('csvBtn').disabled=true;
+  $('hardRefresh').onclick=()=>questions(0,true);
+  try{
+    const page=await hardestReport.page(scope,offset,{refresh});
+    if(!current())return;
+    const rows=page.rows;
+    $('hardRows').setAttribute('aria-busy','false');
+    $('hardStatus').textContent='';
+    $('hardRows').innerHTML=rows.length?wrapTable(`<table><thead><tr><th>Rank</th><th>Track</th><th>Source</th><th>Lesson</th><th>Question</th><th>Attempts</th><th>Correct</th><th>Wrong</th><th>Success</th><th>Check</th></tr></thead><tbody>`+
+      rows.map(r=>`<tr><td class="num">#${r.rank}</td><td>${esc(r.track_id.toUpperCase())}</td><td><span class="pill">${esc(r.sources)}</span></td><td>${esc(r.lesson)}</td><td class="hint">${esc(r.stem)}</td>
         <td class="num">${r.answered_by}</td><td class="num">${r.got_it_right}</td><td class="num">${r.got_it_wrong}</td>
-        <td class="num" style="min-width:130px"><b>${Number(r.percent_correct).toFixed(1)}%</b>${bar(r.percent_correct)}</td><td>${Number(r.answered_by)>=10&&Number(r.percent_correct)<20?'<span class="pill warn">Review key</span>':'—'}</td></tr>`).join('') + `</table>`)
-      : `<div class="empty">No completed answers yet.</div>`}`;
-  $('csvBtn').onclick = () => csv(rows.map(r=>({rank:r.rank,source:r.sources,track:r.track_id,lesson:r.lesson,question_id:r.question_id,question:r.stem,attempts:r.answered_by,correct:r.got_it_right,wrong:r.got_it_wrong,success_rate:`${Number(r.percent_correct).toFixed(1)}%`,review_key:Number(r.answered_by)>=10&&Number(r.percent_correct)<20})), 'hardest-questions');
-  $('pdfBtn').onclick = () => questionPdf(rows);
+        <td class="num" style="min-width:130px"><b>${Number(r.percent_correct).toFixed(1)}%</b>${bar(r.percent_correct)}</td><td>${Number(r.answered_by)>=10&&Number(r.percent_correct)<20?'<span class="pill warn">Review key</span>':'—'}</td></tr>`).join('')+`</tbody></table>`):`<div class="empty">${offset?'No more questions.':'No completed answers yet.'}</div>`;
+    $('hardPaging').classList.toggle('hidden',!rows.length&&!offset);
+    $('hardPrev').disabled=offset===0;
+    $('hardNext').disabled=!page.hasMore;
+    $('hardPageLabel').textContent=rows.length?`Questions ${offset+1}–${offset+rows.length}`:'End of report';
+    $('hardPrev').onclick=()=>questions(Math.max(0,offset-hardestReport.pageSize));
+    $('hardNext').onclick=()=>questions(offset+hardestReport.pageSize);
+    $('pdfBtn').disabled=$('csvBtn').disabled=!rows.length;
+    async function exportAll(kind){
+      // Open the print window during the click, before any asynchronous fetch.
+      const report=kind==='pdf'?window.open('','_blank'):null;
+      if(kind==='pdf'&&!report){alert('Allow pop-ups for this site, then choose Export PDF again.');return;}
+      if(report)report.document.body.textContent='Preparing all ranked questions…';
+      $('pdfBtn').disabled=$('csvBtn').disabled=true;
+      try{
+        const all=await hardestReport.all(scope,count=>{if(current())$('hardStatus').textContent=`Preparing export: ${count} questions…`;});
+        if(!current()){report?.close();return;}
+        if(kind==='pdf')questionPdf(all,report,scope.track);
+        else csv(all.map(r=>({rank:r.rank,source:r.sources,track:r.track_id,lesson:r.lesson,question_id:r.question_id,question:r.stem,attempts:r.answered_by,correct:r.got_it_right,wrong:r.got_it_wrong,success_rate:`${Number(r.percent_correct).toFixed(1)}%`,review_key:Number(r.answered_by)>=10&&Number(r.percent_correct)<20})), 'hardest-questions');
+        $('hardStatus').textContent=`Export ready: ${all.length} questions.`;
+      }catch(e){report?.close();if(current())$('hardStatus').textContent=`Could not export: ${e.message||e}`;}
+      finally{if(current())$('pdfBtn').disabled=$('csvBtn').disabled=false;}
+    }
+    $('csvBtn').onclick=()=>exportAll('csv');
+    $('pdfBtn').onclick=()=>exportAll('pdf');
+  }catch(e){
+    if(!current())return;
+    $('hardRows').setAttribute('aria-busy','false');
+    $('hardStatus').textContent='';
+    $('hardRows').innerHTML=`<div class="msg bad">Could not load questions: ${esc(e.message||e)} <button class="btn-sm" id="hardRetry">Try again</button></div>`;
+    $('hardRetry').onclick=()=>questions(offset,true);
+  }
 }
 
 async function exams(){
@@ -416,11 +465,11 @@ function csv(rows, name){
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 
-function questionPdf(rows){
+function questionPdf(rows, report=null, trackId=ST.track){
   if (!rows.length) return alert('There are no completed answers to export yet.');
-  const track = ST.track ? ST.track.toUpperCase() : 'ALL TRACKS';
+  const track = trackId ? trackId.toUpperCase() : 'ALL TRACKS';
   const generated = new Date().toLocaleString();
-  const report = window.open('', '_blank');
+  report = report || window.open('', '_blank');
   if (!report) return alert('Allow pop-ups for this site, then choose Export PDF again.');
   const body = rows.map(r=>`<tr><td>#${r.rank}</td><td>${esc(r.sources)}</td><td>${esc(r.lesson)}</td><td>${esc(r.stem)}</td><td>${r.answered_by}</td><td>${r.got_it_right}</td><td>${r.got_it_wrong}</td><td><b>${Number(r.percent_correct).toFixed(1)}%</b></td></tr>`).join('');
   report.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>Hardest Questions — ${esc(track)}</title><style>
