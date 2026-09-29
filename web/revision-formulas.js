@@ -11,7 +11,7 @@ const REVISION_FORMULA_TRACKS = {
       'Bluebook provides an embedded calculator and a reference sheet during Math. Desmos is available in the testing app; practise choosing when graphing helps and when algebra is quicker.',
       'Desmos angle mode matters: choose degrees for degree questions; use radians for radian questions. Graphing can check solutions, intersections, vertices, regression and inequalities.'
     ],
-    lessons: ['Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics and polynomials','Functions and transformations','Exponents, radicals and growth','Ratios, percentages and unit conversion','Statistics and data analysis','Probability and conditional probability','Geometry and triangles','Trigonometry','Circles','Area and perimeter','Volume and surface area']
+    lessons: ['Desmos calculator guidance','Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics and polynomials','Functions and transformations','Exponents, radicals and growth','Ratios, percentages and unit conversion','Statistics and data analysis','Probability and conditional probability','Geometry and triangles','Trigonometry','Circles','Area and perimeter','Volume and surface area']
   },
   est: {
     title: 'EST Math I',
@@ -197,7 +197,47 @@ REVISION_FORMULA_LESSONS['Circles and power of a point'] = {
   notes: 'For central and inscribed angles, use the intercepted arc: central angle equals its arc; an inscribed angle equals half its arc. In circle equations, the signs inside parentheses reverse when reading the centre.',
 };
 
+// Desmos guidance audited 2026-09-29. Matches the corrected SAT rules PDF.
+// Official references: https://help.desmos.com/hc/en-us/articles/4407885334285-Inequalities-and-Restrictions
+// https://help.desmos.com/hc/en-us/articles/30913914831757-Assessment-Resources-FAQ
+REVISION_FORMULA_LESSONS['Desmos calculator guidance'] = {
+  "formulas": [
+    "Restrictions: append curly brackets, for example y=2x{0<x<10}. This limits the graph to 0<x<10.",
+    "Use ≤ instead of < to include an endpoint. A restriction changes which points are graphed; zooming changes only the viewing window. Use Graph Settings to adjust axis bounds.",
+    "Equations: enter y=left side and y=right side separately. Read the intersection x-values. A direct equation such as 2x+3=7 also graphs the vertical line x=2; select its x-intercept.",
+    "Systems: graph both equations and select intersections to read (x,y). Adjust the window to find off-screen intersections and use algebra to confirm the total number of solutions.",
+    "Tables: choose + then Table. For outputs, define f(x) and use f(x₁) as the second header. Enter chosen inputs in x₁. A blank y₁ column does not calculate outputs by itself.",
+    "Sliders: enter y=ax+b and add sliders for a and b. Use them to explore possible values, then verify with algebra. In y=2x+k, k changes the intercept, not the slope.",
+    "Inequalities: y>2x+1 shades above a dashed boundary. Use ≥ for a solid boundary that is included. For AND, use the overlap of shaded regions. For OR, use their union.",
+    "Vertices and zeros: select the curve, then an available vertex or x-intercept. A zero can cross OR touch the x-axis. Displayed coordinates may be rounded; confirm exact values algebraically.",
+    "Regression: enter paired x₁,y₁ data, then use y₁~mx₁+b or y₁~ax₁²+bx₁+c. Enter subscripts with _1. Keep parameter letters free of previous slider definitions.",
+    "Predictions: after fitting a model, define f(x)=mx+b (or ax²+bx+c), then evaluate f(5) for the prediction at x=5. A best-fit line is an exact line through the points only when they are collinear.",
+    "Composition: define f(x) and g(x) in separate rows, then enter f(g(x)) in a third row. After defining f(x), use y=a·f(x−h)+k with sliders to explore transformations.",
+    "Powers: x^2, x^3. Fractions: (2x+1)/(x−3). Square roots: sqrt(x+5). For a cube root, type nthroot, enter 3 in the index, then x under the radical.",
+    "Valid inputs include abs(x), sin(x), cos(x), tan(x), log(x) (base 10), ln(x), e^x and pi. The graph y=abs(x−3)+2 has vertex (3,2).",
+    "Trigonometry: check Degrees or Radians in Graph Settings. In Radians, use sin(30*pi/180) for sin 30°. In Degrees, use sin(30); do not convert again.",
+    "Circles: (x−3)²+(y+2)²=25 graphs a circle. Read centre (3,−2) and radius 5 from the equation. Plot (3,−2) to mark the centre; verify exact coordinates by substitution.",
+    "Asymptotes: derive their equations algebraically, then graph those equations. Do not treat them as automatically labelled points of interest. Retain every original domain exclusion."
+  ],
+  "examples": [
+    "Restrictions: y=2x{0<x<10} shows only the part with 0<x<10. The endpoints are excluded. Changing the axis bounds alone leaves the full line unchanged.",
+    "One real root: for x²+kx+4=0, set k²−16=0. Both k=4 and k=−4 work. Sliders visualize these cases; the discriminant proves them.",
+    "Parallel lines: against y=2x+3, the line y=2x+k has no solution when k≠3 and infinitely many when k=3. Changing k cannot change its slope.",
+    "Exponential model: define f(x)=500(1.03)^x. Then f(10) is about 672. The intersection with y=1000 has x≈23.45, the time in years.",
+    "Point and answer checks: to test (a,b) on y=f(x), compare f(a) with b. For an equation candidate, evaluate its left and right sides separately and compare."
+  ],
+  "notes": [
+    "Choose graphing or algebra according to the question; neither method is always faster. A graph is a numerical check, not a symbolic proof.",
+    "Graphs can hide close or off-screen intersections. Use the original equations and domain to confirm all solutions; rounded matches are not proof of exact equality.",
+    "A graph of (x−3)(x+2) confirms zeros 3 and −2. Matching zeros alone does not prove that two polynomials are identical.",
+    "Use the Graphing Calculator for these instructions. Practise with the College Board version linked by the SAT Desmos button; exam configurations may differ from standard Desmos.",
+    "Checked 29 September 2026 against the Desmos Help Center articles Inequalities and Restrictions, Tables, Graph Settings, Regressions, Functions, Supported Functions, Sliders and Movable Points, Getting Started, and Assessment Resources & FAQ."
+  ],
+  "visual": "desmosRestrictions"
+};
+
 const REVISION_FORMULA_SVG = {
+ desmosRestrictions: "<svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Line segment y equals 2x restricted to x strictly between zero and ten; open endpoints at zero zero and ten twenty\"><path d=\"M50 205H385M70 220V25\" stroke=\"#526277\" stroke-width=\"2\"/><path d=\"M70 205L330 45\" stroke=\"#087c91\" stroke-width=\"4\"/><g fill=\"white\" stroke=\"#087c91\" stroke-width=\"3\"><circle cx=\"70\" cy=\"205\" r=\"5\"/><circle cx=\"330\" cy=\"45\" r=\"5\"/></g><path d=\"M330 45V205M70 45H330\" stroke=\"#aab4c1\" stroke-dasharray=\"5 5\"/><g fill=\"#14243e\" font-size=\"14\"><text x=\"54\" y=\"225\">0</text><text x=\"321\" y=\"225\">10</text><text x=\"44\" y=\"50\">20</text><text x=\"390\" y=\"209\">x</text><text x=\"64\" y=\"20\">y</text><text x=\"155\" y=\"100\">y = 2x</text><text x=\"125\" y=\"244\">Open endpoints: 0 &lt; x &lt; 10</text></g></svg>",
  line: '<svg viewBox="0 0 360 180" role="img" aria-label="Coordinate axes with a rising straight line showing slope as rise over run"><path d="M45 145H330M75 165V18" stroke="#526277" stroke-width="2"/><path d="M82 135L300 42" stroke="#087c91" stroke-width="4"/><path d="M130 115V94H180" fill="none" stroke="#ba920d" stroke-width="3"/><text x="143" y="88">rise</text><text x="145" y="132">run</text><text x="305" y="40">m</text></svg>',
  system: '<svg viewBox="0 0 360 180" role="img" aria-label="Two lines intersect at a point, representing the solution to a system"><path d="M40 145H330M75 165V15" stroke="#526277" stroke-width="2"/><path d="M82 138L290 30M85 35L292 142" stroke="#087c91" stroke-width="3"/><circle cx="184" cy="85" r="5" fill="#b28a08"/><text x="195" y="78">solution</text></svg>',
  inequality: '<svg viewBox="0 0 360 180" role="img" aria-label="A half-plane shaded above a dashed boundary line for a strict greater-than inequality"><path d="M40 150H330M75 165V15" stroke="#526277" stroke-width="2"/><path d="M75 65L305 20V150H75Z" fill="#dceef2"/><path d="M75 65L305 20" stroke="#087c91" stroke-width="3" stroke-dasharray="8 6"/><text x="210" y="105">shade above</text></svg>',
@@ -225,6 +265,7 @@ const REVISION_FORMULA_SVG = {
 };
 
 const REVISION_FORMULA_VISUAL_CAPTIONS = {
+  desmosRestrictions: 'y=2x{0<x<10} restricts the line to this segment; both endpoints are excluded. Graph Settings changes the viewing window.',
   boxplot: 'Five-number summary: the box spans Q₁ to Q₃, and the centre line marks the median.',
   stddev: 'Both dot plots have the same mean. The wider spread corresponds to the larger standard deviation.',
   scatter: 'Teal dots are actual observations; the gold line gives predictions. At x = 5, the dot lies above the line, so its vertical residual (actual − predicted) is positive.',
