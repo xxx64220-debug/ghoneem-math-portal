@@ -3,7 +3,7 @@ const html=fs.readFileSync('web/admin.html','utf8');
 const sql=fs.readFileSync('supabase/migrations/20260920_ranked_question_success.sql','utf8');
 
 assert.match(html,/id="pdfBtn">Export PDF/);
-assert.match(html,/questionPdf\(rows\)/);
+assert.match(html,/questionPdf\(all,report,scope\.track\)/);
 assert.match(html,/Print \/ Save as PDF/);
 assert.match(html,/Success<\/th>/);
 assert.match(html,/setTimeout\(\(\) => URL\.revokeObjectURL/);

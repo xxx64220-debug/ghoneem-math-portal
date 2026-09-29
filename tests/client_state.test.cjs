@@ -5,7 +5,7 @@ function setup(file){
  setInterval(){return 1},clearInterval(){},setTimeout(){},clearTimeout(){},location:{reload(){},href:''},alert(){},confirm(){return true},
  localStorage:{setItem(){},getItem(){return null}},document:{addEventListener(){},getElementById:node,querySelectorAll(){return[]},documentElement:{style:{setProperty(){}}}},window:{addEventListener(){},scrollTo(){}},
  supabase:{createClient(){return {auth:{async getSession(){return {data:{session:null}}},async getUser(){return {data:{user:null}}}}}}}};
- vm.createContext(ctx);const code=fs.readFileSync(file,'utf8').split('<script>')[1].split('</script>')[0];new vm.Script(code).runInContext(ctx);for(const module of file.includes('admin')?['web/exam-builder.js']:['web/portal-controls.js'])new vm.Script(fs.readFileSync(module,'utf8')).runInContext(ctx);return ctx;
+ vm.createContext(ctx);if(file.includes('admin'))new vm.Script(fs.readFileSync('web/hardest-questions.js','utf8')).runInContext(ctx);const code=fs.readFileSync(file,'utf8').split('<script>')[1].split('</script>')[0];new vm.Script(code).runInContext(ctx);for(const module of file.includes('admin')?['web/exam-builder.js']:['web/portal-controls.js'])new vm.Script(fs.readFileSync(module,'utf8')).runInContext(ctx);return ctx;
 }
 (async()=>{
  const c=setup('web/index.html'),a=setup('web/admin.html');
