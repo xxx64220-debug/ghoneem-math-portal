@@ -63,6 +63,9 @@ jobs:
 
       - name: Run EST release arithmetic and content checks when source data exists
         run: |
+          python scripts/build-est1-revision-ideas.py
+          python tests/est1_revision_ideas.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est1_revision_ideas_db.cjs
           if [ -f content/est-banks-2026/reviewed-bank.json ]; then
             python tests/est_bank_2026.py
           else
@@ -254,3 +257,23 @@ jobs:
             exit 1
           fi
           echo "PASS: revision taxonomy fingerprint repair rerun was rejected"
+
+      - name: Verify EST I revision idea expansion in isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          PGDATABASE=postgres dropdb --if-exists portal_est1_ideas_ci
+          PGDATABASE=postgres createdb portal_est1_ideas_ci
+          export PGDATABASE=portal_est1_ideas_ci
+          psql -v ON_ERROR_STOP=1 -f tests/00_shim.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/000_preflight.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/001_schema.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/2026-09-27-final-revision-schema.sql
+          psql -v ON_ERROR_STOP=1 -f tests/est1_revision_ideas_fixture.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/20260929_est1_revision_ideas/apply.sql
+          psql -v ON_ERROR_STOP=1 -f tests/est1_revision_ideas.sql
+          if psql -v ON_ERROR_STOP=1 -f content-releases/20260929_est1_revision_ideas/apply.sql; then
+            echo "ERROR: EST I revision idea release rerun was not rejected"
+            exit 1
+          fi
+          echo "PASS: EST I revision idea release rerun was rejected"
