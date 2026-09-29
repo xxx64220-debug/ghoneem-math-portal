@@ -290,7 +290,8 @@ function revisionFormulaPanel() {
   if (!course) return '<section class="dash-panel"><h2>Formula lessons</h2><p>Choose a SAT or EST track to view its lessons.</p></section>';
   const names = course.lessons.filter(name => REVISION_FORMULA_LESSONS[name]);
   const selected = REV.formulaLesson && names.includes(REV.formulaLesson) ? REV.formulaLesson : names[0];
-  const lesson = REVISION_FORMULA_LESSONS[selected];
+  const variant = ST.track?.id === 'est2' ? {'Trigonometry':'Trigonometry and trig graphs','Functions and transformations':'Functions, inverses and asymptotes','Circles':'Circles and power of a point','Probability and conditional probability':'Probability, permutations and combinations'}[selected] : null;
+  const lesson = REVISION_FORMULA_LESSONS[variant || selected];
   const cards = names.map(name => `<button type="button" class="formula-lesson-link ${name === selected ? 'selected' : ''}" data-formula-lesson="${revisionFormulaEscape(name)}" aria-current="${name === selected ? 'true' : 'false'}">${revisionFormulaEscape(name)}</button>`).join('');
   const facts = course.facts.map(item => `<li>${revisionFormulaEscape(item)}</li>`).join('');
   const visualNames = lesson.visuals || (lesson.visual ? [lesson.visual] : []);
@@ -302,4 +303,49 @@ function revisionFormulaPanel() {
   const noteLines = (Array.isArray(lesson.notes) ? lesson.notes : [lesson.notes]).flatMap(revisionFormulaRuleLines);
   const notes = `<ul class="formula-note-list">${noteLines.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul>`;
   return `<section class="dash-panel revision-panel formula-panel"><div class="review-menu"><button class="btn-ghost" data-revision-main>← Main menu</button></div><div class="dash-heading"><h2>Formula lessons</h2><span class="revision-badge">${revisionFormulaEscape(course.title)}</span></div><p class="dash-note">${revisionFormulaEscape(course.intro)}</p><details class="formula-course-notes"><summary>Track notes and exam data</summary><ul>${facts}</ul></details><div class="formula-layout"><nav class="formula-lesson-list" aria-label="Formula lessons">${cards}</nav><article class="formula-lesson"><h3>${revisionFormulaEscape(selected)}</h3><section class="formula-key-point" aria-label="Main point"><span class="formula-section-label">Main point</span>${keyPointLines.map(item=>`<p>${revisionFormulaEscape(item)}</p>`).join('')}</section>${diagrams?`<section class="formula-visual-section"><h4>Visual guide</h4><div class="formula-diagram-grid">${diagrams}</div></section>`:''}<section class="formula-content-section"><h4>Rules and formulas</h4><ul class="formula-list">${ruleLines.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul></section><section class="formula-example"><h4>Worked example</h4>${examples.map(item=>`<p>${revisionFormulaEscape(item)}</p>`).join('')}</section><section class="formula-notes"><h4>Notes and common traps</h4>${notes}</section><p class="dash-note formula-provenance">Prepared by Eng. Abdelrahman Ghoneem. Core lesson topics are organized from the supplied revision PDFs; added clarifications are written to state conditions and avoid ambiguous shorthand.</p></article></div><div class="review-menu"><button type="button" class="btn" data-formulas-to-questions>← Question practice</button></div></section>`;
+}
+
+// Use the same visible lesson names as the bank when the shared catalogue is loaded.
+// Legacy dictionary keys remain available for older saved formula selections.
+if (typeof MATH_LESSONS !== 'undefined') {
+  for (const [name, sources] of Object.entries({
+    'Ratios, percentages and unit conversion':['Ratios, percentages and unit conversion','Percentages and interest','Ratio, proportion and rates','Unit conversions'],
+    'Exponents, radicals and growth':['Exponents, radicals and growth','Exponents and special products']
+  })) {
+    const items=sources.map(key=>REVISION_FORMULA_LESSONS[key]).filter(Boolean);
+    REVISION_FORMULA_LESSONS[name]={...items[0],formulas:[...new Set(items.flatMap(x=>x.formulas))],examples:items.flatMap(x=>x.examples||[x.example]),notes:items.flatMap(x=>Array.isArray(x.notes)?x.notes:[x.notes])};
+  }
+  Object.assign(REVISION_FORMULA_LESSONS, {
+    'Algebraic expressions and equations': {
+      formulas:['Combine like terms: ax + bx = (a + b)x. Distribute: a(b + c) = ab + ac.','Keep an equation balanced by applying the same valid operation to both sides. To rearrange a formula, isolate the required variable.'],
+      example:'If 3x + 5 = 20, subtract 5 to get 3x = 15, then divide by 3: x = 5.',
+      notes:'Substitute the result into the original equation. Do not divide by a variable without checking whether it can be zero.'
+    },
+    'Logic and sets': {
+      formulas:['An implication P ⇒ Q is equivalent to its contrapositive: not Q ⇒ not P. The converse need not be true.','A ∪ B contains elements in either set; A ∩ B contains elements in both. For finite sets, |A ∪ B| = |A| + |B| − |A ∩ B|.'],
+      example:'If A = {1,2} and B = {2,3}, then A ∪ B = {1,2,3} and A ∩ B = {2}.',
+      notes:'A set complement is relative to a specified universal set. A counterexample disproves an always-true claim.'
+    },
+    'Conic sections': {
+      formulas:['Ellipse: (x − h)²/a² + (y − k)²/b² = 1, for positive a and b. Its centre is (h,k).','Horizontal hyperbola: (x − h)²/a² − (y − k)²/b² = 1. Its asymptotes are y − k = ±(b/a)(x − h).'],
+      example:'For x²/9 + y²/4 = 1, the ellipse is centred at (0,0), with x-intercepts ±3 and y-intercepts ±2.',
+      notes:'Check the sign between squared terms. Interchanging the denominators interchanges the horizontal and vertical semiaxes.'
+    },
+    'Matrices': {
+      formulas:['Add equal-sized matrices entry by entry; multiply by a scalar entry by entry.','For a 2 × 2 matrix with rows (a,b) and (c,d), determinant = ad − bc. Matrix multiplication uses row-by-column products.'],
+      example:'For rows (2,1) and (3,4), the determinant is 2·4 − 1·3 = 5.',
+      notes:'AB is defined only when the number of columns of A equals the number of rows of B. Generally AB differs from BA.'
+    },
+    'Vectors': {
+      formulas:['For u = (u₁,u₂) and v = (v₁,v₂), u + v = (u₁ + v₁,u₂ + v₂).','Magnitude |u| = √(u₁² + u₂²). Dot product u·v = u₁v₁ + u₂v₂ = |u||v| cos θ.'],
+      example:'The vector from (1,2) to (4,6) is (3,4), with magnitude 5.',
+      notes:'Subtract starting coordinates from ending coordinates. Nonzero perpendicular vectors have dot product zero.'
+    },
+    'Limits and continuity': {
+      formulas:['A two-sided limit exists when the left-hand and right-hand limits exist and agree.','Continuity at a requires f(a) to be defined, the limit as x approaches a to exist, and that limit to equal f(a).'],
+      example:'For x ≠ 2, (x² − 4)/(x − 2) = x + 2, so its limit as x approaches 2 is 4.',
+      notes:'A limit concerns nearby values; it need not equal the value at the point. Preserve original domain exclusions when cancelling factors.'
+    }
+  });
+  for (const [track,names] of Object.entries(MATH_LESSONS)) REVISION_FORMULA_TRACKS[track].lessons=[...names];
 }
