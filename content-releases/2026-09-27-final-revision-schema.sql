@@ -28,6 +28,20 @@ alter table public.revision_sessions enable row level security;
 revoke all on public.revision_sessions from public,anon,authenticated;
 grant all on public.revision_sessions to service_role;
 
+-- Lesson labels are classification metadata. They must not invalidate a
+-- reviewed question when the student-visible content is unchanged.
+create or replace function public.revision_question_fingerprint(
+ p_stem text,p_choices jsonb,p_assets jsonb,p_correct jsonb,p_explanation text
+) returns text language sql immutable security invoker set search_path=public,pg_temp as $$
+ select md5(jsonb_build_array(
+  p_stem,p_choices,
+  coalesce(p_assets,'{}'::jsonb)-'curriculum_lesson'-'lesson_subtopic'-'lesson_original_topic'-'lesson_taxonomy_version',
+  p_correct,p_explanation
+ )::text)
+$$;
+revoke all on function public.revision_question_fingerprint(text,jsonb,jsonb,jsonb,text) from public,anon,authenticated;
+grant execute on function public.revision_question_fingerprint(text,jsonb,jsonb,jsonb,text) to service_role;
+
 create or replace function public.final_revision_state(p_user uuid,p_track text,p_session uuid)
 returns jsonb language plpgsql security invoker set search_path=public,pg_temp as $$
 declare s public.revision_sessions%rowtype; qs jsonb;
@@ -87,7 +101,7 @@ begin
   'correct',k.correct,'explanation',k.explanation)),'[]') into candidates
  from public.revision_items r join public.questions q on q.id=r.question_id join public.question_keys k on k.question_id=q.id
  where r.active and nullif(q.assets->>'release_hold_reason','') is null
- and r.fingerprint=md5(jsonb_build_array(q.stem,q.choices,q.assets,k.correct,k.explanation)::text);
+ and r.fingerprint=public.revision_question_fingerprint(q.stem,q.choices,q.assets,k.correct,k.explanation);
  select coalesce(jsonb_object_agg(a.key,true),'{}') into seen
  from (select distinct a.key from public.revision_sessions rs cross join lateral jsonb_each(rs.answers) a
        where rs.user_id=p_user) a;

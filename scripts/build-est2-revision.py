@@ -89,7 +89,7 @@ audit={'questions':len(rows),'ideas':len(counts),'sources':dict(Counter(q['sourc
 (out/'audit.json').write_text(json.dumps(audit,indent=2)+'\n')
 sql="begin;\ncreate temp table est2_revision_release on commit drop as select * from jsonb_to_recordset('"+json.dumps(rows,ensure_ascii=False).replace("'","''")+"'::jsonb) as r(id uuid,lesson text,idea text,difficulty text,programmes text[],fingerprint text,focus jsonb);\n"
 sql+='''do $$ begin
-if exists(select 1 from est2_revision_release r left join public.questions q on q.id=r.id left join public.question_keys k on k.question_id=q.id where q.id is null or q.track_id<>'est2' or nullif(q.assets->>'release_hold_reason','') is not null or r.fingerprint is distinct from md5(jsonb_build_array(q.stem,q.choices,q.assets,k.correct,k.explanation)::text)) then raise exception 'est2_revision_source_changed';end if;
+if exists(select 1 from est2_revision_release r left join public.questions q on q.id=r.id left join public.question_keys k on k.question_id=q.id where q.id is null or q.track_id<>'est2' or nullif(q.assets->>'release_hold_reason','') is not null or r.fingerprint is distinct from public.revision_question_fingerprint(q.stem,q.choices,q.assets,k.correct,k.explanation)) then raise exception 'est2_revision_source_changed';end if;
 end $$;
 insert into public.revision_items(question_id,lesson,idea,difficulty,programmes,fingerprint,focus)
 select id,lesson,idea,difficulty,programmes,fingerprint,focus from est2_revision_release

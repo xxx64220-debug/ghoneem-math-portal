@@ -33,14 +33,14 @@ audit={'questions':len(rows),'previous_est_questions':254,'added':len(rows)-254,
 j=lambda x:json.dumps(x,ensure_ascii=False).replace("'","''")
 sql="begin;\ncreate temp table est_revision_release on commit drop as select * from jsonb_to_recordset('"+j(rows)+"'::jsonb) as r(id uuid,lesson text,idea text,difficulty text,programmes text[],fingerprint text,original_fingerprint text,focus jsonb);\n"
 sql+="""do $$ begin
-if exists(select 1 from est_revision_release r left join public.questions q on q.id=r.id left join public.question_keys k on k.question_id=q.id where q.id is null or q.track_id<>'est' or nullif(q.assets->>'release_hold_reason','') is not null or coalesce(r.original_fingerprint,r.fingerprint) is distinct from md5(jsonb_build_array(q.stem,q.choices,q.assets,k.correct,k.explanation)::text) or jsonb_typeof(k.correct) not in ('string','array') or length(btrim(k.explanation))=0) then raise exception 'est_revision_source_changed'; end if;
+if exists(select 1 from est_revision_release r left join public.questions q on q.id=r.id left join public.question_keys k on k.question_id=q.id where q.id is null or q.track_id<>'est' or nullif(q.assets->>'release_hold_reason','') is not null or coalesce(r.original_fingerprint,r.fingerprint) is distinct from public.revision_question_fingerprint(q.stem,q.choices,q.assets,k.correct,k.explanation) or jsonb_typeof(k.correct) not in ('string','array') or length(btrim(k.explanation))=0) then raise exception 'est_revision_source_changed'; end if;
 end $$;
 """
 for f in fixes:
  if 'stem' in f:sql+="update public.questions set stem='"+f['stem'].replace("'","''")+"' where id='"+f['id']+"';\n"
  else:sql+="update public.question_keys set explanation='"+f['explanation'].replace("'","''")+"' where question_id='"+f['id']+"';\n"
 sql+="""do $$ begin
-if exists(select 1 from est_revision_release r join public.questions q on q.id=r.id join public.question_keys k on k.question_id=q.id where r.fingerprint<>md5(jsonb_build_array(q.stem,q.choices,q.assets,k.correct,k.explanation)::text)) then raise exception 'est_revision_postfix_mismatch'; end if;
+if exists(select 1 from est_revision_release r join public.questions q on q.id=r.id join public.question_keys k on k.question_id=q.id where r.fingerprint<>public.revision_question_fingerprint(q.stem,q.choices,q.assets,k.correct,k.explanation)) then raise exception 'est_revision_postfix_mismatch'; end if;
 end $$;
 insert into public.revision_items(question_id,lesson,idea,difficulty,programmes,fingerprint,focus)
 select id,lesson,idea,difficulty,programmes,fingerprint,focus from est_revision_release
