@@ -99,4 +99,11 @@ synthetic exam membership/results, late-conflict atomic rollback, idempotency an
 post-application drift rejection. CI runs both the mathematical and isolated
 database regressions. No student information is included in the fixture.
 
-Application status: prepared and locally verified; not yet applied to the live database.
+## Live application
+
+Applied to the portal database on September 29, 2026 after publication in PR #10.
+Post-commit readback found 484 June-import records, 263 distinct new audit rows,
+zero mismatches against intended content, zero asset mismatches, and 16 newly
+held records with void keys. A guarded replay was a no-op. The five pre-existing
+duplicate holds in the remaining set were retained; four required no data change
+and one changed only because its flattened exponent was restored.
