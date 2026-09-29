@@ -66,6 +66,9 @@ jobs:
           python scripts/build-est1-revision-ideas.py
           python tests/est1_revision_ideas.py
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est1_revision_ideas_db.cjs
+          python scripts/build-est2-sat-revision-ideas.py
+          python tests/est2_sat_revision_ideas.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est2_sat_revision_ideas_db.cjs
           if [ -f content/est-banks-2026/reviewed-bank.json ]; then
             python tests/est_bank_2026.py
           else
@@ -277,3 +280,23 @@ jobs:
             exit 1
           fi
           echo "PASS: EST I revision idea release rerun was rejected"
+
+      - name: Verify SAT and EST II revision idea expansion in isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          PGDATABASE=postgres dropdb --if-exists portal_est2_sat_ideas_ci
+          PGDATABASE=postgres createdb portal_est2_sat_ideas_ci
+          export PGDATABASE=portal_est2_sat_ideas_ci
+          psql -v ON_ERROR_STOP=1 -f tests/00_shim.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/000_preflight.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/001_schema.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/2026-09-27-final-revision-schema.sql
+          psql -v ON_ERROR_STOP=1 -f tests/est2_sat_revision_ideas_fixture.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/20260929_est2_sat_revision_ideas/apply.sql
+          psql -v ON_ERROR_STOP=1 -f tests/est2_sat_revision_ideas.sql
+          if psql -v ON_ERROR_STOP=1 -f content-releases/20260929_est2_sat_revision_ideas/apply.sql; then
+            echo "ERROR: SAT and EST II revision idea release rerun was not rejected"
+            exit 1
+          fi
+          echo "PASS: SAT and EST II revision idea release rerun was rejected"
