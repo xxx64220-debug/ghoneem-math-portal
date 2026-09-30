@@ -337,6 +337,7 @@ jobs:
           sed "s/e7baafb3a3ce792eb2f7401ea4efba1b/$fixture_checksum/" content-releases/20260930_final_revision_prune/apply.sql > /tmp/final_revision_prune_apply.sql
           psql -v ON_ERROR_STOP=1 -f /tmp/final_revision_prune_apply.sql
           psql -v ON_ERROR_STOP=1 -f tests/final_revision_prune.sql
+          psql -v ON_ERROR_STOP=1 -f tests/final_revision_prune_coverage.sql
           if psql -v ON_ERROR_STOP=1 -f /tmp/final_revision_prune_apply.sql; then
             echo "ERROR: Final Revision representative release rerun was not rejected"
             exit 1

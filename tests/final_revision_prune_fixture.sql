@@ -93,7 +93,9 @@ cross join lateral generate_series(1,s.total-s.ready) g;
 insert into questions(id,track_id,topic,difficulty,type,stem,choices,assets)
 select
  f.id,f.track,
- 'Lesson '||f.track||' '||(((f.idea_no-1)%s.lessons)+1),
+ case when not f.ready and f.track='est' and f.idea_no=300 then 'Inequalities and absolute value'
+      when not f.ready then 'Quadratics and polynomials'
+      else 'Lesson '||f.track||' '||(((f.idea_no-1)%s.lessons)+1) end,
  f.difficulty,'mcq','Fixture question '||f.id,
  '[{"key":"A","text":"1"},{"key":"B","text":"2"}]'::jsonb,
  jsonb_build_object('verified_release','fixture','lesson_subtopic','Skill '||f.idea_no)
@@ -104,13 +106,18 @@ select id,'"A"'::jsonb,'Fixture worked explanation.' from questions;
 
 insert into revision_items(question_id,lesson,idea,difficulty,programmes,fingerprint,active,focus)
 select
- f.id,q.topic,'Idea '||f.idea_no,f.difficulty,array[f.track]::text[],
+ f.id,q.topic,case when not f.ready and f.track='est' and f.idea_no=300 then 'Optimising a linear expression'
+      when not f.ready and f.track='est' then 'Reading a parabola graph'
+      when not f.ready then 'Common polynomial factor'
+      else 'Idea '||f.idea_no end,
+ case when not f.ready and (f.track='est2' or f.idea_no=300) then 'hard' else f.difficulty end,array[f.track]::text[],
  case when f.ready then revision_question_fingerprint(q.stem,q.choices,q.assets,k.correct,k.explanation)
       else 'stale-fingerprint' end,
  true,
  jsonb_build_object(
   'collections',
-  case when f.duplicate_no>=3 then '["must_know","unique"]'::jsonb
+  case when not f.ready and (f.track='est2' or f.idea_no=300) then '["unique"]'::jsonb
+       when f.duplicate_no>=3 then '["must_know","unique"]'::jsonb
        when f.duplicate_no=2 then '["must_know"]'::jsonb
        else '[]'::jsonb end,
   'bank_occurrences',1,
