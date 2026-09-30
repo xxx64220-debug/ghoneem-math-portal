@@ -1,0 +1,195 @@
+[
+  {
+    "id": "4e5d0e24-836e-5e18-85af-6868807dc27e",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "stem": "A box contains 50 pens numbered from 1 to 50. What is half the probability that we would select a pen with a number that is divisible by two or by five?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.70"
+      },
+      {
+        "key": "B",
+        "text": "0.60"
+      },
+      {
+        "key": "C",
+        "text": "0.35"
+      },
+      {
+        "key": "D",
+        "text": "0.30"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Probability (number properties)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 049",
+      "source_page": 37,
+      "answer_review": "2026-09-28-independent-solution-and-source-check",
+      "content_audit": "2026-09-28-all-bank-structural-audit",
+      "lesson_subtopic": "Union and overlapping events",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "verified_release": "2026-09-28-independent-solution-and-source-check",
+      "curriculum_lesson": "Probability and conditional probability",
+      "verification_note": "Rechecked newly reported solution against the source: D is correct; clarified union overlap and the final halving.",
+      "verification_source": "EST I Questions by Topic, page 37, DAP 049",
+      "lesson_original_topic": "DAP · Probability and counting",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Among 1–50 there are 25 multiples of 2 and 10 multiples of 5. The 5 multiples of 10 occur in both groups, so count them only once: 25 + 10 − 5 = 30 favorable pens. The probability is 30/50 = 0.60. The question asks for HALF of that probability: 0.60/2 = 0.30, choice D.",
+    "q_digest": "d08d618deb8bd8d28b738b39cb9ef270",
+    "key_digest": "7adfd1fae398ba6586610a1ac49cbf9a",
+    "lesson": "Probability and conditional probability",
+    "idea": "Union and overlapping events",
+    "revision_difficulty": "medium",
+    "focus": {
+      "takeaway": "Key skill: Union and overlapping events.",
+      "collections": [],
+      "math_format": "plain",
+      "source_label": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "bank_occurrences": 2,
+      "source_reference": "DAP 049"
+    },
+    "programmes": [
+      "sat",
+      "est"
+    ]
+  },
+  {
+    "id": "afee4921-ee14-551e-abe7-c86f4f3acb45",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "If \\(5-\\frac32x\\ge3\\), what is the greatest possible value of \\(\\frac98x+1\\)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2.5"
+      },
+      {
+        "key": "B",
+        "text": "3.5"
+      },
+      {
+        "key": "C",
+        "text": "4.5"
+      },
+      {
+        "key": "D",
+        "text": "5.5"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-007.png",
+      "domain": "FA",
+      "subtopic": "Inequalities and systems",
+      "image_alt": "Original question HOA 007, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 007",
+      "source_page": 6,
+      "answer_review": "2026-09-28-independent-solution-and-source-check",
+      "lesson_subtopic": "Optimising a linear expression",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 007",
+      "source_review_id": "clean:HOA 007",
+      "verified_release": "2026-09-28-independent-solution-and-source-check",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "verification_note": "Original PDF visually checked; isolated complete question and independently verified the solution.",
+      "source_image_sha256": "37f3beed090496f6d94b805a1d12f2143f05938ff83ae0949c6d3d2e030c8e54",
+      "verification_source": "Math_Question_Bank_Ghoneem_Clean.pdf page 6",
+      "lesson_original_topic": "Algebra Foundations, Equations & Inequalities",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "The inequality gives −3x/2≥−2, hence x≤4/3 after reversing the inequality when dividing by a negative number. The expression 9x/8+1 increases with x, so its maximum occurs at x=4/3 and equals (9/8)(4/3)+1=2.5.",
+    "q_digest": "f577490a3244cda0b0c4fb846f91f6ee",
+    "key_digest": "303278e8aca81b011fcafbe6af121117",
+    "lesson": "Inequalities and absolute value",
+    "idea": "Optimising a linear expression",
+    "revision_difficulty": "hard",
+    "focus": {
+      "takeaway": "Key skill: Optimising a linear expression.",
+      "collections": [
+        "unique"
+      ],
+      "math_format": "plain",
+      "source_label": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "bank_occurrences": 1,
+      "source_reference": "HOA 007"
+    },
+    "programmes": [
+      "est"
+    ]
+  },
+  {
+    "id": "b515a6ed-1c6f-5848-b2b4-12c02a5d4524",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "Use the graph below. Which of the following statement(s) is/are true regarding the graph? I. The coordinates of the vertex of the parabola are (1, 0). II. The axis of symmetry is at x = −1. III. The equation of the parabola is y = −x² + 2x − 1.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "I only"
+      },
+      {
+        "key": "B",
+        "text": "II only"
+      },
+      {
+        "key": "C",
+        "text": "I and II only"
+      },
+      {
+        "key": "D",
+        "text": "I and III only"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/aaf-048-1.png",
+      "domain": "AAF",
+      "subtopic": "Quadratic functions (graph properties)",
+      "image_alt": "Original diagram for AAF 048",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 048",
+      "source_page": 59,
+      "answer_review": "2026-09-29-independent-solution-and-source-check",
+      "content_audit": "2026-09-29-all-bank-structural-audit",
+      "figure_required": false,
+      "lesson_subtopic": "Reading a parabola graph",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "verified_release": "2026-09-29-independent-solution-and-source-check",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "verification_note": "Complete original exam page 101 visually checked; answer independently solved and all choices checked.  Existing canonical question verified against recovered original.",
+      "verification_source": "New exams_251110_.pdf, physical page 101",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929",
+      "source_verification_date": "2026-09-29"
+    },
+    "correct": "D",
+    "explanation": "The vertex is (1,0), and the symmetry axis is x=1. The graph passes through (0,−1), giving y=−(x−1)²=−x²+2x−1. Thus I and III are true.",
+    "q_digest": "38be0926b33206d22970b2f68164e556",
+    "key_digest": "88da4a849618c26982abe635cb2e8ce5",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Reading a parabola graph",
+    "revision_difficulty": "medium",
+    "focus": {
+      "takeaway": "Key skill: Reading a parabola graph.",
+      "collections": [],
+      "math_format": "plain",
+      "source_label": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "bank_occurrences": 2,
+      "source_reference": "AAF 048"
+    },
+    "programmes": [
+      "sat",
+      "est"
+    ]
+  }
+]

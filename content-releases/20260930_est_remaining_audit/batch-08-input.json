@@ -1,0 +1,3500 @@
+[
+  {
+    "id": "a8bdbcdc-3199-5a9a-a7b8-89126724156f",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "PAM 087 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-pam-087.png",
+      "domain": "AAF",
+      "subtopic": "Rational expressions and formulas",
+      "image_alt": "Original question PAM 087, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PAM 087",
+      "source_page": 361,
+      "lesson_subtopic": "Vertical and horizontal asymptotes",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PAM 087",
+      "curriculum_lesson": "Functions and transformations",
+      "source_image_sha256": "02ed4668fbc408b7e791ad6894fdbdd47182534b0755b5922935e06f57c1cc43",
+      "lesson_original_topic": "AAF · Rational expressions and formulas",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Denominator vanishes at 4, numerator is 33 there, so there is a vertical asymptote, not a removable hole.",
+    "q_digest": "12ebeadf50951cd05263111e43528e10",
+    "key_digest": "32a2d6f74ba88f2d2a0a37f3bb7534ee",
+    "fingerprint": "0c93c222482ca31758462c50f87aeb86"
+  },
+  {
+    "id": "a99d2161-1e9c-5e9c-9280-3ca99828aff0",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "MIX 023 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-mix-023.png",
+      "domain": "AAF",
+      "subtopic": "Quadratics",
+      "image_alt": "Original question MIX 023, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "MIX 023",
+      "source_page": 431,
+      "lesson_subtopic": "Discriminant",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "MIX 023",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_image_sha256": "91d1f803687326f11480a25e87bdffb4958062bf9db804093e38d6f96209b963",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Discriminant=4^2-4*2*(-8)=16+64=80.",
+    "q_digest": "845f07aae9f1fe8b98b295b9d613d2ad",
+    "key_digest": "9228c5db2188d3ee680fcc209c6d17ed",
+    "fingerprint": "659a9f2326c34ec33bb648de3aa99a65"
+  },
+  {
+    "id": "aa44e453-6444-51a3-91b6-b05a83782e22",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "Which of the following statements is true?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Selling the same number of keyboards in both years impacted the overall sales in 2023."
+      },
+      {
+        "key": "B",
+        "text": "The bar graph shows a general decrease in sales from 2022 to 2023."
+      },
+      {
+        "key": "C",
+        "text": "The bar graph shows a general increase in sales from 2022 to 2023."
+      },
+      {
+        "key": "D",
+        "text": "The bar graph shows no general change in sales between both years."
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/dap-020-1.png",
+      "domain": "DAP",
+      "subtopic": "Interpreting bar graphs",
+      "image_alt": "Original diagram for DAP 020",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 020",
+      "source_page": 27,
+      "lesson_subtopic": "Reading and comparing data",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The total sold decreases from 15 hundred to 13 hundred appliances. Thus there is an overall decrease.",
+    "q_digest": "6e1da11893977b162773e51162ac7ed4",
+    "key_digest": "feaba5ce2d23908ec490a7dd2a621b34",
+    "fingerprint": "6bdbb2330d41b2c9c2815d042ce46d6d"
+  },
+  {
+    "id": "aa757655-ff0f-560e-93a0-dbe188e78a3c",
+    "type": "mcq",
+    "topic": "Triangles and similarity",
+    "difficulty": "medium",
+    "stem": "What is the measure of angle BAD, in degrees, in the figure above? (Figure not drawn to scale)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "42"
+      },
+      {
+        "key": "B",
+        "text": "48"
+      },
+      {
+        "key": "C",
+        "text": "52"
+      },
+      {
+        "key": "D",
+        "text": "68"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/gt-010-1.png",
+      "domain": "GT",
+      "subtopic": "Quadrilateral angle sum",
+      "image_alt": "Original diagram for GT 010",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 010",
+      "source_page": 69,
+      "lesson_subtopic": "Interior and exterior angles",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Triangles and similarity",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The four interior angles add to 360°, giving 6x = 360 and x = 60. Substitution gives angle A = 52°.",
+    "q_digest": "b85b74d62858290ca45d2000ca9bc778",
+    "key_digest": "790cdb3a4b00081974414dd14a5cd24d",
+    "fingerprint": "d7d9b69d8f7fd3abcfb799a56ae9e699"
+  },
+  {
+    "id": "ac5ff848-38c5-5ddb-9ca4-bd2f909ba7b8",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "stem": "PSD 111 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-111.png",
+      "domain": "DAP",
+      "subtopic": "Probability and counting",
+      "image_alt": "Original question PSD 111, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 111",
+      "source_page": 232,
+      "lesson_subtopic": "Permutations without replacement",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 111",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_image_sha256": "20a1d7a9a6797ea88831c41996c40558328dca747eedde0bdb5b61224c3d97f2",
+      "lesson_original_topic": "DAP · Probability and counting",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Ordered podium positions give 15*14*13=2730.",
+    "q_digest": "a5d32fa6eb65a1314b9d7c408345aba3",
+    "key_digest": "5d54dd507a27862bca6411299664b34e",
+    "fingerprint": "6d0687184abca76c75230e93d762758b"
+  },
+  {
+    "id": "ae132f85-6925-5adf-a4ea-359488796df0",
+    "type": "mcq",
+    "topic": "Triangles and similarity",
+    "difficulty": "medium",
+    "stem": "In the figure, d and d′ are parallel lines, m∠b = 103°, m∠c = 107°, and m∠e = 97°. What is the measure of ∠a? (Figure not drawn to scale)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "67"
+      },
+      {
+        "key": "B",
+        "text": "77"
+      },
+      {
+        "key": "C",
+        "text": "103"
+      },
+      {
+        "key": "D",
+        "text": "113"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/gt-008-1.png",
+      "domain": "GT",
+      "subtopic": "Parallel lines and angles",
+      "image_alt": "Original diagram for GT 008",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 008",
+      "source_page": 67,
+      "lesson_subtopic": "Multistep angle reasoning",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Triangles and similarity",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "The upper-right interior angle is 180 − 97 = 83°. The remaining quadrilateral angle is 360 − 103 − 107 − 83 = 67°. Parallel-line angle equality gives a = 67°.",
+    "q_digest": "2280984a46b3aac8e9a096acbbb904e8",
+    "key_digest": "ae0cdc9a219023d240c40aa0775d037a",
+    "fingerprint": "f1c71cf946b58ca89abfc46c9e4c06d4"
+  },
+  {
+    "id": "ae73940b-f991-5a4e-8282-26b64d2a2633",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 20. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q20.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 20, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 7,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Axis of symmetry",
+      "source_question": 20,
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "Quadratic functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "For ax² + bx + c, the symmetry axis is x = −b/(2a). Here x = 20/8 = 2.5.",
+    "q_digest": "4acb4fda5f06e3f6cd9ef4e36d3159c8",
+    "key_digest": "8781920d3dd3001a9f10f0c305c8b14f",
+    "fingerprint": "994007c2349cf9c39377007878e2067f"
+  },
+  {
+    "id": "ae751543-17be-5c62-87ee-549099e4b7ad",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "PAM 061 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-pam-061.png",
+      "domain": "AAF",
+      "subtopic": "Polynomials",
+      "image_alt": "Original question PAM 061, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PAM 061",
+      "source_page": 344,
+      "lesson_subtopic": "Roots and multiplicities",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PAM 061",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_image_sha256": "03962720592a65c4092b0f45801135129a50908e5cd99b09cd77eb1f03fde26f",
+      "lesson_original_topic": "AAF · Polynomials",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "-2x^3-8x^2+6x+36=-2(x-2)(x+3)^2. Expansion and substitution verify multiplicities.",
+    "q_digest": "4fab626d900caea11f4711ebeba3228e",
+    "key_digest": "2161e6ea6ea0cc42de1328d7884f46e7",
+    "fingerprint": "93219ceaf852fc387062d6e46d6ed0af"
+  },
+  {
+    "id": "af66f2c1-106f-5fac-a054-e627c8426ff4",
+    "type": "mcq",
+    "topic": "Triangles and similarity",
+    "difficulty": "medium",
+    "stem": "Using the figure, what is the value of y? (Figure not drawn to scale)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "8.0"
+      },
+      {
+        "key": "B",
+        "text": "5.9"
+      },
+      {
+        "key": "C",
+        "text": "3.5"
+      },
+      {
+        "key": "D",
+        "text": "−3.5"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/gt-020-1.png",
+      "domain": "GT",
+      "subtopic": "Triangles (angles)",
+      "image_alt": "Original diagram for GT 020",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 020",
+      "source_page": 74,
+      "lesson_subtopic": "Interior and exterior angles",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Triangles and similarity",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "The exterior-angle theorem gives 3x − 10 = 100 + x + 8, so x = 59. Its supplementary angle is 13°, and 2y + 20 = 13 gives y = −3.5.",
+    "q_digest": "872c0dfb2a0537cb6551fa1c99525e6a",
+    "key_digest": "3454f9debd80a304160092410d7ad591",
+    "fingerprint": "cdab5dd50f380b5098c43e29e30942ff"
+  },
+  {
+    "id": "b1fd89b7-00a8-52f1-bfe4-5891c49c23e3",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "stem": "MIX 061 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-mix-061.png",
+      "domain": "AAF",
+      "subtopic": "Exponents and radicals",
+      "image_alt": "Original question MIX 061, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "MIX 061",
+      "source_page": 454,
+      "lesson_subtopic": "Compound growth and decay",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "MIX 061",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "source_image_sha256": "62a573b7a05b513708bdab7f20a429d625498043a393a67af08d50bcf4fd0574",
+      "lesson_original_topic": "AAF · Exponents and radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "After four halvings, value=4000*(1/2)^4=250.",
+    "q_digest": "6a247ddc9775d51e778b9d682250632b",
+    "key_digest": "d8a3a8ecca7af840bdcbc7d063ff1442",
+    "fingerprint": "a5f6311457308364ad349b63a30f70b9"
+  },
+  {
+    "id": "b276a637-2d1e-5f4f-89e8-fbeb41fac7d8",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 50. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q50.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 50, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 13,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Compound inequalities and integer solutions",
+      "source_question": 50,
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "Linear inequalities",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "3x + 1 < 10 gives x < 3. The positive integers satisfying this are 1 and 2, whose product is 2.",
+    "q_digest": "e999453bd36e8c9269c6fd6c1da91a5c",
+    "key_digest": "c91c08705c33cb1d1e935e89c32c54f9",
+    "fingerprint": "fe5d7b89ee3625ceaa25a1a8148b0ee0"
+  },
+  {
+    "id": "b2897f1d-dee9-531d-be33-ae02f111691e",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "stem": "HOA 016 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-016.png",
+      "domain": "AAF",
+      "subtopic": "Exponents and radicals",
+      "image_alt": "Original question HOA 016, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 016",
+      "source_page": 14,
+      "lesson_subtopic": "Radical equations and extraneous roots",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 016",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "source_image_sha256": "5dca96c2ab186adb01ed0400b23abfe0189fa4e3e0f8d6b07ba48e07909ecc42",
+      "lesson_original_topic": "AAF · Exponents and radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "sqrt(2x+1)=x-1 requiresx>=1. Squaring givesx^2-4x=0, candidates 0,4; x=0 fails the original equation andx=4 gives 3-4=-1.",
+    "q_digest": "e8177780ddf6eccc7a174a22c06df4e4",
+    "key_digest": "889ee87abfe6125a6db1581c15c446aa",
+    "fingerprint": "498290d93524b591e47cc5a253da1860"
+  },
+  {
+    "id": "b727bcb4-1318-53fd-819a-8c69791876e6",
+    "type": "mcq",
+    "topic": "Complex numbers",
+    "difficulty": "medium",
+    "stem": "HOA 062 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-062.png",
+      "domain": "AAF",
+      "subtopic": "Complex numbers",
+      "image_alt": "Original question HOA 062, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 062",
+      "source_page": 42,
+      "lesson_subtopic": "Complex arithmetic and powers",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 062",
+      "curriculum_lesson": "Complex numbers",
+      "source_image_sha256": "9417e63965068ee9676b64355b4c7daf81497be1e60976ee581ea1dd6e34ba5d",
+      "lesson_original_topic": "AAF · Complex numbers",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Z-Z'=-1+5i. Squaring gives 1-10i+25i^2=-24-10i.",
+    "q_digest": "bfc3b1661caeabf5615d3a07ae5c0a25",
+    "key_digest": "0d7c0f61497f1f804337e803ac073338",
+    "fingerprint": "e50efaa7e589d9462c7dc28f6040c64e"
+  },
+  {
+    "id": "b75c9948-6b2a-5aed-85ba-916aaf9c0655",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "PSD 003 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-003.png",
+      "domain": "DAP",
+      "subtopic": "Statistics",
+      "image_alt": "Original question PSD 003, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 003",
+      "source_page": 147,
+      "lesson_subtopic": "Median from frequency data",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 003",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_image_sha256": "51c2f866ded227c4c811dfa3be17de75e4d436bf5e52aa5128f2ee452e89f339",
+      "lesson_original_topic": "DAP · Statistics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Company B has 125 employees. The 63rd observation is in the one-sibling group because cumulative counts are 25,65,90,105,125.",
+    "q_digest": "c596dbc20ecb47dc619ff65da60d0f20",
+    "key_digest": "b2521847e180dd39013ac0a9d5cc5dc8",
+    "fingerprint": "f3d03abb57c36fdfdce5f395509089ac"
+  },
+  {
+    "id": "bb03ca3f-d198-5757-a43f-ef82b32d33c6",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 3. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q03.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 3, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 3,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Rates from data tables",
+      "source_question": 3,
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "Rates and tables",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "The Hyundai revenue covers 14 cars for 12 months. Monthly rent per car = 134,400/(14 × 12) = USD 800.",
+    "q_digest": "56cdf3aff7e73652a67b70ffd8007ba9",
+    "key_digest": "cefe5bfd8af77f2ab67680a098a2f7f1",
+    "fingerprint": "0762d273e2430445cc4b25ed6a9ea8cd"
+  },
+  {
+    "id": "bdac0d01-9d34-561e-8bc4-b6f19c19885e",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "Based on the graph (showing three curves f, g, h), what is the value of f(−1) + g(−1) + h(−1)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−4"
+      },
+      {
+        "key": "B",
+        "text": "−5"
+      },
+      {
+        "key": "C",
+        "text": "−6"
+      },
+      {
+        "key": "D",
+        "text": "−7"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/aaf-020-1.png",
+      "domain": "AAF",
+      "subtopic": "Graphs of functions (reading values)",
+      "image_alt": "Original diagram for AAF 020",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 020",
+      "source_page": 53,
+      "lesson_subtopic": "Evaluating functions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "At x = −1 the graph shows f = −1, g = −2, and h = −2. Their sum is −5.",
+    "q_digest": "2d381783cf2f0da2a64f6ddeb0e0ee68",
+    "key_digest": "1204377efeefb0bb2d7e5c2f58a57960",
+    "fingerprint": "9a49d801eff3a58e0fdfa9bb6a19eed7"
+  },
+  {
+    "id": "bf484669-7c42-5958-9b2f-51e534caa1dc",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "MIX 059 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-mix-059.png",
+      "domain": "FA",
+      "subtopic": "Equations and expressions",
+      "image_alt": "Original question MIX 059, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "MIX 059",
+      "source_page": 452,
+      "lesson_subtopic": "Equivalent expressions from an equation",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "MIX 059",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_image_sha256": "d9962655f7116bfd4f0bc75d24341c5b1dbf5e918b3744974c1d4aaf21ab9a62",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "9x-12+2x=2x-2 gives 9x=10. Then 18x-5=20-5=15.",
+    "q_digest": "c64caed91a2bb66816663a37d1f06414",
+    "key_digest": "f980490a81f6b74485230415cf77ccba",
+    "fingerprint": "832d9e5d23fc7b1697aa0dd27656f40d"
+  },
+  {
+    "id": "c188d690-c014-542c-bc20-4e6fc4212dcd",
+    "type": "mcq",
+    "topic": "Triangles and similarity",
+    "difficulty": "medium",
+    "stem": "Using the figure below, what is the value of 3x − 1 if AC is parallel to FD? (Figure not drawn to scale)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "8/3"
+      },
+      {
+        "key": "B",
+        "text": "8"
+      },
+      {
+        "key": "C",
+        "text": "10"
+      },
+      {
+        "key": "D",
+        "text": "12"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/gt-014-1.png",
+      "domain": "GT",
+      "subtopic": "Similar triangles (parallel lines)",
+      "image_alt": "Original diagram for GT 014",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 014",
+      "source_page": 71,
+      "lesson_subtopic": "Similar triangles and parallel lines",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Triangles and similarity",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The original diagram labels AB = 20 and FB = x + 3. Similarity gives (x + 3)/20 = 3/9, so x = 11/3 and 3x − 1 = 10.",
+    "q_digest": "7ae02343d19306034e9262394f56f473",
+    "key_digest": "9287dad34f8eeee3a052f0d612b10fe8",
+    "fingerprint": "156959d74ff1fd35f013b78cfe24d6cb"
+  },
+  {
+    "id": "c22db1a4-d856-51c8-9108-bf75f58ef6ba",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "HOA 210 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-210.png",
+      "domain": "FA",
+      "subtopic": "Equations and expressions",
+      "image_alt": "Original question HOA 210, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 210",
+      "source_page": 124,
+      "lesson_subtopic": "Equivalent expressions from an equation",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 210",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_image_sha256": "ffbf32bd2e21d9d97519c68df5cbc42d64724de39d6a74e9f4b93f381c586daa",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "3x-5=10 gives x=5 and 10x+5=55.",
+    "q_digest": "8cc25b56dd3ef763e3987ecf456b17a6",
+    "key_digest": "bae7d5e16f7efb8dec9ce6ee834c06d0",
+    "fingerprint": "6e53b9b07ec59c72cab82dc9bf078d45"
+  },
+  {
+    "id": "c3aa4635-3101-558a-88e5-73849824062a",
+    "type": "mcq",
+    "topic": "Systems of equations",
+    "difficulty": "medium",
+    "stem": "HOA 206 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-206.png",
+      "domain": "AAF",
+      "subtopic": "Functions",
+      "image_alt": "Original question HOA 206, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 206",
+      "source_page": 121,
+      "lesson_subtopic": "Inconsistent nonlinear systems",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 206",
+      "curriculum_lesson": "Systems of equations",
+      "source_image_sha256": "eea79d7974121aff51c223bb9bbb7f492c4cb389b13b7e79667d2b275699d46c",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "A point cannot have xy equal to both 1 and -1. There are no intersections.",
+    "q_digest": "b361169e41ff3a73c5e5628734d5d4f9",
+    "key_digest": "830459a013a9e09445c833e4e16a7359",
+    "fingerprint": "fb20699195009fda62e18e44ee65feac"
+  },
+  {
+    "id": "c489b1b6-9ead-5549-8628-f44ef27232bd",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "PAM 049 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-pam-049.png",
+      "domain": "AAF",
+      "subtopic": "Quadratics",
+      "image_alt": "Original question PAM 049, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PAM 049",
+      "source_page": 335,
+      "lesson_subtopic": "Range and minimum value",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PAM 049",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_image_sha256": "f29311085ec00b01d862eb77e51a2c87b3eaa4357bc0a27c9c5e687074991f97",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "4x^2-2x+1=4(x-1/4)^2+3/4. Minimum is 3/4.",
+    "q_digest": "f0b1573b2042e767059b3bde1186ac9c",
+    "key_digest": "23bc473f2094f0dd1c6bd7b673f3bd52",
+    "fingerprint": "d2ced13bc617c4aa8db39fe5cea61da1"
+  },
+  {
+    "id": "c4eaefb9-1506-514e-963c-da80fa96816a",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "HOA 057 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-057.png",
+      "domain": "FA",
+      "subtopic": "Systems of equations",
+      "image_alt": "Original question HOA 057, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 057",
+      "source_page": 40,
+      "lesson_subtopic": "Equivalent expressions from an equation",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 057",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_image_sha256": "ea099578a4cdbf1b21e2ce4e0e81781ca6092d37c4630524cffbcd3d2c993e9f",
+      "lesson_original_topic": "FA · Systems of equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Subtract 11x-7y=6 from 17x-13y=9 to get 6x-6y=3, hencex-y=1/2.",
+    "q_digest": "68b5639dd91167d664ede6290f1a21ee",
+    "key_digest": "e4e1ef530bb78f38ba9d14c53e437bb4",
+    "fingerprint": "0f1376da15f11025fa64397a3dbcee17"
+  },
+  {
+    "id": "c68ff0b2-b7d8-59e7-adf7-281cb5efb159",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "If f and g are two linear functions represented in the table above, what is the value of m + f(a + 30)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "91"
+      },
+      {
+        "key": "B",
+        "text": "99"
+      },
+      {
+        "key": "C",
+        "text": "100"
+      },
+      {
+        "key": "D",
+        "text": "109"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/fa-028-1.png",
+      "domain": "FA",
+      "subtopic": "Linear functions from tables",
+      "image_alt": "Original diagram for FA 028",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 028",
+      "source_page": 10,
+      "lesson_subtopic": "Unknown inputs in linear tables",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The slopes from the table are 1 for f and 0.8 for g. Thus f(a + 30) = 45 and g(a + 40) = 54, whose sum is 99.",
+    "q_digest": "c78a2ce75366b599dd15bf9a30a66ecc",
+    "key_digest": "c636285ca8978230e7162aa49b7865b5",
+    "fingerprint": "c5275ce572d23208b0d54b344a24ce32"
+  },
+  {
+    "id": "c7e2d3aa-c646-5bd7-ab51-d0fd3ef4a1e5",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "PAM 093 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-pam-093.png",
+      "domain": "AAF",
+      "subtopic": "Functions",
+      "image_alt": "Original question PAM 093, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PAM 093",
+      "source_page": 364,
+      "lesson_subtopic": "Finding and evaluating inverses",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PAM 093",
+      "curriculum_lesson": "Functions and transformations",
+      "source_image_sha256": "25e3b3a1805888c3c8bcd4d590f5dc2263ea56b078b107ff696b5c8403405bcf",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Solve y=3x-7 for x: x=(y+7)/3. Composition returns the original input.",
+    "q_digest": "cf1735006696d93ebce257a11d849d54",
+    "key_digest": "89eebd23c4f0b8b11778a17026e71681",
+    "fingerprint": "eb1f66f9446bb4b329af23175a67bf39"
+  },
+  {
+    "id": "ca19170d-67a3-5fdc-a8c8-c75bed9f4da3",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "The graph above shows the number of push-ups Bob did last week. What was the average number of push-ups?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "20"
+      },
+      {
+        "key": "B",
+        "text": "30"
+      },
+      {
+        "key": "C",
+        "text": "60"
+      },
+      {
+        "key": "D",
+        "text": "210"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/dap-025-1.png",
+      "domain": "DAP",
+      "subtopic": "Line graphs (average)",
+      "image_alt": "Original diagram for DAP 025",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 025",
+      "source_page": 29,
+      "lesson_subtopic": "Mean from graphs and tables",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The original graph labels the daily values 20, 15, 30, 20, 10, 55, 60. They sum to 210; dividing by 7 gives 30 push-ups per day.",
+    "q_digest": "eef5f22b3a20aaab59cd4e71097c2070",
+    "key_digest": "77757e5fc379588fb56d4d6c500de927",
+    "fingerprint": "281c455a3ded9c5723aa29f68ef62133"
+  },
+  {
+    "id": "cb6d5b3c-fb5f-5051-9fa6-242f029b0ad2",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "PSD 079 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-079.png",
+      "domain": "FA",
+      "subtopic": "Systems of equations",
+      "image_alt": "Original question PSD 079, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 079",
+      "source_page": 207,
+      "lesson_subtopic": "Integer constraints in word problems",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 079",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_image_sha256": "2ca0d2e0e94609431484baa5fa627802362fca11249422065e91e933b2eb8fed",
+      "lesson_original_topic": "FA · Systems of equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "If dogs=d, horses=d-3, birds=4d, total=6d-3. Only 27 gives an integer d=5 and horses=2.",
+    "q_digest": "da6074f166a492fc8c918507dbb93d7e",
+    "key_digest": "6e10cbcc129526e19f966bdf98497517",
+    "fingerprint": "383e6ccdb25b3e607f6dcb427b5dbcf4"
+  },
+  {
+    "id": "cb72ec57-1580-59ff-9961-f1620ffcafcd",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "How many hours a day, on average, is the washer used on weekdays?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "5"
+      },
+      {
+        "key": "B",
+        "text": "6"
+      },
+      {
+        "key": "C",
+        "text": "7"
+      },
+      {
+        "key": "D",
+        "text": "12"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/dap-062-1.png",
+      "domain": "DAP",
+      "subtopic": "Reading bar graphs",
+      "image_alt": "Original diagram for DAP 064",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 064",
+      "source_page": 42,
+      "lesson_subtopic": "Reading and comparing data",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "The washer's weekday bar reaches 5 hours.",
+    "q_digest": "aba6b709d228130e1fdfadd1be6a2bba",
+    "key_digest": "1b54bf76444e954fc809a569d6e35415",
+    "fingerprint": "aa64a0f8c569d7154d01781818febb9a"
+  },
+  {
+    "id": "cb8f1808-891b-5488-8ba0-e36322569501",
+    "type": "mcq",
+    "topic": "Trigonometry",
+    "difficulty": "medium",
+    "stem": "GTC 041 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-gtc-041.png",
+      "domain": "GT",
+      "subtopic": "Angles, triangles and trigonometry",
+      "image_alt": "Original question GTC 041, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "GTC 041",
+      "source_page": 395,
+      "lesson_subtopic": "Pythagorean theorem with an area constraint",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "GTC 041",
+      "curriculum_lesson": "Trigonometry",
+      "source_image_sha256": "4c518ce2511bef91dfdeb7759968c24c78d7c4ff820af014e42bf56def871f65",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Altitude=2*84/12=14. Equal side=sqrt(14^2+6^2)=sqrt(232)=2sqrt(58).",
+    "q_digest": "e6edc98fefc2d120329432d2ef212db7",
+    "key_digest": "1d8ac560a9165b28c3739fbacabda306",
+    "fingerprint": "25d3e4fda5a897685eb9d6178236837c"
+  },
+  {
+    "id": "cc94e27c-f0d7-5103-ae10-59a3fc25096a",
+    "type": "mcq",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "stem": "In the adjacent figure, C₁ and C₂ are two circles with centers A and B. They intersect at points E and D. Which of the following statements is/are true? (Figure not drawn to scale) I. DE is a diameter in the circle with center A. II. The measure of arc DFE is equal to the measure of arc DGE. III. m∠ECD = 45°.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "I only"
+      },
+      {
+        "key": "B",
+        "text": "II only"
+      },
+      {
+        "key": "C",
+        "text": "I and III only"
+      },
+      {
+        "key": "D",
+        "text": "I, II, and III"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/gt-004-1.png",
+      "domain": "GT",
+      "subtopic": "Circles: diameters, arcs, inscribed angles",
+      "image_alt": "Original diagram for GT 004",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 004",
+      "source_page": 66,
+      "lesson_subtopic": "Inscribed angles and arcs",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Circles",
+      "lesson_original_topic": "GT · Circles",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The 90° inscribed angle DBE makes DE a diameter of circle A. Arc DFE is 180° while arc DGE in circle B is 90°, so II is false. Angle ECD subtends the 90° arc in circle B and is 45°. Thus I and III hold.",
+    "q_digest": "51d653ae7ae9ebf0a0e8bacf3b98a06f",
+    "key_digest": "2dda29d5fedcc80910caa079cdc35601",
+    "fingerprint": "5016d6dbb8db75f6bca14ed86887b79e"
+  },
+  {
+    "id": "cfa3913a-9dd3-5cea-8c40-3f74f6d5b181",
+    "type": "mcq",
+    "topic": "Area and perimeter",
+    "difficulty": "medium",
+    "stem": "GTC 011 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-gtc-011.png",
+      "domain": "GT",
+      "subtopic": "Area and volume",
+      "image_alt": "Original question GTC 011, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "GTC 011",
+      "source_page": 374,
+      "lesson_subtopic": "Composite areas",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "GTC 011",
+      "curriculum_lesson": "Area and perimeter",
+      "source_image_sha256": "1583a4422abe070e2019008830f57769513cdee4637978abc8de884e0c730060",
+      "lesson_original_topic": "GT · Area and volume",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "On the unit grid the left trapezoid has parallel widths 2 and 4 and height 5, so area 15. The right parallelogram has vertical side 3 and horizontal separation 3, so area 9. Total 24.",
+    "q_digest": "2cf233857cb0fba4451c7839736db338",
+    "key_digest": "dac4cbed566ae112a7e624540bfcd1c5",
+    "fingerprint": "26a7f7498f01b6ddd185358f9022729c"
+  },
+  {
+    "id": "d0771fd2-f4fd-5153-bea2-9526e10bd567",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "PSD 101 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-101.png",
+      "domain": "FA",
+      "subtopic": "Equations and expressions",
+      "image_alt": "Original question PSD 101, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 101",
+      "source_page": 226,
+      "lesson_subtopic": "Building a linear equation",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 101",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_image_sha256": "bee43882aeb1aab8a6309e4ec64903dfea50d37e77ecdf46cfc4480e8f462b97",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Paid a=original/2-15; rearrange to original=2(a+15).",
+    "q_digest": "17ec1594475b76e98987c81d11e961e1",
+    "key_digest": "873e3c9a73fcd5f97fd4837dba1112d8",
+    "fingerprint": "1b36422b2268bef9dc9a91208139632c"
+  },
+  {
+    "id": "d2660326-449e-55aa-9b9f-b1f748ea1d8d",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "PSD 008 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-008.png",
+      "domain": "DAP",
+      "subtopic": "Graphs and data interpretation",
+      "image_alt": "Original question PSD 008, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 008",
+      "source_page": 151,
+      "lesson_subtopic": "Percentages from charts and tables",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 008",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_image_sha256": "37a094ce51ff82c32399061433dac92b7f4053f0b7dac1d9289707fe3ec48533",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Compare NYC percentages within each major: 70/250=28%,60/275=21.82%,30/125=24%,40/100=40%; IT is largest.",
+    "q_digest": "360b01285dddcca0420e14257cb1a23d",
+    "key_digest": "0279ff5404496c7126818f4182cb2e28",
+    "fingerprint": "bff53b4ebd025f48b9b861005b5f9288"
+  },
+  {
+    "id": "d2abd3dd-eb8e-5eaa-90f5-4c730a1ca5fd",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "Questions 29 to 32 refer to a bar graph of “Average Hours Used Per Day” for appliances (TV, Heater, Lights, Computer, Washer, Fridge, Others), with Weekday (green) and Weekend (blue) bars. — What information does the graph above provide?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Average hours used in a day by each appliance"
+      },
+      {
+        "key": "B",
+        "text": "Average kilowatts used by each appliance in a day"
+      },
+      {
+        "key": "C",
+        "text": "Hours appliances used per month"
+      },
+      {
+        "key": "D",
+        "text": "Total electricity per day"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/dap-062-1.png",
+      "domain": "DAP",
+      "subtopic": "Reading bar graphs",
+      "image_alt": "Original diagram for DAP 062",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 062",
+      "source_page": 42,
+      "lesson_subtopic": "Reading and comparing data",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "The vertical axis is average hours used per day, separated by appliance and weekday/weekend.",
+    "q_digest": "e7fd104ac98c99ba7b99bf47796b78bd",
+    "key_digest": "ed40f468e60412ad7c5f587e013be324",
+    "fingerprint": "aa03ab44e75ab2823577d2e78e647b26"
+  },
+  {
+    "id": "d2d3fbe3-05f0-58e5-933e-f199c0d93508",
+    "type": "mcq",
+    "topic": "Volume and surface area",
+    "difficulty": "medium",
+    "stem": "What is the area of the cross section perpendicular to the base of the right cone with a diameter of 6? (Figure not drawn to scale)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "36√2"
+      },
+      {
+        "key": "B",
+        "text": "18√2"
+      },
+      {
+        "key": "C",
+        "text": "18"
+      },
+      {
+        "key": "D",
+        "text": "6√2"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/gt-015-1.png",
+      "domain": "GT",
+      "subtopic": "Solid geometry (cone cross-section)",
+      "image_alt": "Original diagram for GT 015",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 015",
+      "source_page": 72,
+      "lesson_subtopic": "Cross-section area",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Volume and surface area",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The altitude bisects the base 6 into lengths 3. Its height is √(9² − 3²) = 6√2. Area = (1/2)(6)(6√2) = 18√2.",
+    "q_digest": "39c6a676d83d7d44296a6d26e50c501a",
+    "key_digest": "38dd2f5fd19c5b35997e422db6779b15",
+    "fingerprint": "d04714c9ec7dbf1ce2e277fcba48df5e"
+  },
+  {
+    "id": "d3677f33-aa01-5ca0-ad6b-60a1cc55ad7e",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "Given that the shaded region represents the solution set of the inequality, which of the following inequalities is shown in the graph above?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−2y > x + 4"
+      },
+      {
+        "key": "B",
+        "text": "2y > −x + 4"
+      },
+      {
+        "key": "C",
+        "text": "2y > −x + 8"
+      },
+      {
+        "key": "D",
+        "text": "2y > x + 8"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/fa-013-1.png",
+      "domain": "FA",
+      "subtopic": "Graphing linear inequalities",
+      "image_alt": "Original diagram for FA 013",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 013",
+      "source_page": 7,
+      "lesson_subtopic": "Regions and systems of inequalities",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The dashed boundary passes through (0, 4) and (8, 0), so y = −x/2 + 4. Shading above a dashed boundary gives 2y > −x + 8.",
+    "q_digest": "af77aa5d0f03e4fb1b9b2b246e73876f",
+    "key_digest": "8da31fb1ed19e2635ca10e4626656025",
+    "fingerprint": "93e44da94f9c81e66cef34f31a1fd2fa"
+  },
+  {
+    "id": "d3f477dd-e9b4-5386-bcbe-80ed9f1b4a82",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "The graph records software sales receipts in thousands of dollars over twelve months. What is the total amount received by this sales representative over the 12 months?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$80,000"
+      },
+      {
+        "key": "B",
+        "text": "$81,000"
+      },
+      {
+        "key": "C",
+        "text": "$84,000"
+      },
+      {
+        "key": "D",
+        "text": "$86,000"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/dap-072-1.png",
+      "domain": "DAP",
+      "subtopic": "Scatterplots / sums from data",
+      "image_alt": "Original diagram for DAP 072",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 072",
+      "source_page": 47,
+      "lesson_subtopic": "Reading and comparing data",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Monthly totals in thousands are 4, 3, 3, 7, 9, 9, 9, 9, 7, 11, 5, 10. Their sum is 86, representing $86,000.",
+    "q_digest": "9b92131ae5af3362c46531d59a5bbdec",
+    "key_digest": "efa90fa687c079661566b1312c49927c",
+    "fingerprint": "09d520346e22d79b4c96a29a19541e87"
+  },
+  {
+    "id": "d4ef18ae-d1ad-568f-b33d-4f73d116cc95",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 11. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q11.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 11, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 5,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Conditional probability",
+      "source_question": 11,
+      "curriculum_lesson": "Probability and conditional probability",
+      "lesson_original_topic": "Conditional probability",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Given that the student is local, use only the locals column: 101 boys out of 101 + 125 = 226 locals. Probability = 101/226 ≈ 0.447.",
+    "q_digest": "2b18e7082dd02c26f5142e2a749dd345",
+    "key_digest": "beb7aeafb120ad43c1b7ba2debbbb08d",
+    "fingerprint": "525635388cba0069976a8e3be49e02f0"
+  },
+  {
+    "id": "d5815d51-a049-5095-9398-3d8fcc03b942",
+    "type": "mcq",
+    "topic": "Algebraic expressions and equations",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 45. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q45.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 45, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 12,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Isolating a variable",
+      "source_question": 45,
+      "curriculum_lesson": "Algebraic expressions and equations",
+      "lesson_original_topic": "Rearranging formulas",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "From 2x + 3yx + 1 = 4x², isolate 3xy = 4x² − 2x − 1. Divide by 3x to get y = (4x² − 2x − 1)/(3x). The original equation has no solution at x = 0.",
+    "q_digest": "0ad4c8baad698f98d0f7ca218496cf3d",
+    "key_digest": "dff306bad3b9883d1350607429ee1985",
+    "fingerprint": "febf0b15a3172ca8c146aa4451aec415"
+  },
+  {
+    "id": "d661f0f0-04a7-5c09-80ef-49a2d17395b9",
+    "type": "mcq",
+    "topic": "Systems of equations",
+    "difficulty": "medium",
+    "stem": "PSD 074 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-074.png",
+      "domain": "FA",
+      "subtopic": "Systems of equations",
+      "image_alt": "Original question PSD 074, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 074",
+      "source_page": 203,
+      "lesson_subtopic": "Two-variable word problems",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 074",
+      "curriculum_lesson": "Systems of equations",
+      "source_image_sha256": "b24fcb21fa67633ff72c7cae63b16ff6425bcd8f7155b57ed929834ed7dc8c95",
+      "lesson_original_topic": "FA · Systems of equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Let red=r, blue=15-r. 3r+2(15-r)=36 gives r=6 and blue=9; difference is 3.",
+    "q_digest": "2fd2bab59d49d8c88167b4bd8aee635a",
+    "key_digest": "3b1687743f6b842694b248a02d63f299",
+    "fingerprint": "b8b7371e2d3ff039b8bea5d79dddc400"
+  },
+  {
+    "id": "d6f5e5ab-249e-5eab-a9fc-6937d0ea87d5",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "PSD 087 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-087.png",
+      "domain": "FA",
+      "subtopic": "Inequalities and systems",
+      "image_alt": "Original question PSD 087, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 087",
+      "source_page": 215,
+      "lesson_subtopic": "Minimum whole-number solutions",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 087",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "source_image_sha256": "d6eca0379c3815d9291284ca87d8e46150c4801d2bd28802320899dbf09d0a06",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The remaining minimum is 90-42=48 hours, divided equally across two weeks: 24 each.",
+    "q_digest": "03f5c2edb360589b1ea1d3eae9ce7810",
+    "key_digest": "e947f89d9aa3e0dc06c49aac38965cfc",
+    "fingerprint": "bb55f616f9fa661e077fe74b74f6be3c"
+  },
+  {
+    "id": "d7024a14-ca5a-5849-a6dd-1de1e7fd98b0",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 7. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q07.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 7, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 4,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Permutations with repeated letters",
+      "source_question": 7,
+      "curriculum_lesson": "Probability and conditional probability",
+      "lesson_original_topic": "Permutations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "OFFICE has six letters with F repeated twice. Distinct arrangements = 6!/2! = 360.",
+    "q_digest": "bd935982e9f3614923b32efcb9f47d52",
+    "key_digest": "6315c2f94a7b7f8f09415fcc8a2dd29b",
+    "fingerprint": "d3bec827f099be954e6ba772d9a14faa"
+  },
+  {
+    "id": "d76b3353-260d-5b6b-a1d6-1edc2aeb8935",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "HOA 106 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-106.png",
+      "domain": "FA",
+      "subtopic": "Equations and expressions",
+      "image_alt": "Original question HOA 106, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 106",
+      "source_page": 65,
+      "lesson_subtopic": "Translating word problems",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 106",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_image_sha256": "dc53bee2211c63c3518dc16a5bb95a0b61d6432ed5f6a3dfbcc5af6b1ea0e34d",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "n+5=2n-3 gives n=8. Both sides equal 13.",
+    "q_digest": "a1142b772bd7f333132cbf7c6213d5e9",
+    "key_digest": "996c1c9ef40ec4d313267b9f287ae7b9",
+    "fingerprint": "f07ced67760e9227c1b4dfaab18577e5"
+  },
+  {
+    "id": "d7d081d6-a6b3-5956-846a-adc1e0229604",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "HOA 236 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-236.png",
+      "domain": "FA",
+      "subtopic": "Equations and expressions",
+      "image_alt": "Original question HOA 236, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 236",
+      "source_page": 142,
+      "lesson_subtopic": "Equivalent expressions from an equation",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 236",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_image_sha256": "f9b380498fded7c761912b9dad074175f7bb77c63e803b2a978e2083cbf9174b",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The original equation gives x=2. Substitution into the choices makes only -5x+5=-5 true.",
+    "q_digest": "600cca3b2aee220c5d11b602439a80af",
+    "key_digest": "9324d8d09425fef61dfebacc08343170",
+    "fingerprint": "66b7bf9375b201656fce0913a09c0c81"
+  },
+  {
+    "id": "d8bec352-fbba-5074-b81c-ee70290d35f0",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "HOA 096 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-096.png",
+      "domain": "FA",
+      "subtopic": "Equations and expressions",
+      "image_alt": "Original question HOA 096, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 096",
+      "source_page": 59,
+      "lesson_subtopic": "Equivalent expressions from an equation",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 096",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_image_sha256": "09c9dd0373db0c51d98aedaff5934e5124542f986714d06fb0805f8c9bde2fe7",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The requested expression is -1/8 times (5x+2y), hence -12000/8=-1500.",
+    "q_digest": "b52b35471210b974591dec0bc2a0fa31",
+    "key_digest": "4153e199214d1625350a8ff93f3d427c",
+    "fingerprint": "d192851a4c027ff934adc54b819bfe81"
+  },
+  {
+    "id": "d964899a-4a71-57df-bd28-8b641b94777f",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 42. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q42.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 42, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 12,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Reading function values from graphs",
+      "source_question": 42,
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "Function graphs",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "From the graph, f(−6) = 1 and g(−1) = 3. Their sum is 4.",
+    "q_digest": "8f8932962257a589185aa77fc80c076d",
+    "key_digest": "1213e0e4f3659cee1728b2ab4f3f2e7f",
+    "fingerprint": "482e99b797d1ada073672a643cd47ca2"
+  },
+  {
+    "id": "d9977a1c-d509-555d-979d-3c976c7c826d",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 18. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q18.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 18, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 6,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Simplifying radicals with absolute values",
+      "source_question": 18,
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "lesson_original_topic": "Radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "For real values, the denominator requires y > 0. The expression simplifies to 5|a|/(y√y). Rationalizing gives 5|a|√y/y², which is B.",
+    "q_digest": "274ad92654484a4938f12d179d6c360b",
+    "key_digest": "0f67dcac3b4be0887abda3b5afce67e0",
+    "fingerprint": "1b611eb3b58214712f5c75f5cfaa00e4"
+  },
+  {
+    "id": "da7220f9-fad9-570f-a8df-5500fe4f5823",
+    "type": "mcq",
+    "topic": "Polynomial division and remainder",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 49. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q49.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 49, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 13,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Factor theorem",
+      "source_question": 49,
+      "curriculum_lesson": "Polynomial division and remainder",
+      "lesson_original_topic": "Polynomial remainder theorem",
+      "lesson_taxonomy_version": "20260929.1"
+    },
+    "correct": "A",
+    "explanation": "Divisibility by x + 1 requires P(−1) = 0. Thus −3 + 2 + m = 0, so m = 1.",
+    "q_digest": "5b663c453df5c7a65f6a4c84557377ca",
+    "key_digest": "40cbcde234791d9ff362697a45902cc9",
+    "fingerprint": "39c10f3c8672a9e84d19107d769709fc"
+  },
+  {
+    "id": "dc454ec3-993f-57e9-ac3c-288f742975a8",
+    "type": "mcq",
+    "topic": "Systems of equations",
+    "difficulty": "medium",
+    "stem": "HOA 220 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-220.png",
+      "domain": "FA",
+      "subtopic": "Systems of equations",
+      "image_alt": "Original question HOA 220, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 220",
+      "source_page": 132,
+      "lesson_subtopic": "Elimination and substitution",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 220",
+      "curriculum_lesson": "Systems of equations",
+      "source_image_sha256": "036d29d54693f33990661b0d5768b5cd678dc688b47e8e91b11c4d482d586676",
+      "lesson_original_topic": "FA · Systems of equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Subtract -x+y=-7 from 3x+y=10: 4x=17. Check with y=-11/4.",
+    "q_digest": "60ba57a0a99452b9a019f654625f20cd",
+    "key_digest": "3f6d289fbc07ae2c0caeab884bb0a71a",
+    "fingerprint": "ab4542da50d3d7d70d2bea3548e63e64"
+  },
+  {
+    "id": "df06c4dd-410f-5998-9a55-6a8941fdbd1c",
+    "type": "mcq",
+    "topic": "Trigonometry",
+    "difficulty": "medium",
+    "stem": "In the triangle, AD ⊥ BC and CE ⊥ BA such that BD = 5, BE = 6 and AD = 8. What is the length of CE? (Figure not drawn to scale)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3/20"
+      },
+      {
+        "key": "B",
+        "text": "6/5"
+      },
+      {
+        "key": "C",
+        "text": "20/3"
+      },
+      {
+        "key": "D",
+        "text": "48/5"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/gt-019-1.png",
+      "domain": "GT",
+      "subtopic": "Triangles (altitudes, Pythagorean theorem)",
+      "image_alt": "Original diagram for GT 019",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 019",
+      "source_page": 73,
+      "lesson_subtopic": "Similarity and trigonometry together",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Trigonometry",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Similar triangles give CE/BE = AD/BD = 8/5. Therefore CE = 6 × 8/5 = 48/5.",
+    "q_digest": "5c52a27e0ab59524731e1ed5649a3640",
+    "key_digest": "d364c9b59df001cc90ab36db993bae8e",
+    "fingerprint": "032b6ad7d8fbec65125a5f6c09f737b5"
+  },
+  {
+    "id": "e3a4351e-8f95-54ae-a109-bfbeca5c8160",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 21. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q21.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 21, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 7,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Compound inequalities and empty intersections",
+      "source_question": 21,
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "Systems of inequalities",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "3x − 1 ≥ −10 gives x ≥ −3, while x + 4 < −6 gives x < −10. No number satisfies both, so the solution set is empty.",
+    "q_digest": "9689dc57d4723423f4ae635771d82f2d",
+    "key_digest": "d72a53db630d510d2842ac5dc1e1d120",
+    "fingerprint": "ad6af8b436adf769f0daa32d753042d9"
+  },
+  {
+    "id": "e4e8f3f5-129e-5611-a38c-ae95ea9698a7",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "PSD 103 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-103.png",
+      "domain": "DAP",
+      "subtopic": "Percentages and interest",
+      "image_alt": "Original question PSD 103, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 103",
+      "source_page": 227,
+      "lesson_subtopic": "Successive percentage changes",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 103",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_image_sha256": "2983305ca60f678bfcfa2ca3c5d92b6f58c879dc55471bc4a706fd5a3621f592",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "4600*1.10*0.97=4908.2. The net increase is 6.7%, not 7%.",
+    "q_digest": "deab91fe230f292dd23cd7f2d811a91f",
+    "key_digest": "54c79c6cc9c40ba14b9eb697d32c2a9e",
+    "fingerprint": "b566dbeefb587aac71d0618fdf75ed84"
+  },
+  {
+    "id": "e65ba36a-394c-5455-a707-c24ce83e847b",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "PAM 062 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-pam-062.png",
+      "domain": "AAF",
+      "subtopic": "Polynomials",
+      "image_alt": "Original question PAM 062, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PAM 062",
+      "source_page": 345,
+      "lesson_subtopic": "Roots and multiplicities",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PAM 062",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_image_sha256": "bd3cb36af94adb822dd255f36b7d5211c0072ad4946e6b42f1d355e4b84b435a",
+      "lesson_original_topic": "AAF · Polynomials",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Expansion gives -x^3+3x^2-4. Roots -1 and 2, with 2 double; graph crosses at -1 and touches at 2.",
+    "q_digest": "e0a4ce021d859546353cf84e811df8c2",
+    "key_digest": "08230d4ca3fbab66280f0f71185955f3",
+    "fingerprint": "040722e32404d60d370f26fce34c3741"
+  },
+  {
+    "id": "e8d7c96b-9a3f-536a-8dc9-7548f841c259",
+    "type": "mcq",
+    "topic": "Trigonometry",
+    "difficulty": "medium",
+    "stem": "In the adjacent figure, AB = 7 cm, DC = 13 cm and tan(C) = 2√6/13. What is the length of segment BC? (Figure not drawn to scale)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "5 cm"
+      },
+      {
+        "key": "B",
+        "text": "8 cm"
+      },
+      {
+        "key": "C",
+        "text": "10 cm"
+      },
+      {
+        "key": "D",
+        "text": "12 cm"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/gt-011-1.png",
+      "domain": "GT",
+      "subtopic": "Right triangles & trigonometry",
+      "image_alt": "Original diagram for GT 011",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 011",
+      "source_page": 70,
+      "lesson_subtopic": "Similarity and trigonometry together",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Trigonometry",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The large right triangle has height 13 × (2√6/13) = 2√6. The smaller has hypotenuse 7, so its base is √(49 − 24) = 5. Therefore BC = 13 − 5 = 8.",
+    "q_digest": "023529a10bd11883de794ce0038cc389",
+    "key_digest": "15dfd755a385a5c779ddd4dd288f94e5",
+    "fingerprint": "8b15a3d3799a247223efa43afd8d22ce"
+  },
+  {
+    "id": "e92d8592-062e-59a4-b193-ae96fa51cbb7",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 40. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q40.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 40, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 11,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Vertex form",
+      "source_question": 40,
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "Quadratic functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The vertex x-coordinate is −(−4)/(2 × −2) = −1. Then f(−1) = −2 + 4 + 1 = 3. Since the parabola opens downward, the highest point is (−1,3).",
+    "q_digest": "5c0051aad886a3eb5869b13131e4ae7d",
+    "key_digest": "90f9de2193ef2eda6c6a1446037df764",
+    "fingerprint": "d649600247bbb96d413e62732c5a9a4b"
+  },
+  {
+    "id": "e97da451-a528-5f11-9e52-d4c686ec0ebb",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 46. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q46.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 46, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 13,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Substitution with radicals",
+      "source_question": 46,
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "lesson_original_topic": "Radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "x² = (√3 − 1)² = 4 − 2√3. Thus 3x² − x + 6√3 = 12 − 6√3 − √3 + 1 + 6√3 = 13 − √3.",
+    "q_digest": "81c5decec3e30fb50da0b2260f82e227",
+    "key_digest": "550a6b408520478d437d888baf887276",
+    "fingerprint": "d0c53b9c334aad3b1a854500b6031b01"
+  },
+  {
+    "id": "eaf45ec7-06ab-5937-bd12-229409ee99a3",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "MIX 010 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-mix-010.png",
+      "domain": "AAF",
+      "subtopic": "Quadratics",
+      "image_alt": "Original question MIX 010, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "MIX 010",
+      "source_page": 425,
+      "lesson_subtopic": "Maximum in a quadratic model",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "MIX 010",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_image_sha256": "5e7e274181bfd0198c963fd3aea9308aee675d3ab1804c26de25436286520c89",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Vertex time=-14/[2*(-2)]=3.5; h(3.5)=-24.5+49+36=60.5.",
+    "q_digest": "d87a7460168e6f143ebd9cc4228b9ee3",
+    "key_digest": "e1a10b705b580a15e994ba036c03850b",
+    "fingerprint": "373372ccd0eabbcc47ef5c7a26fea340"
+  },
+  {
+    "id": "eb623a27-6a4c-55fa-aae0-483ae2c7b939",
+    "type": "mcq",
+    "topic": "Trigonometry",
+    "difficulty": "medium",
+    "stem": "GTC 046 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-gtc-046.png",
+      "domain": "GT",
+      "subtopic": "Area and volume",
+      "image_alt": "Original question GTC 046, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "GTC 046",
+      "source_page": 397,
+      "lesson_subtopic": "Special right triangles",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "GTC 046",
+      "curriculum_lesson": "Trigonometry",
+      "source_image_sha256": "8b54ff53a2142b9c2b762cb41f2ce825d10600e4da316bb6a2559be34e3fe70d",
+      "lesson_original_topic": "GT · Area and volume",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Square side=sqrt(81)=9; diagonal=sqrt(9^2+9^2)=9sqrt(2).",
+    "q_digest": "68bdc832b12261183c45b3a40323617b",
+    "key_digest": "b4abf722543a6b5138e6f00fe3cef1ea",
+    "fingerprint": "5c6ebfc029db5f33d2f4b3cabacf0b5d"
+  },
+  {
+    "id": "ee6714ca-bca3-5b21-b266-2b330069a4ca",
+    "type": "mcq",
+    "topic": "Triangles and similarity",
+    "difficulty": "medium",
+    "stem": "GTC 072 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-gtc-072.png",
+      "domain": "GT",
+      "subtopic": "Angles, triangles and trigonometry",
+      "image_alt": "Original question GTC 072, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "GTC 072",
+      "source_page": 414,
+      "lesson_subtopic": "Complementary-angle equations",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "GTC 072",
+      "curriculum_lesson": "Triangles and similarity",
+      "source_image_sha256": "5ad8ada6cc182dd5ceffde97e0886e2bf9b5ad5238aed19918b46a4648b5153a",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Let angle=a. Then a=(90-a)/3, so 4a=90 and a=22.5.",
+    "q_digest": "693e13a319fd36d9e82867c23c0ea8f1",
+    "key_digest": "3b9b61200ece91459ce2c538ac881457",
+    "fingerprint": "dd18be6e1090b780c4a72da2a95d175f"
+  },
+  {
+    "id": "eed2bb42-18d6-502a-a605-8bbc299eb33c",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "The graph records software sales receipts in thousands of dollars over twelve months. Based on the line of best fit, how much was he expected to earn in the fourth month?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$2,400"
+      },
+      {
+        "key": "B",
+        "text": "$2,800"
+      },
+      {
+        "key": "C",
+        "text": "$3,000"
+      },
+      {
+        "key": "D",
+        "text": "$3,400"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/dap-028-1.png",
+      "domain": "DAP",
+      "subtopic": "Line of best fit",
+      "image_alt": "Original diagram for DAP 028",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 028",
+      "source_page": 31,
+      "lesson_subtopic": "Predictions from a best-fit line",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "At month 4 the line of best fit is at 3 thousand dollars, or $3,000.",
+    "q_digest": "d6aa035d7a786ed118445cb75504d302",
+    "key_digest": "5835a4ba00b53bddadecfecc4a7610ce",
+    "fingerprint": "52b13b8f0802b5473566b4809b56ee88"
+  },
+  {
+    "id": "efa05289-0b96-53ac-9a6c-f78dbd848904",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "In the figure, ABCD is a square and points A, B, and O lie on the parabola of equation y = (1/k)x², where k is a constant number. If the area of ABCD is 16 cm², what is the value of k? (Figure not drawn to scale)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "4"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/aaf-046-1.png",
+      "domain": "AAF",
+      "subtopic": "Quadratic functions & graphs",
+      "image_alt": "Original diagram for AAF 046",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 046",
+      "source_page": 58,
+      "lesson_subtopic": "Connecting a parabola to geometry",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "The square's side is √16 = 4. By symmetry its upper-right vertex is (2, 4). Substitute in y = x²/k: 4 = 4/k, so k = 1.",
+    "q_digest": "3511c603378ebe1016f5f5852985c383",
+    "key_digest": "1744ae4b84860a74a2301f3910d4adb8",
+    "fingerprint": "cb7e93309f351d64af0f749fa8e5f417"
+  },
+  {
+    "id": "f11a38ee-4222-5e9c-923b-0cb0b6a6070a",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "HOA 060 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-060.png",
+      "domain": "FA",
+      "subtopic": "Inequalities and systems",
+      "image_alt": "Original question HOA 060, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 060",
+      "source_page": 41,
+      "lesson_subtopic": "Solving and testing inequalities",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 060",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "source_image_sha256": "b46ff1f09fd0872a0e1ba033066e2c3a40aa660cdda43e01ba12b7e6dbca86e4",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "(2/3)(x+2)-x>5 simplifies-x>11, sox<-11; only-12 qualifies.",
+    "q_digest": "1749f8fc0e6ddbc1df43a5264d7c090e",
+    "key_digest": "85301a1ba927b5a821e4a83fae70d4a6",
+    "fingerprint": "eccaee1c1074fbd79a42ac05b263ffc1"
+  },
+  {
+    "id": "f14c0dd5-f032-5544-a208-d3a0ae563e4f",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 19. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q19.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 19, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 7,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Solving absolute value equations",
+      "source_question": 19,
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "Absolute value equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "|3x − 5| + 1 = 2 gives |3x − 5| = 1, so x = 2 or x = 4/3. The listed solution is x = 2.",
+    "q_digest": "865b5459c66fd92f7b6795fd29f8930a",
+    "key_digest": "b40d56153b628831554678f7fbd956fa",
+    "fingerprint": "5b66d4c1f805fed7e0bb576aa438fb65"
+  },
+  {
+    "id": "f189b45a-5fba-53e5-9c2b-7561d95dece5",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 39. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q39.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 39, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 11,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Parallel and perpendicular lines",
+      "source_question": 39,
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "Perpendicular lines",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "The graphed line rises from left to right, so a perpendicular line must have a negative slope. Among the two negative-slope choices, only y = −2x + 2 passes through (1,0): −2(1) + 2 = 0.",
+    "q_digest": "d28126ca42910e067e94a940cca01a9d",
+    "key_digest": "09de3c1d5e61142042a04c7f1c49c5ba",
+    "fingerprint": "2e4a9e28c1e38e4a22b54101c241a956"
+  },
+  {
+    "id": "f1e41195-34b8-578d-8142-a62048bf2439",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 36. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q36.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 36, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 10,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Unit conversion and rounding",
+      "source_question": 36,
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "Units and rounding",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Convert to grams: 0.05674 × 1,000 = 56.74 g. Rounding to the nearest gram gives 57 g.",
+    "q_digest": "a3172c7f0c23a6c31174675b9959b5af",
+    "key_digest": "bbc1bebd8173b67c443dee4a0ad3d522",
+    "fingerprint": "0695e5558652a82895043bdb08fb2206"
+  },
+  {
+    "id": "f30548b4-8890-5610-b75b-a73357a7a867",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "PAM 046 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-pam-046.png",
+      "domain": "AAF",
+      "subtopic": "Quadratics",
+      "image_alt": "Original question PAM 046, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PAM 046",
+      "source_page": 334,
+      "lesson_subtopic": "Vertex form",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PAM 046",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_image_sha256": "3e237b38089a28f45d476218e0eac2c2d64a43b1cd01c19ba8da937fbbd7b590",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "f(x)=3(x+1)^2-3. Vertex ordinate=-3; its square is 9.",
+    "q_digest": "b8121330f7e94ad7a62b03f0ab8a4892",
+    "key_digest": "a7a46c9c8deb84d88435feba9eb6c54f",
+    "fingerprint": "e20c81829b1d8480cb2d59e538770d0c"
+  },
+  {
+    "id": "f3b57b97-84fd-5e2f-b2a2-cd6cea20786f",
+    "type": "mcq",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "stem": "GTC 059 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-gtc-059.png",
+      "domain": "GT",
+      "subtopic": "Circles",
+      "image_alt": "Original question GTC 059, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "GTC 059",
+      "source_page": 403,
+      "lesson_subtopic": "Tangents and right triangles",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "GTC 059",
+      "curriculum_lesson": "Circles",
+      "source_image_sha256": "ec7a8a27f423426d2e806d1b29fdb627537b408832eb337f0b84ca73c286b162",
+      "lesson_original_topic": "GT · Circles",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Radius and tangent are perpendicular. r^2+7^2=10^2, so r^2=51 and area=51pi.",
+    "q_digest": "844729e814ab702be0ca6c9ef389b9f4",
+    "key_digest": "c680b3c6a695adb21221730027cbb288",
+    "fingerprint": "38333fe0bd8cb2467e557b3e577b3095"
+  },
+  {
+    "id": "f50a70ad-ea5a-550c-938b-b7531556473d",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "HOA 049 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-049.png",
+      "domain": "FA",
+      "subtopic": "Lines and linear models",
+      "image_alt": "Original question HOA 049, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 049",
+      "source_page": 35,
+      "lesson_subtopic": "Parallel and perpendicular lines",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 049",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_image_sha256": "433ec9497ed40c6b67b828c21a4e4cb350e4e715e50f7c8e5f12ae63132478d0",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "3x-2y=5 has slope 3/2, hence perpendicular slope-2/3. Through(-1,4), the intercept is 4-2/3=10/3.",
+    "q_digest": "4ddb4eb2da8738287303857778c7f19d",
+    "key_digest": "0628671de6e602a8f78e1388c33910cd",
+    "fingerprint": "d756813178eda1a43cbaf4dc374a2576"
+  },
+  {
+    "id": "f912060a-0907-5df2-ae64-bf78c63b457f",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "PSD 139 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-139.png",
+      "domain": "DAP",
+      "subtopic": "Ratios, rates and variation",
+      "image_alt": "Original question PSD 139, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 139",
+      "source_page": 253,
+      "lesson_subtopic": "Part-to-part and part-to-whole ratios",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 139",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_image_sha256": "e65dd54f3c4437314d4639259bda24507d5199151d076c7af5350023fc3f5c55",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Jane receives 3/(3+4+5) of 15000, which is 3750.",
+    "q_digest": "f417d1997162396248ed9c793282d480",
+    "key_digest": "b6651517f928ceaac2dc9a5fa262a558",
+    "fingerprint": "ca0cb1ec3ddb0ef4d1384205e01057cf"
+  },
+  {
+    "id": "f92f5496-d803-57a3-8a02-21371006a690",
+    "type": "mcq",
+    "topic": "Logarithms and exponentials",
+    "difficulty": "medium",
+    "stem": "HOA 048 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-048.png",
+      "domain": "AAF",
+      "subtopic": "Exponents and radicals",
+      "image_alt": "Original question HOA 048, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 048",
+      "source_page": 35,
+      "lesson_subtopic": "Solving exponential equations with logarithms",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 048",
+      "curriculum_lesson": "Logarithms and exponentials",
+      "source_image_sha256": "3166696923d46b21ff0bfc4716b5a16f362bf7838d08383715777f80b4509d81",
+      "lesson_original_topic": "AAF · Exponents and radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Taking logarithms givesx ln 3=(x-2)ln 5, sox=2ln5/(ln 5-ln 3)=2ln5/ln(5/3). Both exponential sides are positive, so logarithms preserve equivalence.",
+    "q_digest": "0cf2796e665a89a8807083d5d8d03f29",
+    "key_digest": "cbe99111ad16e8d9e32e335f3c5d07ee",
+    "fingerprint": "f75e3f2091cd3e731ebbac3fb2f50059"
+  },
+  {
+    "id": "f9946320-2bf9-55c5-bc4e-3d3464285586",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "EST I Math — March 2026 · Question 25. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q25.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 25, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 8,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Degree and coefficient conditions",
+      "source_question": 25,
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "Polynomial coefficients",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "When a = 1, the cubic coefficient is 3a + 1 = 4. The quadratic coefficient is 4b. Equating them gives 4b = 4, hence b = 1.",
+    "q_digest": "5797efa4328cf3fa23a03adbad35fa35",
+    "key_digest": "d4b7f8b30ea642bc4ec3d11aa4bda337",
+    "fingerprint": "1c4ed2d74ed7a623db71d01ac54b5187"
+  },
+  {
+    "id": "fa0c66b7-a1c7-5c66-a699-614f0bb36c37",
+    "type": "mcq",
+    "topic": "Trigonometry",
+    "difficulty": "medium",
+    "stem": "GTC 075 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-gtc-075.png",
+      "domain": "GT",
+      "subtopic": "Area and volume",
+      "image_alt": "Original question GTC 075, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "GTC 075",
+      "source_page": 416,
+      "lesson_subtopic": "Special right triangles",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "GTC 075",
+      "curriculum_lesson": "Trigonometry",
+      "source_image_sha256": "cefc19c1a1ab4d1e38dd783c08e3d26dbfc7c70a5febfcea5bb619e18e0aa178",
+      "lesson_original_topic": "GT · Area and volume",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Square side=15; the triangle perimeter is 15+15+15sqrt(2).",
+    "q_digest": "0c2fe3f560a2b56261cbd0822fdce2ff",
+    "key_digest": "01a365ccd7fe89c2ef05e71b56850e6f",
+    "fingerprint": "ea3bc34cb49d99b2e115dd20454172d3"
+  },
+  {
+    "id": "fa89e9b5-a841-5cba-b61b-ef39813d96f0",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "HOA 214 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-214.png",
+      "domain": "FA",
+      "subtopic": "Lines and linear models",
+      "image_alt": "Original question HOA 214, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 214",
+      "source_page": 126,
+      "lesson_subtopic": "Finding an intercept",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 214",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_image_sha256": "1d6af05288ba7ba33781e310ea3eb9ee360578f16b2ba3df455355aa33292881",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Line L crosses the y-axis at 2/3. Substituting into D gives a=3/2, so its slope is -3/a=-2.",
+    "q_digest": "7113143ddedd98d1016cf07601e2598c",
+    "key_digest": "e71464b2d1dafb95b3adb34f19758df0",
+    "fingerprint": "cf9baefbbb9a44cfcc80829bf11bfb55"
+  },
+  {
+    "id": "fdb00d7a-f3b3-5ee3-ad95-73d30e5a838c",
+    "type": "mcq",
+    "topic": "Sequences",
+    "difficulty": "medium",
+    "stem": "HOA 234 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-234.png",
+      "domain": "FA",
+      "subtopic": "Equations and expressions",
+      "image_alt": "Original question HOA 234, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 234",
+      "source_page": 141,
+      "lesson_subtopic": "Sum of consecutive integers",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 234",
+      "curriculum_lesson": "Sequences",
+      "source_image_sha256": "b469a16d1042cf07fa503b77b36a3217bafe61e1e693cf7a3e3fde415b92aae2",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "1+2+3+4+5=15; also 5*6/2=15.",
+    "q_digest": "b794358af0e97163e6e5db352640c188",
+    "key_digest": "81527c693af7c6885c3ad9279a17d20d",
+    "fingerprint": "96359b38f49f73d4c2dace296540a043"
+  },
+  {
+    "id": "fdc2bf1d-4925-5626-a6c9-766d369f56d5",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "stem": "PSD 033 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-033.png",
+      "domain": "AAF",
+      "subtopic": "Exponents and radicals",
+      "image_alt": "Original question PSD 033, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 033",
+      "source_page": 172,
+      "lesson_subtopic": "Exponents and radicals",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 033",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "source_image_sha256": "0bc48ee0f22e668f3cb89df2bca8c92faaf17190f3751e1df1e6a716b949047e",
+      "lesson_original_topic": "AAF · Exponents and radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "-1/(2x-1)=sqrt(3) implies 2x-1=-1/sqrt(3), hence 6x=3-sqrt(3). Substitution returns sqrt(3).",
+    "q_digest": "214de3f2ed3ecac243bbd9c68fd665a0",
+    "key_digest": "f395891ebe6556528c71d889bd54d792",
+    "fingerprint": "f5882b7465f8515a3de0fc009840735a"
+  },
+  {
+    "id": "fecf4f9f-acea-5772-964c-dd4f1f2f8f3d",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "The scatterplot shows the numbers of laptops repaired for different companies in each year. How many laptops were repaired between the years 2012 and 2014?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "128"
+      },
+      {
+        "key": "B",
+        "text": "131"
+      },
+      {
+        "key": "C",
+        "text": "198"
+      },
+      {
+        "key": "D",
+        "text": "200"
+      }
+    ],
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/dap-070-1.png",
+      "domain": "DAP",
+      "subtopic": "Scatterplots (reading values)",
+      "image_alt": "Original diagram for DAP 071",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 071",
+      "source_page": 46,
+      "lesson_subtopic": "Reading and comparing data",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The plotted values total 67 in 2012, 61 in 2013, and 70 in 2014. Their sum is 198 laptops.",
+    "q_digest": "2b139872717648330490ae92a1e61740",
+    "key_digest": "604bf7706b34bda017d093f75163cf2e",
+    "fingerprint": "d5881f9b2ed7076218349431d22429c4"
+  },
+  {
+    "id": "ff6fa3bc-75db-5256-9dcc-3ed056df2cae",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "stem": "MIX 045 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-mix-045.png",
+      "domain": "AAF",
+      "subtopic": "Exponents and radicals",
+      "image_alt": "Original question MIX 045, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "MIX 045",
+      "source_page": 442,
+      "lesson_subtopic": "Cube-root equations",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "MIX 045",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "source_image_sha256": "1c57ea346e8899cff67d3c36de24276e7a2f8de2e573107c3feb096910c28bca",
+      "lesson_original_topic": "AAF · Exponents and radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The source contains a CUBE root. Cube both sides of −x = ∛x: −x³ = x, so x(x² + 1) = 0. The only real solution is x = 0, which satisfies the original equation. Therefore C.",
+    "q_digest": "69a6a8c8b20f02083fc6a66f88d275d4",
+    "key_digest": "ff3deab509aa7ff6b6b1daff9fb7fa32",
+    "fingerprint": "4fae8f8a5d6fcbe6c050b1bf00a28c7a"
+  },
+  {
+    "id": "ffd401b8-d01b-53ba-ba12-aec01837279f",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "PSD 204 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-204.png",
+      "domain": "DAP",
+      "subtopic": "Ratios, rates and variation",
+      "image_alt": "Original question PSD 204, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 204",
+      "source_page": 294,
+      "lesson_subtopic": "Direct proportionality",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 204",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_image_sha256": "7d438aa271ee75821aef591b98345d1ccd9f0f7672719d340360ec7484133110",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Mass per meter=2/5 kg. Two meters weigh 2*(2/5)=0.8 kg.",
+    "q_digest": "5fdd3e29e19e40c207ced46a2e909ffa",
+    "key_digest": "9d361bbac7590be6b86a78c14b322b0a",
+    "fingerprint": "3fb72e7235097785ccc451bf8a35c7df"
+  }
+]

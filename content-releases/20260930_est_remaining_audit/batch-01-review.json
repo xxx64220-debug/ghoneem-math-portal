@@ -1,0 +1,417 @@
+[
+  {
+    "id": "00b95126-e20b-5874-9cdf-5e521e1f0f04",
+    "status": "mathematically_verified",
+    "solution": "Numerator = (4−6+2)m√(3a)=0; denominator positive; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "016c3282-6338-5f41-adb8-bf518964f869",
+    "status": "mathematically_verified",
+    "solution": "At 2014 x=3; prediction2603.3; source blue observed2550; residual magnitude53.3; C.",
+    "expected_key": "C",
+    "source_image_checked": true,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "02356ac9-1bbe-5edb-bfdb-e944a15afb12",
+    "status": "mathematically_verified",
+    "solution": "Substitute A:-1,B:4,C:5,D:14; only14>5; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "023c95b9-3fb8-52f4-8240-fc8aef8da2bd",
+    "status": "repair_and_verified",
+    "solution": "dx=2,dy=−1; distance²=5; C; original image read.",
+    "expected_key": "C",
+    "source_image_checked": true,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": {
+      "stem": "The distance between A(1, −1) and B(3, −2) is √k, where k is a real number. What is the value of k?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "2"
+        },
+        {
+          "key": "B",
+          "text": "3"
+        },
+        {
+          "key": "C",
+          "text": "5"
+        },
+        {
+          "key": "D",
+          "text": "7"
+        }
+      ]
+    }
+  },
+  {
+    "id": "034f4fb8-74f6-5e61-974d-78bb2b5b0da5",
+    "status": "mathematically_verified",
+    "solution": "11/(3+11)*350=275; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "03601fa8-c9c9-5638-8897-8bbb86669445",
+    "status": "repair_and_verified",
+    "solution": "15+0.3x; only A has fixed15 and rate0.3.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": {
+      "stem": "Amira registered in an online magazine for a monthly fee of USD 15. However, to read premium articles, she has to pay an extra charge of USD 0.3 per article. Which of the following represents the total amount Amira is going to pay per month if she reads x premium articles?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "0.3x + 15"
+        },
+        {
+          "key": "B",
+          "text": "0.3x + 15 × 30"
+        },
+        {
+          "key": "C",
+          "text": "15x + 0.3"
+        },
+        {
+          "key": "D",
+          "text": "15 × 30x + 0.3"
+        }
+      ],
+      "explanation": "A fixed charge of USD 15 plus USD 0.30 per unit x gives C = 15 + 0.30x."
+    }
+  },
+  {
+    "id": "0398f66f-3326-5d60-8a9d-318dd3047685",
+    "status": "repair_and_verified",
+    "solution": "12>10 uses10% salary bonus:1300*1.1=1430; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": {
+      "stem": "Rima is a saleswoman in a TV store. Her salary is USD 1,300 per month. She gets an additional USD 10 for every TV she sells if the quantity sold is less than or equal to 10 TVs per month. If she sells more than 10 TVs in one month, she will get an extra bonus of 10% of her initial salary. Last November, she sold 12 TVs. What was her salary at the end of the month?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "1,420"
+        },
+        {
+          "key": "B",
+          "text": "1,430"
+        },
+        {
+          "key": "C",
+          "text": "1,450"
+        },
+        {
+          "key": "D",
+          "text": "1,550"
+        }
+      ],
+      "explanation": "For more than 10 TVs the stated rule gives a 10% bonus on the USD 1,300 base salary: 1,300 × 1.10 = USD 1,430."
+    }
+  },
+  {
+    "id": "04b9f396-e79e-5cb8-b2ce-a5f07ad754e4",
+    "status": "mathematically_verified",
+    "solution": "x²−3x+2=(x−1)(x−2); product2; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "04be0054-500f-5350-b592-51e254d5e781",
+    "status": "repair_and_verified",
+    "solution": "2r+5d=6,4r+2d=4 => d=1,r=0.5;2r+2d=3;D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": {
+      "stem": "Amina went to the flower shop and bought 2 roses and 5 daisies for USD 6. From the same shop, Lara bought 4 roses and 2 daisies for USD 4. How much should Ahmad expect to pay for 2 roses and 2 daisies?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "USD 1.0"
+        },
+        {
+          "key": "B",
+          "text": "USD 1.5"
+        },
+        {
+          "key": "C",
+          "text": "USD 2.0"
+        },
+        {
+          "key": "D",
+          "text": "USD 3.0"
+        }
+      ],
+      "explanation": "Solving 2r + 5d = 6 and 4r + 2d = 4 gives d = 1 and r = 1/2. Therefore 2r + 2d = USD 3."
+    }
+  },
+  {
+    "id": "0548f714-8291-5f58-8376-5cb635981f47",
+    "status": "mathematically_verified",
+    "solution": "9 geometry+6 algebra+6 trig=21/30=70%; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "0577ad03-033b-5ec9-a541-55a7cdf4d93c",
+    "status": "mathematically_verified",
+    "solution": "Force ratio=(r/3r)²=1/9; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "058c6b55-fed1-5016-884a-9a523163c4d9",
+    "status": "mathematically_verified",
+    "solution": "Source box endpoints Q1=6,Q3=20;IQR14; B.",
+    "expected_key": "B",
+    "source_image_checked": true,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "059baedd-7054-522f-addb-6262697310dc",
+    "status": "repair_and_verified",
+    "solution": "120*0.9=108 good,12 defective;108*40+12*20=4560; C.",
+    "expected_key": "C",
+    "source_image_checked": true,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": {
+      "stem": "A bookstore has 120 books. Ten percent are defective. Each non-defective book is sold for 40 dollars, and each defective book is sold for half that price. What is the total revenue from selling all the books?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "4200"
+        },
+        {
+          "key": "B",
+          "text": "4320"
+        },
+        {
+          "key": "C",
+          "text": "4560"
+        },
+        {
+          "key": "D",
+          "text": "4600"
+        }
+      ]
+    }
+  },
+  {
+    "id": "06425acd-66b1-52cc-ae20-8f25158f1735",
+    "status": "mathematically_verified",
+    "solution": "twice number minus2=3times number =>2x−2=3x; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "06d16da3-f0d7-55b9-80f6-00dcd03bc23a",
+    "status": "repair_and_verified",
+    "solution": "Graph intersects y=1.5 at x0, strictly increasing implies unique; A.",
+    "expected_key": "A",
+    "source_image_checked": true,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": {
+      "stem": "The graph shows an increasing function f. What is the solution of f(x) − 1.5 = 0?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "0"
+        },
+        {
+          "key": "B",
+          "text": "1.5"
+        },
+        {
+          "key": "C",
+          "text": "3"
+        },
+        {
+          "key": "D",
+          "text": "4.5"
+        }
+      ],
+      "explanation": "Solving f(x) − 1.5 = 0 means finding where f(x) = 1.5. The graph crosses the y-axis at 1.5 and is increasing, so the only solution is x = 0."
+    }
+  },
+  {
+    "id": "07153eab-b798-435f-a999-7c224e73d396",
+    "status": "mathematically_verified",
+    "solution": "1/(x+2)+1; asymptotes x−2,y1; original options D matches; D.",
+    "expected_key": "D",
+    "source_image_checked": true,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "0750b96d-174c-5957-8049-7b8f33312460",
+    "status": "mathematically_verified",
+    "solution": "Expansion is 6x²−5x−6; the coefficient of x is −5, key B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "07779610-2dd2-5d50-b2e7-7f8b4b30a7a7",
+    "status": "repair_and_verified",
+    "solution": "September has30days−4=26 working days; fiancee26*11*10.7=3060.2;Adam(11000−3060.2)/(26*15)=20.35846, closest20.4; C.",
+    "expected_key": "C",
+    "source_image_checked": true,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": {
+      "stem": "Questions 20 to 22 refer to a graph of Adam and his fiancée's combined monthly salaries (in thousands of dollars) during 2019: Jan 2, Feb 3, Mar 2, Apr 8, May 6, Jun 4, Jul 2, Aug 1, Sep 11, Oct 9, Nov 3, Dec 6. — During September, Adam worked 15 hours per day, while his fiancée worked 11 hours per day. Knowing that each one of them took 4 days off that month, and his fiancée was getting paid USD 10.7 per hour, how much was Adam approximately getting paid per hour?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "USD 16.6"
+        },
+        {
+          "key": "B",
+          "text": "USD 17.8"
+        },
+        {
+          "key": "C",
+          "text": "USD 20.4"
+        },
+        {
+          "key": "D",
+          "text": "USD 36.1"
+        }
+      ],
+      "explanation": "Each worked 26 days. His fiancée earned 26 × 11 × 10.7 = USD 3,060.20. Adam's hourly rate was (11,000 − 3,060.20)/(26 × 15) ≈ USD 20.36, closest to USD 20.4."
+    }
+  },
+  {
+    "id": "0925bb94-9e4d-50c3-b5fb-c8ade4ff1386",
+    "status": "repair_and_verified",
+    "solution": "CityA weighted171/80=2.1375 median/mode2;CityB205/80=2.5625 median/mode3; all different D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": {
+      "explanation": "City A: mean = (25 + 62 + 42 + 32 + 10)/80 = 171/80 = 2.1375, median = 2, mode = 2. City B: mean = (20 + 38 + 69 + 48 + 30)/80 = 205/80 = 2.5625, median = 3, mode = 3. None of the three measures is the same."
+    }
+  },
+  {
+    "id": "0b3427bf-8344-55d2-8ab9-32cf406306ed",
+    "status": "repair_and_verified",
+    "solution": "Combined rate2*600=1200m/h;300/1200h=15minutes; A; source crop checked.",
+    "expected_key": "A",
+    "source_image_checked": true,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": {
+      "stem": "A machine paves 600 meters of road in 1 hour at a steady rate. How much time would two identical machines take to pave 300 meters?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "15 minutes"
+        },
+        {
+          "key": "B",
+          "text": "2 hours"
+        },
+        {
+          "key": "C",
+          "text": "1 hour"
+        },
+        {
+          "key": "D",
+          "text": "30 minutes"
+        }
+      ]
+    }
+  },
+  {
+    "id": "0cbfc70e-50ea-5fdc-9a2d-f8119fc9b5cb",
+    "status": "mathematically_verified",
+    "solution": "Solid boundary through(0,−3),(6,0); shading above means y≥0.5x−3, equivalent to −y≤−0.5x+3; B.",
+    "expected_key": "B",
+    "source_image_checked": true,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "0d1610df-2ffc-5a6e-a793-671b0513f37f",
+    "status": "repair_and_verified",
+    "solution": "2p+n=2.75,3p+2n=4.75 =>p0.75,n1.25; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": {
+      "stem": "Amar and Raya went together to the bookstore. Amar bought 2 pens and 1 notebook and paid USD 2.75. Raya bought 3 pens and 2 notebooks and paid USD 4.75. What is the price of the notebook in this bookstore?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "USD 0.75"
+        },
+        {
+          "key": "B",
+          "text": "USD 1.0"
+        },
+        {
+          "key": "C",
+          "text": "USD 1.25"
+        },
+        {
+          "key": "D",
+          "text": "USD 1.50"
+        }
+      ],
+      "explanation": "Solving the two purchase equations gives a pen price of USD 0.75 and a notebook price of USD 1.25; substitution reproduces both totals."
+    }
+  },
+  {
+    "id": "0eb213c2-a947-58c2-b9c1-b7c7c2bebe77",
+    "status": "repair_and_verified",
+    "solution": "right+45 yields45−45−90;hypotenuse4.4sqrt2=6.2225 =>6; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": {
+      "explanation": "Since triangle REF is right at R and angle REF = 45°, its third angle is also 45°. The legs are equal and EF is the hypotenuse. Thus EF = 4.4√2 ≈ 6.2225 cm, which rounds to 6 cm."
+    }
+  },
+  {
+    "id": "0f40726b-1397-5461-b7e0-7980f4b40bd9",
+    "status": "mathematically_verified",
+    "solution": "Vertex abscissa−(−18)/(2*3)=3; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  },
+  {
+    "id": "0f4f82f5-f03a-5549-acf2-0dd61fa9faf5",
+    "status": "mathematically_verified",
+    "solution": "At m=0,g12 full tank;B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Current complete stem, choices and worked solution; source images checked where needed",
+    "repair": null
+  }
+]

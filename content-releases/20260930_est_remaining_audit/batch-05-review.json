@@ -1,0 +1,989 @@
+[
+  {
+    "id": "985d05c3-e1a8-5278-b359-ddd22ba633f3",
+    "status": "mathematically_verified",
+    "solution": "√(1.25×1.8)=√2.25=1.5; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "fc4d343b0baebca3840cb77b7262c763",
+    "key_digest": "8a54cf42b5c8efaf5d0f31b4cf35bc0b",
+    "fingerprint": "e63b6cd9c32bd3274dd3cb6164069da2"
+  },
+  {
+    "id": "98eaedae-7bce-5cf0-8f7b-4ffdd4b8635f",
+    "status": "mathematically_verified",
+    "solution": "−0.5k+3−1=0=>k4;slope−4/3; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "d2c05078c983508c1558b7f4d7e5d8a7",
+    "key_digest": "0fe2aca5edeed420419a95ca96129641",
+    "fingerprint": "da58dbf483fcfb3cd113c880e587c109"
+  },
+  {
+    "id": "993e9759-4111-51d5-a202-b83ee5b67e1e",
+    "status": "mathematically_verified",
+    "solution": "New2u,usedu;3u474=>new316; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "2de91627b3cdf25dee0d22cd80befd7e",
+    "key_digest": "78565c9d64566de8a1d0f596b79f7de8",
+    "fingerprint": "238d21484cafea7f614d0192d37d0459"
+  },
+  {
+    "id": "9a0a8f91-3794-5ad8-95ba-96c6487a2244",
+    "status": "mathematically_verified",
+    "solution": "Slope2,liney2x+5;6=2h+5=>h0.5; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "87e282a67a7d62f1eb1197560cbfe50a",
+    "key_digest": "5454544821d624d7e3a491083543df5d",
+    "fingerprint": "fcd7e6b9fc3af06e9440fbc233a71f98"
+  },
+  {
+    "id": "9ab25793-e111-533f-b92e-84fabed3ad34",
+    "status": "mathematically_verified",
+    "solution": "y2x−1 andy=x+2 =>x3y5product15; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "ddd5532cf5bb6b7b54788ab81958396a",
+    "key_digest": "d0da3e2599d645de4bd2c6daa7288f65",
+    "fingerprint": "1a28e129b6a4f2643163783a656b4411"
+  },
+  {
+    "id": "9cefe6e0-fe59-5930-a405-902c866c495d",
+    "status": "mathematically_verified",
+    "solution": "Sorted1,4,5,5,5,7,8,9,11,11,13,14;median7.5mode5,sum12.5; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "1bc26f712bb0ec1eb0f3e5a0e20ffd8b",
+    "key_digest": "38ec67514a19f205e7bf7eaf316f86d1",
+    "fingerprint": "eebb383dd4c57e7eab31248947054324"
+  },
+  {
+    "id": "a317599f-826c-5baa-b5d2-4482a1b73851",
+    "status": "mathematically_verified",
+    "solution": "x²+x=x+1=>x±1;larger1; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "7aaa8eed908118a60d20f52400dba101",
+    "key_digest": "385303550adb7aef72f86a204ad0c43b",
+    "fingerprint": "4e2fde0e44e73d9f208071b7f56476a3"
+  },
+  {
+    "id": "a4bb0f93-9a35-5184-a0f4-0a706d6d2ea5",
+    "status": "repair_and_verified",
+    "solution": "Non-grey27of37;withoutreplacement27/37×26/36=702/1332≈0.527027; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {
+      "stem": "A bag contains 15 red marbles, 12 blue marbles, and 10 grey marbles. Two marbles are selected randomly without replacement. What is the probability that both marbles are not grey? Round to three decimal places."
+    },
+    "q_digest": "4de8743708b10b22d457e6664d1b1954",
+    "key_digest": "c0e5403a29aa3fd1b586a97e6d2fa6ce",
+    "fingerprint": "23fc2f3a6960dc2c2e8a6d3721d5718d"
+  },
+  {
+    "id": "aa6395ca-7e4f-5891-a061-b4aa11705887",
+    "status": "mathematically_verified",
+    "solution": "−3<x<6 =>−1<x+2<8;largestinteger7; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "578eaf5881fd24ef57dec0ce27f0945b",
+    "key_digest": "bd64061664179ac23ebb3a11546a6f0f",
+    "fingerprint": "eaf1632232e85b1e77ff2581c642c1ba"
+  },
+  {
+    "id": "aad7ddee-978e-5fb1-b33c-a34667654c26",
+    "status": "mathematically_verified",
+    "solution": "Difference2/(x²−1)=1=>x²3;11x²33; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "e5cb1e52061ae56beef371cfc0427d0c",
+    "key_digest": "8ceb03d5acfac1b2fe2e9686947b5c44",
+    "fingerprint": "7cfcc459140d2a86a467dbdde0b9dca4"
+  },
+  {
+    "id": "ab8f6934-0f96-5a61-ac99-47c0d13a8aa8",
+    "status": "mathematically_verified",
+    "solution": "Denominatorzeroat3or−2.5; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "724158cf39221f3a6fd48fde7c30fbaf",
+    "key_digest": "cb293213801b4a99de24c3837b0a527f",
+    "fingerprint": "a2369bca5eaf15a29108b94d1479afbe"
+  },
+  {
+    "id": "ac176235-f4c5-5b57-ac13-b83e745084f8",
+    "status": "mathematically_verified",
+    "solution": "Legsl,l+4; l(l+4)=192=>l12,long16;hypotenuse√400=20.",
+    "expected_key": "20",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "d9ac4ef4ea25d05663e324538addeb67",
+    "key_digest": "654e591dfceaae8369ce47934ad50112",
+    "fingerprint": "407cd503a2ccc963dfb057afe55bb88d"
+  },
+  {
+    "id": "ac398c33-3b73-5ff9-be53-59ff3e3653c1",
+    "status": "mathematically_verified",
+    "solution": "Odd multiples3and9,total14;2/14=1/7; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "3a9be15dff70c4dabecadca8832eab80",
+    "key_digest": "c3ce97e4cbbc2783b0cbb1320f39cf2e",
+    "fingerprint": "4b59015e4e826bc342fdc374f6c8b76c"
+  },
+  {
+    "id": "ac3b4475-f7c2-5e13-9bfa-158fce6cb7ea",
+    "status": "mathematically_verified",
+    "solution": "2x8=>x4;√(8+13)=√21; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "e6953a9330086b402c7f387d427c0ef7",
+    "key_digest": "60c5d96b9802070c2e65456e31623867",
+    "fingerprint": "b04e861d099766569f7ab0f2e2b24bf9"
+  },
+  {
+    "id": "ac975101-c7f9-5a27-8085-c291291b7fd6",
+    "status": "mathematically_verified",
+    "solution": "Side√49=7;diagonal7√2; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "71b197a060c96effc188b92c6616e0cb",
+    "key_digest": "0a8040a690b4c993263a1c9e8b38da07",
+    "fingerprint": "805e317a57cfb2c7ef7af694fb090808"
+  },
+  {
+    "id": "b0c1df30-8e39-5063-b6bc-0e21bb521681",
+    "status": "repair_and_verified",
+    "solution": "Eachunorderedpairofpointsdistinctlinebecause no3collinear;C(k,2)=k(k−1)/2; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {
+      "stem": "Consider k distinct points on the plane where no three points are collinear. How many straight lines can be drawn using these points?"
+    },
+    "q_digest": "ce4bd94110101d97338e0f9c9a393059",
+    "key_digest": "f1226f13e5b6090a0388b9d73f41ce0e",
+    "fingerprint": "4e180f4bae98745fa9cd8167b8b3893d"
+  },
+  {
+    "id": "b40d4977-ba21-57e5-96f2-d33988677f09",
+    "status": "mathematically_verified",
+    "solution": "Base2:4m+2=15=>m13/4;plus3/4=4; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "a97ae8a4371e54536787623548993aba",
+    "key_digest": "12a6ad52cea75d45f390f148a8f38ed6",
+    "fingerprint": "1801521d17b290ebe6231e2508a0b3b5"
+  },
+  {
+    "id": "ba641902-5ac4-5ee9-abae-650aaf01b164",
+    "status": "mathematically_verified",
+    "solution": "Slope−7,liney−7x+26;yzero=>x26/7; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "4b45fc15361b16dc916f0ca3d52e5336",
+    "key_digest": "a48c4729a225d3102719cda8be701774",
+    "fingerprint": "ca111305e7877edf85b7a1ab4db4fdcf"
+  },
+  {
+    "id": "baef6fec-dfd4-59e8-992a-1bd38d5eda9b",
+    "status": "repair_and_verified",
+    "solution": "a+2i=(2−5i)(3−i)=1−17i=>a1−19i;a²−360−38i=−2(180+19i); D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {
+      "stem": "If (a + 2i)/(3 − i) = 2 − 5i with i = √(−1), what is the value of a²? The unknown a may be complex."
+    },
+    "q_digest": "18df266d3847b3d2e4f270a21db80756",
+    "key_digest": "f1d2a5fc13a6bcf1fb15187f0290a6b0",
+    "fingerprint": "ce933b48e313c38c7161513970af7267"
+  },
+  {
+    "id": "bc6f518c-cfaa-51d2-ae5e-55db0972b979",
+    "status": "mathematically_verified",
+    "solution": "g(−1)=−2;f(−2)=4+10−6=8; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "366ae649a5c03dd38e6424a159c07d12",
+    "key_digest": "5f6929523e6c4ba9e21ef2fdaad8a179",
+    "fingerprint": "fb92c12479667b604126b83312faef50"
+  },
+  {
+    "id": "beae4149-6fef-553d-af57-3c1498c23245",
+    "status": "mathematically_verified",
+    "solution": "Roots1,−3,−5;sum−7; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "b243e4f6e12932b5ec0342b23f7af2fc",
+    "key_digest": "108292dc136a60ed2318d5d4864fddf4",
+    "fingerprint": "82fa863e41674354961fc54f43b78809"
+  },
+  {
+    "id": "beccd2e4-c298-5365-ba58-41fc08d0348d",
+    "status": "mathematically_verified",
+    "solution": "v t=(v+20)(t−1) givesv20t−20;vt=(v−10)(t+2) givesv5t+10;t2v20distance40; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "25d297f947e72552c516ace6eb91e43a",
+    "key_digest": "84f2edad1371a9e46a1e9b852c429255",
+    "fingerprint": "5007cc9b0ffd6a17e1bb7988617439dd"
+  },
+  {
+    "id": "befe0aa4-1087-52f8-811d-c19c5a89e6e8",
+    "status": "mathematically_verified",
+    "solution": "y scalesx³;doublingxmultipliesy8=>64; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "e48ba2456a9b2dacab5c200389021652",
+    "key_digest": "af48d8f753929d574028a91350659a6b",
+    "fingerprint": "7c14adaffbd00c8ce0072e64675de66d"
+  },
+  {
+    "id": "c116b77e-9b66-54f7-b489-3f24b323304d",
+    "status": "mathematically_verified",
+    "solution": "Multiplydenominators:2=x²+1+(Ax+B)(x+1);coefficientsA−1,B1; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "6dafa827c2069267cc89ea4acfe2262b",
+    "key_digest": "fd6db1afd7c9e81a2ea222de41848c12",
+    "fingerprint": "b207e668589125619d7451755f3e669a"
+  },
+  {
+    "id": "c38780ec-a284-5eac-a888-d22c5f60acd2",
+    "status": "repair_and_verified",
+    "solution": "79+0.44×2000=959; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {
+      "stem": "Questions 42 and 43: A company decided to create brochures to introduce their products. The printing house responsible for designing and printing the brochures will charge the company USD 79 for the design with 44 cents for each brochure printed. — If the company decided to print 2,000 brochures, how much should they pay?",
+      "explanation": "The total brochure cost is 79 + 0.44(2,000) = USD 959.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "USD 1,580"
+        },
+        {
+          "key": "B",
+          "text": "USD 1,122"
+        },
+        {
+          "key": "C",
+          "text": "USD 1,000"
+        },
+        {
+          "key": "D",
+          "text": "USD 959"
+        }
+      ]
+    },
+    "q_digest": "e7787166ab4ac390a595bac2dad500ac",
+    "key_digest": "384ce90a65fe1d643465ea75dfdc9a2a",
+    "fingerprint": "691bd738fdda9b4290596950f41b15b1"
+  },
+  {
+    "id": "c44aba20-7355-53e0-974f-3d867e685e9d",
+    "status": "mathematically_verified",
+    "solution": "Vertexx−b/2a=−4/6=−2/3; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "e4196a1828cc984ed0d44f80a504cebc",
+    "key_digest": "1c06d73773f075e97a15509389b51949",
+    "fingerprint": "faebf3452d6d9849bb9d4828493314bd"
+  },
+  {
+    "id": "c537a5fe-260a-538c-9b70-8d15c5c01908",
+    "status": "mathematically_verified",
+    "solution": "OnlyD equations both y=−x−2;othersindependentnormalsgivesinglepoint; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "3420550a5b04fcf62a1c1fee11bd1867",
+    "key_digest": "60b3d8c8ef38a8220f5c4cc2e91a746e",
+    "fingerprint": "8b61444018048fb9b1a516782fea6295"
+  },
+  {
+    "id": "c7385c1d-6814-5cab-9659-c5b48acc8dc2",
+    "status": "repair_and_verified",
+    "solution": "13000×1.025^4=14349.567578125≈14349.57; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {
+      "stem": "Faten borrowed USD 13,000 at a compound interest rate of 2.5% per year, compounded annually. Approximately how much will she need to repay at the end of the 4 years?",
+      "explanation": "Annual compounding gives 13,000(1.025)^4 ≈ USD 14,349.57.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "USD 13,567.45"
+        },
+        {
+          "key": "B",
+          "text": "USD 14,100.24"
+        },
+        {
+          "key": "C",
+          "text": "USD 14,349.57"
+        },
+        {
+          "key": "D",
+          "text": "USD 16,544.13"
+        }
+      ]
+    },
+    "q_digest": "e0cf7064ccc8328cb228ea8d30e06cb0",
+    "key_digest": "f3445703e2e40f22827def7accc2a1a9",
+    "fingerprint": "6703513ba15fc0c8f3b094c6c2623e09"
+  },
+  {
+    "id": "c978af6f-d788-5408-8629-9acac6991210",
+    "status": "mathematically_verified",
+    "solution": "EvaluateP(1.5)=6.75+6.75−1=12.5;twice25; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "13666bd9e3f7b7f0a1aa006da330503f",
+    "key_digest": "951390ecc1f19f363c41f845924dca61",
+    "fingerprint": "e5ebbc2a04c702d1a8126cb040005d20"
+  },
+  {
+    "id": "caebf388-c464-552c-ae0f-a06a56c442b2",
+    "status": "mathematically_verified",
+    "solution": "3^(x+1/4)=3^(4x)=>3x1/4=>x1/12; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "c302140e5e29d429c1a32a3bf5b5c7c6",
+    "key_digest": "207349d5d50927022d9893b6a264aa17",
+    "fingerprint": "53c7473256ade2a2394de911b4849f1d"
+  },
+  {
+    "id": "cc88985a-7d14-59ad-9a1c-fa84abbba7f4",
+    "status": "mathematically_verified",
+    "solution": "Subtract2x+y−(x+y)=−5−4=>x−9;y13; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "4964bc3634fe772596067a3298cc374d",
+    "key_digest": "02c0449ae25f0cebb5feab28ade603cf",
+    "fingerprint": "b17a379e5d1c9fed04ab3dd523743818"
+  },
+  {
+    "id": "cd410473-f82a-5bcf-8f9c-b093ea00f406",
+    "status": "mathematically_verified",
+    "solution": "y=kx²,k3/16;at5y75/16; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "7a26a65194196e8db6a904c4f13d1492",
+    "key_digest": "743497c811a76e35a134fcb763ca2667",
+    "fingerprint": "bcac9070e8d7ed20d52a2c2eb332f3da"
+  },
+  {
+    "id": "ce582c84-3556-51d4-804b-1358edf4fbd9",
+    "status": "repair_and_verified",
+    "solution": "500/25=20 increments;prices460,470,465,470;Aminimum; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {
+      "stem": "The distance between city A and city B is approximately 500 km. To travel that distance, Bilal received offers from 4 different taxi companies — Fixed Amount fee (USD ) / Amount per 25 km (USD ): Taxi A: 160 / 15; Taxi B: 210 / 13; Taxi C: 185 / 14; Taxi D: 150 / 16. Which company gave Bilal the cheapest offer?",
+      "explanation": "There are 500/25 = 20 distance units. The four fares are USD 460, USD 470, USD 465, and USD 470. Taxi A is cheapest."
+    },
+    "q_digest": "dff2fa84593e2e11bdcab85fa86ebef6",
+    "key_digest": "5a7a06bc188c2c418a51afefa61f6ea8",
+    "fingerprint": "6e81a1b280701fc70856376bf03d7878"
+  },
+  {
+    "id": "cea33ea6-380c-5400-901a-c96a9f9e070a",
+    "status": "mathematically_verified",
+    "solution": "y=(2/5)x−1/5;parallelslope0.4; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "f886fc6858ec84c51cb602a25f86a379",
+    "key_digest": "6dbfcc87a79a224d535f58e5b408a8aa",
+    "fingerprint": "7a7706e2fb538fe5065a5b710c351cbd"
+  },
+  {
+    "id": "cf3ea4ff-82ad-5c5c-986d-2dfa90a7c9fd",
+    "status": "mathematically_verified",
+    "solution": "(x−2)(x²+2)=0;onlyreal2.",
+    "expected_key": "2",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "b45dde25776534a6734baf9afcedfe9f",
+    "key_digest": "42dd263f3892045d3442c02382ad8f04",
+    "fingerprint": "cf00bca408d5f89a06eb3441eff50b84"
+  },
+  {
+    "id": "d09a84d5-b0fb-5020-9ad9-579565d4cb56",
+    "status": "mathematically_verified",
+    "solution": "200seconds×18/120=30; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "63efab19333b11436c957362ed17ac66",
+    "key_digest": "3d487169f98a3dd70b05f8b6b8dc641f",
+    "fingerprint": "eab9621753bbc32a258a77300442b5cc"
+  },
+  {
+    "id": "d10cf3b6-a7a8-5c32-90f4-bea57f3fef35",
+    "status": "mathematically_verified",
+    "solution": "Multiplyequationby−1/4:−x−3.5y=7/4; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "ef5cba21bc223a3962b01ee3bf1ec42e",
+    "key_digest": "2119bfa439f9a66c9ee9ba0594d7c285",
+    "fingerprint": "91bf251b29ea40d38590f33ba5a2392e"
+  },
+  {
+    "id": "d1ba40d5-fde6-541c-ba84-f9e7e5cf63c4",
+    "status": "mathematically_verified",
+    "solution": "40000×1.15=46000; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "a8072f644cb09b0383386c776534f376",
+    "key_digest": "3fd5ba7c55fa6087d5d6ae73df04298b",
+    "fingerprint": "2395e4cf03c6df4a5d18a75ab30d5765"
+  },
+  {
+    "id": "d2347322-5e52-5b18-89e1-dcf3358b6fa0",
+    "status": "mathematically_verified",
+    "solution": "3x−2=10=>x4; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "5a199617442dcf71dbb5d4c49f2989f2",
+    "key_digest": "157a1af1896667dd2857d4a679c97d4c",
+    "fingerprint": "90bd745f01d027757971e37e1a422258"
+  },
+  {
+    "id": "d2f07ab6-b8db-5344-9fc6-d37730fdd73c",
+    "status": "mathematically_verified",
+    "solution": "xy>0,xz<0=>differencepositive. yz=(xy)(xz)/x²<0; xyz maypositivewhen x<0. IIonly; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "88f27d8ab7568ac2879f436498fcd6f8",
+    "key_digest": "c0a879a6824deb74e9abfbda41a9ae39",
+    "fingerprint": "04432ddbdca6be2e6727937e2300d4db"
+  },
+  {
+    "id": "d3573f99-9ab2-5263-a031-ae4d10c2e041",
+    "status": "mathematically_verified",
+    "solution": "5(7y−8)=3(9y−5)=>8y25=>y25/8.",
+    "expected_key": "25/8",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "ddae5189620cdec1b8077a5e4c5523f0",
+    "key_digest": "3e08fe2856cef4f26db192e3d8bae9d2",
+    "fingerprint": "e13d54726b8fd9ee36364d47bdf0104b"
+  },
+  {
+    "id": "d4c65797-9b46-5fca-8a58-c56cf74f434b",
+    "status": "mathematically_verified",
+    "solution": "−0.5≤x≤3.5;absolute3x−2endpointvalues3.5and8.5;maximum17/2; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "7c32b9232574db46b09c312afd7afa95",
+    "key_digest": "d3a124062cd5a9b89b024f6d2cd8bd3c",
+    "fingerprint": "d610768f8a1fa6675a096e2df0a7dfad"
+  },
+  {
+    "id": "d4d223f5-8588-52bf-aa97-dba2d1f7241f",
+    "status": "mathematically_verified",
+    "solution": "Second2x−5y=3a;identicalnormalsrequireb1,and3a9=>a3;sum4; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "889f562d93406ed47b145e1473cbeac6",
+    "key_digest": "979257bc2dffda210de48661e4b6d183",
+    "fingerprint": "360eb3562fe4e265f7a575539b94f3da"
+  },
+  {
+    "id": "d62465e0-a101-5323-9a2f-c0115e40f574",
+    "status": "repair_and_verified",
+    "solution": "adultsA,children1500−A;15000+5A19750=>A950;adultrevenue14250; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {
+      "stem": "Street food tickets at the park cost USD 10 for children and USD 15 for adults. On a certain day, 1,500 tickets were bought for a total of USD 19,750. What is the amount of money made from the tickets for adults only on that day?",
+      "explanation": "Let a be adult tickets. Then 10(1,500 − a) + 15a = 19,750, giving a = 950. Adult-ticket revenue is 950 × 15 = USD 14,250.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "USD 5,490"
+        },
+        {
+          "key": "B",
+          "text": "USD 7,500"
+        },
+        {
+          "key": "C",
+          "text": "USD 12,000"
+        },
+        {
+          "key": "D",
+          "text": "USD 14,250"
+        }
+      ]
+    },
+    "q_digest": "b22c87c322047182b47102f297707248",
+    "key_digest": "51c265eb3db7623f2c1e8964f8b1d547",
+    "fingerprint": "1e40a9f088ae9480654a6986f955801e"
+  },
+  {
+    "id": "d6a4b301-2160-5fc6-9b70-c7c2c2cb72b4",
+    "status": "mathematically_verified",
+    "solution": "Probabilityyelloworred9/20; square81/400=.2025; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "4064e69babd81d069ad8061fb3d7266b",
+    "key_digest": "92fbb943caa877a709a5655d4f12e382",
+    "fingerprint": "ed123d4a7fd85ef8bd771deee8124865"
+  },
+  {
+    "id": "d94fea93-9820-5bb8-b44f-1198d0878eb3",
+    "status": "mathematically_verified",
+    "solution": "(2x−1)²+3(2x−1)−1=4x²+2x−3; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "93e91bc0c0ee4aad7812ce197069308b",
+    "key_digest": "2069c5288b9abbae8f1b18642c1eef3d",
+    "fingerprint": "6b3fb6e68643e888cf08f652a516d4e8"
+  },
+  {
+    "id": "dd4b2609-bf4e-5ac1-a62f-39d1583bc9db",
+    "status": "mathematically_verified",
+    "solution": "Anglesum6x−90=180=>x45;angles90,65,25;rightscalene; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "654f31ec5f3f7b96bb5f9a7da7e9a6fc",
+    "key_digest": "4462867d68d72a2b4a669c925f60838f",
+    "fingerprint": "a6199968b0952d6b865c179a5d7aff45"
+  },
+  {
+    "id": "de018bc7-6758-55b4-8d5f-f4420483fe74",
+    "status": "mathematically_verified",
+    "solution": "3(x−1.5)²−23/4 expands3x²−9x+1; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "1e4e1dbb20f4c0adaac847d5981cde0a",
+    "key_digest": "32610f33cf8bdbc8c18dd46bd04d04b4",
+    "fingerprint": "789f6d0c7e8319c4a1d8893bd1f7d4b4"
+  },
+  {
+    "id": "de469239-dc0e-582a-af18-5dbafa20fd4f",
+    "status": "mathematically_verified",
+    "solution": "hk180;h15=>k12;k+4=16; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "bcdb0e6f537cb73a6fab7d8dc345b26a",
+    "key_digest": "37d190ca83ea9d8c9ae1d3c7f87482d3",
+    "fingerprint": "fdae273aa35322dc5ddc5bb416f487dc"
+  },
+  {
+    "id": "de4e464d-7034-5328-bac7-dfeb43aed33d",
+    "status": "mathematically_verified",
+    "solution": "2x+11=(x−1)/3=>6x+33=x−1=>x−34/5;1−x39/5; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "c37c0faffb3032d5c6358adcd9877aeb",
+    "key_digest": "d89242ae1796b6b67ab804947994d867",
+    "fingerprint": "0fe6844aef894c2e264e6557878ddf28"
+  },
+  {
+    "id": "dee24327-9e38-51f4-8cf7-ecad054d5f75",
+    "status": "mathematically_verified",
+    "solution": "h(0)=−7=>g(0)=3+14=17; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "dd5929f8b81ce70bd3baa4e990873308",
+    "key_digest": "70f0a71d2bdd2a5b0dc10e91be7134a7",
+    "fingerprint": "5df790f2a223862618c4ba182e5d5529"
+  },
+  {
+    "id": "df1c3ebd-c786-55fa-9598-3f1f08da3f29",
+    "status": "mathematically_verified",
+    "solution": "Absolutegivesx2or2/3;only2>1; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "b052cec2a76e4e758396ed2eb06568c5",
+    "key_digest": "b8dfd77d4817194c79fcf8cd6f95ded1",
+    "fingerprint": "93073d1f7bd4c50821bcde5a7d73230f"
+  },
+  {
+    "id": "e0a8d85a-a1af-57f5-9448-5f3de9547a4c",
+    "status": "mathematically_verified",
+    "solution": "Acuteanglescomplementary:a+b90=>7m−1=90=>m13; a15b75 verifies; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "4074db92b3a6c095dcd4dd47952f68a2",
+    "key_digest": "2b5250ca84c0698f16e300cfc3d64f94",
+    "fingerprint": "53e857a612c3ee6f124dfd2be0887192"
+  },
+  {
+    "id": "e1699c70-957d-599e-89b5-e45f312e1130",
+    "status": "repair_and_verified",
+    "solution": "Monthlyrate0.08/12;60months;PV10000/(1+0.08/12)^60≈6712.1034; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {
+      "stem": "How much money would you need to deposit today at 8% annual interest compounded monthly to have USD 10,000 in the account after 5 years?",
+      "explanation": "Use present value P = 10,000/(1 + 0.08/12)^(12×5) ≈ USD 6,712.10.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "USD 5,989.30"
+        },
+        {
+          "key": "B",
+          "text": "USD 6,500.50"
+        },
+        {
+          "key": "C",
+          "text": "USD 6,680.13"
+        },
+        {
+          "key": "D",
+          "text": "USD 6,712.10"
+        }
+      ]
+    },
+    "q_digest": "393313c38496bc2a055aecb31a5a5c8d",
+    "key_digest": "f463593f56ea57a66eac490cd42835b5",
+    "fingerprint": "718c6b2c28a7089aaebe56262bdcb4d3"
+  },
+  {
+    "id": "e25020c9-300c-5d81-b05e-b159d4f6d945",
+    "status": "mathematically_verified",
+    "solution": "Denominator1/(x+1)−1=−x/(x+1);quotient−(x+1); A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "387c34a5e8f21de301abf930386cc8bf",
+    "key_digest": "30244f8154c31d41c5e4ea071697a196",
+    "fingerprint": "fdc63672596a376f3127b0e02650cc33"
+  },
+  {
+    "id": "e32043e0-3d31-5ad1-a0b6-7f44923acb9b",
+    "status": "mathematically_verified",
+    "solution": "7x²+14x−21=7(x−1)(x+3)=(7x−7)(x+3); B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "1a4ecba877a5f5b248a8de026728d736",
+    "key_digest": "64aafdb4f03f795c8f2eeb1417f6545d",
+    "fingerprint": "44d5f7da52c3d8f7469325f66e47b4bb"
+  },
+  {
+    "id": "e4da90d0-20bc-51ee-856c-55625f48d0b2",
+    "status": "mathematically_verified",
+    "solution": "At(−1,0),0>−1 and0≤1;otherchoicesfailonebound; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "082ac6b608f83458a5377b6261f07f8d",
+    "key_digest": "24d79084a9cc11365f961e0a7bfcb6bb",
+    "fingerprint": "d6ba719769b234f243659e238face779"
+  },
+  {
+    "id": "e59ce1ca-10eb-5cd8-b38a-b54b8c1a574f",
+    "status": "mathematically_verified",
+    "solution": "0.5a=b=>a2b; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "3d19ff45a78e98f630029ec9d4b0e06d",
+    "key_digest": "faa9fa22c41244777fcfb17eae87271e",
+    "fingerprint": "27e21387985b55e0466281d2240c7fa1"
+  },
+  {
+    "id": "e5b77d19-68eb-57b1-a6a5-fa6196f690d8",
+    "status": "mathematically_verified",
+    "solution": "Roots−2±√5;upwardquadraticpositiveoutsidewithopenendpoints; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "9376baa5a8b087a67f4090f1eb7c4a12",
+    "key_digest": "e7fd246b63190b26a22c4f003c7f9736",
+    "fingerprint": "b2f227c3fa68ef7da5a8746243f277e6"
+  },
+  {
+    "id": "ea7741c7-68cb-5f2d-a109-e3ae999291c2",
+    "status": "mathematically_verified",
+    "solution": "Decrease4/48×100≈8.333%; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "fbcc2ff12d506bd33e7eafc002626251",
+    "key_digest": "ebbc5ede071a930b60ba8535825a806a",
+    "fingerprint": "d6559bfe146e8fda8fc1071f15a73bb6"
+  },
+  {
+    "id": "ea81ac68-1a66-5fb6-89b3-e3bc58333ee4",
+    "status": "mathematically_verified",
+    "solution": "Sums2or3:ordered(1,1),(1,2),(2,1),3/36=1/12; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "3abb6b2e6c114b7b7f4214ccb346ff46",
+    "key_digest": "9ec33e314bba7e89981a9e4c49230c8c",
+    "fingerprint": "2ada5ac88df457790d5f3e6245d7b0b3"
+  },
+  {
+    "id": "ecb0917b-e523-5f1d-bcfc-df08bab797b7",
+    "status": "mathematically_verified",
+    "solution": "2x/3=1/4=>x3/8; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "deadd9aab46eaf4b17edc35de0cf36c2",
+    "key_digest": "e7df287beb9dc08c388d9101de95b1f4",
+    "fingerprint": "21a6ec8acf1b47ae44453b24292fa52d"
+  },
+  {
+    "id": "f1280694-369b-5b13-b1ca-a67c0b68a121",
+    "status": "mathematically_verified",
+    "solution": "−4x/3−1/2=2/5=>−4x/3=9/10=>x−27/40; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "5f0eda3734dd5c7cadcc59ee8c1a2001",
+    "key_digest": "1f12d1540140339f0143a5b43f7f9c11",
+    "fingerprint": "11b1de7bd0f3d80ea2da63ae14277799"
+  },
+  {
+    "id": "f20319a9-43a3-572b-9efc-46ac53d58013",
+    "status": "repair_and_verified",
+    "solution": "Allsixhittarget:5x+3(6−x)=2x+18; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {
+      "stem": "Kurt throws 6 darts, and every dart hits a target. The inner section awards 5 points and the outer section awards 3 points. If x darts hit the inner section, what is his total score?"
+    },
+    "q_digest": "b2aa3760741ab967e3ab8254dfbd19f9",
+    "key_digest": "d3b9417e6a32732927897e5ef8822211",
+    "fingerprint": "289eadc5fb66b214cc4780f35557d205"
+  },
+  {
+    "id": "f42b2e10-4151-5135-9deb-122c7145b02f",
+    "status": "mathematically_verified",
+    "solution": "Integersn,n+2,n+4;n+3(n+4)=20=>n2;sum12; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "6f11417588c67e1f9dfbd2c48cf41363",
+    "key_digest": "4993ecff424e58f247e10b35d7015177",
+    "fingerprint": "02a607320aaa9d0183a34cfbbfa22a8d"
+  },
+  {
+    "id": "f4dbe999-6636-5862-bdc8-08eb5a4e4b9a",
+    "status": "mathematically_verified",
+    "solution": "Slope2,y2x−1;9=2p−1=>p5; B.",
+    "expected_key": "B",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "30e66b6a5a4cdd6a3470412bb26f5d67",
+    "key_digest": "882034622695218fc0a59d322d2c1e4d",
+    "fingerprint": "41dd1d3b1c69372e2226950a5fb69f84"
+  },
+  {
+    "id": "f6d59c59-f9f3-5688-bfde-6d97d373f405",
+    "status": "mathematically_verified",
+    "solution": "Sum12557;mean12557/7≈1793.857→1793.9; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "e337991c2e6850cca18a6e195aeeecef",
+    "key_digest": "a188e748a3ce5faf570b83f62494c9b9",
+    "fingerprint": "07b9fadaa093f7955575f42bfa0601fb"
+  },
+  {
+    "id": "f7a4cf7b-92c2-5880-8031-058d259b7ddf",
+    "status": "mathematically_verified",
+    "solution": "Intersection2x²=8=>x±2;atx2y15; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "3472345ea1670980ade3f4f24cfd941d",
+    "key_digest": "fe61c48793666e2791d544b61183928f",
+    "fingerprint": "0eeef0c8e84fb605195fc8e37c23c757"
+  },
+  {
+    "id": "f8ac509d-4755-5ffc-a63b-c2b64e0ae634",
+    "status": "mathematically_verified",
+    "solution": "5128³=>2x+1=3=>x1; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "55cbde4b4262405ff504d5912cd994f6",
+    "key_digest": "51d1121a906ef056838cdfac88d24195",
+    "fingerprint": "18c7708fd4cf07e16971db6a71ad9a09"
+  },
+  {
+    "id": "f8e70b2e-a92f-5b29-9296-7d03892e0b88",
+    "status": "mathematically_verified",
+    "solution": "Solve−2x+5y39,3x+4y45=>y9,x3;2x+7y69; D.",
+    "expected_key": "D",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "afe4883df82a0b06b9584b81a7c7f727",
+    "key_digest": "6729a0b8ac96dfb1c637da8b498f7ea3",
+    "fingerprint": "20f262381635530f165f7fc5f433d471"
+  },
+  {
+    "id": "fae41ea3-31ed-5cae-8b60-030c503f8fa0",
+    "status": "mathematically_verified",
+    "solution": "Fourtotal46,fivetotal59=>q13; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "6696381871d1cf7035d53ff84fa0e654",
+    "key_digest": "2bbead8be86730b51bcf4914546c09d5",
+    "fingerprint": "82ff1189a2f6c69beb277e6f37a37075"
+  },
+  {
+    "id": "fdfcb3c3-295f-5bde-a5fa-de60f4917205",
+    "status": "repair_and_verified",
+    "solution": "Forreala,b notbothzero determinant−a²−b²≠0;particularx1,y−1satisfiesboth,unique; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {
+      "stem": "Assume a and b are real constants and are not both zero. If ax + by = a − b and bx − ay = a + b then:"
+    },
+    "q_digest": "d11d8f4cdac992ad82f813dcf80e335a",
+    "key_digest": "4958b67c696fed5b9ad25c266b5ecc86",
+    "fingerprint": "c4827fd25ba4fcde5441cbe57f926eef"
+  },
+  {
+    "id": "fe22ccc7-559c-5c50-b069-7f60ae8cc27f",
+    "status": "repair_and_verified",
+    "solution": "x/2+3<2x+3=>x>0;onlylisted1; A.",
+    "expected_key": "A",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {
+      "stem": "Half a number x plus 3 is less than twice x plus 3: x/2 + 3 < 2x + 3. Which listed value could be x?"
+    },
+    "q_digest": "62dbcffab911857d615321a0e95898e6",
+    "key_digest": "dd8ffd32d35a92a1fc96cb73776a8ec3",
+    "fingerprint": "cc0bf81492e869e486db2e67ba75ae84"
+  },
+  {
+    "id": "ffd11fe2-ac61-5a51-bb1a-58f62841184e",
+    "status": "mathematically_verified",
+    "solution": "(34+d)/(102+d)=3/7=>238+7d306+3d=>d17; C.",
+    "expected_key": "C",
+    "source_image_checked": false,
+    "scope": "Independent current-text solution; certified domain and wording repairs explicit. No external diagram used.",
+    "repair": {},
+    "q_digest": "eb4ef1fd8ba05e12ba1d64d89bb63575",
+    "key_digest": "6edaaf4e10630d1f19a61f58d2bd6e53",
+    "fingerprint": "70d5fe9b22fe423fff78c9bf92fd4dc7"
+  }
+]

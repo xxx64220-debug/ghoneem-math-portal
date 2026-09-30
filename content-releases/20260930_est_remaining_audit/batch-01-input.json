@@ -1,0 +1,998 @@
+[
+  {
+    "id": "00b95126-e20b-5874-9cdf-5e521e1f0f04",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Which of the following is equivalent to (4m√(3a) − 2√(27am²) + m√(12a)) / √(243a³) for all positive values of a and m?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2m/9a²"
+      },
+      {
+        "key": "B",
+        "text": "m/9a²"
+      },
+      {
+        "key": "C",
+        "text": "0"
+      },
+      {
+        "key": "D",
+        "text": "−m/9a²"
+      }
+    ],
+    "correct": "C",
+    "explanation": "The numerator simplifies to 4 − 6 + 2 = 0, while the denominator is nonzero. Therefore the fraction is 0.",
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Radicals (simplifying)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 058",
+      "source_page": 61,
+      "lesson_subtopic": "Simplifying radicals",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "lesson_original_topic": "AAF · Exponents and radicals",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "016c3282-6338-5f41-adb8-bf518964f869",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "The graph shows observed values and fitted curves. Year 2011 is x = 0. Village B’s fitted line is y = 194.3x + 2,020.4. What is the closest difference between the actual number of boys in village B and the number which can be predicted from the line of best fit in 2014?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "13"
+      },
+      {
+        "key": "B",
+        "text": "26"
+      },
+      {
+        "key": "C",
+        "text": "53"
+      },
+      {
+        "key": "D",
+        "text": "100"
+      }
+    ],
+    "correct": "C",
+    "explanation": "In 2014, x = 3. The prediction is 194.3(3) + 2,020.4 = 2,603.3 boys. The observed value is about 2,550, a difference of 53.3, closest to 53.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Scatterplots & lines of best fit (prediction error)",
+      "image_alt": "Original diagram for DAP 068",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 068",
+      "source_page": 44,
+      "lesson_subtopic": "Residuals: observed versus predicted",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "02356ac9-1bbe-5edb-bfdb-e944a15afb12",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Which of the following ordered pairs (x, y) satisfies the inequality 2x + 3y > 5?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(−2, 1)"
+      },
+      {
+        "key": "B",
+        "text": "(−1, 2)"
+      },
+      {
+        "key": "C",
+        "text": "(1, 1)"
+      },
+      {
+        "key": "D",
+        "text": "(1, 4)"
+      }
+    ],
+    "correct": "D",
+    "explanation": "For (1, 4), 2x + 3y = 14 > 5. The other listed points give values at most 5.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear inequalities",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 039",
+      "source_page": 12,
+      "lesson_subtopic": "Solving and testing inequalities",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "023c95b9-3fb8-52f4-8240-fc8aef8da2bd",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "EST I Math — March 2026 · Question 48. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "correct": "C",
+    "explanation": "The distance is √[(3 − 1)² + (−2 − (−1))²] = √(4 + 1) = √5, so k = 5.",
+    "assets": {
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 48, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 13,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Distance formula",
+      "source_question": 48,
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "Coordinate geometry: distance",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "034f4fb8-74f6-5e61-974d-78bb2b5b0da5",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Maria has 350 pop and rock songs in the ratio 3:11. How many are rock songs?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "75"
+      },
+      {
+        "key": "B",
+        "text": "125"
+      },
+      {
+        "key": "C",
+        "text": "175"
+      },
+      {
+        "key": "D",
+        "text": "275"
+      }
+    ],
+    "correct": "D",
+    "explanation": "The 14 ratio parts total 350, so one part is 25. Rock songs = 11 × 25 = 275, with 75 pop songs; 75:275 simplifies to 3:11.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Ratios and rates",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "PSD 011",
+      "source_page": 153,
+      "lesson_subtopic": "Part-to-whole ratios and unit rates",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "03601fa8-c9c9-5638-8897-8bbb86669445",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Amira registered in an online magazine for a monthly fee of $15. However, to read premium articles, she has to pay an extra charge of $0.3 per article. Which of the following represents the total amount Amira is going to pay per month if she reads x premium articles?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.3x + 15"
+      },
+      {
+        "key": "B",
+        "text": "0.3x + 15 × 30"
+      },
+      {
+        "key": "C",
+        "text": "15x + 0.3"
+      },
+      {
+        "key": "D",
+        "text": "15 × 30x + 0.3"
+      }
+    ],
+    "correct": "A",
+    "explanation": "A fixed charge of $15 plus $0.30 per unit x gives C = 15 + 0.30x.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Modeling with linear expressions",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 054",
+      "source_page": 15,
+      "lesson_subtopic": "Interpreting slope and intercept",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "0398f66f-3326-5d60-8a9d-318dd3047685",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Rima is a saleswoman in a TV store. Her salary is $1,300 per month. She gets an additional $10 for every TV she sells if the quantity sold is less than or equal to 10 TVs per month. If she sells more than 10 TVs in one month, she will get an extra bonus of 10% of her initial salary. Last November, she sold 12 TVs. What was her salary at the end of the month?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1,420"
+      },
+      {
+        "key": "B",
+        "text": "1,430"
+      },
+      {
+        "key": "C",
+        "text": "1,450"
+      },
+      {
+        "key": "D",
+        "text": "1,550"
+      }
+    ],
+    "correct": "B",
+    "explanation": "For more than 10 TVs the stated rule gives a 10% bonus on the $1,300 base salary: 1,300 × 1.10 = $1,430.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Percentages & money (word problem)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 042",
+      "source_page": 34,
+      "lesson_subtopic": "Piecewise salary and bonus rules",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "04b9f396-e79e-5cb8-b2ce-a5f07ad754e4",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "What is the product of the solutions of the equation x² − 3x = −2?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−2"
+      },
+      {
+        "key": "B",
+        "text": "−1"
+      },
+      {
+        "key": "C",
+        "text": "0"
+      },
+      {
+        "key": "D",
+        "text": "2"
+      }
+    ],
+    "correct": "D",
+    "explanation": "For x² − 3x + 2, the product of the roots is the constant term divided by the leading coefficient: 2.",
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratic equations (product of solutions)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 039",
+      "source_page": 56,
+      "lesson_subtopic": "Sum and product of roots",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "04be0054-500f-5350-b592-51e254d5e781",
+    "topic": "Systems of equations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Amina went to the flower shop and bought 2 roses and 5 daisies for $6. From the same shop, Lara bought 4 roses and 2 daisies for $4. How much should Ahmad expect to pay for 2 roses and 2 daisies?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$1.0"
+      },
+      {
+        "key": "B",
+        "text": "$1.5"
+      },
+      {
+        "key": "C",
+        "text": "$2.0"
+      },
+      {
+        "key": "D",
+        "text": "$3.0"
+      }
+    ],
+    "correct": "D",
+    "explanation": "Solving 2r + 5d = 6 and 4r + 2d = 4 gives d = 1 and r = 1/2. Therefore 2r + 2d = $3.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Systems of equations (word problem)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 070",
+      "source_page": 18,
+      "lesson_subtopic": "Two-variable word problems",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Systems of equations",
+      "lesson_original_topic": "FA · Systems of equations",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "0548f714-8291-5f58-8376-5cb635981f47",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "On a math test of 30 questions, Mona got 75% of the 12 geometry questions correct, 60% of the 10 algebra questions correct, and 25% of the 8 trigonometry questions wrong. What percentage of all the questions did Mona get correct?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "16%"
+      },
+      {
+        "key": "B",
+        "text": "21%"
+      },
+      {
+        "key": "C",
+        "text": "70%"
+      },
+      {
+        "key": "D",
+        "text": "90%"
+      }
+    ],
+    "correct": "C",
+    "explanation": "Correct answers are 0.75(12) + 0.60(10) + 0.75(8) = 9 + 6 + 6 = 21. Therefore 21/30 = 70%.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Percentages (word problem)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 044",
+      "source_page": 34,
+      "lesson_subtopic": "Multistep percentages",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "0577ad03-033b-5ec9-a541-55a7cdf4d93c",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "For fixed charges and permittivity, F = q₁q₂/(4πε₀r²). If the separation is increased from r to 3r, what is the new force F₁ in terms of F?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "F₁ = 3F"
+      },
+      {
+        "key": "B",
+        "text": "F₁ = F/3"
+      },
+      {
+        "key": "C",
+        "text": "F₁ = 9F"
+      },
+      {
+        "key": "D",
+        "text": "F₁ = F/9"
+      }
+    ],
+    "correct": "D",
+    "explanation": "The denominator is proportional to r². Replacing r by 3r multiplies it by 9, so F₁/F = r²/(3r)² = 1/9.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Variation",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "PSD 001",
+      "source_page": 145,
+      "lesson_subtopic": "Inverse-square variation",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "058c6b55-fed1-5016-884a-9a523163c4d9",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "The box plot represents the ages of actors in a TV series. What is the interquartile range of the data collected?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "10"
+      },
+      {
+        "key": "B",
+        "text": "14"
+      },
+      {
+        "key": "C",
+        "text": "18"
+      },
+      {
+        "key": "D",
+        "text": "20"
+      }
+    ],
+    "correct": "B",
+    "explanation": "The interquartile range is Q3 − Q1 = 20 − 6 = 14.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Interquartile range",
+      "image_alt": "Original diagram for DAP 022",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 022",
+      "source_page": 28,
+      "lesson_subtopic": "Quartiles and interquartile range",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Statistics",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "059baedd-7054-522f-addb-6262697310dc",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "PSD 222 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "correct": "C",
+    "explanation": "108 good books at 40 plus 12 defective books at 20 gives 4320+240=4560.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Percentages and interest",
+      "image_alt": "Original question PSD 222, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 222",
+      "source_page": 304,
+      "lesson_subtopic": "Revenue from differently priced groups",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 222",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_image_sha256": "6f780a0d8780fef53ab0751d6d963eef48634c123a8c3e5d5480874d18c96fdd",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "06425acd-66b1-52cc-ae20-8f25158f1735",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "The difference between twice a number and two is three times this number. Which of the following represents the equation that the number verifies?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2 − 2x = 3"
+      },
+      {
+        "key": "B",
+        "text": "2x − 2 = 3(x − 2)"
+      },
+      {
+        "key": "C",
+        "text": "2x − 2 = 3x"
+      },
+      {
+        "key": "D",
+        "text": "2x − 3x = 3 + x"
+      }
+    ],
+    "correct": "C",
+    "explanation": "Twice the number decreased by 2 is 2x − 2. Equating this to three times the number gives 2x − 2 = 3x.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Translating words into equations",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 077",
+      "source_page": 19,
+      "lesson_subtopic": "Building a linear equation",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "06d16da3-f0d7-55b9-80f6-00dcd03bc23a",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "PAM 019 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "correct": "A",
+    "explanation": "The visible increasing graph crosses the y-axis at 1.5, so f(x)=1.5 occurs atx=0.",
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Functions",
+      "image_alt": "Original question PAM 019, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PAM 019",
+      "source_page": 318,
+      "lesson_subtopic": "Reading function values from graphs",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PAM 019",
+      "curriculum_lesson": "Functions and transformations",
+      "source_image_sha256": "63c2b467e92246462504283e14869ea19c023500d4d3b161a73618188c28a853",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "07153eab-b798-435f-a999-7c224e73d396",
+    "topic": "Functions and transformations",
+    "difficulty": "hard",
+    "type": "mcq",
+    "stem": "Which of the following represents the graph of $f(x)=\\dfrac{2}{2x+4}+1$?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "A"
+      },
+      {
+        "key": "B",
+        "text": "B"
+      },
+      {
+        "key": "C",
+        "text": "C"
+      },
+      {
+        "key": "D",
+        "text": "D"
+      }
+    ],
+    "correct": "D",
+    "explanation": "Rewrite as $f(x)=\\frac{1}{x+2}+1$: the vertical asymptote is $x=-2$ and the horizontal asymptote is $y=1$. Only one option has both. Measuring the printed graphs against their gridlines gives A: asymptotes at $x=-3.1$ and $y=1.9$; B: $x=-1.9$ and $y=-1.7$; C: $x=-1.9$ and $y=-0.9$; D: $x=-1.9$ and $y=1.0$. Choice D is the match — the right branch falls from $+\\infty$ toward $y=1$ from above, and the left branch approaches $y=1$ from below before dropping to $-\\infty$ at the asymptote.",
+    "assets": {
+      "code": "M025",
+      "exam": "ESTI-HS Math",
+      "lesson": "Rational Expressions and Functions",
+      "source": "EST Math — May 2026",
+      "session": "May 2026",
+      "lesson_id": "L05",
+      "figure_type": "png",
+      "figure_count": 1,
+      "figure_source": "cut from the ESTI-HS Math May 2026 PDF at 300 dpi",
+      "figure_caption": "The four candidate graphs, A through D.",
+      "lesson_subtopic": "Vertical and horizontal asymptotes",
+      "question_number": 25,
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "Rational function graphs",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "0750b96d-174c-5957-8049-7b8f33312460",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "What is the resulting coefficient of x when −2x + 3 is multiplied by −3x − 2?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−9"
+      },
+      {
+        "key": "B",
+        "text": "−5"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "6"
+      }
+    ],
+    "correct": "B",
+    "explanation": "The x terms in (−2x + 3)(−3x − 2) are 4x − 9x = −5x, so the coefficient is −5.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Polynomial multiplication",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 059",
+      "source_page": 16,
+      "lesson_subtopic": "Expanding and comparing coefficients",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "07779610-2dd2-5d50-b2e7-7f8b4b30a7a7",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Questions 20 to 22 refer to a graph of Adam and his fiancée's combined monthly salaries (in thousands of dollars) during 2019: Jan 2, Feb 3, Mar 2, Apr 8, May 6, Jun 4, Jul 2, Aug 1, Sep 11, Oct 9, Nov 3, Dec 6. — During September, Adam worked 15 hours per day, while his fiancée worked 11 hours per day. Knowing that each one of them took 4 days off that month, and his fiancée was getting paid $10.7 per hour, how much was Adam approximately getting paid per hour?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$16.6"
+      },
+      {
+        "key": "B",
+        "text": "$17.8"
+      },
+      {
+        "key": "C",
+        "text": "$20.4"
+      },
+      {
+        "key": "D",
+        "text": "$36.1"
+      }
+    ],
+    "correct": "C",
+    "explanation": "Each worked 26 days. His fiancée earned 26 × 11 × 10.7 = $3,060.20. Adam's hourly rate was (11,000 − 3,060.20)/(26 × 15) ≈ $20.36, closest to $20.4.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Data interpretation (graph, rates)",
+      "image_alt": "Original diagram for DAP 013",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 013",
+      "source_page": 25,
+      "lesson_subtopic": "Multistep work and pay rates",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "0925bb94-9e4d-50c3-b5fb-c8ade4ff1386",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "A survey covers 80 families in each city. Number of cars: City A frequency, City B frequency — 1: 25, 20; 2: 31, 19; 3: 14, 23; 4: 8, 12; 5: 2, 6. Which measure of center is unchanged in both cities?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Mean"
+      },
+      {
+        "key": "B",
+        "text": "Median"
+      },
+      {
+        "key": "C",
+        "text": "Mode"
+      },
+      {
+        "key": "D",
+        "text": "None of the above"
+      }
+    ],
+    "correct": "D",
+    "explanation": "City A has mean 2.1, median 2, and mode 2. City B has mean 2.5625, median 3, and mode 3. None of the three measures is unchanged.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Measures of center (mean/median/mode)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 033",
+      "source_page": 32,
+      "lesson_subtopic": "Comparing mean, median and mode",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Statistics",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "0b3427bf-8344-55d2-8ab9-32cf406306ed",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "PSD 077 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Two machines pave 1200 m/hour. Time for 300 m is 1/4 hour=15 minutes.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Ratios, rates and variation",
+      "image_alt": "Original question PSD 077, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 077",
+      "source_page": 206,
+      "lesson_subtopic": "Combined work rates",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 077",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_image_sha256": "9997bd99741c1b262702ee7dce4e7633eafa29cb27a763c78b09fa7eddc412f2",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "0cbfc70e-50ea-5fdc-9a2d-f8119fc9b5cb",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Which of the inequalities below represents the shaded region in the figure?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−y ≤ −0.5x − 3"
+      },
+      {
+        "key": "B",
+        "text": "−y ≤ −0.5x + 3"
+      },
+      {
+        "key": "C",
+        "text": "−y ≤ 0.5x + 3"
+      },
+      {
+        "key": "D",
+        "text": "y ≥ −0.5x − 3"
+      }
+    ],
+    "correct": "B",
+    "explanation": "The solid boundary has slope 1/2 and y-intercept −3. Shading above it means y ≥ 0.5x − 3, or −y ≤ −0.5x + 3.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Graphing linear inequalities",
+      "image_alt": "Original diagram for FA 012",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 012",
+      "source_page": 6,
+      "lesson_subtopic": "Regions and systems of inequalities",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "0d1610df-2ffc-5a6e-a793-671b0513f37f",
+    "topic": "Systems of equations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Amar and Raya went together to the bookstore. Amar bought 2 pens and 1 notebook and paid $2.75. Raya bought 3 pens and 2 notebooks and paid $4.75. What is the price of the notebook in this bookstore?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$0.75"
+      },
+      {
+        "key": "B",
+        "text": "$1.0"
+      },
+      {
+        "key": "C",
+        "text": "$1.25"
+      },
+      {
+        "key": "D",
+        "text": "$1.50"
+      }
+    ],
+    "correct": "C",
+    "explanation": "Solving the two purchase equations gives a pen price of $0.75 and a notebook price of $1.25; substitution reproduces both totals.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Systems of linear equations (word problems)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 075",
+      "source_page": 18,
+      "lesson_subtopic": "Two-variable word problems",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Systems of equations",
+      "lesson_original_topic": "FA · Systems of equations",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "0eb213c2-a947-58c2-b9c1-b7c7c2bebe77",
+    "topic": "Trigonometry",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "REF is a right triangle at R with m∠REF = 45°. If RE = 4.4 cm, what is the length of EF to the nearest cm?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "6"
+      }
+    ],
+    "correct": "D",
+    "explanation": "For a square of side 4.4, the diagonal is 4.4√2 ≈ 6.22, which rounds to 6.",
+    "assets": {
+      "domain": "GT",
+      "subtopic": "45-45-90 triangles",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 001",
+      "source_page": 65,
+      "lesson_subtopic": "Special right triangles",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Trigonometry",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "0f40726b-1397-5461-b7e0-7980f4b40bd9",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "What is the abscissa of the vertex of the function f(x) = 3x² − 18x + 4?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−4/3"
+      },
+      {
+        "key": "B",
+        "text": "3"
+      },
+      {
+        "key": "C",
+        "text": "4"
+      },
+      {
+        "key": "D",
+        "text": "6"
+      }
+    ],
+    "correct": "B",
+    "explanation": "For 3x² − 18x + 4, the vertex x-coordinate is −b/(2a) = 18/6 = 3.",
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratic functions (vertex)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 053",
+      "source_page": 60,
+      "lesson_subtopic": "Axis of symmetry",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    }
+  },
+  {
+    "id": "0f4f82f5-f03a-5549-acf2-0dd61fa9faf5",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Questions 4 and 5 refer to the equation g = 12 − m/20. Ibrahim fills up the gas tank of his car before going on a trip. The equation models the number of gallons of gas g remaining in Ibrahim's car after he has driven m kilometers. — How many gallons of gas can Ibrahim's tank hold?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "20.0"
+      },
+      {
+        "key": "B",
+        "text": "12.0"
+      },
+      {
+        "key": "C",
+        "text": "11.95"
+      },
+      {
+        "key": "D",
+        "text": "8.0"
+      }
+    ],
+    "correct": "B",
+    "explanation": "In g = 12 − m/20, the initial amount is g(0) = 12 gallons.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Interpreting linear models",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 014",
+      "source_page": 7,
+      "lesson_subtopic": "Interpreting slope and intercept",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    }
+  }
+]

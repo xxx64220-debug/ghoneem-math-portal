@@ -1,0 +1,4163 @@
+[
+  {
+    "id": "2c28825d-4b7a-574d-8e85-b423c4eb517d",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "Amir’s walking distances (m) in April 2021: Apr 1: 1,678; Apr 2: 2,091; Apr 3: 1,245; Apr 4: 1,566; Apr 5: 2,100; Apr 6: 1,989; Apr 7: 1,888. If on Thursday, April 8th, Amir walked the same distance he did on the second day of April but with an addition of 20%, then what is the distance he walked?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "4,182.0 m"
+      },
+      {
+        "key": "B",
+        "text": "2,509.2 m"
+      },
+      {
+        "key": "C",
+        "text": "2,420.6 m"
+      },
+      {
+        "key": "D",
+        "text": "2,007.6 m"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Percentage increase",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 040",
+      "source_page": 33,
+      "lesson_subtopic": "Percent increase and decrease",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "An additional 20% gives 2,091 × 1.20 = 2,509.2 m.",
+    "q_digest": "8c89d720c0fdc7f4674a97e488f4b059",
+    "key_digest": "d559d54033595c7684e606b3562048aa",
+    "fingerprint": "63a59218da70b2de24a4bf0fd2b765e1"
+  },
+  {
+    "id": "2d42335c-1f88-5e8e-aa0b-b8af3ee8d60a",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "The inverse function of y = 400x is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "400x"
+      },
+      {
+        "key": "B",
+        "text": "x/400"
+      },
+      {
+        "key": "C",
+        "text": "400/x"
+      },
+      {
+        "key": "D",
+        "text": "1/(400x)"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Inverse functions",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 027",
+      "source_page": 54,
+      "lesson_subtopic": "Finding and evaluating inverses",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The inverse reverses multiplication by 400, so f⁻¹(x) = x/400.",
+    "q_digest": "efcd8d3fb0046d2c0a317c0573304b02",
+    "key_digest": "ce761a39df03889af46f77649f4b58b9",
+    "fingerprint": "6ca2a872d30783d5c176ecc0171b1157"
+  },
+  {
+    "id": "2debab8b-ac34-5c80-aad0-685873b65167",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "stem": "In 2011, the population of Cairo was 9.12 million. Considering the population were to increase by 1% each year, what could be the approximate population in Cairo in 2022?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "10.074154 million"
+      },
+      {
+        "key": "B",
+        "text": "10.123200 million"
+      },
+      {
+        "key": "C",
+        "text": "10.174895 million"
+      },
+      {
+        "key": "D",
+        "text": "10.276645 million"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Exponential growth (population)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 012",
+      "source_page": 52,
+      "lesson_subtopic": "Compound growth",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "lesson_original_topic": "AAF · Exponents and radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The exponential model gives 9.12(1.01)^11 ≈ 10.1749, matching the listed approximation.",
+    "q_digest": "34a821e57d2b8e9d2c9bb0f5d82fc9a9",
+    "key_digest": "bc8c38b5f2f2e8557aec3cb336aa22b2",
+    "fingerprint": "3bb019eba92e3b1d34a369b9f758fff5"
+  },
+  {
+    "id": "2eb80a28-0c15-5993-9a21-f5bec04e812a",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "In a school competition, students have to prepare sketches of x minutes. The minimum duration is 2 minutes and the maximum duration is 3 minutes. Which inequality represents the given situation?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "|x − 3| < 2"
+      },
+      {
+        "key": "B",
+        "text": "|x − 2| < 3"
+      },
+      {
+        "key": "C",
+        "text": "|x − 2.5| ≤ 0.5"
+      },
+      {
+        "key": "D",
+        "text": "|x − 0.5| ≤ 2.5"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Absolute value inequalities (word problem)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 006",
+      "source_page": 4,
+      "lesson_subtopic": "Interpreting absolute value inequalities",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Absolute value",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The interval [2, 3] has midpoint 2.5 and radius 0.5, so |x − 2.5| ≤ 0.5.",
+    "q_digest": "c9f5c3ad68286e7541a2fcc407d6f972",
+    "key_digest": "a2eb4f0e4cc2a45bede089108008f267",
+    "fingerprint": "c532d4e67efae2049bb15e8c7f49ee7e"
+  },
+  {
+    "id": "321e4b0a-eb4c-5804-8f5d-bacbf9ee2614",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "What is the product of the solutions of 2x⁴ = 4x² + 6?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3i"
+      },
+      {
+        "key": "B",
+        "text": "0"
+      },
+      {
+        "key": "C",
+        "text": "−3i"
+      },
+      {
+        "key": "D",
+        "text": "−3"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Higher-order equations (with complex solutions)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 022",
+      "source_page": 54,
+      "lesson_subtopic": "Product of polynomial roots",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Complex numbers",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "The product of all four roots of 2x⁴ − 4x² − 6 is the constant term divided by the leading coefficient: −6/2 = −3.",
+    "q_digest": "a5aed399440ae8c58ea43c781f66aa02",
+    "key_digest": "f3d38dd59ffb2346d8862e1a7a532b18",
+    "fingerprint": "4d11051b4a10c4dc3d65f1179986ea7c"
+  },
+  {
+    "id": "32f4ff6d-9d06-54f4-8e25-43f3223ebf96",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "What is the slope m of the line passing through points A(−8, 11) and B(3, 5)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "m = −6/11"
+      },
+      {
+        "key": "B",
+        "text": "m = −3/11"
+      },
+      {
+        "key": "C",
+        "text": "m = 3/11"
+      },
+      {
+        "key": "D",
+        "text": "m = 6/11"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Slope of a line",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 063",
+      "source_page": 17,
+      "lesson_subtopic": "Slope from equations, points and graphs",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "The slope is (5 − 11)/(3 − (−8)) = −6/11.",
+    "q_digest": "a87ea39a2a9c7f4724535aac74b4f971",
+    "key_digest": "b79d685409ce222ee10e25cfcf1e8f2e",
+    "fingerprint": "502da04ccf8d45ddc6e941250d596065"
+  },
+  {
+    "id": "33018364-ea64-5680-8039-fc2d147c7b47",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "If (a, b) lies in the solution set of y ≤ −10x + 2000 and y ≤ 5x, what is the maximum possible b?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "400/3"
+      },
+      {
+        "key": "B",
+        "text": "2000/3"
+      },
+      {
+        "key": "C",
+        "text": "400"
+      },
+      {
+        "key": "D",
+        "text": "550"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Systems of inequalities",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "HOA 044",
+      "source_page": 31,
+      "lesson_subtopic": "Optimising under two constraints",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The greatest feasible height is at the intersection: 5x = −10x + 2000, so x = 400/3 and y = 2000/3. Left of this point 5x is smaller; right of it −10x + 2000 is smaller.",
+    "q_digest": "1b043406f3fe00fc492afd123ce4712c",
+    "key_digest": "ac38e84b17f21982044b171690eeea91",
+    "fingerprint": "f841d329b11341fc39b6f034ec5ece6d"
+  },
+  {
+    "id": "33619ec1-a789-51f3-b422-5a5b862f07b7",
+    "type": "mcq",
+    "topic": "Area and perimeter",
+    "difficulty": "medium",
+    "stem": "ABCD is a parallelogram with A(1, 2), B(4, 4), C(6, 1), and D(3, −1). What are the coordinates of its center E?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(1.5, 3.5)"
+      },
+      {
+        "key": "B",
+        "text": "(4, 1.5)"
+      },
+      {
+        "key": "C",
+        "text": "(1.5, 4)"
+      },
+      {
+        "key": "D",
+        "text": "(3.5, 1.5)"
+      }
+    ],
+    "assets": {
+      "domain": "GT",
+      "subtopic": "Coordinate geometry",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GTC 012",
+      "source_page": 375,
+      "lesson_subtopic": "Midpoint and center of a parallelogram",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Area and perimeter",
+      "lesson_original_topic": "GT · Coordinate geometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "The center is the midpoint of AC: ((1 + 6)/2, (2 + 1)/2) = (3.5, 1.5). The midpoint of BD gives the same result.",
+    "q_digest": "79b86f5c408fa0331946475fba38f4d9",
+    "key_digest": "dae17959b1a33862f20765fb8cb131f7",
+    "fingerprint": "11ead1c29fed97ff1f3e33e4cdf9d25a"
+  },
+  {
+    "id": "338022f0-909a-52f9-86aa-271e2719bad9",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "Average closing gold price ($): 2020: 1,771.90; 2019: 1,393.34; 2018: 1,268.93; 2017: 1,251.92; 2016: 1,158.86; 2015: 1,266.06; 2014: 1,409.51; 2013: 1,668.86. Supposing that the relation is a linear function, what is the rate of change between the years 2013 and 2019?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−45.92"
+      },
+      {
+        "key": "B",
+        "text": "−39.36"
+      },
+      {
+        "key": "C",
+        "text": "39.36"
+      },
+      {
+        "key": "D",
+        "text": "45.92"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Rate of change from a table",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 056",
+      "source_page": 39,
+      "lesson_subtopic": "Average rate of change",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "The rate of change is (1,393.34 − 1,668.86)/(2019 − 2013) = −275.52/6 = −45.92 per year.",
+    "q_digest": "52dc31195c377c33a08a6c8daf15d793",
+    "key_digest": "f057aa873e237b83391c2c3d81ce2735",
+    "fingerprint": "e7925a1906e2fe54cb8f8f9e8203f55a"
+  },
+  {
+    "id": "34b943f1-8655-5814-a258-8c35ed73ffbf",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "A secretary types 1.75 words per second. How long will she actively type a 16-page document averaging 525 words per page?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1 hour, 10 minutes"
+      },
+      {
+        "key": "B",
+        "text": "1 hour, 20 minutes"
+      },
+      {
+        "key": "C",
+        "text": "2 hours, 5 minutes"
+      },
+      {
+        "key": "D",
+        "text": "4 hours, 5 minutes"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Ratios and rates",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "PSD 015",
+      "source_page": 156,
+      "lesson_subtopic": "Work rate and time conversion",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The document has 16 × 525 = 8,400 words. Time = 8,400/1.75 = 4,800 seconds = 80 minutes. Check: 4,800 × 1.75 = 8,400.",
+    "q_digest": "a04a7fc940f79371dad64a112a84a251",
+    "key_digest": "14a8974c8640c4898186faf7f1902e39",
+    "fingerprint": "c923848bd50669b79e3cfacb8958865e"
+  },
+  {
+    "id": "3788bb20-7efc-537c-9eda-fe3df4598bb8",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "stem": "If A = 2√h/5 and B = A²/√h, then the simplified form of B is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "B = 4/(25h)"
+      },
+      {
+        "key": "B",
+        "text": "B = (4/25)√h"
+      },
+      {
+        "key": "C",
+        "text": "B = (4/25)h"
+      },
+      {
+        "key": "D",
+        "text": "B = (4/25)h√h"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Radicals and rational exponents",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 059",
+      "source_page": 61,
+      "lesson_subtopic": "Simplifying radicals",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "lesson_original_topic": "AAF · Exponents and radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Rearranging and taking the appropriate square root gives B = 4√h/25.",
+    "q_digest": "8f87b724ccfab639ab42c1ee908309cd",
+    "key_digest": "4248b4a51dbfd5367aaebc3afc97c8a0",
+    "fingerprint": "db1e92ac902d1a55158ed56017716875"
+  },
+  {
+    "id": "37eceae7-8a25-5306-a282-0173d3857637",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "Amir’s walking distances (m) in April 2021: Apr 1: 1,678; Apr 2: 2,091; Apr 3: 1,245; Apr 4: 1,566; Apr 5: 2,100; Apr 6: 1,989; Apr 7: 1,888. Approximately, by what percent did Amir increase the distance he walked from April 3rd to April 5th?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "34%"
+      },
+      {
+        "key": "B",
+        "text": "60%"
+      },
+      {
+        "key": "C",
+        "text": "67%"
+      },
+      {
+        "key": "D",
+        "text": "69%"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Percentage change",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 038",
+      "source_page": 33,
+      "lesson_subtopic": "Percentages from charts and tables",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "The increase is 2,100 − 1,245 = 855 m. As a percentage of 1,245, this is about 68.67%, or 69%.",
+    "q_digest": "48d47fb564439427b61b37333c721811",
+    "key_digest": "961bc74756e8f0e13bf712fe7c7c7f10",
+    "fingerprint": "e285727d5cf1418f8f7f2202d5abbdf3"
+  },
+  {
+    "id": "381f8888-43e6-55b5-aeca-7b7d8ca54d1e",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "What is the coefficient of x³ when (2/5)x³ + 2x² − 3 is multiplied by 5x + 2/5 ?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "4/25"
+      },
+      {
+        "key": "B",
+        "text": "10"
+      },
+      {
+        "key": "C",
+        "text": "254/25"
+      },
+      {
+        "key": "D",
+        "text": "54/5"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Polynomial multiplication",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 035",
+      "source_page": 56,
+      "lesson_subtopic": "Coefficients in products",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Polynomials",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Only two products contribute to x³: (2/5)x³ × (2/5) and 2x² × 5x. Their coefficients sum to 4/25 + 10 = 254/25.",
+    "q_digest": "721efd34c4795e3d70ac40df8691730c",
+    "key_digest": "b31c709293d896958f8144b8249cb3a5",
+    "fingerprint": "ce1ef8a41bc6449a5389a686901525fb"
+  },
+  {
+    "id": "3a646cc0-6cd5-53bf-8ef0-dc45c206e2a8",
+    "type": "mcq",
+    "topic": "Algebraic expressions and equations",
+    "difficulty": "medium",
+    "stem": "For a spring-mass system, T = 2π√(m/k), where T is the period, m the mass, and k the spring constant (all positive). Without considering the units, what is the value of k if T = 4π and m = 5?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.75"
+      },
+      {
+        "key": "B",
+        "text": "1.0"
+      },
+      {
+        "key": "C",
+        "text": "1.25"
+      },
+      {
+        "key": "D",
+        "text": "1.50"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Evaluating formulas",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 011",
+      "source_page": 5,
+      "lesson_subtopic": "Substitution in a radical formula",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Algebraic expressions and equations",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "From T = 2π√(m/k), k = 4π²m/T². Substitution gives k = 20π²/(16π²) = 1.25.",
+    "q_digest": "2c7561c2f2337bf4d3995e59566894ad",
+    "key_digest": "7db73ef2ee919387fcae674f1962b3d8",
+    "fingerprint": "b2d09b97ad84aee3f90a2454be9fb9cc"
+  },
+  {
+    "id": "3b342c1c-026c-52ee-b1ae-2bdbeb40f88b",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "Questions 39 and 40: A survey is done on 80 families from city A and on 80 families from city B, separated into groups based on the number of cars they own. Table (Number of cars: City A, City B): 1: 25, 20; 2: 31, 19; 3: 14, 23; 4: 8, 12; 5: 2, 6. — What is the average number of cars owned by citizens in both cities A and B combined?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Between 1 and 2"
+      },
+      {
+        "key": "B",
+        "text": "Between 2 and 3"
+      },
+      {
+        "key": "C",
+        "text": "Between 3 and 4"
+      },
+      {
+        "key": "D",
+        "text": "Between 4 and 5"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Measures of center (average from table)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 032",
+      "source_page": 32,
+      "lesson_subtopic": "Weighted mean",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Statistics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The combined weighted car total is 168 + 205 = 373 for 160 families. The mean is 373/160 = 2.33125, between 2 and 3.",
+    "q_digest": "78fac35d41189eed80d72a6d87912d80",
+    "key_digest": "440f18850955cdececcea3e75932c1b6",
+    "fingerprint": "3a3bddb963a20b5640fd87e470d7c2ab"
+  },
+  {
+    "id": "3f57bee0-936f-5399-a83b-ed0fef7b24b6",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "A scatterplot shows a strong positive correlation between A on the x-axis and B on the y-axis. Which statement is justified?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "The rise in A caused the rise in B."
+      },
+      {
+        "key": "B",
+        "text": "The rise in B caused the rise in A."
+      },
+      {
+        "key": "C",
+        "text": "A and B are correlated, but causation is unknown."
+      },
+      {
+        "key": "D",
+        "text": "A and B rise proportionally."
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Data interpretation",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "PSD 002",
+      "source_page": 146,
+      "lesson_subtopic": "Correlation versus causation",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Correlation describes an association. It does not establish either direction of causation, and a strong positive trend need not be direct proportionality through the origin.",
+    "q_digest": "bdcd17a1b7f867349fc697c23007fa93",
+    "key_digest": "b23f3e7560f10ec8f2f8a800ac4e4652",
+    "fingerprint": "0bd7d2fda44627473ee4edea7dd27f57"
+  },
+  {
+    "id": "3fc8fa17-dd54-5329-93a9-3c4f041f9fc5",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "The sum of two numbers is 119, and their product is 3,430. What is half of the greater number?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "24.5"
+      },
+      {
+        "key": "B",
+        "text": "35.0"
+      },
+      {
+        "key": "C",
+        "text": "49.0"
+      },
+      {
+        "key": "D",
+        "text": "70.0"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Quadratic equations (sum & product)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 061",
+      "source_page": 16,
+      "lesson_subtopic": "Sum and product word problems",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The simultaneous conditions yield the two numbers 49 and 70. Half the larger is 70/2 = 35.",
+    "q_digest": "755102167fcc04bda46f626d323d3fae",
+    "key_digest": "42d6ff2c804d984b04f6eb1d0a25d260",
+    "fingerprint": "b1bfd2a364b0aa1e9ea07f28fd7782e3"
+  },
+  {
+    "id": "40418291-9950-506e-be18-9b463d018938",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "−3 < 2x − y ≤ 14. Which point could be the solution for the inequality above?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(0, 3)"
+      },
+      {
+        "key": "B",
+        "text": "(3, 4)"
+      },
+      {
+        "key": "C",
+        "text": "(4, −8)"
+      },
+      {
+        "key": "D",
+        "text": "(4, 12)"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear inequalities (solution points)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 043",
+      "source_page": 13,
+      "lesson_subtopic": "Solving and testing inequalities",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "At (3, 4), 2x − y = 2, which satisfies −3 < 2 ≤ 14. Substitution eliminates the other choices.",
+    "q_digest": "363145a1c18c66493981634d02b355a4",
+    "key_digest": "45f7bacbc2e625a3d58da969e6b8800a",
+    "fingerprint": "1f4e0b2bdb563096675856b4cf3de779"
+  },
+  {
+    "id": "420a94b4-d7ea-515c-92cf-ec21b8444a36",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "Questions 31 to 33 refer to a table of gold's average closing price for the past 8 years: 2020: 1,771.9; 2019: 1,393.34; 2018: 1,268.93; 2017: 1,251.92; 2016: 1,158.86; 2015: 1,266.06; 2014: 1,409.51; 2013: 1,668.86 ($). — What is the mean of the average closing price of the last 5 years according to the given table?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1,137.2"
+      },
+      {
+        "key": "B",
+        "text": "1,351.82"
+      },
+      {
+        "key": "C",
+        "text": "1,368.99"
+      },
+      {
+        "key": "D",
+        "text": "1,622.18"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Mean from a table",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 030",
+      "source_page": 31,
+      "lesson_subtopic": "Mean from graphs and tables",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Statistics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The five latest prices, 2016–2020, sum to 6,844.95. Their mean is 6,844.95/5 = 1,368.99.",
+    "q_digest": "b9c472dcaabe7471433b6be52f5d5875",
+    "key_digest": "ea0e8d4d06165f432b5f0f580299fb50",
+    "fingerprint": "445e99902480f13a14651017563de5bd"
+  },
+  {
+    "id": "42f7f136-eb10-56c9-a710-2f0ea7a068d1",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "An amount of $12,000 was divided among three people in the ratio of 3 : 6 : 6. What is the smallest amount taken?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$1,200"
+      },
+      {
+        "key": "B",
+        "text": "$1,800"
+      },
+      {
+        "key": "C",
+        "text": "$2,400"
+      },
+      {
+        "key": "D",
+        "text": "$4,800"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Ratios and proportional division",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 059",
+      "source_page": 40,
+      "lesson_subtopic": "Part-to-part and part-to-whole ratios",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "There are 3 + 6 + 6 = 15 ratio parts. The smallest share is 3/15 of $12,000, or $2,400.",
+    "q_digest": "693314c091aaa53f71ad3db37bbcdce7",
+    "key_digest": "9102f2758512d8d778057ad8081e3875",
+    "fingerprint": "9fc594ebb1baafc830fee3828f9d9f1c"
+  },
+  {
+    "id": "44244ce3-c07d-5a53-a423-52df588b1f04",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "The sum of the solutions of 2x² + 3x + 1 = 0 is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−1.5"
+      },
+      {
+        "key": "B",
+        "text": "−0.5"
+      },
+      {
+        "key": "C",
+        "text": "0.5"
+      },
+      {
+        "key": "D",
+        "text": "1.5"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratic equations (sum of roots)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 042",
+      "source_page": 57,
+      "lesson_subtopic": "Sum and product of roots",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "The sum of the roots is −b/a = −3/2.",
+    "q_digest": "f63caaff15641598367d2cc44ac4d85f",
+    "key_digest": "70305a0be9f39573b0f0a434f7acbd76",
+    "fingerprint": "fa918e6ecfbfe1a157b327a1850bd0a9"
+  },
+  {
+    "id": "4511af9e-9d42-5fcb-b337-d97a1ecbf09d",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "If D varies directly as m, and D = 4 when m = 3, what is the value of m when D = −1?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "m = −4/3"
+      },
+      {
+        "key": "B",
+        "text": "m = −3/4"
+      },
+      {
+        "key": "C",
+        "text": "m = 1/4"
+      },
+      {
+        "key": "D",
+        "text": "m = 3/4"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Direct variation",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 017",
+      "source_page": 26,
+      "lesson_subtopic": "Direct proportionality",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "D = (4/3)m. At D = −1, m = −3/4.",
+    "q_digest": "8dc02084746d1407ee87404dc9cd0edd",
+    "key_digest": "312cdd3991671cc362d4121a493ec84e",
+    "fingerprint": "5339de498d6dad69cd599b4bfe913f70"
+  },
+  {
+    "id": "454ff7ac-1f23-5563-8acb-9a3c96f7829c",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "What is the remainder when dividing P(x) = 2x⁴ − x² + x + 1 by x − 3?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "150"
+      },
+      {
+        "key": "B",
+        "text": "153"
+      },
+      {
+        "key": "C",
+        "text": "157"
+      },
+      {
+        "key": "D",
+        "text": "178"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Polynomial remainder theorem",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 038",
+      "source_page": 56,
+      "lesson_subtopic": "Remainder theorem",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Polynomials",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Evaluate at x = 3: 2(3⁴) − 3² + 3 + 1 = 162 − 9 + 3 + 1 = 157.",
+    "q_digest": "54cad4961ad5cad2231d6763c882e55a",
+    "key_digest": "b670453b5c913344fd21b495d8663696",
+    "fingerprint": "1fb7fc208b0cf8b5aca6e63c9b5778b0"
+  },
+  {
+    "id": "463a9a18-db84-5c1f-9b62-bb8327fc74b8",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "Given f(x) = 2x² − 3x + 1 and g(x) = −3x + 5, what is the value of (f ∘ g)(−2)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−40"
+      },
+      {
+        "key": "B",
+        "text": "11"
+      },
+      {
+        "key": "C",
+        "text": "15"
+      },
+      {
+        "key": "D",
+        "text": "210"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Composite functions",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 006",
+      "source_page": 51,
+      "lesson_subtopic": "Composing functions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "First g(−2) = 11. Then f(11) = 2(11²) − 3(11) + 1 = 210.",
+    "q_digest": "015f63209019ff59584285cc7b4b6693",
+    "key_digest": "75a5ee61ef54ff9014ea36a0b0a78d45",
+    "fingerprint": "8295ac74dbd3b1c5d42fa651a5740dc1"
+  },
+  {
+    "id": "46afad77-9cb2-5b5e-bc0e-23038d58e957",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "Given 2x − 8 = 3y + 4, what is the value of x if y is equivalent to the square of 2?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "4"
+      },
+      {
+        "key": "B",
+        "text": "8"
+      },
+      {
+        "key": "C",
+        "text": "12"
+      },
+      {
+        "key": "D",
+        "text": "24"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear equations (substitution)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 022",
+      "source_page": 9,
+      "lesson_subtopic": "Solving equations with fractions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Substitute y = 4: 2x − 8 = 16, so x = 12.",
+    "q_digest": "28c145925aafc5f1a305c76ebc5b2fb9",
+    "key_digest": "26ced6e6b04b9e111048b5dabf983e7f",
+    "fingerprint": "f3e7c18dde1a8dbd8531a6836cfe6843"
+  },
+  {
+    "id": "47601b25-cfdb-5c21-8a52-b793ceab2a40",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "The line m has the equation 2nx + y = 3n. If m passes through H(1, −1), what is the value of |n|?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "3"
+      },
+      {
+        "key": "C",
+        "text": "4"
+      },
+      {
+        "key": "D",
+        "text": "5"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Lines with parameters / absolute value",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 050",
+      "source_page": 14,
+      "lesson_subtopic": "Unknown coefficients from a point",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Absolute value",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Substitute (1, −1) into 2nx + y = 3n: 2n − 1 = 3n, so n = −1 and |n| = 1.",
+    "q_digest": "79f105c53c7ac77112eccee3f36afb36",
+    "key_digest": "0e77805ca9cc9e9f1721b06e40c3d7bc",
+    "fingerprint": "5a2795476f3f64f970a700b1e22af2cc"
+  },
+  {
+    "id": "47bc951e-917c-54be-9f2f-a60542607622",
+    "type": "mcq",
+    "topic": "Triangles and similarity",
+    "difficulty": "medium",
+    "stem": "Three points A, B, and C are collinear in that order. If AB = 2 cm, BC = (2x + 1) cm, and AC = 9 cm, what is the value of x?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "7"
+      }
+    ],
+    "assets": {
+      "domain": "GT",
+      "subtopic": "Segment addition",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 013",
+      "source_page": 70,
+      "lesson_subtopic": "Segment addition",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Triangles and similarity",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Segment addition gives AB + BC = AC, so 2 + (2x + 1) = 9. Thus 2x = 6 and x = 3.",
+    "q_digest": "23cc51c658503af3ebfeb83551ccb1df",
+    "key_digest": "b0f80b15bef40c7115c9d401f3241490",
+    "fingerprint": "2100fa07b44dd19c816d4da63ba5176f"
+  },
+  {
+    "id": "47e9698b-79f7-5985-be91-174b25ae7ef3",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "For f(x) = 2(x + 2)(x − 6), the line x = k is the parabola's axis of symmetry. What is k?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "4"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratics",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "PAM 005",
+      "source_page": 311,
+      "lesson_subtopic": "Axis of symmetry from roots",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The roots are −2 and 6, whose midpoint is 2. Expansion gives 2x² − 8x − 24, so −b/(2a) = 8/4 = 2 as well.",
+    "q_digest": "89eb10c945c594af44a81990d38ac4b4",
+    "key_digest": "1337d4a756bd788ab5d5e5329fec68f0",
+    "fingerprint": "4fc4ed265262609b7dffc118df468b45"
+  },
+  {
+    "id": "4b359697-1bd7-5b7f-9699-e8a3336c1f1e",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "stem": "A fair spinner has 7 identical sectors numbered 1, 3, 3, 4, 5, 7, 8. When spun, the probability of the spinner landing on an odd number is k/21. What is the value of k?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "5"
+      },
+      {
+        "key": "B",
+        "text": "10"
+      },
+      {
+        "key": "C",
+        "text": "15"
+      },
+      {
+        "key": "D",
+        "text": "20"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Probability",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 048",
+      "source_page": 37,
+      "lesson_subtopic": "Favourable outcomes and sample spaces",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Probability and conditional probability",
+      "lesson_original_topic": "DAP · Probability and counting",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Five of the seven sectors are odd, so 5/7 = k/21 and k = 15.",
+    "q_digest": "1886fcc17f0718307a69c07a840fa0ac",
+    "key_digest": "7f14dd60758799573e616b1ead3b8302",
+    "fingerprint": "56d281548165da95c80d9d7b7ee27bfc"
+  },
+  {
+    "id": "4d37e42e-9f8b-5b95-b16a-f5296e27dec5",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "Given that A(2, 5), B(9, −2), and J(4, h) lie on the same line, what is the value of h?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "4"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear graphs (collinear points)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 029",
+      "source_page": 10,
+      "lesson_subtopic": "Collinear points",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The line through (2, 5) and (9, −2) has slope −1, so y = −x + 7. At x = 4, h = 3.",
+    "q_digest": "fe13938c7fceb52ba82eb87ffd7cc093",
+    "key_digest": "68c8e553d4b6c66bdcc6314a66d17036",
+    "fingerprint": "06ceb0a1fa5432570140ff20345fc1fb"
+  },
+  {
+    "id": "4d97630e-78e7-53f7-8566-8273688654a8",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "A line l passing through M(10, 3) is perpendicular to the line of equation 2y − 5x = 3. What is the y-intercept of l?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "7"
+      },
+      {
+        "key": "D",
+        "text": "10"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Perpendicular lines",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 057",
+      "source_page": 16,
+      "lesson_subtopic": "Parallel and perpendicular lines",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The required perpendicular slope is −2/5. Using (10, 3): 3 = (−2/5)(10) + b, so b = 7.",
+    "q_digest": "e4184451e816a26290b0dde9d6681189",
+    "key_digest": "4ef448d29848d61697628d159ed54a1b",
+    "fingerprint": "4dc1319a1eb15220881633e5f29e7a33"
+  },
+  {
+    "id": "4fb23f6c-a3f0-5916-9554-360494d5c0f9",
+    "type": "mcq",
+    "topic": "Complex numbers",
+    "difficulty": "medium",
+    "stem": "If i² = −1, what is the simplified form of (2 + i)/(i − 7)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(−13 − 9i)/50"
+      },
+      {
+        "key": "B",
+        "text": "(−13 − 9i)/48"
+      },
+      {
+        "key": "C",
+        "text": "(13 − 9i)/50"
+      },
+      {
+        "key": "D",
+        "text": "(13 + 9i)/50"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Complex numbers",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 005",
+      "source_page": 51,
+      "lesson_subtopic": "Conjugates and division",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Complex numbers",
+      "lesson_original_topic": "AAF · Complex numbers",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Multiply by the conjugate −7 − i: (2 + i)/(−7 + i) = (−13 − 9i)/50.",
+    "q_digest": "436a8b2485e05089764f91d1c4b5fff4",
+    "key_digest": "d9982b23850348e555227f62ee39bb13",
+    "fingerprint": "29deb87d825032e4c35dd7bcc3fb2fb8"
+  },
+  {
+    "id": "511d1a1b-05fa-5ce3-958d-b2729c7bf782",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "Given f(x) = 2x² + ax − 1. What is the value of a if the axis of symmetry of the graph of f is x = −2.5?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−10"
+      },
+      {
+        "key": "B",
+        "text": "5"
+      },
+      {
+        "key": "C",
+        "text": "10"
+      },
+      {
+        "key": "D",
+        "text": "20"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratic functions (axis of symmetry)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 047",
+      "source_page": 58,
+      "lesson_subtopic": "Axis of symmetry",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "For the quadratic, the vertex x-coordinate is −a/4. Equating this to −2.5 gives a = 10.",
+    "q_digest": "1b841cf3eb786a9a48061935d2c4443a",
+    "key_digest": "1635f12da5b846d5f099054135163efe",
+    "fingerprint": "c88ba0417741afcaa7881f4206ac6178"
+  },
+  {
+    "id": "514b13c4-6ec9-597e-92c7-47a80e0fd03d",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "The function h(x) = x² − ax − 3 has zeros at x = 3 and x = −1. What is the value of a?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−2"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "4"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratic functions (zeros)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 054",
+      "source_page": 60,
+      "lesson_subtopic": "Sum and product of roots",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Substitute the given root x = 3 into x² − ax − 3 = 0: 9 − 3a − 3 = 0, so a = 2. The other root −1 checks.",
+    "q_digest": "f16bae46a97f3a4a20fd153fbc4f09db",
+    "key_digest": "c401a717e34f963b4e2941bcfc2ebe96",
+    "fingerprint": "3fc9fb8b6b2b37f71f1f28d18896a647"
+  },
+  {
+    "id": "52448d97-65dc-5d95-820a-3ed31f7e2779",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "Which expression is equivalent to 4x⁵ − 16x³y² + 16xy⁴?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "x(2x² − 2y)²"
+      },
+      {
+        "key": "B",
+        "text": "x²(2x² − 2y²)²"
+      },
+      {
+        "key": "C",
+        "text": "x(2x² − 4y²)²"
+      },
+      {
+        "key": "D",
+        "text": "x(4x² − 4y²)²"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Polynomials",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "PAM 018",
+      "source_page": 317,
+      "lesson_subtopic": "Factoring a perfect square",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Polynomials",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Factor out x and recognize a perfect square: x[4x⁴ − 16x²y² + 16y⁴] = x(2x² − 4y²)². Expanding verifies all three terms.",
+    "q_digest": "7b90e9923729ed58b26e9841486d7628",
+    "key_digest": "4ca65001765b1d5719e55b51e413f939",
+    "fingerprint": "7df7752b729a70c2be263d3638398e20"
+  },
+  {
+    "id": "5305265c-807f-5efc-9b9e-bcd42ba5f2c1",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "The roots of the equation x² − 3x − 10 = 0 are x₁ and x₂ such that x₁ > x₂. The value of x₂ is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−5"
+      },
+      {
+        "key": "B",
+        "text": "−2"
+      },
+      {
+        "key": "C",
+        "text": "2"
+      },
+      {
+        "key": "D",
+        "text": "5"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratic equations (roots)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 041",
+      "source_page": 56,
+      "lesson_subtopic": "Solving by factoring",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "x² − 3x − 10 = (x − 5)(x + 2), so the roots are 5 and −2. The smaller root is −2. This corrects the printed key, which labels D despite the worked solution giving −2.",
+    "q_digest": "e39d8e6f1590f35477f64bd86853ad14",
+    "key_digest": "0491de65c6d9bbc455d78054054b7a08",
+    "fingerprint": "72d3aa294478bf0aaa8219131b68b831"
+  },
+  {
+    "id": "554ecd0b-373a-5ef3-a192-be41b6597ba2",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "What is the inverse function of f(x) = (x − 2)/(2x)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "f⁻¹(x) = −2/(1 − 2x)"
+      },
+      {
+        "key": "B",
+        "text": "f⁻¹(x) = 2/(1 − 2x)"
+      },
+      {
+        "key": "C",
+        "text": "f⁻¹(x) = 2/x"
+      },
+      {
+        "key": "D",
+        "text": "f⁻¹(x) = 2 − 1/x"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Inverse functions",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 026",
+      "source_page": 54,
+      "lesson_subtopic": "Finding and evaluating inverses",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "To invert the relation, interchange x and y and solve for y; this gives y = 2/(1 − 2x).",
+    "q_digest": "ccc837652351025ee32a001263578c35",
+    "key_digest": "47df9dc17ae4bddefefe50f4b826462b",
+    "fingerprint": "eec013c584132b16724200cfa1d4d510"
+  },
+  {
+    "id": "557bd2ef-700b-5792-a2df-f95c81521f46",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "If a/(2b + 1) = 1/2, which of the following is correct?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "a − 2b = 1/2"
+      },
+      {
+        "key": "B",
+        "text": "a − b = 1/2"
+      },
+      {
+        "key": "C",
+        "text": "a + b = 1/2"
+      },
+      {
+        "key": "D",
+        "text": "2a − b = 1/2"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Manipulating equations",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 051",
+      "source_page": 15,
+      "lesson_subtopic": "Equivalent expressions from an equation",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "From a/(2b + 1) = 1/2, 2a = 2b + 1. Hence a − b = 1/2.",
+    "q_digest": "3703b6519aece74ab13fc94278021e18",
+    "key_digest": "400a7a0c5f08ca99684aed9060f46701",
+    "fingerprint": "4e35903af11c28afad4ff8eba2b4bd43"
+  },
+  {
+    "id": "56e0fa8c-daec-580b-a19b-f558f37858e9",
+    "type": "grid_in",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "The function g is defined by g(x) = ax² − 2x − 5 and g(−1) = 1. What is g(2)?",
+    "choices": [],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratics",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "PAM 010",
+      "source_page": 313,
+      "lesson_subtopic": "Unknown coefficients from a function value",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "7",
+    "explanation": "At x = −1, a + 2 − 5 = 1, so a = 4. Then g(2) = 16 − 4 − 5 = 7. Substituting −1 into 4x² − 2x − 5 confirms the given value 1.",
+    "q_digest": "fb5c9e8845ad3541dcd55ec82cab6ef4",
+    "key_digest": "7238658a92907797133148c9a92ed3fd",
+    "fingerprint": "93e185a8ab0b7f9ba7c477906ea83915"
+  },
+  {
+    "id": "57566bc8-ae6c-5b3f-b90c-f9f6ee043eac",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "stem": "Given that 3ˣ = 11, what is the value of 2 × 3^(3x) − 4?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "18"
+      },
+      {
+        "key": "B",
+        "text": "500"
+      },
+      {
+        "key": "C",
+        "text": "1,890"
+      },
+      {
+        "key": "D",
+        "text": "2,658"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Laws of exponents",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 029",
+      "source_page": 55,
+      "lesson_subtopic": "Exponent rules and substitution",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "lesson_original_topic": "AAF · Exponents and radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Substitution gives 2(11³) − 4 = 2,658.",
+    "q_digest": "61a9de2ffe2a928725e9210dc280378c",
+    "key_digest": "02ef7f096760d72f58865ab769272404",
+    "fingerprint": "f4ea5b1101505a080119e40dd16fdf7e"
+  },
+  {
+    "id": "58e16fea-d98e-5b97-9402-02b99d3c7464",
+    "type": "mcq",
+    "topic": "Systems of equations",
+    "difficulty": "medium",
+    "stem": "The graphs of f(x) = x² + 4x and g(x) = −x² + 1 intersect in:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Quadrant I only"
+      },
+      {
+        "key": "B",
+        "text": "Quadrants I and II"
+      },
+      {
+        "key": "C",
+        "text": "Quadrants I and III"
+      },
+      {
+        "key": "D",
+        "text": "Quadrants II and IV"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Intersections of function graphs",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 025",
+      "source_page": 54,
+      "lesson_subtopic": "Intersections and quadrants",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Systems of equations",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Solving the intersection equation gives x = −1 ± √6/2. Substitution places one point in quadrant I and one in quadrant III.",
+    "q_digest": "20601f9e985ca59bf26a9287440f2317",
+    "key_digest": "f86cfff779b9a74db1f0c53bbacd5c89",
+    "fingerprint": "6394872a55f7d527d77e772ac8467c15"
+  },
+  {
+    "id": "5a21e8b2-c644-5eb5-869e-21ee8f8e89a3",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "stem": "How many different integers between 16 and 45 contain only digits from the following list: 1, 3, 5, 7, 9?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "16"
+      },
+      {
+        "key": "B",
+        "text": "7"
+      },
+      {
+        "key": "C",
+        "text": "6"
+      },
+      {
+        "key": "D",
+        "text": "5"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Counting (digit restrictions)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 010",
+      "source_page": 24,
+      "lesson_subtopic": "Systematic counting",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Probability and conditional probability",
+      "lesson_original_topic": "DAP · Probability and counting",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The eligible integers are 17, 19, 31, 33, 35, 37, and 39: seven numbers.",
+    "q_digest": "fa9ff56cbe6f9aa770e87459ccc85864",
+    "key_digest": "88086546024735f98eb5f85004f8d12d",
+    "fingerprint": "efbfb4598026d7dd2d7d61803547f8f4"
+  },
+  {
+    "id": "5a705f1c-70bf-5ba5-89ab-f48904741b5b",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "What is 17% of 36% of 2,500?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "153"
+      },
+      {
+        "key": "B",
+        "text": "425"
+      },
+      {
+        "key": "C",
+        "text": "900"
+      },
+      {
+        "key": "D",
+        "text": "1,325"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Percentages (successive)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 043",
+      "source_page": 34,
+      "lesson_subtopic": "Percent of a percent",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "0.17 × 0.36 × 2,500 = 153.",
+    "q_digest": "b4d46d0e272816ceff49bc2f264144fc",
+    "key_digest": "9246cda22f251f231744ff7c259c6164",
+    "fingerprint": "0ba8bc938152dcbade7593b1723d1ef8"
+  },
+  {
+    "id": "5ad80534-a478-5ea9-a1c1-52819ecd60e6",
+    "type": "mcq",
+    "topic": "Area and perimeter",
+    "difficulty": "medium",
+    "stem": "What is the area of a square, in squared units, if its diagonal measures 3√2 units?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "6"
+      },
+      {
+        "key": "C",
+        "text": "9"
+      },
+      {
+        "key": "D",
+        "text": "18"
+      }
+    ],
+    "assets": {
+      "domain": "GT",
+      "subtopic": "Squares and diagonals",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 017",
+      "source_page": 72,
+      "lesson_subtopic": "Square area from a diagonal",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Area and perimeter",
+      "lesson_original_topic": "GT · Area and volume",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "For a square, area = diagonal²/2. Thus (3√2)²/2 = 9.",
+    "q_digest": "b83db1c0291462d9e8b8c9c586bd56cf",
+    "key_digest": "62c72348e8e804c6694a48534d580c3f",
+    "fingerprint": "ae63edcb205b09d94f7066a5fec05e15"
+  },
+  {
+    "id": "5b500172-3958-5fc9-8bc2-b4e665f4ae70",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "At a high school, 3 out of 5 seniors voted to celebrate their prom night at restaurant X, while 30% of the rest voted for restaurant Y, and the 84 students left voted for restaurant Z. If all seniors voted once, how many senior students voted for restaurant X?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "180"
+      },
+      {
+        "key": "B",
+        "text": "120"
+      },
+      {
+        "key": "C",
+        "text": "60"
+      },
+      {
+        "key": "D",
+        "text": "54"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Percentages & fractions (word problem)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 041",
+      "source_page": 33,
+      "lesson_subtopic": "Multistep percentages",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Restaurant Z receives 70% of the remaining 40%, or 28% of all votes. Thus total students = 84/0.28 = 300, and X gets 60% of 300 = 180.",
+    "q_digest": "4e8c7423038a129fe88d98f7558d0840",
+    "key_digest": "0efcd896de5b508b7e64f622b53f80fa",
+    "fingerprint": "6c3a3eb862983958c45df3e58bbb639f"
+  },
+  {
+    "id": "5b63b5f6-3422-569a-9b26-4254e21d4970",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "stem": "A box contains 7 identical balls: three red, two green, and two blue. Three balls are drawn randomly and successively one after the other without replacing each ball in the box. What is the probability of getting exactly one ball of each color?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "12/343"
+      },
+      {
+        "key": "B",
+        "text": "2/35"
+      },
+      {
+        "key": "C",
+        "text": "72/343"
+      },
+      {
+        "key": "D",
+        "text": "12/35"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Probability (without replacement)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 052",
+      "source_page": 38,
+      "lesson_subtopic": "Sampling without replacement",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Probability and conditional probability",
+      "lesson_original_topic": "DAP · Probability and counting",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "There are 3 × 2 × 2 = 12 ways to choose one of each color, out of 7 choose 3 = 35 unordered draws. Probability = 12/35.",
+    "q_digest": "d66de81b9f13d3baf65833b4c20ac80d",
+    "key_digest": "ede3263502f9f7fd4d9cc4aa9475f232",
+    "fingerprint": "e147fdc77a04acbc98d009c47cceb2f9"
+  },
+  {
+    "id": "5c5a06c2-47c0-581d-ab57-5266d13ce2e7",
+    "type": "mcq",
+    "topic": "Trigonometry",
+    "difficulty": "medium",
+    "stem": "In right triangle ABC, angle A is 90°, angle C is 40°, and AB = 3. What is BC?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3 sin(40°)"
+      },
+      {
+        "key": "B",
+        "text": "sin(40°)/3"
+      },
+      {
+        "key": "C",
+        "text": "3/sin(40°)"
+      },
+      {
+        "key": "D",
+        "text": "3 cos(40°)"
+      }
+    ],
+    "assets": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 430 270\" role=\"img\" aria-label=\"Right triangle ABC, right angle at A, AB equals 3 and angle C equals 40 degrees\"><path d=\"M65 40H365L65 235Z M65 60H85V40\" fill=\"none\" stroke=\"#233247\" stroke-width=\"3\"/><g fill=\"#233247\" font-size=\"22\"><text x=\"40\" y=\"35\">A</text><text x=\"40\" y=\"260\">B</text><text x=\"373\" y=\"45\">C</text><text x=\"32\" y=\"143\">3</text><text x=\"295\" y=\"76\">40°</text></g></svg>",
+      "domain": "GT",
+      "subtopic": "Triangles and trigonometry",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GTC 014",
+      "source_page": 376,
+      "lesson_subtopic": "Sine ratio",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Trigonometry",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "AB is opposite 40° and BC is the hypotenuse. Thus sin(40°) = 3/BC and BC = 3/sin(40°). This is about 4.67, greater than the leg 3 as required.",
+    "q_digest": "f43279a90e78c344de2fc904b513e5cc",
+    "key_digest": "92a1245e7c906cd849d0e564c2d9910d",
+    "fingerprint": "dc802a37d0c2ab3e87b7bac0646f75be"
+  },
+  {
+    "id": "5ce6fb9b-9993-50e7-9069-8e79873ded47",
+    "type": "mcq",
+    "topic": "Systems of equations",
+    "difficulty": "medium",
+    "stem": "The value of x in the system of equations {3x + 4y = 5; −x + 3y = 7} is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−1"
+      },
+      {
+        "key": "B",
+        "text": "1"
+      },
+      {
+        "key": "C",
+        "text": "2"
+      },
+      {
+        "key": "D",
+        "text": "5"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Systems of linear equations",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 073",
+      "source_page": 18,
+      "lesson_subtopic": "Elimination and substitution",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Systems of equations",
+      "lesson_original_topic": "FA · Systems of equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "From −x + 3y = 7, x = 3y − 7. Substitute in 3x + 4y = 5 to get y = 2 and x = −1.",
+    "q_digest": "3457d9beaea89ef39346f6c8f43e27d8",
+    "key_digest": "7a3f345740b3212855ad82aec191658f",
+    "fingerprint": "4c153ca1aac6a962ba9f82ba9f0e0508"
+  },
+  {
+    "id": "5e687a83-67ec-532d-85d0-c60b5037deea",
+    "type": "mcq",
+    "topic": "Systems of equations",
+    "difficulty": "medium",
+    "stem": "If a + b = 5, b − c = −2, and c = 5, then a =",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−1"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "5"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Systems of equations",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 067",
+      "source_page": 17,
+      "lesson_subtopic": "Elimination and substitution",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Systems of equations",
+      "lesson_original_topic": "FA · Systems of equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Back-substitution gives c = 5, b = 3, and a = 2.",
+    "q_digest": "6244e0404cd65e872f1a75771eb95762",
+    "key_digest": "50322d24f7dbabd1d2b98475d61cde5e",
+    "fingerprint": "f684b2089c7f8b41f0dd6e2240f3cff6"
+  },
+  {
+    "id": "60dbff82-d8c8-5ece-9f18-00a367ea7b0c",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "Given that the two lines d: 2x + ty = −1 and m: −3x − gy = 2 are perpendicular, and t and g are constants, what is the value of −5tg?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−30"
+      },
+      {
+        "key": "B",
+        "text": "−6"
+      },
+      {
+        "key": "C",
+        "text": "3/2"
+      },
+      {
+        "key": "D",
+        "text": "30"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear graphs (perpendicular lines)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 032",
+      "source_page": 11,
+      "lesson_subtopic": "Perpendicular lines with extra constraints",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "The slopes are −2/t and −3/g. Their product is −1, so 6/(tg) = −1 and tg = −6. Therefore −5tg = 30.",
+    "q_digest": "65317b92d009ae152f8e28e56182492c",
+    "key_digest": "295772e53f17aca08a365755651daff5",
+    "fingerprint": "aa99d1a43262b7c893fab3100cc83ef1"
+  },
+  {
+    "id": "63b8ca35-68f9-5ea9-9584-302dbf6dd908",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "Prices rise by 25%, then a supermarket discounts the raised prices by 15%. By what percentage have the original prices increased overall?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "8.625%"
+      },
+      {
+        "key": "B",
+        "text": "7.250%"
+      },
+      {
+        "key": "C",
+        "text": "6.250%"
+      },
+      {
+        "key": "D",
+        "text": "5.625%"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Percentages and interest",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "PSD 018",
+      "source_page": 158,
+      "lesson_subtopic": "Successive percentage changes",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The combined multiplier is 1.25 × 0.85 = 1.0625, an increase of 6.25%. For example, $100 becomes $125 and then $106.25.",
+    "q_digest": "f4a05f1298f1afb24828769c4abbccb0",
+    "key_digest": "486bb7fb4fac111a046f0c7b1b7276f7",
+    "fingerprint": "aa78d1ed11b02f0c99f20c03b60a2df6"
+  },
+  {
+    "id": "6574b390-dfe4-5e0d-af07-d84c852308c3",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "Combined monthly salaries in 2019, in thousands of dollars: Jan 2; Feb 3; Mar 2; Apr 8; May 6; Jun 4; Jul 2; Aug 1; Sep 11; Oct 9; Nov 3; Dec 6. In which quarter of the year did they get the lowest income?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1st"
+      },
+      {
+        "key": "B",
+        "text": "2nd"
+      },
+      {
+        "key": "C",
+        "text": "3rd"
+      },
+      {
+        "key": "D",
+        "text": "4th"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Data interpretation (graph)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 012",
+      "source_page": 24,
+      "lesson_subtopic": "Reading and comparing data",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Quarterly totals, in thousands, are 7, 18, 14, and 18. The first quarter is lowest.",
+    "q_digest": "642bf713365bbe217092842914eba34e",
+    "key_digest": "b42bf09a090d322c7a90e050b47f4a73",
+    "fingerprint": "425bb1ff1119c67dc8c1c4c628f88029"
+  },
+  {
+    "id": "65c0c188-8f25-59ee-9897-d1379567e89b",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "Three numbers are in the ratio of 3 : 11 : 13. If their sum is 729, then the largest number is equal to:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "65"
+      },
+      {
+        "key": "B",
+        "text": "104"
+      },
+      {
+        "key": "C",
+        "text": "297"
+      },
+      {
+        "key": "D",
+        "text": "351"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Ratios and proportional division",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 060",
+      "source_page": 40,
+      "lesson_subtopic": "Part-to-part and part-to-whole ratios",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "The 27 ratio parts sum to 729, so each part is 27. The largest number is 13 × 27 = 351.",
+    "q_digest": "c30e3efcd21a7a6e60ae1119104697b5",
+    "key_digest": "98831491a42cbd0112fbe5e9716db673",
+    "fingerprint": "692041de663c4d7bf8b01371ddfb76a1"
+  },
+  {
+    "id": "660324a2-e053-55ea-87be-c15ed7a77bcc",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "What is the range of the function f(x) = x² + 4x − 3?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "[−7, +∞)"
+      },
+      {
+        "key": "B",
+        "text": "[−1, +∞)"
+      },
+      {
+        "key": "C",
+        "text": "[1, +∞)"
+      },
+      {
+        "key": "D",
+        "text": "[7, +∞)"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratic functions (range)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 049",
+      "source_page": 59,
+      "lesson_subtopic": "Range and minimum value",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Completing the square gives f(x) = (x + 2)² − 7. Since the square is nonnegative, the range is y ≥ −7.",
+    "q_digest": "fe0d5e2a23b42d59d4b2a2aa22c04a6a",
+    "key_digest": "e6c78633ce30b478fb6d53c2cdeeb0f5",
+    "fingerprint": "9d3df8f818e7b94c3fc1847968928675"
+  },
+  {
+    "id": "6708257f-1eb6-5c6d-8ed1-b9cb317908e8",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "If 3y/(2y(y+1)) + 4/(4y(y−1)) = (6y² − ay + b)/(4y(y²−1)) for all y ≠ −1, 0, 1, where a and b are two constants, what is the value of a + b?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−2"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "4"
+      },
+      {
+        "key": "D",
+        "text": "6"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Rational expressions",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 064",
+      "source_page": 62,
+      "lesson_subtopic": "Comparing coefficients in rational identities",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Rational expressions and formulas",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Combine the fractions over the common denominator. The numerator is 6y² − 2y + 4, giving a = 2, b = 4, and a + b = 6.",
+    "q_digest": "a3fbc55bab394ad883e1fce8e94396ce",
+    "key_digest": "6438cadd2fe387c01ef71dbd2afc0873",
+    "fingerprint": "7fafee5e36dffaeab2132de8a930e5cf"
+  },
+  {
+    "id": "67b76c11-12bf-5b7e-8cfd-cd52ad1338ba",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "Which of the following points is not a solution to |2x − 1| > 3y?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(4, 2)"
+      },
+      {
+        "key": "B",
+        "text": "(2, 1)"
+      },
+      {
+        "key": "C",
+        "text": "(−1, −1)"
+      },
+      {
+        "key": "D",
+        "text": "(−2, 1)"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Absolute value inequalities (solution points)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 005",
+      "source_page": 4,
+      "lesson_subtopic": "Interpreting absolute value inequalities",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Absolute value",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "At (2, 1), |2x − 1| = 3 and 3y = 3, so the strict inequality fails. The other three points satisfy it.",
+    "q_digest": "2fb94e80ef8226d1ecb5e7f3f7277c8a",
+    "key_digest": "6081a85690c2489d251bf1cba88583fa",
+    "fingerprint": "86964c7cd748be9fc122cfb55b23e31b"
+  },
+  {
+    "id": "67f79e3d-29aa-538f-a4da-f9f6fc1edbc7",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "stem": "Ramy went to the bookstore and bought 8 different greeting cards to send to his friends. However, he decided to send cards to only 5 of his friends. In how many ways can this be done?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "40"
+      },
+      {
+        "key": "B",
+        "text": "620"
+      },
+      {
+        "key": "C",
+        "text": "960"
+      },
+      {
+        "key": "D",
+        "text": "6,720"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Counting (arrangements/permutations)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 008",
+      "source_page": 23,
+      "lesson_subtopic": "Counting (arrangements/permutations)",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Probability and conditional probability",
+      "lesson_original_topic": "DAP · Probability and counting",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Assign five distinct cards to five distinct friends: 8P5 = 8 × 7 × 6 × 5 × 4 = 6,720.",
+    "q_digest": "4c0c6719ba5066e460c0ef4829431723",
+    "key_digest": "4d9afa677eac8f49cdba88b855bf807b",
+    "fingerprint": "288b8ba2ff2f1b4c98ba351eb5831e98"
+  },
+  {
+    "id": "690fbb64-5cbb-5132-9102-1dce5bdecc51",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "What is the value of m, given that Q(x) = x³ + (m + 8)x² − (m + 11)x is divisible by x − 3?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−11"
+      },
+      {
+        "key": "B",
+        "text": "−6"
+      },
+      {
+        "key": "C",
+        "text": "−3"
+      },
+      {
+        "key": "D",
+        "text": "6"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Factor theorem",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 013",
+      "source_page": 52,
+      "lesson_subtopic": "Factor theorem",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Polynomials",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Divisibility by x − 3 requires Q(3) = 0. This gives 27 + 9(m + 8) − 3(m + 11) = 66 + 6m = 0, so m = −11.",
+    "q_digest": "1a4bea0085da25e602c4c67563675113",
+    "key_digest": "498b4074a91e4d6908ea0d8ee00a1de2",
+    "fingerprint": "e1df3fb550148209e4a989bac298f469"
+  },
+  {
+    "id": "6bb1b3e6-d9c6-5cf7-921b-ed8d41b70d93",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "Ibrahim wants to enclose a rectangular garden of 200 meters with fencing. The length of the garden is 60 meters, and the width is x meters. Which of the following equations correctly represents this situation and can be used to find the value of x?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "x + 60 = 200"
+      },
+      {
+        "key": "B",
+        "text": "2x − 200 = 120"
+      },
+      {
+        "key": "C",
+        "text": "2x + 60 = 200"
+      },
+      {
+        "key": "D",
+        "text": "2x + 120 = 200"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear equations (word problem: perimeter)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 024",
+      "source_page": 9,
+      "lesson_subtopic": "Building a linear equation",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "A rectangle with length 60 and width x has perimeter 2(60 + x), so 2x + 120 = 200.",
+    "q_digest": "1c33fffe03dd7fb17a1960c1a05859c8",
+    "key_digest": "04a4629b545fd83ce41d0830d05c1db9",
+    "fingerprint": "c9b19a724d5bb289bf1d73de4f4ec239"
+  },
+  {
+    "id": "6c626425-5ebf-5b9f-b30b-a6c8a2cf22c0",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "A salesperson receives base pay of 800 EGP per month and a 5% commission on sales. Which equation relates sales a and monthly income b?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "b = 800a + 0.05"
+      },
+      {
+        "key": "B",
+        "text": "b = 0.05a + 800"
+      },
+      {
+        "key": "C",
+        "text": "a = 800b + 0.05"
+      },
+      {
+        "key": "D",
+        "text": "a = 0.05b + 800"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear models",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "HOA 036",
+      "source_page": 27,
+      "lesson_subtopic": "Building a linear cost or score model",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Income is base pay plus commission: b = 800 + 0.05a. At zero sales income is 800 EGP; each additional 100 EGP of sales adds 5 EGP.",
+    "q_digest": "2c1c5803ed5eff7081143f3f465fa606",
+    "key_digest": "da5eeeaf234ef9d9d30a5e03b30d25e9",
+    "fingerprint": "d58e2b30b2989fc39ec5abddb54aca90"
+  },
+  {
+    "id": "6dcd3ca9-155e-4743-a146-c997febb3272",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "easy",
+    "stem": "A price of 250 EGP is increased by 20%. What is the new price?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "270"
+      },
+      {
+        "key": "B",
+        "text": "290"
+      },
+      {
+        "key": "C",
+        "text": "300"
+      },
+      {
+        "key": "D",
+        "text": "320"
+      }
+    ],
+    "assets": {
+      "lesson_subtopic": "Percentages",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "Percentages",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "20% of 250 is 50, so the new price is 250 + 50 = 300 EGP.",
+    "q_digest": "5719f2b1f0d94f05711cb2c820b40b49",
+    "key_digest": "2d6da5470034ca09ce7f8037f4e328be",
+    "fingerprint": "6de25dbab9ac050a17aa8ca01ada379e"
+  },
+  {
+    "id": "6f0e2c60-6525-5040-8467-71847ffbe34c",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "Which quadratic function has its graph passing through the points (−2, 0), (3, 0), and (1, 7)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "f(x) = (7/6)x² + (7/6)x + 7"
+      },
+      {
+        "key": "B",
+        "text": "f(x) = (7/6)x² − (7/6)x + 7"
+      },
+      {
+        "key": "C",
+        "text": "f(x) = −(7/6)x² + (7/6)x + 7"
+      },
+      {
+        "key": "D",
+        "text": "f(x) = −(7/6)x² − (7/6)x + 7"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratic functions (through 3 points)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 051",
+      "source_page": 60,
+      "lesson_subtopic": "Constructing a quadratic from points",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The roots give f(x) = c(x + 2)(x − 3). Since f(1) = 7, −6c = 7 and c = −7/6.",
+    "q_digest": "6040d975f9b2bb6a075b3941486c78cf",
+    "key_digest": "2e7288f6fa341f4186349171447573cc",
+    "fingerprint": "9fd037bab09fd314a77297977ad41835"
+  },
+  {
+    "id": "71b24e7e-ae7b-52eb-a378-f06d5b44d582",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "If f(x) = x² + 3 and h(x) = x · f(x) + 3x, what is h(−1)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "−4"
+      },
+      {
+        "key": "C",
+        "text": "−5"
+      },
+      {
+        "key": "D",
+        "text": "−7"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Function evaluation & composition",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 017",
+      "source_page": 52,
+      "lesson_subtopic": "Evaluating functions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "f(−1) = 4, so h(−1) = (−1)(4) + 3(−1) = −7.",
+    "q_digest": "121958de57ed3666698b7a2327d1c827",
+    "key_digest": "918fdcb11b508921669160608c0cbf1d",
+    "fingerprint": "32a4720dc6eace7dd708ac1da9df76d6"
+  },
+  {
+    "id": "733b354d-242a-511d-a562-db0c1924581b",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "stem": "Each time Troy plays a basketball game, he has a 2/5 chance of scoring more than 20 points. If he played 10 games last month, how many times can he expect to score more than 20 points, to the nearest whole number?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2"
+      },
+      {
+        "key": "B",
+        "text": "3"
+      },
+      {
+        "key": "C",
+        "text": "4"
+      },
+      {
+        "key": "D",
+        "text": "5"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Expected value / probability",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 019",
+      "source_page": 27,
+      "lesson_subtopic": "Expected frequency",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Probability and conditional probability",
+      "lesson_original_topic": "DAP · Probability and counting",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Expected count = number of games × probability = 10 × 2/5 = 4.",
+    "q_digest": "cc25f5f6da4046c5a7ab7e416e96b6f0",
+    "key_digest": "11f57c2d5fd292845d3c4673dc54fc7e",
+    "fingerprint": "aee59ac2437709916707042994539f40"
+  },
+  {
+    "id": "7434a59a-7a56-5d5a-a3cb-7a7a429728eb",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "The graph of f(x) = 3x² − 9x + 1 has an axis of symmetry at x = k/4, where k is a constant. What is the value of k?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "6"
+      },
+      {
+        "key": "C",
+        "text": "9"
+      },
+      {
+        "key": "D",
+        "text": "12"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Axis of symmetry of a parabola",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 002",
+      "source_page": 50,
+      "lesson_subtopic": "Axis of symmetry",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The axis of 3x² − 9x + 1 is x = −b/(2a) = 9/6 = 3/2. Since this equals k/4, k = 6.",
+    "q_digest": "d1f8df4f29f1727bc608f2a6d2419bb0",
+    "key_digest": "5e5c686a0a40cfc642c5fefb0010d9f6",
+    "fingerprint": "91e736e57590d04b8999c39b594a13b2"
+  },
+  {
+    "id": "760a09ce-5923-53b3-8643-4736fbfb3197",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "Given the two functions represented by f = {(7, 4), (2, 3), (0, 1), (11, 3)} and g = {(3, 0), (7, 2), (0, 4), (2, 11)}, what is the value of f(g(2))?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0"
+      },
+      {
+        "key": "B",
+        "text": "3"
+      },
+      {
+        "key": "C",
+        "text": "4"
+      },
+      {
+        "key": "D",
+        "text": "11"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Function composition",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 015",
+      "source_page": 52,
+      "lesson_subtopic": "Composing functions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "From the ordered pairs, g(2) = 11 and f(11) = 3. Therefore f(g(2)) = 3.",
+    "q_digest": "2de32d4e0737408726cf3089089b1709",
+    "key_digest": "d41e12c7341ee6e0cd2b6d34b7c19c1e",
+    "fingerprint": "dada2071a1764d513ccfe0f2d07006f0"
+  },
+  {
+    "id": "766728a0-81d3-5a7d-a111-eac0085c7eee",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "The graphs of f(x) = ||x| − 2| and g(x) = 1 in the same coordinate system will have:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0 points of intersection"
+      },
+      {
+        "key": "B",
+        "text": "1 point of intersection"
+      },
+      {
+        "key": "C",
+        "text": "2 points of intersection"
+      },
+      {
+        "key": "D",
+        "text": "4 points of intersection"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Graphs of functions (intersections)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 019",
+      "source_page": 53,
+      "lesson_subtopic": "Nested absolute value equations",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "||x| − 2| = 1 gives |x| = 1 or 3. The four solutions are −3, −1, 1, and 3.",
+    "q_digest": "91fd0dc76ad1d2c782152b8ffa41b8cb",
+    "key_digest": "c0f41d144adfe29873c61baa1bd64aa3",
+    "fingerprint": "97794ec2647a3045de224d57b086721b"
+  },
+  {
+    "id": "775334ae-0e01-59dd-8874-d9d9bdf7a50a",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "In June 2021, Raed wants to manage his time efficiently in order to determine the maximum number of interviews, T, that he can conduct. For each interview, he spends 3.5 hours working on the candidate's application. In addition, he spends 5 hours scheduling meetings. If Raed has 80 hours available in June, how many interviews can he conduct?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "24"
+      },
+      {
+        "key": "B",
+        "text": "23"
+      },
+      {
+        "key": "C",
+        "text": "21"
+      },
+      {
+        "key": "D",
+        "text": "9"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear equations (word problem: time management)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 025",
+      "source_page": 9,
+      "lesson_subtopic": "Maximum whole-number solutions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The cost condition is 3.5T + 5 ≤ 80. This gives T ≤ 75/3.5 ≈ 21.43, so the greatest whole number is 21.",
+    "q_digest": "0f1063401fcb19abbb149a1845f23f03",
+    "key_digest": "2502e3f5665d5d30f225a5bf2d459f04",
+    "fingerprint": "17452532c4408149d1d338fda44677b2"
+  },
+  {
+    "id": "7864f08a-31db-5744-b13e-efe71f89f6e4",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "Solving the equation 2(3y − 1) + 3y = 3(4y + 3) − 4 yields y =",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−7/3"
+      },
+      {
+        "key": "B",
+        "text": "−5/3"
+      },
+      {
+        "key": "C",
+        "text": "1"
+      },
+      {
+        "key": "D",
+        "text": "5/3"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear equations",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 019",
+      "source_page": 8,
+      "lesson_subtopic": "Solving equations with fractions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Expand to get 9y − 2 = 12y + 5. Thus −3y = 7 and y = −7/3.",
+    "q_digest": "4c62e874fb598392a8ec877d3d881b2e",
+    "key_digest": "c7186abf394bc09e3ec5b9324286b45f",
+    "fingerprint": "e0a350f0cc72dffaf8a326fe28abef03"
+  },
+  {
+    "id": "78adfb38-ba78-5d83-b95a-d28b2da5fb3b",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "If (2a − 1)/b = 6, what is the value of a − 3b? (b ≠ 0)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.5"
+      },
+      {
+        "key": "B",
+        "text": "1.0"
+      },
+      {
+        "key": "C",
+        "text": "2.0"
+      },
+      {
+        "key": "D",
+        "text": "3.0"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Manipulating equations",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 052",
+      "source_page": 15,
+      "lesson_subtopic": "Equivalent expressions from an equation",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "From (2a − 1)/b = 6, 2a − 1 = 6b. Thus a − 3b = 1/2.",
+    "q_digest": "952837e8d0264fc396d3a34c51e9a526",
+    "key_digest": "cf743fdfa2cb5eeb718ffa836d2feb28",
+    "fingerprint": "a113ac8260cc7eb5f00b7fab105590d1"
+  },
+  {
+    "id": "797d7faf-4a3f-5e04-9bbe-afc9c521c1a1",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "Given the system {y ≤ 3x − 2; y > (3x/4) − 3}. In which quadrant(s) does the system above have no solutions?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "I"
+      },
+      {
+        "key": "B",
+        "text": "II and III"
+      },
+      {
+        "key": "C",
+        "text": "II"
+      },
+      {
+        "key": "D",
+        "text": "III"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Systems of inequalities (regions)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 072",
+      "source_page": 18,
+      "lesson_subtopic": "Regions and systems of inequalities",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "For x < 0, y ≤ 3x − 2 is negative, so no point can be in quadrant II. The other quadrants contain solutions to both inequalities.",
+    "q_digest": "3d1e11f34bdcb796f55efb05d58bed75",
+    "key_digest": "b6574ca46079fc799da03ded05e31a1b",
+    "fingerprint": "e254bf2680fc74cf2086fd06b38b80d7"
+  },
+  {
+    "id": "811ede34-fc13-5745-a08a-c5e5a6989fb8",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "A school conducted a survey on the brand of the phone its employees are using. Table — Staff: Huawei 13, Samsung 15, iPhone 20, Other brands 3; Teachers: Huawei 22, Samsung 56, iPhone 44, Other brands 7. What is the percentage of staff members using iPhone out of all the employees?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "39.20%"
+      },
+      {
+        "key": "B",
+        "text": "31.25%"
+      },
+      {
+        "key": "C",
+        "text": "11.11%"
+      },
+      {
+        "key": "D",
+        "text": "9.0%"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Two-way tables (percentages)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 075",
+      "source_page": 48,
+      "lesson_subtopic": "Percentages from charts and tables",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "There are 180 employees in total and 20 staff members using iPhones. Thus 100 × 20/180 = 11.11…%.",
+    "q_digest": "5c5189d8ed0de2423fd73745784136b8",
+    "key_digest": "51ec25b9cc14bd3661aae4e1f1e77b8e",
+    "fingerprint": "f9928cfdee746a1cf68e124312c6c465"
+  },
+  {
+    "id": "8195192c-741e-5f51-802e-7bca50ab957f",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "The equation of a line is x/2 − (y − 1)/3 = 0. What is the slope of the line?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "3/2"
+      },
+      {
+        "key": "D",
+        "text": "1/2"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear graphs (slope)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 036",
+      "source_page": 12,
+      "lesson_subtopic": "Slope from equations, points and graphs",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Multiply x/2 − (y − 1)/3 = 0 by 6: 3x − 2y + 2 = 0. Thus y = (3/2)x + 1 and the slope is 3/2.",
+    "q_digest": "77ce3c4af922449fe492208b7d207798",
+    "key_digest": "4a8366f5f8575a3be479bfac39417c70",
+    "fingerprint": "09ce55d0e7925e4990681c2db822db8d"
+  },
+  {
+    "id": "828ecc1d-9b5e-57c9-a0b0-0fb2bfc2482c",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "Which of the following statements is true about the line passing through the points A(−2, 3) and B(−2, 4)? I. It is a vertical line. II. Its slope is equal to 0. III. Its slope is undefined.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "I only"
+      },
+      {
+        "key": "B",
+        "text": "II only"
+      },
+      {
+        "key": "C",
+        "text": "I and II only"
+      },
+      {
+        "key": "D",
+        "text": "I and III only"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Vertical lines / slope",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 078",
+      "source_page": 19,
+      "lesson_subtopic": "Vertical lines and undefined slope",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Both points have x = −2. The line is vertical with equation x = −2 and undefined slope, so I and III are true.",
+    "q_digest": "5eb56e00d5ef163a6874bd1c57381776",
+    "key_digest": "f7d575b275793717a601578038e00989",
+    "fingerprint": "ca661e33d161fd901484b07837780f4d"
+  },
+  {
+    "id": "8298e4d7-7614-5d41-a9cc-fdad76cccc20",
+    "type": "mcq",
+    "topic": "Complex numbers",
+    "difficulty": "medium",
+    "stem": "For i = √(−1), which of the following is equivalent to (2i − 3)/(i − 5)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(13 − 7i)/24"
+      },
+      {
+        "key": "B",
+        "text": "(13 − 13i)/24"
+      },
+      {
+        "key": "C",
+        "text": "(17 − 7i)/26"
+      },
+      {
+        "key": "D",
+        "text": "(17 − 13i)/24"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Complex numbers",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 003",
+      "source_page": 50,
+      "lesson_subtopic": "Conjugates and division",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Complex numbers",
+      "lesson_original_topic": "AAF · Complex numbers",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Multiply numerator and denominator by −5 − i. The result is (17 − 7i)/26.",
+    "q_digest": "2a5643d351ddfe6e973e5ecb51e53cf6",
+    "key_digest": "2f5c6d5d88390f57bb8dfd4fc7b84c25",
+    "fingerprint": "6c0c8b4dd5314f08d726612e2760e2d2"
+  },
+  {
+    "id": "829ebd5d-cf3a-5863-9d21-d200d5b604aa",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "What are the coordinates of the y-intercept of the graph of f(x) = 2|3x − 1|?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(0, 1/3)"
+      },
+      {
+        "key": "B",
+        "text": "(0, 1)"
+      },
+      {
+        "key": "C",
+        "text": "(0, 3/2)"
+      },
+      {
+        "key": "D",
+        "text": "(0, 2)"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Absolute value functions / intercepts",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 003",
+      "source_page": 4,
+      "lesson_subtopic": "Intercepts of absolute value graphs",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Absolute value",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "At x = 0, f(0) = 2|−1| = 2, so the intercept is (0, 2).",
+    "q_digest": "386aa7aebe5f31162eae0f570fff327b",
+    "key_digest": "12f7a56477ac303c30bb434c29330719",
+    "fingerprint": "5e5789cf51b09119342479b37b39effb"
+  },
+  {
+    "id": "82cabbbe-098d-51f6-81fb-bcd142c716a3",
+    "type": "mcq",
+    "topic": "Algebraic expressions and equations",
+    "difficulty": "medium",
+    "stem": "The “Bond Number” B₀ or “Eötvös Number” is a formula used in fluid dynamics that shows the importance of gravitational forces compared to surface tension forces, and is used to describe the shape of a droplet moving in a surrounding fluid. To find the bond number, we apply the formula B₀ = ρgL²/σ, where ρ represents the density of the liquid, g represents the acceleration due to gravity, L is the radius of the curvature of the droplet, and σ is the surface tension. What is L in terms of B₀, ρ, g, and σ?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "L = √(B₀σ/ρg)"
+      },
+      {
+        "key": "B",
+        "text": "L = √(B₀ρ/σg)"
+      },
+      {
+        "key": "C",
+        "text": "L = B₀σ/ρg"
+      },
+      {
+        "key": "D",
+        "text": "L = B₀ρ/σg"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Rearranging formulas",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 069",
+      "source_page": 63,
+      "lesson_subtopic": "Isolating a variable in a radical formula",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Algebraic expressions and equations",
+      "lesson_original_topic": "AAF · Rational expressions and formulas",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Isolate L² = Bσ/(ρg), then take the positive square root for a length: L = √(Bσ/(ρg)).",
+    "q_digest": "305c4fcce5eca29e682f4cd9abc3433d",
+    "key_digest": "e8eb334e17cb54c93be1929d39787519",
+    "fingerprint": "2c87e3de93f1a7528465f409e9713c99"
+  },
+  {
+    "id": "8326565d-6af6-507f-9e4f-f07daf00e3a5",
+    "type": "grid_in",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "stem": "The circle x² + y² − 2kx + 4y − 3k² = 0 has center (1/2, −2) and radius √5. What is k?",
+    "choices": [],
+    "assets": {
+      "domain": "GT",
+      "subtopic": "Circles",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GTC 018",
+      "source_page": 379,
+      "lesson_subtopic": "Circle equations with parameters",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Circles",
+      "lesson_original_topic": "GT · Circles",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "1/2",
+    "explanation": "Completing squares gives (x − k)² + (y + 2)² = 4k² + 4. The center gives k = 1/2. The radius then is √(1 + 4) = √5, confirming the result.",
+    "q_digest": "86f3289cd1c786284f2ae7ce150a9ce1",
+    "key_digest": "55e9191727c7b3c071bdada28edc4537",
+    "fingerprint": "688f5d39578b1617f694d4139b2e410f"
+  },
+  {
+    "id": "846d5d06-7540-547f-8d93-d17030d95834",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "stem": "Nassim's average score in math over five tests is 75. What score does he need to get on his sixth test to raise his average in math to 78?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "90"
+      },
+      {
+        "key": "B",
+        "text": "93"
+      },
+      {
+        "key": "C",
+        "text": "95"
+      },
+      {
+        "key": "D",
+        "text": "98"
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Averages",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 002",
+      "source_page": 21,
+      "lesson_subtopic": "Mean and missing values",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The required sixth score is 6(78) − 5(75) = 93.",
+    "q_digest": "587cf204f000bc06d05d2d465aaff15f",
+    "key_digest": "415c0b617ddd68fafb6591a30b92000a",
+    "fingerprint": "b1b9f5f1b9db73bb07697a1329e9ea4d"
+  },
+  {
+    "id": "8539d688-f6e6-5a00-8298-0d0644fa042f",
+    "type": "mcq",
+    "topic": "Systems of equations",
+    "difficulty": "medium",
+    "stem": "In the system of equations {ax + by = −5; (a + 2)x + by = −3}, y = −2 and a and b are two real constants. Which of following represents b in terms of a?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "b = −a − 5"
+      },
+      {
+        "key": "B",
+        "text": "b = 5/2 − a/2"
+      },
+      {
+        "key": "C",
+        "text": "b = a + 5"
+      },
+      {
+        "key": "D",
+        "text": "b = 5/2 + a/2"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Systems of equations with parameters",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 071",
+      "source_page": 18,
+      "lesson_subtopic": "Elimination with parameters",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Systems of equations",
+      "lesson_original_topic": "FA · Systems of equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Subtract the equations after using y = −2 to obtain x = 1. Then a − 2b = −5, so b = (5 + a)/2.",
+    "q_digest": "5dcb565291e9bcc49f0d43dfb741b4c2",
+    "key_digest": "a9aac3ac2fb02c1122fd963e657ce968",
+    "fingerprint": "2cb1fba530d3d9a3e8ab0c5eae20c092"
+  },
+  {
+    "id": "85e6d3ea-8ba1-525c-adaa-0863635ce1c8",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "The line through (3, m) and (m, 12) passes through the origin. Which could be m?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−6"
+      },
+      {
+        "key": "B",
+        "text": "9"
+      },
+      {
+        "key": "C",
+        "text": "1"
+      },
+      {
+        "key": "D",
+        "text": "0"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Lines and slopes",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "HOA 043",
+      "source_page": 31,
+      "lesson_subtopic": "Slope with unknown coordinates",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Collinearity with the origin requires 3 × 12 − m² = 0, giving m = ±6. Only −6 is listed. The slopes to (3, −6) and (−6, 12) both equal −2.",
+    "q_digest": "1644608eeab9804bdc7ea72c5322fc80",
+    "key_digest": "e061023b277bdad5960ece3b786e3be7",
+    "fingerprint": "bfd2319f5ae72cdfb54a4d83179cc093"
+  },
+  {
+    "id": "86e4207c-3b9c-5d80-9c18-20bf75785de3",
+    "type": "mcq",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "stem": "A circle of center C(1, 3) passes through the point T(4, 7). What is the length of the diameter of this circle?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2.5 units"
+      },
+      {
+        "key": "B",
+        "text": "5.0 units"
+      },
+      {
+        "key": "C",
+        "text": "10.0 units"
+      },
+      {
+        "key": "D",
+        "text": "20.0 units"
+      }
+    ],
+    "assets": {
+      "domain": "GT",
+      "subtopic": "Circles: radius and diameter",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 005",
+      "source_page": 66,
+      "lesson_subtopic": "Radius from coordinates",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Circles",
+      "lesson_original_topic": "GT · Circles",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The radius is √(3² + 4²) = 5, so the diameter is 10.",
+    "q_digest": "d36b1ea5c8b5b309e51c62c015be4aa3",
+    "key_digest": "0aa1b7ef81b36bab062cc894544d6584",
+    "fingerprint": "619af5a4633d81b9f5c1789f3d6ed66d"
+  },
+  {
+    "id": "86f16b84-112c-5f0d-b1f1-86d3e104a6b4",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "According to the data published by “Worldometer”, the total cases of people infected by Covid-19 in Egypt on July 24, 2020, was 91,072, while on August 3, 2020 it went up to 94,640 cases. If we consider that the graph of the change in number of total cases over the change in days is linear and July 24 is day 0, what would be the total number of cases reported on August 9, 2020?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "96,781"
+      },
+      {
+        "key": "B",
+        "text": "97,138"
+      },
+      {
+        "key": "C",
+        "text": "98,208"
+      },
+      {
+        "key": "D",
+        "text": "101,776"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear models (extrapolation)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 047",
+      "source_page": 14,
+      "lesson_subtopic": "Linear models from data",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "The increase over 10 days is 94,640 − 91,072 = 3,568, or 356.8 per day. August 9 is 16 days after July 24: 91,072 + 16(356.8) = 96,780.8, which rounds to 96,781.",
+    "q_digest": "2ef486503821b15b2b101bd4b821ec7f",
+    "key_digest": "da06dc8c9df36acf2493e2defad78f64",
+    "fingerprint": "5ca6cfdd0dfbc0a2516dbd12c152ff15"
+  },
+  {
+    "id": "871a0256-a89c-5464-8677-cae7db3baedf",
+    "type": "mcq",
+    "topic": "Volume and surface area",
+    "difficulty": "medium",
+    "stem": "The length and the width of the base of a rectangular prism are in the ratio of 3 : 2. If the height of this prism is 4 cm and the volume is 216 cm³, then the length of the base in cm is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "4"
+      },
+      {
+        "key": "B",
+        "text": "6"
+      },
+      {
+        "key": "C",
+        "text": "9"
+      },
+      {
+        "key": "D",
+        "text": "10"
+      }
+    ],
+    "assets": {
+      "domain": "GT",
+      "subtopic": "Volume of rectangular prisms",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 023",
+      "source_page": 75,
+      "lesson_subtopic": "Volume with side-length ratios",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Volume and surface area",
+      "lesson_original_topic": "GT · Area and volume",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Write the base sides as 3k and 2k, with height 4. Volume = 24k² = 216, so k = 3. The longer base side is 9.",
+    "q_digest": "ca4ac3914af4b12d1adaf37fee7186ed",
+    "key_digest": "e0f338334f1f17359c778c61347a2fa1",
+    "fingerprint": "f9c659c1cac53346c91fbd95be3cc580"
+  },
+  {
+    "id": "87cebb7f-6196-5b45-a190-0d42204b471c",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "stem": "Average closing gold price ($): 2020: 1,771.90; 2019: 1,393.34; 2018: 1,268.93; 2017: 1,251.92; 2016: 1,158.86; 2015: 1,266.06; 2014: 1,409.51; 2013: 1,668.86. Which of the following statements is true when comparing the annual percentage change from 2018 to 2020?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "It decreased by 27.17%."
+      },
+      {
+        "key": "B",
+        "text": "It decreased by 39.64%."
+      },
+      {
+        "key": "C",
+        "text": "It increased by 27.17%."
+      },
+      {
+        "key": "D",
+        "text": "It increased by 39.64%."
+      }
+    ],
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Percentage change",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 037",
+      "source_page": 33,
+      "lesson_subtopic": "Percentage change",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "100(1,771.9 − 1,268.93)/1,268.93 ≈ 39.64%, an increase.",
+    "q_digest": "822a26210a3804544e21b806a455e8b1",
+    "key_digest": "30f9706be22b7fcb7774d8d2a9e78356",
+    "fingerprint": "edfd1709054c1cceafa19b3b6d88ee7f"
+  },
+  {
+    "id": "89bb602c-25c8-5f13-9633-475ac24d5219",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "For which positive value of x is the expression −2/(x² − 10x − 11) undefined?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "10"
+      },
+      {
+        "key": "C",
+        "text": "11"
+      },
+      {
+        "key": "D",
+        "text": "15"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Undefined rational expressions",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 073",
+      "source_page": 63,
+      "lesson_subtopic": "Excluded values",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Rational expressions and formulas",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "x² − 10x − 11 = (x − 11)(x + 1). The positive root is 11.",
+    "q_digest": "4915ab563e466014f50c9bebc08d2af8",
+    "key_digest": "c24f9be0b6afe08212a047d308ea3c23",
+    "fingerprint": "f5a4ae1b72c0e9440a25fb9668714126"
+  },
+  {
+    "id": "8a02d032-611b-5915-833a-2ecd2b8cf87f",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "If 3 < 2x + 7 ≤ 15, which of the following integers represents the smallest value for x + 3?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−2"
+      },
+      {
+        "key": "B",
+        "text": "−1"
+      },
+      {
+        "key": "C",
+        "text": "1"
+      },
+      {
+        "key": "D",
+        "text": "2"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear inequalities",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 038",
+      "source_page": 12,
+      "lesson_subtopic": "Compound inequalities and integer solutions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Subtract 7 and divide by 2: −2 < x ≤ 4. The least integer x is −1, so x + 3 = 2.",
+    "q_digest": "7963f0b6a7ba9ee96c0afd48c4f9dcc7",
+    "key_digest": "4216cc441af1f24208efda3d0518c3bf",
+    "fingerprint": "d589e9515b43fe7f63e695ea071492c4"
+  },
+  {
+    "id": "8a4b8128-ab2e-59cf-868a-850e37052070",
+    "type": "mcq",
+    "topic": "Trigonometry",
+    "difficulty": "medium",
+    "stem": "Given that ABG is a right triangle at A, where AB = 6 cm and AG = 10 cm, what is the value of sin(∠ABG) × cos(∠BGA), to the nearest tenth?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.4"
+      },
+      {
+        "key": "B",
+        "text": "0.5"
+      },
+      {
+        "key": "C",
+        "text": "0.6"
+      },
+      {
+        "key": "D",
+        "text": "0.7"
+      }
+    ],
+    "assets": {
+      "domain": "GT",
+      "subtopic": "Right-triangle trigonometry",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 012",
+      "source_page": 70,
+      "lesson_subtopic": "Sine and cosine ratios",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Trigonometry",
+      "lesson_original_topic": "GT · Angles, triangles and trigonometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "The hypotenuse squared is 6² + 10² = 136. Both requested ratios equal 10/√136, so their product is 100/136 ≈ 0.7353, rounding to 0.7.",
+    "q_digest": "8c35193adc380121836e15a5b27016eb",
+    "key_digest": "b1fe296ec7b9e1665b89eec5e00920ff",
+    "fingerprint": "6bd70de178ecba0fc2b4fc3596c0af11"
+  },
+  {
+    "id": "8c13bfbd-6c12-5b48-8508-a1a82d794621",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "stem": "The solution of the equation 27^(2x − 1) = (1/9)^(x − 3) is x = k/8, where k is a constant. What is the value of k?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "3"
+      },
+      {
+        "key": "C",
+        "text": "6"
+      },
+      {
+        "key": "D",
+        "text": "9"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Exponential equations",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 010",
+      "source_page": 51,
+      "lesson_subtopic": "Equations with a common base",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "lesson_original_topic": "AAF · Exponents and radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Using base 3 gives 6x − 3 = −2x + 6. Thus x = 9/8 and k = 9.",
+    "q_digest": "e179c0d777c0a52ab75616a3184478b5",
+    "key_digest": "e5008b135c96ed8815ab73515db5b9f5",
+    "fingerprint": "b57a256094ea424e4e252a8e3f69bf39"
+  },
+  {
+    "id": "8d819726-ee5b-5991-aaf4-7871176ae5c8",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "For what values of a and b will the equation x² + ax = b have the solutions 1 and −1?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "a = 0, b = −1"
+      },
+      {
+        "key": "B",
+        "text": "a = 0, b = 1"
+      },
+      {
+        "key": "C",
+        "text": "a = 1, b = 0"
+      },
+      {
+        "key": "D",
+        "text": "a = 1, b = 1"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratic equations (roots & coefficients)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 040",
+      "source_page": 56,
+      "lesson_subtopic": "Sum and product of roots",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Roots 1 and −1 give (x − 1)(x + 1) = x² − 1 = 0. Thus x² + ax = b requires a = 0 and b = 1.",
+    "q_digest": "2ef824db48a455d4b9ab9daa4da91f19",
+    "key_digest": "db10ce8eef9206a932331c8ee02c202b",
+    "fingerprint": "93a56fec28ac023ec50a6279202592b8"
+  },
+  {
+    "id": "8eaf2ded-c1dc-5410-ad1e-fd6d3d13d061",
+    "type": "mcq",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "stem": "If C is a circle with center (2, 0) and radius of 2, then which of the following points is inside the circle?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(1, 3)"
+      },
+      {
+        "key": "B",
+        "text": "(2, −2)"
+      },
+      {
+        "key": "C",
+        "text": "(3, −1)"
+      },
+      {
+        "key": "D",
+        "text": "(4, 0)"
+      }
+    ],
+    "assets": {
+      "domain": "GT",
+      "subtopic": "Circles in the coordinate plane",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 002",
+      "source_page": 65,
+      "lesson_subtopic": "Points inside, on and outside a circle",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Circles",
+      "lesson_original_topic": "GT · Circles",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "For (3, −1), squared distance from (2, 0) is 1² + (−1)² = 2 < 2². The other offered points are on or outside the circle.",
+    "q_digest": "7f7b02bc8da235acf2df94d822ac6a14",
+    "key_digest": "e5cbb1f03e1b0e33a69c8074f8d0cac2",
+    "fingerprint": "6fdce7b45ff4c8ff349341efccd05c01"
+  },
+  {
+    "id": "8fb6c4fd-e35b-50fe-9142-75e0aede3e13",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "If (2/5)x − (1/4)a = (2/3)(a + x), and x = −5, what is the value of 22a?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "11"
+      },
+      {
+        "key": "B",
+        "text": "22"
+      },
+      {
+        "key": "C",
+        "text": "32"
+      },
+      {
+        "key": "D",
+        "text": "44"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear equations with two variables",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 027",
+      "source_page": 9,
+      "lesson_subtopic": "Solving for a parameter",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "With x = −5, −2 − a/4 = 2a/3 − 10/3. Multiplying by 12 gives −24 − 3a = 8a − 40, so a = 16/11 and 22a = 32.",
+    "q_digest": "07341f0eb13d82e48f40b2e183913c36",
+    "key_digest": "073842d4738cbe2928e34d6f0a34c01a",
+    "fingerprint": "6773ed5fe53c85886b47ed9dfed72dcb"
+  },
+  {
+    "id": "90914900-05cd-51b0-b0ac-7ba63518b645",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "stem": "Which of the following is the simplified form of ⁴√(x⁸y⁹)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "xy·⁴√y"
+      },
+      {
+        "key": "B",
+        "text": "x²y²·⁴√y"
+      },
+      {
+        "key": "C",
+        "text": "x²y³"
+      },
+      {
+        "key": "D",
+        "text": "x⁴y⁶"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Radicals with variables",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 060",
+      "source_page": 61,
+      "lesson_subtopic": "Radicals with variables",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "lesson_original_topic": "AAF · Exponents and radicals",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Extract fourth powers: ⁴√(x⁸y⁹) = x²y² ⁴√y on the real domain y ≥ 0.",
+    "q_digest": "fb2225fee65f3d15963552eb705f8f9c",
+    "key_digest": "b6eee4abb7ddeb0ac14010250c685747",
+    "fingerprint": "d1db340b326bc89851ee396fad8eb594"
+  },
+  {
+    "id": "913a7ada-1781-5eaa-aa66-9f38c170bf6e",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "Given the function f defined by f(x) = 2/(x + 3) with x ≠ −3, the value of f⁻¹(4) is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−2.5"
+      },
+      {
+        "key": "B",
+        "text": "−1.5"
+      },
+      {
+        "key": "C",
+        "text": "1.0"
+      },
+      {
+        "key": "D",
+        "text": "2.5"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Inverse functions",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 028",
+      "source_page": 54,
+      "lesson_subtopic": "Finding and evaluating inverses",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "f⁻¹(4) is the input giving output 4. Solve 2/(x + 3) = 4 to get x = −5/2.",
+    "q_digest": "56f636b58cc3b597eff84a7d33af983a",
+    "key_digest": "2c1ff52d5555f31a3cdbbd3f5af81ffe",
+    "fingerprint": "5d7616c788d54ee7c10a0af288513a14"
+  },
+  {
+    "id": "94b4cf80-d688-5b32-b9ee-750cc4f18b6a",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "What is the positive solution of |2x − 3| = 13?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "5"
+      },
+      {
+        "key": "B",
+        "text": "8"
+      },
+      {
+        "key": "C",
+        "text": "10"
+      },
+      {
+        "key": "D",
+        "text": "12"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Absolute value equations",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 002",
+      "source_page": 4,
+      "lesson_subtopic": "Solving absolute value equations",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Absolute value",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "2x − 3 = ±13 gives x = 8 or −5. The positive solution is 8.",
+    "q_digest": "c48e46daf2f468c386752f93638c51f9",
+    "key_digest": "1254c6f7ebad771c1ee10505f760dcf2",
+    "fingerprint": "9b09b6bc55aaeddf8c540dfa5a5e4d54"
+  },
+  {
+    "id": "94c44fac-5e46-59d3-a034-8a964f65a31e",
+    "type": "mcq",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "stem": "Printing n brochures costs C = 79 + 0.44n dollars. The maximum budget put by the company for the brochures is $1,950. How many brochures at most can they print?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "25"
+      },
+      {
+        "key": "B",
+        "text": "2,000"
+      },
+      {
+        "key": "C",
+        "text": "4,252"
+      },
+      {
+        "key": "D",
+        "text": "4,431"
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear inequalities (budget)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 041",
+      "source_page": 12,
+      "lesson_subtopic": "Maximum whole-number solutions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Solve 79 + 0.44n ≤ 1,950: n ≤ 4,252.2727…. At 4,252 brochures the cost is $1,949.88, while 4,253 costs $1,950.32.",
+    "q_digest": "71a0aabeb137eba4f753c714ad263cb8",
+    "key_digest": "0637bc9fc1d9e57d7e0e468bf11913cf",
+    "fingerprint": "bd9e9fb072983c33e2b9e2c34d535096"
+  },
+  {
+    "id": "966e80b2-3df4-5767-b510-f3b379d8a42f",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "stem": "The number g of gallons remaining after driving m kilometers is g = 12 − m/20. What does 20 represent in the equation of the amount of gas?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Ibrahim uses 20 gallons of gas per kilometer."
+      },
+      {
+        "key": "B",
+        "text": "Ibrahim's car can travel 20 kilometers to the gallon."
+      },
+      {
+        "key": "C",
+        "text": "Ibrahim's car uses 12 gallons of gas to travel 20 kilometers."
+      },
+      {
+        "key": "D",
+        "text": "Ibrahim's tank can hold 20 gallons of gas."
+      }
+    ],
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Interpreting linear models",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 015",
+      "source_page": 7,
+      "lesson_subtopic": "Interpreting slope and intercept",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The coefficient −1/20 means one gallon is used for every 20 kilometers, so the fuel economy is 20 km per gallon.",
+    "q_digest": "fd69e7b29ea913c87e60bafef4e12dc7",
+    "key_digest": "752b4a8ecb186fc10053ff0813382362",
+    "fingerprint": "dbd66d02640a72bec5e0ad0ec29be17a"
+  },
+  {
+    "id": "97cd2607-7c66-55be-8adc-611878a85b80",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "The simplified form of (2√3 + √5)/(√5 − √3) is (a + b√15)/c, where a, b, and c are integers. What is the value of b × c?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "6"
+      },
+      {
+        "key": "D",
+        "text": "9"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Rationalizing denominators",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 068",
+      "source_page": 62,
+      "lesson_subtopic": "Rationalizing denominators",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Rational expressions and formulas",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Multiply by the conjugate √5 + √3. The numerator becomes 11 + 3√15 and the denominator 2. In lowest terms b = 3, c = 2, so bc = 6.",
+    "q_digest": "59effd17f8ddec8b83dcc8f4ed059aab",
+    "key_digest": "44769fc4e6bc4a849db95e7a6b25358c",
+    "fingerprint": "c488d3eab8bf3595debcdfbb0706c940"
+  },
+  {
+    "id": "983eb663-1c9c-553f-a1b9-a7c4bfcdad63",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "stem": "Which of the following is the range of f(x) = 2 + 3/(x − 4)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(−∞, −2) ∪ (−2, +∞)"
+      },
+      {
+        "key": "B",
+        "text": "(−∞, 2) ∪ (2, +∞)"
+      },
+      {
+        "key": "C",
+        "text": "(−∞, 4) ∪ (4, +∞)"
+      },
+      {
+        "key": "D",
+        "text": "(−∞, +∞)"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Range of rational functions",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 061",
+      "source_page": 61,
+      "lesson_subtopic": "Range restrictions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Rational expressions and formulas",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Solving y = f(x) for x shows every real output except 2 is attainable. Hence the range excludes 2.",
+    "q_digest": "ef041893594d534633e597dda60d3de8",
+    "key_digest": "b06751ef9d3da60d73683829e8e6b25e",
+    "fingerprint": "b4a4a3793506f6b3e2ecb4289beb8a37"
+  },
+  {
+    "id": "98475a0e-23d0-5ab0-883d-5d341c0b9f9e",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "stem": "Given 2x² + 10x + 1 = 0, which of the following statements is/are true? I. x² + 5x + 25/4 = 23/4. II. x = (−5 ± √23)/2. III. x + 5/2 = −1/2 + 5/2.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "I only"
+      },
+      {
+        "key": "B",
+        "text": "II only"
+      },
+      {
+        "key": "C",
+        "text": "I and II only"
+      },
+      {
+        "key": "D",
+        "text": "II and III only"
+      }
+    ],
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Quadratic equations / completing the square",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 043",
+      "source_page": 57,
+      "lesson_subtopic": "Completing the square and checking claims",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Divide by 2 and complete the square: x² + 5x + 25/4 = 23/4, giving x = (−5 ± √23)/2. Thus I and II hold. Statement III would require x = −1/2, which does not solve the equation.",
+    "q_digest": "1dec030d73b208b50cdca3f2e10bc0d5",
+    "key_digest": "d09259b6639058af669b6b788a5ca977",
+    "fingerprint": "ef3875b162b3111e5f36c68a8cca523a"
+  }
+]

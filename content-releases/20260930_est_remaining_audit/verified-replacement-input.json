@@ -1,0 +1,45 @@
+{
+  "id": "97a4e8db-e914-5a56-a4c6-f3b6efe36600",
+  "type": "mcq",
+  "topic": "Systems of equations",
+  "difficulty": "medium",
+  "stem": "For what a does the system 2x+5y=1/5 and 5x+ay=2/25 have no solution?",
+  "choices": [
+    {
+      "key": "A",
+      "text": "25/2"
+    },
+    {
+      "key": "B",
+      "text": "1/2"
+    },
+    {
+      "key": "C",
+      "text": "1.9"
+    },
+    {
+      "key": "D",
+      "text": "11"
+    }
+  ],
+  "assets": {
+    "source": "reviewed-bank-20260928",
+    "source_code": "HOA 179",
+    "source_page": 104,
+    "answer_review": "2026-09-28-independent-solution-and-source-check",
+    "lesson_subtopic": "Algebra Foundations, Equations & Inequalities",
+    "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+    "source_review_id": "clean:HOA 179",
+    "verified_release": "2026-09-28-independent-solution-and-source-check",
+    "curriculum_lesson": "Systems of equations",
+    "verification_note": "Original PDF visually checked; isolated complete question and independently verified the solution.",
+    "verification_source": "Math_Question_Bank_Ghoneem_Clean.pdf page 104",
+    "lesson_original_topic": "Algebra Foundations, Equations & Inequalities",
+    "lesson_taxonomy_version": "20260929"
+  },
+  "correct": "A",
+  "explanation": "The lines must be parallel with different intercepts. Multiplying the first left side by 5/2 gives 5x+(25/2)y, so a=25/2. Its right side would be 1/2, which differs from 2/25; hence the lines are distinct and the system is inconsistent.",
+  "q_digest": "dbb755b3f1713233d1a52021cd9d8a12",
+  "key_digest": "d87ff3799377fa5e85da7bde2aa42efb",
+  "fingerprint": "658c76728200518975bee749c0f09ec7"
+}

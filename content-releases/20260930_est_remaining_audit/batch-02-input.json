@@ -1,0 +1,1084 @@
+[
+  {
+    "id": "0fc5cd33-336f-5d79-9847-8c3e9e40d173",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Which of the following is equivalent to 4a² − 9 + (2a − 3)(a − 1) + 3(2a − 3)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(2a − 3)(3a + 5)"
+      },
+      {
+        "key": "B",
+        "text": "2(2a − 3)(3a + 5)"
+      },
+      {
+        "key": "C",
+        "text": "(2a − 3)(a + 5)"
+      },
+      {
+        "key": "D",
+        "text": "(2a − 3)(3a + 7)"
+      }
+    ],
+    "correct": "A",
+    "explanation": "6a² + a − 15 factors as (2a − 3)(3a + 5); expansion verifies both the middle and constant terms.",
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Simplifying & factoring expressions",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 071",
+      "source_page": 63,
+      "lesson_subtopic": "Factoring expressions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Polynomials",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "cee20a7d97f96b28c40b995092fc57e5",
+    "key_digest": "e84a99653a25b43e203bedc54bacfa48",
+    "fingerprint": "a9b7c59cd70a81f68cffd88d7b85b16b"
+  },
+  {
+    "id": "10158f1b-0cf6-5f96-a001-b9107784d961",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "PSD 071 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "correct": "C",
+    "explanation": "Growth factor is 2520/2400=1.05. Next month is 2520*1.05=2646.",
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-071.png",
+      "domain": "DAP",
+      "subtopic": "Percentages and interest",
+      "image_alt": "Original question PSD 071, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 071",
+      "source_page": 201,
+      "lesson_subtopic": "Compound growth and decay",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 071",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "source_image_sha256": "d883942bdd380db0c4892f31222992e16968d049b5ec7e90180b6a3d125b072d",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "9f03e25830319aee8d03c72d16eb1335",
+    "key_digest": "c6ffc9128531a30eed69719283f3d237",
+    "fingerprint": "b41a1baf8cdad8b7989da2729348eee9"
+  },
+  {
+    "id": "11a1e605-fdee-5df7-8341-7f86e47321fd",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Which of the following is equivalent to the expression ((2x − 3)/(x − 3))² ÷ 3/(2x − 6), given that x ≠ 3?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2(2x − 3)² / 3(x − 3)"
+      },
+      {
+        "key": "B",
+        "text": "2(x − 3)² / 3(2x − 3)"
+      },
+      {
+        "key": "C",
+        "text": "2(2x − 3) / 3(x − 3)²"
+      },
+      {
+        "key": "D",
+        "text": "2(2x − 3)³ / 3"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Divide by 3/(2x − 6) by multiplying by 2(x − 3)/3. Cancellation gives 2(2x − 3)²/[3(x − 3)], for x ≠ 3.",
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Rational expressions",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 063",
+      "source_page": 62,
+      "lesson_subtopic": "Simplifying rational expressions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Rational expressions and formulas",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "ffe481ea58e9eb7c743033657668af0f",
+    "key_digest": "93d2e2620e44499a6222c4a9d8cc8ffc",
+    "fingerprint": "cbf39284a54b1bc10a80ac79cad3aaba"
+  },
+  {
+    "id": "1224ac52-4510-57c1-9a5f-8c0cacb01502",
+    "topic": "Area and perimeter",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Given the points A(1, 4), B(4, 1), R(−1, −4), and C(−4, −1), what is the value of the area of rectangle ABRC?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "22.5 unit squared"
+      },
+      {
+        "key": "B",
+        "text": "25.5 unit squared"
+      },
+      {
+        "key": "C",
+        "text": "30.0 unit squared"
+      },
+      {
+        "key": "D",
+        "text": "32.5 unit squared"
+      }
+    ],
+    "correct": "C",
+    "explanation": "Adjacent side lengths are √18 and √50, and their slopes are perpendicular. The rectangle's area is √18 × √50 = 30.",
+    "assets": {
+      "domain": "GT",
+      "subtopic": "Coordinate geometry (area of rectangle)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "GT 006",
+      "source_page": 66,
+      "lesson_subtopic": "Area from coordinates",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Area and perimeter",
+      "lesson_original_topic": "GT · Coordinate geometry",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "2ff7d384a9b3777b013bc1b203bd683f",
+    "key_digest": "821b2c313cf79c773728c2fcf784a237",
+    "fingerprint": "6d3180f864ddeb2a5236734dc8020dc8"
+  },
+  {
+    "id": "12ae8dee-aa30-5359-9380-970aacd3e90c",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "From 2020 to 2021, the amount in Tom's bank account decreased by 11% to $49,840. What was the initial amount in his bank account?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$56,000"
+      },
+      {
+        "key": "B",
+        "text": "$54,820"
+      },
+      {
+        "key": "C",
+        "text": "$45,309"
+      },
+      {
+        "key": "D",
+        "text": "$44,358"
+      }
+    ],
+    "correct": "A",
+    "explanation": "After an 11% decrease, 89% remains. The original amount is 49,840/0.89 = $56,000.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Percentage decrease (finding original)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 039",
+      "source_page": 33,
+      "lesson_subtopic": "Reverse percentages",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "e5efdf47bfc8c28102b7b5370e3d4b58",
+    "key_digest": "ec02eb0f799c8a7b5fa55c4b786883de",
+    "fingerprint": "d8ac5bad2c46b913288e1f7653a4fcbc"
+  },
+  {
+    "id": "12f69774-0102-50ec-83b3-a28e4d04a047",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "The smallest integer that satisfies the inequality 3(4x − 1) > 21 is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "4"
+      }
+    ],
+    "correct": "C",
+    "explanation": "3(4x − 1) > 21 gives 12x > 24 and x > 2. The least integer is 3.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear inequalities",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 040",
+      "source_page": 12,
+      "lesson_subtopic": "Solving and testing inequalities",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "cb8996c554c9cc46dd75596b898262e7",
+    "key_digest": "0a52301ce728860a127e6b7bd86c578c",
+    "fingerprint": "00931dcf78b18ced7f3014416b9b4909"
+  },
+  {
+    "id": "1326c086-b4e9-5d6b-acef-d8db4c5c6ba4",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "An apartment's selling price is directly proportional to its area. If 127 m² sells for $168,275, what is the price of 156 m²?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$237,900"
+      },
+      {
+        "key": "B",
+        "text": "$208,500"
+      },
+      {
+        "key": "C",
+        "text": "$136,993"
+      },
+      {
+        "key": "D",
+        "text": "$206,700"
+      }
+    ],
+    "correct": "D",
+    "explanation": "Price per square meter is 168,275/127 = $1,325. Thus 156 × 1,325 = $206,700. The ratio 206,700/168,275 equals 156/127.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Variation",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "PSD 009",
+      "source_page": 152,
+      "lesson_subtopic": "Part-to-whole ratios and unit rates",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "75ea04bf68e0745eb3d1f8118224e298",
+    "key_digest": "6b60f2f73431fa7633e80e0648d04539",
+    "fingerprint": "4f669fd8862a8d0a718025f9cc6a32c9"
+  },
+  {
+    "id": "132a8052-5811-5b69-8502-b3834dff6527",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "What is f(a + 2) if f(x) = 3x² − x + 4?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "f(a + 2) = 3a² − 11a + 12"
+      },
+      {
+        "key": "B",
+        "text": "f(a + 2) = 3a² − 11a + 14"
+      },
+      {
+        "key": "C",
+        "text": "f(a + 2) = 3a² + 11a + 12"
+      },
+      {
+        "key": "D",
+        "text": "f(a + 2) = 3a² + 11a + 14"
+      }
+    ],
+    "correct": "D",
+    "explanation": "Expand 3(a + 2)² − (a + 2) + 4 = 3a² + 11a + 14.",
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Function evaluation",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 016",
+      "source_page": 52,
+      "lesson_subtopic": "Evaluating functions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Functions and transformations",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "c177b3d26a159799a84d66b1bf65512e",
+    "key_digest": "aee31bc265d88259d4f2bcd14c262040",
+    "fingerprint": "f41b2843df1633dec88f82848982ba14"
+  },
+  {
+    "id": "136b6118-43cb-5ed6-9a08-ba00d0363108",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "HOA 013 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "correct": "C",
+    "explanation": "No more than 40 total moves givesh+v<=40, at least 10 horizontal givesh>=10, and point cost is 5h+3v. Also retain the implicit nonnegative integer move counts.",
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-hoa-013.png",
+      "domain": "FA",
+      "subtopic": "Inequalities and systems",
+      "image_alt": "Original question HOA 013, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "HOA 013",
+      "source_page": 11,
+      "lesson_subtopic": "Modelling constraints",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "HOA 013",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "source_image_sha256": "fd44d0610394da4b4d2bb6f37e14d9b880f3846cf98a4eefb753f5942d6830b4",
+      "lesson_original_topic": "FA · Inequalities and systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "9616636db651ae85013e4fa1f1964ba2",
+    "key_digest": "639a8e521ef31728dcec2f0b85630a71",
+    "fingerprint": "695b37d37554b23b1e1159de5c8233ad"
+  },
+  {
+    "id": "14d6e825-5aaa-5cc4-8804-b48363cce436",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "PSD 142 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "correct": "B",
+    "explanation": "Difference the cumulative counts to obtain 4,9,15,12,6,4. Weighted sum is 119; divide by 50 families to get 2.38.",
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-142.png",
+      "domain": "DAP",
+      "subtopic": "Statistics",
+      "image_alt": "Original question PSD 142, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 142",
+      "source_page": 255,
+      "lesson_subtopic": "Mean from cumulative frequency",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 142",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_image_sha256": "4c38ebb61f67d0d7e650de5c8282d59dc557e5cdb643d3bdbc6e5ef66b50e553",
+      "lesson_original_topic": "DAP · Statistics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "5f74a6678348562d762f8d53b3720d69",
+    "key_digest": "eac0b6cec059b8bcf02bedd37cb9b930",
+    "fingerprint": "543603a3d8a288394361752eb1b89b0f"
+  },
+  {
+    "id": "154d45d6-34c7-5c42-8567-4193574b7436",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Combined monthly salaries in 2019, in thousands of dollars: Jan 2; Feb 3; Mar 2; Apr 8; May 6; Jun 4; Jul 2; Aug 1; Sep 11; Oct 9; Nov 3; Dec 6. What is the approximate percentage of the income in May out of their total annual income?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3.41%"
+      },
+      {
+        "key": "B",
+        "text": "5.27%"
+      },
+      {
+        "key": "C",
+        "text": "9.52%"
+      },
+      {
+        "key": "D",
+        "text": "10.53%"
+      }
+    ],
+    "correct": "D",
+    "explanation": "The monthly values sum to 57 thousand dollars. May contributes 6 thousand, so its share is 100 × 6/57 ≈ 10.53%.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Data interpretation (percentages)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 014",
+      "source_page": 25,
+      "lesson_subtopic": "Percentages from charts and tables",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "DAP · Percentages and interest",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "2721cb2460858b3c15591d12f309c50c",
+    "key_digest": "de2fd62eb5e17e7fdde71571bb860065",
+    "fingerprint": "55552cdf4672898f649c1988997f8d06"
+  },
+  {
+    "id": "1578cec6-aa18-5b85-b957-5f718428c9dc",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "The simplified form of the expression x² − 4 − (−2x² + x − 4) is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−x² − x − 8"
+      },
+      {
+        "key": "B",
+        "text": "3x² − x"
+      },
+      {
+        "key": "C",
+        "text": "3x² − x + 4"
+      },
+      {
+        "key": "D",
+        "text": "3x² − 2x"
+      }
+    ],
+    "correct": "B",
+    "explanation": "Combining like terms leaves 3x² − x.",
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Polynomial operations",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 036",
+      "source_page": 56,
+      "lesson_subtopic": "Combining like terms",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Polynomials",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "c61c980203a85c67d4889a711b4b1ef8",
+    "key_digest": "5d45ed6edbd05a426ba5b57ac0009e53",
+    "fingerprint": "27006312955f89dc31b6d52992f7fd4c"
+  },
+  {
+    "id": "164376dd-7559-54c7-893d-385c2fb3a710",
+    "topic": "Algebraic expressions and equations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "For a spring-mass system, T = 2π√(m/k), where T is the period, m the mass, and k the spring constant (all positive). What is m in terms of T and k?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "m = kT/(4π²)"
+      },
+      {
+        "key": "B",
+        "text": "m = kT²/(4π²)"
+      },
+      {
+        "key": "C",
+        "text": "m = kT²/(4π)"
+      },
+      {
+        "key": "D",
+        "text": "m = k²T/(4π²)"
+      }
+    ],
+    "correct": "B",
+    "explanation": "Square T = 2π√(m/k) to get T² = 4π²m/k. Rearranging gives m = kT²/(4π²).",
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Rearranging formulas",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 070",
+      "source_page": 63,
+      "lesson_subtopic": "Isolating a variable in a radical formula",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Algebraic expressions and equations",
+      "lesson_original_topic": "AAF · Rational expressions and formulas",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "36529367661d82c56da7cd3b124a336e",
+    "key_digest": "2e532196ee03c45e37f80d651fdbb8e9",
+    "fingerprint": "7fc917a23cc8e93c7c84fc6acf17c2f5"
+  },
+  {
+    "id": "16905e1d-26cd-5d58-b92c-3b2b3dfb7b21",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "For what values of a and b would f(x) = (2a − 3)x² + bx − 1 be equal to g(x) = (4a + 3)x² + (3 − b)x − 1?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "a = −3 and b = −1.5"
+      },
+      {
+        "key": "B",
+        "text": "a = −3 and b = 1.5"
+      },
+      {
+        "key": "C",
+        "text": "a = 3 and b = −1.5"
+      },
+      {
+        "key": "D",
+        "text": "a = 3 and b = 1.5"
+      }
+    ],
+    "correct": "B",
+    "explanation": "Equating the first expressions gives 2a − 3 = 4a + 3, so a = −3. The other equality gives b = 3 − b, hence b = 3/2.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Polynomial equality (matching coefficients)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 058",
+      "source_page": 16,
+      "lesson_subtopic": "Expanding and comparing coefficients",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "2736ada581827ace187ec163192df81d",
+    "key_digest": "9e29124a54311e865f4f434dd6bf526d",
+    "fingerprint": "2809dca48088562d4a33803f08a93d0c"
+  },
+  {
+    "id": "16b5283b-c923-5c89-b6ed-9b48e0b75abe",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "EST I Math — March 2026 · Question 12. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "correct": "A",
+    "explanation": "A 40% increase multiplies the original price by 1.40. Original price = 308/1.40 = USD 220.",
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/q12.png",
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 12, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 5,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "lesson_subtopic": "Reverse percentages",
+      "source_question": 12,
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "Percentages",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "298555f4de4c9b9cc4d877a3cbaece86",
+    "key_digest": "ed0e9aee843a4ec549e94b2a9223721a",
+    "fingerprint": "d993c5d02c440c413219b9dece62c6ef"
+  },
+  {
+    "id": "16eb7c1f-a81f-5d70-a9c8-e153707927c0",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Which appliance was sold the most during these two years?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "TVs"
+      },
+      {
+        "key": "B",
+        "text": "Laptops"
+      },
+      {
+        "key": "C",
+        "text": "Headphones"
+      },
+      {
+        "key": "D",
+        "text": "Keyboards"
+      }
+    ],
+    "correct": "B",
+    "explanation": "Across both years, the totals in hundreds are 6 TVs, 10 laptops, 8 headphones, and 4 keyboards. Laptops have the largest total.",
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/dap-003-1.png",
+      "domain": "DAP",
+      "subtopic": "Bar graphs",
+      "image_alt": "Original diagram for DAP 003",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 003",
+      "source_page": 21,
+      "lesson_subtopic": "Reading and comparing data",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "00839b2ceb9f6a8f2bb91cc3edc3864b",
+    "key_digest": "f224e8c83fbe58088f68d6b71cfa2a87",
+    "fingerprint": "73eeab2d9513dce9eb558a92e3d180dc"
+  },
+  {
+    "id": "191dae01-9ac9-5aea-907c-46d6b8fb3857",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "The average height of 14 players in a football club is 178.8 cm. Two players of equal height joined the club. If the new average height of the players is 179.325 cm, what is the height of each of the two players?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "181 cm"
+      },
+      {
+        "key": "B",
+        "text": "183 cm"
+      },
+      {
+        "key": "C",
+        "text": "185 cm"
+      },
+      {
+        "key": "D",
+        "text": "186 cm"
+      }
+    ],
+    "correct": "B",
+    "explanation": "The two newcomers' combined height is 16(179.325) − 14(178.8) = 366 cm. Each is 183 cm tall.",
+    "assets": {
+      "domain": "DAP",
+      "subtopic": "Averages",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 001",
+      "source_page": 21,
+      "lesson_subtopic": "Mean and missing values",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "a4ed5259a6366bc9cb89b52efa58ef6a",
+    "key_digest": "f8782bcb7c0f9f35a5ef8de9d2cbe42e",
+    "fingerprint": "3fdc4ccbdcba82a37b98fd9357f886d8"
+  },
+  {
+    "id": "1ae438e4-9e2b-5876-9e46-e7b9c8b4c3a1",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "PSD 218 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "correct": "D",
+    "explanation": "4.5*60*60=16200.",
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-psd-218.png",
+      "domain": "DAP",
+      "subtopic": "Ratios, rates and variation",
+      "image_alt": "Original question PSD 218, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "PSD 218",
+      "source_page": 303,
+      "lesson_subtopic": "Rates and unit conversion",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "PSD 218",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_image_sha256": "b3463be107b2b28501c4bd08147e075a4a064a690bfc97b3f6f8172497039863",
+      "lesson_original_topic": "DAP · Ratios, rates and variation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "6ede2542fc62539d2b60851d28e254a5",
+    "key_digest": "23503ea755e3cfd0fddf4e11a4fb6536",
+    "fingerprint": "85f6a0172104f2a85d901d93f015c8b1"
+  },
+  {
+    "id": "1b44c959-54ba-55b2-9271-c48da29208ad",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "d: x + 2y + 2 = 0. Which of the equations below could not be a line perpendicular to line d given above?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "6x − 3y = 0"
+      },
+      {
+        "key": "B",
+        "text": "4x − 2y − 2 = 0"
+      },
+      {
+        "key": "C",
+        "text": "2x − y + 3 = 0"
+      },
+      {
+        "key": "D",
+        "text": "2x + y + 1 = 0"
+      }
+    ],
+    "correct": "D",
+    "explanation": "The given line has slope −1/2; perpendicular lines have slope 2. The line 2x + y + 1 = 0 has slope −2 instead.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear graphs (perpendicular lines)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 030",
+      "source_page": 10,
+      "lesson_subtopic": "Parallel and perpendicular lines",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "76d80f74f0770ef8e49bd807cb1c4516",
+    "key_digest": "adaee141e1a01b82e2aad4ace3043b6d",
+    "fingerprint": "03d5ed19d487906d29c90085fd0ebcb7"
+  },
+  {
+    "id": "1c5532ae-a588-5192-9607-aaf78f437c83",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Line m is parallel to the line with equation 2y = 3x + 1. If the equation of m is 3ax − by = 1, what is the value of a/b?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1/2"
+      },
+      {
+        "key": "B",
+        "text": "3/2"
+      },
+      {
+        "key": "C",
+        "text": "5/2"
+      },
+      {
+        "key": "D",
+        "text": "7/2"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Parallel lines have equal slopes. Setting 3a/b = 3/2 gives a/b = 1/2.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Parallel lines",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 055",
+      "source_page": 15,
+      "lesson_subtopic": "Parallel and perpendicular lines",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "d89aba50831878b7c1fb1947d8fe6653",
+    "key_digest": "222638c45e0d2160d12d1e9780630aff",
+    "fingerprint": "20eafeb1eb552c3d36ba7757c3b70508"
+  },
+  {
+    "id": "1c873ecc-b074-5414-b8dc-cf78a6d7f8a1",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "GTC 021 — Answer the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Option A in the original question"
+      },
+      {
+        "key": "B",
+        "text": "Option B in the original question"
+      },
+      {
+        "key": "C",
+        "text": "Option C in the original question"
+      },
+      {
+        "key": "D",
+        "text": "Option D in the original question"
+      }
+    ],
+    "correct": "D",
+    "explanation": "Area ratio=(3/1.8)^2=25/9. Percent larger=(25/9-1)*100=177.777...%.",
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/exams/est-september-2026/clean-gtc-021.png",
+      "domain": "GT",
+      "subtopic": "Circles",
+      "image_alt": "Original question GTC 021, including its complete answer choices and any diagram or table.",
+      "reference": "https://math.portal.ghoneem.com/exams/est-march-2026/reference.png",
+      "source_bank": "est-september-2026",
+      "source_code": "GTC 021",
+      "source_page": 381,
+      "lesson_subtopic": "Length, area and volume scale factors",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_question": "GTC 021",
+      "curriculum_lesson": "Circles",
+      "source_image_sha256": "ab556ccb355ea4c45c6a7161dee4f935432f3a407524f5c3dc2c593eadd3b75a",
+      "lesson_original_topic": "GT · Circles",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "7bcf90da61fc629a3841b304a983eadb",
+    "key_digest": "343df2b09369b851780e3baf6a2cc3aa",
+    "fingerprint": "36f2df67d393c3bc2c2cbf2001d3fdf9"
+  },
+  {
+    "id": "1d1852a3-a842-55a8-abf6-7bbad2cd65da",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "The equation 2(2x + 3) − 5 = (2 + a)x + 3 has no real solutions. What is the value of a?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−1"
+      },
+      {
+        "key": "B",
+        "text": "0"
+      },
+      {
+        "key": "C",
+        "text": "1"
+      },
+      {
+        "key": "D",
+        "text": "2"
+      }
+    ],
+    "correct": "D",
+    "explanation": "For no solution, the x coefficients must match while the constants differ. Thus 2 + a = 4, giving a = 2.",
+    "assets": {
+      "domain": "FA",
+      "subtopic": "Linear equations with no solution",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 026",
+      "source_page": 9,
+      "lesson_subtopic": "No-solution conditions",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Equations and expressions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "c00976720a9f131529b45268c182b113",
+    "key_digest": "117caec80c82b25812b4f98be4ae289b",
+    "fingerprint": "6a92c2d50ee4f8ab8ad447817e36d783"
+  },
+  {
+    "id": "1dce879c-64fb-5c10-8d79-5892cb9b7602",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "How many real solutions does the equation 4x³ + 8x² + x + 2 = 0 have?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0"
+      },
+      {
+        "key": "B",
+        "text": "1"
+      },
+      {
+        "key": "C",
+        "text": "2"
+      },
+      {
+        "key": "D",
+        "text": "3"
+      }
+    ],
+    "correct": "B",
+    "explanation": "Factor as (x + 2)(4x² + 1) = 0. Only x = −2 is real, so there is one real root.",
+    "assets": {
+      "domain": "AAF",
+      "subtopic": "Higher-order equations (number of real solutions)",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "AAF 021",
+      "source_page": 53,
+      "lesson_subtopic": "Roots and zero-product property",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "AAF · Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "ceb449bf79195a9880e33f9bff16a746",
+    "key_digest": "95952c0731cf665ac208214e22065eee",
+    "fingerprint": "f731f0aedac566371bcea9d96ac44cda"
+  },
+  {
+    "id": "1eab2836-30b8-57b6-8496-b9cd04665db8",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "The variables x and y in the table above form a linear relationship. The value of ab is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "5"
+      },
+      {
+        "key": "B",
+        "text": "16"
+      },
+      {
+        "key": "C",
+        "text": "25"
+      },
+      {
+        "key": "D",
+        "text": "55"
+      }
+    ],
+    "correct": "D",
+    "explanation": "The table follows y = 2x + 3. The missing values are a = 11 and b = 5, so ab = 55.",
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/fa-049-1.png",
+      "domain": "FA",
+      "subtopic": "Linear relationships from tables",
+      "image_alt": "Original diagram for FA 049",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "FA 049",
+      "source_page": 14,
+      "lesson_subtopic": "Linear models from data",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Linear functions and slope",
+      "lesson_original_topic": "FA · Lines and linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "5922b4b94740037b73dab19846bd5dcd",
+    "key_digest": "a822881668ec1cf9ae40997c363dc588",
+    "fingerprint": "20d19c4ad5e00551374bf14e5f4c9b3b"
+  },
+  {
+    "id": "1ebaae07-19c0-5d8f-a4eb-eb9ac17bc25c",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Which appliances are used on weekends for an average of at least three hours per day more than on weekdays?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Lights and washer"
+      },
+      {
+        "key": "B",
+        "text": "TV and heater"
+      },
+      {
+        "key": "C",
+        "text": "TV, computer and washer"
+      },
+      {
+        "key": "D",
+        "text": "Others"
+      }
+    ],
+    "correct": "B",
+    "explanation": "TV usage increases by 4 hours and heater usage by 3 hours on weekends. No other appliance increases by at least 3 hours.",
+    "assets": {
+      "image": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-banks-2026/figures/dap-062-1.png",
+      "domain": "DAP",
+      "subtopic": "Reading bar graphs",
+      "image_alt": "Original diagram for DAP 065",
+      "source_bank": "est-reviewed-banks-2026",
+      "source_code": "DAP 065",
+      "source_page": 42,
+      "lesson_subtopic": "Reading and comparing data",
+      "source_document": "EST_I_Math_Questions_by_Topic-2.pdf",
+      "curriculum_lesson": "Statistics and data analysis",
+      "lesson_original_topic": "DAP · Graphs and data interpretation",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "q_digest": "b1b2afe76a46e55e58b44502e514aae9",
+    "key_digest": "69bf7a27c66754ffe7f51552f0827b61",
+    "fingerprint": "ae28d0664d45b4540bbd0d7e10f2e45a"
+  }
+]
