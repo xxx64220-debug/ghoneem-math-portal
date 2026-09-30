@@ -63,7 +63,7 @@ jobs:
 
       - name: Verify remaining EST mathematics, exclusions and coverage in isolation
         run: |
-          for test in tests/est_remaining_review_batch*.cjs tests/est_remaining_exclusions.cjs tests/est_remaining_verified_replacement.cjs tests/est_remaining_prune_reconciliation.cjs; do
+          for test in tests/est_remaining_review_batch*.cjs tests/est_remaining_exclusions.cjs tests/est_remaining_verified_replacement.cjs tests/est_remaining_prune_reconciliation.cjs tests/revision_cross_bank_additions.cjs; do
             PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node "$test" || exit 1
           done
 
