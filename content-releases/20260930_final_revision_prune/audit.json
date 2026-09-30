@@ -1,0 +1,31 @@
+{
+  "release": "revision.final_revision_representatives.20260930",
+  "rule": "At most two ready, unheld questions per source track, lesson, normalized idea, and difficulty.",
+  "before": {
+    "questions": 2427,
+    "ready": 2414,
+    "tracks": {
+      "sat": {"questions": 1341, "ready": 1341, "ideas": 326},
+      "est": {"questions": 590, "ready": 578, "ideas": 300},
+      "est2": {"questions": 496, "ready": 495, "ideas": 368}
+    }
+  },
+  "after": {
+    "questions": 1344,
+    "tracks": {
+      "sat": {"questions": 456, "lessons": 20, "ideas": 326, "difficulty": {"easy": 84, "medium": 294, "hard": 78}},
+      "est": {"questions": 438, "lessons": 22, "ideas": 298, "difficulty": {"easy": 111, "medium": 248, "hard": 79}},
+      "est2": {"questions": 450, "lessons": 24, "ideas": 367, "difficulty": {"easy": 193, "medium": 148, "hard": 109}}
+    }
+  },
+  "deactivated": {
+    "questions": 1083,
+    "representative_cap": {"sat": 885, "est": 140, "est2": 45},
+    "source_not_ready": {"sat": 0, "est": 12, "est2": 1}
+  },
+  "collection_slice_loss": 0,
+  "classification_only": true,
+  "new_answer_certification": false,
+  "deleted_questions": 0,
+  "reversible": true
+}

@@ -71,6 +71,8 @@ jobs:
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est2_sat_revision_ideas_db.cjs
           python tests/est2_sat_revision_ideas_20260930.py
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est2_sat_revision_ideas_20260930_db.cjs
+          python tests/final_revision_prune.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/final_revision_prune_db.cjs
           if [ -f content/est-banks-2026/reviewed-bank.json ]; then
             python tests/est_bank_2026.py
           else
@@ -322,3 +324,21 @@ jobs:
             exit 1
           fi
           echo "PASS: second SAT and EST II revision idea release rerun was rejected"
+
+      - name: Verify Final Revision representative pruning in isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          PGDATABASE=postgres dropdb --if-exists portal_revision_prune_ci
+          PGDATABASE=postgres createdb portal_revision_prune_ci
+          export PGDATABASE=portal_revision_prune_ci
+          psql -v ON_ERROR_STOP=1 -f tests/final_revision_prune_fixture.sql
+          fixture_checksum="$(psql -v ON_ERROR_STOP=1 -Atc "select md5(string_agg(q.track_id||'|'||r.question_id::text||'|'||r.lesson||'|'||r.idea||'|'||r.difficulty||'|'||r.programmes::text||'|'||r.fingerprint||'|'||r.active::text||'|'||r.focus::text,';' order by r.question_id)) from revision_items r join questions q on q.id=r.question_id where r.active")"
+          sed "s/e7baafb3a3ce792eb2f7401ea4efba1b/$fixture_checksum/" content-releases/20260930_final_revision_prune/apply.sql > /tmp/final_revision_prune_apply.sql
+          psql -v ON_ERROR_STOP=1 -f /tmp/final_revision_prune_apply.sql
+          psql -v ON_ERROR_STOP=1 -f tests/final_revision_prune.sql
+          if psql -v ON_ERROR_STOP=1 -f /tmp/final_revision_prune_apply.sql; then
+            echo "ERROR: Final Revision representative release rerun was not rejected"
+            exit 1
+          fi
+          echo "PASS: Final Revision representative release rerun was rejected"
