@@ -150,3 +150,13 @@ Production application data remains in Supabase. The frontend is hosted on the e
 The migration `portal_secure_authoring_and_submission` contains the applied SQL assembled from `supabase/sql/portal_upgrade.sql`, `portal_admin.sql`, `portal_access.sql`, and `portal_scope.sql`. These scripts are the source record for the migration and should not be blindly reapplied.
 
 Run `node tests/client_state.test.cjs` for client state regression checks. The `tests/upgrade_*.sql` files must run together inside a transaction ending in ROLLBACK; do not use the local Auth shim on Supabase.
+
+
+
+# English passage readability — 30 September 2026
+
+English reading and writing passages now have a dedicated, responsive reading panel with 18px-equivalent body text, generous paragraph spacing, a 72-character reading width, clearer titles/authors and preserved illustrations. The sanitizer retains underlined source wording and highlighted question references, while rejecting executable markup, event handlers and unsafe image URLs. Question data, answers and scoring are unchanged.
+
+Checked all 340 live English passage records against the renderer: every word, paragraph, underline, reference marker and illustration element is preserved. Source image data in the offline fixtures is replaced with a tiny inert test image URL; the live assets are unchanged. Renderer/client regressions passed. Browser visual QA was unavailable for this static checkout.
+
+Reproduce the focused regression with `npm ci --prefix tests/passage-runtime --ignore-scripts --no-audit --no-fund` followed by `node tests/english_passages.test.cjs`. To audit another complete passage export, pass its JSON path as the final argument.

@@ -743,11 +743,16 @@ function drawFig(spec) {
 }
 function cleanMarkup(markup){
  const doc=new DOMParser().parseFromString(markup,'text/html');
- const tags=new Set('svg g path line rect circle ellipse polygon polyline text tspan defs marker table thead tbody tr th td caption colgroup col div span p br b i strong em sup sub'.split(' '));
+ const tags=new Set('svg g path line rect circle ellipse polygon polyline text tspan defs marker table thead tbody tr th td caption colgroup col div span p br b i strong em sup sub u mark figure figcaption img'.split(' '));
  const attrs=new Set('viewBox xmlns d x y x1 y1 x2 y2 cx cy r rx ry width height points fill stroke stroke-width transform text-anchor dominant-baseline font-size font-style colspan rowspan scope role aria-label'.toLowerCase().split(' '));
  for(const el of [...doc.body.querySelectorAll('*')]){
   if(!tags.has(el.localName)){el.remove();continue;}
-  for(const a of [...el.attributes])if(!attrs.has(a.name.toLowerCase())||/url\s*\(|javascript:/i.test(a.value))el.removeAttribute(a.name);
+  for(const a of [...el.attributes]){
+   const name=a.name.toLowerCase();
+   if(el.localName==='img' && name==='alt')continue;
+   if(el.localName==='img' && name==='src' && (/^https:\/\//i.test(a.value)||/^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\s]+$/i.test(a.value)))continue;
+   if(!attrs.has(name)||/url\s*\(|javascript:/i.test(a.value))el.removeAttribute(a.name);
+  }
  }
  return doc.body.innerHTML;
 }
@@ -757,7 +762,12 @@ function figure(a) {
   const figures=Array.isArray(a.figure)?a.figure:[a.figure];
   for(const src of figures){if(typeof src==='string'&&(/^(https:\/\/)/.test(src)||/^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\s]+$/.test(src)))out+=`<div class="fig"><img src="${esc(src)}" alt="${esc(a.figure_caption||'Question diagram')}" style="max-width:100%;height:auto"></div>`;}
   if (a.figspec) out += `<div class="fig">${cleanMarkup(drawFig(a.figspec))}</div>`;
-  if (a.html)    out += `<div class="fig fig-table">${cleanMarkup(ent(a.html))}</div>`;
+  if (a.html) {
+    const passage=typeof a.passage_title==='string' && a.passage_title.trim();
+    out += passage
+      ? `<section class="fig english-passage" aria-label="${esc(a.passage_title)}" lang="en" dir="ltr">${cleanMarkup(ent(a.html))}</section>`
+      : `<div class="fig fig-table">${cleanMarkup(ent(a.html))}</div>`;
+  }
   if(a.svg) out+=`<div class="fig">${cleanMarkup(a.svg)}</div>`;
   if(a.image&&/^https:\/\//.test(a.image))out+=`<div class="fig"><img src="${esc(a.image)}" alt="${esc(a.image_alt || 'Question diagram')}" style="max-width:100%;height:auto"></div>`;
   if((a.source_question||a.source_code) && a.image && /^https:\/\//.test(a.image))out+=`<p style="margin:8px 0 18px;font-size:14px"><a href="${esc(a.image)}" target="_blank" rel="noopener">${a.source_question?'Enlarge original question':'Enlarge diagram'}</a></p>`;

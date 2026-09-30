@@ -49,6 +49,11 @@ jobs:
             echo "SKIP: tests/est_source_review.test.cjs needs content/est-september-2026/review-archive.json and dist/."
           fi
 
+      - name: Verify English passage preservation and safe rendering
+        run: |
+          npm ci --prefix tests/passage-runtime --ignore-scripts --no-audit --no-fund
+          node tests/english_passages.test.cjs
+
       - name: Compile Python sources
         run: |
           python -m compileall -q scripts tests content-releases
