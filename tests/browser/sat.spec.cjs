@@ -8,7 +8,7 @@ const questions = [
  { id:'smoke-q2', topic:'Linear equations', stem:'Solve 2x = 8.', type:'grid_in', assets:{html:'<table><tr><th>x</th><th>2x</th></tr><tr><td>4</td><td>8</td></tr></table>'} }
 ];
 // Replace only the SDK boundary; execute the checked-in portal scripts unchanged.
-const sdk = `window.supabase={createClient(){const session={access_token:'synthetic-local-only',user:{id:'smoke-user'}};return {auth:{getSession:async()=>({data:{session}}),getUser:async()=>({data:{user:session.user}})},from:()=>({upsert:async rows=>{window.__savedAnswers=(window.__savedAnswers||[]).concat(rows);return {error:null}}})}}};`;
+const sdk = `window.supabase={createClient(){const session={access_token:'synthetic-local-only',user:{id:'smoke-user'}};return {auth:{onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}}),getSession:async()=>({data:{session}}),getUser:async()=>({data:{user:session.user}})},from:()=>({upsert:async rows=>{window.__savedAnswers=(window.__savedAnswers||[]).concat(rows);return {error:null}}})}}};`;
 test('SAT portal, exam navigation/timer/figures and Final Revision', async ({page,context}) => {
  const errors=[], unexpected=[]; let revisionRequested=false;
  page.on('pageerror', e=>errors.push(e.message));
