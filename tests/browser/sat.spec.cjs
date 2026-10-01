@@ -76,6 +76,9 @@ test('SAT portal, exam navigation/timer/figures and Final Revision', async ({pag
  await expect(page.locator('#satDesmos')).toHaveAttribute('rel',/noopener/);
  // Also handles a future embed without permitting an external network request.
  for(const frame of await page.locator('#vRun iframe[src*="desmos"]').all())await expect(frame).toBeVisible();
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);
+ const layout=await page.evaluate(()=>({width:document.documentElement.clientWidth,content:document.documentElement.scrollWidth}));
+ expect(layout.content,JSON.stringify(layout)).toBeLessThanOrEqual(page.viewportSize().width+1);
+ const calculator=await page.locator('#satDesmos').boundingBox();
+ expect(calculator.x+calculator.width).toBeLessThanOrEqual(page.viewportSize().width+1);
  expect(errors).toEqual([]);expect(unexpected).toEqual([]);
 });
