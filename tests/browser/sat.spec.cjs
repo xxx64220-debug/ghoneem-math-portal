@@ -1,7 +1,8 @@
 const { test, expect } = require('@playwright/test');
 const tracks = [{ id:'sat', name:'SAT Math', exams_available:1, attempts_done:0 }, { id:'est', name:'EST Math', exams_available:0, attempts_done:0 }];
 const exam = { id:'smoke-exam', title:'Synthetic SAT smoke exam', track_id:'sat', assessment_type:'full_exam', questions:2, duration_seconds:2100, open:true };
-const graph = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160"><path d="M20 140V20M20 140H220M20 140L180 20" stroke="blue" fill="none"/><text x="80" y="140">y = x</text></svg>');
+const graph = 'https://fixtures.invalid/sat-line.svg';
+const graphSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="240" height="160"><path d="M20 140V20M20 140H220M20 140L180 20" stroke="blue" fill="none"/><text x="80" y="140">y = x</text></svg>';
 const questions = [
  { id:'smoke-q1', topic:'Linear functions', stem:'For the graph shown, what is the slope?', type:'mcq', choices:[{key:'A',text:'1'},{key:'B',text:'2'},{key:'C',text:'3'},{key:'D',text:'4'}], assets:{image:graph,image_alt:'Synthetic line graph'} },
  { id:'smoke-q2', topic:'Linear equations', stem:'Solve 2x = 8.', type:'grid_in', assets:{html:'<table><tr><th>x</th><th>2x</th></tr><tr><td>4</td><td>8</td></tr></table>'} }
@@ -14,6 +15,7 @@ test('SAT portal, exam navigation/timer/figures and Final Revision', async ({pag
  await context.route('**/*', async route=>{
   const url=new URL(route.request().url());
   if(url.origin==='http://127.0.0.1:4173')return route.continue();
+  if(url.href===graph)return route.fulfill({contentType:'image/svg+xml',body:graphSvg});
   if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:sdk});
   // Optional CDN styling/fonts/math are offline in this smoke test.
   if(url.hostname==='fonts.googleapis.com' || (url.hostname==='cdn.jsdelivr.net' && url.pathname.startsWith('/npm/katex@0.16.9/dist/')))return route.fulfill({body:'',contentType:route.request().resourceType()==='script'?'application/javascript':'text/css'});
@@ -52,7 +54,7 @@ test('SAT portal, exam navigation/timer/figures and Final Revision', async ({pag
  const before=await page.locator('#clock').textContent();
  await expect(page.locator('#clock')).not.toHaveText(before,{timeout:4000});
  await page.locator('.choice[data-k="A"]').click();
- await expect(page.locator('#saving')).toContainText('Saved');
+ await expect(page.locator('#saving')).toContainText('All answers saved');
  await page.locator('#flagBtn').click();
  await expect(page.locator('#palette .pal').first()).toHaveClass(/flagged/);
  await page.locator('#nextBtn').click();
@@ -61,6 +63,9 @@ test('SAT portal, exam navigation/timer/figures and Final Revision', async ({pag
  await page.locator('#gin').fill('4');
  await expect(page.locator('#progress')).toHaveText('2 of 2 answered');
  await expect(page.locator('#nextBtn')).toBeDisabled();
+ await page.locator('#prevBtn').click();
+ await expect(page.locator('#qcard .stem')).toHaveText(questions[0].stem);
+ await page.locator('#palette .pal').nth(1).click();
  await page.locator('#palette .pal').first().click();
  await expect(page.locator('.choice[data-k="A"]')).toHaveClass(/sel/);
  await page.locator('#nextBtn').click();await expect(page.locator('#gin')).toHaveValue('4');
