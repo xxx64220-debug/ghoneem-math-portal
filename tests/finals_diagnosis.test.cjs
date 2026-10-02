@@ -1,7 +1,7 @@
 const fs=require('fs'),assert=require('assert');
 const student=fs.readFileSync('web/portal-controls.js','utf8');
 const admin=fs.readFileSync('web/hardest-questions.js','utf8');
-assert(student.includes("data-view=\"finalsDiagnosis\""),'student finals diagnosis tab missing');
+assert(student.includes("b.dataset.view='finalsDiagnosis'"),'student finals diagnosis tab missing');
 assert(student.includes('Not individually measured'),'student UI must not invent per-question timing');
 assert(student.includes('C / A / R / D / T / X'),'student error-code legend missing');
 assert(student.includes('Do not immediately reteach everything missed'),'student diagnosis workflow missing');
