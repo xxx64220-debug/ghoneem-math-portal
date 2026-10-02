@@ -31,6 +31,7 @@ jobs:
           node --test \
             tests/admin_question_reports.test.cjs \
             tests/hardest_questions.test.cjs \
+            tests/finals_diagnosis.test.cjs \
             tests/client_state.test.cjs \
             tests/cors.test.cjs \
             tests/daily_streak.test.cjs \
