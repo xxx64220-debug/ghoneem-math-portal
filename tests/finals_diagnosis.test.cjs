@@ -22,7 +22,8 @@ for(const failed of [false,true])test(`diagnosis survives notebook ${failed?'fai
  let resolveNotebook,calls=0,refreshes=0,paints=0;
  const result=new Promise(resolve=>{resolveNotebook=resolve;});
  const content={innerHTML:''};let buttons=[];
- const document={getElementById:()=>content,querySelector:()=>null,querySelectorAll:()=>{
+ const document={getElementById:()=>content,querySelector:()=>null,querySelectorAll:selector=>{
+  if(selector!=='[data-diagnosis-revision]')return [];
   buttons=[...content.innerHTML.matchAll(/data-diagnosis-revision="([^"]+)"/g)].map(m=>({dataset:{diagnosisRevision:m[1]}}));return buttons;
  }};
  const c={document,ST:{track:{id:'est'}},DASH:{view:'finalsDiagnosis',lessons:[{lesson:'Linear equations',seen:4,correct:1,percent:25,priority:'focus'}],history:[],exams:[]},esc:String,REV:{data:null},paintDashboard(){},paintDashboardContent(){content.innerHTML='Generic focus';},wireDashboard(){},setDashboardView(view){c.DASH.view=view;},async refreshRevision(){refreshes++;c.REV.data={items:[]};},revisionPaint(){paints++;},sb:{from:()=>{calls++;return {select:()=>({gte:()=>({lt:()=>result})})};}}};
@@ -32,4 +33,19 @@ for(const failed of [false,true])test(`diagnosis survives notebook ${failed?'fai
  await new Promise(resolve=>setImmediate(resolve));
  assert(content.innerHTML.includes('Finals diagnosis'));assert.equal(buttons.length,1);assert.equal(calls,1,'failed loads must not loop');
  await buttons[0].onclick();assert.equal(c.DASH.view,'revision');assert.equal(c.REV.lesson,'Linear equations');assert.equal(c.REV.collection,'all');assert.equal(c.REV.level,'mixed');assert.equal(refreshes,1);assert.equal(paints,1);
+});
+
+const lessonContext={};vm.createContext(lessonContext);vm.runInContext(student.slice(student.indexOf('function finalsExamLessons'),student.indexOf('/* ===================== EST FINALS DIAGNOSIS')),lessonContext);
+test('exam study plan uses graded results, explicit lessons and distinct question IDs',()=>{
+ const rows=lessonContext.finalsExamLessons([
+  {id:'a',assets:{curriculum_lesson:'Circles'},is_correct:false,response:''},
+  {id:'b',assets:{curriculum_lesson:'Circles'},is_correct:true,response:'A'},
+  {id:'b',assets:{curriculum_lesson:'Circles'},is_correct:true,response:'A'},
+  {id:'held',assets:{curriculum_lesson:'Circles'},is_correct:false,correct:{void:true}},
+  {id:'pending',assets:{curriculum_lesson:'Circles'},is_correct:null},
+  {id:'untagged',is_correct:false,response:'B'},
+  {id:'topic',topic:'Triangles and similarity',is_correct:true}
+ ]);
+ const circles=rows.find(x=>x.lesson==='Circles');assert.equal(circles.seen,2);assert.equal(circles.correct,1);assert.equal(circles.percent,50);assert.equal(circles.blank,1);
+ assert.equal(rows.find(x=>x.lesson==='Unclassified questions').classified,false);assert.equal(rows.length,3);
 });

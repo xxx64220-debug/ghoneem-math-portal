@@ -3,3 +3,5 @@
 
 /* EST Finals Diagnosis */
 .finals-diagnosis .student-table{margin:18px 0 24px}.finals-diagnosis td{vertical-align:top;min-width:150px}.diagnosis-bottom{margin-top:22px}.diagnosis-bottom>h3,.diagnosis-legend h3{font-family:Fraunces,Georgia,serif;color:var(--navy);margin-bottom:12px}.diagnosis-legend{border-top:1px solid var(--line);padding-top:18px;margin-top:20px;line-height:1.8}.finals-diagnosis .dash-notice{margin-top:20px}@media(max-width:700px){.finals-diagnosis .student-table table{min-width:820px}}
+
+.diagnosis-exams{margin-top:28px;border-top:1px solid var(--line);padding-top:22px}.diagnosis-exams>h3{margin:0 0 12px}.diagnosis-exams .lesson-grid{margin:16px 0}.diagnosis-exams .lesson-card p{margin:8px 0}
