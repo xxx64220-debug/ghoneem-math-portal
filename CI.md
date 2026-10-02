@@ -48,7 +48,7 @@ on the checked-in upgrade SQL for `assessment_type`; CI applies it explicitly
 before dependent migrations. Database behavior is checked against the isolated
 PostgreSQL service instead.
 
-## Local SAT browser smoke
+## Local SAT and EST English browser checks
 
 Run `npm ci --prefix tests/browser --ignore-scripts`, then
 `cd tests/browser && npx playwright install --with-deps chromium && npm test`.
@@ -67,7 +67,7 @@ autosave, next/previous palette navigation, flags, disabled boundary controls,
 and timer countdown without reset on navigation. The current calculator is an
 official SAT Desmos link, not an embed; visibility, URL, safe new-tab attributes
 and horizontal layout are checked. This does not certify actual Desmos service
-behavior. Traces are retained on failure. Fixtures are deliberately synthetic
+behavior. Traces are retained on failure; English desktop/mobile screenshots are retained on every run. Fixtures are deliberately synthetic
 and do not certify bank mathematics or production content/assets.
 
 Still requires an enrolled account: actual authentication/enrolment, assignment
@@ -76,3 +76,5 @@ submission/grading, production Final Revision availability and deployed assets.
 Still requires a physical device: touch/keyboard behavior, screen locking and
 app switching, PWA installation and opted-in notification display. Mobile
 viewport emulation does not establish those device behaviors.
+
+EST English coverage and fixture provenance are documented in `ENGLISH_READING.md`. Eight additional Chromium cases check English layout/formatting, collapse/reopen, answers, navigation and review, and unchanged SAT/EST I/EST II math paths.
