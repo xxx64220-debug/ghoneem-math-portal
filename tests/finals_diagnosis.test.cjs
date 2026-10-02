@@ -49,3 +49,5 @@ test('exam study plan uses graded results, explicit lessons and distinct questio
  const circles=rows.find(x=>x.lesson==='Circles');assert.equal(circles.seen,2);assert.equal(circles.correct,1);assert.equal(circles.percent,50);assert.equal(circles.blank,1);
  assert.equal(rows.find(x=>x.lesson==='Unclassified questions').classified,false);assert.equal(rows.length,3);
 });
+
+test('empty and ungraded reviews have no study evidence',()=>{assert.equal(lessonContext.finalsExamLessons([]).length,0);assert.equal(lessonContext.finalsExamLessons([{id:'pending',is_correct:null}]).length,0);assert(student.includes('No scored question evidence is available yet.'));});
