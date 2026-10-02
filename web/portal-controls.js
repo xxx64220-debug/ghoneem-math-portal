@@ -62,7 +62,7 @@ document.addEventListener('click',event=>{
     '<td><b>Teacher review</b><span class="history-detail">C / A / R / D / T / X</span></td>'+
     '<td><b>Not individually measured</b><span class="history-detail">Whole-attempt pacing: '+finalsPacing(latest)+'</span></td>'+
     '<td><b>'+repeats+'</b><span class="history-detail">RPT = the same question/pattern keeps returning</span></td></tr></tbody></table></div>'+
-    '<div class="diagnosis-bottom"><h3>Bottom skills to fix first</h3>'+(bottom.length?bottom.map((x,i)=>'<article class="lesson-card '+esc(x.priority)+'"><div class="lesson-card-top"><h3>'+(i+1)+'. '+esc(x.lesson)+'</h3><span class="priority-label">'+x.percent+'%</span></div><p>'+x.correct+'/'+x.seen+' distinct reviewed questions correct. Repair this skill, then retest with unseen mixed questions.</p></article>').join(''):'<div class="dash-empty">Complete enough reviewed questions to identify reliable bottom skills.</div>')+'</div>'+
+    '<div class="diagnosis-bottom"><h3>Bottom skills to fix first</h3>'+(bottom.length?bottom.map((x,i)=>'<article class="lesson-card '+esc(x.priority)+'"><div class="lesson-card-top"><h3>'+(i+1)+'. '+esc(x.lesson)+'</h3><span class="priority-label">'+x.percent+'%</span></div><p>'+x.correct+'/'+x.seen+' distinct reviewed questions correct. Repair this skill, then retest with unseen mixed questions.</p><button class="btn-ghost" data-diagnosis-revision="'+esc(x.lesson)+'">Practise this in Final Revision</button></article>').join(''):'<div class="dash-empty">Complete enough reviewed questions to identify reliable bottom skills.</div>')+'</div>'+
     '<div class="diagnosis-legend"><h3>Error codes</h3><p><b>C</b> — Concept &nbsp; <b>A</b> — Algebra/calculation &nbsp; <b>R</b> — Reading &nbsp; <b>D</b> — Calculator &nbsp; <b>T</b> — Timing &nbsp; <b>X</b> — Careless &nbsp; <b>RPT</b> — Repeat mistake</p><p class="dash-note">C/A/R/D/T/X are intentionally teacher-classified after reviewing the work; the portal does not guess a cause from a wrong answer.</p></div>'+
     '<div class="dash-notice"><strong>Final-week rule:</strong> Do not immediately reteach everything missed. Identify the bottom 2–3 skills, repair them, then retest.</div></section>';
  }
@@ -84,6 +84,6 @@ document.addEventListener('click',event=>{
  paintDashboardContent=function(){
    if(DASH.view!=='finalsDiagnosis')return basePaintDashboardContent();
    const content=document.getElementById('dashboardContent');if(!content)return;
-   content.innerHTML=finalsDiagnosisPanel();wireDashboard();loadFinalsRepeats();
+   content.innerHTML=finalsDiagnosisPanel();wireDashboard();document.querySelectorAll('[data-diagnosis-revision]').forEach(b=>b.onclick=async()=>{const lesson=b.dataset.diagnosisRevision;setDashboardView('revision');if(!REV.data)await refreshRevision();REV.collection='all';REV.level='mixed';REV.lesson=lesson;revisionPaint();});loadFinalsRepeats();
  };
 })();

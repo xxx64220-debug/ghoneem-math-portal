@@ -10,3 +10,7 @@ assert(admin.includes('Individual question time not reliably tracked'),'admin mu
 assert(admin.includes('Bottom 2–3 skills / topic accuracy'),'admin diagnosis columns missing');
 assert(admin.includes('C/A/R/D/T/X'),'admin error-code legend missing');
 console.log('finals diagnosis regression checks passed');
+
+assert(student.includes('data-diagnosis-revision'),'diagnosis must link weak skills to Final Revision');
+assert(student.includes("REV.lesson=lesson"),'diagnosis must focus Final Revision on selected weak lesson');
+assert(student.includes("REV.collection='all'"),'diagnosis practice must use the existing full curated revision bank');
