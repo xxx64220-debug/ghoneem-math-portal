@@ -42,9 +42,37 @@ run on every CI build.
 Migration `010_expiry_schedule.sql` is intentionally not applied in CI: it
 installs `pg_cron` and schedules a recurring database job, behavior provided by
 the hosted Supabase environment. The standalone notification scheduler also
-needs hosted `pg_cron` and `pg_net`, and is not applied. No browser end-to-end
-test or deployed Edge Function test runs here; those need a browser session or
-hosted Supabase services and credentials. The clean migration sequence relies
+needs hosted `pg_cron` and `pg_net`, and is not applied. Deployed Edge Function tests remain outside CI; those require hosted Supabase
+services and credentials. The clean migration sequence relies
 on the checked-in upgrade SQL for `assessment_type`; CI applies it explicitly
 before dependent migrations. Database behavior is checked against the isolated
 PostgreSQL service instead.
+
+## Local SAT browser smoke
+
+Run `npm ci --prefix tests/browser --ignore-scripts`, then
+`cd tests/browser && npx playwright install --with-deps chromium && npm test`.
+CI runs this suite on Chromium at desktop and mobile viewport sizes. Python
+serves the actual `web/` tree on `127.0.0.1:4173`; no configurable preview or
+production target is accepted and existing servers are not reused. Service
+workers are blocked. The SDK is replaced at its network boundary with an
+explicit synthetic session and in-memory answer writes. Edge Function requests
+receive synthetic fixtures; unknown external requests abort and fail the test.
+No request reaches Supabase. Optional CDN fonts/math are stubbed offline, so
+this does not verify CDN availability or KaTeX typesetting.
+
+Coverage: track chooser, SAT dashboard, Final Revision catalogue, exam stems,
+four real choices, decoded graph image and table, MCQ/grid-in answer state and
+autosave, next/previous palette navigation, flags, disabled boundary controls,
+and timer countdown without reset on navigation. The current calculator is an
+official SAT Desmos link, not an embed; visibility, URL, safe new-tab attributes
+and horizontal layout are checked. This does not certify actual Desmos service
+behavior. Traces are retained on failure. Fixtures are deliberately synthetic
+and do not certify bank mathematics or production content/assets.
+
+Still requires an enrolled account: actual authentication/enrolment, assignment
+visibility, server-backed answer persistence after reload, module unlocking,
+submission/grading, production Final Revision availability and deployed assets.
+Still requires a physical device: touch/keyboard behavior, screen locking and
+app switching, PWA installation and opted-in notification display. Mobile
+viewport emulation does not establish those device behaviors.
