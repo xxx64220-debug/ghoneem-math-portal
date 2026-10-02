@@ -17,4 +17,17 @@ node --test tests/english_reading.test.cjs
 
 Five new tests pass, alongside all 40 checks in the existing JavaScript CI suite. Tests cover source-shape handling, paragraphs, underlines, highlights, illustrations, unsafe markup, answer selection, collapse state, all reading routes, uncertain boundaries, math exam parity and dist synchronization. CI installs a pinned, locked jsdom test dependency only; the client gains no dependency.
 
-Visual browser QA remains pending: this environment has no Chromium executable and the browser download failed. Before deployment, check an illustrated and an underlined English question at desktop and phone widths, collapse/reopen the passage with touch and keyboard, select an answer, navigate, and review it. These checks require no production database changes. No deployment was performed as part of this change.
+## Isolated Chromium verification
+
+The existing Playwright framework now runs `tests/browser/english.spec.cjs` at 1280×800 desktop and 390×844 touch-enabled mobile sizes. The fixture mirrors the observed import topology: one explicitly marked `assets.html` root, metadata divs, original paragraph nodes, bold numbered references, underline, highlight, line break, raster illustration and caption; `stem` remains separate. Fixture text and image are synthetic, so the suite does not certify production passage contents.
+
+Eight added browser cases cover side-by-side desktop panes, paragraph spacing and readable line height, preserved formatting, decoded and bounded illustrations, stacked mobile panes with unrestricted passage height, pointer collapse and keyboard reopen, answer autosave, next/previous navigation, retained selection, submission and review. Each math track is also exercised with marked HTML and must retain its generic figure path in exam and review. The five jsdom regressions additionally compare math markup with the original renderer and verify uncertain boundaries and all practice routes.
+
+```sh
+npm ci --prefix tests/browser --ignore-scripts --no-audit --no-fund
+cd tests/browser
+npx playwright install --with-deps chromium
+npm test
+```
+
+CI serves only local `web/` and mocks the SDK/API boundary; unknown remote requests fail. No browser request reaches production Supabase. Desktop/mobile screenshots are retained in the `browser-smoke-results` artifact for visual inspection. Browser emulation does not certify physical-phone touch behavior, actual enrolment, production submission/grading, deployed assets or CDN availability; those remain real-account/device checks. No question data, database changes, or passage-boundary inference is introduced.
