@@ -95,7 +95,7 @@ jobs:
           fi
 
   browser-smoke:
-    name: Local SAT browser smoke
+    name: Local SAT and EST English browser checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
