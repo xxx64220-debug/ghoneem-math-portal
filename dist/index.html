@@ -192,6 +192,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 @media(max-width:560px){.formula-lesson-list{grid-template-columns:1fr}.formula-lesson{padding:16px}.formula-diagram-grid{grid-template-columns:1fr}.formula-key-point p{font-size:17px}}
 </style>
 <link rel="stylesheet" href="/daily-challenge.css">
+<link rel="stylesheet" href="/english-reading.css">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#14243E">
 <meta name="mobile-web-app-capable" content="yes">
@@ -560,6 +561,39 @@ function renderPalette() {
   $('progress').textContent = `${done} of ${qs.length} answered`;
 }
 
+// The English import stores an entire marked passage in assets.html, and
+// the separate question in stem. Never infer boundaries from prose or length.
+function englishPassage(q, track) {
+  const a = q.assets;
+  if (track !== 'est_eng' || typeof a?.html !== 'string') return '';
+  const doc = new DOMParser().parseFromString(a.html, 'text/html');
+  const root = doc.body.firstElementChild;
+  if (doc.body.children.length !== 1 || !root?.classList.contains('est-passage') ||
+      [...doc.body.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) return '';
+  const tags = new Set('div span p br b i strong em u mark sup sub figure figcaption img'.split(' '));
+  for (const el of [root, ...root.querySelectorAll('*')]) {
+    if (!tags.has(el.localName)) { el.remove(); continue; }
+    const src = el.getAttribute('src'), alt = el.getAttribute('alt');
+    for (const attr of [...el.attributes]) el.removeAttribute(attr.name);
+    if (el.localName === 'img') {
+      if (!src || !(/^https:\/\//.test(src) || /^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\s]+$/.test(src))) { el.remove(); continue; }
+      el.setAttribute('src', src); el.setAttribute('alt', alt || a.image_alt || 'Passage illustration');
+    }
+  }
+  root.className = 'est-passage';
+  return root.outerHTML;
+}
+function readingQuestion(q, track, answers = '', stemHtml = `<div class="stem">${esc(q.stem)}</div>`) {
+  const passage = englishPassage(q, track);
+  if (!passage) return stemHtml + figure(q.assets) + answers;
+  // Keep other assets, but do not render the passage a second time as a figure.
+  const rest = {...q.assets}; delete rest.html;
+  return `<div class="english-reading"><details class="english-passage-pane" open>
+    <summary>Read passage${q.assets.passage_title ? ': ' + esc(q.assets.passage_title) : ''}<span class="reading-toggle" aria-hidden="true"> · Show / hide</span></summary>
+    <div class="english-passage-body">${passage}</div></details>
+    <section class="english-question-pane" aria-label="Question and answers">${stemHtml}${figure(rest)}${answers}</section></div>`;
+}
+
 function renderQ() {
   const q = ST.run.questions[ST.idx];
   let body;
@@ -574,7 +608,7 @@ function renderQ() {
   $('qcard').innerHTML = `<div class="qhead"><span class="qnum">QUESTION ${ST.idx + 1}</span>
     <span class="qnum" style="color:var(--accent)">${esc(q.topic || '')}</span></div>
     ${ST.run.exam?.track_id==='est'?'<p class="dash-note" style="margin-bottom:14px"><a href="/exams/est-march-2026/reference.png" target="_blank" rel="noopener">Formula reference ↗</a></p>':''}
-    <div class="stem">${esc(q.stem)}</div>${figure(q.assets)}${body}${reportButton(q.id,'exam question')}`;
+    ${readingQuestion(q,ST.run.exam?.track_id||ST.track?.id,body)}${reportButton(q.id,'exam question')}`;
   math($('qcard'));
 
   $('qcard').querySelectorAll('.choice').forEach(b =>
@@ -680,11 +714,10 @@ function paintReview(r,nextExamId=null) {
   } else {
     html += (r.items || []).map((it, i) => `<div class="rev ${it.correct?.void ? 'excluded' : it.is_correct ? 'right' : 'wrong'}">
       <span class="tag">${i + 1} · ${it.correct?.void ? 'EXCLUDED FROM SCORING' : it.is_correct ? 'CORRECT' : 'INCORRECT'}</span>
-      <div class="stem" style="margin:9px 0 0;font-size:16px">${esc(it.stem)}</div>
-      ${figure(it.assets)}
+      ${readingQuestion(it,r.exam?.track_id||ST.track?.id,`
       ${it.type==='mcq'?`<div class="review-choices">${(it.choices||[]).map(c=>`<div class="review-choice"><b>${esc(c.key)}.</b><span>${esc(c.text)}</span></div>`).join('')}</div>`:''}
       <div class="ans"><div><b>Your answer:</b> ${esc(fmt(it.response)) || '<i>blank</i>'}</div><div><b>Correct:</b> ${esc(fmt(it.correct))}</div></div>
-      ${it.explanation ? `<div class="exp">${esc(it.explanation)}</div>` : ''}${reportButton(it.id||it.question_id,'exam review')}</div>`).join('');
+      ${it.explanation ? `<div class="exp">${esc(it.explanation)}</div>` : ''}`,`<div class="stem" style="margin:9px 0 0;font-size:16px">${esc(it.stem)}</div>`)}${reportButton(it.id||it.question_id,'exam review')}</div>`).join('');
   }
   html += `<div class="nav" style="margin-top:22px">${nextExamId?'<button class="btn" id="nextModuleBtn">Start Module 2</button>':''}<button class="btn" id="backBtn">Back to exams</button></div>`;
   $('vReview').innerHTML = html;

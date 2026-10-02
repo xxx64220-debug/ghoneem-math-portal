@@ -41,6 +41,11 @@ jobs:
             tests/portal_notifications.test.cjs \
             tests/practice_figures.test.cjs
 
+      - name: Run EST English passage client regressions
+        run: |
+          npm ci --prefix tests/english-runtime --ignore-scripts --no-audit --no-fund
+          node --test tests/english_reading.test.cjs
+
       - name: Run source archive UI regression when its checked-in inputs exist
         run: |
           if [ -f content/est-september-2026/review-archive.json ] && [ -d dist ]; then
