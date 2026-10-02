@@ -35,7 +35,8 @@ for (const track of ['est_eng','sat','est','est2']) {
  });
 
  await page.goto('/');
- await page.getByRole('button',{name:track,exact:false}).click();
+ await expect(page.locator('#listTitle')).toHaveText(track);
+ await page.locator('[data-view="full_exam"]').click();
  await page.locator('[data-start="smoke-exam"]').click();
  await expect(page.locator('#qcard .stem')).toHaveText(questions[0].stem);
  if(track==='est_eng') {
