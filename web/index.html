@@ -408,7 +408,7 @@ async function openTrack(t){
 }
 function setDashboardView(view){if(view==='revision'&&DASH.revisionVisible===false)return;DASH.view=view;DASH.searchTerm='';DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();if(view==='drill'&&!DASH.drill)refreshDrill();if(view==='revision'&&!REV.data)refreshRevision();}
 function paintDashboard(){
- const tabs=[...(['sat','est','est2'].includes(ST.track?.id)&&DASH.revisionVisible!==false?[['revision','Final revision']]:[]),['daily','Daily practice'],['mistakes','Mistake notebook'],['drill','Weak-topic drill'],['overview','My progress'],['lesson_exam','Lesson exams'],['quiz','Quizzes'],['full_exam','Full exams'],['history','Exam history'],['focus','Lesson focus']];
+ const tabs=[...(['sat','est','est2'].includes(ST.track?.id)&&DASH.revisionVisible!==false?[['revision','Final revision']]:[]),['daily','Daily practice'],['mistakes','Mistake notebook'],['drill','Weak-topic drill'],...((ST.track?.id==='est')?[['diagnosis','Finals diagnosis']]:[]),['overview','My progress'],['lesson_exam','Lesson exams'],['quiz','Quizzes'],['full_exam','Full exams'],['history','Exam history'],['focus','Lesson focus']];
  $('examList').innerHTML=`<nav class="student-tabs" aria-label="Student dashboard">${tabs.map(([id,name])=>`<button class="student-tab ${id==='revision'?'revision-highlight':''} ${!DASH.searchTerm&&DASH.view===id?'active':''}" data-view="${id}" aria-current="${!DASH.searchTerm&&DASH.view===id?'page':'false'}">${name}${ASSESSMENTS[id]?` <span>${DASH.exams.filter(e=>e.assessment_type===id).length}</span>`:''}</button>`).join('')}</nav><div class="review-menu"><button class="btn-ghost" data-go="overview">Main menu</button>${reportButton('','dashboard')}</div><div class="dashboard-search"><label for="dashboardSearch">Find an exam or lesson</label><input type="search" id="dashboardSearch" autocomplete="off" placeholder="Search exams, results, or lessons" value="${esc(DASH.searchTerm||'')}"></div><div id="dashboardContent" aria-live="polite"></div>`;
  document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setDashboardView(b.dataset.view));
  $('dashboardSearch').oninput=e=>{DASH.searchTerm=e.target.value;document.querySelectorAll('[data-view]').forEach(b=>{const active=!DASH.searchTerm.trim()&&b.dataset.view===DASH.view;b.classList.toggle('active',active);b.setAttribute('aria-current',active?'page':'false');});paintDashboardContent();};
@@ -422,6 +422,7 @@ function paintDashboardContent(){
  else if(DASH.view==='mistakes')content.innerHTML=mistakesPanel();
  else if(DASH.view==='drill')content.innerHTML=drillPanel();
  else if(DASH.view==='overview')content.innerHTML=dashboardOverview();
+ else if(DASH.view==='diagnosis')content.innerHTML=finalsDiagnosisPanel();
  else if(DASH.view==='full_exam')content.innerHTML=fullExamSection();
  else if(ASSESSMENTS[DASH.view])content.innerHTML=assessmentSection(DASH.view);
  else if(DASH.view==='history')content.innerHTML=historySection();
@@ -440,6 +441,18 @@ function searchSection(){
  const lessons=DASH.lessons.filter(l=>l.lesson.toLocaleLowerCase().includes(term));
  const total=exams.length+results.length+lessons.length;
  return `<section class="dash-panel search-results"><div class="dash-heading"><h2>Search results</h2><span class="dash-note">${total} match${total===1?'':'es'}</span></div>${!total?'<div class="dash-empty">No matching exams, results, or lessons in this track.</div>':''}${exams.length?`<h3>Assigned exams (${exams.length})</h3>${exams.map(e=>{const first=DASH.exams.find(m=>m.exam_set_code&&m.exam_set_code===e.exam_set_code&&m.module_number===1);return assessmentRow(e,{locked:e.module_number===2&&first&&!moduleState(first).done});}).join('')}`:''}${results.length?`<h3>Past results (${results.length})</h3>${results.slice(0,20).map(h=>`<div class="search-history"><span><strong>${esc(h.title)}</strong><span class="history-detail">${dateText(h.submitted_at)} · ${h.score==null?'Awaiting grading':`${h.score}/${h.total}`}</span></span><button class="btn-ghost" data-review="${esc(h.id)}">${h.review_open?'Review':'View score'}</button></div>`).join('')}${results.length>20?'<p class="dash-note">Showing the first 20 results. Use Exam history for all attempts.</p>':''}`:''}${lessons.length?`<h3>Lesson focus (${lessons.length})</h3><div class="lesson-grid">${lessons.map(l=>lessonCard(l,true)).join('')}</div>`:''}</section>`;
+}
+function finalsDiagnosisPanel(){
+ const h=DASH.history.filter(x=>x.percent!=null);
+ const latest=h[0]||null;
+ const weak=DASH.lessons.filter(x=>Number(x.questions_seen)>=2).sort((a,b)=>Number(a.percent)-Number(b.percent)).slice(0,3);
+ const slow=latest&&latest.time_used?Math.round(latest.time_used/60):null;
+ return `<section class="dash-panel"><div class="dash-heading"><h2>Finals diagnosis</h2><span class="revision-badge">EST I final week</span></div>
+ <p class="dash-note">Use this after a timed mock. Do not try to reteach every missed question. Start with the bottom 2–3 skills below, correct them, then retest with unseen questions.</p>
+ <div class="dashboard-stats"><div class="dash-stat"><span>Latest score</span><strong>${latest?latest.percent+'%':'—'}</strong></div><div class="dash-stat"><span>Time used</span><strong>${slow==null?'—':slow+'m'}</strong></div><div class="dash-stat"><span>Skills to target</span><strong>${weak.length}</strong></div><div class="dash-stat"><span>Repeat errors</span><strong>Review</strong></div></div>
+ <h3 style="margin:22px 0 10px">Bottom skills</h3>${weak.length?'<div class="lesson-grid">'+weak.map(x=>lessonCard(x,true)).join('')+'</div>':'<div class="dash-empty">Complete reviewed EST I questions to build a diagnosis.</div>'}
+ <h3 style="margin:24px 0 10px">Teacher error codes</h3><p class="dash-note"><b>C</b> — Concept &nbsp; <b>A</b> — Algebra/calculation &nbsp; <b>R</b> — Reading &nbsp; <b>D</b> — Calculator &nbsp; <b>T</b> — Timing &nbsp; <b>X</b> — Careless &nbsp; <b>RPT</b> — Repeat mistake</p>
+ <div class="dash-notice"><strong>Important:</strong> the portal does not guess why an answer was wrong. Error codes are teacher diagnoses. Topic accuracy and timing come from recorded results; repeat errors should be confirmed from the student's mistake history.</div></section>`;
 }
 function dashboardOverview(){
  const s=DASH.summary,live=DASH.exams.filter(e=>e.last?.status==='in_progress');
