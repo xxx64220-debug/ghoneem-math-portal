@@ -33,7 +33,7 @@ document.addEventListener('click',event=>{
 (function(){
  if(typeof paintDashboard!=='function'||typeof paintDashboardContent!=='function')return;
  const basePaintDashboard=paintDashboard,basePaintDashboardContent=paintDashboardContent;
- let finalsRepeat=null,finalsLoading=false;
+ let finalsRepeat=null,finalsLoading=false,finalsLoaded=false;
  function finalsBottom(){
    return (DASH.lessons||[]).filter(x=>Number(x.seen)>=3&&x.percent!=null)
      .sort((a,b)=>Number(a.percent)-Number(b.percent)||Number(b.seen)-Number(a.seen)).slice(0,3);
@@ -67,12 +67,12 @@ document.addEventListener('click',event=>{
     '<div class="dash-notice"><strong>Final-week rule:</strong> Do not immediately reteach everything missed. Identify the bottom 2–3 skills, repair them, then retest.</div></section>';
  }
  async function loadFinalsRepeats(){
-   if(finalsLoading||finalsRepeat!=null)return;finalsLoading=true;
+   if(finalsLoading||finalsLoaded)return;finalsLoading=true;
    try{
      const {data,error}=await sb.from('practice_notebook').select('question_id,tries,correct_streak').gte('tries',2).lt('correct_streak',2);
      if(error)throw error;finalsRepeat=(data||[]).length;
    }catch(_){finalsRepeat=null;}
-   finally{finalsLoading=false;if(DASH.view==='finalsDiagnosis')basePaintDashboardContent();}
+   finally{finalsLoading=false;finalsLoaded=true;if(DASH.view==='finalsDiagnosis')paintDashboardContent();}
  }
  paintDashboard=function(){
    basePaintDashboard();
