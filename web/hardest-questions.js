@@ -68,6 +68,7 @@
    Error causes remain teacher-classified; per-question duration is not inferred.
 ====================================================================== */
 (function(){
+ if(typeof document==='undefined')return;
  function escFinal(v){return String(v??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
  async function finalsDiagnosisAdmin(){
    if(typeof q!=='function')return;
