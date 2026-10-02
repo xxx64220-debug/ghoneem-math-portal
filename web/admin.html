@@ -111,12 +111,12 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 <nav class="tabs hidden" id="tabs"><div class="wrap">
   <button class="tab on" data-v="overview">Overview</button>
   <button class="tab" data-v="quizAdmin">Daily quizzes</button><button class="tab" data-v="revisionAdmin">Final revision</button><button class="tab" data-v="reportsAdmin">Reports</button><button class="tab" data-v="integrityAdmin">Exam activity</button>
-  <button class="tab" data-v="students">Students</button>
+  <button class="tab" data-v="diagnosisAdmin">Finals diagnosis</button>\n  <button class="tab" data-v="students">Students</button>
   <button class="tab" data-v="results">Results</button>
   <button class="tab" data-v="lessons">Class heatmap</button>
   <button class="tab" data-v="questions">Hardest questions</button>
   <button class="tab" data-v="exams">Exams & assignments</button><button class="tab" data-v="bank">Question bank</button><button class="tab" data-v="groups">Groups</button><button class="tab" data-v="devices">Devices</button><button class="tab" data-v="audit">Audit log</button><button class="tab" data-v="notifications">Notifications</button>
-</div><div class="wrap admin-section-nav"><label for="adminSection">Go to section</label><select id="adminSection"><optgroup label="Teaching"><option value="overview">Overview</option><option value="quizAdmin">Daily quizzes</option><option value="revisionAdmin">Final revision</option><option value="reportsAdmin">Reports</option><option value="integrityAdmin">Exam activity</option><option value="exams">Exams &amp; assignments</option><option value="bank">Question bank</option></optgroup><optgroup label="Students"><option value="students">Students</option><option value="results">Results</option><option value="lessons">Class heatmap</option><option value="questions">Hardest questions</option><option value="groups">Groups</option></optgroup><optgroup label="Settings"><option value="devices">Devices</option><option value="audit">Audit log</option><option value="notifications">Notifications</option></optgroup></select></div></nav>
+</div><div class="wrap admin-section-nav"><label for="adminSection">Go to section</label><select id="adminSection"><optgroup label="Teaching"><option value="overview">Overview</option><option value="quizAdmin">Daily quizzes</option><option value="revisionAdmin">Final revision</option><option value="reportsAdmin">Reports</option><option value="integrityAdmin">Exam activity</option><option value="exams">Exams &amp; assignments</option><option value="bank">Question bank</option></optgroup><optgroup label="Students"><option value="diagnosisAdmin">Finals diagnosis</option><option value="students">Students</option><option value="results">Results</option><option value="lessons">Class heatmap</option><option value="questions">Hardest questions</option><option value="groups">Groups</option></optgroup><optgroup label="Settings"><option value="devices">Devices</option><option value="audit">Audit log</option><option value="notifications">Notifications</option></optgroup></select></div></nav>
 
 <section id="vLogin" class="login">
   <h1 style="font-size:28px;margin-bottom:5px">Instructor sign in</h1>
@@ -235,7 +235,7 @@ async function render(){
   hardestRequest++; hardestReport.cancel();
   syncAdminNavigation();
   $('view').innerHTML = `<p class="hint">Loading…</p>`;
-  try { await ({ overview, students, results, lessons, questions, exams, bank, groups, devices, audit, notifications, quizAdmin, revisionAdmin, reportsAdmin, integrityAdmin })[ST.view](); }
+  try { await ({ overview, diagnosisAdmin, students, results, lessons, questions, exams, bank, groups, devices, audit, notifications, quizAdmin, revisionAdmin, reportsAdmin, integrityAdmin })[ST.view](); }
   catch (e) { $('view').innerHTML = `<div class="msg bad">Could not load: ${esc(e.message||e)}</div>`; }
 }
 const trackFilter = (b) => ST.track ? b.eq('track_id', ST.track) : b;
@@ -317,6 +317,21 @@ async function students(){
   };
 }
 
+async function diagnosisAdmin(){
+ if(ST.track&&ST.track!=='est'){$('view').innerHTML='<div class="empty">Finals diagnosis is currently scoped to EST I. Select EST Math or All tracks.</div>';return;}
+ const [lessonRows,resultRows]=await Promise.all([getRows('student_by_lesson',true),getRows('results_feed',true)]);
+ const lessons=(lessonRows||[]).filter(r=>(!ST.track||r.track_id==='est')&&r.questions_seen>=2);
+ const results=(resultRows||[]).filter(r=>(!ST.track||r.track_id==='est')&&r.track_id==='est'&&r.percent!=null);
+ const byStudent=new Map();
+ lessons.forEach(r=>{if(!byStudent.has(r.user_id))byStudent.set(r.user_id,{id:r.user_id,name:r.full_name,lessons:[]});byStudent.get(r.user_id).lessons.push(r);});
+ results.forEach(r=>{const x=byStudent.get(r.user_id)||{id:r.user_id,name:r.full_name,lessons:[]};if(!x.latest||new Date(r.submitted_at)>new Date(x.latest.submitted_at))x.latest=r;byStudent.set(r.user_id,x);});
+ const rows=[...byStudent.values()].map(s=>({...s,weak:s.lessons.sort((a,b)=>Number(a.percent)-Number(b.percent)).slice(0,3)})).sort((a,b)=>sortText(a.name,b.name));
+ $('view').innerHTML=`<div class="head"><h2>Finals diagnosis</h2><div class="sp"></div><button class="btn-sm" id="csvBtn">Export CSV</button></div>
+ <p class="hint" style="margin-bottom:14px">EST I final-week report. Topic accuracy is calculated from reviewed attempts. The report identifies the bottom 2–3 skills; it does not automatically invent a reason for a wrong answer.</p>
+ <div class="card"><b>Error codes for teacher review:</b><p class="hint" style="margin-top:8px">C — Concept · A — Algebra/calculation · R — Reading · D — Calculator · T — Timing · X — Careless · RPT — Repeat mistake</p><p style="margin-top:10px"><b>Workflow:</b> Score → Topic accuracy → teacher error code → timing → repeat-error check → bottom 2–3 skills → targeted repair → unseen retest.</p></div>
+ ${rows.length?wrapTable('<table><tr><th>Student</th><th>Latest score</th><th>Time</th><th>Bottom 2–3 skills</th><th>Error type</th><th>Repeat errors</th></tr>'+rows.map(s=>'<tr><td>'+esc(s.name)+'</td><td class="num">'+(s.latest?esc(s.latest.score+'/'+s.latest.total+' ('+s.latest.percent+'%)'):'—')+'</td><td class="num">'+(s.latest&&s.latest.time_used?Math.round(s.latest.time_used/60)+'m':'—')+'</td><td>'+ (s.weak.length?s.weak.map(x=>esc(x.lesson)+' <span class="pill '+(Number(x.percent)<50?'bad':'warn')+'">'+x.percent+'%</span>').join('<br>'):'—')+'</td><td><span class="hint">Teacher review</span></td><td><span class="hint">Check mistake history</span></td></tr>').join('')+'</table>'):'<div class="empty">No EST I diagnosis data yet.</div>'}`;
+ $('csvBtn').onclick=()=>csv(rows.map(s=>({student:s.name,latest_score:s.latest?s.latest.score+'/'+s.latest.total:'',percent:s.latest?.percent??'',time_minutes:s.latest?.time_used?Math.round(s.latest.time_used/60):'',bottom_skills:s.weak.map(x=>x.lesson+' '+x.percent+'%').join(' | '),error_type:'Teacher review',repeat_errors:'Check mistake history'})),'est-finals-diagnosis');
+}
 async function results(){
   const { data:f } = await trackFilter(q('results_feed')).order('submitted_at',{ascending:false});
   $('view').innerHTML = `
