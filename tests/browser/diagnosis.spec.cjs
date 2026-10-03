@@ -54,7 +54,7 @@ test('instructor diagnosis downloads safe CSV from the displayed EST roster',asy
  await context.route('**/*',route=>{
   const url=new URL(route.request().url());if(url.origin==='http://127.0.0.1:4173')return route.continue();
   if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:`window.supabase={createClient(){return {auth:{getSession:async()=>({data:{session:null}}),onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}})},from(table){const q={select:()=>q,throwOnError:()=>q,eq:()=>q,order:()=>Promise.resolve({data:(${JSON.stringify(fixtures)})[table]||[]})};return q}}}};`});
-  if(url.hostname==='fonts.googleapis.com')return route.fulfill({body:'',contentType:'text/css'});
+  if(url.hostname==='fonts.googleapis.com'||(url.hostname==='cdn.jsdelivr.net'&&url.pathname.startsWith('/npm/katex@0.16.9/dist/')))return route.fulfill({body:'',contentType:route.request().resourceType()==='script'?'application/javascript':'text/css'});
   unexpected.push(url.href);return route.abort();
  });
  await page.goto('/admin.html');await page.waitForFunction(()=>!!document.querySelector('[data-v="finalsDiagnosisAdmin"]'));
