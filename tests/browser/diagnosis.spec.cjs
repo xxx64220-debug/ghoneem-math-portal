@@ -53,12 +53,12 @@ test('instructor diagnosis downloads safe CSV from the displayed EST roster',asy
  const fixtures={roster:[{user_id:'a',full_name:'=Student, "A"',tracks:'est, sat'},{user_id:'b',full_name:'No attempts',tracks:'est'},{user_id:'c',full_name:'Other track',tracks:'est2'}],results_feed:[{user_id:'a',score:1,total:4,percent:25,time_used:0}],student_by_lesson:[{user_id:'a',lesson:'Limited',questions_seen:2,percent:0},{user_id:'a',lesson:'Circles',questions_seen:3,percent:25}]};
  await context.route('**/*',route=>{
   const url=new URL(route.request().url());if(url.origin==='http://127.0.0.1:4173')return route.continue();
-  if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:`window.supabase={createClient(){return {auth:{getSession:async()=>({data:{session:null}})},from(table){const q={select:()=>q,throwOnError:()=>q,eq:()=>q,order:()=>Promise.resolve({data:(${JSON.stringify(fixtures)})[table]||[]})};return q}}}};`});
+  if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:`window.supabase={createClient(){return {auth:{getSession:async()=>({data:{session:null}}),onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}})},from(table){const q={select:()=>q,throwOnError:()=>q,eq:()=>q,order:()=>Promise.resolve({data:(${JSON.stringify(fixtures)})[table]||[]})};return q}}}};`});
   if(url.hostname==='fonts.googleapis.com')return route.fulfill({body:'',contentType:'text/css'});
   unexpected.push(url.href);return route.abort();
  });
  await page.goto('/admin.html');await page.waitForFunction(()=>!!document.querySelector('[data-v="finalsDiagnosisAdmin"]'));
- await page.evaluate(async()=>{ST.view='finalsDiagnosisAdmin';await render();document.getElementById('vApp')?.classList.remove('hidden');document.getElementById('view').parentElement.classList.remove('hidden');});
+ await page.evaluate(async()=>{ST.view='finalsDiagnosisAdmin';await render();document.getElementById('view').parentElement.classList.remove('hidden');});
  await expect(page.locator('#view')).toContainText('More evidence needed');
  const downloadPromise=page.waitForEvent('download');await page.locator('#finalsDiagnosisCsv').click();const download=await downloadPromise;
  expect(download.suggestedFilename()).toMatch(/^est-finals-diagnosis-\d{4}-\d{2}-\d{2}\.csv$/);
