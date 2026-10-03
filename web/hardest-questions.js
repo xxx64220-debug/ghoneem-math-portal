@@ -90,11 +90,27 @@
      const pace=result&&result.time_used!=null?Math.floor(result.time_used/60)+'m '+(result.time_used%60)+'s total':'—';
      return '<tr><td><b>'+escFinal(s.full_name)+'</b></td><td>'+score+'</td><td>'+skillText+'</td><td><span class="pill warn">Classify</span><br><span class="hint">C/A/R/D/T/X</span></td><td><span class="hint">Individual question time not reliably tracked</span><br>'+pace+'</td><td><span class="pill">RPT review</span><br><span class="hint">Check Mistake Notebook / repeated patterns</span></td></tr>';
    }).join('');
-   document.getElementById('view').innerHTML='<div class="head"><h2>Finals diagnosis</h2><div class="sp"></div><span class="pill">EST I</span></div>'+
+   document.getElementById('view').innerHTML='<div class="head"><h2>Finals diagnosis</h2><div class="sp"></div><span class="pill">EST I</span><button class="btn-sm" id="finalsDiagnosisCsv">Export CSV</button></div>'+
     '<div class="msg ok"><b>Final-week workflow:</b> Score → topic accuracy → classify the cause → identify the bottom 2–3 skills → repair → retest. Do not immediately reteach everything missed.</div>'+
     '<div class="card"><h2 style="font-size:18px;margin-bottom:10px">Error-code key</h2><p><b>C</b> — Concept &nbsp; <b>A</b> — Algebra/calculation &nbsp; <b>R</b> — Reading &nbsp; <b>D</b> — Calculator &nbsp; <b>T</b> — Timing &nbsp; <b>X</b> — Careless &nbsp; <b>RPT</b> — Repeat mistake</p><p class="hint" style="margin-top:10px">C/A/R/D/T/X are not guessed automatically. Review the student work and classify the actual cause. Per-question “slow” flags are also not invented because the portal currently stores reliable whole-attempt time, not time-on-question.</p></div>'+
     '<div class="table-wrap"><table><thead><tr><th>Student</th><th>Score</th><th>Bottom 2–3 skills / topic accuracy</th><th>Error type</th><th>Slow questions / pacing</th><th>Repeat errors</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
     (!rows?'<div class="empty">No EST I students are currently enrolled.</div>':'');
+   const exportButton=document.getElementById('finalsDiagnosisCsv');
+   exportButton.disabled=!enrolled.length;
+   exportButton.onclick=()=>csv(enrolled.map(s=>{
+     const result=latest.get(s.user_id);
+     const skills=(byStudent.get(s.user_id)||[]).slice(0,3);
+     return {
+       student:s.full_name,
+       latest_score:result?(result.score==null?'Awaiting grading':result.score+'/'+result.total):'No completed EST attempt',
+       percent:result?.score!=null?(result.percent??''):'',
+       time_seconds:result?.time_used??'',
+       bottom_skills:skills.length?skills.map(x=>x.lesson+' '+x.percent+'%').join(' | '):'More evidence needed',
+       error_type:'Teacher review: C/A/R/D/T/X',
+       pacing:'Individual question time not reliably tracked',
+       repeat_errors:'Check Mistake Notebook / repeated patterns'
+     };
+   }),'est-finals-diagnosis');
  }
  function install(){
    if(typeof render!=='function'||typeof ST==='undefined')return;
