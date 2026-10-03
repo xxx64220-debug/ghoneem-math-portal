@@ -51,3 +51,18 @@ test('exam study plan uses graded results, explicit lessons and distinct questio
 });
 
 test('empty and ungraded reviews have no study evidence',()=>{assert.equal(lessonContext.finalsExamLessons([]).length,0);assert.equal(lessonContext.finalsExamLessons([{id:'pending',is_correct:null}]).length,0);assert(student.includes('No scored question evidence is available yet.'));});
+
+function adminReport(fixtures){
+ const view={innerHTML:''},button={},queries=[],exports=[];
+ const c={document:{readyState:'complete',getElementById:id=>id==='view'?view:id==='finalsDiagnosisCsv'?button:null,querySelector:()=>null},setTimeout:fn=>fn(),ST:{view:'finalsDiagnosisAdmin'},render(){},syncAdminNavigation(){},csv:(rows,name)=>exports.push({rows,name}),q:table=>{
+  queries.push(table);const query={eq:()=>query,order:async()=>({data:fixtures[table]||[]})};return query;
+ }};
+ vm.createContext(c);vm.runInContext(admin,c);return {c,view,button,queries,exports};
+}
+test('instructor CSV preserves enrolled roster, latest pending scores and evidence threshold',async()=>{
+ const f=adminReport({roster:[{user_id:'a',full_name:'=Student, "A"',tracks:'est, sat'},{user_id:'b',full_name:'No attempts',tracks:'est'},{user_id:'c',tracks:'est2'}],results_feed:[{user_id:'a',score:null,percent:0,time_used:0},{user_id:'a',score:9,total:10,percent:90}],student_by_lesson:[{user_id:'a',lesson:'Limited',questions_seen:2,percent:0},{user_id:'a',lesson:'Circles',questions_seen:3,percent:25}]});
+ await f.c.render();assert(f.view.innerHTML.includes('Export CSV'));assert.equal(f.button.disabled,false);
+ f.button.onclick();assert.equal(f.exports[0].name,'est-finals-diagnosis');
+ const rows=f.exports[0].rows;assert.equal(rows.length,2);assert.equal(rows[0].student,'=Student, "A"');assert.equal(rows[0].latest_score,'Awaiting grading');assert.equal(rows[0].percent,'');assert.equal(rows[0].time_seconds,0);assert.equal(rows[0].bottom_skills,'Circles 25%');assert.equal(rows[1].latest_score,'No completed EST attempt');assert.equal(rows[1].bottom_skills,'More evidence needed');assert.equal(f.queries.length,3,'export requires no new data requests');
+});
+test('instructor CSV is disabled with an empty enrolled roster',async()=>{const f=adminReport({});await f.c.render();assert.equal(f.button.disabled,true);});
