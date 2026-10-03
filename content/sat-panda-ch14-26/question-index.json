@@ -1,0 +1,5322 @@
+[
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 1,
+    "page": 168,
+    "rect": [
+      55,
+      136,
+      475,
+      387
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 2,
+    "page": 168,
+    "rect": [
+      55,
+      387,
+      475,
+      696
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 3,
+    "page": 168,
+    "rect": [
+      55,
+      696,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 4,
+    "page": 168,
+    "rect": [
+      475,
+      137,
+      920,
+      482
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 5,
+    "page": 168,
+    "rect": [
+      475,
+      482,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 6,
+    "page": 169,
+    "rect": [
+      55,
+      87,
+      475,
+      394
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 7,
+    "page": 169,
+    "rect": [
+      55,
+      394,
+      475,
+      687
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 8,
+    "page": 169,
+    "rect": [
+      55,
+      687,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 9,
+    "page": 169,
+    "rect": [
+      475,
+      85,
+      920,
+      392
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 10,
+    "page": 169,
+    "rect": [
+      475,
+      392,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 11,
+    "page": 170,
+    "rect": [
+      55,
+      82,
+      475,
+      494
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 12,
+    "page": 170,
+    "rect": [
+      55,
+      494,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 13,
+    "page": 170,
+    "rect": [
+      475,
+      81,
+      920,
+      406
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 14,
+    "page": 170,
+    "rect": [
+      475,
+      406,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 15,
+    "page": 171,
+    "rect": [
+      55,
+      87,
+      475,
+      637
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 16,
+    "page": 171,
+    "rect": [
+      55,
+      637,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 17,
+    "page": 171,
+    "rect": [
+      475,
+      87,
+      920,
+      472
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 18,
+    "page": 171,
+    "rect": [
+      475,
+      472,
+      920,
+      785
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 1,
+    "n": 19,
+    "page": 171,
+    "rect": [
+      475,
+      785,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 1,
+    "page": 172,
+    "rect": [
+      55,
+      135,
+      475,
+      446
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 2,
+    "page": 172,
+    "rect": [
+      55,
+      446,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 3,
+    "page": 172,
+    "rect": [
+      475,
+      135,
+      920,
+      460
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 4,
+    "page": 172,
+    "rect": [
+      475,
+      460,
+      920,
+      817
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 5,
+    "page": 172,
+    "rect": [
+      475,
+      817,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 6,
+    "page": 173,
+    "rect": [
+      55,
+      83,
+      475,
+      486
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 7,
+    "page": 173,
+    "rect": [
+      55,
+      486,
+      475,
+      755
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 8,
+    "page": 173,
+    "rect": [
+      55,
+      755,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 9,
+    "page": 173,
+    "rect": [
+      475,
+      84,
+      920,
+      431
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 10,
+    "page": 173,
+    "rect": [
+      475,
+      431,
+      920,
+      676
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 11,
+    "page": 173,
+    "rect": [
+      475,
+      676,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 12,
+    "page": 174,
+    "rect": [
+      55,
+      86,
+      475,
+      604
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 13,
+    "page": 174,
+    "rect": [
+      55,
+      604,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 14,
+    "page": 174,
+    "rect": [
+      475,
+      89,
+      920,
+      435
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 15,
+    "page": 174,
+    "rect": [
+      475,
+      435,
+      920,
+      776
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 16,
+    "page": 174,
+    "rect": [
+      475,
+      776,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 17,
+    "page": 175,
+    "rect": [
+      55,
+      91,
+      475,
+      439
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 18,
+    "page": 175,
+    "rect": [
+      55,
+      439,
+      475,
+      723
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 19,
+    "page": 175,
+    "rect": [
+      55,
+      723,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 20,
+    "page": 175,
+    "rect": [
+      475,
+      88,
+      920,
+      437
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 14,
+    "topic": "Inequalities",
+    "exercise": 2,
+    "n": 21,
+    "page": 175,
+    "rect": [
+      475,
+      437,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 1,
+    "page": 178,
+    "rect": [
+      55,
+      132,
+      475,
+      397
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 2,
+    "page": 178,
+    "rect": [
+      55,
+      397,
+      475,
+      657
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 3,
+    "page": 178,
+    "rect": [
+      55,
+      657,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 4,
+    "page": 178,
+    "rect": [
+      475,
+      133,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 5,
+    "page": 179,
+    "rect": [
+      55,
+      89,
+      475,
+      603
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 6,
+    "page": 179,
+    "rect": [
+      55,
+      603,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 7,
+    "page": 179,
+    "rect": [
+      475,
+      88,
+      920,
+      333
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 8,
+    "page": 179,
+    "rect": [
+      475,
+      333,
+      920,
+      618
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 9,
+    "page": 179,
+    "rect": [
+      475,
+      618,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 10,
+    "page": 180,
+    "rect": [
+      55,
+      88,
+      475,
+      594
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 11,
+    "page": 180,
+    "rect": [
+      55,
+      594,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 12,
+    "page": 180,
+    "rect": [
+      475,
+      89,
+      920,
+      417
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 13,
+    "page": 180,
+    "rect": [
+      475,
+      417,
+      920,
+      771
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 14,
+    "page": 180,
+    "rect": [
+      475,
+      771,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 15,
+    "page": 181,
+    "rect": [
+      55,
+      86,
+      475,
+      562
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 16,
+    "page": 181,
+    "rect": [
+      55,
+      562,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 17,
+    "page": 181,
+    "rect": [
+      475,
+      85,
+      920,
+      561
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 15,
+    "topic": "Function Transformations",
+    "exercise": 1,
+    "n": 18,
+    "page": 181,
+    "rect": [
+      475,
+      561,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 1,
+    "page": 191,
+    "rect": [
+      55,
+      138,
+      475,
+      388
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 2,
+    "page": 191,
+    "rect": [
+      55,
+      388,
+      475,
+      818
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 3,
+    "page": 191,
+    "rect": [
+      55,
+      818,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 4,
+    "page": 191,
+    "rect": [
+      475,
+      136,
+      920,
+      396
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 5,
+    "page": 191,
+    "rect": [
+      475,
+      396,
+      920,
+      747
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 6,
+    "page": 191,
+    "rect": [
+      475,
+      747,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 7,
+    "page": 192,
+    "rect": [
+      55,
+      87,
+      475,
+      401
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 8,
+    "page": 192,
+    "rect": [
+      55,
+      401,
+      475,
+      681
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 9,
+    "page": 192,
+    "rect": [
+      55,
+      681,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 10,
+    "page": 192,
+    "rect": [
+      475,
+      87,
+      920,
+      358
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 11,
+    "page": 192,
+    "rect": [
+      475,
+      358,
+      920,
+      629
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 12,
+    "page": 192,
+    "rect": [
+      475,
+      629,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 13,
+    "page": 193,
+    "rect": [
+      55,
+      81,
+      475,
+      361
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 14,
+    "page": 193,
+    "rect": [
+      55,
+      361,
+      475,
+      827
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 15,
+    "page": 193,
+    "rect": [
+      55,
+      827,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 16,
+    "page": 193,
+    "rect": [
+      475,
+      82,
+      920,
+      399
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 17,
+    "page": 193,
+    "rect": [
+      475,
+      399,
+      920,
+      740
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 1,
+    "n": 18,
+    "page": 193,
+    "rect": [
+      475,
+      740,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 1,
+    "page": 194,
+    "rect": [
+      55,
+      134,
+      475,
+      387
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 2,
+    "page": 194,
+    "rect": [
+      55,
+      387,
+      475,
+      802
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 3,
+    "page": 194,
+    "rect": [
+      55,
+      802,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 4,
+    "page": 194,
+    "rect": [
+      475,
+      135,
+      920,
+      395
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 5,
+    "page": 194,
+    "rect": [
+      475,
+      395,
+      920,
+      707
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 6,
+    "page": 194,
+    "rect": [
+      475,
+      707,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 7,
+    "page": 195,
+    "rect": [
+      55,
+      89,
+      475,
+      527
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 8,
+    "page": 195,
+    "rect": [
+      55,
+      527,
+      475,
+      826
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 9,
+    "page": 195,
+    "rect": [
+      55,
+      826,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 10,
+    "page": 195,
+    "rect": [
+      475,
+      88,
+      920,
+      609
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 11,
+    "page": 195,
+    "rect": [
+      475,
+      609,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 12,
+    "page": 196,
+    "rect": [
+      55,
+      87,
+      475,
+      358
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 13,
+    "page": 196,
+    "rect": [
+      55,
+      358,
+      475,
+      687
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 14,
+    "page": 196,
+    "rect": [
+      55,
+      687,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 15,
+    "page": 196,
+    "rect": [
+      475,
+      85,
+      920,
+      377
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 16,
+    "page": 196,
+    "rect": [
+      475,
+      377,
+      920,
+      693
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 17,
+    "page": 196,
+    "rect": [
+      475,
+      693,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 18,
+    "page": 197,
+    "rect": [
+      55,
+      83,
+      475,
+      563
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 19,
+    "page": 197,
+    "rect": [
+      55,
+      563,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 20,
+    "page": 197,
+    "rect": [
+      475,
+      84,
+      920,
+      488
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 21,
+    "page": 197,
+    "rect": [
+      475,
+      488,
+      920,
+      800
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 16,
+    "topic": "Quadratic Functions",
+    "exercise": 2,
+    "n": 22,
+    "page": 197,
+    "rect": [
+      475,
+      800,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 1,
+    "page": 201,
+    "rect": [
+      55,
+      133,
+      475,
+      620
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 2,
+    "page": 201,
+    "rect": [
+      55,
+      620,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 3,
+    "page": 201,
+    "rect": [
+      475,
+      133,
+      920,
+      521
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 4,
+    "page": 201,
+    "rect": [
+      475,
+      521,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 5,
+    "page": 202,
+    "rect": [
+      55,
+      85,
+      475,
+      548
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 6,
+    "page": 202,
+    "rect": [
+      55,
+      548,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 7,
+    "page": 202,
+    "rect": [
+      475,
+      85,
+      920,
+      515
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 8,
+    "page": 202,
+    "rect": [
+      475,
+      515,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 9,
+    "page": 203,
+    "rect": [
+      55,
+      88,
+      475,
+      539
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 10,
+    "page": 203,
+    "rect": [
+      55,
+      539,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 11,
+    "page": 203,
+    "rect": [
+      475,
+      87,
+      920,
+      594
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 12,
+    "page": 203,
+    "rect": [
+      475,
+      594,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 13,
+    "page": 204,
+    "rect": [
+      55,
+      87,
+      475,
+      633
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 14,
+    "page": 204,
+    "rect": [
+      55,
+      633,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 15,
+    "page": 204,
+    "rect": [
+      475,
+      85,
+      920,
+      669
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 17,
+    "topic": "Angles",
+    "exercise": 1,
+    "n": 16,
+    "page": 204,
+    "rect": [
+      475,
+      669,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 1,
+    "page": 217,
+    "rect": [
+      55,
+      132,
+      475,
+      356
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 2,
+    "page": 217,
+    "rect": [
+      55,
+      356,
+      475,
+      819
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 3,
+    "page": 217,
+    "rect": [
+      55,
+      819,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 4,
+    "page": 217,
+    "rect": [
+      475,
+      132,
+      920,
+      397
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 5,
+    "page": 217,
+    "rect": [
+      475,
+      397,
+      920,
+      781
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 6,
+    "page": 217,
+    "rect": [
+      475,
+      781,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 7,
+    "page": 218,
+    "rect": [
+      55,
+      83,
+      475,
+      373
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 8,
+    "page": 218,
+    "rect": [
+      55,
+      373,
+      475,
+      617
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 9,
+    "page": 218,
+    "rect": [
+      55,
+      617,
+      475,
+      883
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 10,
+    "page": 218,
+    "rect": [
+      55,
+      883,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 11,
+    "page": 218,
+    "rect": [
+      475,
+      81,
+      920,
+      401
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 12,
+    "page": 218,
+    "rect": [
+      475,
+      401,
+      920,
+      645
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 13,
+    "page": 218,
+    "rect": [
+      475,
+      645,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 14,
+    "page": 219,
+    "rect": [
+      55,
+      87,
+      475,
+      509
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 15,
+    "page": 219,
+    "rect": [
+      55,
+      509,
+      475,
+      834
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 16,
+    "page": 219,
+    "rect": [
+      55,
+      834,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 17,
+    "page": 219,
+    "rect": [
+      475,
+      86,
+      920,
+      538
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 18,
+    "page": 219,
+    "rect": [
+      475,
+      538,
+      920,
+      822
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 1,
+    "n": 19,
+    "page": 219,
+    "rect": [
+      475,
+      822,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 1,
+    "page": 220,
+    "rect": [
+      55,
+      135,
+      475,
+      632
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 2,
+    "page": 220,
+    "rect": [
+      55,
+      632,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 3,
+    "page": 220,
+    "rect": [
+      475,
+      136,
+      920,
+      462
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 4,
+    "page": 220,
+    "rect": [
+      475,
+      462,
+      920,
+      810
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 5,
+    "page": 220,
+    "rect": [
+      475,
+      810,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 6,
+    "page": 221,
+    "rect": [
+      55,
+      84,
+      475,
+      423
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 7,
+    "page": 221,
+    "rect": [
+      55,
+      423,
+      475,
+      782
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 8,
+    "page": 221,
+    "rect": [
+      55,
+      782,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 9,
+    "page": 221,
+    "rect": [
+      475,
+      84,
+      920,
+      456
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 10,
+    "page": 221,
+    "rect": [
+      475,
+      456,
+      920,
+      795
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 11,
+    "page": 221,
+    "rect": [
+      475,
+      795,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 12,
+    "page": 222,
+    "rect": [
+      55,
+      84,
+      475,
+      471
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 13,
+    "page": 222,
+    "rect": [
+      55,
+      471,
+      475,
+      801
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 14,
+    "page": 222,
+    "rect": [
+      55,
+      801,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 15,
+    "page": 222,
+    "rect": [
+      475,
+      85,
+      920,
+      471
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 16,
+    "page": 222,
+    "rect": [
+      475,
+      471,
+      920,
+      801
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 17,
+    "page": 222,
+    "rect": [
+      475,
+      801,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 18,
+    "page": 223,
+    "rect": [
+      55,
+      87,
+      475,
+      454
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 19,
+    "page": 223,
+    "rect": [
+      55,
+      454,
+      475,
+      796
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 20,
+    "page": 223,
+    "rect": [
+      55,
+      796,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 21,
+    "page": 223,
+    "rect": [
+      475,
+      87,
+      920,
+      425
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 22,
+    "page": 223,
+    "rect": [
+      475,
+      425,
+      920,
+      763
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 18,
+    "topic": "Triangles",
+    "exercise": 2,
+    "n": 23,
+    "page": 223,
+    "rect": [
+      475,
+      763,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 1,
+    "page": 233,
+    "rect": [
+      55,
+      133,
+      475,
+      384
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 2,
+    "page": 233,
+    "rect": [
+      55,
+      384,
+      475,
+      638
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 3,
+    "page": 233,
+    "rect": [
+      55,
+      638,
+      475,
+      903
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 4,
+    "page": 233,
+    "rect": [
+      55,
+      903,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 5,
+    "page": 233,
+    "rect": [
+      475,
+      133,
+      920,
+      378
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 6,
+    "page": 233,
+    "rect": [
+      475,
+      378,
+      920,
+      910
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 7,
+    "page": 233,
+    "rect": [
+      475,
+      910,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 8,
+    "page": 234,
+    "rect": [
+      55,
+      84,
+      475,
+      524
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 9,
+    "page": 234,
+    "rect": [
+      55,
+      524,
+      475,
+      768
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 10,
+    "page": 234,
+    "rect": [
+      55,
+      768,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 11,
+    "page": 234,
+    "rect": [
+      475,
+      84,
+      920,
+      337
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 12,
+    "page": 234,
+    "rect": [
+      475,
+      337,
+      920,
+      618
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 13,
+    "page": 234,
+    "rect": [
+      475,
+      618,
+      920,
+      890
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 1,
+    "n": 14,
+    "page": 234,
+    "rect": [
+      475,
+      890,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 1,
+    "page": 235,
+    "rect": [
+      55,
+      137,
+      475,
+      408
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 2,
+    "page": 235,
+    "rect": [
+      55,
+      408,
+      475,
+      672
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 3,
+    "page": 235,
+    "rect": [
+      55,
+      672,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 4,
+    "page": 235,
+    "rect": [
+      475,
+      136,
+      920,
+      612
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 5,
+    "page": 235,
+    "rect": [
+      475,
+      612,
+      920,
+      883
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 6,
+    "page": 235,
+    "rect": [
+      475,
+      883,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 7,
+    "page": 236,
+    "rect": [
+      55,
+      86,
+      475,
+      359
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 8,
+    "page": 236,
+    "rect": [
+      55,
+      359,
+      475,
+      682
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 9,
+    "page": 236,
+    "rect": [
+      55,
+      682,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 10,
+    "page": 236,
+    "rect": [
+      475,
+      84,
+      920,
+      356
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 11,
+    "page": 236,
+    "rect": [
+      475,
+      356,
+      920,
+      861
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 12,
+    "page": 236,
+    "rect": [
+      475,
+      861,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 13,
+    "page": 237,
+    "rect": [
+      55,
+      85,
+      475,
+      395
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 14,
+    "page": 237,
+    "rect": [
+      55,
+      395,
+      475,
+      722
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 15,
+    "page": 237,
+    "rect": [
+      55,
+      722,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 16,
+    "page": 237,
+    "rect": [
+      475,
+      84,
+      920,
+      378
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 17,
+    "page": 237,
+    "rect": [
+      475,
+      378,
+      920,
+      766
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 19,
+    "topic": "Circles",
+    "exercise": 2,
+    "n": 18,
+    "page": 237,
+    "rect": [
+      475,
+      766,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 1,
+    "page": 240,
+    "rect": [
+      55,
+      134,
+      475,
+      377
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 2,
+    "page": 240,
+    "rect": [
+      55,
+      377,
+      475,
+      678
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 3,
+    "page": 240,
+    "rect": [
+      55,
+      678,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 4,
+    "page": 240,
+    "rect": [
+      475,
+      133,
+      920,
+      476
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 5,
+    "page": 240,
+    "rect": [
+      475,
+      476,
+      920,
+      769
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 6,
+    "page": 240,
+    "rect": [
+      475,
+      769,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 7,
+    "page": 241,
+    "rect": [
+      55,
+      84,
+      475,
+      353
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 8,
+    "page": 241,
+    "rect": [
+      55,
+      353,
+      475,
+      855
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 9,
+    "page": 241,
+    "rect": [
+      55,
+      855,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 10,
+    "page": 241,
+    "rect": [
+      475,
+      83,
+      920,
+      445
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 11,
+    "page": 241,
+    "rect": [
+      475,
+      445,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 12,
+    "page": 242,
+    "rect": [
+      55,
+      83,
+      475,
+      616
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 13,
+    "page": 242,
+    "rect": [
+      55,
+      616,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 14,
+    "page": 242,
+    "rect": [
+      475,
+      82,
+      920,
+      624
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 20,
+    "topic": "Radians",
+    "exercise": 1,
+    "n": 15,
+    "page": 242,
+    "rect": [
+      475,
+      624,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 1,
+    "page": 250,
+    "rect": [
+      55,
+      132,
+      475,
+      433
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 2,
+    "page": 250,
+    "rect": [
+      55,
+      433,
+      475,
+      711
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 3,
+    "page": 250,
+    "rect": [
+      55,
+      711,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 4,
+    "page": 250,
+    "rect": [
+      475,
+      130,
+      920,
+      433
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 5,
+    "page": 250,
+    "rect": [
+      475,
+      433,
+      920,
+      705
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 6,
+    "page": 250,
+    "rect": [
+      475,
+      705,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 7,
+    "page": 251,
+    "rect": [
+      55,
+      87,
+      475,
+      359
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 8,
+    "page": 251,
+    "rect": [
+      55,
+      359,
+      475,
+      601
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 9,
+    "page": 251,
+    "rect": [
+      55,
+      601,
+      475,
+      872
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 10,
+    "page": 251,
+    "rect": [
+      55,
+      872,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 11,
+    "page": 251,
+    "rect": [
+      475,
+      86,
+      920,
+      419
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 12,
+    "page": 251,
+    "rect": [
+      475,
+      419,
+      920,
+      889
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 1,
+    "n": 13,
+    "page": 251,
+    "rect": [
+      475,
+      889,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 1,
+    "page": 252,
+    "rect": [
+      55,
+      134,
+      475,
+      437
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 2,
+    "page": 252,
+    "rect": [
+      55,
+      437,
+      475,
+      756
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 3,
+    "page": 252,
+    "rect": [
+      55,
+      756,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 4,
+    "page": 252,
+    "rect": [
+      475,
+      131,
+      920,
+      428
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 5,
+    "page": 252,
+    "rect": [
+      475,
+      428,
+      920,
+      660
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 6,
+    "page": 252,
+    "rect": [
+      475,
+      660,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 7,
+    "page": 253,
+    "rect": [
+      55,
+      85,
+      475,
+      387
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 8,
+    "page": 253,
+    "rect": [
+      55,
+      387,
+      475,
+      743
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 9,
+    "page": 253,
+    "rect": [
+      55,
+      743,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 10,
+    "page": 253,
+    "rect": [
+      475,
+      83,
+      920,
+      645
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 11,
+    "page": 253,
+    "rect": [
+      475,
+      645,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 12,
+    "page": 254,
+    "rect": [
+      55,
+      82,
+      475,
+      446
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 21,
+    "topic": "Trigonometry",
+    "exercise": 2,
+    "n": 13,
+    "page": 254,
+    "rect": [
+      55,
+      446,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 1,
+    "page": 261,
+    "rect": [
+      55,
+      131,
+      475,
+      396
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 2,
+    "page": 261,
+    "rect": [
+      55,
+      396,
+      475,
+      645
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 3,
+    "page": 261,
+    "rect": [
+      55,
+      645,
+      475,
+      918
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 4,
+    "page": 261,
+    "rect": [
+      55,
+      918,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 5,
+    "page": 261,
+    "rect": [
+      475,
+      132,
+      920,
+      396
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 6,
+    "page": 261,
+    "rect": [
+      475,
+      396,
+      920,
+      742
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 7,
+    "page": 261,
+    "rect": [
+      475,
+      742,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 8,
+    "page": 262,
+    "rect": [
+      55,
+      83,
+      475,
+      348
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 9,
+    "page": 262,
+    "rect": [
+      55,
+      348,
+      475,
+      593
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 10,
+    "page": 262,
+    "rect": [
+      55,
+      593,
+      475,
+      897
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 11,
+    "page": 262,
+    "rect": [
+      55,
+      897,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 12,
+    "page": 262,
+    "rect": [
+      475,
+      84,
+      920,
+      582
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 13,
+    "page": 262,
+    "rect": [
+      475,
+      582,
+      920,
+      866
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 14,
+    "page": 262,
+    "rect": [
+      475,
+      866,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 15,
+    "page": 263,
+    "rect": [
+      55,
+      86,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 1,
+    "n": 16,
+    "page": 263,
+    "rect": [
+      475,
+      85,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 1,
+    "page": 264,
+    "rect": [
+      55,
+      135,
+      475,
+      379
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 2,
+    "page": 264,
+    "rect": [
+      55,
+      379,
+      475,
+      650
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 3,
+    "page": 264,
+    "rect": [
+      55,
+      650,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 4,
+    "page": 264,
+    "rect": [
+      475,
+      135,
+      920,
+      449
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 5,
+    "page": 264,
+    "rect": [
+      475,
+      449,
+      920,
+      740
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 6,
+    "page": 264,
+    "rect": [
+      475,
+      740,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 7,
+    "page": 265,
+    "rect": [
+      55,
+      83,
+      475,
+      395
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 8,
+    "page": 265,
+    "rect": [
+      55,
+      395,
+      475,
+      770
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 9,
+    "page": 265,
+    "rect": [
+      55,
+      770,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 10,
+    "page": 265,
+    "rect": [
+      475,
+      83,
+      920,
+      414
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 11,
+    "page": 265,
+    "rect": [
+      475,
+      414,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 12,
+    "page": 266,
+    "rect": [
+      55,
+      83,
+      475,
+      511
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 13,
+    "page": 266,
+    "rect": [
+      55,
+      511,
+      475,
+      825
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 14,
+    "page": 266,
+    "rect": [
+      55,
+      825,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 15,
+    "page": 266,
+    "rect": [
+      475,
+      84,
+      920,
+      602
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 22,
+    "topic": "Area, Perimeter, & Volume",
+    "exercise": 2,
+    "n": 16,
+    "page": 266,
+    "rect": [
+      475,
+      602,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 1,
+    "page": 268,
+    "rect": [
+      55,
+      134,
+      475,
+      612
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 2,
+    "page": 268,
+    "rect": [
+      55,
+      612,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 3,
+    "page": 268,
+    "rect": [
+      475,
+      135,
+      920,
+      616
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 4,
+    "page": 268,
+    "rect": [
+      475,
+      616,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 5,
+    "page": 269,
+    "rect": [
+      55,
+      84,
+      475,
+      718
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 6,
+    "page": 269,
+    "rect": [
+      55,
+      718,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 7,
+    "page": 269,
+    "rect": [
+      475,
+      83,
+      920,
+      654
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 8,
+    "page": 269,
+    "rect": [
+      475,
+      654,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 9,
+    "page": 270,
+    "rect": [
+      55,
+      81,
+      475,
+      631
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 10,
+    "page": 270,
+    "rect": [
+      55,
+      631,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 11,
+    "page": 270,
+    "rect": [
+      475,
+      80,
+      920,
+      634
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 12,
+    "page": 270,
+    "rect": [
+      475,
+      634,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 13,
+    "page": 271,
+    "rect": [
+      55,
+      85,
+      475,
+      634
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 14,
+    "page": 271,
+    "rect": [
+      55,
+      634,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 15,
+    "page": 271,
+    "rect": [
+      475,
+      84,
+      920,
+      670
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 16,
+    "page": 271,
+    "rect": [
+      475,
+      670,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 17,
+    "page": 272,
+    "rect": [
+      55,
+      84,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 18,
+    "page": 272,
+    "rect": [
+      475,
+      82,
+      920,
+      637
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 23,
+    "topic": "Reading Data",
+    "exercise": 1,
+    "n": 19,
+    "page": 272,
+    "rect": [
+      475,
+      637,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 1,
+    "page": 275,
+    "rect": [
+      55,
+      134,
+      475,
+      395
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 2,
+    "page": 275,
+    "rect": [
+      55,
+      395,
+      475,
+      827
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 3,
+    "page": 275,
+    "rect": [
+      55,
+      827,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 4,
+    "page": 275,
+    "rect": [
+      475,
+      132,
+      920,
+      595
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 5,
+    "page": 275,
+    "rect": [
+      475,
+      595,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 6,
+    "page": 276,
+    "rect": [
+      55,
+      81,
+      475,
+      444
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 7,
+    "page": 276,
+    "rect": [
+      55,
+      444,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 8,
+    "page": 276,
+    "rect": [
+      475,
+      79,
+      920,
+      418
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 9,
+    "page": 276,
+    "rect": [
+      475,
+      418,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 10,
+    "page": 277,
+    "rect": [
+      55,
+      81,
+      475,
+      592
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 11,
+    "page": 277,
+    "rect": [
+      55,
+      592,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 12,
+    "page": 277,
+    "rect": [
+      475,
+      80,
+      920,
+      632
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 13,
+    "page": 277,
+    "rect": [
+      475,
+      632,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 14,
+    "page": 278,
+    "rect": [
+      55,
+      81,
+      475,
+      532
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 15,
+    "page": 278,
+    "rect": [
+      55,
+      532,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 16,
+    "page": 278,
+    "rect": [
+      475,
+      80,
+      920,
+      594
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 1,
+    "n": 17,
+    "page": 278,
+    "rect": [
+      475,
+      594,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 1,
+    "page": 279,
+    "rect": [
+      55,
+      135,
+      475,
+      664
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 2,
+    "page": 279,
+    "rect": [
+      55,
+      664,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 3,
+    "page": 279,
+    "rect": [
+      475,
+      133,
+      920,
+      528
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 4,
+    "page": 279,
+    "rect": [
+      475,
+      528,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 5,
+    "page": 280,
+    "rect": [
+      55,
+      83,
+      475,
+      512
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 6,
+    "page": 280,
+    "rect": [
+      55,
+      512,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 7,
+    "page": 280,
+    "rect": [
+      475,
+      82,
+      920,
+      772
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 8,
+    "page": 280,
+    "rect": [
+      475,
+      772,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 9,
+    "page": 281,
+    "rect": [
+      55,
+      83,
+      475,
+      552
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 10,
+    "page": 281,
+    "rect": [
+      55,
+      552,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 11,
+    "page": 281,
+    "rect": [
+      475,
+      81,
+      920,
+      370
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 12,
+    "page": 281,
+    "rect": [
+      475,
+      370,
+      920,
+      738
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 13,
+    "page": 281,
+    "rect": [
+      475,
+      738,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 14,
+    "page": 282,
+    "rect": [
+      55,
+      81,
+      475,
+      689
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 15,
+    "page": 282,
+    "rect": [
+      55,
+      689,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 16,
+    "page": 282,
+    "rect": [
+      475,
+      82,
+      920,
+      587
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 24,
+    "topic": "Probability",
+    "exercise": 2,
+    "n": 17,
+    "page": 282,
+    "rect": [
+      475,
+      587,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 1,
+    "page": 289,
+    "rect": [
+      55,
+      131,
+      475,
+      450
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 2,
+    "page": 289,
+    "rect": [
+      55,
+      450,
+      475,
+      820
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 3,
+    "page": 289,
+    "rect": [
+      55,
+      820,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 4,
+    "page": 289,
+    "rect": [
+      475,
+      131,
+      920,
+      565
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 5,
+    "page": 289,
+    "rect": [
+      475,
+      565,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 6,
+    "page": 290,
+    "rect": [
+      55,
+      81,
+      475,
+      504
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 7,
+    "page": 290,
+    "rect": [
+      55,
+      504,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 8,
+    "page": 290,
+    "rect": [
+      475,
+      81,
+      920,
+      399
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 9,
+    "page": 290,
+    "rect": [
+      475,
+      399,
+      920,
+      834
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 10,
+    "page": 290,
+    "rect": [
+      475,
+      834,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 11,
+    "page": 291,
+    "rect": [
+      55,
+      85,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 12,
+    "page": 291,
+    "rect": [
+      475,
+      84,
+      920,
+      612
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 13,
+    "page": 291,
+    "rect": [
+      475,
+      612,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 14,
+    "page": 292,
+    "rect": [
+      55,
+      83,
+      475,
+      412
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 15,
+    "page": 292,
+    "rect": [
+      55,
+      412,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 16,
+    "page": 292,
+    "rect": [
+      475,
+      82,
+      920,
+      488
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 1,
+    "n": 17,
+    "page": 292,
+    "rect": [
+      475,
+      488,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 1,
+    "page": 293,
+    "rect": [
+      55,
+      131,
+      475,
+      477
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 2,
+    "page": 293,
+    "rect": [
+      55,
+      477,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 3,
+    "page": 293,
+    "rect": [
+      475,
+      130,
+      920,
+      424
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 4,
+    "page": 293,
+    "rect": [
+      475,
+      424,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 5,
+    "page": 294,
+    "rect": [
+      55,
+      80,
+      475,
+      365
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 6,
+    "page": 294,
+    "rect": [
+      55,
+      365,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 7,
+    "page": 294,
+    "rect": [
+      475,
+      76,
+      920,
+      562
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 8,
+    "page": 294,
+    "rect": [
+      475,
+      562,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 9,
+    "page": 295,
+    "rect": [
+      55,
+      83,
+      475,
+      604
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 10,
+    "page": 295,
+    "rect": [
+      55,
+      604,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 11,
+    "page": 295,
+    "rect": [
+      475,
+      83,
+      920,
+      748
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 12,
+    "page": 295,
+    "rect": [
+      475,
+      748,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 13,
+    "page": 296,
+    "rect": [
+      55,
+      85,
+      475,
+      602
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 14,
+    "page": 296,
+    "rect": [
+      55,
+      602,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 15,
+    "page": 296,
+    "rect": [
+      475,
+      90,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 16,
+    "page": 297,
+    "rect": [
+      55,
+      80,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 25,
+    "topic": "Statistics I",
+    "exercise": 2,
+    "n": 17,
+    "page": 297,
+    "rect": [
+      475,
+      79,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 1,
+    "page": 304,
+    "rect": [
+      55,
+      132,
+      475,
+      477
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 2,
+    "page": 304,
+    "rect": [
+      55,
+      477,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 3,
+    "page": 304,
+    "rect": [
+      475,
+      132,
+      920,
+      652
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 4,
+    "page": 304,
+    "rect": [
+      475,
+      652,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 5,
+    "page": 305,
+    "rect": [
+      55,
+      82,
+      475,
+      660
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 6,
+    "page": 305,
+    "rect": [
+      55,
+      660,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 7,
+    "page": 305,
+    "rect": [
+      475,
+      81,
+      920,
+      643
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 8,
+    "page": 305,
+    "rect": [
+      475,
+      643,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 9,
+    "page": 306,
+    "rect": [
+      55,
+      78,
+      475,
+      616
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 10,
+    "page": 306,
+    "rect": [
+      55,
+      616,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 11,
+    "page": 306,
+    "rect": [
+      475,
+      72,
+      920,
+      592
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 12,
+    "page": 306,
+    "rect": [
+      475,
+      592,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 13,
+    "page": 307,
+    "rect": [
+      55,
+      83,
+      475,
+      505
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 14,
+    "page": 307,
+    "rect": [
+      55,
+      505,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 15,
+    "page": 307,
+    "rect": [
+      475,
+      83,
+      920,
+      607
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 1,
+    "n": 16,
+    "page": 307,
+    "rect": [
+      475,
+      607,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 1,
+    "page": 308,
+    "rect": [
+      55,
+      132,
+      475,
+      452
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 2,
+    "page": 308,
+    "rect": [
+      55,
+      452,
+      475,
+      834
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 3,
+    "page": 308,
+    "rect": [
+      55,
+      834,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 4,
+    "page": 308,
+    "rect": [
+      475,
+      130,
+      920,
+      591
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 5,
+    "page": 308,
+    "rect": [
+      475,
+      591,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 6,
+    "page": 309,
+    "rect": [
+      55,
+      82,
+      475,
+      635
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 7,
+    "page": 309,
+    "rect": [
+      55,
+      635,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 8,
+    "page": 309,
+    "rect": [
+      475,
+      80,
+      920,
+      426
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 9,
+    "page": 309,
+    "rect": [
+      475,
+      426,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 10,
+    "page": 310,
+    "rect": [
+      55,
+      79,
+      475,
+      588
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 11,
+    "page": 310,
+    "rect": [
+      55,
+      588,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 12,
+    "page": 310,
+    "rect": [
+      475,
+      75,
+      920,
+      636
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 13,
+    "page": 310,
+    "rect": [
+      475,
+      636,
+      920,
+      1150
+    ],
+    "column": 1
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 14,
+    "page": 311,
+    "rect": [
+      55,
+      82,
+      475,
+      448
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 15,
+    "page": 311,
+    "rect": [
+      55,
+      448,
+      475,
+      1150
+    ],
+    "column": 0
+  },
+  {
+    "chapter": 26,
+    "topic": "Statistics II",
+    "exercise": 2,
+    "n": 16,
+    "page": 311,
+    "rect": [
+      475,
+      83,
+      920,
+      1150
+    ],
+    "column": 1
+  }
+]

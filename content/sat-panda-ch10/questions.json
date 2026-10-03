@@ -1,0 +1,671 @@
+[
+  {
+    "exercise": 1,
+    "n": 1,
+    "page": 119,
+    "rect": [
+      76,
+      145,
+      461,
+      368
+    ],
+    "stem": "Idina types 90 words in 2.5 minutes. How many words in 12 minutes at the same rate?",
+    "choices": [],
+    "correct": "432",
+    "explanation": "The rate is 36 words per minute, so 12 minutes yields 432 words."
+  },
+  {
+    "exercise": 1,
+    "n": 2,
+    "page": 119,
+    "rect": [
+      76,
+      378,
+      461,
+      605
+    ],
+    "stem": "Markers to pencils are in an 8:3 ratio. If there are 48 pencils, how many markers?",
+    "choices": [],
+    "correct": "128",
+    "explanation": "48·8/3=128 markers."
+  },
+  {
+    "exercise": 1,
+    "n": 3,
+    "page": 119,
+    "rect": [
+      76,
+      626,
+      461,
+      877
+    ],
+    "stem": "Emma has $270, buys five $12 blankets, then $15 pillows. How many pillows can she buy?",
+    "choices": [],
+    "correct": "14",
+    "explanation": "After spending $60 she has $210, enough for 14 pillows."
+  },
+  {
+    "exercise": 1,
+    "n": 4,
+    "page": 119,
+    "rect": [
+      76,
+      903,
+      461,
+      1145
+    ],
+    "stem": "The ratio a to b equals 36 to z. If a=3, express b in terms of z.",
+    "choices": [
+      "z/3",
+      "12z",
+      "z/12",
+      "108z"
+    ],
+    "correct": "C",
+    "explanation": "3/b=36/z gives b=z/12."
+  },
+  {
+    "exercise": 1,
+    "n": 5,
+    "page": 119,
+    "rect": [
+      485,
+      145,
+      871,
+      382
+    ],
+    "stem": "Nine furlongs equals how many inches? (1 furlong=220 yards; 1 yard=36 inches)",
+    "choices": [],
+    "correct": "71280",
+    "explanation": "9·220·36=71,280 inches."
+  },
+  {
+    "exercise": 1,
+    "n": 6,
+    "page": 119,
+    "rect": [
+      485,
+      398,
+      871,
+      715
+    ],
+    "stem": "Blueberries to grapes are 5:12. If there are x blueberries, how many grapes?",
+    "choices": [
+      "5x/12",
+      "12x/5",
+      "12x/17",
+      "60x"
+    ],
+    "correct": "B",
+    "explanation": "For every five blueberries there are twelve grapes, so the count is 12x/5."
+  },
+  {
+    "exercise": 1,
+    "n": 7,
+    "page": 119,
+    "rect": [
+      485,
+      725,
+      871,
+      974
+    ],
+    "stem": "A pool fills in five hours at 300 gallons per hour. How many hours at 500 gallons per hour?",
+    "choices": [],
+    "correct": "3",
+    "explanation": "The pool holds 1,500 gallons; 1,500/500=3 hours."
+  },
+  {
+    "exercise": 1,
+    "n": 8,
+    "page": 120,
+    "rect": [
+      58,
+      90,
+      452,
+      305
+    ],
+    "stem": "Convert 990 miles per hour to yards per second (1 mile=1,760 yards).",
+    "choices": [
+      "33.75",
+      "484",
+      "2,025",
+      "29,040"
+    ],
+    "correct": "B",
+    "explanation": "990·1,760/3,600=484 yards per second."
+  },
+  {
+    "exercise": 1,
+    "n": 9,
+    "page": 120,
+    "rect": [
+      58,
+      317,
+      452,
+      625
+    ],
+    "stem": "If a apples cost d dollars, which expression gives the cost of 20 apples?",
+    "choices": [
+      "20a/d",
+      "20d/a",
+      "a/(20d)",
+      "20/(ad)"
+    ],
+    "correct": "B",
+    "explanation": "The price per apple is d/a, so twenty cost 20d/a."
+  },
+  {
+    "exercise": 1,
+    "n": 10,
+    "page": 120,
+    "rect": [
+      58,
+      635,
+      452,
+      880
+    ],
+    "stem": "Nachos cost d and fries cost 0.3d. What is the ratio of nachos price to fries price?",
+    "choices": [
+      "1 to 3",
+      "3 to 1",
+      "7 to 3",
+      "10 to 3"
+    ],
+    "correct": "D",
+    "explanation": "The price ratio is d:0.3d, which simplifies to 10:3."
+  },
+  {
+    "exercise": 1,
+    "n": 11,
+    "page": 120,
+    "rect": [
+      58,
+      898,
+      452,
+      1138
+    ],
+    "stem": "Henry drives 150 miles at 30 mph and 200 miles at 50 mph. Find average speed for the whole trip to nearest hundredth.",
+    "choices": [
+      "38.89",
+      "40.00",
+      "42.33",
+      "43.58"
+    ],
+    "correct": "A",
+    "explanation": "Total distance 350 miles divided by total time 5+4=9 hours is 38.89 mph."
+  },
+  {
+    "exercise": 1,
+    "n": 12,
+    "page": 120,
+    "rect": [
+      480,
+      90,
+      861,
+      317
+    ],
+    "stem": "Milk to flour in a mixture is 16:20. For ten extra cups of milk, how many cups of flour maintain the ratio?",
+    "choices": [],
+    "correct": "12.5",
+    "explanation": "Flour needed is 10·20/16=12.5 cups."
+  },
+  {
+    "exercise": 1,
+    "n": 13,
+    "page": 120,
+    "rect": [
+      480,
+      324,
+      861,
+      638
+    ],
+    "stem": "A park area is 5.5 square miles. Approximate its area in square kilometers using 1 km=0.62 mile.",
+    "choices": [
+      "2.1",
+      "3.4",
+      "8.9",
+      "14.3"
+    ],
+    "correct": "D",
+    "explanation": "Area conversion squares the length factor: 5.5/(0.62)^2≈14.3 square kilometers."
+  },
+  {
+    "exercise": 1,
+    "n": 14,
+    "page": 120,
+    "rect": [
+      480,
+      645,
+      861,
+      888
+    ],
+    "stem": "There are 270 coupons with expired to unexpired ratio 5:1. How many are unexpired?",
+    "choices": [],
+    "correct": "45",
+    "explanation": "Unexpired are one of six equal parts, giving 270/6=45."
+  },
+  {
+    "exercise": 1,
+    "n": 15,
+    "page": 121,
+    "rect": [
+      78,
+      90,
+      468,
+      408
+    ],
+    "stem": "At dinner start 30 diners are seated, and at 45 minutes 120 are seated. At a constant rate, how many at 24 minutes?",
+    "choices": [
+      "42",
+      "48",
+      "72",
+      "78"
+    ],
+    "correct": "D",
+    "explanation": "Growth is (120−30)/45=2 per minute; 30+2·24=78."
+  },
+  {
+    "exercise": 1,
+    "n": 16,
+    "page": 121,
+    "rect": [
+      78,
+      422,
+      468,
+      761
+    ],
+    "stem": "Solution concentration is $7.1\\times10^{15}$ ions/mL; $4.8\\times10^{23}$ ions have mass 0.8 grams. Estimate grams per liter.",
+    "choices": [
+      "$1.2\\times10^{-5}$",
+      "$1.2\\times10^{-8}$",
+      "$1.5\\times10^{-5}$",
+      "$1.5\\times10^{-8}$"
+    ],
+    "correct": "A",
+    "explanation": "Multiply ions per mL by grams per ion and by 1,000 mL per liter to get about 1.2×10^−5 g/L."
+  },
+  {
+    "exercise": 1,
+    "n": 17,
+    "page": 121,
+    "rect": [
+      78,
+      767,
+      468,
+      1130
+    ],
+    "stem": "An island has 740 sea lions over 4,200 hectares. Estimate sea lions per square mile using 1 square mile=259 hectares.",
+    "choices": [
+      "0.0007",
+      "0.02",
+      "45.6",
+      "12,000"
+    ],
+    "correct": "C",
+    "explanation": "740·259/4,200≈45.6 sea lions per square mile."
+  },
+  {
+    "exercise": 1,
+    "n": 18,
+    "page": 121,
+    "rect": [
+      487,
+      90,
+      872,
+      426
+    ],
+    "stem": "Jared reads 240 pages in 15 hours; Robert reads twice as fast. How many minutes does Robert need for 120 pages?",
+    "choices": [
+      "225",
+      "345",
+      "450",
+      "900"
+    ],
+    "correct": "A",
+    "explanation": "Robert reads 32 pages per hour; 120/32 hours is 225 minutes."
+  },
+  {
+    "exercise": 1,
+    "n": 19,
+    "page": 121,
+    "rect": [
+      487,
+      439,
+      872,
+      739
+    ],
+    "stem": "Fuel decreases from 22 gallons after lap 4 to 18 after lap 7. At this rate, after which lap will 6 gallons remain?",
+    "choices": [
+      "Lap 13",
+      "Lap 15",
+      "Lap 16",
+      "Lap 19"
+    ],
+    "correct": "C",
+    "explanation": "Four gallons are used every three laps. Twelve more gallons take nine laps after lap 7, so lap 16."
+  },
+  {
+    "exercise": 2,
+    "n": 1,
+    "page": 122,
+    "rect": [
+      80,
+      143,
+      466,
+      447
+    ],
+    "stem": "A bookstore orders paperbacks to hardcovers in a 10:4 ratio. For a second order of 50 hardcovers, how many paperbacks?",
+    "choices": [],
+    "correct": "125",
+    "explanation": "50·10/4=125 paperbacks."
+  },
+  {
+    "exercise": 2,
+    "n": 2,
+    "page": 122,
+    "rect": [
+      80,
+      500,
+      466,
+      827
+    ],
+    "stem": "Five inches on a model correspond to 16 feet actual. A room is 10w feet wide. Which expression is model width in inches?",
+    "choices": [
+      "5w/8",
+      "25w/8",
+      "8w",
+      "32w"
+    ],
+    "correct": "B",
+    "explanation": "Model width is 10w·5/16=25w/8 inches."
+  },
+  {
+    "exercise": 2,
+    "n": 3,
+    "page": 122,
+    "rect": [
+      80,
+      839,
+      466,
+      1139
+    ],
+    "stem": "Submarine pressure goes from 50 atm at −700 m to 70 atm at −900 m. How much does it increase per 10 m descent?",
+    "choices": [
+      "0.1",
+      "1",
+      "2",
+      "10"
+    ],
+    "correct": "B",
+    "explanation": "An increase of 20 atm over 200 m is one atmosphere per ten meters."
+  },
+  {
+    "exercise": 2,
+    "n": 4,
+    "page": 122,
+    "rect": [
+      487,
+      143,
+      873,
+      395
+    ],
+    "stem": "A train travels 32 km in 14.5 minutes. At the same speed, about how far in two hours?",
+    "choices": [
+      "54 km",
+      "265 km",
+      "364 km",
+      "928 km"
+    ],
+    "correct": "B",
+    "explanation": "32·120/14.5≈265 kilometers."
+  },
+  {
+    "exercise": 2,
+    "n": 5,
+    "page": 122,
+    "rect": [
+      487,
+      405,
+      873,
+      757
+    ],
+    "stem": "A soap recipe needs 1 1/2 cups lye per 2/5 cup castor oil. How much lye for 3 cups oil?",
+    "choices": [
+      "1 4/5",
+      "5",
+      "9 4/5",
+      "11 1/4"
+    ],
+    "correct": "D",
+    "explanation": "3·(3/2)/(2/5)=45/4=11 1/4 cups."
+  },
+  {
+    "exercise": 2,
+    "n": 6,
+    "page": 122,
+    "rect": [
+      487,
+      767,
+      873,
+      997
+    ],
+    "stem": "Ratio 2 1/4 to 1 1/2 is n to 2. Find n.",
+    "choices": [],
+    "correct": "3",
+    "explanation": "(9/4)/(3/2)=3/2, so n/2=3/2 and n=3."
+  },
+  {
+    "exercise": 2,
+    "n": 7,
+    "page": 123,
+    "rect": [
+      82,
+      93,
+      472,
+      386
+    ],
+    "stem": "Given 9 pikol=2 large bahar and 400 kulack=29 pikol, how many large bahar equal 1,000 kulack?",
+    "choices": [],
+    "correct": "145/9",
+    "explanation": "The exact conversion is 1,000·29/400·2/9=145/9≈16.11 large bahar. The printed key rounds to 16.",
+    "accepted": [
+      "145/9",
+      "16"
+    ]
+  },
+  {
+    "exercise": 2,
+    "n": 8,
+    "page": 123,
+    "rect": [
+      82,
+      402,
+      472,
+      727
+    ],
+    "stem": "Polyethylene costs $5.75 per kg; density is 0.92 kg per cubic meter. Find dollars per cubic meter.",
+    "choices": [],
+    "correct": "5.29",
+    "explanation": "Multiply 5.75 dollars/kg by 0.92 kg/m³ to obtain 5.29 dollars/m³."
+  },
+  {
+    "exercise": 2,
+    "n": 9,
+    "page": 123,
+    "rect": [
+      82,
+      767,
+      472,
+      1030
+    ],
+    "stem": "An 8×10 inch sheet costs $2. If price scales with area, what does a 16×20 inch sheet cost?",
+    "choices": [
+      "$4",
+      "$8",
+      "$12",
+      "$16"
+    ],
+    "correct": "B",
+    "explanation": "The area quadruples, so the cost is 4·$2=$8."
+  },
+  {
+    "exercise": 2,
+    "n": 10,
+    "page": 123,
+    "rect": [
+      497,
+      93,
+      876,
+      352
+    ],
+    "stem": "The ratio x:y is 15:19. If x rises 50%, by what factor must y be multiplied to maintain the ratio?",
+    "choices": [],
+    "correct": "1.5",
+    "explanation": "Both quantities must be scaled by the same factor, 1.5."
+  },
+  {
+    "exercise": 2,
+    "n": 11,
+    "page": 123,
+    "rect": [
+      497,
+      361,
+      876,
+      637
+    ],
+    "stem": "There are 110 sixth, seventh, and eighth graders; sixth to eighth ratio is 17:28. What is the least possible number of seventh graders?",
+    "choices": [],
+    "correct": "20",
+    "explanation": "Sixth and eighth must total a multiple of 45. The largest such total below 110 is 90, leaving 20 seventh graders."
+  },
+  {
+    "exercise": 2,
+    "n": 12,
+    "page": 123,
+    "rect": [
+      497,
+      647,
+      876,
+      995
+    ],
+    "stem": "A washer pumps 24,960 fluid ounces per minute. Convert to gallons per second (128 fluid ounces=1 gallon).",
+    "choices": [
+      "3.25",
+      "195",
+      "11,700",
+      "53,248"
+    ],
+    "correct": "A",
+    "explanation": "24,960/(128·60)=3.25 gallons per second."
+  },
+  {
+    "exercise": 2,
+    "n": 13,
+    "page": 124,
+    "rect": [
+      82,
+      91,
+      475,
+      337
+    ],
+    "stem": "A $40 arcade pass covers 8 rounds of 14 minutes. About how many cents per minute?",
+    "choices": [
+      "2.8",
+      "22.9",
+      "35.7",
+      "70.0"
+    ],
+    "correct": "C",
+    "explanation": "4,000 cents divided by 112 minutes is about 35.7 cents/minute."
+  },
+  {
+    "exercise": 2,
+    "n": 14,
+    "page": 124,
+    "rect": [
+      82,
+      347,
+      475,
+      619
+    ],
+    "stem": "Pistachios:walnuts=5:6, walnuts:cashews=4:15. If pistachios:cashews=2:k, find k.",
+    "choices": [],
+    "correct": "9",
+    "explanation": "Using 12 walnuts yields 10 pistachios and 45 cashews; ratio 2:9."
+  },
+  {
+    "exercise": 2,
+    "n": 15,
+    "page": 124,
+    "rect": [
+      82,
+      631,
+      475,
+      946
+    ],
+    "stem": "Product X costs 25% more than Y; Z costs 25% less than Y. What is X:Z price?",
+    "choices": [
+      "3 to 2",
+      "4 to 3",
+      "5 to 2",
+      "5 to 3"
+    ],
+    "correct": "D",
+    "explanation": "1.25Y:0.75Y=5:3."
+  },
+  {
+    "exercise": 2,
+    "n": 16,
+    "page": 124,
+    "rect": [
+      497,
+      91,
+      883,
+      411
+    ],
+    "stem": "Surface area rises 3 square inches per hour. What is the rate in square meters per hour? (1 foot=0.3048 meter; 144 square inches=1 square foot)",
+    "choices": [
+      "0.0019",
+      "0.0064",
+      "0.0684",
+      "0.2242"
+    ],
+    "correct": "A",
+    "explanation": "3/144·(0.3048)^2≈0.0019 m²/hour."
+  },
+  {
+    "exercise": 2,
+    "n": 17,
+    "page": 124,
+    "rect": [
+      497,
+      418,
+      883,
+      730
+    ],
+    "stem": "At 1:00 PM, 40 boxes were unloaded; by 3:30 PM, 65. At the same rate, how many total by 7:00 PM?",
+    "choices": [],
+    "correct": "100",
+    "explanation": "The rate is 25/2.5=10 boxes/hour. In the next 3.5 hours another 35 are unloaded, totaling 100."
+  },
+  {
+    "exercise": 2,
+    "n": 18,
+    "page": 124,
+    "rect": [
+      497,
+      740,
+      883,
+      1110
+    ],
+    "stem": "Brett spends $160 monthly on gas at 30 miles/gallon. At the same distance and gas price, what will he spend with a 40-mile/gallon car?",
+    "choices": [
+      "$100",
+      "$120",
+      "$130",
+      "$140"
+    ],
+    "correct": "B",
+    "explanation": "Gas needed scales inversely with miles per gallon: 160·30/40=$120."
+  }
+]

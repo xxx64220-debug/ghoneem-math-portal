@@ -1,0 +1,28 @@
+[
+  {
+    "n": 19,
+    "page": 19,
+    "topic": "Angles and polygons",
+    "lesson": "Angles, triangles and similarity",
+    "idea": "Compare angles made by transversals of parallel lines",
+    "difficulty": "hard",
+    "stem": "In the source diagram, parallel lines $a$ and $b$ are intersected by lines $c$, $d$, and $e$. If $x=54^\\circ$, $v=127^\\circ$, and $w>x$, which statement about $y$ and $z$ must be true? Use the attached original diagram to locate each angle.",
+    "choices": ["$z>y$", "$z<y$", "$z=y$", "$z+y=90^\\circ$"],
+    "correct": "B",
+    "explanation": "Corresponding angles along the parallel lines give $y=|v-x|=127^\\circ-54^\\circ=73^\\circ$. The upper angle is $z=|v-w|=|127^\\circ-w|$. Since $54^\\circ<w<180^\\circ$, $z<73^\\circ$ whether $w$ is below or above $127^\\circ$. Thus $z<y$ (B).",
+    "takeaway": "Compare corresponding angles using the two parallel lines; then apply the stated inequality to the remaining angle."
+  },
+  {
+    "n": 24,
+    "page": 24,
+    "topic": "Functions and graphs",
+    "lesson": "Functions and graphs",
+    "idea": "Equal distances inside an absolute-value function",
+    "difficulty": "hard",
+    "stem": "The source defines $g(x)=k|x-13|-47|x-13|+m$, where $k$ and $m$ are constants and $k>m>47$. If $g(397)=a$ and $g(-371)=b$, what is $43(-397)^{a-b}+371(43)^{b-a}$? The original printed equation is attached.",
+    "choices": [],
+    "correct": ["414"],
+    "explanation": "Both inputs are 384 units from 13: $|397-13|=|-371-13|=384$. Therefore $g(397)=g(-371)$ for every permitted $k,m$, so $a=b$. Both exponents are zero, and the expression is $43\\cdot1+371\\cdot1=414$.",
+    "takeaway": "A function built from $|x-13|$ has equal values at points equally far from 13."
+  }
+]
