@@ -112,17 +112,6 @@
     "reason": "Remove neighboring heading and add independently worked explanation; preserve key."
   },
   {
-    "id": "4ab54efe-2260-eeb3-dbf2-9909db0b4845",
-    "track_id": "sat",
-    "before_hash": "2d3e7997a62ffcd683f5ea936b44b6fa",
-    "revision_fingerprint": null,
-    "revision_active": null,
-    "asset_patch": {
-      "release_hold_reason": "20261004: Required graph choices are only referenced by an unrendered source PDF pointer. Recover and attach the original graph choices."
-    },
-    "reason": "20261004: Required graph choices are only referenced by an unrendered source PDF pointer. Recover and attach the original graph choices."
-  },
-  {
     "id": "4bbf865e-5279-5547-a289-111ac0501705",
     "track_id": "est2",
     "before_hash": "61937475d4e680e7d3f1fd1348123c87",
@@ -267,17 +256,6 @@
     "reason": "Add worked solution verified against attached frequency table; preserve D."
   },
   {
-    "id": "a62bb4f1-6a6d-46af-b5d3-72929458bc2b",
-    "track_id": "sat",
-    "before_hash": "dfc3fd5f37c116ec5426491f4b80842f",
-    "revision_fingerprint": null,
-    "revision_active": null,
-    "asset_patch": {
-      "release_hold_reason": "20261004: Required soft-drinks scatterplot is absent. Recover the source graph before certifying the model/key."
-    },
-    "reason": "20261004: Required soft-drinks scatterplot is absent. Recover the source graph before certifying the model/key."
-  },
-  {
     "id": "c67b0e13-af43-5f72-9910-ca0da3a09ae9",
     "track_id": "est",
     "before_hash": "78c8871d170b52375256d708128fc8e7",
@@ -332,16 +310,5 @@
     ],
     "explanation": "D. Substitute x=(3/5)n+1 and y=n−1: 5x−3y=3n+5−3n+3=8 for every real n. The second equation is −4 times the first, so the same pair satisfies it. A gives24, B gives8−6n, and C gives−2, so they do not work for every n.",
     "reason": "Remove neighboring heading and add independently worked explanation; preserve key."
-  },
-  {
-    "id": "f30234c6-7d80-1640-054d-97b86fde38ad",
-    "track_id": "est",
-    "before_hash": "43c9be1ba63e89c7e6dfef325582948a",
-    "revision_fingerprint": null,
-    "revision_active": null,
-    "asset_patch": {
-      "release_hold_reason": "20261004: No correct stored distance option. Points (3,7) and (−1,2) have distance √41; stored options29,29,40,41 omit it. Original source required before repair."
-    },
-    "reason": "20261004: No correct stored distance option. Points (3,7) and (−1,2) have distance √41; stored options29,29,40,41 omit it. Original source required before repair."
   }
 ]

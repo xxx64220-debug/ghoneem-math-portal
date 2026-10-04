@@ -8,15 +8,15 @@ Final Revision builds its catalogue and candidate pool from metadata. It hydrate
 
 ## Content repairs
 
-The guarded release touches 15 existing IDs without changing any answer key, track, lesson, exam membership or student score:
+The guarded release touches 12 existing IDs without changing any answer key, track, lesson, exam membership or student score. The three source-recovered questions from PR #21 are excluded from this packet and retained unchanged in its regression fixture:
 
 | Repair | Records |
 | --- | ---: |
 | Remove neighboring chapter/exercise headings and add worked solutions | 10 |
 | Restore Elite May Module 2 Q21 graph and verify answer C | 1 |
 | Add Panda statistics Q9 worked solution; retain D | 1 |
-| Hold distance question with no correct stored option | 1 |
-| Hold missing scatterplot and missing graph-choice item | 2 |
+
+The earlier 15-record proposal contained holds for the distance question, MSET006 Q49 and Maya's graph-choice question. Those three records have since been repaired against their original sources by the separate source-recovery release. Reapplying those holds would undo that work, so they are removed. The database regression confirms all three remain eligible and unchanged through apply, rollback and reapply of this packet.
 
 The Elite graph is rendered with an opaque white background directly from original source page97; its complete prompt and choices were checked on page98. The source PDF hash matches the import. The exact rendered PNG is served as a static website asset, avoiding an extra 682 KB of base64 in every question payload. `elite-restoration-proof.json` records the image hash and a conservative regression-influence check: the y-intercept decreases and the quadratic coefficient increases when the erroneous central point is removed. It does not invent exact point coordinates.
 
@@ -34,4 +34,4 @@ The browser now decodes UTF-8 SVG data-URI figures through the existing markup a
 
 `tests/question_reliability_db.cjs` covers every active track, numeric/alternative grid-in keys, publication-only rejection, start/resume, notebooks, frozen daily quizzes, drills, exact lesson selection, metadata-only catalogues, hydrated revision sessions, private helper ACLs, late-error transaction rollback, release replay rejection, rollback and reapply. Desktop/mobile browser coverage checks preserved history and SVG rendering through exams, revision, daily quizzes, notebooks and drills.
 
-The next audit queue remains source recovery for the three newly held records, clean replacement exam versions where question holds affect existing papers, unknown-skill classification, bank pagination/lazy previews, and independent mathematical/source review of the remaining bank. This release does not mark the full bank as mathematically certified.
+The next audit queue remains clean replacement exam versions where existing question holds affect papers, unknown-skill classification, bank pagination/lazy previews, and independent mathematical/source review of the remaining bank. This release does not mark the full bank as mathematically certified.

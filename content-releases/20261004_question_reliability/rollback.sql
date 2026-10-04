@@ -3,7 +3,7 @@ begin;
 do $rollback$
 declare b public.question_reliability_20261004_backup%rowtype;q public.questions%rowtype;k public.question_keys%rowtype;
 begin
- if (select count(*) from public.question_reliability_20261004_backup)<>15 then raise exception 'Incomplete release backup'; end if;
+ if (select count(*) from public.question_reliability_20261004_backup)<>12 then raise exception 'Incomplete release backup'; end if;
  for b in select * from public.question_reliability_20261004_backup order by question_id loop
   select * into q from public.questions where id=b.question_id for update;
   select * into k from public.question_keys where question_id=b.question_id for update;
