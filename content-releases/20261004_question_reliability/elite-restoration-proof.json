@@ -1,0 +1,56 @@
+{
+  "source_pdf_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+  "source_pages": [
+    97,
+    98
+  ],
+  "graph_clip_pdf_points": [
+    160.0,
+    184.0,
+    430.0,
+    470.0
+  ],
+  "x_intervals": [
+    [
+      -4.5,
+      -3.5
+    ],
+    [
+      -3.5,
+      -2.5
+    ],
+    [
+      -2.5,
+      -1.5
+    ],
+    [
+      -1.5,
+      -0.5
+    ],
+    [
+      0.5,
+      1.5
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ]
+  ],
+  "removed_point": [
+    0,
+    12
+  ],
+  "original_c": 6.52,
+  "lower_sum_x2_squared": 1242.5625,
+  "upper_sum_x_times_sum_x3": 642.8125,
+  "strict_positive_margin": 599.75,
+  "coefficient_change": "OLS deletion at x=0 with positive residual lowers c. Inverse-normal-matrix entry for a is (S1*S3-S2*S2)/det; the strictly positive margin proves a increases for all plotted x-values within the broad read-off intervals. C (I and II) is correct."
+}

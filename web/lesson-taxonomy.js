@@ -33,7 +33,6 @@ const MATH_LESSONS = {
     "Exponents, radicals and growth",
     "Logarithms and exponentials",
     "Ratios, percentages and unit conversion",
-    "Sequences",
     "Complex numbers",
     "Statistics and data analysis",
     "Probability and conditional probability",

@@ -46,6 +46,7 @@ jobs:
         run: |
           npm ci --prefix tests/english-runtime --ignore-scripts --no-audit --no-fund
           node --test tests/english_reading.test.cjs
+          node --test tests/svg_figures.test.cjs
 
       - name: Run source archive UI regression when its checked-in inputs exist
         run: |
@@ -79,6 +80,7 @@ jobs:
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est2_sat_revision_ideas_20260930_db.cjs
           python tests/final_revision_prune.py
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/final_revision_prune_db.cjs
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/question_reliability_db.cjs
           if [ -f content/est-banks-2026/reviewed-bank.json ]; then
             python tests/est_bank_2026.py
           else

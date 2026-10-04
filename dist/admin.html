@@ -511,7 +511,7 @@ async function getRows(table,track=false,columns='*',orderBy='',eqField='',eqVal
 }
 const wrapTable=html=>`<div class="table-wrap">${html}</div>`;
 async function bank(){
- const rows=await getRows('questions',true);
+ const rows=(await getRows('questions',true)).filter(q=>q.assets?.bank_removed!==true);
  let source=[];
  if(ST.track==='est'){
   source=await getRows('est_source_review',true,'id,track_id,source_document,source_code,source_page,source_section,review_status,question_id,duplicate_of','source_code');
@@ -667,5 +667,7 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 <script src="/exam-builder.js"></script>
 <script src="/admin-controls.js"></script>
 <script src="/admin-exam-activity.js"></script>
+<link rel="stylesheet" href="/portal-navigation.css">
+<script src="/portal-navigation.js"></script>
 </body>
 </html>

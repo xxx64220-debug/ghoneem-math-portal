@@ -316,6 +316,9 @@ function math(el) {
   });
 }
 const FRIENDLY = {
+  exam_content_under_review: 'This exam is being checked by your instructor. Your saved results are safe; choose another exam for now.',
+  question_content_under_review: 'This question is being checked. Return to practice and choose another set.',
+  daily_content_under_review: 'Today’s quiz is being checked by your instructor. Your existing points are safe; try lesson practice for now.',
   revision_hidden: 'Your instructor has hidden final revision for this track.',
   report_limit_try_later: 'You have sent several reports recently. Please try again later.',
   no_revision_questions: 'No questions match these filters. Choose another lesson or difficulty.',
@@ -459,11 +462,11 @@ function scoreTrend(){
 }
 function assessmentRow(e,options={}){
  const a=e.last,live=a?.status==='in_progress',done=a&&!live;
- const locked=options?.locked===true;
- const label=live?'Resume':done?'Review':locked?'Complete Module 1':'Start';
+ const locked=options?.locked===true,underReview=e.content_ready===false;
+ const label=done?'Review':underReview?'Under review':live?'Resume':locked?'Complete Module 1':'Start';
  const practice=e.assessment_type==='lesson_exam';
  const score=done?`<span class="badge done">${a.score == null ? 'Awaiting grading' : a.score+'/'+a.total}</span>`:'';
- return `<div class="exam-row"><div style="flex:1;min-width:170px"><h3>${esc(e.title)}</h3><div class="meta">${e.questions} questions · ${live&&a.untimed?'No time limit':Math.round(e.duration_seconds/60)+' min'}${practice?' · Repeatable':''}${!e.open&&!live?' · Not open':''}${done?' · Completed':''}</div></div>${score}${practice&&!live&&e.open?`<label class="practice-mode">Timer<select data-timer="${e.id}" aria-label="Timer for ${esc(e.title)}"><option value="untimed">No time limit</option><option value="timed">Timed (${Math.round(e.duration_seconds/60)} min)</option></select></label>`:''}<button class="btn" ${done?`data-review="${a.id}"`:`data-start="${e.id}"`} ${(!done&&!live&&locked)||(!done&&!live&&!e.open)?'disabled':''}>${label}</button>${done&&(practice||e.retake_available)&&e.open?`<button class="btn" data-start="${e.id}">${practice?'Practice again':'Start retake'}</button>`:''}</div>`;
+ return `<div class="exam-row"><div style="flex:1;min-width:170px"><h3>${esc(e.title)}</h3><div class="meta">${e.questions} questions · ${live&&a.untimed?'No time limit':Math.round(e.duration_seconds/60)+' min'}${practice?' · Repeatable':''}${underReview?' · Content under review':!e.open&&!live?' · Not open':''}${done?' · Completed':''}</div></div>${score}${practice&&!live&&e.open&&!underReview?`<label class="practice-mode">Timer<select data-timer="${e.id}" aria-label="Timer for ${esc(e.title)}"><option value="untimed">No time limit</option><option value="timed">Timed (${Math.round(e.duration_seconds/60)} min)</option></select></label>`:''}<button class="btn" ${done?`data-review="${a.id}"`:`data-start="${e.id}"`} ${(!done&&underReview)||(!done&&!live&&locked)||(!done&&!live&&!e.open)?'disabled':''}>${label}</button>${done&&(practice||e.retake_available)&&e.open&&!underReview?`<button class="btn" data-start="${e.id}">${practice?'Practice again':'Start retake'}</button>`:''}</div>`;
 }
 function assessmentSection(type){
  const rows=DASH.exams.filter(e=>e.assessment_type===type).sort((a,b)=>DASH.examSort==='questions'?b.questions-a.questions:DASH.examSort==='status'?Number(b.open)-Number(a.open)||String(a.title).localeCompare(String(b.title)):String(a.title).localeCompare(String(b.title),undefined,{numeric:true,sensitivity:'base'}));
@@ -471,7 +474,7 @@ function assessmentSection(type){
 }
 function moduleState(e){
  const a=e?.last,live=a?.status==='in_progress',done=a&&!live;
- return {a,live,done,label:live?'Resume':done?'Review':'Start'};
+ return {a,live,done,label:done?'Review':e.content_ready===false?'Under review':live?'Resume':'Start'};
 }
 function fullExamSection(){
  const modules=DASH.exams.filter(e=>e.assessment_type==='full_exam');
@@ -494,7 +497,7 @@ function fullExamSection(){
   const complete=s1.done&&s2.done&&s1.a.score!=null&&s2.a.score!=null;
   const title=(m1?.title||'SAT Practice Exam').replace(/\s+[—-]\s+Module\s+1$/i,'');
   const combined=complete?`${s1.a.score+s2.a.score}/${s1.a.total+s2.a.total}`:'—';
-  const row=(e,s,locked)=>`<div class="exam-row module-row"><div style="flex:1;min-width:170px"><h3>Module ${e.module_number}</h3><div class="meta">${e.questions} questions · 35 min${locked?' · Complete Module 1 first':''}</div></div>${s.done?`<span class="badge done">${s.a.score==null?'Awaiting grading':s.a.score+'/'+s.a.total}</span>`:''}<button class="btn" ${s.done?`data-review="${s.a.id}"`:`data-start="${e.id}"`} ${locked||(!s.done&&!s.live&&!e.open)?'disabled':''}>${s.label}</button></div>`;
+  const row=(e,s,locked)=>`<div class="exam-row module-row"><div style="flex:1;min-width:170px"><h3>Module ${e.module_number}</h3><div class="meta">${e.questions} questions · 35 min${e.content_ready===false?' · Content under review':locked?' · Complete Module 1 first':''}</div></div>${s.done?`<span class="badge done">${s.a.score==null?'Awaiting grading':s.a.score+'/'+s.a.total}</span>`:''}<button class="btn" ${s.done?`data-review="${s.a.id}"`:`data-start="${e.id}"`} ${locked||(!s.done&&e.content_ready===false)||(!s.done&&!s.live&&!e.open)?'disabled':''}>${s.label}</button></div>`;
   return `<article class="dash-panel exam-pair"><div class="dash-heading"><div><h2>${esc(title)}</h2><p class="dash-note">2 modules · 22 questions each · 35 minutes per module</p></div><div class="pair-score"><span>Combined</span><strong>${combined}</strong></div></div>${row(m1,s1,false)}${row(m2,s2,!s1.done)}</article>`;
  }).join('');
  return `<div class="full-exam-intro"><h2>SAT practice exams</h2><p>Each exam has two separately timed 35-minute modules. Complete Module 1 to unlock Module 2; your combined result is out of 44.</p></div>${pairHtml}${singles.length?`<section class="dash-panel"><h2>Other full exams</h2>${singles.map(assessmentRow).join('')}</section>`:''}${!pairs.length&&!singles.length?'<div class="dash-empty">No full exams are assigned yet.</div>':''}`;
@@ -788,7 +791,17 @@ function figure(a) {
   if (!a) return '';
   let out = '';
   const figures=Array.isArray(a.figure)?a.figure:[a.figure];
-  for(const src of figures){if(typeof src==='string'&&(/^(https:\/\/)/.test(src)||/^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\s]+$/.test(src)))out+=`<div class="fig"><img src="${esc(src)}" alt="${esc(a.figure_caption||'Question diagram')}" style="max-width:100%;height:auto"></div>`;}
+  for(const src of figures){
+    if(typeof src!=='string')continue;
+    if(/^data:image\/svg\+xml;base64,[A-Za-z0-9+/=\s]+$/.test(src)){
+      try{
+        const bytes=Uint8Array.from(atob(src.slice(src.indexOf(',')+1)),c=>c.charCodeAt(0));
+        const markup=new TextDecoder('utf-8',{fatal:true}).decode(bytes);
+        const parsed=new DOMParser().parseFromString(markup,'image/svg+xml');
+        if(!parsed.querySelector('parsererror')&&parsed.documentElement.localName==='svg')out+=`<div class="fig">${cleanMarkup(markup)}</div>`;
+      }catch{}
+    }else if(/^(https:\/\/)/.test(src)||/^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\s]+$/.test(src))out+=`<div class="fig"><img src="${esc(src)}" alt="${esc(a.figure_caption||'Question diagram')}" style="max-width:100%;height:auto"></div>`;
+  }
   if (a.figspec) out += `<div class="fig">${cleanMarkup(drawFig(a.figspec))}</div>`;
   if (a.html)    out += `<div class="fig fig-table">${cleanMarkup(ent(a.html))}</div>`;
   if(a.svg) out+=`<div class="fig">${cleanMarkup(a.svg)}</div>`;
@@ -821,6 +834,7 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 </script>
 <script src="/portal-controls.js"></script>
 <script src="/exam-activity.js"></script>
+<link rel="stylesheet" href="/portal-navigation.css">
+<script src="/portal-navigation.js"></script>
 </body>
 </html>
-
