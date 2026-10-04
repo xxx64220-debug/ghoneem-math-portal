@@ -28,7 +28,7 @@ async function setup(page,context,{visible=true,resourceFailure=false,noRetest=f
  await page.evaluate(async()=>{ST.me={role:'instructor'};ST.tracks=[{id:'est',name:'EST Math'}];ST.view='finalsDiagnosisAdmin';await render();show(true);});
  return {errors,unexpected,actions};
 }
-test('group plan coordinates the saved seven-person class and opens existing lesson and retest views without writes',async({page,context})=>{
+test('group plan coordinates the saved seven-person class and opens existing lesson and retest views without writes',async({page,context},testInfo)=>{
  const audit=await setup(page,context);await page.locator('#finalsGroupView').click();
  const plan=page.locator('#finalsGroupPlan');await expect(plan).toContainText('7 students selected');
  await expect(page.locator('#finalsClass')).toHaveValue('seven');await expect(plan.locator('.finals-cluster')).toHaveCount(3);
@@ -36,9 +36,11 @@ test('group plan coordinates the saved seven-person class and opens existing les
  await expect(plan.locator('.finals-clusters')).not.toContainText('Student g');await expect(plan).not.toContainText('Student h');await expect(page.locator('#finalsGroup')).not.toContainText('Other track');
  await expect(plan.locator('.finals-cluster').first()).toContainText('25 questions · 35 minutes');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.screenshot({path:testInfo.outputPath('group-planning.png'),fullPage:true});
  await page.locator('#finalsStudentsView').click();await expect(page.locator('#finalsIndividual')).toBeVisible();await expect(page.locator('#finalsGroup')).toBeHidden();
  await expect(page.locator('#finalsIndividual')).toContainText('Individual question time not reliably tracked');
  await page.locator('#finalsGroupView').click();await expect(plan).toContainText('7 students selected');
+ await page.locator('#finalsGroup summary').click();
  await page.locator('[data-finals-student="a"]').uncheck();await expect(plan).toContainText('6 students selected');await expect(plan.locator('.finals-cluster')).toHaveCount(2);
  await page.locator('#finalsClass').selectOption('other');await expect(plan).toContainText('1 students selected');await expect(plan.locator('.finals-common')).toContainText('Circles · 1/1');
  await page.locator('#finalsClass').selectOption('seven');await expect(plan.locator('.finals-cluster')).toHaveCount(3);
