@@ -1,0 +1,13 @@
+#bankTable td{vertical-align:top}#bankTable small,#bankTable details{overflow-wrap:anywhere}#bankTable .hint{margin-top:6px}#bankError{margin:12px 0}
+@media(max-width:700px){
+ #bankTable .table-wrap{overflow:visible}
+ #bankTable table,#bankTable tbody{display:block;width:100%;min-width:0;border:0;background:transparent}
+ #bankTable thead{display:none}
+ #bankTable tr{display:block;margin:12px 0;padding:16px;border:1px solid var(--line);border-radius:10px;background:#fff}
+ #bankTable td{display:block;width:100%;min-width:0;padding:7px 0;border:0;white-space:normal;overflow-wrap:anywhere}
+ #bankTable td::before{content:attr(data-label);display:block;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:5px}
+ #bankTable .pill{white-space:normal;max-width:100%}
+ #bankTable button{min-height:44px;margin:3px 5px 3px 0}
+ #bankTable input[type=checkbox]{width:22px;height:22px}
+ #bankPrev,#bankNext,#bankClear{min-height:44px}
+}

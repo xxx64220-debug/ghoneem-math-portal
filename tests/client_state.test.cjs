@@ -1,20 +1,17 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 function setup(file){
- const nodes=new Map();function node(id){if(!nodes.has(id))nodes.set(id,{id,value:'',textContent:'',innerHTML:'',disabled:false,style:{},classList:{toggle(){},contains(){return true},remove(){},add(){}},querySelectorAll(){return[]},close(){},showModal(){}});return nodes.get(id);}
+ const nodes=new Map();function node(id){if(!nodes.has(id))nodes.set(id,{id,value:'',textContent:'',innerHTML:'',disabled:false,style:{},isConnected:true,classList:{toggle(){},contains(){return true},remove(){},add(){}},querySelectorAll(){return[]},close(){},showModal(){}});return nodes.get(id);}
  const ctx={console,Map,Set,Date,JSON,Promise,Number,String,Array,Object,Math,Error,RegExp,URL,Blob,TextEncoder,crypto:require('node:crypto').webcrypto,
  setInterval(){return 1},clearInterval(){},setTimeout(){},clearTimeout(){},location:{reload(){},href:''},alert(){},confirm(){return true},
  localStorage:{setItem(){},getItem(){return null}},document:{addEventListener(){},getElementById:node,querySelectorAll(){return[]},documentElement:{style:{setProperty(){}}}},window:{addEventListener(){},scrollTo(){}},
  supabase:{createClient(){return {auth:{async getSession(){return {data:{session:null}}},async getUser(){return {data:{user:null}}}}}}}};
- vm.createContext(ctx);if(file.includes('admin'))new vm.Script(fs.readFileSync('web/hardest-questions.js','utf8')).runInContext(ctx);const code=fs.readFileSync(file,'utf8').split('<script>')[1].split('</script>')[0];new vm.Script(code).runInContext(ctx);for(const module of file.includes('admin')?['web/exam-builder.js']:['web/portal-controls.js'])new vm.Script(fs.readFileSync(module,'utf8')).runInContext(ctx);return ctx;
+ vm.createContext(ctx);if(file.includes('admin'))new vm.Script(fs.readFileSync('web/hardest-questions.js','utf8')).runInContext(ctx);const code=fs.readFileSync(file,'utf8').split('<script>')[1].split('</script>')[0];new vm.Script(code).runInContext(ctx);for(const module of file.includes('admin')?['web/exam-builder.js','web/admin-bank.js']:['web/portal-controls.js'])new vm.Script(fs.readFileSync(module,'utf8')).runInContext(ctx);return ctx;
 }
 (async()=>{
  const c=setup('web/index.html'),a=setup('web/admin.html');
- a.testQuestions=[{id:'q-ready',track_id:'est',topic:'Linear equations',stem:'FA 001 — Solve the original question',type:'mcq',assets:{source_code:'FA 001'}}];
- a.testSource=[{id:'topic:FA 001',track_id:'est',source_document:'Topics PDF',source_code:'FA 001',source_page:2,source_section:'Foundational Algebra',review_status:'ready',question_id:'q-ready',duplicate_of:null},{id:'clean:MIX 024',track_id:'est',source_document:'Clean PDF',source_code:'MIX 024',source_page:400,source_section:'Mixed',review_status:'incomplete',question_id:null,duplicate_of:null}];
- vm.runInContext("ST.track='est';sourceStatus=s=>s==='ready'?'Ready in question bank':'Needs review';getRows=async table=>table==='questions'?testQuestions:table==='est_source_review'?testSource:[];sb.from=table=>({select(){return this},order(){return this},limit:async()=>({data:testSource,error:null})});",a);
+ a.testBank={total:2,size:50,lessons:['Algebra'],summary:{total:2,held:1,unclassified:1,independently_solved:0},items:[{entry_id:'ready',question_id:'q-ready',code:'FA 001',topic:'Algebra',stem:'Fixture',ready:true,priority:3,published_uses:0,review_status:'source_checked'},{entry_id:'held',question_id:null,code:'MIX 024',topic:'Algebra',stem:'',ready:false,priority:1,published_uses:0,review_status:'review'}]};
+ vm.runInContext("ST.track='est';ST.view='bank';sb.rpc=async()=>({data:testBank,error:null});",a);
  await vm.runInContext('bank()',a);
- assert.match(a.document.getElementById('view').innerHTML,/2 PDF source entries · 1 verified/);
- a.document.getElementById('bankScope').value='source';a.document.getElementById('bankScope').onchange();
  const sourceBank=a.document.getElementById('bankTable').innerHTML;
  assert.match(sourceBank,/FA 001/);assert.match(sourceBank,/data-bank-select="q-ready"/);assert.match(sourceBank,/MIX 024/);
  assert.doesNotMatch(sourceBank,/data-bank-select="null"/);
