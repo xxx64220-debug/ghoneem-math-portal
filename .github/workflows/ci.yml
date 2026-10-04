@@ -83,6 +83,8 @@ jobs:
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/final_revision_prune_db.cjs
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/question_reliability_db.cjs
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/source_recovery_db.cjs
+          python tests/reviewed_exam_versions_math.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/reviewed_exam_versions_db.cjs
           if [ -f content/est-banks-2026/reviewed-bank.json ]; then
             python tests/est_bank_2026.py
           else

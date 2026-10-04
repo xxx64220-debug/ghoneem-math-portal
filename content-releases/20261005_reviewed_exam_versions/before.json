@@ -1,0 +1,1296 @@
+[
+  {
+    "id": "00858c9b-1dd1-5bb3-7ca9-36307cd63d78",
+    "stem": "Q117. A 1.2 m³ pool is filled by 9 gallons. How many gallons fill a 26 m³ pool?",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "assets": {
+      "source_id": "ghoneem_full_revision_jun_2026",
+      "source_page": 24,
+      "visual_page": 24,
+      "content_audit": "2026-09-25-format-and-grading-review",
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Ratios, rates, and proportions",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "117",
+      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_pdf_bucket": "question-sources",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "ghoneem_full_revision_jun_2026-q00115",
+      "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "release_hold_reason": "The supplied proportional calculation is 9×26/1.2=195, but the premise equates 1.2 cubic meters with 9 gallons, which is not a valid volume conversion. The intended unit or quantity cannot be recovered from the source; retain the source and hold it.",
+      "lesson_original_topic": "Ratios, rates, and proportions",
+      "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "195"
+      },
+      {
+        "key": "B",
+        "text": "202"
+      },
+      {
+        "key": "C",
+        "text": "223"
+      },
+      {
+        "key": "D",
+        "text": "234"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T16:08:45.89527+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The supplied proportional calculation is 9×26/1.2=195, but the premise equates 1.2 cubic meters with 9 gallons, which is not a valid volume conversion. The intended unit or quantity cannot be recovered from the source; retain the source and hold it.",
+    "question_id": "00858c9b-1dd1-5bb3-7ca9-36307cd63d78"
+  },
+  {
+    "id": "22a42973-8e94-0307-7341-5a98290fdaf9",
+    "stem": "If x − 3 and x + 2 are both factors of the polynomial p(x), which of the\nfollowing could be p(x)?",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 16,
+      "lesson_subtopic": "Algebra",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 16, extracted block 76",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_question_id": "full_subject_revision_june_2026-p16-q76",
+      "release_hold_reason": "Both A=x(x−3)(x+2) and D=(x+1)(x−3)(x+2) contain the required factors. The single-answer source is ambiguous.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Algebra",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "p(x) = x³ − x² − 6x"
+      },
+      {
+        "key": "B",
+        "text": "p(x) = x³ + x² − 6x"
+      },
+      {
+        "key": "C",
+        "text": "p(x) = x³ − 5x² + 6x"
+      },
+      {
+        "key": "D",
+        "text": "p(x) = x³ − 7x − 6"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T10:58:58.855467+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: Both A=x(x−3)(x+2) and D=(x+1)(x−3)(x+2) contain the required factors. The single-answer source is ambiguous.",
+    "question_id": "22a42973-8e94-0307-7341-5a98290fdaf9"
+  },
+  {
+    "id": "3556fa31-7c75-76db-d8d7-9ee22d7c3867",
+    "stem": "If \\(3^{x+2}-3^x=216\\), what is the value of \\(x\\)?",
+    "type": "mcq",
+    "topic": "Exponents, radicals and growth",
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 48,
+      "duplicate_of": "10fab705-da9f-6719-ec0d-3297d5afae40",
+      "recheck_date": "2026-09-28",
+      "lesson_subtopic": "Algebra",
+      "recheck_outcome": "superseded_active_copy",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 48, extracted block 6",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "source_question_id": "full_subject_revision_june_2026-p48-q214",
+      "release_hold_reason": "Duplicate of reviewed question 10fab705-da9f-6719-ec0d-3297d5afae40; old content retained for active exam",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Algebra",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "2"
+      },
+      {
+        "key": "B",
+        "text": "3"
+      },
+      {
+        "key": "C",
+        "text": "4"
+      },
+      {
+        "key": "D",
+        "text": "5"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T10:58:58.855467+00:00",
+    "difficulty": "hard",
+    "correct": "B",
+    "explanation": "The source prints 3^(x+2)−3^x=216. Factoring gives 8·3^x=216, so 3^x=27 and x=3.",
+    "question_id": "3556fa31-7c75-76db-d8d7-9ee22d7c3867"
+  },
+  {
+    "id": "43f410ac-41a2-a7a0-09b7-effd44fca3ea",
+    "stem": "Spinner 1 has sections {1, 2, 3, 4} and Spinner 2 has {1, 2, 3}. Both are\nspun. What is P(the product is even)?",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 38,
+      "lesson_subtopic": "Needs classification",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 38, extracted block 18",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_question_id": "full_subject_revision_june_2026-p38-q171",
+      "release_hold_reason": "The source lists spinner labels but does not specify equal sector probabilities or independent spins. The value 2/3 requires both assumptions; the probability is otherwise undetermined.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "1/4"
+      },
+      {
+        "key": "B",
+        "text": "1/3"
+      },
+      {
+        "key": "C",
+        "text": "1/2"
+      },
+      {
+        "key": "D",
+        "text": "2/3"
+      },
+      {
+        "key": "E",
+        "text": "3/4"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T10:58:58.855467+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The source lists spinner labels but does not specify equal sector probabilities or independent spins. The value 2/3 requires both assumptions; the probability is otherwise undetermined.",
+    "question_id": "43f410ac-41a2-a7a0-09b7-effd44fca3ea"
+  },
+  {
+    "id": "44d81c11-3760-7638-292b-77268461e4b5",
+    "stem": "Q106. A teacher gives a test to 3 classes: Class A (30 students, avg 15.8), Class B\n (20 students, avg 16.2), Class C (10 students, avg 17.2). One student from each\n class scored 20/20. Find the new average after removing those three students.",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "assets": {
+      "source_id": "ghoneem_full_revision_jun_2026",
+      "source_page": 22,
+      "visual_page": 22,
+      "content_audit": "2026-09-25-format-and-grading-review",
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Area, surface area, and volume",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "106",
+      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_pdf_bucket": "question-sources",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "ghoneem_full_revision_jun_2026-q00104",
+      "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "release_hold_reason": "Original total=30(15.8)+20(16.2)+10(17.2)=970. Removing 60 points and 3 students gives 910/57=15.964912..., or 16.0 to one decimal, not the keyed 15.9. None of the choices matches.",
+      "lesson_original_topic": "Area, surface area, and volume",
+      "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "50.7"
+      },
+      {
+        "key": "B",
+        "text": "15.9"
+      },
+      {
+        "key": "C",
+        "text": "15.1"
+      },
+      {
+        "key": "D",
+        "text": "48.2"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T16:08:45.89527+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: Original total=30(15.8)+20(16.2)+10(17.2)=970. Removing 60 points and 3 students gives 910/57=15.964912..., or 16.0 to one decimal, not the keyed 15.9. None of the choices matches.",
+    "question_id": "44d81c11-3760-7638-292b-77268461e4b5"
+  },
+  {
+    "id": "492aa09e-a370-8678-c92c-43dbf5eafce1",
+    "stem": "A fake die has 6 faces labeled 2, 3, 3, 4, 6, 7. P(prime) = (k − 2)/6. What is the\npositive value of k?",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 43,
+      "lesson_subtopic": "Needs classification",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 43, extracted block 47",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_question_id": "full_subject_revision_june_2026-p43-q200",
+      "release_hold_reason": "The source calls this a fake die without stating that faces are equally likely. Counting four prime-labeled faces gives 4/6 only for fair faces; hold this under-specified copy. Preserve the separately corrected explicit-fair-die copy.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "2"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "6"
+      },
+      {
+        "key": "D",
+        "text": "8"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T10:58:58.855467+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The source calls this a fake die without stating that faces are equally likely. Counting four prime-labeled faces gives 4/6 only for fair faces; hold this under-specified copy. Preserve the separately corrected explicit-fair-die copy.",
+    "question_id": "492aa09e-a370-8678-c92c-43dbf5eafce1"
+  },
+  {
+    "id": "5a374899-5d5d-d706-1ce4-77197041133e",
+    "stem": "A 1.2 m³ pool is filled by 9 gallons. How many gallons fill a 26 m³ pool?",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 24,
+      "lesson_subtopic": "Needs classification",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 24, extracted block 117",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_question_id": "full_subject_revision_june_2026-p24-q117",
+      "release_hold_reason": "The supplied proportional calculation is 9×26/1.2=195, but the premise equates 1.2 cubic meters with 9 gallons, which is not a valid volume conversion. The intended unit or quantity cannot be recovered from the source; retain the source and hold it.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "195"
+      },
+      {
+        "key": "B",
+        "text": "202"
+      },
+      {
+        "key": "C",
+        "text": "223"
+      },
+      {
+        "key": "D",
+        "text": "234"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T10:58:58.855467+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The supplied proportional calculation is 9×26/1.2=195, but the premise equates 1.2 cubic meters with 9 gallons, which is not a valid volume conversion. The intended unit or quantity cannot be recovered from the source; retain the source and hold it.",
+    "question_id": "5a374899-5d5d-d706-1ce4-77197041133e"
+  },
+  {
+    "id": "855deeb1-fd4b-3673-3528-a52fde5f19e5",
+    "stem": "Q6. Three people have heights 160, 170, 180 cm. One leaves and another joins,\n and the new mean is 175 cm. What is the new person's height?",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "assets": {
+      "source_id": "ghoneem_full_revision_jun_2026",
+      "source_page": 36,
+      "visual_page": 36,
+      "content_audit": "2026-09-25-format-and-grading-review",
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Statistics: frequency and percent",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "6",
+      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_pdf_bucket": "question-sources",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "ghoneem_full_revision_jun_2026-q00154",
+      "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "release_hold_reason": "Original total=510 and new total=525, so the new person is 15 cm taller than the person who left. Possibilities are 175,185,195; the departing person is unspecified. A unique height cannot be inferred even though 185 is the only listed possibility.",
+      "lesson_original_topic": "Statistics: frequency and percent",
+      "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "165"
+      },
+      {
+        "key": "B",
+        "text": "170"
+      },
+      {
+        "key": "C",
+        "text": "172"
+      },
+      {
+        "key": "D",
+        "text": "185"
+      },
+      {
+        "key": "E",
+        "text": "190"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T16:08:45.89527+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: Original total=510 and new total=525, so the new person is 15 cm taller than the person who left. Possibilities are 175,185,195; the departing person is unspecified. A unique height cannot be inferred even though 185 is the only listed possibility.",
+    "question_id": "855deeb1-fd4b-3673-3528-a52fde5f19e5"
+  },
+  {
+    "id": "8d191406-f760-fa40-c64e-376509666eb9",
+    "stem": "Three people have heights 160, 170, 180 cm. One leaves and another joins,\nand the new mean is 175 cm. What is the new person's height?",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 36,
+      "lesson_subtopic": "Statistics and probability",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 36, extracted block 6",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_question_id": "full_subject_revision_june_2026-p36-q159",
+      "release_hold_reason": "Original total=510 and new total=525, so the new person is 15 cm taller than the person who left. Possibilities are 175,185,195; the departing person is unspecified. A unique height cannot be inferred even though 185 is the only listed possibility.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Statistics and probability",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "165"
+      },
+      {
+        "key": "B",
+        "text": "170"
+      },
+      {
+        "key": "C",
+        "text": "172"
+      },
+      {
+        "key": "D",
+        "text": "185"
+      },
+      {
+        "key": "E",
+        "text": "190"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T10:58:58.855467+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: Original total=510 and new total=525, so the new person is 15 cm taller than the person who left. Possibilities are 175,185,195; the departing person is unspecified. A unique height cannot be inferred even though 185 is the only listed possibility.",
+    "question_id": "8d191406-f760-fa40-c64e-376509666eb9"
+  },
+  {
+    "id": "9957502d-04d6-c636-3947-31d2ed2ffc04",
+    "stem": "Q19. P(scoring a penalty) = 0.3. A player takes 3 shots. What is P(he scores all of\n them)?",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "assets": {
+      "source_id": "ghoneem_full_revision_jun_2026",
+      "source_page": 38,
+      "visual_page": 38,
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Probability and counting",
+      "reviewed_release": "2026-09-21-source-page-formula-choice-and-visual-check",
+      "source_reference": "19",
+      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_pdf_bucket": "question-sources",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "ghoneem_full_revision_jun_2026-q00168",
+      "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "release_hold_reason": "The source gives marginal success probability 0.3 but does not establish independent shots. All-three probability is 0.027 under independence, but can be 0.3 for perfectly correlated shots. Hold rather than invent independence.",
+      "lesson_original_topic": "Probability and counting",
+      "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.027"
+      },
+      {
+        "key": "B",
+        "text": "0.343"
+      },
+      {
+        "key": "C",
+        "text": "0.540"
+      },
+      {
+        "key": "D",
+        "text": "0.90"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T16:08:45.89527+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The source gives marginal success probability 0.3 but does not establish independent shots. All-three probability is 0.027 under independence, but can be 0.3 for perfectly correlated shots. Hold rather than invent independence.",
+    "question_id": "9957502d-04d6-c636-3947-31d2ed2ffc04"
+  },
+  {
+    "id": "9f479ecd-a687-b0be-fc29-ace016e04fff",
+    "stem": "Nada invests $6,000 in an account earning r% interest compounded yearly.\nAfter 8 years the total is $8,950.95. What is r?",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 20,
+      "lesson_subtopic": "Needs classification",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 20, extracted block 94",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_question_id": "full_subject_revision_june_2026-p20-q94",
+      "release_hold_reason": "The stated amount requires r=100((8950.95/6000)^(1/8)−1), approximately 5.13%. At 5%, the balance is 8864.73, not 8950.95. No listed rate satisfies the data; the source does not specify rounding the rate to a whole percent.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "1"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "7"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T10:58:58.855467+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The stated amount requires r=100((8950.95/6000)^(1/8)−1), approximately 5.13%. At 5%, the balance is 8864.73, not 8950.95. No listed rate satisfies the data; the source does not specify rounding the rate to a whole percent.",
+    "question_id": "9f479ecd-a687-b0be-fc29-ace016e04fff"
+  },
+  {
+    "id": "b7c33115-0e83-acfe-d2e7-e5dd4364c922",
+    "stem": "P(scoring a penalty) = 0.3. A player takes 3 shots. What is P(he scores all of\nthem)?",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 38,
+      "lesson_subtopic": "Needs classification",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 38, extracted block 19",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_question_id": "full_subject_revision_june_2026-p38-q172",
+      "release_hold_reason": "The source gives marginal success probability 0.3 but does not establish independent shots. All-three probability is 0.027 under independence, but can be 0.3 for perfectly correlated shots. Hold rather than invent independence.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.027"
+      },
+      {
+        "key": "B",
+        "text": "0.343"
+      },
+      {
+        "key": "C",
+        "text": "0.540"
+      },
+      {
+        "key": "D",
+        "text": "0.90"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T10:58:58.855467+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The source gives marginal success probability 0.3 but does not establish independent shots. All-three probability is 0.027 under independence, but can be 0.3 for perfectly correlated shots. Hold rather than invent independence.",
+    "question_id": "b7c33115-0e83-acfe-d2e7-e5dd4364c922"
+  },
+  {
+    "id": "ce2258e9-a83b-a947-3290-7cac213933ca",
+    "stem": "Q94. Nada invests $6,000 in an account earning r% interest compounded yearly.\n After 8 years the total is $8,950.95. What is r?",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "assets": {
+      "source_id": "ghoneem_full_revision_jun_2026",
+      "source_page": 20,
+      "visual_page": 20,
+      "content_audit": "2026-09-25-format-and-grading-review",
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Linear equations and lines",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "94",
+      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_pdf_bucket": "question-sources",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "ghoneem_full_revision_jun_2026-q00093",
+      "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "release_hold_reason": "The stated amount requires r=100((8950.95/6000)^(1/8)−1), approximately 5.13%. At 5%, the balance is 8864.73, not 8950.95. No listed rate satisfies the data; the source does not specify rounding the rate to a whole percent.",
+      "lesson_original_topic": "Linear equations and lines",
+      "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "1"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "7"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T16:08:45.89527+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The stated amount requires r=100((8950.95/6000)^(1/8)−1), approximately 5.13%. At 5%, the balance is 8864.73, not 8950.95. No listed rate satisfies the data; the source does not specify rounding the rate to a whole percent.",
+    "question_id": "ce2258e9-a83b-a947-3290-7cac213933ca"
+  },
+  {
+    "id": "dba94174-dfce-f518-cbb3-76d958d73bea",
+    "stem": "Q76. If x − 3 and x + 2 are both factors of the polynomial p(x), which of the\n following could be p(x)?",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "assets": {
+      "source_id": "ghoneem_full_revision_jun_2026",
+      "source_page": 16,
+      "visual_page": 16,
+      "content_audit": "2026-09-25-format-and-grading-review",
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Polynomials and roots",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "76",
+      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_pdf_bucket": "question-sources",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "ghoneem_full_revision_jun_2026-q00075",
+      "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "release_hold_reason": "Both A=x(x−3)(x+2) and D=(x+1)(x−3)(x+2) contain the required factors. The single-answer source is ambiguous.",
+      "lesson_original_topic": "Polynomials and roots",
+      "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "p(x) = x³ − x² − 6x"
+      },
+      {
+        "key": "B",
+        "text": "p(x) = x³ + x² − 6x"
+      },
+      {
+        "key": "C",
+        "text": "p(x) = x³ − 5x² + 6x"
+      },
+      {
+        "key": "D",
+        "text": "p(x) = x³ − 7x − 6"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T16:08:45.89527+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: Both A=x(x−3)(x+2) and D=(x+1)(x−3)(x+2) contain the required factors. The single-answer source is ambiguous.",
+    "question_id": "dba94174-dfce-f518-cbb3-76d958d73bea"
+  },
+  {
+    "id": "efd7a835-6f42-cb9a-1a06-07232cdab400",
+    "stem": "A teacher gives a test to 3 classes: Class A (30 students, avg 15.8), Class B\n(20 students, avg 16.2), Class C (10 students, avg 17.2). One student from each\nclass scored 20/20. Find the new average after removing those three students.",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 22,
+      "lesson_subtopic": "Needs classification",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 22, extracted block 106",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_question_id": "full_subject_revision_june_2026-p22-q106",
+      "release_hold_reason": "Original total=30(15.8)+20(16.2)+10(17.2)=970. Removing 60 points and 3 students gives 910/57=15.964912..., or 16.0 to one decimal, not the keyed 15.9. None of the choices matches.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "50.7"
+      },
+      {
+        "key": "B",
+        "text": "15.9"
+      },
+      {
+        "key": "C",
+        "text": "15.1"
+      },
+      {
+        "key": "D",
+        "text": "48.2"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T10:58:58.855467+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: Original total=30(15.8)+20(16.2)+10(17.2)=970. Removing 60 points and 3 students gives 910/57=15.964912..., or 16.0 to one decimal, not the keyed 15.9. None of the choices matches.",
+    "question_id": "efd7a835-6f42-cb9a-1a06-07232cdab400"
+  },
+  {
+    "id": "fb385f7e-c71c-22d8-3c30-05a7ad9269c5",
+    "stem": "Q18. Spinner 1 has sections {1, 2, 3, 4} and Spinner 2 has {1, 2, 3}. Both are\n spun. What is P(the product is even)?",
+    "type": "mcq",
+    "topic": "Probability and conditional probability",
+    "assets": {
+      "source_id": "ghoneem_full_revision_jun_2026",
+      "source_page": 38,
+      "visual_page": 38,
+      "content_audit": "2026-09-25-format-and-grading-review",
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Probability and counting",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "18",
+      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_pdf_bucket": "question-sources",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "ghoneem_full_revision_jun_2026-q00167",
+      "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "release_hold_reason": "The source lists spinner labels but does not specify equal sector probabilities or independent spins. The value 2/3 requires both assumptions; the probability is otherwise undetermined.",
+      "lesson_original_topic": "Probability and counting",
+      "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "1/4"
+      },
+      {
+        "key": "B",
+        "text": "1/3"
+      },
+      {
+        "key": "C",
+        "text": "1/2"
+      },
+      {
+        "key": "D",
+        "text": "2/3"
+      },
+      {
+        "key": "E",
+        "text": "3/4"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T16:08:45.89527+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The source lists spinner labels but does not specify equal sector probabilities or independent spins. The value 2/3 requires both assumptions; the probability is otherwise undetermined.",
+    "question_id": "fb385f7e-c71c-22d8-3c30-05a7ad9269c5"
+  },
+  {
+    "id": "6d671cad-0f53-5e10-abaf-6d1328031b81",
+    "stem": "[Figure: Circle with chords AB and CD intersecting inside the circle at 80°; A right, B lower right, C lower left, D upper left.]\nIn the figure: If m arc AB = 60°, then m arc DC =",
+    "type": "mcq",
+    "topic": "Circles",
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t7.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+      "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+      "curriculum_lesson": "Circles",
+      "hold_recheck_date": "2026-09-29",
+      "hold_recheck_note": "The listed circle-point order and claim that chords AB and CD intersect are inconsistent. The calculation (60+arc DC)/2=80 would give 100°, but only if these are the intercepted opposite arcs. The original chord/angle labeling is required.",
+      "source_question_id": "T7-08",
+      "release_hold_reason": "Original figure or source-layout review needed",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "20°"
+      },
+      {
+        "key": "B",
+        "text": "40°"
+      },
+      {
+        "key": "C",
+        "text": "80°"
+      },
+      {
+        "key": "D",
+        "text": "100°"
+      }
+    ],
+    "track_id": "est2",
+    "created_at": "2026-09-21T08:44:05.303431+00:00",
+    "difficulty": "medium",
+    "correct": "D",
+    "explanation": "Source-keyed answer from book_t7.md (T7-08).",
+    "question_id": "6d671cad-0f53-5e10-abaf-6d1328031b81"
+  },
+  {
+    "id": "75a90933-fefc-5852-a2e5-c49a4e399855",
+    "stem": "[Figure: Triangle ACB with A at top, C bottom left, B bottom right; D on CB; segment AD drawn.]\n△ACD ~ △BCA because of:",
+    "type": "mcq",
+    "topic": "Triangles and similarity",
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t9.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "417d165758ab4ea90b91891cea0b6cd71d4ad113c1cbac2ccd7241a361c29d57",
+      "lesson_subtopic": "Triangles, Trigonometry & Similarity",
+      "curriculum_lesson": "Triangles and similarity",
+      "hold_recheck_date": "2026-09-29",
+      "hold_recheck_note": "If angle CAD equals angle ABC and D lies on CB, triangles ACD and BCA share angle C and are similar by AA, matching C. The missing source angle mark/given is needed to establish the claimed equality.",
+      "source_question_id": "T9-34",
+      "release_hold_reason": "Original figure or source-layout review needed",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Triangles, Trigonometry & Similarity",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "m∠CAD = m∠B and AD is a common side"
+      },
+      {
+        "key": "B",
+        "text": "m∠CAD = m∠B and AC is a common side"
+      },
+      {
+        "key": "C",
+        "text": "m∠CAD = m∠B, and C is a common angle"
+      },
+      {
+        "key": "D",
+        "text": "none of the above"
+      }
+    ],
+    "track_id": "est2",
+    "created_at": "2026-09-21T08:44:06.105185+00:00",
+    "difficulty": "medium",
+    "correct": "C",
+    "explanation": "Source-keyed answer from book_t9.md (T9-34).",
+    "question_id": "75a90933-fefc-5852-a2e5-c49a4e399855"
+  },
+  {
+    "id": "e390176d-dc15-5440-8f9c-c89f7706e604",
+    "stem": "[Figure: Circle with inscribed figure; AD is a chord across top with H on arc AD; AB vertical-ish chord at left with arrow; BC chord at bottom; CD chord at right; E on BC; arrows on AB, HE-line, and AD indicating parallels.]\nIn the figure: If m∠HEC = 2y + 10, m∠D = y + 20, then m∠B =",
+    "type": "mcq",
+    "topic": "Circles",
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t7.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+      "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+      "curriculum_lesson": "Circles",
+      "hold_recheck_date": "2026-09-29",
+      "hold_recheck_note": "The transcription does not unambiguously identify the parallel segments or inscribed-angle positions. The proposed 110° depends on those relationships, so a source diagram is required.",
+      "source_question_id": "T7-07",
+      "release_hold_reason": "Original figure or source-layout review needed",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "50"
+      },
+      {
+        "key": "B",
+        "text": "60"
+      },
+      {
+        "key": "C",
+        "text": "80"
+      },
+      {
+        "key": "D",
+        "text": "110"
+      }
+    ],
+    "track_id": "est2",
+    "created_at": "2026-09-21T08:44:05.303431+00:00",
+    "difficulty": "medium",
+    "correct": "D",
+    "explanation": "Source-keyed answer from book_t7.md (T7-07).",
+    "question_id": "e390176d-dc15-5440-8f9c-c89f7706e604"
+  },
+  {
+    "id": "e66b07e7-ae80-5b66-a025-bb6f27c972a6",
+    "stem": "[Figure: Graph of f(x) rising from lower left through (−5,0), crossing y-axis at 4, peaking near x = 1, dipping to a minimum at x = 3, then rising again.]\nAt which interval is the function f(x) decreasing?",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t7.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+      "lesson_subtopic": "Functions, Transformations & Graphs",
+      "curriculum_lesson": "Functions and transformations",
+      "hold_recheck_date": "2026-09-29",
+      "hold_recheck_note": "If the extrema occur exactly at x=1 and x=3 as suggested, the decreasing interval is (1,3). The transcription says near x=1 and supplies no original graph, so the exact boundaries remain unverified.",
+      "source_question_id": "T7-28",
+      "release_hold_reason": "Original figure or source-layout review needed",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Functions, Transformations & Graphs",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "−5 < x < 1"
+      },
+      {
+        "key": "B",
+        "text": "1 < x < 3"
+      },
+      {
+        "key": "C",
+        "text": "x > 3"
+      },
+      {
+        "key": "D",
+        "text": "x < 3"
+      }
+    ],
+    "track_id": "est2",
+    "created_at": "2026-09-21T08:44:06.856742+00:00",
+    "difficulty": "medium",
+    "correct": "B",
+    "explanation": "Source-keyed answer from book_t7.md (T7-28).",
+    "question_id": "e66b07e7-ae80-5b66-a025-bb6f27c972a6"
+  },
+  {
+    "id": "38dae603-01c3-93f3-000f-2d8610facd6a",
+    "stem": "(2a − 14)x² + 5b − cx = 2x² − (4x + 5c)b for all x. What is the value of a + 8b + c?",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 14,
+      "content_review": "2026-09-29-revision-contamination",
+      "lesson_subtopic": "Algebra",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 14, extracted block 65",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_question_id": "full_subject_revision_june_2026-p14-q65",
+      "content_review_page": 14,
+      "release_hold_reason": "Source ambiguity: coefficient identity permits both 5 and 8; a missing condition requires clarification.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "content_review_source": "DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Algebra",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "11"
+      },
+      {
+        "key": "B",
+        "text": "7"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "3"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T10:58:58.855467+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "Source ambiguity: coefficient identity permits both 5 and 8; a missing condition requires clarification."
+    },
+    "explanation": "This question is ambiguous as written. Matching coefficients gives a = 8, c = 4b, and b(1 + c) = 0. If b = 0, then c = 0 and a + 8b + c = 8. If c = −1, then b = −1/4 and the value is 5. The source omits a condition that would select one branch. Excluded from scoring pending clarification.",
+    "question_id": "38dae603-01c3-93f3-000f-2d8610facd6a"
+  },
+  {
+    "id": "cee9c7d1-307b-60d3-afd0-4347ea1bc2aa",
+    "stem": "Q65. (2a − 14)x² + 5b − cx = 2x² − (4x + 5c)b for all x. What is the value of a + 8b + c?",
+    "type": "mcq",
+    "topic": "Quadratics and polynomials",
+    "assets": {
+      "source_id": "ghoneem_full_revision_jun_2026",
+      "source_page": 14,
+      "visual_page": 14,
+      "visual_bucket": "question-sources",
+      "content_review": "2026-09-29-revision-contamination",
+      "lesson_subtopic": "Polynomials and roots",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "65",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_pdf_bucket": "question-sources",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "ghoneem_full_revision_jun_2026-q00064",
+      "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "content_review_page": 14,
+      "release_hold_reason": "Source ambiguity: coefficient identity permits both 5 and 8; a missing condition requires clarification.",
+      "content_review_source": "DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Polynomials and roots",
+      "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "11"
+      },
+      {
+        "key": "B",
+        "text": "7"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "3"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-20T16:08:45.89527+00:00",
+    "difficulty": "medium",
+    "correct": {
+      "void": true,
+      "reason": "Source ambiguity: coefficient identity permits both 5 and 8; a missing condition requires clarification."
+    },
+    "explanation": "This question is ambiguous as written. Matching coefficients gives a = 8, c = 4b, and b(1 + c) = 0. If b = 0, then c = 0 and a + 8b + c = 8. If c = −1, then b = −1/4 and the value is 5. The source omits a condition that would select one branch. Excluded from scoring pending clarification.",
+    "question_id": "cee9c7d1-307b-60d3-afd0-4347ea1bc2aa"
+  },
+  {
+    "id": "0476278a-01ae-54ce-816f-c8e7687e3849",
+    "stem": "[Figure: f(x) shown as an increasing, concave-down curve through the origin in the first quadrant. Four graphs A–D: A same shape as f; B decreasing curve in second quadrant; C increasing concave-up curve through origin; D decreasing curve in third/fourth quadrant.]\nFor the function f(x) shown, which of the following represents the graph of the inverse function of f(x)?",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t7.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+      "lesson_subtopic": "Functions, Transformations & Graphs",
+      "curriculum_lesson": "Functions and transformations",
+      "hold_recheck_date": "2026-09-29",
+      "hold_recheck_note": "An increasing invertible concave-down graph has an increasing concave-up inverse reflected in y=x. The qualitative description favors C, but exact original graph choices and scale are missing; no original letter release approved.",
+      "source_question_id": "T7-21",
+      "release_hold_reason": "Original figure or source-layout review needed",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Functions, Transformations & Graphs",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "Graph A"
+      },
+      {
+        "key": "B",
+        "text": "Graph B"
+      },
+      {
+        "key": "C",
+        "text": "Graph C"
+      },
+      {
+        "key": "D",
+        "text": "Graph D"
+      }
+    ],
+    "track_id": "est2",
+    "created_at": "2026-09-21T08:44:06.856742+00:00",
+    "difficulty": "hard",
+    "correct": "C",
+    "explanation": "Source-keyed answer from book_t7.md (T7-21).",
+    "question_id": "0476278a-01ae-54ce-816f-c8e7687e3849"
+  },
+  {
+    "id": "30eec906-1afb-5d4e-afd6-a9f868417e15",
+    "stem": "[Figure: graph of g(x), a wavy cubic-like curve crossing the x-axis at −2, 1, and 3.]\nIf f(x) = k(x)/g(x), g(x) is represented by the graph above, then the domain of f(x) is ……",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t6.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "fff115dbcac720ded29af3b5a3d4e954934e7afdc285b7b3e484aee7cfdf97a9",
+      "lesson_subtopic": "Rational, Radical, Exponential & Logarithmic Functions",
+      "curriculum_lesson": "Functions and transformations",
+      "hold_recheck_date": "2026-09-29",
+      "hold_recheck_note": "The zeros −2,1,3 of g would be excluded from the quotient domain, but the numerator function k and its domain are not supplied. D requires an unstated all-real numerator domain; E may be appropriate if the omission is intentional. Original complete prompt is needed.",
+      "source_question_id": "T6-11",
+      "release_hold_reason": "Original figure or source-layout review needed",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Rational, Radical, Exponential & Logarithmic Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "all real numbers"
+      },
+      {
+        "key": "B",
+        "text": "all real numbers except −1, 2"
+      },
+      {
+        "key": "C",
+        "text": "all real numbers except −1, 1, 3"
+      },
+      {
+        "key": "D",
+        "text": "all real numbers except 1, −2, 3"
+      },
+      {
+        "key": "E",
+        "text": "we can not determine the domain"
+      }
+    ],
+    "track_id": "est2",
+    "created_at": "2026-09-21T08:44:05.303431+00:00",
+    "difficulty": "medium",
+    "correct": "D",
+    "explanation": "Source-keyed answer from book_t6.md (T6-11).",
+    "question_id": "30eec906-1afb-5d4e-afd6-a9f868417e15"
+  },
+  {
+    "id": "3611425e-4860-524c-92d1-62c1bc11cea2",
+    "stem": "The entire graph of a function, F, is shown in the standard (x,y) coordinate plane below. One of the following sets is the range of the function. Which set is it?\n[Figure: discrete points at approximately (0, 6), (1, 4), (2, 2), (3, 0), (4, 2), (5, 4), (6, 6).]",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t9.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "417d165758ab4ea90b91891cea0b6cd71d4ad113c1cbac2ccd7241a361c29d57",
+      "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+      "curriculum_lesson": "Functions and transformations",
+      "hold_recheck_date": "2026-09-29",
+      "hold_recheck_note": "The range is the set of plotted y-values, not the interval between them. The approximate transcription suggests {0,2,4,6}, but exact plotted values have not been verified from an original graph.",
+      "source_question_id": "T9-19",
+      "release_hold_reason": "Original figure or source-layout review needed",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "{y: y ≥ 0}"
+      },
+      {
+        "key": "B",
+        "text": "{y: 0 ≤ y ≤ 6}"
+      },
+      {
+        "key": "C",
+        "text": "{x: 0 ≤ x ≤ 6}"
+      },
+      {
+        "key": "D",
+        "text": "{0, 2, 4, 6}"
+      },
+      {
+        "key": "E",
+        "text": "{0, 1, 2, 3, 4, 5, 6}"
+      }
+    ],
+    "track_id": "est2",
+    "created_at": "2026-09-21T08:44:06.856742+00:00",
+    "difficulty": "medium",
+    "correct": "D",
+    "explanation": "Source-keyed answer from book_t9.md (T9-19).",
+    "question_id": "3611425e-4860-524c-92d1-62c1bc11cea2"
+  },
+  {
+    "id": "ca0b3c27-5617-532d-93ce-30461e2b7d10",
+    "stem": "[Figure: Shaded region above the line through (0,0) and (6,2) and to the right of the vertical line x = 6.]\nA portion of which of the following systems of inequalities is represented by the shaded region of the graph?",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t10.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "f20516078371096927f6322b82ff1576ab3861b0fb64e776ba5ff7fbc66dbac0",
+      "lesson_subtopic": "Functions, Transformations & Graphs",
+      "curriculum_lesson": "Functions and transformations",
+      "hold_recheck_date": "2026-09-29",
+      "hold_recheck_note": "The described descending/rising boundaries give slope (2−0)/(6−0)=1/3 and region above this line to the right of x=6. This favors A if the boundaries are included, but the transcription omits their solid/dashed status. Retain until source boundary inclusions are verified.",
+      "source_question_id": "T10-10",
+      "release_hold_reason": "Original figure or source-layout review needed",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Functions, Transformations & Graphs",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "y ≥ (1/3)x and x ≥ 6"
+      },
+      {
+        "key": "B",
+        "text": "y ≥ 3x and x ≥ 6"
+      },
+      {
+        "key": "C",
+        "text": "y ≤ (1/3)x and x ≥ 6"
+      },
+      {
+        "key": "D",
+        "text": "y ≥ 3x and x ≤ 6"
+      },
+      {
+        "key": "E",
+        "text": "y ≥ (1/3)x and x ≤ 6"
+      }
+    ],
+    "track_id": "est2",
+    "created_at": "2026-09-21T08:44:01.950341+00:00",
+    "difficulty": "medium",
+    "correct": "A",
+    "explanation": "Source-keyed answer from book_t10.md (T10-10).",
+    "question_id": "ca0b3c27-5617-532d-93ce-30461e2b7d10"
+  }
+]
