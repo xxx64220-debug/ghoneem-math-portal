@@ -4,6 +4,7 @@ test('under-review cards preserve history; SVG graphs render safely in every pra
  const sdk=`window.supabase={createClient(){const session={access_token:'synthetic-local-only',user:{id:'test-student'}};return {auth:{onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}}),getSession:async()=>({data:{session}})},from:()=>({upsert:async()=>({error:null})})}}};`;
  await context.route('**/*',async route=>{
   const url=new URL(route.request().url());if(url.origin==='http://127.0.0.1:4173')return route.continue();
+  if(url.href==='https://math.portal.ghoneem.com/assets/question-figures/elite-m2-q21-20261004.png')return route.fulfill({path:require('node:path').join(__dirname,'../../web/assets/question-figures/elite-m2-q21-20261004.png'),contentType:'image/png'});
   if(url.hostname==='cdn.jsdelivr.net'&&url.pathname.includes('supabase-js'))return route.fulfill({contentType:'application/javascript',body:sdk});
   if(url.hostname==='fonts.googleapis.com'||url.hostname==='cdn.jsdelivr.net')return route.fulfill({body:'',contentType:route.request().resourceType()==='script'?'application/javascript':'text/css'});
   if(url.hostname==='wfhurjyouemahvkcfkdz.supabase.co'&&url.pathname.startsWith('/functions/v1/')){
@@ -38,5 +39,8 @@ test('under-review cards preserve history; SVG graphs render safely in every pra
   await expect(page.locator(surface==='exam'?'#qcard svg':'#dashboardContent svg')).toBeVisible();
  }
  expect(await page.evaluate(()=>window.__bad)).toBeUndefined();expect(errors).toEqual([]);expect(blocked).toEqual([]);
+ await page.evaluate(()=>{ST.run.questions[0].assets.figure='https://math.portal.ghoneem.com/assets/question-figures/elite-m2-q21-20261004.png';renderQ();});
+ const sourceGraph=page.locator('#qcard img');await expect(sourceGraph).toBeVisible();await expect(sourceGraph).toHaveJSProperty('naturalWidth',675);await expect(sourceGraph).toHaveJSProperty('naturalHeight',715);
+ expect(errors).toEqual([]);expect(blocked).toEqual([]);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(page.viewportSize().width+1);
 });
