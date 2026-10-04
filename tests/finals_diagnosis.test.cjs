@@ -55,7 +55,7 @@ test('empty and ungraded reviews have no study evidence',()=>{assert.equal(lesso
 function adminReport(fixtures){
  const view={innerHTML:''},button={},queries=[],exports=[];
  const c={document:{readyState:'complete',getElementById:id=>id==='view'?view:id==='finalsDiagnosisCsv'?button:null,querySelector:()=>null},setTimeout:fn=>fn(),ST:{view:'finalsDiagnosisAdmin'},render(){},syncAdminNavigation(){},csv:(rows,name)=>exports.push({rows,name}),q:table=>{
-  queries.push(table);const query={eq:()=>query,order:async()=>({data:fixtures[table]||[]})};return query;
+  queries.push(table);const query={eq:()=>query,order:()=>query,range:async(a,b)=>({data:(fixtures[table]||[]).slice(a,b+1)})};return query;
  }};
  vm.createContext(c);vm.runInContext(admin,c);return {c,view,button,queries,exports};
 }
@@ -66,3 +66,43 @@ test('instructor CSV preserves enrolled roster, latest pending scores and eviden
  const rows=f.exports[0].rows;assert.equal(rows.length,2);assert.equal(rows[0].student,'=Student, "A"');assert.equal(rows[0].latest_score,'Awaiting grading');assert.equal(rows[0].percent,'');assert.equal(rows[0].time_seconds,0);assert.equal(rows[0].bottom_skills,'Circles 25%');assert.equal(rows[1].latest_score,'No completed EST attempt');assert.equal(rows[1].bottom_skills,'More evidence needed');assert.equal(f.queries.length,3,'export requires no new data requests');
 });
 test('instructor CSV is disabled with an empty enrolled roster',async()=>{const f=adminReport({});await f.c.render();assert.equal(f.button.disabled,true);});
+test('instructor evidence and CSV include lessons beyond the first database page',async()=>{
+ const lessons=Array.from({length:1001},(_,i)=>({user_id:'a',lesson:'Lesson '+i,questions_seen:3,percent:90}));
+ lessons.push({user_id:'a',lesson:'Last page weakness',questions_seen:3,percent:10});
+ const f=adminReport({roster:[{user_id:'a',full_name:'Student A',tracks:'est'}],student_by_lesson:lessons});
+ await f.c.render();f.button.onclick();assert(f.view.innerHTML.includes('Last page weakness'));assert(f.exports[0].rows[0].bottom_skills.startsWith('Last page weakness 10%'));assert.equal(f.queries.filter(x=>x==='student_by_lesson').length,3);
+});
+
+const {buildGroupPlan,weakSkills}=require('../web/hardest-questions.js');
+const groupRoster='abcdefg'.split('').map(user_id=>({user_id,full_name:'Student '+user_id,role:'student',tracks:'est, sat'}));
+const groupEvidence=['Circles','Linear equations','Statistics'].flatMap((lesson,i)=>['abcdef'[i*2],'abcdef'[i*2+1]].flatMap(user_id=>[
+ {user_id,lesson,questions_seen:4,percent:20+i*10,track_id:'est'},
+ {user_id,lesson:'Functions',questions_seen:3,percent:90,track_id:'est'}
+]));
+test('seven-student plan counts students once and produces deterministic disjoint shared-lesson clusters',()=>{
+ const before=JSON.stringify({groupRoster,groupEvidence});
+ const ids=groupRoster.map(x=>x.user_id),plan=buildGroupPlan(groupRoster,groupEvidence,ids);
+ assert.equal(plan.students.length,7);assert.equal(plan.clusters.length,3);assert.equal(plan.insufficient[0].user_id,'g');
+ assert.deepEqual(plan.common.map(x=>[x.lesson,x.count,x.mean]),[['Circles',2,20],['Linear equations',2,30],['Statistics',2,40]]);
+ assert.deepEqual(plan.clusters.map(x=>x.students.map(s=>s.user_id)),[['a','b'],['c','d'],['e','f']]);
+ assert.deepEqual(buildGroupPlan([...groupRoster].reverse(),[...groupEvidence].reverse(),[...ids].reverse()),plan);
+ assert.equal(JSON.stringify({groupRoster,groupEvidence}),before,'planning must not mutate source evidence');
+});
+test('invalid, limited, unclassified and other-track evidence cannot create group weaknesses',()=>{
+ const rows=[{lesson:'Null percent',questions_seen:9,percent:null},{lesson:'Blank percent',questions_seen:9,percent:''},{lesson:'Invalid',questions_seen:9,percent:'NaN'},{lesson:'Limited',questions_seen:2,percent:0},{lesson:'Negative',questions_seen:4,percent:-1},{lesson:'Too high',questions_seen:4,percent:101},{lesson:'',questions_seen:9,percent:0},{lesson:'Mixed / untagged',questions_seen:9,percent:0},{lesson:'EST II',questions_seen:9,percent:0,track_id:'est2'},{lesson:'Circles',questions_seen:3,percent:25},{lesson:'Circles',questions_seen:3,percent:25}];
+ assert.deepEqual(weakSkills(rows),[{lesson:'Circles',questions_seen:3,percent:25}]);
+ const plan=buildGroupPlan([...groupRoster,{user_id:'x',full_name:'Other track',tracks:'est2'},{user_id:'staff',role:'instructor',tracks:'est'}],rows.map(x=>({...x,user_id:'a'})),['a','x','staff']);
+ assert.equal(plan.students.length,1);assert.equal(plan.insufficient.length,1);assert.equal(plan.clusters.length,0);assert.equal(plan.common.length,0);
+});
+test('selection limits counts and leaves nonoverlapping and strong students separate',()=>{
+ const rows=[...groupEvidence,{user_id:'g',lesson:'Quadratics',questions_seen:3,percent:59},{user_id:'g',lesson:'Functions',questions_seen:3,percent:60}];
+ let plan=buildGroupPlan(groupRoster,rows,['a','c','g']);
+ assert.equal(plan.clusters.length,0);assert.equal(plan.individual.length,3);assert.equal(plan.insufficient.length,0);
+ plan=buildGroupPlan(groupRoster,[...rows,{user_id:'g',lesson:'Quadratics',questions_seen:4,percent:80}],['g']);
+ assert.equal(plan.maintenance.length,1);assert.equal(plan.common.length,0);assert.equal(buildGroupPlan(groupRoster,rows,[]).students.length,0);
+});
+test('pairwise overlap does not invent a shared lesson for every student',()=>{
+ const rows=[['a','Alpha'],['a','Beta'],['b','Alpha'],['b','Gamma'],['c','Beta'],['c','Gamma']].map(([user_id,lesson])=>({user_id,lesson,percent:20,questions_seen:3}));
+ const plan=buildGroupPlan(groupRoster,rows,['c','b','a']);
+ assert.equal(plan.clusters.length,1);assert.equal(plan.clusters[0].anchor,'Alpha');assert.deepEqual(plan.clusters[0].students.map(x=>x.user_id),['a','b']);assert.deepEqual(plan.clusters[0].shared,['Alpha']);assert.equal(plan.individual[0].user_id,'c');
+});
