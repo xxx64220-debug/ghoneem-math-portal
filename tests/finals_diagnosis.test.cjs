@@ -106,3 +106,21 @@ test('pairwise overlap does not invent a shared lesson for every student',()=>{
  const plan=buildGroupPlan(groupRoster,rows,['c','b','a']);
  assert.equal(plan.clusters.length,1);assert.equal(plan.clusters[0].anchor,'Alpha');assert.deepEqual(plan.clusters[0].students.map(x=>x.user_id),['a','b']);assert.deepEqual(plan.clusters[0].shared,['Alpha']);assert.equal(plan.individual[0].user_id,'c');
 });
+
+test('exam planner ranks missed counts and excludes limited, locked and unclassified evidence deterministically',()=>{
+ const evidence=groupRoster.map(s=>({user_id:s.user_id,state:s.user_id==='g'?'locked':'available',lessons:[]}));
+ const rows=['a','b','g'].flatMap(user_id=>[
+  {user_id,lesson:'Many misses',questions_seen:12,percent:75,missed:3,classified:true},
+  {user_id,lesson:'Lower accuracy',questions_seen:3,percent:33,missed:2,classified:true},
+  {user_id,lesson:'One miss',questions_seen:4,percent:75,missed:1,classified:true},
+  {user_id,lesson:'Passed',questions_seen:3,percent:100,missed:0,classified:true},
+  {user_id,lesson:'Limited',questions_seen:2,percent:0,missed:2,classified:true},
+  {user_id,lesson:'Unclassified questions',questions_seen:9,percent:0,missed:9,classified:false}
+ ]);
+ const selected=['a','b','g'],options={exam:true,evidence};
+ const plan=buildGroupPlan(groupRoster,rows,selected,options);
+ assert.equal(plan.clusters.length,1);assert.deepEqual(plan.clusters[0].students.map(x=>x.user_id),['a','b']);
+ assert.deepEqual(plan.students[0].weak.map(x=>x.lesson),['Many misses','Lower accuracy','One miss']);
+ assert.equal(plan.insufficient[0].source.state,'locked');assert.equal(plan.insufficient[0].evidence.length,0);
+ assert.deepEqual(buildGroupPlan([...groupRoster].reverse(),[...rows].reverse(),[...selected].reverse(),options),plan);
+});
