@@ -52,5 +52,7 @@
   "lower_sum_x2_squared": 1242.5625,
   "upper_sum_x_times_sum_x3": 642.8125,
   "strict_positive_margin": 599.75,
-  "coefficient_change": "OLS deletion at x=0 with positive residual lowers c. Inverse-normal-matrix entry for a is (S1*S3-S2*S2)/det; the strictly positive margin proves a increases for all plotted x-values within the broad read-off intervals. C (I and II) is correct."
+  "coefficient_change": "OLS deletion at x=0 with positive residual lowers c. Inverse-normal-matrix entry for a is (S1*S3-S2*S2)/det; the strictly positive margin proves a increases for all plotted x-values within the broad read-off intervals. C (I and II) is correct.",
+  "graph_asset_path": "assets/question-figures/elite-m2-q21-20261004.png",
+  "graph_asset_sha256": "305acda582ccdf1ed0fcbd7c134f45eb3a2031011c71902036babbdcd232a53f"
 }
