@@ -98,6 +98,7 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 <script defer src="/portal-notifications.js"></script>
 <link rel="stylesheet" href="/exam-builder.css">
 <link rel="stylesheet" href="/portal-controls.css?v=20261004-group">
+<link rel="stylesheet" href="/admin-bank.css?v=20261005">
 </head>
 <body>
 
@@ -510,43 +511,11 @@ async function getRows(table,track=false,columns='*',orderBy='',eqField='',eqVal
  return rows;
 }
 const wrapTable=html=>`<div class="table-wrap">${html}</div>`;
-async function bank(){
- const rows=(await getRows('questions',true)).filter(q=>q.assets?.bank_removed!==true);
- let source=[];
- if(ST.track==='est'){
-  source=await getRows('est_source_review',true,'id,track_id,source_document,source_code,source_page,source_section,review_status,question_id,duplicate_of','source_code');
- }
- const byId=new Map(rows.map(x=>[x.id,x])),ready=source.filter(x=>x.question_id&&byId.has(x.question_id)),chosen=new Set();
- const held=rows.filter(x=>x.assets?.release_hold_reason).length;
- $('view').innerHTML=`<div class="head"><h2>Question bank</h2><span class="hint">${rows.length} questions · ${rows.length-held} ready · ${held} held for review${source.length?` · ${source.length} PDF source entries`:''}</span><div class="sp"></div><button class="btn-sm" id="importQ">Import JSON</button><button class="btn" id="newQ">Add question</button></div><p class="hint" style="margin-bottom:16px">${source.length?'The source archive is part of the question bank. Ready entries can be selected for an exam; incomplete, duplicate and ambiguous entries remain visible with their hold reason.':'Original diagrams and tables stay attached to each question. Questions used in published exams are protected from editing.'}</p><div class="control-bar"><div class="field"><label for="bankScope">Data</label><select id="bankScope"><option value="questions">Question bank (${rows.length})</option>${source.length?`<option value="source" selected>PDF source archive (${source.length})</option>`:''}</select></div><div class="field search"><label for="qSearch">Search</label><input id="qSearch" placeholder="Code, lesson or question"></div><div class="field" id="sourceFilterField"><label for="sourceFilter">Source status</label><select id="sourceFilter"><option value="">All statuses</option><option value="ready">Ready in question bank</option><option value="review">Needs review</option></select></div><div class="field" id="bankStatusField"><label for="bankStatus">Release status</label><select id="bankStatus"><option value="">All questions</option><option value="ready">Ready / released</option><option value="review">Held for review</option></select></div><div class="field"><label for="bankLesson">Lesson</label><select id="bankLesson"><option value="">All lessons</option>${[...new Set(rows.map(r=>r.topic).filter(Boolean))].sort().map(n=>`<option value="${esc(n)}">${esc(n)}</option>`).join('')}</select></div><div class="field"><label for="bankSort">Sort by</label><select id="bankSort"><option value="topic">Lesson A–Z</option><option value="code">Source code</option><option value="type">Answer type</option><option value="difficulty">Difficulty</option></select></div><button class="btn" id="examFromBank" disabled>Create exam from selected</button></div><p id="bankCount" class="hint" style="margin-bottom:12px"></p><div id="bankTable"></div>`;
- if(source.length)$('view').innerHTML=$('view').innerHTML.replace(`${source.length} PDF source entries`,`${source.length} PDF source entries · ${ready.length} verified`);
- const refreshSelected=()=>{const b=$('examFromBank');b.disabled=!chosen.size;b.textContent=chosen.size?`Create exam (${chosen.size})`:'Create exam from selected';};
- const bindChecks=()=>{document.querySelectorAll('[data-bank-select]').forEach(b=>{b.checked=chosen.has(b.dataset.bankSelect);b.onchange=()=>{b.checked?chosen.add(b.dataset.bankSelect):chosen.delete(b.dataset.bankSelect);refreshSelected();};});};
- const paint=()=>{
-  const needle=val('qSearch').toLowerCase(),scope=val('bankScope');
-  $('sourceFilterField').style.display=scope==='source'?'':'none';
-  $('bankStatusField').style.display=scope==='questions'?'':'none';
-  if(scope==='source'){
-   const status=val('sourceFilter'),sort=val('bankSort'),filtered=source.filter(x=>{const isReady=!!(x.question_id&&byId.has(x.question_id));return(!val('bankLesson')||byId.get(x.question_id)?.topic===val('bankLesson'))&&(!status||(status==='ready'?isReady:!isReady))&&[x.source_code,x.source_section,x.source_document,byId.get(x.question_id)?.topic].join(' ').toLowerCase().includes(needle);}).sort((a,b)=>sort==='code'?sortText(a.source_code,b.source_code):sortText(byId.get(a.question_id)?.topic||a.source_section,byId.get(b.question_id)?.topic||b.source_section));
-   $('bankCount').textContent=`${filtered.length} source entries shown · ${filtered.filter(x=>x.question_id&&byId.has(x.question_id)).length} ready to use`;
-   if(filtered.length>300)$('bankCount').textContent+=' · first 300 displayed — search to narrow';
-   $('bankTable').innerHTML=wrapTable(`<table><thead><tr><th>Select</th><th>Code</th><th>PDF / page</th><th>Status</th><th>Lesson</th><th>Actions</th></tr></thead><tbody>${filtered.slice(0,300).map(x=>{const qx=byId.get(x.question_id),isReady=!!qx;return`<tr><td>${isReady?`<input type="checkbox" aria-label="Select ${esc(x.source_code)}" data-bank-select="${qx.id}">`:''}</td><td><b>${esc(x.source_code)}</b></td><td>${esc(x.source_document)} · ${x.source_page}</td><td><span class="pill ${isReady?'ok':'warn'}">${esc(sourceStatus(x.review_status))}</span>${x.duplicate_of?`<div class="hint">${esc(x.duplicate_of)}</div>`:''}</td><td>${esc(qx?.topic||x.source_section||'—')}</td><td><button class="btn-sm" data-source-id="${esc(x.id)}">View source</button>${isReady?` <button class="btn-sm" data-edit-q="${qx.id}">Edit bank question</button>`:''}</td></tr>`}).join('')}</tbody></table>`);
-   document.querySelectorAll('[data-source-id]').forEach(b=>b.onclick=()=>openSourceEntry(b.dataset.sourceId));
-  }else{
-   const sort=val('bankSort'),status=val('bankStatus'),filtered=rows.filter(x=>(!val('bankLesson')||x.topic===val('bankLesson'))&&(!status||(status==='review'?!!x.assets?.release_hold_reason:!x.assets?.release_hold_reason))&&[x.topic,x.assets?.lesson_subtopic,x.stem,x.assets?.source_code,x.assets?.source_question_id,x.assets?.release_hold_reason].join(' ').toLowerCase().includes(needle)).sort((a,b)=>sort==='code'?sortText(a.assets?.source_code||a.assets?.source_question_id,b.assets?.source_code||b.assets?.source_question_id):sort==='type'?sortText(a.type,b.type)||sortText(a.topic,b.topic):sort==='difficulty'?sortText(a.difficulty,b.difficulty)||sortText(a.topic,b.topic):sortText(a.topic,b.topic)||sortText(a.stem,b.stem));
-   $('bankCount').textContent=`${filtered.length} questions shown · ${filtered.filter(x=>x.assets?.release_hold_reason).length} held`;
-   if(filtered.length>300)$('bankCount').textContent+=' · first 300 displayed — search to narrow';
-   $('bankTable').innerHTML=wrapTable(`<table><thead><tr><th>Select</th><th>Code</th><th>Lesson</th><th>Question</th><th>Type</th><th>Status</th><th></th></tr></thead><tbody>${filtered.slice(0,300).map(x=>`<tr><td>${x.assets?.release_hold_reason?'':`<input type="checkbox" aria-label="Select question" data-bank-select="${x.id}">`}</td><td>${esc(x.assets?.source_code||x.assets?.source_question_id||'—')}</td><td>${esc(x.topic)}</td><td>${esc(x.stem.slice(0,150))}</td><td>${esc(x.type)}</td><td><span class="pill ${x.assets?.release_hold_reason?'warn':'ok'}" title="${esc(x.assets?.release_hold_reason||'Ready to use')}">${x.assets?.release_hold_reason?'Needs review':'Ready'}</span></td><td><button class="btn-sm" data-edit-q="${x.id}">Edit</button></td></tr>`).join('')}</tbody></table>`);
-  }
-  document.querySelectorAll('[data-edit-q]').forEach(b=>b.onclick=()=>editQuestion(rows.find(x=>x.id===b.dataset.editQ)));bindChecks();refreshSelected();
- };
- $('qSearch').oninput=paint;$('bankScope').onchange=paint;$('sourceFilter').onchange=paint;$('bankStatus').onchange=paint;$('bankSort').onchange=paint;$('bankLesson').onchange=paint;$('newQ').onclick=()=>editQuestion();$('importQ').onclick=importQuestions;$('examFromBank').onclick=()=>editExam({},[...chosen]);paint();
-}
 async function editQuestion(x={}){
  let key={};if(x.id){const {data,error}=await sb.from('question_keys').select('*').eq('question_id',x.id).single();if(error){alert(error.message);return;}key=data;}
- dialog(x.id?'Edit question':'Add question',select('qt','Track',tracks(),x.track_id||ST.track)+`<div id="questionLessonField">${questionLessonMarkup(x.track_id||ST.track,x.topic)}</div>`+select('qtype','Answer type',[['mcq','Multiple choice'],['grid_in','Student response']],x.type)+select('qd','Difficulty',[['easy','Easy'],['medium','Medium'],['hard','Hard']],x.difficulty||'medium')+area('qstem','Question',x.stem)+area('qchoices','Choices — one per line, in display order',(x.choices||[]).map(c=>c.text).join('\n'))+field('qcorrect','Correct answer — choice letter, or accepted numeric answers separated by ;',key.correct?.void?'Excluded from scoring':Array.isArray(key.correct)?key.correct.join('; '):key.correct)+area('qexplain','Worked explanation',key.explanation)+area('qassets','Diagrams and tables (assets JSON; optional)',JSON.stringify(x.assets||{})),async()=>{
+ dialog(x.id?'Edit question':'Add question',select('qt','Track',tracks(),x.track_id||ST.track)+`<div id="questionLessonField">${questionLessonMarkup(x.track_id||ST.track,x.topic)}</div>`+field('qskill','Detailed skill',x.assets?.lesson_subtopic||x.assets?.skill||'')+field('qsourceCode','Source code',x.assets?.source_code||x.assets?.source_question_id||'')+select('qtype','Answer type',[['mcq','Multiple choice'],['grid_in','Student response']],x.type)+select('qd','Difficulty',[['easy','Easy'],['medium','Medium'],['hard','Hard']],x.difficulty||'medium')+area('qstem','Question',x.stem)+area('qchoices','Choices — one per line, in display order',(x.choices||[]).map(c=>c.text).join('\n'))+field('qcorrect','Correct answer — choice letter, or accepted numeric answers separated by ;',key.correct?.void?'Excluded from scoring':Array.isArray(key.correct)?key.correct.join('; '):key.correct)+area('qexplain','Worked explanation',key.explanation)+area('qassets','Diagrams and tables (assets JSON; optional)',JSON.stringify(x.assets||{})),async()=>{
  const type=val('qtype');const choices=val('qchoices').split('\n').filter(Boolean).map((text,i)=>({key:String.fromCharCode(65+i),text}));
- await mutation('question.save',{id:x.id,track_id:val('qt'),topic:canonicalMathLesson(val('qt'),val('qtopic')),type,difficulty:val('qd'),stem:val('qstem'),choices:type==='mcq'?choices:[],correct:type==='mcq'?val('qcorrect').toUpperCase():val('qcorrect').split(';').map(x=>x.trim()),explanation:val('qexplain'),assets:{...(jval('qassets')||{}),...(MATH_LESSONS[val('qt')]?{curriculum_lesson:canonicalMathLesson(val('qt'),val('qtopic'))}:{})}});
+ await mutation('question.save',{id:x.id,track_id:val('qt'),topic:canonicalMathLesson(val('qt'),val('qtopic')),type,difficulty:val('qd'),stem:val('qstem'),choices:type==='mcq'?choices:[],correct:type==='mcq'?val('qcorrect').toUpperCase():val('qcorrect').split(';').map(x=>x.trim()),explanation:val('qexplain'),assets:{...(jval('qassets')||{}),lesson_subtopic:val('qskill'),source_code:val('qsourceCode'),...(MATH_LESSONS[val('qt')]?{curriculum_lesson:canonicalMathLesson(val('qt'),val('qtopic'))}:{})}});
  });if(x.id)$('qt').disabled=true;else $('qt').onchange=()=>{$('questionLessonField').innerHTML=questionLessonMarkup(val('qt'),'');};
 }
 function importQuestions(){
@@ -665,6 +634,7 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 <script src="/est-source-review.js"></script>
 <script src="/instructor-practice.js"></script>
 <script src="/exam-builder.js"></script>
+<script src="/admin-bank.js?v=20261005"></script>
 <script src="/admin-controls.js"></script>
 <script src="/admin-exam-activity.js"></script>
 <link rel="stylesheet" href="/portal-navigation.css">
