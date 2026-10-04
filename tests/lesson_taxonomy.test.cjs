@@ -6,10 +6,13 @@ const rows=JSON.parse(fs.readFileSync('content-releases/20260929_lesson_taxonomy
 const corrections=JSON.parse(fs.readFileSync('content-releases/20260929_lesson_taxonomy_corrections/assignments.json','utf8'));
 const correctionById=new Map(corrections.map(x=>[x.id,x]));
 const finalRows=rows.map(x=>correctionById.has(x.id)?{...x,lesson:correctionById.get(x.id).new_lesson}:x);
-test('every question and formula resolves to the shared track lesson list',()=>{
+test('active lesson names resolve while archived EST I sequences stay excluded from new imports',()=>{
  assert.equal(rows.length,6916);assert.equal(new Set(rows.map(x=>x.id)).size,rows.length);
  assert.equal(corrections.length,13);assert.equal(new Set(corrections.map(x=>x.id)).size,corrections.length);
- for(const r of finalRows){c.r=r;assert.equal(vm.runInContext('canonicalMathLesson(r.track_id,r.lesson)',c),r.lesson);}
+ const archived=finalRows.filter(r=>r.track_id==='est'&&r.lesson==='Sequences');assert.equal(archived.length,28);
+ for(const r of finalRows){c.r=r;if(archived.includes(r))assert.throws(()=>vm.runInContext('canonicalMathLesson(r.track_id,r.lesson)',c));else assert.equal(vm.runInContext('canonicalMathLesson(r.track_id,r.lesson)',c),r.lesson);}
+ assert.equal(vm.runInContext("REVISION_FORMULA_TRACKS.est.lessons.includes('Sequences')",c),false);
+ assert.equal(vm.runInContext("canonicalMathLesson('est2','Sequences')",c),'Sequences');
  for(const t of ['sat','est','est2']){c.ST.track.id=t;const names=vm.runInContext(`MATH_LESSONS[ST.track.id]`,c);for(const n of names){c.REV.formulaLesson=n;const html=vm.runInContext('revisionFormulaPanel()',c);assert.ok(html.includes(`<h3>${n}</h3>`));assert.ok(!html.includes('>undefined<'));}}
 });
 test('aliases consolidate and mixed categories are rejected on import',()=>{

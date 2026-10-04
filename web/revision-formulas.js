@@ -21,7 +21,7 @@ const REVISION_FORMULA_TRACKS = {
       'The lessons below organize the supplied EST mind maps and revision notes by topic. Topic coverage in a revision guide does not by itself establish official question weighting.',
       'For multi-step unit problems, keep units visible on every line. Convert first, then calculate; a correct number with the wrong unit is not a complete answer.'
     ],
-    lessons: ['Triangles and similarity','Trigonometry','Angles and polygons','Area and perimeter','Volume and surface area','Circles','Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics and polynomials','Functions and transformations','Polynomial division and remainder','Complex numbers','Exponents and special products','Percentages and interest','Ratio, proportion and rates','Sequences','Statistics and data analysis','Probability and conditional probability','Unit conversions']
+    lessons: ['Triangles and similarity','Trigonometry','Angles and polygons','Area and perimeter','Volume and surface area','Circles','Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics and polynomials','Functions and transformations','Polynomial division and remainder','Complex numbers','Exponents and special products','Percentages and interest','Ratio, proportion and rates','Statistics and data analysis','Probability and conditional probability','Unit conversions']
   },
   est2: {
     title: 'EST Math II',
