@@ -1,0 +1,98 @@
+[
+  {
+    "id": "10fab705-da9f-6719-ec0d-3297d5afae40",
+    "track_id": "est",
+    "topic": "Logarithms and exponentials",
+    "stem": "If \\(3^{x+2}-3^x=216\\), what is the value of \\(x\\)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2"
+      },
+      {
+        "key": "B",
+        "text": "3"
+      },
+      {
+        "key": "C",
+        "text": "4"
+      },
+      {
+        "key": "D",
+        "text": "5"
+      }
+    ],
+    "assets": {
+      "source_id": "ghoneem_full_revision_jun_2026",
+      "source_page": 48,
+      "visual_page": 48,
+      "answer_review": "2026-09-28-independent-solution-and-source-check",
+      "content_audit": "2026-09-28-all-bank-structural-audit",
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Exponents, Radicals & Logarithms",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "6",
+      "verified_release": "2026-09-28-independent-solution-and-source-check",
+      "curriculum_lesson": "Logarithms and exponentials",
+      "source_pdf_bucket": "question-sources",
+      "verification_note": "Restored the two exponents, removed footer text, checked factorization and substitution.",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "ghoneem_full_revision_jun_2026-q00207",
+      "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "verification_source": "Full-Subject Revision June 2026, page 48 Q6; rendered source confirms superscripts",
+      "lesson_original_topic": "Exponents, Radicals & Logarithms",
+      "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Factor out \\(3^x\\): \\(3^{x+2}-3^x=3^x(9-1)=8\\cdot3^x=216\\). Hence \\(3^x=27=3^3\\), so \\(x=3\\). Check: \\(3^5-3^3=243-27=216\\)."
+  },
+  {
+    "id": "57dcf00a-7933-8695-addb-d22c1045f6d7",
+    "track_id": "est",
+    "topic": "Probability and conditional probability",
+    "stem": "A fair six-sided die has faces labeled 2, 3, 3, 4, 6, and 7. The probability of rolling a prime number is (k − 2)/6. What is k?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "6"
+      },
+      {
+        "key": "D",
+        "text": "8"
+      }
+    ],
+    "assets": {
+      "source_id": "ghoneem_full_revision_jun_2026",
+      "source_page": 43,
+      "visual_page": 43,
+      "answer_review": "2026-09-28-independent-solution-and-source-check",
+      "content_audit": "2026-09-28-all-bank-structural-audit",
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Probability and counting",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "47",
+      "verified_release": "2026-09-28-independent-solution-and-source-check",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_pdf_bucket": "question-sources",
+      "verification_note": "Removed page-footer contamination; independently solved the complete problem and checked every choice.",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "ghoneem_full_revision_jun_2026-q00194",
+      "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "verification_source": "ghoneem_full_revision_jun_2026; source page 43",
+      "lesson_original_topic": "Probability and counting",
+      "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The prime-labeled faces are 2, 3, 3, and 7: four of the six equally likely faces. Thus (k − 2)/6 = 4/6, so k − 2 = 4 and k = 6."
+  }
+]
