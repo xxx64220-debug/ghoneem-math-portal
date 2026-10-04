@@ -68,6 +68,7 @@ jobs:
           python tests/revision_contamination_review.py
           npm ci --prefix tests/june-review-runtime --ignore-scripts --no-audit --no-fund
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/june_remaining_review_db.cjs
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/group_exam_evidence_db.cjs
 
       - name: Run EST release arithmetic and content checks when source data exists
         run: |

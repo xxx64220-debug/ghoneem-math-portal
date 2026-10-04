@@ -8,15 +8,25 @@ const evidence=['Circles','Linear equations','Statistics'].flatMap((lesson,i)=>[
 evidence.push({user_id:'g',lesson:'Circles',questions_seen:2,percent:0,track_id:'est'},
  {user_id:'h',lesson:'Circles',questions_seen:20,percent:0,track_id:'est'},
  {user_id:'h',lesson:'Functions',questions_seen:20,percent:0,track_id:'est'});
-async function setup(page,context,{visible=true,resourceFailure=false,noRetest=false}={}){
+async function setup(page,context,{visible=true,resourceFailure=false,noRetest=false,examFailure=false}={}){
  const errors=[],unexpected=[],actions=[];page.on('pageerror',e=>errors.push(e.message));
  const fixtures={roster:[...roster,{user_id:'est2-only',full_name:'Other track',role:'student',tracks:'est2'}],results_feed:[],student_by_lesson:evidence,
  groups:[{id:'seven',name:'EST I class of seven',track_id:'est'},{id:'other',name:'Other class',track_id:'est'}],group_members:[...'abcdefg'].map(user_id=>({group_id:'seven',user_id})).concat([{group_id:'other',user_id:'h'}]),exams:noRetest?[]:[retest],assignments:[]};
  const revision={visible,items:['Circles','Linear equations','Statistics'].map(lesson=>({id:'revision-'+lesson,lesson,active:true,ready:true,difficulty:'easy',idea:'Fixture',stem:'Synthetic fixture'}))};
  await context.route('**/*',route=>{
   const url=new URL(route.request().url());if(url.origin==='http://127.0.0.1:4173')return route.continue();
-  if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:`window.fixtureReads=[];window.supabase={createClient(){return {auth:{getSession:async()=>({data:{session:{access_token:'local-staff-fixture'}}}),getUser:async()=>({data:{user:null}}),onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}})},from(table){const filters=[];let range=null;const query={select:()=>query,throwOnError:()=>query,eq:(k,v)=>{filters.push([k,v]);return query},order:()=>query,range:(a,b)=>{range=[a,b];return query},then(resolve,reject){window.fixtureReads.push(table);let data=(${JSON.stringify(fixtures)})[table]||[];for(const [k,v] of filters)data=data.filter(x=>x[k]===v);if(range)data=data.slice(range[0],range[1]+1);return Promise.resolve(${resourceFailure}&&['groups','group_members','exams'].includes(table)?{data:null,error:{message:'Offline'}}:{data,error:null}).then(resolve,reject)}};return query}}}};`});
+  if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:`window.fixtureReads=[];window.supabase={createClient(){return {rpc:async(name,args)=>{const r=await fetch('https://wfhurjyouemahvkcfkdz.supabase.co/rest/v1/rpc/'+name,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(args)});const data=await r.json();return r.ok?{data,error:null}:{data:null,error:data};},auth:{getSession:async()=>({data:{session:{access_token:'local-staff-fixture'}}}),getUser:async()=>({data:{user:null}}),onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}})},from(table){const filters=[];let range=null;const query={select:()=>query,throwOnError:()=>query,eq:(k,v)=>{filters.push([k,v]);return query},order:()=>query,range:(a,b)=>{range=[a,b];return query},then(resolve,reject){window.fixtureReads.push(table);let data=(${JSON.stringify(fixtures)})[table]||[];for(const [k,v] of filters)data=data.filter(x=>x[k]===v);if(range)data=data.slice(range[0],range[1]+1);return Promise.resolve(${resourceFailure}&&['groups','group_members','exams'].includes(table)?{data:null,error:{message:'Offline'}}:{data,error:null}).then(resolve,reject)}};return query}}}};`});
   if(url.hostname==='fonts.googleapis.com'||(url.hostname==='cdn.jsdelivr.net'&&url.pathname.startsWith('/npm/katex@0.16.9/dist/')))return route.fulfill({body:'',contentType:route.request().resourceType()==='script'?'application/javascript':'text/css'});
+  if(url.hostname==='wfhurjyouemahvkcfkdz.supabase.co'&&url.pathname==='/rest/v1/rpc/staff_group_exam_evidence'){
+   const args=JSON.parse(route.request().postData());actions.push({action:'staff_group_exam_evidence',data:args});
+   if(args.p_exam!=='retest'){unexpected.push(args.p_exam);return route.abort();}
+   const students=args.p_students.map(user_id=>({user_id,state:user_id==='c'?'locked':user_id==='d'?'ungraded':user_id==='e'?'missing':'available',attempt:{id:'synthetic-'+user_id,attempt_no:2,submitted_at:'2026-10-04T12:00:00Z'},lessons:'cde'.includes(user_id)?[]:[
+     {lesson:'Statistics',classified:true,seen:4,correct:3,missed:1,blank:1,percent:75},
+     {lesson:'Functions',classified:true,seen:3,correct:3,missed:0,blank:0,percent:100},
+     {lesson:'Limited',classified:true,seen:1,correct:0,missed:1,blank:0,percent:0}
+   ]}));
+   return route.fulfill(examFailure?{status:503,json:{message:'Offline'}}:{json:{exam_id:args.p_exam,track_id:'est',students}});
+  }
   if(url.hostname==='wfhurjyouemahvkcfkdz.supabase.co'&&url.pathname==='/functions/v1/portal-controls'){
    const body=JSON.parse(route.request().postData());actions.push(body);
    if(body.action!=='revision.list'||body.data.track!=='est'){unexpected.push(body.action);return route.abort();}
@@ -65,5 +75,28 @@ test('resource failures keep student evidence available and allow manual class s
  await expect(page.locator('#finalsGroupPlan')).toContainText('Final Revision availability could not be checked.');
  await expect(page.locator('#finalsGroupPlan')).toContainText('Weakness retest availability could not be checked.');
  await page.locator('#finalsStudentsView').click();await expect(page.locator('#finalsIndividual')).toContainText('Student a');
+ expect(audit.errors).toEqual([]);expect(audit.unexpected).toEqual([]);
+});
+
+test('selected exam plans use scored misses, separate locked and missing students, and return safely to Overall',async({page,context},testInfo)=>{
+ const audit=await setup(page,context);await page.locator('#finalsGroupView').click();
+ const plan=page.locator('#finalsGroupPlan');await expect(plan.locator('.finals-cluster')).toHaveCount(3);
+ await page.locator('#finalsEvidenceScope').selectOption('retest');await expect(plan.locator('.finals-cluster')).toHaveCount(1);
+ await expect(plan.locator('.finals-common')).toContainText('Statistics · 4/7');await expect(plan.locator('.finals-common')).toContainText('75%');await expect(plan.locator('.finals-common')).not.toContainText('Circles');
+ await expect(plan.locator('.finals-insufficient')).toContainText('Student c');await expect(plan.locator('.finals-insufficient')).toContainText('review is locked');
+ await expect(plan.locator('.finals-insufficient')).toContainText('awaiting grading');await expect(plan.locator('.finals-insufficient')).toContainText('No completed scored attempt');
+ await expect(plan).toContainText('Attempt 2');await expect(plan).toContainText('Limited evidence: fewer than 3');await expect(plan).toContainText('1 unanswered');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.screenshot({path:testInfo.outputPath('group-selected-exam.png'),fullPage:true});
+ await page.locator('#finalsGroup summary').click();await page.locator('[data-finals-student="a"]').uncheck();await expect(plan).toContainText('6 students selected');
+ await page.locator('#finalsEvidenceScope').selectOption('');await expect(plan.locator('.finals-cluster')).toHaveCount(2);await expect(page.locator('#finalsEvidenceHint')).toContainText('Historical responses');
+ const reads=audit.actions.filter(x=>x.action==='staff_group_exam_evidence');expect(reads).toHaveLength(2);expect(reads[0].data.p_students).toEqual([...'abcdefg']);expect(reads[1].data.p_students).toEqual([...'bcdefg']);
+ expect(audit.errors).toEqual([]);expect(audit.unexpected).toEqual([]);expect(await page.evaluate(()=>[localStorage.length,sessionStorage.length])).toEqual([0,0]);
+});
+test('failed exam read shows retry without silently showing overall clusters',async({page,context})=>{
+ const audit=await setup(page,context,{examFailure:true});await page.locator('#finalsGroupView').click();await page.locator('#finalsEvidenceScope').selectOption('retest');
+ const plan=page.locator('#finalsGroupPlan');await expect(plan).toContainText('Could not load');await expect(plan.locator('.finals-cluster')).toHaveCount(0);
+ await page.locator('#finalsExamRetry').click();await expect(plan).toContainText('Could not load');
+ await page.locator('#finalsEvidenceScope').selectOption('');await expect(plan.locator('.finals-cluster')).toHaveCount(3);
  expect(audit.errors).toEqual([]);expect(audit.unexpected).toEqual([]);
 });
