@@ -4,11 +4,11 @@ lock table public.questions,public.question_keys,public.exams in share row exclu
 do $rollback$
 declare b record; q_ public.questions; k_ public.question_keys; e_ public.exams;
 begin
- if (select count(*) from portal_private.skill_review_20261005_backup) <> 152 then
+ if (select count(*) from portal_private.skill_review_20261005_backup) <> 168 then
   raise exception 'Incomplete release backup';
  end if;
  for b in select * from portal_private.skill_review_20261005_backup loop
-  if b.kind='exam' then
+  if b.kind in('exam','exam_name') then
    select * into e_ from public.exams where id=b.id;
    if md5(to_jsonb(e_)::text) is distinct from b.after_hash then
     raise exception 'Concurrent exam edit; refusing metadata rollback';
@@ -29,9 +29,9 @@ begin
         where key in('curriculum_lesson','lesson_subtopic','lesson_original_topic','lesson_taxonomy_version'))
   where id=b.id;
  end loop;
- for b in select * from portal_private.skill_review_20261005_backup where kind='exam' loop
+ for b in select * from portal_private.skill_review_20261005_backup where kind in('exam','exam_name') loop
   update public.exams set title=b.payload->'exam'->>'title' where id=b.id;
-  if not (select portal_private.exam_content_ready(question_ids,track_id) from public.exams where id=b.id) then
+  if b.kind='exam' and not (select portal_private.exam_content_ready(question_ids,track_id) from public.exams where id=b.id) then
    raise exception 'Exam no longer eligible';
   end if;
  end loop;

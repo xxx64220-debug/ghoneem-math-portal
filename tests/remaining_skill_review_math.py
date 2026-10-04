@@ -21,5 +21,6 @@ class Review(unittest.TestCase):
   self.assertEqual(len(P['decisions']),146);self.assertEqual(len({q['id'] for q in P['decisions']}),146);self.assertEqual(sum(q['topic']!=q['before_topic'] for q in P['decisions']),19)
   canonical=json.loads(re.search(r'const MATH_LESSONS = (.*?);', (ROOT/'web/lesson-taxonomy.js').read_text(),re.S).group(1))['est']
   for q in P['decisions']:self.assertIn(q['topic'],canonical);self.assertTrue(q['skill']);self.assertNotEqual(q['skill'],'Needs classification');self.assertNotIn('answer_review_status',q)
+  self.assertEqual(len(P['names']),16);self.assertEqual(len({e['title'] for e in P['names']}),16)
   self.assertEqual(len(P['holds']),4);self.assertEqual(len(P['changes']),5);self.assertEqual(len({e['title'] for e in P['changes']}),5)
 if __name__=='__main__':unittest.main()
