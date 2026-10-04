@@ -92,6 +92,9 @@ async function main(){
  assert.equal(await scalar("select has_function_privilege('authenticated','portal_private.question_eligible(questions,question_keys,text,boolean)','execute')"),false);
  await assert.rejects(()=>db.exec(read('supabase/sql/question_eligibility.sql')),/Function changed since reviewed/);await db.exec('rollback');
  const originals=JSON.parse(read('tests/fixtures/oct4-questions-before.json')),patches=JSON.parse(read(dir+'repairs.json'));
+ assert.equal(patches.length,12);
+ const recovered=originals.filter(q=>q.assets.verified_release==='20261004-source-recovery');
+ assert.equal(recovered.length,3);assert.ok(recovered.every(q=>!patches.some(p=>p.id===q.id)));
  for(const q of originals){
   await db.query('insert into questions(id,track_id,topic,type,stem,choices,assets) values($1,$2,$3,$4,$5,$6::jsonb,$7::jsonb)',[q.id,q.track_id,q.topic,q.type,q.stem,JSON.stringify(q.choices),JSON.stringify(q.assets)]);
   await db.query('insert into question_keys values($1,$2::jsonb,$3)',[q.id,JSON.stringify(q.correct),q.explanation]);
@@ -99,19 +102,20 @@ async function main(){
  }
  const snap=async()=>(await db.query('select q.*,k.correct,k.explanation from questions q join question_keys k on k.question_id=q.id order by q.id')).rows;
  const before=await snap(),examBefore=(await db.query('select * from exams order by id')).rows,attemptsBefore=(await db.query('select * from attempts order by id')).rows;
- const last=originals.at(-1);await db.query('update question_keys set explanation=$2 where question_id=$1',[last.id,last.explanation+' concurrent edit']);
+ const last=originals.find(q=>q.id===patches.at(-1).id);await db.query('update question_keys set explanation=$2 where question_id=$1',[last.id,last.explanation+' concurrent edit']);
  await assert.rejects(()=>db.exec(read(dir+'apply.sql')),/Concurrent content change/);await db.exec('rollback');
  assert.equal(await scalar("select to_regclass('public.question_reliability_20261004_backup')"),null);
  await db.query('update question_keys set explanation=$2 where question_id=$1',[last.id,last.explanation]);assert.deepEqual(await snap(),before);
  await db.exec(read(dir+'apply.sql'));const after=await snap();
  for(const old of before){const patch=patches.find(p=>p.id===old.id),now=after.find(q=>q.id===old.id);assert.deepEqual(now,patch?{...old,choices:patch.choices||old.choices,assets:{...old.assets,...patch.asset_patch},explanation:patch.explanation||old.explanation}:old,old.id);}
  assert.deepEqual((await db.query('select * from exams order by id')).rows,examBefore);assert.deepEqual((await db.query('select * from attempts order by id')).rows,attemptsBefore);
- assert.equal(await scalar('select count(*)::int from question_reliability_20261004_backup'),15);
+ assert.equal(await scalar('select count(*)::int from question_reliability_20261004_backup'),12);
+ for(const q of recovered)assert.equal(await check(q.id,q.track_id),true,'Recovered source item remains eligible: '+q.id);
  assert.equal(await scalar("select count(*)::int from revision_items r join questions q on q.id=r.question_id join question_keys k on k.question_id=q.id where r.active and r.fingerprint<>revision_question_fingerprint(q.stem,q.choices,q.assets,k.correct,k.explanation)"),0);
  await assert.rejects(()=>db.exec(read(dir+'apply.sql')),/Concurrent content change|duplicate key/);await db.exec('rollback');assert.deepEqual(await snap(),after);
  await db.exec(read(dir+'rollback.sql'));assert.deepEqual(await snap(),before);assert.equal(await scalar('select count(*)::int from question_reliability_20261004_backup'),0);
  await db.exec(read(dir+'apply.sql'));assert.deepEqual(await snap(),after);
- console.log('PASS: every active track; malformed/held/removed/visual/numeric key cases; publish-only rejection; start/resume guard; historical scores; notebook; frozen daily sets; drills; exact lesson selection; keyless metadata and hydrated revision; private helper privileges; migration replay guard; 15 guarded content repairs, late-error rollback, fingerprints, retained keys/IDs/track/assets/membership/results, and release replay rejection.');
+ console.log('PASS: every active track; malformed/held/removed/visual/numeric key cases; publish-only rejection; start/resume guard; historical scores; notebook; frozen daily sets; drills; exact lesson selection; keyless metadata and hydrated revision; private helper privileges; migration replay guard; 12 guarded content repairs, three recovered source records preserved and eligible, late-error rollback, fingerprints, retained keys/IDs/track/assets/membership/results, and release replay rejection.');
  await db.close();
 }
 main().catch(async e=>{console.error(e.message,e.position||'',e.where||'',e.query?.slice(Math.max(0,Number(e.position)-80),Number(e.position)+80)||'');await db.close();process.exitCode=1;});

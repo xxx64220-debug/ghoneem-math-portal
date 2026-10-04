@@ -185,42 +185,46 @@
     "choices": [
       {
         "key": "A",
-        "text": "Graph A on source PDF page 11"
+        "text": "Graph A in the figure"
       },
       {
         "key": "B",
-        "text": "Graph B on source PDF page 11"
+        "text": "Graph B in the figure"
       },
       {
         "key": "C",
-        "text": "Graph C on source PDF page 11"
+        "text": "Graph C in the figure"
       },
       {
         "key": "D",
-        "text": "Graph D on source PDF page 11"
+        "text": "Graph D in the figure"
       }
     ],
     "assets": {
+      "figure": "https://math.portal.ghoneem.com/assets/question-figures/maya-choice-graphs-20261004.png",
       "source_id": "college_panda_10_practice_tests",
       "source_page": 11,
       "visual_page": 11,
       "visual_bucket": "question-sources",
+      "figure_caption": "Original graph choices A–D from College Panda Test 1, section 4, Q3, page 11.",
       "lesson_subtopic": "Interpreting distance-time graphs",
       "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
       "source_reference": "Test 1, section 4, question 3",
-      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "verified_release": "20261004-source-recovery",
       "curriculum_lesson": "Linear functions and slope",
       "source_pdf_bucket": "question-sources",
       "visual_asset_kind": "authoritative_source_pdf_page",
       "source_question_id": "college_panda_10_practice_tests-test01-s4-q03",
       "visual_object_path": "toaz_info_the_college_panda_10_practice_tests_for__260725_181105_1_.pdf",
+      "source_image_sha256": "31b16c1ca897b52a0edee0f2ff6e12555b5cd6fa520ff9e2a57b2d23a81c079a",
       "lesson_original_topic": "Interpreting distance-time graphs",
       "source_pdf_object_path": "toaz_info_the_college_panda_10_practice_tests_for__260725_181105_1_.pdf",
-      "lesson_taxonomy_version": "20260929"
+      "lesson_taxonomy_version": "20260929",
+      "source_recovery_release": "20261004"
     },
     "correct": "A",
-    "explanation": "Distance from home starts at zero, increases while she drives to the store, remains constant while she stays there, then decreases to zero on her return. Graph A is the only graph with all four features.",
-    "content_hash": "2d3e7997a62ffcd683f5ea936b44b6fa",
+    "explanation": "A. Distance from home starts at 0, increases during the drive to the bookstore, remains constant for the several hours spent there, and returns to 0 on the drive home. Original graph A has all four features. B ends farther from home, C starts away from home, and D has no horizontal interval for the stop.",
+    "content_hash": "80813488c9d17576c488cc8cb3dea5ec",
     "revision_fingerprint": null,
     "revision_active": null
   },
@@ -542,16 +546,23 @@
       "code": "MSET006-49",
       "paper": "MSET006",
       "track": "SAT",
+      "figure": "https://math.portal.ghoneem.com/assets/question-figures/mset006-q49-20261004.png",
       "source": "SAT — MSET006",
+      "source_page": 14,
+      "figure_caption": "Authentic soft-drinks scatterplot from MSET006 Q49, page 14; choices continue on page 15 and key is on page 16.",
       "lesson_subtopic": "Modeling with quadratics",
       "question_number": 49,
+      "source_drive_id": "1sO50D2SCGnRzldtlNqXsdYuo9eVn1zkS",
+      "verified_release": "20261004-source-recovery",
       "curriculum_lesson": "Quadratics and polynomials",
+      "source_image_sha256": "5fedca2f8fe381df0328e939d524b8087f1eebe513cf7d37fa80a4d4725ed800",
       "lesson_original_topic": "Modeling with quadratics",
-      "lesson_taxonomy_version": "20260929"
+      "lesson_taxonomy_version": "20260929",
+      "source_recovery_release": "20261004"
     },
     "correct": "A",
-    "explanation": "At $x=0$ the data sits near 480, so the constant must be positive, ruling out B and C. The data falls to a minimum and then rises again, which requires an upward-opening parabola, so the leading coefficient must be positive. Only A fits both.",
-    "content_hash": "dfc3fd5f37c116ec5426491f4b80842f",
+    "explanation": "A. The original scatterplot decreases from about 455 thousand gallons at year 1 to a minimum near years 7–10, then rises to about 423 at year 16. This requires positive quadratic curvature and a positive intercept. Only A has both. Its vertex occurs at x = 38.44/(2×2.138) ≈ 8.99 with y ≈ 310.49; it predicts y(1) ≈ 446.97 and y(16) ≈ 415.56, consistent with the plotted trend. B and C predict negative initial values, and D curves downward and decreases for x ≥ 0. Independently verified; the printed MSET006 key also marks Q49 A.",
+    "content_hash": "b3c807d3e2e96e76e73a08a149f60544",
     "revision_fingerprint": null,
     "revision_active": null
   },
@@ -654,15 +665,15 @@
       },
       {
         "key": "B",
-        "text": "29"
+        "text": "$\\sqrt{29}$"
       },
       {
         "key": "C",
-        "text": "40"
+        "text": "$\\sqrt{40}$"
       },
       {
         "key": "D",
-        "text": "41"
+        "text": "$\\sqrt{41}$"
       }
     ],
     "assets": {
@@ -673,7 +684,7 @@
       "lesson_subtopic": "Coordinate geometry",
       "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
       "source_reference": "8",
-      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "verified_release": "20261004-source-recovery",
       "curriculum_lesson": "Linear functions and slope",
       "source_pdf_bucket": "question-sources",
       "visual_asset_kind": "authoritative_source_pdf_page",
@@ -681,11 +692,12 @@
       "visual_object_path": "December_2025_est_1_math_260716_152922_1_.pdf",
       "lesson_original_topic": "Coordinate geometry",
       "source_pdf_object_path": "December_2025_est_1_math_260716_152922_1_.pdf",
-      "lesson_taxonomy_version": "20260929"
+      "lesson_taxonomy_version": "20260929",
+      "source_recovery_release": "20261004"
     },
     "correct": "D",
-    "explanation": "The coordinate differences are 3 - (-1) = 4 and 7 - 2 = 5. Distance is sqrt(4^2 + 5^2) = sqrt(41), shown as choice D in the original PDF.",
-    "content_hash": "43c9be1ba63e89c7e6dfef325582948a",
+    "explanation": "D. The original December 2025 EST I Q8 choices are A: 29, B: √29, C: √40, D: √41. The horizontal difference is 3 − (−1) = 4 and the vertical difference is 7 − 2 = 5. Therefore AB = √(4² + 5²) = √41. The import omitted the radical signs; the answer letter D is unchanged.",
+    "content_hash": "0c0d0a9950a1f38682fbf96357594bde",
     "revision_fingerprint": null,
     "revision_active": null
   }
