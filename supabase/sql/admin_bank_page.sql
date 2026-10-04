@@ -29,9 +29,9 @@ begin
    coalesce(q.assets->>'verified_release','') verified_release,
    coalesce(q.assets->>'answer_review_status','') answer_review_status,
    portal_private.question_eligible(q,k,p_track,false) ready,
-   nullif(btrim(q.topic),'') is null or q.topic ilike '%classification%' or coalesce(nullif(btrim(q.assets->>'lesson_subtopic'),''),nullif(btrim(q.assets->>'skill'),'')) is null or q.assets->>'lesson_subtopic'='Needs classification' unclassified,
+   nullif(btrim(q.topic),'') is null or q.topic ilike '%classification%' or coalesce(nullif(btrim(q.assets->>'lesson_subtopic'),''),nullif(btrim(q.assets->>'skill'),'')) is null or coalesce(q.assets->>'lesson_subtopic'='Needs classification',false) unclassified,
    coalesce(u.uses,0) published_uses,
-   lower(concat_ws(' ',q.id::text,q.topic,q.stem,q.assets->>'lesson_subtopic',q.assets->>'source_code',q.assets->>'source_question_id',q.assets->>'source',q.assets->>'source_document',q.assets->>'release_hold_reason')) search_text
+   lower(concat_ws(' ',q.id::text,q.topic,q.stem,q.assets->>'lesson_subtopic',q.assets->>'skill',q.assets->>'source_file',q.assets->>'source_code',q.assets->>'source_question_id',q.assets->>'source',q.assets->>'source_document',q.assets->>'release_hold_reason')) search_text
   from public.questions q left join public.question_keys k on k.question_id=q.id left join usage_ u on u.qid=q.id
   where q.track_id=p_track and lower(coalesce(q.assets->>'bank_removed','false'))<>'true'
  ), labelled_ as materialized (
