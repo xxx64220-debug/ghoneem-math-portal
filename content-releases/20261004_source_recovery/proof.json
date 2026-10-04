@@ -1,0 +1,40 @@
+[
+  {
+    "tag": "mset006-q49",
+    "source_sha256": "8a6ad9cb809f19d4f42fe6bca1d495bdf9737beda322c022545f90966d093ecb",
+    "source_page": 14,
+    "crop": [
+      130,
+      440,
+      465,
+      696
+    ],
+    "figure": "web/assets/question-figures/mset006-q49-20261004.png",
+    "sha256": "5fedca2f8fe381df0328e939d524b8087f1eebe513cf7d37fa80a4d4725ed800"
+  },
+  {
+    "tag": "maya-choice-graphs",
+    "source_sha256": "119c2336b935ecbe468ee9432ea52628151c6369a7337873aba5d26f54620ce3",
+    "source_page": 11,
+    "crop": [
+      320,
+      185,
+      455,
+      615
+    ],
+    "figure": "web/assets/question-figures/maya-choice-graphs-20261004.png",
+    "sha256": "31b16c1ca897b52a0edee0f2ff6e12555b5cd6fa520ff9e2a57b2d23a81c079a"
+  },
+  {
+    "tag": "est-dec2025-q8",
+    "source_sha256": "14e494bb95e06b82708d881a8c6848c73f2a7eac0cfd3010af6f361e5a7ecdf4",
+    "source_page": 3,
+    "choices": [
+      "29",
+      "\u221a29",
+      "\u221a40",
+      "\u221a41"
+    ],
+    "correct": "D"
+  }
+]
