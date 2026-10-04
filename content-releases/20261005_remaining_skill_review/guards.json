@@ -1,0 +1,220 @@
+{
+  "exams": [
+    {
+      "exam": {
+        "id": "33a219c7-c1fa-5f58-a55c-bf2c22cccb85",
+        "title": "Mixed source practice \u2014 Released practice 1",
+        "shuffle": false,
+        "track_id": "est",
+        "created_at": "2026-09-21T19:55:27.534152+00:00",
+        "scoring_map": null,
+        "is_published": true,
+        "max_attempts": 999,
+        "module_count": null,
+        "question_ids": [
+          "331de3d6-88c5-6cf4-3195-fd9efc2019d6"
+        ],
+        "exam_set_code": null,
+        "module_number": null,
+        "review_policy": "full_review",
+        "is_full_length": false,
+        "assessment_type": "lesson_exam",
+        "duration_seconds": 600
+      },
+      "hash": "523465df593791db1674561e4e6d9367",
+      "has_history": false,
+      "assignment_hash": "475a7181c800f42413d6a2ffcb2ab774"
+    },
+    {
+      "exam": {
+        "id": "409a1c30-4a28-420e-a090-fb858513a09a",
+        "title": "Needs classification \u2014 Reviewed practice 1",
+        "shuffle": false,
+        "track_id": "est",
+        "created_at": "2026-09-21T21:07:23.641562+00:00",
+        "scoring_map": null,
+        "is_published": true,
+        "max_attempts": 999,
+        "module_count": null,
+        "question_ids": [
+          "02ac14b4-f84e-6e9f-1ab3-1427f41cdef7",
+          "038993d1-b753-c0ba-9570-01f8ab6124e0",
+          "0a95bfb6-30df-c3c0-d33c-e5a15adfd76c",
+          "0c8b1b7f-bcd6-11b2-0db3-de291d7e7df4",
+          "0d8d4ea3-be1f-bc84-5db9-316ab2d458d7",
+          "0e673807-c4b8-3ff2-8a89-3f504a5912ce",
+          "0f903815-6ab3-765a-f5af-2e1c3e13fdf6",
+          "0fb55610-9253-9fb0-6f08-8a415b6edece",
+          "119f2069-177f-fd3c-3606-035c46264b67",
+          "163b33a8-34e6-0fd3-f8ab-87a5683e7064",
+          "1890be68-8663-1492-3d35-35cb4f360677",
+          "199d6976-2b71-905e-9aec-889720bf2f80",
+          "1ea4fe04-4a95-fdea-7323-77b5f1558942",
+          "1f157430-f01c-294b-c4ef-36929bf5ddf8",
+          "1f72859c-385b-f913-17bc-b4b8c5cd941a",
+          "20546978-a28f-0222-64e6-d904469699de",
+          "2764f3de-d5e5-a200-4547-723cfb85514d",
+          "2805d575-dd4d-9d99-caed-11e92c8f4319",
+          "2b6279f9-5d84-c436-70d9-15a48e7e1395",
+          "2da6a0db-dc8d-da18-6b03-abb5a6ba324e"
+        ],
+        "exam_set_code": null,
+        "module_number": null,
+        "review_policy": "full_review",
+        "is_full_length": false,
+        "assessment_type": "lesson_exam",
+        "duration_seconds": 1800
+      },
+      "hash": "fd16e55a2dee0e5bcea578e4f56eac8d",
+      "has_history": false,
+      "assignment_hash": "47a6b2d78d9fadc220d322d85223291f"
+    },
+    {
+      "exam": {
+        "id": "854ac600-ebe2-42c1-b4b2-07ef629cc570",
+        "title": "Needs classification \u2014 Reviewed practice 4",
+        "shuffle": false,
+        "track_id": "est",
+        "created_at": "2026-09-21T21:07:23.641562+00:00",
+        "scoring_map": null,
+        "is_published": true,
+        "max_attempts": 999,
+        "module_count": null,
+        "question_ids": [
+          "7c28c31f-43b2-d0aa-e2c5-f4f4bafba8b4",
+          "7dde3e4f-583b-331c-ed99-7ac7f9a8aae7",
+          "7f231779-be71-2f87-fd43-50ba14636043",
+          "8389f658-e4d8-87f5-69ed-76d6c6a12a19",
+          "855228b6-6cf0-30d9-bbaa-c3222fd51a33",
+          "8a1fbba4-ac9f-1c5a-99e1-d4838576e40e",
+          "8b144389-f978-f4ef-f233-6c6155e883cf",
+          "8d657bd9-2af8-6080-a05f-648df6a8e08c",
+          "8e5cf006-fe41-7bae-e676-e2354a6916a9",
+          "8f837c16-8096-c128-2509-410a190123ba",
+          "9053b06a-14e0-86b2-1616-31fc90726ae2",
+          "91a56f20-a3cb-dfc4-74dc-483e5c31e0c3",
+          "9210d3e2-d311-4739-94dc-722187eb7726",
+          "92118004-2f60-6326-dab8-e6ad8b7911e7",
+          "92209c3f-418e-e955-7232-5dda771812e6",
+          "9221d0a8-55b7-3c0c-9628-5e9cec68556f",
+          "92f77626-cf96-fa75-d172-b57c96a2bb24",
+          "93290e68-223f-4f69-8e55-646f49598d24",
+          "935147fe-dd28-39df-b93c-0aca8a27c43b",
+          "954cc02c-362c-e738-45e7-3f14a6baa73b"
+        ],
+        "exam_set_code": null,
+        "module_number": null,
+        "review_policy": "full_review",
+        "is_full_length": false,
+        "assessment_type": "lesson_exam",
+        "duration_seconds": 1800
+      },
+      "hash": "778c96e257f88ef389b96fbd74c6ac40",
+      "has_history": false,
+      "assignment_hash": "e86cf561c40f3b3cb4f8f3daa8d0e340"
+    },
+    {
+      "exam": {
+        "id": "44f78447-035b-4fe7-886b-210307b1e6b4",
+        "title": "Needs classification \u2014 Reviewed practice 6",
+        "shuffle": false,
+        "track_id": "est",
+        "created_at": "2026-09-21T21:07:23.641562+00:00",
+        "scoring_map": null,
+        "is_published": true,
+        "max_attempts": 999,
+        "module_count": null,
+        "question_ids": [
+          "bb35af6f-dc1e-4600-14ee-bef2842b7a08",
+          "c279cde1-ee45-6874-b30c-b937462859d5",
+          "c3f89d73-eead-c715-ff52-152a275fdd7c",
+          "cce52abe-c3f7-b219-9ce0-595c47a6e573",
+          "ce7da225-b505-2b6d-8475-5b0334030662",
+          "d2f717a4-ec5f-294b-fa31-d5622b829735",
+          "d62887a6-b09c-b8b0-690d-bfcbb25cd067",
+          "d8f3d9c0-7810-a4bc-1906-8d2034b41084",
+          "d9eaf651-01cd-43e5-9584-347818be4b43",
+          "dc220155-bbb4-ddc2-6f65-aa31fc55dd7a",
+          "ddf9abdb-fe34-8936-159c-0329934198af",
+          "de3bd434-fbf5-cc4b-8128-98d693754c81",
+          "dfcdf4e1-e3ea-b087-d0a1-f45011f89210",
+          "e005a2dc-43ee-db63-b7b9-7abe96e36d8a",
+          "e03d05c9-65fc-b6f9-fcc8-59b05b5c48b6",
+          "e281cdae-aef5-657c-69e9-554747f3d822",
+          "e773194a-5f49-6be4-2600-4c9790f93f05",
+          "e7862c9b-d69c-1e79-6895-4ce92428e341",
+          "e851ee2a-cfce-dded-0dab-559461b37b4d",
+          "eb22a74a-de0b-ffe1-75f8-cda019471cc4"
+        ],
+        "exam_set_code": null,
+        "module_number": null,
+        "review_policy": "full_review",
+        "is_full_length": false,
+        "assessment_type": "lesson_exam",
+        "duration_seconds": 1800
+      },
+      "hash": "25c4edf052cf850a0a8900c4573d5c7f",
+      "has_history": false,
+      "assignment_hash": "c9d3364c877d03858730188583c06f97"
+    },
+    {
+      "exam": {
+        "id": "d017f2ad-153b-48ba-b5c4-ba0698c2ee3b",
+        "title": "Needs classification \u2014 Source-corrected practice",
+        "shuffle": false,
+        "track_id": "est",
+        "created_at": "2026-09-21T21:17:57.601931+00:00",
+        "scoring_map": null,
+        "is_published": true,
+        "max_attempts": 999,
+        "module_count": null,
+        "question_ids": [
+          "0009abf2-0392-09f4-5263-4cf7b050595f",
+          "ff77c776-a33d-c23f-442c-abe35ff84a02"
+        ],
+        "exam_set_code": null,
+        "module_number": null,
+        "review_policy": "full_review",
+        "is_full_length": false,
+        "assessment_type": "lesson_exam",
+        "duration_seconds": 600
+      },
+      "hash": "677fb90f7fc102b8486349b0898b5e56",
+      "has_history": false,
+      "assignment_hash": "f469c662cf8e7994b9a367abc47edcc7"
+    }
+  ],
+  "revisions": [
+    {
+      "id": "a4c68116-825f-4a37-9f49-1c20eaa92e6e",
+      "row": {
+        "idea": "Set union, intersection and absorption",
+        "focus": {
+          "release": "20260929-est1-idea-expansion",
+          "takeaway": "Key skill: Set union, intersection and absorption.",
+          "collections": [
+            "unique"
+          ],
+          "math_format": "latex",
+          "bank_occurrences": 1
+        },
+        "active": true,
+        "lesson": "Logic and sets",
+        "difficulty": "medium",
+        "programmes": [
+          "est"
+        ],
+        "fingerprint": "75f192e033d2aa85657b44e7ec21ce07",
+        "question_id": "a4c68116-825f-4a37-9f49-1c20eaa92e6e"
+      },
+      "hash": "d8da29dc2407a3c24c97d6b4d26dce29"
+    }
+  ],
+  "weighted_hash": "46244517c46948eb8aba6dc5a81998d3",
+  "mapping": {
+    "02ac14b4-f84e-6e9f-1ab3-1427f41cdef7": "fd8a640f-d351-7cbc-e455-9f2f51709e79",
+    "92118004-2f60-6326-dab8-e6ad8b7911e7": "53c77113-7a68-6837-4af9-b5d4594962cb",
+    "331de3d6-88c5-6cf4-3195-fd9efc2019d6": "389099ff-c93c-5290-9688-3fc4ea0f5ffa",
+    "dc220155-bbb4-ddc2-6f65-aa31fc55dd7a": "91126e02-c74e-55ea-a4ce-0157f5cbf3fe"
+  }
+}
