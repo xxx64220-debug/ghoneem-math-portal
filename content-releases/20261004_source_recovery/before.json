@@ -1,0 +1,139 @@
+[
+  {
+    "id": "4ab54efe-2260-eeb3-dbf2-9909db0b4845",
+    "track_id": "sat",
+    "topic": "Linear functions and slope",
+    "type": "mcq",
+    "stem": "Last Saturday, Maya drove from her house to the bookstore, where she stayed for several hours before driving back home. Which of the following graphs could represent Maya\u2019s trip?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Graph A on source PDF page 11"
+      },
+      {
+        "key": "B",
+        "text": "Graph B on source PDF page 11"
+      },
+      {
+        "key": "C",
+        "text": "Graph C on source PDF page 11"
+      },
+      {
+        "key": "D",
+        "text": "Graph D on source PDF page 11"
+      }
+    ],
+    "assets": {
+      "source_id": "college_panda_10_practice_tests",
+      "source_page": 11,
+      "visual_page": 11,
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Interpreting distance-time graphs",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Test 1, section 4, question 3",
+      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_pdf_bucket": "question-sources",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "college_panda_10_practice_tests-test01-s4-q03",
+      "visual_object_path": "toaz_info_the_college_panda_10_practice_tests_for__260725_181105_1_.pdf",
+      "lesson_original_topic": "Interpreting distance-time graphs",
+      "source_pdf_object_path": "toaz_info_the_college_panda_10_practice_tests_for__260725_181105_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Distance from home starts at zero, increases while she drives to the store, remains constant while she stays there, then decreases to zero on her return. Graph A is the only graph with all four features.",
+    "content_hash": "2d3e7997a62ffcd683f5ea936b44b6fa",
+    "revision_fingerprint": null,
+    "revision_active": null
+  },
+  {
+    "id": "a62bb4f1-6a6d-46af-b5d3-72929458bc2b",
+    "track_id": "sat",
+    "topic": "Quadratics and polynomials",
+    "type": "mcq",
+    "stem": "The scatterplot shows soft drinks sold, in thousands of gallons, by fast food restaurants over a 15-year period. Which equation best models the data?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$y=2.138x^2-38.44x+483.27$"
+      },
+      {
+        "key": "B",
+        "text": "$y=2.138x^2+38.44x-483.27$"
+      },
+      {
+        "key": "C",
+        "text": "$y=-2.138x^2-38.44x-483.27$"
+      },
+      {
+        "key": "D",
+        "text": "$y=-2.138x^2-38.44x+483.27$"
+      }
+    ],
+    "assets": {
+      "code": "MSET006-49",
+      "paper": "MSET006",
+      "track": "SAT",
+      "source": "SAT \u2014 MSET006",
+      "lesson_subtopic": "Modeling with quadratics",
+      "question_number": 49,
+      "curriculum_lesson": "Quadratics and polynomials",
+      "lesson_original_topic": "Modeling with quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "At $x=0$ the data sits near 480, so the constant must be positive, ruling out B and C. The data falls to a minimum and then rises again, which requires an upward-opening parabola, so the leading coefficient must be positive. Only A fits both.",
+    "content_hash": "dfc3fd5f37c116ec5426491f4b80842f",
+    "revision_fingerprint": null,
+    "revision_active": null
+  },
+  {
+    "id": "f30234c6-7d80-1640-054d-97b86fde38ad",
+    "track_id": "est",
+    "topic": "Linear functions and slope",
+    "type": "mcq",
+    "stem": "8. Point A (3,7) point B(-1,2) , the distance between the two points is.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "29"
+      },
+      {
+        "key": "B",
+        "text": "29"
+      },
+      {
+        "key": "C",
+        "text": "40"
+      },
+      {
+        "key": "D",
+        "text": "41"
+      }
+    ],
+    "assets": {
+      "source_id": "est1_dec_2025",
+      "source_page": 3,
+      "visual_page": 3,
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Coordinate geometry",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "8",
+      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_pdf_bucket": "question-sources",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "est1_dec_2025-q00008",
+      "visual_object_path": "December_2025_est_1_math_260716_152922_1_.pdf",
+      "lesson_original_topic": "Coordinate geometry",
+      "source_pdf_object_path": "December_2025_est_1_math_260716_152922_1_.pdf",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "The coordinate differences are 3 - (-1) = 4 and 7 - 2 = 5. Distance is sqrt(4^2 + 5^2) = sqrt(41), shown as choice D in the original PDF.",
+    "content_hash": "43c9be1ba63e89c7e6dfef325582948a",
+    "revision_fingerprint": null,
+    "revision_active": null
+  }
+]
