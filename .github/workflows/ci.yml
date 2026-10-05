@@ -88,6 +88,8 @@ jobs:
           python scripts/build_remaining_skill_review.py
           python tests/remaining_skill_review_math.py
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/remaining_skill_review_db.cjs
+          python tests/est_source_evidence_math.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est_source_evidence_db.cjs
           python tests/reviewed_exam_versions_math.py
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/reviewed_exam_versions_db.cjs
           if [ -f content/est-banks-2026/reviewed-bank.json ]; then
