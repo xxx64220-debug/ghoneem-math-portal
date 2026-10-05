@@ -89,6 +89,7 @@ jobs:
           python tests/remaining_skill_review_math.py
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/remaining_skill_review_db.cjs
           python tests/est_source_evidence_math.py
+          python tests/est_notes_20261005_math.py
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est_source_evidence_db.cjs
           python tests/reviewed_exam_versions_math.py
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/reviewed_exam_versions_db.cjs
