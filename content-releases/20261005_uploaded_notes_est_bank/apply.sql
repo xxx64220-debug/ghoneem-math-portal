@@ -257,32 +257,6 @@ begin
       }
     },
     {
-      "id": "2c571796-ca54-5fa4-9d34-9c1dd39c85bb",
-      "track_id": "est",
-      "topic": "Systems of equations",
-      "difficulty": "medium",
-      "type": "grid_in",
-      "stem": "A multiple-choice test contains 50 questions. A correct answer is worth 3 points and an incorrect answer is worth −2 points. If a student receives 75 points, how many questions did the student answer correctly?\nRecord your answer as a number.",
-      "choices": [],
-      "correct": "35",
-      "explanation": "Let c be the number correct and w the number incorrect. Then c+w=50 and 3c−2w=75. Substituting w=50−c gives 5c−100=75, so c=35.",
-      "assets": {
-        "source": "teacher_uploaded_notes_20261005",
-        "source_document": "Notes_261005_140129.pdf",
-        "source_page": 6,
-        "source_item": 1,
-        "source_sha256": "c8866e74eb87ce3401c5e3bd6ea7a7717f889dc70ec6398eedc2d0e89e4ed62c",
-        "release_batch": "20261005_uploaded_notes_est_bank",
-        "answer_review": "2026-10-05-independent-solution-and-image-check",
-        "verified_release": "20261005_uploaded_notes_est_bank",
-        "verification_note": "Transcribed from the uploaded page image; independently solved. The student-facing stem preserves all needed source givens.",
-        "curriculum_lesson": "Systems of equations",
-        "lesson_subtopic": "Systems and word problems",
-        "lesson_original_topic": "Systems of equations",
-        "lesson_taxonomy_version": "20260929"
-      }
-    },
-    {
       "id": "c7fbd005-b09f-5075-b19f-b2da9d124cf2",
       "track_id": "est",
       "topic": "Ratios, percentages and unit conversion",
@@ -291,7 +265,7 @@ begin
       "stem": "Lucas bought a car for $3,500. He sold it to Brad for 12% less than he paid. Brad then sold it to Amira for 5% more than he paid. How much did Amira pay?\nRecord your answer in dollars.",
       "choices": [],
       "correct": "3234",
-      "explanation": "Let w be the width. Then w(7w−4)=155, so 7w²−4w−155=0. The discriminant is 4²+4·7·155=4356=66². The positive root is (4+66)/14=5; the negative root is not a possible width.",
+      "explanation": "Brad paid 3500×0.88=$3,080. Amira paid 3080×1.05=$3,234.",
       "assets": {
         "source": "teacher_uploaded_notes_20261005",
         "source_document": "Notes_261005_140129.pdf",
@@ -317,7 +291,7 @@ begin
       "stem": "A rectangle has an area of 155 square inches. Its length is 4 inches less than 7 times its width. What is the width, in inches?\nRecord your answer as a number.",
       "choices": [],
       "correct": "5",
-      "explanation": "Let w be the width. Then w(7w−4)=155, so 7w²−4w−155=0. Factoring gives (7w−?); equivalently, the positive root is (4+√4356)/14=(4+66)/14=5. The width is 5 inches.",
+      "explanation": "Let w be the width. Then w(7w−4)=155, so 7w²−4w−155=0. The discriminant is 4²+4·7·155=4356=66². The positive root is (4+66)/14=5; the negative root is not a possible width.",
       "assets": {
         "source": "teacher_uploaded_notes_20261005",
         "source_document": "Notes_261005_140129.pdf",
@@ -564,7 +538,7 @@ begin
       "source_page": 3,
       "source_item": 1,
       "status": "held_source_defect",
-      "reason": "Interpreting the printed exponent as (n−1)^4, taking base-3 exponents gives (n−1)^4+4n−11=0. This has two real solutions, approximately −0.963 and 2.211, but the choices do not include a value near 2.107; the single-answer item is not safe to grade."
+      "reason": "Interpreting the printed exponent as (n−1)^4, taking base-3 exponents gives (n−1)^4+4n−11=0. This has two real solutions, approximately −0.963 and 2.211, but the choices do not include a value near 2.211; the single-answer item is not safe to grade."
     },
     {
       "source_page": 3,
@@ -592,10 +566,16 @@ begin
       "status": "duplicate_skipped",
       "duplicate_of": "d4ba140c-c921-52b0-8d2c-a4fb03baafda",
       "reason": "Near-duplicate of the existing EST chained-ratio question: both combine a:b and b:c and ask for a:c. Excluded to avoid repeating the same tested idea."
+    },
+    {
+      "source_page": 6,
+      "source_item": 1,
+      "status": "held_missing_assumption",
+      "reason": "The printed score item does not say the student answered all 50 questions. If unanswered items are allowed and score zero, multiple correct-answer counts can produce 75; the handwritten x+y=50 assumption is not stated in the printed question."
     }
   ],
   "database_notes": {
-    "insert_count": 15,
+    "insert_count": 14,
     "update_count": 0,
     "assessment_changes": 0,
     "revision_membership_changes": 0,
@@ -615,7 +595,7 @@ begin
      values(null,'question.20261005_uploaded_notes_est_bank','questions',qid::text,jsonb_build_object('release','20261005_uploaded_notes_est_bank','source_sha256','c8866e74eb87ce3401c5e3bd6ea7a7717f889dc70ec6398eedc2d0e89e4ed62c','source_page',r->'assets'->'source_page','source_item',r->'assets'->'source_item','topic',r->>'topic'));
    inserted:=inserted+1;
  end loop;
- if inserted<>15 then raise exception 'Expected 15 new questions; inserted %',inserted; end if;
+ if inserted<>14 then raise exception 'Expected 14 new questions; inserted %',inserted; end if;
  select jsonb_build_object(
    'exams',(select md5(coalesce(jsonb_agg(to_jsonb(x) order by x.id),'[]')::text) from exams x),
    'assignments',(select md5(coalesce(jsonb_agg(to_jsonb(x) order by x.id),'[]')::text) from assignments x),
