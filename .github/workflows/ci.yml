@@ -70,6 +70,11 @@ jobs:
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/june_remaining_review_db.cjs
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/group_exam_evidence_db.cjs
 
+      - name: Verify preserved SAT intake and private worked-page controls offline
+        run: |
+          python tests/sat_pr6_records.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/panda_private_worked_pages_db.cjs
+
       - name: Run EST release arithmetic and content checks when source data exists
         run: |
           python scripts/build-est1-revision-ideas.py

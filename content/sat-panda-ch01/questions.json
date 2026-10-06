@@ -1,0 +1,771 @@
+[
+  {
+    "exercise": 1,
+    "n": 1,
+    "stem": "Evaluate without a calculator: $(-1)^{10}$",
+    "choices": [],
+    "correct": "1",
+    "explanation": "An even power of −1 is 1.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 2,
+    "stem": "Evaluate without a calculator: $(-1)^{15}$",
+    "choices": [],
+    "correct": "-1",
+    "explanation": "An odd power of −1 is −1.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 3,
+    "stem": "Evaluate without a calculator: $(-1)^8$",
+    "choices": [],
+    "correct": "1",
+    "explanation": "An even power of −1 is 1.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 4,
+    "stem": "Evaluate without a calculator: $-1^8$",
+    "choices": [],
+    "correct": "-1",
+    "explanation": "The exponent applies to 1 before the leading negative sign.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 5,
+    "stem": "Evaluate without a calculator: $-(-1)^8$",
+    "choices": [],
+    "correct": "-1",
+    "explanation": "First evaluate (−1)^8=1, then apply the leading negative sign.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 6,
+    "stem": "Evaluate without a calculator: $(-3)^3$",
+    "choices": [],
+    "correct": "-27",
+    "explanation": "An odd power keeps the negative sign: (−3)^3=−27.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 7,
+    "stem": "Evaluate without a calculator: $-3^3$",
+    "choices": [],
+    "correct": "-27",
+    "explanation": "The power applies to 3 before the leading negative sign: −3³=−27.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 8,
+    "stem": "Evaluate without a calculator: $-(-6)^2$",
+    "choices": [],
+    "correct": "-36",
+    "explanation": "Square −6 to get 36, then apply the leading negative sign.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 9,
+    "stem": "Evaluate without a calculator: $-(-4)^3$",
+    "choices": [],
+    "correct": "64",
+    "explanation": "Cube −4 to get −64, then negate it to get 64.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 10,
+    "stem": "Evaluate without a calculator: $2^3\\cdot3^2\\cdot(-1)^5$",
+    "choices": [],
+    "correct": "-72",
+    "explanation": "Compute 8·9·(−1)=−72.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 11,
+    "stem": "Evaluate without a calculator: $4^{-1}$",
+    "choices": [],
+    "correct": "1/4",
+    "explanation": "A negative exponent takes the reciprocal: 4^(−1)=1/4.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 12,
+    "stem": "Evaluate without a calculator: $5^0$",
+    "choices": [],
+    "correct": "1",
+    "explanation": "Any nonzero number to the zeroth power equals 1.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 13,
+    "stem": "Evaluate without a calculator: $3^{-2}$",
+    "choices": [],
+    "correct": "1/9",
+    "explanation": "3^(−2)=1/3²=1/9.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 14,
+    "stem": "Evaluate without a calculator: $(\\frac12)^{-1}$",
+    "choices": [],
+    "correct": "2",
+    "explanation": "A negative exponent takes the reciprocal: (1/2)^(−1)=2.",
+    "page": 17
+  },
+  {
+    "exercise": 1,
+    "n": 15,
+    "stem": "Evaluate without a calculator: $(\\frac43)^{-2}$",
+    "choices": [],
+    "correct": "9/16",
+    "explanation": "(4/3)^(−2)=(3/4)²=9/16.",
+    "page": 17
+  },
+  {
+    "exercise": 3,
+    "n": 7,
+    "stem": "Solve for x: $5\\sqrt2=\\sqrt x$",
+    "choices": [],
+    "correct": "50",
+    "explanation": "Square both sides: x=(5√2)²=50.",
+    "page": 17
+  },
+  {
+    "exercise": 3,
+    "n": 8,
+    "stem": "Solve for x: $3\\sqrt x=\\sqrt{45}$",
+    "choices": [],
+    "correct": "5",
+    "explanation": "Squaring yields 9x=45, so x=5.",
+    "page": 17
+  },
+  {
+    "exercise": 3,
+    "n": 9,
+    "stem": "Solve for x: $2\\sqrt2=\\sqrt{4x}$",
+    "choices": [],
+    "correct": "2",
+    "explanation": "Square both sides: 8=4x, giving x=2.",
+    "page": 17
+  },
+  {
+    "exercise": 3,
+    "n": 10,
+    "stem": "Solve for x: $4\\sqrt6=2\\sqrt{3x}$",
+    "choices": [],
+    "correct": "8",
+    "explanation": "Squaring gives 96=12x, so x=8.",
+    "page": 17
+  },
+  {
+    "exercise": 3,
+    "n": 11,
+    "stem": "Solve for x: $3\\sqrt8=x\\sqrt2$",
+    "choices": [],
+    "correct": "6",
+    "explanation": "Since √8=2√2, the equation becomes 6√2=x√2; x=6.",
+    "page": 17
+  },
+  {
+    "exercise": 3,
+    "n": 12,
+    "stem": "Solve for x: $x\\sqrt x=\\sqrt{216}$",
+    "choices": [],
+    "correct": "6",
+    "explanation": "Squaring gives x³=216; with x≥0, x=6.",
+    "page": 17
+  },
+  {
+    "exercise": 4,
+    "n": 1,
+    "stem": "Which expression is equivalent to $(x^2y)(x^4y^{-3})$, where x, y, and z are positive?",
+    "choices": [
+      "$x^6y^{-3}$",
+      "$x^6y^{-2}$",
+      "$x^8y^{-3}$",
+      "$x^8y^{-2}$"
+    ],
+    "correct": "B",
+    "explanation": "Multiply like bases by adding exponents: x^(2+4)y^(1−3)=x^6y^(−2).",
+    "page": 18,
+    "rect": [
+      70,
+      132,
+      453,
+      385
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 2,
+    "stem": "Which expression is equivalent to $\\sqrt{x/64}$ for x>0?",
+    "choices": [
+      "$x^2/8$",
+      "$x^2/32$",
+      "$x^{1/2}/8$",
+      "$x^{1/2}/32$"
+    ],
+    "correct": "C",
+    "explanation": "The square root of 64 is 8, so √(x/64)=√x/8=x^(1/2)/8.",
+    "page": 18,
+    "rect": [
+      70,
+      385,
+      453,
+      730
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 3,
+    "stem": "Which expression is equivalent to $x^{5/6}/\\sqrt[3]{x}$, where x≠0?",
+    "choices": [
+      "$x^{1/2}$",
+      "$x^{5/8}$",
+      "$x^{2/3}$",
+      "$x^{5/3}$"
+    ],
+    "correct": "A",
+    "explanation": "Write the cube root as x^(1/3); 5/6−1/3=1/2.",
+    "page": 18,
+    "rect": [
+      70,
+      730,
+      453,
+      1010
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 4,
+    "stem": "Which expression is equivalent to $b^{9/7}$, where b>0?",
+    "choices": [
+      "$\\sqrt[15]{b^{105}}$",
+      "$\\sqrt[15]{b^{135}}$",
+      "$\\sqrt[105]{b^{135}}$",
+      "$\\sqrt[135]{b^{105}}$"
+    ],
+    "correct": "C",
+    "explanation": "The 105th root of b^135 is b^(135/105)=b^(9/7).",
+    "page": 18,
+    "rect": [
+      475,
+      132,
+      900,
+      385
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 5,
+    "stem": "Which expression is the product of $(b^6c^{-2}d^{-5})$ and $(b^8c^{-3}+c^4d^5)$, where b, c, and d are positive?",
+    "choices": [
+      "$b^{14}c^{-5}+c^2d^{-10}$",
+      "$b^{14}c^{-5}+c^2$",
+      "$b^{14}c^{-5}d^{-5}+b^6c^2$",
+      "$b^{14}c^{-5}d^{-5}+c^2$"
+    ],
+    "correct": "C",
+    "explanation": "Distribute the first term and add exponents of matching factors: b^14 c^(−5)d^(−5)+b^6c².",
+    "page": 18,
+    "rect": [
+      475,
+      385,
+      900,
+      650
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 7,
+    "stem": "For positive r and s, which expression is equivalent to $r^{6/7}s^{3/7}$?",
+    "choices": [
+      "$1/\\sqrt[6]{r^7s^{14}}$",
+      "$\\sqrt[6]{r^7s^{14}}$",
+      "$1/\\sqrt[7]{r^6s^3}$",
+      "$\\sqrt[7]{r^6s^3}$"
+    ],
+    "correct": "D",
+    "explanation": "Put both factors under a seventh root: (r^6s³)^(1/7).",
+    "page": 19,
+    "rect": [
+      75,
+      95,
+      460,
+      400
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 8,
+    "stem": "If $\\sqrt[b]{a}=\\sqrt[d]{c}$ for distinct positive a, b, c, and d, which equation expresses c in terms of a, b, and d?",
+    "choices": [
+      "$c=d/a^{1/b}$",
+      "$c=a^{d-b}$",
+      "$c=a^{b/d}$",
+      "$c=a^{d/b}$"
+    ],
+    "correct": "D",
+    "explanation": "a^(1/b)=c^(1/d). Raise both sides to d: c=a^(d/b).",
+    "page": 19,
+    "rect": [
+      75,
+      390,
+      460,
+      705
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 9,
+    "stem": "Which expression is equivalent to $\\sqrt{16a^{2/3}}$, where a>0?",
+    "choices": [
+      "$4a^{1/3}$",
+      "$4a^{4/3}$",
+      "$8a^{1/3}$",
+      "$8a^{4/3}$"
+    ],
+    "correct": "A",
+    "explanation": "The square root of 16 is 4 and (a^(2/3))^(1/2)=a^(1/3).",
+    "page": 19,
+    "rect": [
+      75,
+      700,
+      460,
+      1030
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 10,
+    "stem": "Which expression is equivalent to $\\sqrt{rs}(\\sqrt r+\\sqrt s)$, where r≥0 and s≥0?",
+    "choices": [
+      "$\\sqrt{r^2s+rs^2}$",
+      "$r\\sqrt s+s\\sqrt r$",
+      "$rs\\sqrt{r+s}$",
+      "$\\sqrt{rs+r+s}$"
+    ],
+    "correct": "B",
+    "explanation": "Distribute √(rs): √(r²s)=r√s and √(rs²)=s√r.",
+    "page": 19,
+    "rect": [
+      480,
+      90,
+      890,
+      325
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 11,
+    "stem": "The expression $(\\sqrt[3]{x^2})^n$ is equivalent to $x^8$. What is n?",
+    "choices": [],
+    "correct": "12",
+    "explanation": "(x^(2/3))^n=x^(2n/3), so 2n/3=8 and n=12.",
+    "page": 19,
+    "rect": [
+      480,
+      320,
+      890,
+      570
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 12,
+    "stem": "Which expression is equivalent to $2^{-2k}\\cdot3^k$?",
+    "choices": [
+      "$(3\\sqrt2)^k$",
+      "$(1/36)^k$",
+      "$(3/4)^k$",
+      "$(9/4)^k$"
+    ],
+    "correct": "C",
+    "explanation": "2^(−2k)=(1/4)^k. Multiply by 3^k to get (3/4)^k.",
+    "page": 19,
+    "rect": [
+      480,
+      560,
+      890,
+      835
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 13,
+    "stem": "Which expression is equivalent to $a^{2/9}(a^{2/3})^{2/3}$, where a is positive?",
+    "choices": [
+      "$\\sqrt[3]{a^2}$",
+      "$\\sqrt[3]{a^{16}}$",
+      "$\\sqrt[9]{a^8}$",
+      "$\\sqrt[9]{a^{14}}$"
+    ],
+    "correct": "A",
+    "explanation": "Multiply the inner exponents, then add: 2/9+(2/3)(2/3)=6/9=2/3.",
+    "page": 19,
+    "rect": [
+      480,
+      830,
+      890,
+      1045
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 14,
+    "stem": "Which expression is equivalent to $(4/9)(2/3)^a$?",
+    "choices": [
+      "$(2/3)^{a/2}$",
+      "$(2/3)^{a-2}$",
+      "$(2/3)^{a+2}$",
+      "$(2/3)^{2a}$"
+    ],
+    "correct": "C",
+    "explanation": "Since 4/9=(2/3)², add the exponents: (2/3)^(a+2).",
+    "page": 20,
+    "rect": [
+      70,
+      90,
+      455,
+      405
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 15,
+    "stem": "The expression $\\sqrt[4]{x^3}\\cdot\\sqrt[12]{x^5}$ equals $\\sqrt[m]{x^n}$, with positive constants m,n<10 and x>1. What is m/n?",
+    "choices": [],
+    "correct": "6/7",
+    "explanation": "Add exponents: 3/4+5/12=14/12=7/6. Thus the sixth root of x^7 has m=6 and n=7, so m/n=6/7.",
+    "page": 20,
+    "rect": [
+      70,
+      410,
+      455,
+      700
+    ]
+  },
+  {
+    "exercise": 4,
+    "n": 16,
+    "stem": "Positive p and q satisfy $p^2=\\sqrt[3]{q}$. For what value of x does $p^{1-x}=\\sqrt q$?",
+    "choices": [],
+    "correct": "-2",
+    "explanation": "Cubing p²=q^(1/3) gives q=p^6, so √q=p³. Hence 1−x=3 and x=−2.",
+    "page": 20,
+    "rect": [
+      70,
+      700,
+      455,
+      950
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 1,
+    "stem": "Which expression is equivalent to $\\sqrt{100x^{36}}$?",
+    "choices": [
+      "$10x^6$",
+      "$50x^6$",
+      "$10x^{18}$",
+      "$50x^{18}$"
+    ],
+    "correct": "C",
+    "explanation": "The square root is 10·|x^18|=10x^18, since x^18 is nonnegative.",
+    "page": 21,
+    "rect": [
+      70,
+      115,
+      465,
+      300
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 2,
+    "stem": "If $(5^3)^{4k}=(5^{1/3})^{24}$, what is k?",
+    "choices": [
+      "$-6$",
+      "$2/3$",
+      "$3/4$",
+      "$2$"
+    ],
+    "correct": "B",
+    "explanation": "The left exponent is 12k and the right exponent is 8, so k=2/3.",
+    "page": 21,
+    "rect": [
+      70,
+      295,
+      465,
+      480
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 3,
+    "stem": "Which expression is equivalent to $3y^{1/2}$ for y>0?",
+    "choices": [
+      "$\\sqrt{3y}$",
+      "$\\sqrt{9y}$",
+      "$\\sqrt{3/y}$",
+      "$\\sqrt{9/y}$"
+    ],
+    "correct": "B",
+    "explanation": "Since 3=√9, multiply radicals to obtain 3√y=√(9y).",
+    "page": 21,
+    "rect": [
+      70,
+      480,
+      465,
+      700
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 4,
+    "stem": "Which expression is equivalent to $4^{m+2}$?",
+    "choices": [
+      "$16^m$",
+      "$16+4^m$",
+      "$8(4^m)$",
+      "$16(4^m)$"
+    ],
+    "correct": "D",
+    "explanation": "Separate the exponents: 4^(m+2)=4^m·4²=16(4^m).",
+    "page": 21,
+    "rect": [
+      70,
+      700,
+      465,
+      900
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 5,
+    "stem": "Which expression is equivalent to $\\sqrt[4]{x^2y^4}$, where x>0 and y>0?",
+    "choices": [
+      "$\\sqrt{xy}$",
+      "$y\\sqrt{x}$",
+      "$1/x^2$",
+      "$x^2y$"
+    ],
+    "correct": "B",
+    "explanation": "The fourth root gives x^(2/4)y^(4/4)=y√x.",
+    "page": 21,
+    "rect": [
+      475,
+      115,
+      900,
+      325
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 6,
+    "stem": "Which expression is equivalent to $p^{1/3}(\\sqrt[3]{p})^2$, where p>0?",
+    "choices": [
+      "$p^{2/3}$",
+      "$p^{5/3}$",
+      "$p^{7/3}$",
+      "$p$"
+    ],
+    "correct": "D",
+    "explanation": "Add exponents: 1/3+2/3=1, so the product is p.",
+    "page": 21,
+    "rect": [
+      475,
+      320,
+      900,
+      545
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 7,
+    "stem": "Which expression is equivalent to $x^{2a/b}$ for x>0 and positive integers a,b?",
+    "choices": [
+      "$\\sqrt[b]{ax^2}$",
+      "$\\sqrt[b]{x^{2a}}$",
+      "$\\sqrt[b]{x^{a+2}}$",
+      "$\\sqrt[2a]{x^b}$"
+    ],
+    "correct": "B",
+    "explanation": "The bth root of x^(2a) is x^(2a/b).",
+    "page": 21,
+    "rect": [
+      475,
+      540,
+      900,
+      765
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 8,
+    "stem": "If $9^7/\\sqrt[4]{9^{10}}=9^{6t}$, what is t?",
+    "choices": [],
+    "correct": "3/4",
+    "explanation": "Subtract powers of 9: 7−10/4=9/2, so 6t=9/2 and t=3/4.",
+    "page": 21,
+    "rect": [
+      475,
+      760,
+      900,
+      950
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 9,
+    "stem": "Which expression is equivalent to $a^{3/4}b^{1/2}$, where a≥0 and b≥0?",
+    "choices": [
+      "$\\sqrt[4]{a^3b}$",
+      "$\\sqrt[4]{a^3b^2}$",
+      "$\\sqrt{a^3b}$",
+      "$\\sqrt{a^4b^2}$"
+    ],
+    "correct": "B",
+    "explanation": "Use a common fourth-root index: b^(1/2)=b^(2/4), so the product is the fourth root of a³b².",
+    "page": 22,
+    "rect": [
+      75,
+      90,
+      467,
+      355
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 10,
+    "stem": "Which expression is equivalent to $h^{5/12}(h^{-1/4})^{7/3}$, where h>0?",
+    "choices": [
+      "$1/h^6$",
+      "$\\sqrt{h^5}$",
+      "$1/\\sqrt[6]{h}$",
+      "$1/\\sqrt[5]{h^2}$"
+    ],
+    "correct": "C",
+    "explanation": "Multiply exponents, then add: 5/12+(−1/4)(7/3)=5/12−7/12=−1/6.",
+    "page": 22,
+    "rect": [
+      75,
+      350,
+      467,
+      655
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 11,
+    "stem": "For k>1, $\\sqrt[8]{41k}(\\sqrt[9]{41k})^{12}=(41k)^{25x}$. What is x?",
+    "choices": [],
+    "correct": "7/120",
+    "explanation": "The exponent on 41k is 1/8+12/9=35/24. Thus 25x=35/24, giving x=7/120.",
+    "page": 22,
+    "rect": [
+      75,
+      650,
+      467,
+      935
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 12,
+    "stem": "If $4^{18x}=k^{3x}$ for constant k and x≠0, what is k?",
+    "choices": [],
+    "correct": "4096",
+    "explanation": "Divide both exponents by 3x: k=4^6=4096.",
+    "page": 22,
+    "rect": [
+      75,
+      925,
+      467,
+      1120
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 13,
+    "stem": "Which expression is equivalent to $9^{1/n}(4^{1/(2n)})$, where n is a positive integer?",
+    "choices": [
+      "$24^{1/n}$",
+      "$12^{1/n}$",
+      "$\\sqrt[n]{18}$",
+      "$\\sqrt[n]{6}$"
+    ],
+    "correct": "C",
+    "explanation": "(4^(1/2))^(1/n)=2^(1/n); multiplying by 9^(1/n) yields 18^(1/n).",
+    "page": 22,
+    "rect": [
+      490,
+      90,
+      925,
+      360
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 14,
+    "stem": "For a>0, b>0 and x>1, $\\dfrac{10\\sqrt[6]{9^3x^{48}}}{\\sqrt[4]{6^4x}}=ax^b$. What is ab?",
+    "choices": [],
+    "correct": "155/4",
+    "explanation": "The numerator becomes 30x⁸ and the denominator 6x^(1/4), so a=5 and b=31/4; ab=155/4.",
+    "page": 22,
+    "rect": [
+      490,
+      350,
+      925,
+      675
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 15,
+    "stem": "Positive m,n satisfy $4m=\\sqrt[3]{n^2}$. If m=2 and $m^x=n$, what is x?",
+    "choices": [],
+    "correct": "9/2",
+    "explanation": "4m=8, so n^(2/3)=8=2³. Hence n=2^(9/2); since m=2, x=9/2.",
+    "page": 22,
+    "rect": [
+      490,
+      650,
+      925,
+      920
+    ]
+  },
+  {
+    "exercise": 5,
+    "n": 16,
+    "stem": "If $2^{x+3}-2^x=k(2^x)$, what is k?",
+    "choices": [
+      "3",
+      "5",
+      "7",
+      "8"
+    ],
+    "correct": "C",
+    "explanation": "Factor 2^x: 2^x(2³−1)=7(2^x), so k=7.",
+    "page": 22,
+    "rect": [
+      490,
+      915,
+      925,
+      1150
+    ]
+  }
+]

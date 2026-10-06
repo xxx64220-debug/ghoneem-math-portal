@@ -1,0 +1,567 @@
+[
+  {
+    "exercise": 1,
+    "n": 1,
+    "page": 29,
+    "rect": [
+      80,
+      140,
+      470,
+      355
+    ],
+    "stem": "Which expression is equivalent to $6x^2y+6xy^2$?",
+    "choices": [
+      "$6xy(x+y)$",
+      "$12xy(x+y)$",
+      "$6x^2y^2(x+y)$",
+      "$12x^3y^3$"
+    ],
+    "correct": "A",
+    "explanation": "Factor the common term 6xy: 6x²y+6xy²=6xy(x+y)."
+  },
+  {
+    "exercise": 1,
+    "n": 2,
+    "page": 29,
+    "rect": [
+      80,
+      355,
+      470,
+      590
+    ],
+    "stem": "Which expression is equivalent to $(3x^3+8x^2-4x)+(7x^2-11x-7)$?",
+    "choices": [
+      "$3x^3+x^2-15x-7$",
+      "$3x^3+15x^2-15x-7$",
+      "$10x^5-7x-7$",
+      "$15x^4+3x^3-15x^2-7$"
+    ],
+    "correct": "B",
+    "explanation": "Collect like terms: 3x³+(8+7)x²+(−4−11)x−7."
+  },
+  {
+    "exercise": 1,
+    "n": 3,
+    "page": 29,
+    "rect": [
+      80,
+      590,
+      470,
+      890
+    ],
+    "stem": "Which expression is equivalent to $1/a+3/4$, where a≠0?",
+    "choices": [
+      "$(3+4a)/(4a)$",
+      "$(4+3a)/(4a)$",
+      "$7/(4a)$",
+      "$4/(a+4)$"
+    ],
+    "correct": "B",
+    "explanation": "Use denominator 4a: 1/a=4/(4a), and 3/4=3a/(4a)."
+  },
+  {
+    "exercise": 1,
+    "n": 4,
+    "page": 29,
+    "rect": [
+      80,
+      900,
+      470,
+      1150
+    ],
+    "stem": "If $(15x+34)(-8x+3)=ax^2+bx+c$, what is b?",
+    "choices": [],
+    "correct": "-227",
+    "explanation": "The x terms are 15x·3=45x and 34·(−8x)=−272x, giving b=−227."
+  },
+  {
+    "exercise": 1,
+    "n": 5,
+    "page": 29,
+    "rect": [
+      490,
+      140,
+      900,
+      430
+    ],
+    "stem": "Which expression is equivalent to $(4+8x)/(12x)$, where x≠0?",
+    "choices": [
+      "$(1+8x)/(3x)$",
+      "$(4+2x)/(3x)$",
+      "$(1+2x)/(3x)$",
+      "1"
+    ],
+    "correct": "C",
+    "explanation": "Factor 4 from the numerator and cancel it with 12: (1+2x)/(3x)."
+  },
+  {
+    "exercise": 1,
+    "n": 6,
+    "page": 29,
+    "rect": [
+      490,
+      430,
+      900,
+      640
+    ],
+    "stem": "Which expression is equivalent to $484x^2-324$?",
+    "choices": [
+      "$(18x-22)(18x+22)$",
+      "$(18x-22)^2$",
+      "$(22x-18)(22x+18)$",
+      "$(22x-18)^2$"
+    ],
+    "correct": "C",
+    "explanation": "Recognize a difference of squares: 484x²−324=(22x)²−18²."
+  },
+  {
+    "exercise": 1,
+    "n": 7,
+    "page": 29,
+    "rect": [
+      490,
+      640,
+      900,
+      900
+    ],
+    "stem": "Which expression is equivalent to $(x^2+y)(y+z)$?",
+    "choices": [
+      "$x^2z+y^2+yz$",
+      "$x^2y+x^2z+y^2+yz$",
+      "$x^2y+y^2+x^2z$",
+      "$x^2+x^2z+y^2+yz$"
+    ],
+    "correct": "B",
+    "explanation": "Distribute both terms: x²y+x²z+y²+yz."
+  },
+  {
+    "exercise": 1,
+    "n": 8,
+    "page": 29,
+    "rect": [
+      490,
+      900,
+      900,
+      1160
+    ],
+    "stem": "If $15x/(36x^2+18x)=5/[k(2x+1)]$ for x>0, what is k?",
+    "choices": [
+      "3",
+      "6",
+      "12",
+      "18"
+    ],
+    "correct": "B",
+    "explanation": "Factor 18x below: 15x/[18x(2x+1)]=5/[6(2x+1)], so k=6."
+  },
+  {
+    "exercise": 1,
+    "n": 9,
+    "page": 30,
+    "rect": [
+      75,
+      85,
+      450,
+      295
+    ],
+    "stem": "Which expression is equivalent to $3x^4-3$?",
+    "choices": [
+      "$3(x^2+1)^2$",
+      "$3(x^2-1)^2$",
+      "$3(x^3-1)(x+1)$",
+      "$3(x^2+1)(x+1)(x-1)$"
+    ],
+    "correct": "D",
+    "explanation": "Factor 3 and a difference of squares: 3(x⁴−1)=3(x²+1)(x+1)(x−1)."
+  },
+  {
+    "exercise": 1,
+    "n": 10,
+    "page": 30,
+    "rect": [
+      75,
+      300,
+      450,
+      600
+    ],
+    "stem": "Which expression is equivalent to $[3/(x-1)]/(6x-6)$, where x≠1?",
+    "choices": [
+      "$1/2$",
+      "18",
+      "$1/(2x-2)$",
+      "$1/[2(x-1)^2]$"
+    ],
+    "correct": "D",
+    "explanation": "Since 6x−6=6(x−1), the expression is 3/[6(x−1)²]."
+  },
+  {
+    "exercise": 1,
+    "n": 11,
+    "page": 30,
+    "rect": [
+      75,
+      590,
+      450,
+      840
+    ],
+    "stem": "Which expression is equivalent to $2(3x^2-5)^2-(3x^2-5)^2$?",
+    "choices": [
+      "$9x^4-15x^2+75$",
+      "$9x^4-30x^2+25$",
+      "$9x^4-60x^2+75$",
+      "$18x^4-90x^2+25$"
+    ],
+    "correct": "B",
+    "explanation": "The like square terms leave (3x²−5)²=9x⁴−30x²+25."
+  },
+  {
+    "exercise": 1,
+    "n": 12,
+    "page": 30,
+    "rect": [
+      75,
+      840,
+      450,
+      1150
+    ],
+    "stem": "Which expression is equivalent to $(xy-x^2)/(xy-y^2)$, where y≠0 and x≠y?",
+    "choices": [
+      "$-y/x$",
+      "$y/x$",
+      "$x/y$",
+      "$-x/y$"
+    ],
+    "correct": "D",
+    "explanation": "Factor x(y−x)/[y(x−y)] and use y−x=−(x−y), yielding −x/y."
+  },
+  {
+    "exercise": 1,
+    "n": 13,
+    "page": 30,
+    "rect": [
+      465,
+      85,
+      890,
+      395
+    ],
+    "stem": "Which expression is equivalent to $[x^2(2x-3)-(2x-3)]/(x-1)$, where x>1?",
+    "choices": [
+      "$2x^2-3x$",
+      "$(2x-3)(x+1)$",
+      "$(2x^2-3)/(x-1)$",
+      "$(2x^3-5x^2+3)/(x-1)$"
+    ],
+    "correct": "B",
+    "explanation": "Factor (2x−3)(x²−1) then cancel x−1 to obtain (2x−3)(x+1)."
+  },
+  {
+    "exercise": 1,
+    "n": 14,
+    "page": 30,
+    "rect": [
+      465,
+      395,
+      890,
+      730
+    ],
+    "stem": "Which expression is equivalent to $3/(3x-14)-1/(x-3)$?",
+    "choices": [
+      "$2/(2x-11)$",
+      "$23/[(3x-14)(x-3)]$",
+      "$5/[(3x-14)(x-3)]$",
+      "$(3x-10)/[(3x-14)(x-3)]$"
+    ],
+    "correct": "C",
+    "explanation": "Common denominator gives [3(x−3)−(3x−14)]/[(3x−14)(x−3)]=5/denominator."
+  },
+  {
+    "exercise": 1,
+    "n": 15,
+    "page": 30,
+    "rect": [
+      465,
+      730,
+      890,
+      1120
+    ],
+    "stem": "Which expression is equivalent to $x^2(x+2)(x-2)+4$?",
+    "choices": [
+      "$(x^2-2)^2$",
+      "$(x^2+2)^2$",
+      "$(x-1)^2(x+2)^2$",
+      "$(x+1)^2(x-2)^2$"
+    ],
+    "correct": "A",
+    "explanation": "Expand to x⁴−4x²+4, a perfect square (x²−2)²."
+  },
+  {
+    "exercise": 2,
+    "n": 1,
+    "page": 31,
+    "rect": [
+      80,
+      145,
+      470,
+      345
+    ],
+    "stem": "Which expression is equivalent to $3xy^6+3x^3y^3$?",
+    "choices": [
+      "$3xy^3(y^2+x^2)$",
+      "$3xy^3(y^2+x^3)$",
+      "$3xy^3(y^3+x^2)$",
+      "$3xy^3(y^3+x^3)$"
+    ],
+    "correct": "C",
+    "explanation": "Factor 3xy³ from both terms to obtain 3xy³(y³+x²)."
+  },
+  {
+    "exercise": 2,
+    "n": 2,
+    "page": 31,
+    "rect": [
+      80,
+      345,
+      470,
+      610
+    ],
+    "stem": "Which expression is equivalent to $(5a+3\\sqrt a)-(2a+5\\sqrt a)$?",
+    "choices": [
+      "$-2a\\sqrt a$",
+      "$a\\sqrt a$",
+      "$3a-2\\sqrt a$",
+      "$3a+8\\sqrt a$"
+    ],
+    "correct": "C",
+    "explanation": "Subtract like terms: (5a−2a)+(3√a−5√a)=3a−2√a."
+  },
+  {
+    "exercise": 2,
+    "n": 3,
+    "page": 31,
+    "rect": [
+      80,
+      610,
+      470,
+      875
+    ],
+    "stem": "Which expression is equivalent to $2/x-1/(3x)$, where x>0?",
+    "choices": [
+      "$-1/(2x)$",
+      "$2/x$",
+      "$2/(3x)$",
+      "$5/(3x)$"
+    ],
+    "correct": "D",
+    "explanation": "Use denominator 3x: 6/(3x)−1/(3x)=5/(3x)."
+  },
+  {
+    "exercise": 2,
+    "n": 4,
+    "page": 31,
+    "rect": [
+      80,
+      875,
+      470,
+      1160
+    ],
+    "stem": "Which expression is equivalent to $(x-8)(5-3x^2)$?",
+    "choices": [
+      "$-3x^3-6x^2+24$",
+      "$-3x^3+11x^2+5x-40$",
+      "$-3x^3+24x^2+5x-40$",
+      "$-3x^3+29x^2+24$"
+    ],
+    "correct": "C",
+    "explanation": "Distribute: 5x−3x³−40+24x²=−3x³+24x²+5x−40."
+  },
+  {
+    "exercise": 2,
+    "n": 5,
+    "page": 31,
+    "rect": [
+      485,
+      145,
+      900,
+      400
+    ],
+    "stem": "Which expression is equivalent to $(x^2-3)/(x+\\sqrt3)$, where x≠−√3?",
+    "choices": [
+      "$x\\sqrt3/3$",
+      "$x-1$",
+      "$x-\\sqrt3$",
+      "$x+\\sqrt3$"
+    ],
+    "correct": "C",
+    "explanation": "Factor x²−3=(x+√3)(x−√3) and cancel the nonzero common factor."
+  },
+  {
+    "exercise": 2,
+    "n": 6,
+    "page": 31,
+    "rect": [
+      485,
+      400,
+      900,
+      685
+    ],
+    "stem": "If $(4x^2+4x-1)(x^2-3x)=ax^4+bx^3+cx^2+dx$, what is b+c?",
+    "choices": [],
+    "correct": "-21",
+    "explanation": "Expanding gives 4x⁴−8x³−13x²+3x. Thus b=−8, c=−13, and b+c=−21."
+  },
+  {
+    "exercise": 2,
+    "n": 7,
+    "page": 31,
+    "rect": [
+      485,
+      685,
+      900,
+      1000
+    ],
+    "stem": "Which expression is equivalent to $5b-(b+k)/b$, where b>0?",
+    "choices": [
+      "$(4b-k)/b$",
+      "$(4b+k)/b$",
+      "$(5b^2-b-k)/b$",
+      "$(5b^2-b+k)/b$"
+    ],
+    "correct": "C",
+    "explanation": "Write 5b=5b²/b, then subtract the numerator b+k."
+  },
+  {
+    "exercise": 2,
+    "n": 8,
+    "page": 32,
+    "rect": [
+      75,
+      90,
+      455,
+      340
+    ],
+    "stem": "If $[(6x+8)(3x+6)]/(12x+24)=(ax+b)/2$ for x>0, what is a+b?",
+    "choices": [],
+    "correct": "7",
+    "explanation": "Factor numerator and denominator: 2(3x+4)·3(x+2)/[12(x+2)]=(3x+4)/2. Hence a+b=3+4=7."
+  },
+  {
+    "exercise": 2,
+    "n": 9,
+    "page": 32,
+    "rect": [
+      75,
+      340,
+      455,
+      615
+    ],
+    "stem": "Which expression is equivalent to $(3\\sqrt a-\\sqrt b)^{2/7}$, where a>b>0?",
+    "choices": [
+      "$\\sqrt[7]{9a-b}$",
+      "$\\sqrt[7]{9a-6ab+b}$",
+      "$\\sqrt[7]{9a-3\\sqrt{ab}+b}$",
+      "$\\sqrt[7]{9a-6\\sqrt{ab}+b}$"
+    ],
+    "correct": "D",
+    "explanation": "Square the binomial inside the seventh root: 9a−6√(ab)+b."
+  },
+  {
+    "exercise": 2,
+    "n": 10,
+    "page": 32,
+    "rect": [
+      75,
+      615,
+      455,
+      825
+    ],
+    "stem": "Which expression is equivalent to $x^4-8x^2+16$?",
+    "choices": [
+      "$(x-2)^4$",
+      "$(x-2)^3(x+2)$",
+      "$(x-2)^2(x+2)^2$",
+      "$(x^2+4)(x+2)(x-2)$"
+    ],
+    "correct": "C",
+    "explanation": "It is (x²−4)², which factors as (x−2)²(x+2)²."
+  },
+  {
+    "exercise": 2,
+    "n": 11,
+    "page": 32,
+    "rect": [
+      75,
+      825,
+      455,
+      1160
+    ],
+    "stem": "Which expression is equivalent to $(y-3xy)/(2x^2-2xy)+(1+3y)/(x-y)$?",
+    "choices": [
+      "$(2x-3xy+4y)/(2x^2-2xy)$",
+      "$(2x+3xy+y)/(2x^2-2xy)$",
+      "$(2x+3xy+y)/(2x^3-4x^2y+2xy^2)$",
+      "$(4y-3xy+1)/(2x^3-4x^2y+2xy^2)$"
+    ],
+    "correct": "B",
+    "explanation": "Use denominator 2x(x−y). The numerator becomes y−3xy+2x(1+3y)=2x+3xy+y."
+  },
+  {
+    "exercise": 2,
+    "n": 12,
+    "page": 32,
+    "rect": [
+      465,
+      90,
+      890,
+      410
+    ],
+    "stem": "If $8x^2-\\tfrac12 y^2=8(x-cy)(x+cy)$ for positive c, what is c?",
+    "choices": [
+      "$1/16$",
+      "$1/8$",
+      "$1/4$",
+      "$\\sqrt2/4$"
+    ],
+    "correct": "C",
+    "explanation": "The coefficient of y² is −8c²=−1/2. Therefore c²=1/16 and c=1/4."
+  },
+  {
+    "exercise": 2,
+    "n": 13,
+    "page": 32,
+    "rect": [
+      465,
+      410,
+      890,
+      675
+    ],
+    "stem": "Which expression is equivalent to $(x+1)^2+2(x+1)(y+1)+(y+1)^2$?",
+    "choices": [
+      "$(x+y+1)^2$",
+      "$(x+y+2)^2$",
+      "$(x+y)^2+2$",
+      "$(x+y)^2-x-y$"
+    ],
+    "correct": "B",
+    "explanation": "Apply u²+2uv+v²=(u+v)² with u=x+1 and v=y+1."
+  },
+  {
+    "exercise": 2,
+    "n": 14,
+    "page": 32,
+    "rect": [
+      465,
+      675,
+      890,
+      1000
+    ],
+    "stem": "Which expression is equivalent to $x/(x-2)+x/[2(2-x)]$, where x≠2?",
+    "choices": [
+      "$-x/(x-2)$",
+      "$-x/[2(x-2)]$",
+      "$x/[2(x-2)]$",
+      "$3x/[2(x-2)]$"
+    ],
+    "correct": "C",
+    "explanation": "Since 2−x=−(x−2), the second term subtracts x/[2(x−2)], leaving x/[2(x−2)]."
+  }
+]
