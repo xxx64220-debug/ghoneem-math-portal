@@ -1,0 +1,552 @@
+[
+  {
+    "exercise": 1,
+    "n": 1,
+    "page": 100,
+    "rect": [
+      68,
+      140,
+      451,
+      338
+    ],
+    "stem": "280 is 32% of what number?",
+    "choices": [],
+    "correct": "875",
+    "explanation": "Divide 280 by 0.32 to get 875."
+  },
+  {
+    "exercise": 1,
+    "n": 2,
+    "page": 100,
+    "rect": [
+      68,
+      350,
+      451,
+      551
+    ],
+    "stem": "If n% of 40 is 9.6, what is n% of 250?",
+    "choices": [
+      "45",
+      "60",
+      "75",
+      "80"
+    ],
+    "correct": "B",
+    "explanation": "n%=9.6/40=24%; 24% of 250 is 60."
+  },
+  {
+    "exercise": 1,
+    "n": 3,
+    "page": 100,
+    "rect": [
+      68,
+      553,
+      451,
+      817
+    ],
+    "stem": "About 15% of a town’s r residents live downtown. Which expression gives the number outside downtown?",
+    "choices": [
+      "0.15r",
+      "0.85r",
+      "1.15r",
+      "6.67r"
+    ],
+    "correct": "B",
+    "explanation": "The remaining 85% is 0.85r."
+  },
+  {
+    "exercise": 1,
+    "n": 4,
+    "page": 100,
+    "rect": [
+      68,
+      832,
+      451,
+      1090
+    ],
+    "stem": "Decreasing a positive x by p% produces 0.12x. What is p?",
+    "choices": [
+      "0.12",
+      "0.88",
+      "12",
+      "88"
+    ],
+    "correct": "D",
+    "explanation": "The remaining 12% means a decrease of 88%."
+  },
+  {
+    "exercise": 1,
+    "n": 5,
+    "page": 100,
+    "rect": [
+      470,
+      139,
+      865,
+      385
+    ],
+    "stem": "Electricity use increased by 2% from 2022 to 2023. If the new use is n times the old use, what is n?",
+    "choices": [
+      "0.02",
+      "0.98",
+      "1.02",
+      "1.2"
+    ],
+    "correct": "C",
+    "explanation": "A 2% increase multiplies the old amount by 1.02."
+  },
+  {
+    "exercise": 1,
+    "n": 6,
+    "page": 100,
+    "rect": [
+      470,
+      398,
+      865,
+      601
+    ],
+    "stem": "What is the result of increasing 150 by 300%?",
+    "choices": [],
+    "correct": "600",
+    "explanation": "Add 300% of 150: 150(1+3)=600."
+  },
+  {
+    "exercise": 1,
+    "n": 7,
+    "page": 100,
+    "rect": [
+      470,
+      610,
+      865,
+      900
+    ],
+    "stem": "Lisbon had about 2.3 million residents in 2019, about 28% of Portugal. Estimate Portugal’s population.",
+    "choices": [
+      "1.8 million",
+      "3.2 million",
+      "8.2 million",
+      "12.2 million"
+    ],
+    "correct": "C",
+    "explanation": "2.3/0.28≈8.2 million."
+  },
+  {
+    "exercise": 1,
+    "n": 8,
+    "page": 100,
+    "rect": [
+      470,
+      912,
+      865,
+      1095
+    ],
+    "stem": "A 20% coupon reduces a book price to $29. What was its price before the coupon?",
+    "choices": [],
+    "correct": "36.25",
+    "explanation": "The discounted price is 80% of the original, so 29/0.8=36.25."
+  },
+  {
+    "exercise": 1,
+    "n": 9,
+    "page": 101,
+    "rect": [
+      78,
+      92,
+      467,
+      290
+    ],
+    "stem": "90 is u% less than 450. What is u?",
+    "choices": [],
+    "correct": "80",
+    "explanation": "The decrease is (450−90)/450=80%."
+  },
+  {
+    "exercise": 1,
+    "n": 10,
+    "page": 101,
+    "rect": [
+      78,
+      301,
+      467,
+      601
+    ],
+    "stem": "Dinner service had 17.5% more dishes than lunch and served 940 dishes. How many more dinner than lunch dishes?",
+    "choices": [],
+    "correct": "140",
+    "explanation": "Lunch served 940/1.175=800; dinner served 140 more."
+  },
+  {
+    "exercise": 1,
+    "n": 11,
+    "page": 101,
+    "rect": [
+      78,
+      615,
+      467,
+      892
+    ],
+    "stem": "Groceries cost 76% more in 2016 than 2015 and 145% more in 2017 than 2016. How many times 2015 is the 2017 spending?",
+    "choices": [
+      "1.102",
+      "1.862",
+      "2.552",
+      "4.312"
+    ],
+    "correct": "D",
+    "explanation": "Multiply factors 1.76 and 2.45 to obtain 4.312."
+  },
+  {
+    "exercise": 1,
+    "n": 12,
+    "page": 101,
+    "rect": [
+      78,
+      905,
+      467,
+      1102
+    ],
+    "stem": "Positive p is 60% of q and 390% of r. If q is x% of r, find x.",
+    "choices": [],
+    "correct": "650",
+    "explanation": "0.60q=3.90r, so q=6.5r=650% of r."
+  },
+  {
+    "exercise": 1,
+    "n": 13,
+    "page": 101,
+    "rect": [
+      485,
+      92,
+      870,
+      366
+    ],
+    "stem": "24% of store items are vests, 36% of the vests are blue, and 78% of the blue vests are fleece. Approximately what percentage of all items are not blue fleece vests?",
+    "choices": [
+      "10.70%",
+      "67.39%",
+      "89.30%",
+      "93.26%"
+    ],
+    "correct": "D",
+    "explanation": "Blue fleece vests are 0.24·0.36·0.78=0.067392 of items; the complement is about 93.26%."
+  },
+  {
+    "exercise": 1,
+    "n": 14,
+    "page": 101,
+    "rect": [
+      485,
+      375,
+      870,
+      704
+    ],
+    "stem": "The starting air volume in a balloon is 258% of the ending volume. The ending volume is n% of the starting volume. Find n to the nearest whole number.",
+    "choices": [],
+    "correct": "39",
+    "explanation": "Ending/starting =1/2.58≈0.3876, or 39% rounded."
+  },
+  {
+    "exercise": 1,
+    "n": 15,
+    "page": 101,
+    "rect": [
+      485,
+      711,
+      870,
+      1082
+    ],
+    "stem": "Two counties collected equal taxes in 2016. In 2017 county A decreased 25% and county B increased 20%. If A collected $60 million in 2017, how many millions did B collect?",
+    "choices": [
+      "54",
+      "78",
+      "90",
+      "96"
+    ],
+    "correct": "D",
+    "explanation": "The common 2016 amount was 60/0.75=80 million; B collected 1.2·80=96 million."
+  },
+  {
+    "exercise": 2,
+    "n": 1,
+    "page": 102,
+    "rect": [
+      70,
+      140,
+      457,
+      408
+    ],
+    "stem": "A zoo had 32,000 visitors in March and 15% more in April. How many visitors in April?",
+    "choices": [
+      "32,150",
+      "32,480",
+      "35,200",
+      "36,800"
+    ],
+    "correct": "D",
+    "explanation": "32,000·1.15=36,800."
+  },
+  {
+    "exercise": 2,
+    "n": 2,
+    "page": 102,
+    "rect": [
+      70,
+      421,
+      457,
+      652
+    ],
+    "stem": "A product costs 1.84 times its original price. What was the percent increase?",
+    "choices": [
+      "0.84%",
+      "1.84%",
+      "84%",
+      "184%"
+    ],
+    "correct": "C",
+    "explanation": "The price increase is 1.84−1=0.84 of the original, or 84%."
+  },
+  {
+    "exercise": 2,
+    "n": 3,
+    "page": 102,
+    "rect": [
+      70,
+      664,
+      457,
+      903
+    ],
+    "stem": "A $22,500 marketing budget decreases by k% to $18,750. Find k.",
+    "choices": [],
+    "correct": "50/3",
+    "explanation": "The decrease is 3,750/22,500=1/6=16 2/3%.",
+    "accepted": [
+      "50/3",
+      "16.66",
+      "16.67"
+    ]
+  },
+  {
+    "exercise": 2,
+    "n": 4,
+    "page": 102,
+    "rect": [
+      70,
+      916,
+      457,
+      1103
+    ],
+    "stem": "Increasing y by 2,400% yields 10,200. Find y.",
+    "choices": [],
+    "correct": "408",
+    "explanation": "The result is 25y, so y=10,200/25=408."
+  },
+  {
+    "exercise": 2,
+    "n": 5,
+    "page": 102,
+    "rect": [
+      478,
+      140,
+      866,
+      413
+    ],
+    "stem": "60% of mice are male and 0.05% of males carry a mutation. What percent of all mice are male carriers?",
+    "choices": [
+      "0.0003%",
+      "0.003%",
+      "0.03%",
+      "0.3%"
+    ],
+    "correct": "C",
+    "explanation": "As a fraction of all mice, 0.60·0.0005=0.0003, or 0.03%."
+  },
+  {
+    "exercise": 2,
+    "n": 6,
+    "page": 102,
+    "rect": [
+      478,
+      422,
+      866,
+      659
+    ],
+    "stem": "A mirror costs $67.50 after 8% sales tax. Find its pretax cost.",
+    "choices": [],
+    "correct": "62.5",
+    "explanation": "Divide the taxed price by 1.08: 67.50/1.08=62.50."
+  },
+  {
+    "exercise": 2,
+    "n": 7,
+    "page": 102,
+    "rect": [
+      478,
+      670,
+      866,
+      943
+    ],
+    "stem": "A travel bag’s wholesale price is 10% below retail. A promotion charges 80% of wholesale. What percentage of retail was paid?",
+    "choices": [
+      "8%",
+      "18%",
+      "72%",
+      "82%"
+    ],
+    "correct": "C",
+    "explanation": "The payment factor is 0.80·0.90=0.72, or 72%."
+  },
+  {
+    "exercise": 2,
+    "n": 8,
+    "page": 102,
+    "rect": [
+      478,
+      950,
+      866,
+      1115
+    ],
+    "stem": "220% of c is 880, and c is p% greater than 50. Find p.",
+    "choices": [],
+    "correct": "700",
+    "explanation": "2.2c=880 gives c=400. The increase from 50 to 400 is 350/50=700%."
+  },
+  {
+    "exercise": 2,
+    "n": 9,
+    "page": 103,
+    "rect": [
+      78,
+      91,
+      463,
+      359
+    ],
+    "stem": "8% of a paint container was used, leaving 57.5 liters. How many liters were initially in the container?",
+    "choices": [],
+    "correct": "62.5",
+    "explanation": "The remaining 92% equals 57.5 liters; 57.5/0.92=62.5."
+  },
+  {
+    "exercise": 2,
+    "n": 10,
+    "page": 103,
+    "rect": [
+      78,
+      374,
+      463,
+      634
+    ],
+    "stem": "An auction starting price is 60% below a $30,000 assessed value. An offer is 370% of that starting price. Find the offer in dollars.",
+    "choices": [],
+    "correct": "44400",
+    "explanation": "Starting price is 0.40·30,000=12,000; 3.70·12,000=44,400."
+  },
+  {
+    "exercise": 2,
+    "n": 11,
+    "page": 103,
+    "rect": [
+      78,
+      646,
+      463,
+      864
+    ],
+    "stem": "r is 70% less than s and 60% greater than t. If s=180, find t.",
+    "choices": [],
+    "correct": "33.75",
+    "explanation": "r=0.30·180=54 and r=1.6t, so t=33.75."
+  },
+  {
+    "exercise": 2,
+    "n": 12,
+    "page": 103,
+    "rect": [
+      78,
+      897,
+      463,
+      1140
+    ],
+    "stem": "An iceberg lost 14% of its mass, then gained 188% of its new mass. What is the net percentage increase?",
+    "choices": [
+      "40.32%",
+      "147.68%",
+      "161.68%",
+      "174.00%"
+    ],
+    "correct": "B",
+    "explanation": "The combined factor is 0.86·2.88=2.4768, so the increase is 147.68%."
+  },
+  {
+    "exercise": 2,
+    "n": 13,
+    "page": 103,
+    "rect": [
+      485,
+      91,
+      870,
+      326
+    ],
+    "stem": "x is 75% less than positive y, and z is 84% greater than x. How many times y is z?",
+    "choices": [],
+    "correct": "0.46",
+    "explanation": "x=0.25y and z=1.84x=0.46y."
+  },
+  {
+    "exercise": 2,
+    "n": 14,
+    "page": 103,
+    "rect": [
+      485,
+      340,
+      870,
+      588
+    ],
+    "stem": "a is 25/16 times b, with b>0. By what percent is b less than a?",
+    "choices": [
+      "36.00%",
+      "43.75%",
+      "56.25%",
+      "64.00%"
+    ],
+    "correct": "A",
+    "explanation": "b=(16/25)a=0.64a, which is 36% less than a."
+  },
+  {
+    "exercise": 2,
+    "n": 15,
+    "page": 103,
+    "rect": [
+      485,
+      594,
+      870,
+      828
+    ],
+    "stem": "The sum of positive a and b is 4.76 times positive c, and a is 124% of b. What percent of c is a?",
+    "choices": [
+      "216.85%",
+      "238.00%",
+      "263.50%",
+      "295.12%"
+    ],
+    "correct": "C",
+    "explanation": "a=1.24b and 2.24b=4.76c, hence a=(1.24·4.76/2.24)c=2.635c."
+  },
+  {
+    "exercise": 2,
+    "n": 16,
+    "page": 103,
+    "rect": [
+      485,
+      843,
+      870,
+      1165
+    ],
+    "stem": "Town A built n% more houses than town B in 2010. If A built 700, which expression gives B?",
+    "choices": [
+      "$700(100+n)/100$",
+      "$700(100/(100+n))$",
+      "$700(100−n)/100$",
+      "$700(100/(100−n))$"
+    ],
+    "correct": "B",
+    "explanation": "A=(1+n/100)B, so B=700·100/(100+n)."
+  }
+]

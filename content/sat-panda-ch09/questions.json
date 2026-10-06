@@ -1,0 +1,647 @@
+[
+  {
+    "exercise": 1,
+    "n": 1,
+    "page": 109,
+    "rect": [
+      70,
+      143,
+      457,
+      443
+    ],
+    "stem": "Albert trades two used books for one new book each month. What describes his collection size over time?",
+    "choices": [
+      "Increasing linear",
+      "Decreasing linear",
+      "Exponential growth",
+      "Exponential decay"
+    ],
+    "correct": "B",
+    "explanation": "Each month the collection loses one book, so its size decreases linearly."
+  },
+  {
+    "exercise": 1,
+    "n": 2,
+    "page": 109,
+    "rect": [
+      70,
+      450,
+      457,
+      738
+    ],
+    "stem": "A dish starts with 80 cells, each splitting into two every hour. In $A(t)=cr^t$, find c and r.",
+    "choices": [
+      "c=40, r=2",
+      "c=80, r=0.5",
+      "c=80, r=1.5",
+      "c=80, r=2"
+    ],
+    "correct": "D",
+    "explanation": "The initial cell count is 80 and the hourly multiplier is 2."
+  },
+  {
+    "exercise": 1,
+    "n": 3,
+    "page": 109,
+    "rect": [
+      70,
+      750,
+      457,
+      1110
+    ],
+    "stem": "A deer population of 12,000 decreases 11% yearly. Which is closest to the count after 3 years?",
+    "choices": [
+      "8,040",
+      "8,460",
+      "8,770",
+      "9,320"
+    ],
+    "correct": "B",
+    "explanation": "12,000(0.89)^3≈8,460."
+  },
+  {
+    "exercise": 1,
+    "n": 4,
+    "page": 109,
+    "rect": [
+      475,
+      143,
+      866,
+      420
+    ],
+    "stem": "y decreases 25% each time x increases by 1 and y=4 when x=0. Which equation represents the relationship?",
+    "choices": [
+      "$y=0.75(4)^x$",
+      "$y=4(0.75)^x$",
+      "$y=4(1.25)^x$",
+      "$y=16(0.25)^{x+1}$"
+    ],
+    "correct": "B",
+    "explanation": "The initial value is 4 and each increment multiplies by 0.75."
+  },
+  {
+    "exercise": 1,
+    "n": 5,
+    "page": 109,
+    "rect": [
+      475,
+      432,
+      866,
+      851
+    ],
+    "stem": "Employees stock shelves at a constant rate over two weeks. If p(t) is shelves left after t days, which describes p?",
+    "choices": [
+      "Increasing exponential",
+      "Decreasing exponential",
+      "Increasing linear",
+      "Decreasing linear"
+    ],
+    "correct": "D",
+    "explanation": "A constant amount of work each day makes the count decrease at a constant rate."
+  },
+  {
+    "exercise": 1,
+    "n": 6,
+    "page": 109,
+    "rect": [
+      475,
+      858,
+      866,
+      1135
+    ],
+    "stem": "A car initially worth $10,000 retains 65% of its value after each year. Which equation gives its value after k years?",
+    "choices": [
+      "$10000(0.35)^k$",
+      "$10000(0.65)^k$",
+      "$10000(1.35)^k$",
+      "$10000(1.65)^k$"
+    ],
+    "correct": "B",
+    "explanation": "Multiply the initial value by 0.65 for each elapsed year."
+  },
+  {
+    "exercise": 1,
+    "n": 7,
+    "page": 110,
+    "rect": [
+      58,
+      90,
+      449,
+      508
+    ],
+    "stem": "Town population in thousands is $p(t)=13(1.1)^t$, t years after 2008. What does $p(4)≈19$ mean?",
+    "choices": [
+      "Annual growth about 19% from 2008 to 2012",
+      "Population grew about 19,000 from 2008 to 2012",
+      "Population was about 19,000 in 2012",
+      "Population grew about 19,000 every four years"
+    ],
+    "correct": "C",
+    "explanation": "The output at t=4 is population in thousands in 2012."
+  },
+  {
+    "exercise": 1,
+    "n": 8,
+    "page": 110,
+    "rect": [
+      58,
+      515,
+      449,
+      1090
+    ],
+    "stem": "Temperature of an alloy is $f(t)=20(1+15/100)^t$, t seconds after experiment starts. What does 15 mean?",
+    "choices": [
+      "Initial temperature in Celsius",
+      "Temperature increases 15 degrees every 100 seconds",
+      "Temperature decreases 15% each second",
+      "Temperature increases 15% each second"
+    ],
+    "correct": "D",
+    "explanation": "The factor 1.15 means a 15% increase each second."
+  },
+  {
+    "exercise": 1,
+    "n": 9,
+    "page": 110,
+    "rect": [
+      468,
+      90,
+      854,
+      485
+    ],
+    "stem": "Members of a club in thousands are $m(t)=31.6(1.278)^t$, t years after 1976. What does 31.6 represent?",
+    "choices": [
+      "Members in thousands in 1976",
+      "Members in thousands t years after 1976",
+      "Annual increase in thousands",
+      "Annual percentage increase"
+    ],
+    "correct": "A",
+    "explanation": "At t=0 (1976), the estimated membership is 31.6 thousand."
+  },
+  {
+    "exercise": 1,
+    "n": 10,
+    "page": 110,
+    "rect": [
+      468,
+      496,
+      854,
+      1102
+    ],
+    "stem": "The source graph shows $f(x)=a(b)^x$ with positive a and b. Which value is closest to $a/b$?",
+    "choices": [
+      "63",
+      "85",
+      "102",
+      "480"
+    ],
+    "correct": "B",
+    "explanation": "The graph shows f(0)≈72 and f(1)≈61, so b≈61/72≈0.85 and a/b≈85."
+  },
+  {
+    "exercise": 1,
+    "n": 11,
+    "page": 111,
+    "rect": [
+      79,
+      93,
+      468,
+      411
+    ],
+    "stem": "A $900 bond gains 20% in market value annually. Its value after 3 years is $900(1+p)$. Find p.",
+    "choices": [],
+    "correct": "0.728",
+    "explanation": "The three-year multiplier is (1.2)^3=1.728, so p=0.728."
+  },
+  {
+    "exercise": 1,
+    "n": 12,
+    "page": 111,
+    "rect": [
+      79,
+      431,
+      468,
+      786
+    ],
+    "stem": "Which equivalent form of f displays the value of $f(4)$ as a base or coefficient?",
+    "choices": [
+      "$f(x)=2(1/2)^x$",
+      "$f(x)=2(1/4)^{x/2}$",
+      "$f(x)=2(1/8)^{x/3}$",
+      "$f(x)=2(1/16)^{x/4}$"
+    ],
+    "correct": "C",
+    "explanation": "All forms give f(4)=2(1/2)^4=1/8; choice C shows 1/8 as a base."
+  },
+  {
+    "exercise": 1,
+    "n": 13,
+    "page": 111,
+    "rect": [
+      79,
+      802,
+      468,
+      1135
+    ],
+    "stem": "A forest starts with 14,000 trees in 2015 and loses 6% every four years. Which model gives trees P, t years after 2015?",
+    "choices": [
+      "$P=14000(0.06)^{t/4}$",
+      "$P=14000+0.94(4t)$",
+      "$P=14000(0.94)^{4t}$",
+      "$P=14000(0.94)^{t/4}$"
+    ],
+    "correct": "D",
+    "explanation": "A 0.94 multiplier occurs once for each four-year period, or t/4 periods."
+  },
+  {
+    "exercise": 1,
+    "n": 14,
+    "page": 111,
+    "rect": [
+      487,
+      93,
+      872,
+      424
+    ],
+    "stem": "Collectible resale value t years after release is $v=40(1.6)^t$. Which model uses m months after release?",
+    "choices": [
+      "$v=40(1.6)^m$",
+      "$v=40(1.6)^{m/12}$",
+      "$v=40(1.6)^{12m}$",
+      "$v=40(1.6)^{12/m}$"
+    ],
+    "correct": "B",
+    "explanation": "Convert months to years using t=m/12."
+  },
+  {
+    "exercise": 1,
+    "n": 15,
+    "page": 111,
+    "rect": [
+      487,
+      430,
+      872,
+      752
+    ],
+    "stem": "Bacteria count is $N(h)=1000(0.97)^{4h}$ after h hours. The bacteria decrease 3% every k minutes. Find k.",
+    "choices": [
+      "1/4",
+      "4",
+      "15",
+      "240"
+    ],
+    "correct": "C",
+    "explanation": "The exponent advances by 1 every 1/4 hour, or 15 minutes."
+  },
+  {
+    "exercise": 1,
+    "n": 16,
+    "page": 111,
+    "rect": [
+      487,
+      761,
+      872,
+      1138
+    ],
+    "stem": "Data initially 16 GB increases by 2% every 15 hours. Which model gives the data after t days?",
+    "choices": [
+      "$g(t)=16(2)^{15t}$",
+      "$g(t)=16(1.02)^{t/15}$",
+      "$g(t)=16(1.02)^{5t/8}$",
+      "$g(t)=16(1.02)^{8t/5}$"
+    ],
+    "correct": "D",
+    "explanation": "Each day contains 24/15=8/5 fifteen-hour intervals."
+  },
+  {
+    "exercise": 2,
+    "n": 1,
+    "page": 112,
+    "rect": [
+      82,
+      142,
+      468,
+      438
+    ],
+    "stem": "A service has 10,000 subscribers and grows 160% annually. Which equation gives subscribers t years later?",
+    "choices": [
+      "$s=10000+16000t$",
+      "$s=10000(1.16)^t$",
+      "$s=10000(1.6)^t$",
+      "$s=10000(2.6)^t$"
+    ],
+    "correct": "D",
+    "explanation": "Increasing 160% per year gives growth factor 2.6."
+  },
+  {
+    "exercise": 2,
+    "n": 2,
+    "page": 112,
+    "rect": [
+      82,
+      445,
+      468,
+      837
+    ],
+    "stem": "Roundworm population in thousands is $r(t)=11(0.92)^t$, t years later. What does 0.92 represent?",
+    "choices": [
+      "Population decreases 0.92 thousand each year",
+      "It takes 0.92 years to halve",
+      "Proportion remaining after each year",
+      "Population decreases 0.92% each year"
+    ],
+    "correct": "C",
+    "explanation": "The multiplier 0.92 is 92% remaining each year, an 8% annual decrease."
+  },
+  {
+    "exercise": 2,
+    "n": 3,
+    "page": 112,
+    "rect": [
+      82,
+      843,
+      468,
+      1115
+    ],
+    "stem": "Each week, a crocodile gains 0.75% of its initial birth weight. Which function best models its weight over time?",
+    "choices": [
+      "Decreasing exponential",
+      "Decreasing linear",
+      "Increasing exponential",
+      "Increasing linear"
+    ],
+    "correct": "D",
+    "explanation": "A fixed percentage of the fixed initial weight is a fixed amount gained each week."
+  },
+  {
+    "exercise": 2,
+    "n": 4,
+    "page": 112,
+    "rect": [
+      487,
+      142,
+      871,
+      570
+    ],
+    "stem": "The value of missing artwork after x years is $f(x)=2.9(1.07)^x$ million dollars. What does the y-intercept mean?",
+    "choices": [
+      "Average 2.9 million during first six years",
+      "Average 3.1 million during first six years",
+      "Estimated value 2.9 million at disappearance",
+      "Estimated value 3.1 million at disappearance"
+    ],
+    "correct": "C",
+    "explanation": "At x=0, when it disappeared, the estimated value is 2.9 million dollars."
+  },
+  {
+    "exercise": 2,
+    "n": 5,
+    "page": 112,
+    "rect": [
+      487,
+      584,
+      871,
+      1116
+    ],
+    "stem": "Virus-infected cell count t days after introduction is $C(t)=100(2)^{t/5}$. What does $(2)^{t/5}$ mean?",
+    "choices": [
+      "Infected cells double every five days",
+      "Infected cells grow fivefold every two days",
+      "Infected cells double every day",
+      "Infected cells grow fivefold every day"
+    ],
+    "correct": "A",
+    "explanation": "Each increment of five days increases the exponent by one, doubling the cell count."
+  },
+  {
+    "exercise": 2,
+    "n": 6,
+    "page": 113,
+    "rect": [
+      75,
+      91,
+      462,
+      415
+    ],
+    "stem": "A $326.50 stock is predicted to be worth $413.60 after eight years. Which exponential model could fit?",
+    "choices": [
+      "$V(t)=87.10(1.03)^t$",
+      "$V(t)=87.10(1.3)^t$",
+      "$V(t)=326.50(1.03)^t$",
+      "$V(t)=326.50(1.3)^t$"
+    ],
+    "correct": "C",
+    "explanation": "The initial value is 326.50, and 326.50(1.03)^8≈413.60."
+  },
+  {
+    "exercise": 2,
+    "n": 7,
+    "page": 113,
+    "rect": [
+      75,
+      418,
+      462,
+      661
+    ],
+    "stem": "If $f(x)=x/2$, which describes f?",
+    "choices": [
+      "Decreasing linear",
+      "Decreasing exponential",
+      "Increasing linear",
+      "Increasing exponential"
+    ],
+    "correct": "C",
+    "explanation": "f is a line with positive slope 1/2."
+  },
+  {
+    "exercise": 2,
+    "n": 8,
+    "page": 113,
+    "rect": [
+      75,
+      672,
+      462,
+      1080
+    ],
+    "stem": "Ben pays $30 on day 1 and each subsequent day 1.5 times the prior day. Which equation gives day n payment r?",
+    "choices": [
+      "$r=30(1.5)^n$",
+      "$r=30(1.5)^{n−1}$",
+      "$r=30(2.5)^n$",
+      "$r=30(2.5)^{n−1}$"
+    ],
+    "correct": "B",
+    "explanation": "The first payment is at n=1, so the exponent is n−1."
+  },
+  {
+    "exercise": 2,
+    "n": 9,
+    "page": 113,
+    "rect": [
+      484,
+      91,
+      869,
+      435
+    ],
+    "stem": "Honeybees are modeled by $h(t)=10000(3)^{bt}$, with t in days. There are 30,000 after 10 days. Find b.",
+    "choices": [],
+    "correct": "1/10",
+    "explanation": "30,000/10,000=3=3^{10b}, hence b=1/10."
+  },
+  {
+    "exercise": 2,
+    "n": 10,
+    "page": 113,
+    "rect": [
+      484,
+      440,
+      869,
+      749
+    ],
+    "stem": "Investment value after t years is $W(t)=830(1.09)^{(6/8)t}$. It rises by 9% every n months. Find n.",
+    "choices": [],
+    "correct": "16",
+    "explanation": "One growth period is 8/6=4/3 years, or 16 months."
+  },
+  {
+    "exercise": 2,
+    "n": 11,
+    "page": 113,
+    "rect": [
+      484,
+      760,
+      869,
+      1130
+    ],
+    "stem": "$g(x)=256(0.61)^{x/30}=256(1−k/100)^{x/10}$. Find k to the nearest integer.",
+    "choices": [
+      "15",
+      "20",
+      "27",
+      "77"
+    ],
+    "correct": "A",
+    "explanation": "A ten-unit growth factor is the cube root of 0.61, about 0.85, giving k≈15."
+  },
+  {
+    "exercise": 2,
+    "n": 12,
+    "page": 114,
+    "rect": [
+      75,
+      91,
+      462,
+      394
+    ],
+    "stem": "A pendant loses 4% of its value annually. At the start of 1991 it is worth $840. Which model gives value t years after the start of 1990?",
+    "choices": [
+      "$v=840(0.96)^t$",
+      "$v=840(1.04)(0.96)^t$",
+      "$v=875(0.96)^t$",
+      "$v=875−875(0.04)^t$"
+    ],
+    "correct": "C",
+    "explanation": "The start-of-1990 value is 840/0.96=875; it retains 96% each year."
+  },
+  {
+    "exercise": 2,
+    "n": 13,
+    "page": 114,
+    "rect": [
+      75,
+      401,
+      462,
+      899
+    ],
+    "stem": "The source table gives barrel price P: at days 0,10,20,30,40 it is 50,60,72,86.40,103.68. For $P=50r^{t/n}$, which r and n could work?",
+    "choices": [
+      "r=1.2,n=5",
+      "r=1.44,n=5",
+      "r=1.2,n=20",
+      "r=1.44,n=20"
+    ],
+    "correct": "D",
+    "explanation": "Price rises by 1.2 every 10 days, equivalently 1.44 every 20 days."
+  },
+  {
+    "exercise": 2,
+    "n": 14,
+    "page": 114,
+    "rect": [
+      75,
+      913,
+      462,
+      1153
+    ],
+    "stem": "For x≥0, which equivalent exponential form displays the minimum value of f as a constant or coefficient?",
+    "choices": [
+      "$f(x)=50(2.5)(1.25)^{x−2}$",
+      "$f(x)=125(0.8)(1.25)^{x−1}$",
+      "$f(x)=64(1.25)^{x+1}$",
+      "$f(x)=80(0.64)(1.25)^{x+2}$"
+    ],
+    "correct": "D",
+    "explanation": "The function grows with x, and f(0)=80; only choice D displays 80 as a coefficient."
+  },
+  {
+    "exercise": 2,
+    "n": 15,
+    "page": 114,
+    "rect": [
+      480,
+      91,
+      866,
+      395
+    ],
+    "stem": "The number of cars in millions t years after 2009 is $C=4(1.002)^{2t}$. What is the percent increase every 6 months?",
+    "choices": [
+      "0.002",
+      "0.04",
+      "0.2",
+      "2"
+    ],
+    "correct": "C",
+    "explanation": "The exponent advances by one every half-year, giving 0.2% increase each six months."
+  },
+  {
+    "exercise": 2,
+    "n": 16,
+    "page": 114,
+    "rect": [
+      480,
+      401,
+      866,
+      752
+    ],
+    "stem": "A festival increases ticket supply 5% annually and offers 40,000 in year 4. Which model gives supply T in year n?",
+    "choices": [
+      "$T=40000(0.05)^{n−4}$",
+      "$T=40000(1.05)^n$",
+      "$T=40000(1.05)^{n−4}$",
+      "$T=40000(1.05)^{n+4}$"
+    ],
+    "correct": "C",
+    "explanation": "At n=4 the exponent must be zero; then it increases by one per year."
+  },
+  {
+    "exercise": 2,
+    "n": 17,
+    "page": 114,
+    "rect": [
+      480,
+      762,
+      866,
+      1155
+    ],
+    "stem": "Thistles are $p(t)=870(1.14)^t$, t years after 2000. Which q(n) uses n years after 2003?",
+    "choices": [
+      "$870(1.14)^{n−3}$",
+      "$870(1.14)^{3n}$",
+      "$870(1.14)^3(1.14)^{n/3}$",
+      "$870(1.14)^3(1.14)^n$"
+    ],
+    "correct": "D",
+    "explanation": "At n=0 it is 2003, three years after 2000; multiply by (1.14)^3 then by (1.14)^n."
+  }
+]

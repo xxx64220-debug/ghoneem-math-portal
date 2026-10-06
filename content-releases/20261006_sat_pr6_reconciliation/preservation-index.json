@@ -1,0 +1,445 @@
+{
+  "source_pr": 6,
+  "source_head": "4c2b60308e0df2b97453b1444676cec8e4a59c19",
+  "reconciled_base": "f9d865a81bb9e7a790c1c6ea6c01fa96fa593857",
+  "files": [
+    {
+      "source_path": "content/sat-elite-may-2026/README.md",
+      "preserved_path": "content/sat-elite-may-2026/README.md",
+      "sha256": "9f05fb1de66c5cd0b0a3e51e11b7d15b34a3448234522cb9cc85f6bdd06127b4",
+      "bytes": 1131
+    },
+    {
+      "source_path": "content/sat-elite-may-2026/build.py",
+      "preserved_path": "content/sat-elite-may-2026/build.py",
+      "sha256": "910bd0aff62b74ff6513b0337b92b7c75911c4daf192253d16294e82a014f76f",
+      "bytes": 8688
+    },
+    {
+      "source_path": "content/sat-elite-may-2026/image-hashes.json",
+      "preserved_path": "content/sat-elite-may-2026/image-hashes.json",
+      "sha256": "5b641715164c668c84a60c3f66f4b5bc399153e113e115d5fdeabca373478f5a",
+      "bytes": 3523
+    },
+    {
+      "source_path": "content/sat-elite-may-2026/questions.json",
+      "preserved_path": "content/sat-elite-may-2026/questions.json",
+      "sha256": "8548d54ba014238117d8ed0fa242eb593a1989808f0a1f77764cbe36c08692bb",
+      "bytes": 12840
+    },
+    {
+      "source_path": "content/sat-march-int-2026/README.md",
+      "preserved_path": "content/sat-march-int-2026/README.md",
+      "sha256": "e3f3c2516e7ad96cf390730eaefdbf8be66a370acb9d61375a53913ce8a742e8",
+      "bytes": 2518
+    },
+    {
+      "source_path": "content/sat-march-int-2026/build.py",
+      "preserved_path": "content/sat-march-int-2026/build.py",
+      "sha256": "cee08d058fa16b4aec194ba194acc71fa9a55965c59a2aa0484986921b40271d",
+      "bytes": 8246
+    },
+    {
+      "source_path": "content/sat-march-int-2026/image-hashes.json",
+      "preserved_path": "content/sat-march-int-2026/image-hashes.json",
+      "sha256": "2007a7e7600f531d68fcdc3a2d509dae9acc5a06a86f6c3934ff0c2a2f0e27c4",
+      "bytes": 3203
+    },
+    {
+      "source_path": "content/sat-march-int-2026/questions.json",
+      "preserved_path": "content/sat-march-int-2026/questions.json",
+      "sha256": "c8c955a24c03d82c7b83d347d4ac302bb87dd4fc881217f16dc1663bfe7546a6",
+      "bytes": 11389
+    },
+    {
+      "source_path": "content/sat-march-us-2026/README.md",
+      "preserved_path": "content/sat-march-us-2026/README.md",
+      "sha256": "08d7ec17bd9bd7ad713eb9ae5e04130b6f6edc75a947d9903b1ea9b0f5b48da1",
+      "bytes": 1770
+    },
+    {
+      "source_path": "content/sat-march-us-2026/build.py",
+      "preserved_path": "content/sat-march-us-2026/build.py",
+      "sha256": "7c7646815f0d447ea31d4cf846f24818bcdfef16f48cd93cfd1329d8e9dbc3b8",
+      "bytes": 7568
+    },
+    {
+      "source_path": "content/sat-march-us-2026/image-hashes.json",
+      "preserved_path": "content/sat-march-us-2026/image-hashes.json",
+      "sha256": "9f31bcffc695132809a8047df420bf86455b99345b4bfec7d58bda017c836235",
+      "bytes": 3043
+    },
+    {
+      "source_path": "content/sat-march-us-2026/questions.json",
+      "preserved_path": "content/sat-march-us-2026/questions.json",
+      "sha256": "179ac24fc7ebe0e7a03520a93022a9b1b56842dbea398f9a017017991184f611",
+      "bytes": 14604
+    },
+    {
+      "source_path": "content/sat-panda-ch01/README.md",
+      "preserved_path": "content/sat-panda-ch01/README.md",
+      "sha256": "331fb8984bc8d5da05275e811a70b9c83a89002fab11798be9691a846994923f",
+      "bytes": 1582
+    },
+    {
+      "source_path": "content/sat-panda-ch01/build.py",
+      "preserved_path": "content/sat-panda-ch01/build.py",
+      "sha256": "87b91e4589fc0465a28a03dde05c9d5e7d2d8aa4e35ce8f96b7c084271d242cf",
+      "bytes": 6020
+    },
+    {
+      "source_path": "content/sat-panda-ch01/questions.json",
+      "preserved_path": "content/sat-panda-ch01/questions.json",
+      "sha256": "b5b5c07e6e99650ee9029f18942d9191278ba6ae6d9235e4349e4cf695256b9c",
+      "bytes": 16873
+    },
+    {
+      "source_path": "content/sat-panda-ch02/README.md",
+      "preserved_path": "content/sat-panda-ch02/README.md",
+      "sha256": "1c4fc37da80267a7db904eae7beb8c551d52317b90a9745646aaec9bf3a13dde",
+      "bytes": 626
+    },
+    {
+      "source_path": "content/sat-panda-ch02/build.py",
+      "preserved_path": "content/sat-panda-ch02/build.py",
+      "sha256": "c7b1723d88a6037eddb8fe8adc6fdedfb3d1d785d04d62ce23bcc5cc1c2e1497",
+      "bytes": 5698
+    },
+    {
+      "source_path": "content/sat-panda-ch02/questions.json",
+      "preserved_path": "content/sat-panda-ch02/questions.json",
+      "sha256": "ab8d67b7143c143c7b44cd82b23c755249b11f342ee24c0090aeb2e2784ed4c8",
+      "bytes": 11712
+    },
+    {
+      "source_path": "content/sat-panda-ch03/README.md",
+      "preserved_path": "content/sat-panda-ch03/README.md",
+      "sha256": "b6be6eb6fc12f90266dd1035fb9ae08f3d3afde5616b621034038f23e26e2b62",
+      "bytes": 816
+    },
+    {
+      "source_path": "content/sat-panda-ch03/build.py",
+      "preserved_path": "content/sat-panda-ch03/build.py",
+      "sha256": "156cf781c83d6aa05406d99291018670408c850737074a28dbe283977637650b",
+      "bytes": 6080
+    },
+    {
+      "source_path": "content/sat-panda-ch03/questions.json",
+      "preserved_path": "content/sat-panda-ch03/questions.json",
+      "sha256": "bb065180e52a1862b2b87c1b4bc552761cfbfeefc8027d2972420f0bdd119fee",
+      "bytes": 18577
+    },
+    {
+      "source_path": "content/sat-panda-ch04/README.md",
+      "preserved_path": "content/sat-panda-ch04/README.md",
+      "sha256": "771c6605e8c17647b7cc4936fa1ad07cbf8defeb61b9698b2cbb647c1bebc416",
+      "bytes": 829
+    },
+    {
+      "source_path": "content/sat-panda-ch04/build.py",
+      "preserved_path": "content/sat-panda-ch04/build.py",
+      "sha256": "268483ffd84b973ae647742c3320500fb7df21ea710042e0522db578bf7e5005",
+      "bytes": 5926
+    },
+    {
+      "source_path": "content/sat-panda-ch04/questions.json",
+      "preserved_path": "content/sat-panda-ch04/questions.json",
+      "sha256": "038fae6c969d4dfef0c0c4df4fc33b6239f60a9c748d8568a7c983f4d6e67c32",
+      "bytes": 14232
+    },
+    {
+      "source_path": "content/sat-panda-ch05/README.md",
+      "preserved_path": "content/sat-panda-ch05/README.md",
+      "sha256": "d3e238103652a41e7b35a97fd53e124aa07bda2cbf03393f38dad32db1fdaf66",
+      "bytes": 653
+    },
+    {
+      "source_path": "content/sat-panda-ch05/build.py",
+      "preserved_path": "content/sat-panda-ch05/build.py",
+      "sha256": "6c83e5904191e5c5855c27aeb2fd8046e492be6226381f34d2ab045147be6dbc",
+      "bytes": 5977
+    },
+    {
+      "source_path": "content/sat-panda-ch05/questions.json",
+      "preserved_path": "content/sat-panda-ch05/questions.json",
+      "sha256": "cb5e8507865357be465e6bda0c48d2d7b537125ff5896370609fa637ea3d07a8",
+      "bytes": 15835
+    },
+    {
+      "source_path": "content/sat-panda-ch06/README.md",
+      "preserved_path": "content/sat-panda-ch06/README.md",
+      "sha256": "f00065c4f8b5d5511d5bcba36691e1813e99ec2654e2051755ce309a0274d5a4",
+      "bytes": 933
+    },
+    {
+      "source_path": "content/sat-panda-ch06/build.py",
+      "preserved_path": "content/sat-panda-ch06/build.py",
+      "sha256": "2bf544ecc7548432d6df75162b3186953bc7a77a12703759d1db5950ee6001d6",
+      "bytes": 5836
+    },
+    {
+      "source_path": "content/sat-panda-ch06/questions.json",
+      "preserved_path": "content/sat-panda-ch06/questions.json",
+      "sha256": "33836fc7facf08bbd7f92865065567eb650cf6e0b69d16ba77054df829371229",
+      "bytes": 12948
+    },
+    {
+      "source_path": "content/sat-panda-ch07/README.md",
+      "preserved_path": "content/sat-panda-ch07/README.md",
+      "sha256": "d62399151aa8d7461e425b4183ef1573aa339efc077c39240792cf7e924717ba",
+      "bytes": 921
+    },
+    {
+      "source_path": "content/sat-panda-ch07/build.py",
+      "preserved_path": "content/sat-panda-ch07/build.py",
+      "sha256": "ba80fa0165cc642349b5f1972e007fe8080f37ee922acc3d21ebbd722428b25e",
+      "bytes": 5828
+    },
+    {
+      "source_path": "content/sat-panda-ch07/questions.json",
+      "preserved_path": "content/sat-panda-ch07/questions.json",
+      "sha256": "4c51707e53567170774a9071cc71f4881adec030f97d4cddc8b85d4e8c9a3aa8",
+      "bytes": 18982
+    },
+    {
+      "source_path": "content/sat-panda-ch08/README.md",
+      "preserved_path": "content/sat-panda-ch08/README.md",
+      "sha256": "fc3d30c60e32cf8df67a1971475c8a79d8af9997e95db505eeb490b10f207808",
+      "bytes": 840
+    },
+    {
+      "source_path": "content/sat-panda-ch08/build.py",
+      "preserved_path": "content/sat-panda-ch08/build.py",
+      "sha256": "8163005c1d245ec5764535db65594ed629b1ad170888b84fa89ff4f5afafd08a",
+      "bytes": 5805
+    },
+    {
+      "source_path": "content/sat-panda-ch08/questions.json",
+      "preserved_path": "content/sat-panda-ch08/questions.json",
+      "sha256": "13553a5ae2f9cb85d7979c2b4f6d15bcde0224c4a5da417c6dd764088ba02d28",
+      "bytes": 11466
+    },
+    {
+      "source_path": "content/sat-panda-ch09/README.md",
+      "preserved_path": "content/sat-panda-ch09/README.md",
+      "sha256": "022cbb512cf831f02efd46daa5afc45964a5cc18d39608a82469f8bf4c30f2fb",
+      "bytes": 914
+    },
+    {
+      "source_path": "content/sat-panda-ch09/build.py",
+      "preserved_path": "content/sat-panda-ch09/build.py",
+      "sha256": "567c7d565a7b72acbb2fd7b3cb2bf8af994648880295c418c47a3861d56e86f0",
+      "bytes": 5825
+    },
+    {
+      "source_path": "content/sat-panda-ch09/questions.json",
+      "preserved_path": "content/sat-panda-ch09/questions.json",
+      "sha256": "4384ad7f8add5c4421b1bdc86cd963fe3c91f4542eb735c02fbb65c232b35d41",
+      "bytes": 15585
+    },
+    {
+      "source_path": "content/sat-panda-ch10/README.md",
+      "preserved_path": "content/sat-panda-ch10/README.md",
+      "sha256": "a1d672d006fac73fed8695dd3e15a28ae5b7515d386e8b0d2e8dd2fe4ec24df5",
+      "bytes": 935
+    },
+    {
+      "source_path": "content/sat-panda-ch10/build.py",
+      "preserved_path": "content/sat-panda-ch10/build.py",
+      "sha256": "36339061b110811812894ee35fef5edc32e0e1b89d390121062ef67eb03ecab3",
+      "bytes": 5841
+    },
+    {
+      "source_path": "content/sat-panda-ch10/questions.json",
+      "preserved_path": "content/sat-panda-ch10/questions.json",
+      "sha256": "e0f91b177718e816a85afc3ce113cf2f5f248c928fa7d4e3c94b3e9453e778bd",
+      "bytes": 14404
+    },
+    {
+      "source_path": "content/sat-panda-ch11/README.md",
+      "preserved_path": "content/sat-panda-ch11/README.md",
+      "sha256": "bc102ed662ae2559d239be0d84c39fc7068579ecfdab23842bedcace11757bb9",
+      "bytes": 1465
+    },
+    {
+      "source_path": "content/sat-panda-ch11/build.py",
+      "preserved_path": "content/sat-panda-ch11/build.py",
+      "sha256": "b413c8dafd9fd7ef587592dedfd54f284cb40460d48637b2646e5b38466746e7",
+      "bytes": 5998
+    },
+    {
+      "source_path": "content/sat-panda-ch11/make_manifest.py",
+      "preserved_path": "content/sat-panda-ch11/make_manifest.py",
+      "sha256": "53f3d65b129675b0cc2098b1b166926574e00b5ccd36e687d330970ba677b5ad",
+      "bytes": 10009
+    },
+    {
+      "source_path": "content/sat-panda-ch11/questions.json",
+      "preserved_path": "content/sat-panda-ch11/questions.json",
+      "sha256": "82208ab96c5910f7f2f0bd4597488b3d635822d43bb6501083d810a71f7c0892",
+      "bytes": 15365
+    },
+    {
+      "source_path": "content/sat-panda-ch11/repair-source-chapters.sql",
+      "preserved_path": "content/sat-panda-ch11/repair-source-chapters.sql",
+      "sha256": "ea63c82180f9dc96361464b033b1d6e976ea5735b79e9a26efd28a064fc5ac6e",
+      "bytes": 1479
+    },
+    {
+      "source_path": "content/sat-panda-ch12/README.md",
+      "preserved_path": "content/sat-panda-ch12/README.md",
+      "sha256": "6213bd5690d013cdd7adc24891f348be6c89370def7e460a34f2ba7ace9ab9ae",
+      "bytes": 1338
+    },
+    {
+      "source_path": "content/sat-panda-ch12/build.py",
+      "preserved_path": "content/sat-panda-ch12/build.py",
+      "sha256": "c5bb9093fef87def0217b875b4e2bbcbd08f5d9fb97cd8d709737cf943c3a93f",
+      "bytes": 6100
+    },
+    {
+      "source_path": "content/sat-panda-ch12/make_manifest.py",
+      "preserved_path": "content/sat-panda-ch12/make_manifest.py",
+      "sha256": "2fa2757113fa23c5ca4ae1c57f4448cfd203fa59735b022bf323cdc36b378f98",
+      "bytes": 6636
+    },
+    {
+      "source_path": "content/sat-panda-ch12/questions.json",
+      "preserved_path": "content/sat-panda-ch12/questions.json",
+      "sha256": "d7ecae916a96845e010225eb774956c2e44bfb81fb67c67d80a8574910723d4a",
+      "bytes": 11984
+    },
+    {
+      "source_path": "content/sat-panda-ch13/README.md",
+      "preserved_path": "content/sat-panda-ch13/README.md",
+      "sha256": "b9a669dfdddecab64747c42377db7fb7a0af4cddb4a93b3712d9502105743aab",
+      "bytes": 1517
+    },
+    {
+      "source_path": "content/sat-panda-ch13/build.py",
+      "preserved_path": "content/sat-panda-ch13/build.py",
+      "sha256": "a22b92606c0f8dcbd37a5396db077085eec1a1beaf4ca3f7952973d2fec80d48",
+      "bytes": 6051
+    },
+    {
+      "source_path": "content/sat-panda-ch13/make_manifest.py",
+      "preserved_path": "content/sat-panda-ch13/make_manifest.py",
+      "sha256": "65a83999742ad0eae78d9a799c9362ac143b1d277d483ce21722551d3c4273ee",
+      "bytes": 10504
+    },
+    {
+      "source_path": "content/sat-panda-ch13/questions.json",
+      "preserved_path": "content/sat-panda-ch13/questions.json",
+      "sha256": "47b49673a8712854d619b7408883c3ebb320ea92f6cc446bd17a89a1050f3550",
+      "bytes": 17896
+    },
+    {
+      "source_path": "content/sat-panda-ch14-26/README.md",
+      "preserved_path": "content/sat-panda-ch14-26/README.md",
+      "sha256": "e8eba06136d2e7e6ce32655e3d2d36b9177d8fb6adab0c3acf17c396aeb14c0d",
+      "bytes": 2040
+    },
+    {
+      "source_path": "content/sat-panda-ch14-26/build.py",
+      "preserved_path": "content/sat-panda-ch14-26/build.py",
+      "sha256": "ace9e281a5003566071b89f6c47bc0e85be170592f729b1929f15b827351fb49",
+      "bytes": 9105
+    },
+    {
+      "source_path": "content/sat-panda-ch14-26/extract.py",
+      "preserved_path": "content/sat-panda-ch14-26/extract.py",
+      "sha256": "676c0c9da9187d367c5a4bbb2c9832360525b059318c87e9dc3a5b2f371a4a60",
+      "bytes": 4185
+    },
+    {
+      "source_path": "content/sat-panda-ch14-26/question-index.json",
+      "preserved_path": "content/sat-panda-ch14-26/question-index.json",
+      "sha256": "9bcf3ac5edd79ad96835b2214cdc91e0ebd92b600d6957e9c410ce00e207b28e",
+      "bytes": 70787
+    },
+    {
+      "source_path": "content/sat-panda-ch14-26/reviewed-keys.json",
+      "preserved_path": "content/sat-panda-ch14-26/reviewed-keys.json",
+      "sha256": "1ba0bf7f483cd281a2b0fb104e9af331283cc91f8bfb3f4963a181f03dea114f",
+      "bytes": 2671
+    },
+    {
+      "source_path": "content/sat-sep-2026/README.md",
+      "preserved_path": "content/sat-sep-2026/README.md",
+      "sha256": "1049b551a62eaa0e010df8e10d17dfb41cd154380c98e02fe3d6978fef329043",
+      "bytes": 3743
+    },
+    {
+      "source_path": "content/sat-sep-2026/audit.json",
+      "preserved_path": "content/sat-sep-2026/audit.json",
+      "sha256": "c3aa144638348e0752ed9649d98fb0c8861cdacebe3803b7ffece97057117e08",
+      "bytes": 1573
+    },
+    {
+      "source_path": "content/sat-sep-2026/build-backfill.py",
+      "preserved_path": "content/sat-sep-2026/build-backfill.py",
+      "sha256": "b5e89ae9a99bd44742dbe6b6b8b6eb1397f1f714389c734ca083d25a363d9352",
+      "bytes": 6014
+    },
+    {
+      "source_path": "content/sat-sep-2026/build-release.py",
+      "preserved_path": "content/sat-sep-2026/build-release.py",
+      "sha256": "e7e32eb9a976deaab2dd2f237a541f1a99453ca79d437d6334da06ec681763e9",
+      "bytes": 8425
+    },
+    {
+      "source_path": "content/sat-sep-2026/questions.json",
+      "preserved_path": "content/sat-sep-2026/questions.json",
+      "sha256": "03d4c9d1847fa6600787bcfd4a766383118f90f50fe4b80dd9b3003b67b52a03",
+      "bytes": 10809
+    },
+    {
+      "source_path": "content/sat-sep-2026/release.sql",
+      "preserved_path": "content/sat-sep-2026/release.sql",
+      "sha256": "4238a6e5781ae6628de759b3fac07c09cfb304dbcc3d040fe089ae4045b0bf7e",
+      "bytes": 18875
+    },
+    {
+      "source_path": "content/sat-sep-2026/revision-backfill.sql",
+      "preserved_path": "content/sat-sep-2026/revision-backfill.sql",
+      "sha256": "d232842f477809b54ddc4e9e8936cece99f52d9153919fe066295eb8162c76de",
+      "bytes": 8610
+    },
+    {
+      "source_path": "content/sat-sep-held-2026-09-29/README.md",
+      "preserved_path": "content/sat-sep-held-2026-09-29/README.md",
+      "sha256": "a0bbdbe2f2430f0fe14882e6c182e85425d91671f48bb5a9f7a4ca739710e3be",
+      "bytes": 2408
+    },
+    {
+      "source_path": "content/sat-sep-held-2026-09-29/build.py",
+      "preserved_path": "content/sat-sep-held-2026-09-29/build.py",
+      "sha256": "d293e1e043e26f05efea6e445b7cbe9d32238116257a051be3e76547eeab39d2",
+      "bytes": 5698
+    },
+    {
+      "source_path": "content/sat-sep-held-2026-09-29/questions.json",
+      "preserved_path": "content/sat-sep-held-2026-09-29/questions.json",
+      "sha256": "82a5d097758825ce4955edffabfc777bbfa9f58b1157daa15e5574d37161bfb4",
+      "bytes": 1750
+    },
+    {
+      "source_path": "content/sat-uploads-2026-09-28/README.md",
+      "preserved_path": "content/sat-uploads-2026-09-28/README.md",
+      "sha256": "4acfaa481e64ef3cfb1fe1fcfced03ae6c0c12d6aa3bc48a8f5fc16c44168ecb",
+      "bytes": 2436
+    },
+    {
+      "source_path": "supabase/migrations/20260928_panda_worked_solution_after_check.sql",
+      "preserved_path": "content-releases/20261006_sat_pr6_reconciliation/historical-migrations/20260928_panda_worked_solution_after_check.sql",
+      "sha256": "b8a88296abf1c4242b564cd498805a27e56d06e27241e13d2abd878a4e5e2dd0",
+      "bytes": 2150
+    },
+    {
+      "source_path": "supabase/migrations/20260928_zz_panda_private_worked_pages.sql",
+      "preserved_path": "content-releases/20261006_sat_pr6_reconciliation/historical-migrations/20260928_zz_panda_private_worked_pages.sql",
+      "sha256": "45c80de4d44df4b4e97307242686cc5bc156347cfc825cb15694ed17e7e966a9",
+      "bytes": 3996
+    }
+  ]
+}
