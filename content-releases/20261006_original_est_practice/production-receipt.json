@@ -1,0 +1,28 @@
+{
+  "release": "20261006-original-est-practice",
+  "applied_at": "2026-10-06T11:31:51.60839+00:00",
+  "audit_id": 19527,
+  "inserted_questions": 50,
+  "inserted_private_keys": 50,
+  "verified_figures": 13,
+  "exact_content_and_keys_verified": true,
+  "practice_eligible": 50,
+  "daily_eligible": 50,
+  "est_bank_count_after": 3474,
+  "existing_question_and_key_hash_before": "1cef3f5af1c1827d51015de7a096f4ff",
+  "existing_question_and_key_hash_after": "1cef3f5af1c1827d51015de7a096f4ff",
+  "history_counts_before": {
+    "exams": 542,
+    "attempts": 278,
+    "assignments": 573,
+    "revision_items": 2436
+  },
+  "history_counts_after": {
+    "exams": 542,
+    "attempts": 278,
+    "assignments": 573,
+    "revision_items": 2436
+  },
+  "scope": "Insert-only questions, question_keys and one audit event. No student/assessment/schema/frontend writes.",
+  "release_commit": "a03e4b2c2045ec3281dea2810cd7e10f4b52b4e1"
+}
