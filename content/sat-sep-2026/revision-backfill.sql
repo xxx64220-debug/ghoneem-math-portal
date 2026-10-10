@@ -1,0 +1,43 @@
+-- Backfill revision from existing independently verified SAT items.
+-- The source questions and private keys are never edited.
+begin;
+set local statement_timeout='45s';
+create temporary table sat_topic_map on commit drop as
+ select * from jsonb_to_recordset('[{"topic": "Angle bisectors", "lesson": "Angles, triangles and similarity"}, {"topic": "Angles and parallel lines", "lesson": "Angles, triangles and similarity"}, {"topic": "Arc length", "lesson": "Circles"}, {"topic": "Area", "lesson": "Area and volume"}, {"topic": "Area of circles", "lesson": "Circles"}, {"topic": "Circle geometry", "lesson": "Circles"}, {"topic": "Circles", "lesson": "Circles"}, {"topic": "Cofunction identities", "lesson": "Angles, triangles and similarity"}, {"topic": "Comparing means", "lesson": "Statistics"}, {"topic": "Compound inequalities", "lesson": "Linear inequalities"}, {"topic": "Conditional probability", "lesson": "Probability"}, {"topic": "Constant functions", "lesson": "Functions and graphs"}, {"topic": "Continued fractions", "lesson": "Rational expressions and equations"}, {"topic": "Cubic graphs", "lesson": "Functions and graphs"}, {"topic": "Discriminant", "lesson": "Quadratics"}, {"topic": "Distinct roots", "lesson": "Polynomials"}, {"topic": "Distinct zeros", "lesson": "Polynomials"}, {"topic": "Equations from graphs", "lesson": "Linear equations"}, {"topic": "Equations of circles", "lesson": "Circles"}, {"topic": "Equations of lines", "lesson": "Linear equations"}, {"topic": "Evaluating functions", "lesson": "Functions and graphs"}, {"topic": "Exact values", "lesson": "Right triangles and trigonometry"}, {"topic": "Expanding polynomials", "lesson": "Polynomials"}, {"topic": "Exponential decay", "lesson": "Exponential models"}, {"topic": "Exponential growth", "lesson": "Exponential models"}, {"topic": "Exponential models", "lesson": "Exponential models"}, {"topic": "Factor theorem", "lesson": "Polynomials"}, {"topic": "Factored forms", "lesson": "Polynomials"}, {"topic": "Factoring", "lesson": "Polynomials"}, {"topic": "Factoring by grouping", "lesson": "Polynomials"}, {"topic": "Function transformations", "lesson": "Functions and graphs"}, {"topic": "Generalizing from samples", "lesson": "Statistical inference"}, {"topic": "Geometric mean", "lesson": "Right triangles and trigonometry"}, {"topic": "Infinitely many solutions", "lesson": "Linear equations"}, {"topic": "Intermediate value", "lesson": "Polynomials"}, {"topic": "Interpreting exponentials", "lesson": "Exponential models"}, {"topic": "Interpreting functions", "lesson": "Functions and graphs"}, {"topic": "Interpreting linear models", "lesson": "Lines and linear models"}, {"topic": "Intersections", "lesson": "Linear systems"}, {"topic": "Line of best fit", "lesson": "Scatterplots and models"}, {"topic": "Linear and exponential", "lesson": "Functions and graphs"}, {"topic": "Linear equations", "lesson": "Linear equations"}, {"topic": "Linear equations from graphs", "lesson": "Lines and linear models"}, {"topic": "Linear functions", "lesson": "Lines and linear models"}, {"topic": "Linear models", "lesson": "Lines and linear models"}, {"topic": "Linear models from scatterplots", "lesson": "Scatterplots and models"}, {"topic": "Margin of error", "lesson": "Statistical inference"}, {"topic": "Maximum of a quadratic", "lesson": "Quadratics"}, {"topic": "Mean", "lesson": "Statistics"}, {"topic": "Odd functions", "lesson": "Functions and graphs"}, {"topic": "Parallel lines", "lesson": "Angles, triangles and similarity"}, {"topic": "Percent change", "lesson": "Percentages"}, {"topic": "Percentages", "lesson": "Percentages"}, {"topic": "Perimeter", "lesson": "Area and volume"}, {"topic": "Polynomial division", "lesson": "Polynomials"}, {"topic": "Polynomial graphs", "lesson": "Polynomials"}, {"topic": "Probability", "lesson": "Probability"}, {"topic": "Proportional relationships", "lesson": "Ratios, rates and units"}, {"topic": "Quadratic formula", "lesson": "Quadratics"}, {"topic": "Quadratic models", "lesson": "Quadratics"}, {"topic": "Radians and degrees", "lesson": "Right triangles and trigonometry"}, {"topic": "Rational equations", "lesson": "Rational expressions and equations"}, {"topic": "Rational expressions", "lesson": "Rational expressions and equations"}, {"topic": "Ratios", "lesson": "Ratios, rates and units"}, {"topic": "Reading scatterplots", "lesson": "Scatterplots and models"}, {"topic": "Reading tables", "lesson": "Statistics"}, {"topic": "Rearranging formulas", "lesson": "Rearranging formulas"}, {"topic": "Remainder theorem", "lesson": "Polynomials"}, {"topic": "Removable discontinuities", "lesson": "Rational expressions and equations"}, {"topic": "Right triangle trigonometry", "lesson": "Right triangles and trigonometry"}, {"topic": "Roots and factors", "lesson": "Polynomials"}, {"topic": "Roots of polynomials", "lesson": "Polynomials"}, {"topic": "Sector area", "lesson": "Circles"}, {"topic": "Similar solids", "lesson": "Area and volume"}, {"topic": "Solving quadratics", "lesson": "Quadratics"}, {"topic": "Solving trig equations", "lesson": "Right triangles and trigonometry"}, {"topic": "Standard deviation", "lesson": "Statistics"}, {"topic": "Systems with no solution", "lesson": "Linear systems"}, {"topic": "Tangent systems", "lesson": "Linear systems"}, {"topic": "Transformations", "lesson": "Functions and graphs"}, {"topic": "Triangle angles", "lesson": "Angles, triangles and similarity"}, {"topic": "Trigonometric identities", "lesson": "Right triangles and trigonometry"}, {"topic": "Unique solutions", "lesson": "Linear equations"}, {"topic": "Unit circle", "lesson": "Right triangles and trigonometry"}, {"topic": "Unit circle coordinates", "lesson": "Right triangles and trigonometry"}, {"topic": "Unit conversion", "lesson": "Ratios, rates and units"}, {"topic": "Vertex form", "lesson": "Quadratics"}, {"topic": "Vertex form models", "lesson": "Quadratics"}, {"topic": "Volume ratios", "lesson": "Area and volume"}, {"topic": "Zeros of polynomials", "lesson": "Polynomials"}]'::jsonb) as t(topic text,lesson text);
+create temporary table sat_focus_map on commit drop as
+ select * from jsonb_to_recordset('[{"code": "AUGINT2-M2-05", "collection": "unique"}, {"code": "AUGINT2-M2-10", "collection": "must_know"}, {"code": "AUGINT2-M2-12", "collection": "must_know"}, {"code": "AUGINT2-M2-21", "collection": "unique"}, {"code": "AUGPRED-M2-13", "collection": "must_know"}, {"code": "MSET008-25", "collection": "unique"}, {"code": "MSET008-28", "collection": "unique"}, {"code": "MSET008-49", "collection": "must_know"}]'::jsonb) as t(code text,collection text);
+create temporary table sat_backfill on commit drop as
+ select q.id,q.topic,q.difficulty,q.assets->>'code' code,m.lesson,q.stem,q.choices,q.assets,
+        k.correct,k.explanation
+ from public.questions q
+ join public.question_keys k on k.question_id=q.id
+ left join public.revision_items r on r.question_id=q.id
+ left join sat_topic_map m on m.topic=q.topic
+ where q.track_id='sat'
+   and q.assets->>'paper' in ('2026 Aug Int II','August Prediction','MSET008')
+   and q.assets#>>'{content_review,status}'='verified'
+   and nullif(q.assets->>'release_hold_reason','') is null
+   and length(btrim(k.explanation))>=20
+   and jsonb_typeof(k.correct) in ('string','array')
+   and r.question_id is null;
+do $$ begin
+ if (select count(*) from sat_backfill)<>114
+    or exists(select 1 from sat_backfill where lesson is null)
+    or exists(select 1 from sat_focus_map f left join sat_backfill q on q.code=f.code where q.id is null)
+ then raise exception 'sat_revision_backfill_source_changed'; end if;
+end $$;
+insert into public.revision_items(question_id,lesson,idea,difficulty,programmes,fingerprint,active,focus)
+select q.id,q.lesson,q.topic,q.difficulty,array['sat']::text[],
+       md5(jsonb_build_array(q.stem,q.choices,q.assets,q.correct,q.explanation)::text),
+       true,jsonb_build_object('collections',case when f.collection is null then '[]'::jsonb
+                                                  else jsonb_build_array(f.collection) end,
+                               'bank_occurrences',0,
+                               'takeaway',case when f.collection is null then ''
+                                  else 'Review this source question and its checked worked solution.' end)
+from sat_backfill q left join sat_focus_map f on f.code=q.code
+on conflict(question_id) do nothing;
+do $$ begin
+ if (select count(*) from sat_backfill q join public.revision_items r on r.question_id=q.id)<>114
+ then raise exception 'sat_revision_backfill_incomplete'; end if;
+end $$;
+commit;

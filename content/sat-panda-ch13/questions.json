@@ -1,0 +1,814 @@
+[
+  {
+    "exercise": 1,
+    "n": 1,
+    "page": 152,
+    "rect": [
+      100,
+      140,
+      487,
+      425
+    ],
+    "stem": "Solve y = −5x + 65 and y = 25. Which ordered pair (x,y) is the solution?",
+    "choices": [
+      "(−8,25)",
+      "(8,25)",
+      "(25,−8)",
+      "(25,8)"
+    ],
+    "correct": "B",
+    "explanation": "25 = −5x + 65 gives x = 8, so the pair is (8,25)."
+  },
+  {
+    "exercise": 1,
+    "n": 2,
+    "page": 152,
+    "rect": [
+      100,
+      429,
+      487,
+      714
+    ],
+    "stem": "For 3x − 5y = −11 and x = 1 − 3y, find y.",
+    "choices": [
+      "−1",
+      "0",
+      "1",
+      "2"
+    ],
+    "correct": "C",
+    "explanation": "Substitute x = 1 − 3y: 3 − 14y = −11, hence y = 1."
+  },
+  {
+    "exercise": 1,
+    "n": 3,
+    "page": 152,
+    "rect": [
+      100,
+      717,
+      487,
+      1060
+    ],
+    "stem": "Solve y + 2x = 20 and 6x − 5y = 12. Which is (x,y)?",
+    "choices": [
+      "(−7,6)",
+      "(−6,7)",
+      "(6,7)",
+      "(7,6)"
+    ],
+    "correct": "D",
+    "explanation": "Use y = 20 − 2x; 6x − 5(20 − 2x) = 12 gives x = 7 and y = 6."
+  },
+  {
+    "exercise": 1,
+    "n": 4,
+    "page": 152,
+    "rect": [
+      507,
+      140,
+      899,
+      418
+    ],
+    "stem": "For y = x² + 10x + 23 and x − 9 = −15, find y.",
+    "choices": [],
+    "correct": "-1",
+    "explanation": "x = −6 and y = 36 − 60 + 23 = −1."
+  },
+  {
+    "exercise": 1,
+    "n": 5,
+    "page": 152,
+    "rect": [
+      507,
+      422,
+      899,
+      917
+    ],
+    "stem": "What is the intersection (x,y) of the two lines shown in the source graph?",
+    "choices": [
+      "(−4,−6)",
+      "(−3,−2)",
+      "(−2,−3)",
+      "(−1,2)"
+    ],
+    "correct": "C",
+    "explanation": "Read the graph at the crossing of the lines: (−2,−3)."
+  },
+  {
+    "exercise": 1,
+    "n": 6,
+    "page": 152,
+    "rect": [
+      507,
+      920,
+      899,
+      1175
+    ],
+    "stem": "For 2x + 5y = 24 and x + 4y = 15, find x + y.",
+    "choices": [
+      "7",
+      "8",
+      "9",
+      "10"
+    ],
+    "correct": "C",
+    "explanation": "Subtract the second equation from the first: x + y = 9."
+  },
+  {
+    "exercise": 1,
+    "n": 7,
+    "page": 153,
+    "rect": [
+      75,
+      90,
+      470,
+      375
+    ],
+    "stem": "How many solutions does 2x − 4y = 8 and x + 2y = 4 have?",
+    "choices": [
+      "Zero",
+      "One",
+      "Two",
+      "More than two"
+    ],
+    "correct": "B",
+    "explanation": "The equations have different slopes. Adding after dividing the first by 2 gives x = 4, y = 0; one solution."
+  },
+  {
+    "exercise": 1,
+    "n": 8,
+    "page": 153,
+    "rect": [
+      75,
+      380,
+      470,
+      865
+    ],
+    "stem": "A vendor sells 200 small and large cups at $5 and $7. Revenue from small cups is $160 more than from large cups. If x and y are their counts, which system models this?",
+    "choices": [
+      "x − y = 160; 5x + 7y = 200",
+      "x − y = 160; 7x + 5y = 200",
+      "x + y = 200; 5x = 7y + 160",
+      "x + y = 200; 7y = 5x + 160"
+    ],
+    "correct": "C",
+    "explanation": "The counts total 200, and small-cup revenue exceeds large-cup revenue: 5x − 7y = 160."
+  },
+  {
+    "exercise": 1,
+    "n": 9,
+    "page": 153,
+    "rect": [
+      75,
+      868,
+      470,
+      1128
+    ],
+    "stem": "If a/b = 4.5 and a/(kb) = 12.5, find k.",
+    "choices": [],
+    "correct": "9/25",
+    "explanation": "Dividing a/b by a/(kb) gives k = 4.5/12.5 = 9/25 = 0.36.",
+    "accepted": [
+      "9/25",
+      "0.36"
+    ]
+  },
+  {
+    "exercise": 1,
+    "n": 10,
+    "page": 153,
+    "rect": [
+      485,
+      90,
+      883,
+      424
+    ],
+    "stem": "One equation is 6x − 3y = 9. Which second equation makes the system have no solution?",
+    "choices": [
+      "3x − y = 2",
+      "2x − y = 3",
+      "x/3 − y/6 = 2",
+      "x/3 − y/6 = 1/2"
+    ],
+    "correct": "C",
+    "explanation": "The first line is x/3 − y/6 = 1/2; choice C is parallel with a different constant."
+  },
+  {
+    "exercise": 1,
+    "n": 11,
+    "page": 153,
+    "rect": [
+      485,
+      428,
+      883,
+      710
+    ],
+    "stem": "If x² − y² = 48 and x − y = 6, find x + y.",
+    "choices": [
+      "8",
+      "12",
+      "16",
+      "24"
+    ],
+    "correct": "A",
+    "explanation": "Factor (x − y)(x + y) = 48; since x − y = 6, x + y = 8."
+  },
+  {
+    "exercise": 1,
+    "n": 12,
+    "page": 153,
+    "rect": [
+      485,
+      713,
+      883,
+      1045
+    ],
+    "stem": "For 2x − 5y = a and bx + 10y = −8, find a if the lines have infinitely many common solutions.",
+    "choices": [
+      "−4",
+      "1/4",
+      "4",
+      "16"
+    ],
+    "correct": "C",
+    "explanation": "Multiply the first equation by −2; the constant becomes −2a = −8, so a = 4."
+  },
+  {
+    "exercise": 1,
+    "n": 13,
+    "page": 154,
+    "rect": [
+      95,
+      90,
+      480,
+      424
+    ],
+    "stem": "The lines y = ax + b and y = −bx meet at (2,8). Find a.",
+    "choices": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ],
+    "correct": "C",
+    "explanation": "From 8 = −2b, b = −4. Then 8 = 2a − 4, so a = 6."
+  },
+  {
+    "exercise": 1,
+    "n": 14,
+    "page": 154,
+    "rect": [
+      95,
+      428,
+      480,
+      875
+    ],
+    "stem": "The source graph shows y = x² + 1 and y = x − 1. How many real intersection points?",
+    "choices": [
+      "Zero",
+      "Exactly one",
+      "Exactly two",
+      "Exactly three"
+    ],
+    "correct": "A",
+    "explanation": "Equating them gives x² − x + 2 = 0 with discriminant −7, so no real intersection."
+  },
+  {
+    "exercise": 1,
+    "n": 15,
+    "page": 154,
+    "rect": [
+      95,
+      880,
+      480,
+      1180
+    ],
+    "stem": "If 3x − 5/16 = 4 and y = 2(3x − 5/16)², find y.",
+    "choices": [
+      "8",
+      "16",
+      "32",
+      "64"
+    ],
+    "correct": "C",
+    "explanation": "The parenthesized value equals 4, so y = 2·4² = 32."
+  },
+  {
+    "exercise": 1,
+    "n": 16,
+    "page": 154,
+    "rect": [
+      495,
+      90,
+      890,
+      417
+    ],
+    "stem": "For ax + 2y = 5 and 3x − 6y = 20, the system has exactly one solution. Which value of a is impossible?",
+    "choices": [
+      "−1",
+      "3/4",
+      "1",
+      "3"
+    ],
+    "correct": "A",
+    "explanation": "At a = −1, multiplying the first equation by −3 gives the same x,y coefficients as the second but a different constant; the lines are parallel."
+  },
+  {
+    "exercise": 1,
+    "n": 17,
+    "page": 154,
+    "rect": [
+      495,
+      420,
+      890,
+      779
+    ],
+    "stem": "For 3x = 16 and 80 = 4y² + 3x, which choice could be y?",
+    "choices": [
+      "−16/3",
+      "−4",
+      "4/3",
+      "8"
+    ],
+    "correct": "B",
+    "explanation": "Substitute 3x = 16: 4y² = 64, so y = ±4; −4 is listed."
+  },
+  {
+    "exercise": 1,
+    "n": 18,
+    "page": 154,
+    "rect": [
+      495,
+      785,
+      890,
+      1095
+    ],
+    "stem": "For −5x = 8 − ky and 18y + 5x = −10x + 21, find k if the lines never meet.",
+    "choices": [],
+    "correct": "-6",
+    "explanation": "Rewrite as ky − 5x = 8 and 18y + 15x = 21. Matching x coefficients after multiplying the first by −3 gives −3k = 18, so k = −6."
+  },
+  {
+    "exercise": 1,
+    "n": 19,
+    "page": 155,
+    "rect": [
+      80,
+      90,
+      475,
+      700
+    ],
+    "stem": "The source graph shows a line through (−3,5) and (0,3). Which second line makes a system with no solution?",
+    "choices": [
+      "y = −3x/2 − 1",
+      "y = 3x/2 + 3",
+      "y = −2x/3 − 1",
+      "y = −2x/3 + 3"
+    ],
+    "correct": "C",
+    "explanation": "The shown slope is (3 − 5)/(0 − (−3)) = −2/3. Choice C has the same slope and a different intercept."
+  },
+  {
+    "exercise": 1,
+    "n": 20,
+    "page": 155,
+    "rect": [
+      80,
+      706,
+      475,
+      990
+    ],
+    "stem": "The graphs y = x² − 7x + 7 and y = 2x − 1 intersect at (1,1) and (p,q). Find p.",
+    "choices": [],
+    "correct": "8",
+    "explanation": "Solve x² − 7x + 7 = 2x − 1: (x − 1)(x − 8) = 0, so p = 8."
+  },
+  {
+    "exercise": 1,
+    "n": 21,
+    "page": 155,
+    "rect": [
+      490,
+      90,
+      887,
+      485
+    ],
+    "stem": "Shannon drives 340 miles in 9 hours at 50 mph then 30 mph. How many miles were driven at 50 mph?",
+    "choices": [],
+    "correct": "175",
+    "explanation": "With times t and 9 − t, 50t + 30(9 − t) = 340 gives t = 3.5 hours, or 175 miles."
+  },
+  {
+    "exercise": 1,
+    "n": 22,
+    "page": 155,
+    "rect": [
+      490,
+      491,
+      887,
+      872
+    ],
+    "stem": "For 4/3 + (5/4)x = 28y + (5/8)x and my = (5x − 8)/2, find m if the equations are parallel and distinct.",
+    "choices": [],
+    "correct": "112",
+    "explanation": "The first equation simplifies to 15x − 672y = −32. The second is 5x − 2my = 8. Match slopes using three times the second: 6m = 672, so m = 112."
+  },
+  {
+    "exercise": 2,
+    "n": 1,
+    "page": 156,
+    "rect": [
+      100,
+      140,
+      487,
+      419
+    ],
+    "stem": "Which pair solves 4x − y/3 = −8 and y = 4x + 16?",
+    "choices": [
+      "(−2,8)",
+      "(−1,12)",
+      "(1,20)",
+      "(3,28)"
+    ],
+    "correct": "B",
+    "explanation": "Multiply first equation by 3: 12x − y = −24. Substitute y = 4x + 16 to get x = −1, y = 12."
+  },
+  {
+    "exercise": 2,
+    "n": 2,
+    "page": 156,
+    "rect": [
+      100,
+      423,
+      487,
+      715
+    ],
+    "stem": "For 9x = −7y + 22 and 5x = 7y − 76, find 7x.",
+    "choices": [],
+    "correct": "-27",
+    "explanation": "Add the equations: 14x = −54, hence 7x = −27."
+  },
+  {
+    "exercise": 2,
+    "n": 3,
+    "page": 156,
+    "rect": [
+      100,
+      719,
+      487,
+      1050
+    ],
+    "stem": "For y = 0.5x + 14 and x − y = −18, find y.",
+    "choices": [],
+    "correct": "10",
+    "explanation": "Set x = y − 18: y = 0.5(y − 18) + 14, giving y = 10."
+  },
+  {
+    "exercise": 2,
+    "n": 4,
+    "page": 156,
+    "rect": [
+      505,
+      140,
+      890,
+      593
+    ],
+    "stem": "How many common intersection points do the three lines in the source graph have?",
+    "choices": [
+      "Zero",
+      "Exactly one",
+      "Exactly two",
+      "Exactly three"
+    ],
+    "correct": "A",
+    "explanation": "The three lines do not all pass through a single point, so their system has zero solutions."
+  },
+  {
+    "exercise": 2,
+    "n": 5,
+    "page": 156,
+    "rect": [
+      505,
+      598,
+      890,
+      1015
+    ],
+    "stem": "Which system has no solution?",
+    "choices": [
+      "y = 8; x = 8",
+      "y = 8; y = 8x + 8",
+      "y = 8x; y = 8x + 8",
+      "y = −8x + 8; y = 8x + 8"
+    ],
+    "correct": "C",
+    "explanation": "The lines in C have equal slope 8 and different intercepts, hence no intersection."
+  },
+  {
+    "exercise": 2,
+    "n": 6,
+    "page": 157,
+    "rect": [
+      80,
+      90,
+      469,
+      373
+    ],
+    "stem": "For y = 2x − 14 and y = (x + 5)(x − 7), which listed x is a possible intersection?",
+    "choices": [
+      "−7",
+      "−3",
+      "4",
+      "9"
+    ],
+    "correct": "B",
+    "explanation": "2(x − 7) = (x + 5)(x − 7), giving x = 7 or x = −3; only −3 is listed."
+  },
+  {
+    "exercise": 2,
+    "n": 7,
+    "page": 157,
+    "rect": [
+      80,
+      377,
+      469,
+      660
+    ],
+    "stem": "How many intersection points have 3x − 6y = 15 and −2x + 4y = −10?",
+    "choices": [
+      "Zero",
+      "One",
+      "Two",
+      "More than two"
+    ],
+    "correct": "D",
+    "explanation": "Both equations reduce to x − 2y = 5, so all their points coincide."
+  },
+  {
+    "exercise": 2,
+    "n": 8,
+    "page": 157,
+    "rect": [
+      80,
+      664,
+      469,
+      947
+    ],
+    "stem": "For y = −10x and x² + y = 96, find y in a solution with y < 0.",
+    "choices": [],
+    "correct": "-160",
+    "explanation": "x² − 10x − 96 = (x + 6)(x − 16) = 0. At x = 16, y = −160."
+  },
+  {
+    "exercise": 2,
+    "n": 9,
+    "page": 157,
+    "rect": [
+      485,
+      90,
+      889,
+      320
+    ],
+    "stem": "If (x + y)/x = 9 and ay/(3x) = 32, find a.",
+    "choices": [],
+    "correct": "12",
+    "explanation": "The first ratio gives y = 8x. Then 8a/3 = 32, so a = 12."
+  },
+  {
+    "exercise": 2,
+    "n": 10,
+    "page": 157,
+    "rect": [
+      485,
+      326,
+      889,
+      624
+    ],
+    "stem": "For 9(2x + 1) + 27(y − 4) = 810 and (2x + 1) + (y − 4) = −393, find 8(y − 4).",
+    "choices": [],
+    "correct": "1932",
+    "explanation": "Divide the first by 9, subtract the second: 2(y − 4) = 483. Multiply by 4 to get 1,932."
+  },
+  {
+    "exercise": 2,
+    "n": 11,
+    "page": 157,
+    "rect": [
+      485,
+      629,
+      889,
+      990
+    ],
+    "stem": "A restaurant has 30 tables seating 144 people: each rectangular table seats 4 and each round table seats 8. How many rectangular tables?",
+    "choices": [
+      "12",
+      "16",
+      "20",
+      "24"
+    ],
+    "correct": "D",
+    "explanation": "With r + c = 30 and 4r + 8c = 144, subtract from 8(r + c) = 240: 4r = 96, r = 24."
+  },
+  {
+    "exercise": 2,
+    "n": 12,
+    "page": 158,
+    "rect": [
+      90,
+      90,
+      480,
+      475
+    ],
+    "stem": "For mx − 6y = 10 and 2x − ny = 5, find m/n if the equations have infinitely many solutions.",
+    "choices": [
+      "1/12",
+      "1/3",
+      "4/3",
+      "3"
+    ],
+    "correct": "C",
+    "explanation": "Double the second equation: 4x − 2ny = 10. Thus m = 4, n = 3, and m/n = 4/3."
+  },
+  {
+    "exercise": 2,
+    "n": 13,
+    "page": 158,
+    "rect": [
+      90,
+      480,
+      480,
+      738
+    ],
+    "stem": "With x − 2y = 5, which second equation gives exactly one common solution?",
+    "choices": [
+      "−x + 2y = 0",
+      "x − 2y = 0",
+      "−x + 2y = −5",
+      "x + 2y = −5"
+    ],
+    "correct": "D",
+    "explanation": "Only x + 2y = −5 has a different slope, so it crosses the first line once."
+  },
+  {
+    "exercise": 2,
+    "n": 14,
+    "page": 158,
+    "rect": [
+      90,
+      744,
+      480,
+      1118
+    ],
+    "stem": "For x² − y² = 1/12 and x − 2y = 0, which listed value of y is possible?",
+    "choices": [
+      "−1/6",
+      "−1/√12",
+      "1/4",
+      "1/2"
+    ],
+    "correct": "A",
+    "explanation": "x = 2y gives 3y² = 1/12, so y = ±1/6; −1/6 is listed."
+  },
+  {
+    "exercise": 2,
+    "n": 15,
+    "page": 158,
+    "rect": [
+      495,
+      90,
+      893,
+      438
+    ],
+    "stem": "For (3/10)y + (b/3)x = 3/4 − (1/5)y and (3/8)x + 3/5 = −(1/4)y + 8/5, find b if the lines are parallel and distinct.",
+    "choices": [],
+    "correct": "9/4",
+    "explanation": "Simplify to y/2 + (b/3)x = 3/4 and y/4 + (3/8)x = 1. Double the latter and match x coefficients: b/3 = 3/4, so b = 9/4.",
+    "accepted": [
+      "9/4",
+      "2.25"
+    ]
+  },
+  {
+    "exercise": 2,
+    "n": 16,
+    "page": 158,
+    "rect": [
+      495,
+      444,
+      893,
+      1120
+    ],
+    "stem": "Which listed pair of equations matches the two source lines meeting at (5600,6900)?",
+    "choices": [
+      "−x/0.01 + y/0.04 = 90; −40x + 30y = 220",
+      "−x/0.01 + y/0.04 = 220; −40x + 30y = 90",
+      "−0.01x + 0.04y = 90; −x/40 + y/30 = 220",
+      "−0.01x + 0.04y = 220; −x/40 + y/30 = 90"
+    ],
+    "correct": "D",
+    "explanation": "At (5600,6900), −0.01(5600)+0.04(6900)=220 and −5600/40+6900/30=90; only D fits both."
+  },
+  {
+    "exercise": 2,
+    "n": 17,
+    "page": 159,
+    "rect": [
+      80,
+      90,
+      470,
+      357
+    ],
+    "stem": "If f(x) = ax³ + bx passes through (−1,−10) and (2,38), find ab.",
+    "choices": [
+      "9",
+      "21",
+      "24",
+      "39"
+    ],
+    "correct": "B",
+    "explanation": "−a − b = −10 and 8a + 2b = 38 give a = 3, b = 7, and ab = 21."
+  },
+  {
+    "exercise": 2,
+    "n": 18,
+    "page": 159,
+    "rect": [
+      80,
+      363,
+      470,
+      650
+    ],
+    "stem": "For x² + 2x = y − 1 and −4x = y + 8, find x.",
+    "choices": [],
+    "correct": "-3",
+    "explanation": "y = −4x − 8. Then x² + 2x = −4x − 9, or (x + 3)² = 0."
+  },
+  {
+    "exercise": 2,
+    "n": 19,
+    "page": 159,
+    "rect": [
+      80,
+      655,
+      470,
+      1110
+    ],
+    "stem": "Kenji mows 57.75 square yards/minute with a push mower and 80.25 with a self-propelled mower. In 120 total minutes he mows 9,000 square yards. How long on the push mower?",
+    "choices": [],
+    "correct": "28",
+    "explanation": "If p is push-mower minutes, 57.75p + 80.25(120 − p) = 9000, giving p = 28."
+  },
+  {
+    "exercise": 2,
+    "n": 20,
+    "page": 159,
+    "rect": [
+      490,
+      90,
+      890,
+      396
+    ],
+    "stem": "For y = √x + 3 and √(4x) − y = 3, find y.",
+    "choices": [],
+    "correct": "9",
+    "explanation": "Since √(4x) = 2√x, substitution gives √x − 3 = 3, so √x = 6 and y = 9."
+  },
+  {
+    "exercise": 2,
+    "n": 21,
+    "page": 159,
+    "rect": [
+      490,
+      400,
+      890,
+      717
+    ],
+    "stem": "For −15x + 3y = 12 and y + 132 = x² − 4x, find one possible x.",
+    "choices": [],
+    "correct": "-8",
+    "explanation": "First y = 5x + 4. Substitution gives x² − 9x − 136 = (x + 8)(x − 17) = 0; either −8 or 17 works.",
+    "accepted": [
+      "-8",
+      "17"
+    ]
+  },
+  {
+    "exercise": 2,
+    "n": 22,
+    "page": 159,
+    "rect": [
+      490,
+      723,
+      890,
+      1115
+    ],
+    "stem": "For 5x − 3y = 8 and −20x + 12y = −32, which pair satisfies both for every real n?",
+    "choices": [
+      "(n,5n/3 − 8)",
+      "(3n/5 + 8/5,n)",
+      "(n − 1,5n/3 − 1)",
+      "(3n/5 + 1,n − 1)"
+    ],
+    "correct": "D",
+    "explanation": "The equations are equivalent. For x = 3n/5 + 1 and y = n − 1, 5x − 3y = 3n + 5 − 3n + 3 = 8."
+  }
+]
