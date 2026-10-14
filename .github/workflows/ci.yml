@@ -254,6 +254,27 @@ jobs:
             echo "SKIP: tests/fair_exam_keys.sql needs the imported 50-question March 2026 exam fixture."
           fi
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Run September 28 daily quiz database and client regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Controls replaces daily_state; apply the quality guard last.
+          for support_sql in \
+            content-releases/2026-09-27-final-revision-schema.sql \
+            content-releases/2026-09-27-revision-focus-schema.sql \
+            content-releases/2026-09-28-portal-controls.sql \
+            supabase/migrations/20260928_daily_quiz_placeholder_guard.sql; do
+            psql -X -v ON_ERROR_STOP=1 -f "$support_sql"
+          done
+          export DAILY_QUIZ_TEST_PAYLOAD="$RUNNER_TEMP/daily-quiz-quality.json"
+          psql -X -qAt -v ON_ERROR_STOP=1 -f tests/daily_quiz_quality.sql > "$DAILY_QUIZ_TEST_PAYLOAD"
+          node --test tests/daily_quiz_quality.test.cjs
+          bash tests/daily_quiz_mutations.sh
+
       - name: Run EST release database gates when source fixtures exist
         shell: bash
         run: |
