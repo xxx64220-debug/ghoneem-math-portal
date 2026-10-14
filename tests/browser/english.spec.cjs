@@ -68,8 +68,8 @@ for (const track of ['est_eng','sat','est','est2']) {
   await page.screenshot({path:testInfo.outputPath('passage.png'),fullPage:true});
  } else {
   await expect(page.locator('#qcard .english-reading')).toHaveCount(0);
-  // Even marked HTML remains a generic figure for each math track.
-  await expect(page.locator('#qcard .fig')).toContainText('First source paragraph.');
+  // Marked source text keeps its readable fallback, without the English split pane.
+  await expect(page.locator('#qcard .english-passage')).toContainText('First source paragraph.');
   await expect(page.locator('#qcard .english-passage-pane')).toHaveCount(0);
  }
  await page.locator('#qcard .choice[data-k="A"]').click();

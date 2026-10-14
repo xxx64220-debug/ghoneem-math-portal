@@ -43,7 +43,7 @@ test('SAT portal, exam navigation/timer/figures and Final Revision', async ({pag
  await expect(page.locator('[data-view="quiz"]')).toHaveAttribute('aria-current','page');
  await expect(page.locator('#navigationLocation')).toContainText('Quizzes');
  await page.locator('#studentSection').selectOption('overview');
- await expect(page.locator('#navigationLocation')).toContainText('My progress');
+ await expect(page.locator('#navigationLocation')).toContainText('SAT Math / Progress');
  await page.locator('[data-view="revision"]').click();
  await expect(page.locator('#studentSection')).toHaveValue('revision');
  await expect(page.locator('.revision-lesson')).toContainText('Linear functions');
