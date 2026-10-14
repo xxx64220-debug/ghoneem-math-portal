@@ -1,0 +1,176 @@
+[
+  {
+    "id": "02ac14b4-f84e-6e9f-1ab3-1427f41cdef7",
+    "track_id": "est",
+    "topic": "Linear functions and slope",
+    "stem": "What is the slope of the line passing through A(—3, 44) and B(1, —2)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "—1.5"
+      },
+      {
+        "key": "B",
+        "text": "0.5"
+      },
+      {
+        "key": "C",
+        "text": "1.0"
+      },
+      {
+        "key": "D",
+        "text": "1.5"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Independently solved and checked against the original scanned page and printed choices.",
+    "assets": {
+      "lesson_subtopic": "Needs classification"
+    }
+  },
+  {
+    "id": "fd8a640f-d351-7cbc-e455-9f2f51709e79",
+    "track_id": "est",
+    "topic": "Linear functions and slope",
+    "stem": "Slope of the line through A(−3, 4) and B(1, −2)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−1.5"
+      },
+      {
+        "key": "B",
+        "text": "0.5"
+      },
+      {
+        "key": "C",
+        "text": "1.0"
+      },
+      {
+        "key": "D",
+        "text": "1.5"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Slope=(−2−4)/(1+3)=−6/4=−1.5.",
+    "assets": {
+      "lesson_subtopic": "Needs classification"
+    }
+  },
+  {
+    "id": "53c77113-7a68-6837-4af9-b5d4594962cb",
+    "track_id": "est",
+    "topic": "Quadratics and polynomials",
+    "stem": "A(x) = (2x − 3)(2x + 3) − (2x² + x − 3). The simplified form of A(x) is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2x² − x − 6"
+      },
+      {
+        "key": "B",
+        "text": "2x² − x + 6"
+      },
+      {
+        "key": "C",
+        "text": "2x² + x − 6"
+      },
+      {
+        "key": "D",
+        "text": "4x² − x − 6"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Expand and subtract: (2x − 3)(2x + 3) − (2x² + x − 3) = 4x² − 9 − 2x² − x + 3 = 2x² − x − 6.",
+    "assets": {
+      "lesson_subtopic": "Needs classification"
+    }
+  },
+  {
+    "id": "92118004-2f60-6326-dab8-e6ad8b7911e7",
+    "track_id": "est",
+    "topic": "Quadratics and polynomials",
+    "stem": "The simplified form of A(x) is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2x*-x-6"
+      },
+      {
+        "key": "B",
+        "text": "2x?-x+6"
+      },
+      {
+        "key": "C",
+        "text": "2x*+x-6"
+      },
+      {
+        "key": "D",
+        "text": "4x*-x-6"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Independently solved and checked against the original scanned page and printed choices.",
+    "assets": {
+      "lesson_subtopic": "Needs classification"
+    }
+  },
+  {
+    "id": "dc220155-bbb4-ddc2-6f65-aa31fc55dd7a",
+    "track_id": "est",
+    "topic": "Ratios, percentages and unit conversion",
+    "stem": "X and Y are inversly proportional, when x=4\ny=5, what is the value of y*when x =3? (calc)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "44.44 Kye &\nKae"
+      },
+      {
+        "key": "B",
+        "text": "6.667 %7-~ 6 a:"
+      },
+      {
+        "key": "C",
+        "text": "25 S¢"
+      },
+      {
+        "key": "D",
+        "text": "9"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Independently solved and checked against the original scanned page and printed choices.",
+    "assets": {
+      "lesson_subtopic": "Needs classification"
+    }
+  },
+  {
+    "id": "331de3d6-88c5-6cf4-3195-fd9efc2019d6",
+    "track_id": "est",
+    "topic": "Statistics and data analysis",
+    "stem": "2- Ai teacher gives a test to his 3 classes. The table below shows the\naverage score for each class. The teacher knows that from each class\nonly one gets the full mark (20 out of 20). The teacher wants to know the\nnew average for the students after removing who get the full mark\nClass name A B C\nNumber of students 30 20 10\nin each class\nAverage score for 15.8 16.2 17.2\neach class",
+    "choices": [
+      {
+        "key": "A",
+        "text": "90.1"
+      },
+      {
+        "key": "B",
+        "text": "15.9"
+      },
+      {
+        "key": "C",
+        "text": "15.1"
+      },
+      {
+        "key": "D",
+        "text": "48.2"
+      }
+    ],
+    "correct": "B",
+    "explanation": "Independently solved and checked against the original scanned page and printed choices.",
+    "assets": {
+      "lesson_subtopic": "Needs classification"
+    }
+  }
+]

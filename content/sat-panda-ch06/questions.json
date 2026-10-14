@@ -1,0 +1,597 @@
+[
+  {
+    "exercise": 1,
+    "n": 1,
+    "page": 77,
+    "rect": [
+      76,
+      143,
+      465,
+      390
+    ],
+    "stem": "What is the slope of a line perpendicular to $y=-\\frac14x+5$?",
+    "choices": [],
+    "correct": "4",
+    "explanation": "A perpendicular line has slope equal to the negative reciprocal of −1/4, which is 4."
+  },
+  {
+    "exercise": 1,
+    "n": 2,
+    "page": 77,
+    "rect": [
+      76,
+      395,
+      465,
+      610
+    ],
+    "stem": "What is the x-intercept of $8x+12y=48$?",
+    "choices": [
+      "(4,0)",
+      "(6,0)",
+      "(8,0)",
+      "(12,0)"
+    ],
+    "correct": "B",
+    "explanation": "Set y=0, giving 8x=48 and x=6."
+  },
+  {
+    "exercise": 1,
+    "n": 3,
+    "page": 77,
+    "rect": [
+      76,
+      620,
+      465,
+      835
+    ],
+    "stem": "The y-intercept of $5x-8y=40$ is $(0,c)$. What is c?",
+    "choices": [],
+    "correct": "-5",
+    "explanation": "Set x=0: −8y=40, hence c=−5."
+  },
+  {
+    "exercise": 1,
+    "n": 4,
+    "page": 77,
+    "rect": [
+      76,
+      845,
+      465,
+      1168
+    ],
+    "stem": "Line w has slope −8 and passes through $(1/2,-1)$. Which equation defines w?",
+    "choices": [
+      "$y=\\frac12x-1$",
+      "$y=-8x-5$",
+      "$y=-8x+3$",
+      "$y=8x-5$"
+    ],
+    "correct": "C",
+    "explanation": "Using y=−8x+b and the given point gives −1=−4+b, so b=3."
+  },
+  {
+    "exercise": 1,
+    "n": 5,
+    "page": 77,
+    "rect": [
+      485,
+      140,
+      871,
+      325
+    ],
+    "stem": "What is the slope of $y=-11x-\\frac25(18-6x)$?",
+    "choices": [],
+    "correct": "-43/5",
+    "explanation": "Expand to y=−11x−36/5+12x/5; the coefficient of x is −43/5."
+  },
+  {
+    "exercise": 1,
+    "n": 6,
+    "page": 77,
+    "rect": [
+      485,
+      335,
+      871,
+      610
+    ],
+    "stem": "A line has intercepts $(−2,0)$ and $(0,−4)$. What is its slope?",
+    "choices": [
+      "−2",
+      "−1/2",
+      "1/2",
+      "2"
+    ],
+    "correct": "A",
+    "explanation": "The slope is (−4−0)/(0−(−2))=−2."
+  },
+  {
+    "exercise": 1,
+    "n": 7,
+    "page": 77,
+    "rect": [
+      485,
+      620,
+      871,
+      1175
+    ],
+    "stem": "The source graph shows line l. Which equation is parallel to it?",
+    "choices": [
+      "$y=-\\frac23x+2$",
+      "$y=\\frac23x+10$",
+      "$y=\\frac32x-4$",
+      "$y=3x-1$"
+    ],
+    "correct": "C",
+    "explanation": "The graph rises 3 for every 2 units to the right; a parallel line must have slope 3/2."
+  },
+  {
+    "exercise": 1,
+    "n": 8,
+    "page": 78,
+    "rect": [
+      60,
+      90,
+      450,
+      580
+    ],
+    "stem": "The table gives average treadmill speeds s and calories c: (7.2,616), (6.8,584), (7.9,672), (8.5,720). Which linear function models c in terms of s?",
+    "choices": [
+      "$c(s)=30s+400$",
+      "$c(s)=60s+210$",
+      "$c(s)=80s+40$",
+      "$c(s)=90s-30$"
+    ],
+    "correct": "C",
+    "explanation": "The slope is (616−584)/(7.2−6.8)=80; substituting gives intercept 40."
+  },
+  {
+    "exercise": 1,
+    "n": 9,
+    "page": 78,
+    "rect": [
+      60,
+      592,
+      450,
+      1045
+    ],
+    "stem": "The graph of line l is $y=mx+b$. Which must be true?",
+    "choices": [
+      "$mb>0$",
+      "$mb<0$",
+      "$mb=0$",
+      "$mb=1$"
+    ],
+    "correct": "B",
+    "explanation": "The graph has positive slope m and negative y-intercept b, so their product is negative."
+  },
+  {
+    "exercise": 1,
+    "n": 10,
+    "page": 78,
+    "rect": [
+      467,
+      90,
+      857,
+      410
+    ],
+    "stem": "Line k passes through $(1,5)$ and is perpendicular to $y=\\frac12x+3$. Which equation defines k?",
+    "choices": [
+      "$y=-2x+3$",
+      "$y=-2x+7$",
+      "$y=-\\frac12x+\\frac{11}2$",
+      "$y=\\frac12x+\\frac92$"
+    ],
+    "correct": "B",
+    "explanation": "The perpendicular slope is −2. Substituting (1,5) into y=−2x+b gives b=7."
+  },
+  {
+    "exercise": 1,
+    "n": 11,
+    "page": 78,
+    "rect": [
+      467,
+      418,
+      857,
+      672
+    ],
+    "stem": "A line of slope $1/3$ passes through $(−1,1)$ and $(5,n)$. Find n.",
+    "choices": [
+      "9",
+      "4",
+      "3",
+      "$7/3$"
+    ],
+    "correct": "C",
+    "explanation": "The horizontal change is 6 and the vertical change is 6/3=2, so n=3."
+  },
+  {
+    "exercise": 1,
+    "n": 12,
+    "page": 78,
+    "rect": [
+      467,
+      690,
+      857,
+      970
+    ],
+    "stem": "The source table lists $f(−3)=10$, $f(3)=14$, $f(9)=18$ for $f(x)=ax+b$. What is ab?",
+    "choices": [],
+    "correct": "8",
+    "explanation": "The slope is (14−10)/6=2/3; f(3)=14 gives b=12, so ab=8."
+  },
+  {
+    "exercise": 1,
+    "n": 13,
+    "page": 79,
+    "rect": [
+      80,
+      90,
+      470,
+      620
+    ],
+    "stem": "The source graph shows line p through $(0,−6)$ and $(7,0)$. What is r if $(5,r)$ is on p?",
+    "choices": [
+      "−5/3",
+      "−11/6",
+      "−11/7",
+      "−12/7"
+    ],
+    "correct": "D",
+    "explanation": "The slope is 6/7, so r=(6/7)5−6=−12/7."
+  },
+  {
+    "exercise": 1,
+    "n": 14,
+    "page": 79,
+    "rect": [
+      80,
+      630,
+      470,
+      1145
+    ],
+    "stem": "Line r in the source graph passes through $(0,1)$ and $(−2,0)$. Parallel line s passes through $(1,−1)$. Which point lies on s?",
+    "choices": [
+      "(−3,−3)",
+      "(−2,−2)",
+      "(0,−2)",
+      "(4,0)"
+    ],
+    "correct": "A",
+    "explanation": "The slope is 1/2, so s has equation y=(x−1)/2−1. At x=−3, y=−3."
+  },
+  {
+    "exercise": 1,
+    "n": 15,
+    "page": 79,
+    "rect": [
+      485,
+      92,
+      870,
+      382
+    ],
+    "stem": "The lines $6x+y=17$ and $hx-9y=-8$ are perpendicular. Find h.",
+    "choices": [],
+    "correct": "3/2",
+    "explanation": "Their slopes are −6 and h/9, so (−6)(h/9)=−1 and h=3/2."
+  },
+  {
+    "exercise": 1,
+    "n": 16,
+    "page": 79,
+    "rect": [
+      485,
+      409,
+      870,
+      660
+    ],
+    "stem": "A line passes through $(6,−3)$ and crosses the x-axis at $(15,0)$. If it also passes through $(−9,t)$, find t.",
+    "choices": [],
+    "correct": "-8",
+    "explanation": "The slope is (0+3)/(15−6)=1/3. From (15,0), t=(−9−15)/3=−8."
+  },
+  {
+    "exercise": 1,
+    "n": 17,
+    "page": 79,
+    "rect": [
+      485,
+      682,
+      870,
+      1110
+    ],
+    "stem": "A line g is perpendicular to the graphed f and intersects it at $(1,5/2)$. Find $g(−1)$.",
+    "choices": [],
+    "correct": "13/2",
+    "explanation": "The graph of f has slope 1/2, so g has slope −2. Moving left 2 units raises g by 4, giving 5/2+4=13/2."
+  },
+  {
+    "exercise": 2,
+    "n": 1,
+    "page": 80,
+    "rect": [
+      60,
+      140,
+      451,
+      695
+    ],
+    "stem": "What is the slope of the source graph, which passes through $(0,2)$ and $(4,0)$?",
+    "choices": [
+      "−2",
+      "−1/2",
+      "1/4",
+      "1/2"
+    ],
+    "correct": "B",
+    "explanation": "The slope is (0−2)/(4−0)=−1/2."
+  },
+  {
+    "exercise": 2,
+    "n": 2,
+    "page": 80,
+    "rect": [
+      60,
+      700,
+      451,
+      1065
+    ],
+    "stem": "Line j is $4x+20y=5$. What is the slope of a parallel line k?",
+    "choices": [
+      "−5",
+      "−1/5",
+      "1/5",
+      "5"
+    ],
+    "correct": "B",
+    "explanation": "Rearrange to y=−x/5+1/4; parallel lines share slope −1/5."
+  },
+  {
+    "exercise": 2,
+    "n": 3,
+    "page": 80,
+    "rect": [
+      470,
+      140,
+      858,
+      425
+    ],
+    "stem": "The line $f(x)=ax+b$ has slope 6 and passes through $(−5,−14)$. Find b.",
+    "choices": [],
+    "correct": "16",
+    "explanation": "Substitute into −14=6(−5)+b to get b=16."
+  },
+  {
+    "exercise": 2,
+    "n": 4,
+    "page": 80,
+    "rect": [
+      470,
+      430,
+      858,
+      685
+    ],
+    "stem": "Find the y-coordinate of the y-intercept of $7x=6(15+9x/4-4y/7)$.",
+    "choices": [],
+    "correct": "105/4",
+    "explanation": "Set x=0: 0=6(15−4y/7), so y=105/4."
+  },
+  {
+    "exercise": 2,
+    "n": 5,
+    "page": 80,
+    "rect": [
+      470,
+      690,
+      858,
+      1060
+    ],
+    "stem": "The graphed line $ax+by=−4$ crosses $(−4,0)$ and $(0,1)$. Find ab.",
+    "choices": [],
+    "correct": "-4",
+    "explanation": "At (−4,0), −4a=−4 so a=1; at (0,1), b=−4. Thus ab=−4."
+  },
+  {
+    "exercise": 2,
+    "n": 6,
+    "page": 81,
+    "rect": [
+      78,
+      91,
+      467,
+      322
+    ],
+    "stem": "A line through $(0,−79)$ and $(5,91)$ is $y=ax+b$. Find a+b.",
+    "choices": [],
+    "correct": "-45",
+    "explanation": "b=−79 and slope a=(91+79)/5=34, giving a+b=−45."
+  },
+  {
+    "exercise": 2,
+    "n": 7,
+    "page": 81,
+    "rect": [
+      78,
+      333,
+      467,
+      610
+    ],
+    "stem": "The line $ax-\\frac13y=8$ passes through $(2,6)$. What is its x-intercept?",
+    "choices": [],
+    "correct": "8/5",
+    "explanation": "2a−2=8 gives a=5. Set y=0 to obtain x=8/5."
+  },
+  {
+    "exercise": 2,
+    "n": 8,
+    "page": 81,
+    "rect": [
+      78,
+      630,
+      467,
+      1040
+    ],
+    "stem": "The table gives $(x,y)=(−6,−114−p),(−2,−57−p),(2,−p)$. What is the slope?",
+    "choices": [
+      "−57/4",
+      "57/4",
+      "$(p−57)/4$",
+      "$(2p+57)/4$"
+    ],
+    "correct": "B",
+    "explanation": "Between consecutive rows, x rises 4 and y rises 57, so slope is 57/4."
+  },
+  {
+    "exercise": 2,
+    "n": 9,
+    "page": 81,
+    "rect": [
+      485,
+      92,
+      871,
+      452
+    ],
+    "stem": "The line $5x-8y=k$ has intercepts $(m,0)$ and $(0,n)$. What is $m/n$?",
+    "choices": [
+      "−8/5",
+      "−5/8",
+      "5/8",
+      "8/5"
+    ],
+    "correct": "A",
+    "explanation": "The intercepts are m=k/5 and n=−k/8, so m/n=−8/5."
+  },
+  {
+    "exercise": 2,
+    "n": 10,
+    "page": 81,
+    "rect": [
+      485,
+      470,
+      871,
+      803
+    ],
+    "stem": "The linear function f has a negative slope and a y-intercept $(0,k)$ with $k>0$. Which statements must hold? I: If a>b, f(a)<f(b). II: If a<0, f(a)>k. III: If a>0, f(a)>0.",
+    "choices": [
+      "I and II only",
+      "I and III only",
+      "II and III only",
+      "I, II, and III"
+    ],
+    "correct": "A",
+    "explanation": "A decreasing line proves I; for negative a its value exceeds its positive intercept, proving II. III can fail for large a."
+  },
+  {
+    "exercise": 2,
+    "n": 11,
+    "page": 81,
+    "rect": [
+      485,
+      808,
+      871,
+      1045
+    ],
+    "stem": "Line l contains $(−3,5)$ and $(6,8)$. Which point also lies on it?",
+    "choices": [
+      "(27,15)",
+      "(33,19)",
+      "(42,23)",
+      "(54,27)"
+    ],
+    "correct": "A",
+    "explanation": "The line has slope 1/3 and equation y=x/3+6; (27,15) satisfies it."
+  },
+  {
+    "exercise": 2,
+    "n": 12,
+    "page": 82,
+    "rect": [
+      62,
+      90,
+      452,
+      503
+    ],
+    "stem": "The lines $y=(a/b)x+c$ and $y=(d/e)x+c$ are perpendicular, with $0<a/b<1$. Which must be true?",
+    "choices": [
+      "$d/e<−1$",
+      "$−1<d/e<0$",
+      "$0<d/e<1$",
+      "$d/e>1$"
+    ],
+    "correct": "A",
+    "explanation": "The second slope is the negative reciprocal, −b/a. Since 0<a/b<1, b/a>1."
+  },
+  {
+    "exercise": 2,
+    "n": 13,
+    "page": 82,
+    "rect": [
+      62,
+      515,
+      452,
+      755
+    ],
+    "stem": "Line p contains $(1,n)$ and meets perpendicular line q at $(0,0)$. Which point must lie on q?",
+    "choices": [
+      "(−n,−1)",
+      "(n,−1)",
+      "(n,1)",
+      "(1,−n)"
+    ],
+    "correct": "B",
+    "explanation": "Line p has slope n, hence q has slope −1/n. Substituting x=n gives y=−1."
+  },
+  {
+    "exercise": 2,
+    "n": 14,
+    "page": 82,
+    "rect": [
+      62,
+      763,
+      452,
+      1100
+    ],
+    "stem": "Line m has x-intercept $(a,b+4)$ and passes through $(b,−11)$ and $(b+6,7)$. Find a.",
+    "choices": [],
+    "correct": "-1/3",
+    "explanation": "An x-intercept has y=0, so b=−4. Slope between (−4,−11) and (2,7) is 3; y=3x+1, so x-intercept a=−1/3."
+  },
+  {
+    "exercise": 2,
+    "n": 15,
+    "page": 82,
+    "rect": [
+      475,
+      90,
+      862,
+      670
+    ],
+    "stem": "The source graph shows $g(x)=(f(x)+6)/x$ where f is linear and $g(3)=7$, $g(5)=3$. What is the y-intercept of f?",
+    "choices": [
+      "(0,8)",
+      "(0,24)",
+      "(0,30)",
+      "(0,48)"
+    ],
+    "correct": "B",
+    "explanation": "Let f(x)=mx+b. Then 3m+b+6=21 and 5m+b+6=15, so m=−3 and b=24."
+  },
+  {
+    "exercise": 2,
+    "n": 16,
+    "page": 82,
+    "rect": [
+      475,
+      685,
+      862,
+      1078
+    ],
+    "stem": "Line $ax-by=5$ is perpendicular to $11x-4y=5$. Which equation is perpendicular to $11x+12y=5$?",
+    "choices": [
+      "$ax-3by=5$",
+      "$ax+3by=5$",
+      "$3ax-by=5$",
+      "$3ax+by=5$"
+    ],
+    "correct": "D",
+    "explanation": "Perpendicularity first gives a/b=−4/11. The desired slope is 12/11, and 3ax+by=5 has slope −3a/b=12/11."
+  }
+]

@@ -1,0 +1,597 @@
+[
+  {
+    "exercise": 1,
+    "n": 1,
+    "page": 140,
+    "rect": [
+      100,
+      142,
+      488,
+      405
+    ],
+    "stem": "Solve x² − 5x − 24 = 0; give one solution.",
+    "choices": [],
+    "correct": "8",
+    "explanation": "(x − 8)(x + 3) = 0; the solutions are 8 and −3.",
+    "accepted": [
+      "8",
+      "-3"
+    ]
+  },
+  {
+    "exercise": 1,
+    "n": 2,
+    "page": 140,
+    "rect": [
+      100,
+      407,
+      488,
+      662
+    ],
+    "stem": "Find the positive solution of x² − 3x − 12 = x − 7.",
+    "choices": [],
+    "correct": "5",
+    "explanation": "Rearranging gives x² − 4x − 5 = (x − 5)(x + 1) = 0."
+  },
+  {
+    "exercise": 1,
+    "n": 3,
+    "page": 140,
+    "rect": [
+      100,
+      665,
+      488,
+      920
+    ],
+    "stem": "What is the sum of the solutions to x² + 7x + 19 = 28 − 5x?",
+    "choices": [
+      "−12",
+      "−9",
+      "−7",
+      "12"
+    ],
+    "correct": "A",
+    "explanation": "The equation becomes x² + 12x − 9 = 0. The sum of its roots is −12."
+  },
+  {
+    "exercise": 1,
+    "n": 4,
+    "page": 140,
+    "rect": [
+      100,
+      922,
+      488,
+      1130
+    ],
+    "stem": "Which choice solves x² − 10x + 7 = 0?",
+    "choices": [
+      "5 + 6√2",
+      "5 − 3√2",
+      "10 + 8√3",
+      "10 − 6√3"
+    ],
+    "correct": "B",
+    "explanation": "The quadratic formula gives (10 ± √72)/2 = 5 ± 3√2."
+  },
+  {
+    "exercise": 1,
+    "n": 5,
+    "page": 140,
+    "rect": [
+      505,
+      142,
+      902,
+      385
+    ],
+    "stem": "Solve −x(x + 3) = x + 4.",
+    "choices": [],
+    "correct": "-2",
+    "explanation": "Rearrange to x² + 4x + 4 = (x + 2)² = 0."
+  },
+  {
+    "exercise": 1,
+    "n": 6,
+    "page": 140,
+    "rect": [
+      505,
+      389,
+      902,
+      618
+    ],
+    "stem": "Which choice gives both solutions of x² + 4x + 2 = 0?",
+    "choices": [
+      "−2 ± √2",
+      "2 ± 2√2",
+      "−2 ± 2√2",
+      "−4 ± 2√2"
+    ],
+    "correct": "A",
+    "explanation": "The quadratic formula gives x = (−4 ± √8)/2 = −2 ± √2."
+  },
+  {
+    "exercise": 1,
+    "n": 7,
+    "page": 140,
+    "rect": [
+      505,
+      622,
+      902,
+      885
+    ],
+    "stem": "Find the positive solution of 84/x = x − 8.",
+    "choices": [],
+    "correct": "14",
+    "explanation": "Since x ≠ 0, x² − 8x − 84 = (x − 14)(x + 6) = 0."
+  },
+  {
+    "exercise": 1,
+    "n": 8,
+    "page": 140,
+    "rect": [
+      505,
+      889,
+      902,
+      1130
+    ],
+    "stem": "Which expression is a factor of 2x² + x − 15?",
+    "choices": [
+      "x − 3",
+      "x + 5",
+      "2x − 5",
+      "2x + 3"
+    ],
+    "correct": "C",
+    "explanation": "2x² + x − 15 = (x + 3)(2x − 5)."
+  },
+  {
+    "exercise": 1,
+    "n": 9,
+    "page": 141,
+    "rect": [
+      80,
+      90,
+      468,
+      344
+    ],
+    "stem": "What is the sum of solutions of (2x − 3)² = 4x + 5?",
+    "choices": [],
+    "correct": "4",
+    "explanation": "Expand to 4x² − 16x + 4 = 0; the root sum is 16/4 = 4."
+  },
+  {
+    "exercise": 1,
+    "n": 10,
+    "page": 141,
+    "rect": [
+      80,
+      348,
+      468,
+      598
+    ],
+    "stem": "For 3x³ + 69x² + 336x, a factor is x + k where k > 0. Find the largest possible k.",
+    "choices": [],
+    "correct": "16",
+    "explanation": "Factor as 3x(x + 7)(x + 16); largest k is 16."
+  },
+  {
+    "exercise": 1,
+    "n": 11,
+    "page": 141,
+    "rect": [
+      80,
+      603,
+      468,
+      846
+    ],
+    "stem": "A solution of x² − 12x + 6 = 0 is 6 + √n. Find n.",
+    "choices": [],
+    "correct": "30",
+    "explanation": "Roots are (12 ± √120)/2 = 6 ± √30."
+  },
+  {
+    "exercise": 1,
+    "n": 12,
+    "page": 141,
+    "rect": [
+      80,
+      850,
+      468,
+      1130
+    ],
+    "stem": "What is the product of solutions of (x + 3)(x − 3) = 7x − 3?",
+    "choices": [
+      "−12",
+      "−9",
+      "−6",
+      "7"
+    ],
+    "correct": "C",
+    "explanation": "Rearrange to x² − 7x − 6 = 0, whose root product is −6."
+  },
+  {
+    "exercise": 1,
+    "n": 13,
+    "page": 141,
+    "rect": [
+      488,
+      90,
+      884,
+      310
+    ],
+    "stem": "In 5x³ − 50x² + 120x, a factor is x − m with m > 0. Give one possible m.",
+    "choices": [],
+    "correct": "4",
+    "explanation": "Factor 5x(x − 4)(x − 6); m may be 4 or 6.",
+    "accepted": [
+      "4",
+      "6"
+    ]
+  },
+  {
+    "exercise": 1,
+    "n": 14,
+    "page": 141,
+    "rect": [
+      488,
+      314,
+      884,
+      658
+    ],
+    "stem": "For 4x² − (2k + 1)x + k + 1 = 0, the root product is w(k + 1). Find w.",
+    "choices": [
+      "4",
+      "2",
+      "1/2",
+      "1/4"
+    ],
+    "correct": "D",
+    "explanation": "By Vieta, product c/a = (k + 1)/4, so w = 1/4."
+  },
+  {
+    "exercise": 1,
+    "n": 15,
+    "page": 141,
+    "rect": [
+      488,
+      664,
+      884,
+      900
+    ],
+    "stem": "Find the smallest solution of √((x + 6)²) = √(6 − 5x).",
+    "choices": [],
+    "correct": "-15",
+    "explanation": "Squaring gives x² + 17x + 30 = (x + 2)(x + 15) = 0. Both satisfy the original equation; smallest is −15."
+  },
+  {
+    "exercise": 1,
+    "n": 16,
+    "page": 141,
+    "rect": [
+      488,
+      906,
+      884,
+      1110
+    ],
+    "stem": "Find the positive solution of (8x)² − 5(8x) = 6.",
+    "choices": [],
+    "correct": "3/4",
+    "explanation": "Let u = 8x; u² − 5u − 6 = (u − 6)(u + 1) = 0. Positive x = 6/8 = 3/4.",
+    "accepted": [
+      "3/4",
+      "0.75"
+    ]
+  },
+  {
+    "exercise": 2,
+    "n": 1,
+    "page": 142,
+    "rect": [
+      95,
+      142,
+      477,
+      460
+    ],
+    "stem": "Which choice gives both solutions of 4x² − 9x − 1 = 0?",
+    "choices": [
+      "(−9 ± √97)/8",
+      "(−9 ± √65)/8",
+      "(9 ± √97)/8",
+      "(9 ± √65)/8"
+    ],
+    "correct": "C",
+    "explanation": "The discriminant is 81 + 16 = 97, so x = (9 ± √97)/8."
+  },
+  {
+    "exercise": 2,
+    "n": 2,
+    "page": 142,
+    "rect": [
+      95,
+      465,
+      477,
+      745
+    ],
+    "stem": "Find the positive solution of −x²/2 + x = −24.",
+    "choices": [],
+    "correct": "8",
+    "explanation": "Multiply by −2: x² − 2x − 48 = (x − 8)(x + 6) = 0."
+  },
+  {
+    "exercise": 2,
+    "n": 3,
+    "page": 142,
+    "rect": [
+      95,
+      748,
+      477,
+      1020
+    ],
+    "stem": "A root of x² + x − 5 = 0 is (√k − 1)/2. Find k.",
+    "choices": [],
+    "correct": "21",
+    "explanation": "The quadratic formula gives (−1 ± √21)/2."
+  },
+  {
+    "exercise": 2,
+    "n": 4,
+    "page": 142,
+    "rect": [
+      495,
+      142,
+      890,
+      402
+    ],
+    "stem": "What is the sum of solutions of 2x(−x + 17) = 54 − x(5 − 3x)?",
+    "choices": [],
+    "correct": "39/5",
+    "explanation": "Rearrange to 5x² − 39x + 54 = 0. The sum is 39/5.",
+    "accepted": [
+      "39/5",
+      "7.8"
+    ]
+  },
+  {
+    "exercise": 2,
+    "n": 5,
+    "page": 142,
+    "rect": [
+      495,
+      408,
+      890,
+      730
+    ],
+    "stem": "Which choice is one solution of −3x² + 6x − 1 = 0?",
+    "choices": [
+      "−1 + √2/3",
+      "−1 + √6/3",
+      "1 − √2/3",
+      "1 − √6/3"
+    ],
+    "correct": "D",
+    "explanation": "The roots are 1 ± √6/3."
+  },
+  {
+    "exercise": 2,
+    "n": 6,
+    "page": 142,
+    "rect": [
+      495,
+      735,
+      890,
+      1010
+    ],
+    "stem": "For x(x − a)(x + 4) = 0, a > 0 and the sum of solutions is 6. Find a.",
+    "choices": [],
+    "correct": "10",
+    "explanation": "The roots are 0, a, and −4; a − 4 = 6 gives a = 10."
+  },
+  {
+    "exercise": 2,
+    "n": 7,
+    "page": 143,
+    "rect": [
+      80,
+      90,
+      470,
+      365
+    ],
+    "stem": "A solution of x² − 8x = −9 is a − √b. Find a + b.",
+    "choices": [
+      "8",
+      "11",
+      "18",
+      "36"
+    ],
+    "correct": "B",
+    "explanation": "x² − 8x + 9 = 0 has roots 4 ± √7, so a + b = 4 + 7 = 11."
+  },
+  {
+    "exercise": 2,
+    "n": 8,
+    "page": 143,
+    "rect": [
+      80,
+      370,
+      470,
+      635
+    ],
+    "stem": "For x² − 8kx − (k − 4) = 0, what is the product of the roots?",
+    "choices": [
+      "4 − k",
+      "k − 4",
+      "−8k",
+      "8k"
+    ],
+    "correct": "A",
+    "explanation": "Product c/a = −(k − 4) = 4 − k."
+  },
+  {
+    "exercise": 2,
+    "n": 9,
+    "page": 143,
+    "rect": [
+      80,
+      638,
+      470,
+      884
+    ],
+    "stem": "The line y = ax + 12, with a > 0, passes through (−a, a). Find a.",
+    "choices": [],
+    "correct": "3",
+    "explanation": "a = −a² + 12 gives (a + 4)(a − 3) = 0. Since a > 0, a = 3."
+  },
+  {
+    "exercise": 2,
+    "n": 10,
+    "page": 143,
+    "rect": [
+      80,
+      886,
+      470,
+      1110
+    ],
+    "stem": "Find the smaller root of 2x² − 7x + 3 = 0.",
+    "choices": [],
+    "correct": "1/2",
+    "explanation": "(2x − 1)(x − 3) = 0; the smaller root is 1/2.",
+    "accepted": [
+      "1/2",
+      "0.5"
+    ]
+  },
+  {
+    "exercise": 2,
+    "n": 11,
+    "page": 143,
+    "rect": [
+      490,
+      90,
+      885,
+      370
+    ],
+    "stem": "Which proposed factors of 2x² + 11x + 12 are valid: I. x + 2; II. 2x + 1?",
+    "choices": [
+      "Neither I nor II",
+      "I only",
+      "II only",
+      "I and II"
+    ],
+    "correct": "A",
+    "explanation": "2x² + 11x + 12 = (x + 4)(2x + 3); neither proposed factor works."
+  },
+  {
+    "exercise": 2,
+    "n": 12,
+    "page": 143,
+    "rect": [
+      490,
+      373,
+      885,
+      730
+    ],
+    "stem": "For 3x² + (108k − 51)x + 93k + 21 = 0, the root sum is ak + b. Find a + b.",
+    "choices": [],
+    "correct": "-19",
+    "explanation": "The sum is −(108k − 51)/3 = −36k + 17, so a + b = −19."
+  },
+  {
+    "exercise": 2,
+    "n": 13,
+    "page": 143,
+    "rect": [
+      490,
+      735,
+      885,
+      1015
+    ],
+    "stem": "For 72x² − (18p + 9q)x + 64p = −32q, the root product is n(2p + q). Find n.",
+    "choices": [],
+    "correct": "4/9",
+    "explanation": "Rearrange; product is (64p + 32q)/72 = (4/9)(2p + q)."
+  },
+  {
+    "exercise": 2,
+    "n": 14,
+    "page": 144,
+    "rect": [
+      90,
+      90,
+      480,
+      280
+    ],
+    "stem": "If 4x + k is a factor of 8x³ − 26x² − 24x, k > 0, find k.",
+    "choices": [],
+    "correct": "3",
+    "explanation": "8x³ − 26x² − 24x = 2x(x − 4)(4x + 3), so k = 3."
+  },
+  {
+    "exercise": 2,
+    "n": 15,
+    "page": 144,
+    "rect": [
+      90,
+      284,
+      480,
+      567
+    ],
+    "stem": "Find the largest solution of 2√(4x − 19) = x − 3.",
+    "choices": [],
+    "correct": "17",
+    "explanation": "Squaring yields x² − 22x + 85 = (x − 5)(x − 17) = 0; both roots satisfy the original; largest is 17."
+  },
+  {
+    "exercise": 2,
+    "n": 16,
+    "page": 144,
+    "rect": [
+      90,
+      570,
+      480,
+      805
+    ],
+    "stem": "Find the positive solution of (x + 11)² − 21(x + 11) + 54 = 0.",
+    "choices": [],
+    "correct": "7",
+    "explanation": "Set u = x + 11; (u − 3)(u − 18) = 0. Thus x = −8 or 7."
+  },
+  {
+    "exercise": 2,
+    "n": 17,
+    "page": 144,
+    "rect": [
+      90,
+      810,
+      480,
+      1125
+    ],
+    "stem": "For 3x² + 10x = 8, the roots are a > b. Find b².",
+    "choices": [
+      "4/9",
+      "2/3",
+      "4",
+      "16"
+    ],
+    "correct": "D",
+    "explanation": "3x² + 10x − 8 = (3x − 2)(x + 4); b = −4 and b² = 16."
+  },
+  {
+    "exercise": 2,
+    "n": 18,
+    "page": 144,
+    "rect": [
+      500,
+      90,
+      890,
+      442
+    ],
+    "stem": "For x² + px + 18 = 0, p > 0 and both roots are integers. Which values are possible: I. 9; II. 17; III. 19?",
+    "choices": [
+      "I only",
+      "II only",
+      "I and III only",
+      "I, II, and III"
+    ],
+    "correct": "C",
+    "explanation": "Positive factor pairs of 18 have sums 19, 11, and 9. Thus I and III are possible."
+  }
+]

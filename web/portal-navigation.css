@@ -1,0 +1,20 @@
+.portal-navigation{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:10px;margin-bottom:10px}
+.portal-navigation label{font-size:14px;font-weight:600;color:var(--navy);white-space:nowrap}
+.portal-navigation select{min-height:46px;flex:1;min-width:0;padding:10px 12px;font:inherit;color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:8px}
+.portal-navigation button{min-height:44px;white-space:nowrap}
+.navigation-location{font-size:14px;color:var(--muted);margin:0 0 14px;line-height:1.5}
+.student-tabs{flex-wrap:wrap;overflow-x:visible;gap:6px;margin-bottom:18px}
+.student-tab{min-height:44px;font-size:14px}
+.student-tab:focus-visible,.portal-navigation select:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+nav.tabs .wrap:first-child{flex-wrap:wrap;overflow-x:visible}
+nav.tabs .tab{font-size:14px;min-height:44px;padding:10px 12px}
+@media(max-width:700px){
+ .portal-navigation{display:grid;grid-template-columns:minmax(0,1fr) auto;padding:12px;gap:8px}
+ .portal-navigation label{grid-column:1/-1}
+ .portal-navigation select{width:100%}
+ .student-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:8px}
+ nav.tabs .wrap:first-child{display:none}
+ nav.tabs .admin-section-nav{display:flex;padding:12px 14px;gap:10px}
+ nav.tabs .admin-section-nav select{min-height:46px;min-width:0;flex:1}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

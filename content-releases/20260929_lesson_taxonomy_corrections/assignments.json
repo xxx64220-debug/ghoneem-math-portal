@@ -1,0 +1,15 @@
+[
+  {"id":"12039edd-0ed2-4caf-847b-1f8b79633f6d","track_id":"sat","old_lesson":"Statistics and data analysis","new_lesson":"Functions and transformations","evidence":"The stem asks for a function with a specified domain and range; range is not a statistical spread here."},
+  {"id":"5f8bdfe2-cb1a-409e-b86a-1f4c6fd5c15a","track_id":"sat","old_lesson":"Triangles and similarity","new_lesson":"Trigonometry","evidence":"The question applies a sine/cosine cofunction identity."},
+  {"id":"98b55bd5-6947-41a1-8d69-5f942958b2f4","track_id":"sat","old_lesson":"Triangles and similarity","new_lesson":"Trigonometry","evidence":"The worked solution applies cosine of an angle equals sine of its complement."},
+  {"id":"9d7495b1-b96a-431f-b79d-6d76a5a220a3","track_id":"sat","old_lesson":"Triangles and similarity","new_lesson":"Trigonometry","evidence":"The stem directly tests a sine/cosine cofunction identity."},
+  {"id":"a443a041-cac2-43fb-89c5-19e7039d8f56","track_id":"sat","old_lesson":"Triangles and similarity","new_lesson":"Trigonometry","evidence":"The question tests trigonometric cofunctions for complementary acute angles."},
+  {"id":"bffede21-7eb9-449a-9ff9-c8fff021ae10","track_id":"sat","old_lesson":"Triangles and similarity","new_lesson":"Trigonometry","evidence":"The question asks which trigonometric identity is true."},
+  {"id":"ca2b3234-ea0e-4328-9cc7-ac8d9e9e32cf","track_id":"sat","old_lesson":"Triangles and similarity","new_lesson":"Trigonometry","evidence":"The equation cos(Q)=sin(R) is a cofunction relationship."},
+  {"id":"ff6f428b-3bba-4c63-aa81-05c6afba57a6","track_id":"sat","old_lesson":"Triangles and similarity","new_lesson":"Trigonometry","evidence":"The question tests the sine/cosine complementary-angle identity."},
+  {"id":"086ff1ee-3885-4c3c-ab7d-cf4685e399e4","track_id":"sat","old_lesson":"Quadratics and polynomials","new_lesson":"Polynomial division and remainder","evidence":"The stem and explanation explicitly use the remainder theorem."},
+  {"id":"1acd1ade-28f1-4ee4-8c84-855f427629e2","track_id":"sat","old_lesson":"Quadratics and polynomials","new_lesson":"Polynomial division and remainder","evidence":"The stem and explanation explicitly use the factor theorem."},
+  {"id":"61de8416-5bda-4d8c-aaf3-14f52feb16ff","track_id":"sat","old_lesson":"Quadratics and polynomials","new_lesson":"Polynomial division and remainder","evidence":"The stem and explanation explicitly use the factor theorem."},
+  {"id":"e5897815-836d-4eb7-8da2-1d7873e5f913","track_id":"sat","old_lesson":"Quadratics and polynomials","new_lesson":"Polynomial division and remainder","evidence":"The given polynomial zero is evaluated with the factor theorem."},
+  {"id":"da7220f9-fad9-570f-a8df-5500fe4f5823","track_id":"est","old_lesson":"Quadratics and polynomials","new_lesson":"Polynomial division and remainder","evidence":"The stored explanation uses divisibility and the factor theorem."}
+]

@@ -11,7 +11,7 @@ const REVISION_FORMULA_TRACKS = {
       'Bluebook provides an embedded calculator and a reference sheet during Math. Desmos is available in the testing app; practise choosing when graphing helps and when algebra is quicker.',
       'Desmos angle mode matters: choose degrees for degree questions; use radians for radian questions. Graphing can check solutions, intersections, vertices, regression and inequalities.'
     ],
-    lessons: ['Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics and polynomials','Functions and transformations','Exponents, radicals and growth','Ratios, percentages and unit conversion','Statistics and data analysis','Probability and conditional probability','Geometry and triangles','Trigonometry','Circles','Area and perimeter','Volume and surface area']
+    lessons: ['Desmos calculator guidance','Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics and polynomials','Functions and transformations','Exponents, radicals and growth','Ratios, percentages and unit conversion','Statistics and data analysis','Probability and conditional probability','Geometry and triangles','Trigonometry','Circles','Area and perimeter','Volume and surface area']
   },
   est: {
     title: 'EST Math I',
@@ -21,7 +21,7 @@ const REVISION_FORMULA_TRACKS = {
       'The lessons below organize the supplied EST mind maps and revision notes by topic. Topic coverage in a revision guide does not by itself establish official question weighting.',
       'For multi-step unit problems, keep units visible on every line. Convert first, then calculate; a correct number with the wrong unit is not a complete answer.'
     ],
-    lessons: ['Triangles and similarity','Trigonometry','Angles and polygons','Area and perimeter','Volume and surface area','Circles','Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics and polynomials','Functions and transformations','Polynomial division and remainder','Complex numbers','Exponents and special products','Percentages and interest','Ratio, proportion and rates','Sequences','Statistics and data analysis','Probability and conditional probability','Unit conversions']
+    lessons: ['Triangles and similarity','Trigonometry','Angles and polygons','Area and perimeter','Volume and surface area','Circles','Linear functions and slope','Systems of equations','Inequalities and absolute value','Quadratics and polynomials','Functions and transformations','Polynomial division and remainder','Complex numbers','Exponents and special products','Percentages and interest','Ratio, proportion and rates','Statistics and data analysis','Probability and conditional probability','Unit conversions']
   },
   est2: {
     title: 'EST Math II',
@@ -197,7 +197,47 @@ REVISION_FORMULA_LESSONS['Circles and power of a point'] = {
   notes: 'For central and inscribed angles, use the intercepted arc: central angle equals its arc; an inscribed angle equals half its arc. In circle equations, the signs inside parentheses reverse when reading the centre.',
 };
 
+// Desmos guidance audited 2026-09-29. Matches the corrected SAT rules PDF.
+// Official references: https://help.desmos.com/hc/en-us/articles/4407885334285-Inequalities-and-Restrictions
+// https://help.desmos.com/hc/en-us/articles/30913914831757-Assessment-Resources-FAQ
+REVISION_FORMULA_LESSONS['Desmos calculator guidance'] = {
+  "formulas": [
+    "Restrictions: append curly brackets, for example y=2x{0<x<10}. This limits the graph to 0<x<10.",
+    "Use ≤ instead of < to include an endpoint. A restriction changes which points are graphed; zooming changes only the viewing window. Use Graph Settings to adjust axis bounds.",
+    "Equations: enter y=left side and y=right side separately. Read the intersection x-values. A direct equation such as 2x+3=7 also graphs the vertical line x=2; select its x-intercept.",
+    "Systems: graph both equations and select intersections to read (x,y). Adjust the window to find off-screen intersections and use algebra to confirm the total number of solutions.",
+    "Tables: choose + then Table. For outputs, define f(x) and use f(x₁) as the second header. Enter chosen inputs in x₁. A blank y₁ column does not calculate outputs by itself.",
+    "Sliders: enter y=ax+b and add sliders for a and b. Use them to explore possible values, then verify with algebra. In y=2x+k, k changes the intercept, not the slope.",
+    "Inequalities: y>2x+1 shades above a dashed boundary. Use ≥ for a solid boundary that is included. For AND, use the overlap of shaded regions. For OR, use their union.",
+    "Vertices and zeros: select the curve, then an available vertex or x-intercept. A zero can cross OR touch the x-axis. Displayed coordinates may be rounded; confirm exact values algebraically.",
+    "Regression: enter paired x₁,y₁ data, then use y₁~mx₁+b or y₁~ax₁²+bx₁+c. Enter subscripts with _1. Keep parameter letters free of previous slider definitions.",
+    "Predictions: after fitting a model, define f(x)=mx+b (or ax²+bx+c), then evaluate f(5) for the prediction at x=5. A best-fit line is an exact line through the points only when they are collinear.",
+    "Composition: define f(x) and g(x) in separate rows, then enter f(g(x)) in a third row. After defining f(x), use y=a·f(x−h)+k with sliders to explore transformations.",
+    "Powers: x^2, x^3. Fractions: (2x+1)/(x−3). Square roots: sqrt(x+5). For a cube root, type nthroot, enter 3 in the index, then x under the radical.",
+    "Valid inputs include abs(x), sin(x), cos(x), tan(x), log(x) (base 10), ln(x), e^x and pi. The graph y=abs(x−3)+2 has vertex (3,2).",
+    "Trigonometry: check Degrees or Radians in Graph Settings. In Radians, use sin(30*pi/180) for sin 30°. In Degrees, use sin(30); do not convert again.",
+    "Circles: (x−3)²+(y+2)²=25 graphs a circle. Read centre (3,−2) and radius 5 from the equation. Plot (3,−2) to mark the centre; verify exact coordinates by substitution.",
+    "Asymptotes: derive their equations algebraically, then graph those equations. Do not treat them as automatically labelled points of interest. Retain every original domain exclusion."
+  ],
+  "examples": [
+    "Restrictions: y=2x{0<x<10} shows only the part with 0<x<10. The endpoints are excluded. Changing the axis bounds alone leaves the full line unchanged.",
+    "One real root: for x²+kx+4=0, set k²−16=0. Both k=4 and k=−4 work. Sliders visualize these cases; the discriminant proves them.",
+    "Parallel lines: against y=2x+3, the line y=2x+k has no solution when k≠3 and infinitely many when k=3. Changing k cannot change its slope.",
+    "Exponential model: define f(x)=500(1.03)^x. Then f(10) is about 672. The intersection with y=1000 has x≈23.45, the time in years.",
+    "Point and answer checks: to test (a,b) on y=f(x), compare f(a) with b. For an equation candidate, evaluate its left and right sides separately and compare."
+  ],
+  "notes": [
+    "Choose graphing or algebra according to the question; neither method is always faster. A graph is a numerical check, not a symbolic proof.",
+    "Graphs can hide close or off-screen intersections. Use the original equations and domain to confirm all solutions; rounded matches are not proof of exact equality.",
+    "A graph of (x−3)(x+2) confirms zeros 3 and −2. Matching zeros alone does not prove that two polynomials are identical.",
+    "Use the Graphing Calculator for these instructions. Practise with the College Board version linked by the SAT Desmos button; exam configurations may differ from standard Desmos.",
+    "Checked 29 September 2026 against the Desmos Help Center articles Inequalities and Restrictions, Tables, Graph Settings, Regressions, Functions, Supported Functions, Sliders and Movable Points, Getting Started, and Assessment Resources & FAQ."
+  ],
+  "visual": "desmosRestrictions"
+};
+
 const REVISION_FORMULA_SVG = {
+ desmosRestrictions: "<svg viewBox=\"0 0 420 250\" role=\"img\" aria-label=\"Line segment y equals 2x restricted to x strictly between zero and ten; open endpoints at zero zero and ten twenty\"><path d=\"M50 205H385M70 220V25\" stroke=\"#526277\" stroke-width=\"2\"/><path d=\"M70 205L330 45\" stroke=\"#087c91\" stroke-width=\"4\"/><g fill=\"white\" stroke=\"#087c91\" stroke-width=\"3\"><circle cx=\"70\" cy=\"205\" r=\"5\"/><circle cx=\"330\" cy=\"45\" r=\"5\"/></g><path d=\"M330 45V205M70 45H330\" stroke=\"#aab4c1\" stroke-dasharray=\"5 5\"/><g fill=\"#14243e\" font-size=\"14\"><text x=\"54\" y=\"225\">0</text><text x=\"321\" y=\"225\">10</text><text x=\"44\" y=\"50\">20</text><text x=\"390\" y=\"209\">x</text><text x=\"64\" y=\"20\">y</text><text x=\"155\" y=\"100\">y = 2x</text><text x=\"125\" y=\"244\">Open endpoints: 0 &lt; x &lt; 10</text></g></svg>",
  line: '<svg viewBox="0 0 360 180" role="img" aria-label="Coordinate axes with a rising straight line showing slope as rise over run"><path d="M45 145H330M75 165V18" stroke="#526277" stroke-width="2"/><path d="M82 135L300 42" stroke="#087c91" stroke-width="4"/><path d="M130 115V94H180" fill="none" stroke="#ba920d" stroke-width="3"/><text x="143" y="88">rise</text><text x="145" y="132">run</text><text x="305" y="40">m</text></svg>',
  system: '<svg viewBox="0 0 360 180" role="img" aria-label="Two lines intersect at a point, representing the solution to a system"><path d="M40 145H330M75 165V15" stroke="#526277" stroke-width="2"/><path d="M82 138L290 30M85 35L292 142" stroke="#087c91" stroke-width="3"/><circle cx="184" cy="85" r="5" fill="#b28a08"/><text x="195" y="78">solution</text></svg>',
  inequality: '<svg viewBox="0 0 360 180" role="img" aria-label="A half-plane shaded above a dashed boundary line for a strict greater-than inequality"><path d="M40 150H330M75 165V15" stroke="#526277" stroke-width="2"/><path d="M75 65L305 20V150H75Z" fill="#dceef2"/><path d="M75 65L305 20" stroke="#087c91" stroke-width="3" stroke-dasharray="8 6"/><text x="210" y="105">shade above</text></svg>',
@@ -225,6 +265,7 @@ const REVISION_FORMULA_SVG = {
 };
 
 const REVISION_FORMULA_VISUAL_CAPTIONS = {
+  desmosRestrictions: 'y=2x{0<x<10} restricts the line to this segment; both endpoints are excluded. Graph Settings changes the viewing window.',
   boxplot: 'Five-number summary: the box spans Q₁ to Q₃, and the centre line marks the median.',
   stddev: 'Both dot plots have the same mean. The wider spread corresponds to the larger standard deviation.',
   scatter: 'Teal dots are actual observations; the gold line gives predictions. At x = 5, the dot lies above the line, so its vertical residual (actual − predicted) is positive.',
@@ -249,7 +290,8 @@ function revisionFormulaPanel() {
   if (!course) return '<section class="dash-panel"><h2>Formula lessons</h2><p>Choose a SAT or EST track to view its lessons.</p></section>';
   const names = course.lessons.filter(name => REVISION_FORMULA_LESSONS[name]);
   const selected = REV.formulaLesson && names.includes(REV.formulaLesson) ? REV.formulaLesson : names[0];
-  const lesson = REVISION_FORMULA_LESSONS[selected];
+  const variant = ST.track?.id === 'est2' ? {'Trigonometry':'Trigonometry and trig graphs','Functions and transformations':'Functions, inverses and asymptotes','Circles':'Circles and power of a point','Probability and conditional probability':'Probability, permutations and combinations'}[selected] : null;
+  const lesson = REVISION_FORMULA_LESSONS[variant || selected];
   const cards = names.map(name => `<button type="button" class="formula-lesson-link ${name === selected ? 'selected' : ''}" data-formula-lesson="${revisionFormulaEscape(name)}" aria-current="${name === selected ? 'true' : 'false'}">${revisionFormulaEscape(name)}</button>`).join('');
   const facts = course.facts.map(item => `<li>${revisionFormulaEscape(item)}</li>`).join('');
   const visualNames = lesson.visuals || (lesson.visual ? [lesson.visual] : []);
@@ -261,4 +303,49 @@ function revisionFormulaPanel() {
   const noteLines = (Array.isArray(lesson.notes) ? lesson.notes : [lesson.notes]).flatMap(revisionFormulaRuleLines);
   const notes = `<ul class="formula-note-list">${noteLines.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul>`;
   return `<section class="dash-panel revision-panel formula-panel"><div class="review-menu"><button class="btn-ghost" data-revision-main>← Main menu</button></div><div class="dash-heading"><h2>Formula lessons</h2><span class="revision-badge">${revisionFormulaEscape(course.title)}</span></div><p class="dash-note">${revisionFormulaEscape(course.intro)}</p><details class="formula-course-notes"><summary>Track notes and exam data</summary><ul>${facts}</ul></details><div class="formula-layout"><nav class="formula-lesson-list" aria-label="Formula lessons">${cards}</nav><article class="formula-lesson"><h3>${revisionFormulaEscape(selected)}</h3><section class="formula-key-point" aria-label="Main point"><span class="formula-section-label">Main point</span>${keyPointLines.map(item=>`<p>${revisionFormulaEscape(item)}</p>`).join('')}</section>${diagrams?`<section class="formula-visual-section"><h4>Visual guide</h4><div class="formula-diagram-grid">${diagrams}</div></section>`:''}<section class="formula-content-section"><h4>Rules and formulas</h4><ul class="formula-list">${ruleLines.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul></section><section class="formula-example"><h4>Worked example</h4>${examples.map(item=>`<p>${revisionFormulaEscape(item)}</p>`).join('')}</section><section class="formula-notes"><h4>Notes and common traps</h4>${notes}</section><p class="dash-note formula-provenance">Prepared by Eng. Abdelrahman Ghoneem. Core lesson topics are organized from the supplied revision PDFs; added clarifications are written to state conditions and avoid ambiguous shorthand.</p></article></div><div class="review-menu"><button type="button" class="btn" data-formulas-to-questions>← Question practice</button></div></section>`;
+}
+
+// Use the same visible lesson names as the bank when the shared catalogue is loaded.
+// Legacy dictionary keys remain available for older saved formula selections.
+if (typeof MATH_LESSONS !== 'undefined') {
+  for (const [name, sources] of Object.entries({
+    'Ratios, percentages and unit conversion':['Ratios, percentages and unit conversion','Percentages and interest','Ratio, proportion and rates','Unit conversions'],
+    'Exponents, radicals and growth':['Exponents, radicals and growth','Exponents and special products']
+  })) {
+    const items=sources.map(key=>REVISION_FORMULA_LESSONS[key]).filter(Boolean);
+    REVISION_FORMULA_LESSONS[name]={...items[0],formulas:[...new Set(items.flatMap(x=>x.formulas))],examples:items.flatMap(x=>x.examples||[x.example]),notes:items.flatMap(x=>Array.isArray(x.notes)?x.notes:[x.notes])};
+  }
+  Object.assign(REVISION_FORMULA_LESSONS, {
+    'Algebraic expressions and equations': {
+      formulas:['Combine like terms: ax + bx = (a + b)x. Distribute: a(b + c) = ab + ac.','Keep an equation balanced by applying the same valid operation to both sides. To rearrange a formula, isolate the required variable.'],
+      example:'If 3x + 5 = 20, subtract 5 to get 3x = 15, then divide by 3: x = 5.',
+      notes:'Substitute the result into the original equation. Do not divide by a variable without checking whether it can be zero.'
+    },
+    'Logic and sets': {
+      formulas:['An implication P ⇒ Q is equivalent to its contrapositive: not Q ⇒ not P. The converse need not be true.','A ∪ B contains elements in either set; A ∩ B contains elements in both. For finite sets, |A ∪ B| = |A| + |B| − |A ∩ B|.'],
+      example:'If A = {1,2} and B = {2,3}, then A ∪ B = {1,2,3} and A ∩ B = {2}.',
+      notes:'A set complement is relative to a specified universal set. A counterexample disproves an always-true claim.'
+    },
+    'Conic sections': {
+      formulas:['Ellipse: (x − h)²/a² + (y − k)²/b² = 1, for positive a and b. Its centre is (h,k).','Horizontal hyperbola: (x − h)²/a² − (y − k)²/b² = 1. Its asymptotes are y − k = ±(b/a)(x − h).'],
+      example:'For x²/9 + y²/4 = 1, the ellipse is centred at (0,0), with x-intercepts ±3 and y-intercepts ±2.',
+      notes:'Check the sign between squared terms. Interchanging the denominators interchanges the horizontal and vertical semiaxes.'
+    },
+    'Matrices': {
+      formulas:['Add equal-sized matrices entry by entry; multiply by a scalar entry by entry.','For a 2 × 2 matrix with rows (a,b) and (c,d), determinant = ad − bc. Matrix multiplication uses row-by-column products.'],
+      example:'For rows (2,1) and (3,4), the determinant is 2·4 − 1·3 = 5.',
+      notes:'AB is defined only when the number of columns of A equals the number of rows of B. Generally AB differs from BA.'
+    },
+    'Vectors': {
+      formulas:['For u = (u₁,u₂) and v = (v₁,v₂), u + v = (u₁ + v₁,u₂ + v₂).','Magnitude |u| = √(u₁² + u₂²). Dot product u·v = u₁v₁ + u₂v₂ = |u||v| cos θ.'],
+      example:'The vector from (1,2) to (4,6) is (3,4), with magnitude 5.',
+      notes:'Subtract starting coordinates from ending coordinates. Nonzero perpendicular vectors have dot product zero.'
+    },
+    'Limits and continuity': {
+      formulas:['A two-sided limit exists when the left-hand and right-hand limits exist and agree.','Continuity at a requires f(a) to be defined, the limit as x approaches a to exist, and that limit to equal f(a).'],
+      example:'For x ≠ 2, (x² − 4)/(x − 2) = x + 2, so its limit as x approaches 2 is 4.',
+      notes:'A limit concerns nearby values; it need not equal the value at the point. Preserve original domain exclusions when cancelling factors.'
+    }
+  });
+  for (const [track,names] of Object.entries(MATH_LESSONS)) REVISION_FORMULA_TRACKS[track].lessons=[...names];
 }

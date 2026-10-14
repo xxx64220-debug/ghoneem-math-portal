@@ -1,0 +1,50 @@
+{
+  "k": {
+    "correct": "C",
+    "explanation": "The model is 6000(1+r)⁸=8950.95. At r=0.05, the amount is 6000·1.05⁸≈8950.95. Thus the rate is 5%.",
+    "question_id": "1b9f821a-f99f-5ea7-8f1d-97f2c4ce6217"
+  },
+  "q": {
+    "id": "1b9f821a-f99f-5ea7-8f1d-97f2c4ce6217",
+    "stem": "A $6000 investment compounded annually grows to approximately $8950.95 after 8 years. Which annual interest rate is consistent with this amount?",
+    "type": "mcq",
+    "topic": "Functions and transformations",
+    "assets": {
+      "source": "reviewed-bank-20260928",
+      "source_code": "PSD 132",
+      "source_page": 249,
+      "answer_review": "2026-09-28-independent-solution-and-source-check",
+      "lesson_subtopic": "Functions, Transformations & Graphs",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_review_id": "clean:PSD 132",
+      "verified_release": "2026-09-28-independent-solution-and-source-check",
+      "curriculum_lesson": "Functions and transformations",
+      "verification_note": "Original PDF visually checked; isolated complete question and independently verified the solution.",
+      "verification_source": "Math_Question_Bank_Ghoneem_Clean.pdf page 249",
+      "lesson_original_topic": "Functions, Transformations & Graphs",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "3%"
+      },
+      {
+        "key": "B",
+        "text": "1%"
+      },
+      {
+        "key": "C",
+        "text": "5%"
+      },
+      {
+        "key": "D",
+        "text": "7%"
+      }
+    ],
+    "track_id": "est",
+    "created_at": "2026-09-28T21:08:45.167383+00:00",
+    "difficulty": "medium"
+  },
+  "hash": "450061bb6d46b8417cb15bae4881b04e"
+}

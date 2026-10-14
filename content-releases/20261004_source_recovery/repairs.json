@@ -1,0 +1,82 @@
+[
+  {
+    "id": "4ab54efe-2260-eeb3-dbf2-9909db0b4845",
+    "track_id": "sat",
+    "before_hash": "2d3e7997a62ffcd683f5ea936b44b6fa",
+    "correct": "A",
+    "asset_patch": {
+      "source_recovery_release": "20261004",
+      "verified_release": "20261004-source-recovery",
+      "figure_caption": "Original graph choices A\u2013D from College Panda Test 1, section 4, Q3, page 11.",
+      "figure": "https://math.portal.ghoneem.com/assets/question-figures/maya-choice-graphs-20261004.png",
+      "source_image_sha256": "31b16c1ca897b52a0edee0f2ff6e12555b5cd6fa520ff9e2a57b2d23a81c079a"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "Graph A in the figure"
+      },
+      {
+        "key": "B",
+        "text": "Graph B in the figure"
+      },
+      {
+        "key": "C",
+        "text": "Graph C in the figure"
+      },
+      {
+        "key": "D",
+        "text": "Graph D in the figure"
+      }
+    ],
+    "explanation": "A. Distance from home starts at 0, increases during the drive to the bookstore, remains constant for the several hours spent there, and returns to 0 on the drive home. Original graph A has all four features. B ends farther from home, C starts away from home, and D has no horizontal interval for the stop.",
+    "expected_hold": "20261004: Required graph choices are only referenced by an unrendered source PDF pointer. Recover and attach the original graph choices."
+  },
+  {
+    "id": "a62bb4f1-6a6d-46af-b5d3-72929458bc2b",
+    "track_id": "sat",
+    "before_hash": "dfc3fd5f37c116ec5426491f4b80842f",
+    "correct": "A",
+    "asset_patch": {
+      "source_recovery_release": "20261004",
+      "verified_release": "20261004-source-recovery",
+      "source_page": 14,
+      "source_drive_id": "1sO50D2SCGnRzldtlNqXsdYuo9eVn1zkS",
+      "figure_caption": "Authentic soft-drinks scatterplot from MSET006 Q49, page 14; choices continue on page 15 and key is on page 16.",
+      "figure": "https://math.portal.ghoneem.com/assets/question-figures/mset006-q49-20261004.png",
+      "source_image_sha256": "5fedca2f8fe381df0328e939d524b8087f1eebe513cf7d37fa80a4d4725ed800"
+    },
+    "explanation": "A. The original scatterplot decreases from about 455 thousand gallons at year 1 to a minimum near years 7\u201310, then rises to about 423 at year 16. This requires positive quadratic curvature and a positive intercept. Only A has both. Its vertex occurs at x = 38.44/(2\u00d72.138) \u2248 8.99 with y \u2248 310.49; it predicts y(1) \u2248 446.97 and y(16) \u2248 415.56, consistent with the plotted trend. B and C predict negative initial values, and D curves downward and decreases for x \u2265 0. Independently verified; the printed MSET006 key also marks Q49 A.",
+    "expected_hold": "20261004: Required soft-drinks scatterplot is absent. Recover the source graph before certifying the model/key."
+  },
+  {
+    "id": "f30234c6-7d80-1640-054d-97b86fde38ad",
+    "track_id": "est",
+    "before_hash": "43c9be1ba63e89c7e6dfef325582948a",
+    "correct": "D",
+    "asset_patch": {
+      "source_recovery_release": "20261004",
+      "verified_release": "20261004-source-recovery"
+    },
+    "choices": [
+      {
+        "key": "A",
+        "text": "29"
+      },
+      {
+        "key": "B",
+        "text": "$\\sqrt{29}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\sqrt{40}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\sqrt{41}$"
+      }
+    ],
+    "explanation": "D. The original December 2025 EST I Q8 choices are A: 29, B: \u221a29, C: \u221a40, D: \u221a41. The horizontal difference is 3 \u2212 (\u22121) = 4 and the vertical difference is 7 \u2212 2 = 5. Therefore AB = \u221a(4\u00b2 + 5\u00b2) = \u221a41. The import omitted the radical signs; the answer letter D is unchanged.",
+    "expected_hold": "20261004: No correct stored distance option. Points (3,7) and (\u22121,2) have distance \u221a41; stored options29,29,40,41 omit it. Original source required before repair."
+  }
+]

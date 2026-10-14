@@ -1,0 +1,503 @@
+[
+  {
+    "module": 1,
+    "n": 1,
+    "topic": "Exponential functions",
+    "stem": "For f(x)=23(1.20)^(x/4), f increases by p% whenever x rises by 8. Find p.",
+    "choices": [
+      "20",
+      "31",
+      "40",
+      "44"
+    ],
+    "correct": "D",
+    "explanation": "An increase of 8 adds 2 to the exponent, multiplying f by 1.20²=1.44; p=44."
+  },
+  {
+    "module": 1,
+    "n": 2,
+    "topic": "Exponential models",
+    "stem": "Tree counts fall 21% for each extra inch of diameter. A forest has about 3,100 trees of diameter 13 inches. Which model best estimates count f(x)?",
+    "choices": [
+      "3,100(0.21)^x",
+      "3,100(0.79)^x",
+      "66,000(0.21)^x",
+      "66,000(0.79)^x"
+    ],
+    "correct": "D",
+    "explanation": "The decay factor is 0.79 per inch. At x=13, 66,000(0.79)^13 is approximately 3,100."
+  },
+  {
+    "module": 1,
+    "n": 3,
+    "topic": "Scatterplots and models",
+    "stem": "A scatterplot of t and d has a best-fit line through about (230,404) and (270,485). Which linear model fits?",
+    "choices": [
+      "d=−60.1+2.02t",
+      "d=160.1+2.02t",
+      "d=359.8+2.02t",
+      "d=394.8+2.02t"
+    ],
+    "correct": "A",
+    "explanation": "The line rises about 2.02 per t unit. At t=230, −60.1+2.02(230)≈404.5.",
+    "visual": true
+  },
+  {
+    "module": 1,
+    "n": 4,
+    "topic": "Exponential functions",
+    "stem": "For f(x)=a^x−b, the graph contains (c,11) and (2c,221). Which value could b have?",
+    "choices": [
+      "4",
+      "25",
+      "210",
+      "232"
+    ],
+    "correct": "A",
+    "explanation": "Let u=a^c. Then u−b=11 and u²−b=221, so u²−u=210. The positive root is 15 and b=4."
+  },
+  {
+    "module": 1,
+    "n": 5,
+    "topic": "Similar triangles",
+    "stem": "In ABC, A=56° and AC=30. In PQR, P=56° and PR=90. Which extra information proves ABC~PQR?",
+    "choices": [
+      "AB=20 and PQ=20",
+      "AB=20 and QR=60",
+      "B=48° and R=76°",
+      "B=56° and Q=48°"
+    ],
+    "correct": "C",
+    "explanation": "With B=48°, C=76°. Given R=76° and P=56°, Q=48°, the triangles have matching angles."
+  },
+  {
+    "module": 1,
+    "n": 7,
+    "topic": "Discriminant",
+    "stem": "For integer p and w, 4x²−px+w=−86 has exactly one real solution. Which listed w is impossible?",
+    "choices": [
+      "−22",
+      "14",
+      "25",
+      "314"
+    ],
+    "correct": "C",
+    "explanation": "The discriminant zero condition gives p²=16(w+86). Thus w+86 must be a perfect square; 25+86=111 is not."
+  },
+  {
+    "module": 1,
+    "n": 8,
+    "topic": "Rational equations",
+    "stem": "If (x+6)/5=(x+6)/13, between which pair does x+6 lie?",
+    "choices": [
+      "−7 and −5",
+      "−2 and 2",
+      "2 and 7",
+      "8 and 13"
+    ],
+    "correct": "B",
+    "explanation": "The unequal denominators force x+6=0, which lies between −2 and 2."
+  },
+  {
+    "module": 1,
+    "n": 9,
+    "topic": "Factoring",
+    "stem": "The polynomial 6x⁴+17x²+5 has forms (3x²+a)(2x²+b) for positive integer a,b and (3x²+c)(2x²+d) for positive nonintegers c,d. Find a+c.",
+    "choices": [],
+    "correct": "17/2",
+    "explanation": "ab=5 and 3b+2a=17 give a=1,b=5. The other solution is c=15/2,d=2/3; thus a+c=17/2."
+  },
+  {
+    "module": 1,
+    "n": 10,
+    "topic": "Scatterplots and models",
+    "stem": "A best-fit line falls from about (0,9.5) to (14,4). Which equation matches?",
+    "choices": [
+      "y=9.5+0.4x",
+      "y=9.5−0.4x",
+      "y=−9.5+0.4x",
+      "y=−9.5−0.4x"
+    ],
+    "correct": "B",
+    "explanation": "The intercept is about 9.5 and the slope about (4−9.5)/14≈−0.4.",
+    "visual": true
+  },
+  {
+    "module": 1,
+    "n": 11,
+    "topic": "Evaluating functions",
+    "stem": "A polynomial graph contains the point (9,8). Which must be true?",
+    "choices": [
+      "f(0)=8",
+      "f(8)=9",
+      "f(9)=0",
+      "f(9)=8"
+    ],
+    "correct": "D",
+    "explanation": "For a point (x,y) on y=f(x), substituting x=9 gives f(9)=8. The PDF drops the ordered-pair punctuation; the keyed interpretation is (9,8)."
+  },
+  {
+    "module": 1,
+    "n": 12,
+    "topic": "Exponential functions",
+    "stem": "For exponential g, g(x) doubles when x rises by 2. If g(4)=9, find g(6).",
+    "choices": [],
+    "correct": "18",
+    "explanation": "From x=4 to x=6 is an increase of 2, so the value doubles from 9 to 18."
+  },
+  {
+    "module": 1,
+    "n": 13,
+    "topic": "Linear models",
+    "stem": "Monthly mean sunspots fall linearly from 120 in December 2013 to about 50 after 30 months. Which listed estimate fits December 2014?",
+    "choices": [
+      "61",
+      "71",
+      "81",
+      "91"
+    ],
+    "correct": "D",
+    "explanation": "December 2014 is 12 months later. The graph is about 92 at month 12, nearest 91.",
+    "visual": true
+  },
+  {
+    "module": 1,
+    "n": 14,
+    "topic": "Linear functions",
+    "stem": "A line has slope −4/7 and passes through (0,12). Which point is its x-intercept?",
+    "choices": [
+      "(−21,0)",
+      "(−4,0)",
+      "(7,0)",
+      "(21,0)"
+    ],
+    "correct": "D",
+    "explanation": "Set 0=−4x/7+12, so x=21."
+  },
+  {
+    "module": 1,
+    "n": 15,
+    "topic": "Linear inequalities",
+    "stem": "The graph shows the shaded side of a dashed line through (0,1) with slope 4. Which inequality describes it?",
+    "choices": [
+      "y<−x/4+1",
+      "y<4x+1",
+      "y>−x/4+1",
+      "y>4x+1"
+    ],
+    "correct": "B",
+    "explanation": "The dashed line has slope 4 and intercept 1, and a shaded point (4,0) satisfies 0<4(4)+1.",
+    "visual": true
+  },
+  {
+    "module": 1,
+    "n": 16,
+    "topic": "Linear systems",
+    "stem": "How many solutions do y=5x+18 and y=5x−18 have?",
+    "choices": [
+      "Zero",
+      "Exactly one",
+      "Exactly two",
+      "Infinitely many"
+    ],
+    "correct": "A",
+    "explanation": "The lines have equal slope and distinct intercepts, so they never meet."
+  },
+  {
+    "module": 1,
+    "n": 17,
+    "topic": "Trigonometry",
+    "stem": "In the pictured right triangle, A and C are complementary. If cos A=0.65, find sin C.",
+    "choices": [
+      "0.87",
+      "0.65",
+      "0.35",
+      "0.13"
+    ],
+    "correct": "B",
+    "explanation": "sin C=sin(90°−A)=cos A=0.65.",
+    "visual": true
+  },
+  {
+    "module": 1,
+    "n": 18,
+    "topic": "Linear functions",
+    "stem": "If f(x)=3x−7 and f(b)=4/5, find b.",
+    "choices": [],
+    "correct": "13/5",
+    "explanation": "Solve 3b−7=4/5, so 3b=39/5 and b=13/5."
+  },
+  {
+    "module": 1,
+    "n": 20,
+    "topic": "Quadratic functions",
+    "stem": "Which equivalent form of f(x)=x²−4x−780 displays the minimum value?",
+    "choices": [
+      "f(x)=x²−4x+195",
+      "f(x)=(x−2)²−784",
+      "f(x)=x(x−4)−780",
+      "f(x)=(x+26)(x−30)"
+    ],
+    "correct": "B",
+    "explanation": "Completing the square gives (x−2)²−784, whose minimum value is −784."
+  },
+  {
+    "module": 1,
+    "n": 21,
+    "topic": "Quadratic functions",
+    "stem": "A graph of y=6x²+bx+c passes through (−2,−3) and (0,−3), with vertex (−1,−9). Find bc.",
+    "choices": [],
+    "correct": "-36",
+    "explanation": "The vertex form is 6(x+1)²−9=6x²+12x−3, so bc=12(−3)=−36.",
+    "visual": true
+  },
+  {
+    "module": 1,
+    "n": 22,
+    "topic": "Percent change",
+    "stem": "A painting's value rose 166% one year, then fell 14% the next. What was its net percentage increase?",
+    "choices": [
+      "128.76%",
+      "142.76%",
+      "152.00%",
+      "203.24%"
+    ],
+    "correct": "A",
+    "explanation": "The combined multiplier is 2.66·0.86=2.2876, so the increase is 128.76%."
+  },
+  {
+    "module": 2,
+    "n": 1,
+    "topic": "Ratios and units",
+    "stem": "Convert acceleration 12.60 meters/second² to miles/minute² using 1 mile=1,609 meters; round to the nearest tenth.",
+    "choices": [],
+    "correct": "28.2",
+    "explanation": "Multiply by 60² seconds²/minute² and divide by 1,609: 12.6·3,600/1,609≈28.2."
+  },
+  {
+    "module": 2,
+    "n": 2,
+    "topic": "Mixture equations",
+    "stem": "Mix x liters of 6% saline and y liters of 9% saline to obtain a 7% solution. Which equation models this?",
+    "choices": [
+      "0.06x+0.09y=7(x+y)",
+      "0.06x+0.09y=0.07(x+y)",
+      "0.6x+0.9y=7(x+y)",
+      "0.6x+0.9y=0.7(x+y)"
+    ],
+    "correct": "B",
+    "explanation": "Total salt is 0.06x+0.09y liters, equal to 7% of the total volume x+y."
+  },
+  {
+    "module": 2,
+    "n": 4,
+    "topic": "Quadratic equations",
+    "stem": "A rectangle has sides x and x−3, and area 28. Find x.",
+    "choices": [
+      "4",
+      "7",
+      "11",
+      "28"
+    ],
+    "correct": "B",
+    "explanation": "x(x−3)=28 gives (x−7)(x+4)=0. A length must be positive, so x=7."
+  },
+  {
+    "module": 2,
+    "n": 5,
+    "topic": "Linear inequalities",
+    "stem": "x is at most 27 less than three times y. If y=8, what is the greatest possible x?",
+    "choices": [],
+    "correct": "-3",
+    "explanation": "x≤3y−27=24−27=−3."
+  },
+  {
+    "module": 2,
+    "n": 6,
+    "topic": "Rational equations",
+    "stem": "Which listed x solves 1/(x−3)=(x−1)/(−x+1.75)?",
+    "choices": [
+      "0.75",
+      "2.5",
+      "3",
+      "4"
+    ],
+    "correct": "B",
+    "explanation": "At x=2.5, the left side is −2 and the right is 1.5/(−0.75)=−2. x=3 is excluded."
+  },
+  {
+    "module": 2,
+    "n": 7,
+    "topic": "Linear models",
+    "stem": "A train's maximum capacity p is 81 for 2 cars, 189 for 5, and 369 for 10. Which equation relates cars c and p?",
+    "choices": [
+      "36c−p=−9",
+      "36c−p=9",
+      "36p−c=−9",
+      "36p−c=9"
+    ],
+    "correct": "A",
+    "explanation": "The slope is (189−81)/(5−2)=36, and p=36c+9; rearrange to 36c−p=−9.",
+    "visual": true
+  },
+  {
+    "module": 2,
+    "n": 8,
+    "topic": "Linear systems",
+    "stem": "One system equation is 20x=1,200y−2,000. Which second equation makes the system inconsistent?",
+    "choices": [
+      "x/20=3y",
+      "x/20=60y−100",
+      "x=3y",
+      "x=60y−100"
+    ],
+    "correct": "A",
+    "explanation": "The first equation simplifies to x=60y−100. Option A gives x=60y, a parallel distinct line."
+  },
+  {
+    "module": 2,
+    "n": 9,
+    "topic": "Tangent geometry",
+    "stem": "A circle has center G, radius 247 mm, and tangents MH and NH from H. Quadrilateral GMHN has perimeter 5,174 mm. Find GH.",
+    "choices": [],
+    "correct": "2353",
+    "explanation": "Each tangent is (5,174−2·247)/2=2,340. Radius and tangent are perpendicular, so GH=√(247²+2340²)=2353."
+  },
+  {
+    "module": 2,
+    "n": 10,
+    "topic": "Trigonometry",
+    "stem": "Triangle JKL has angles J=90b°, K=66a°, L=24a°, for constants a,b. Which comparison must hold?",
+    "choices": [
+      "cos L>sin K",
+      "cos L=sin K",
+      "cos L<sin K",
+      "Not enough information to compare"
+    ],
+    "correct": "D",
+    "explanation": "The angle sum only imposes a+b=2. For a=1 the expressions match, while other allowed a can change their order."
+  },
+  {
+    "module": 2,
+    "n": 11,
+    "topic": "Linear models",
+    "stem": "A graph gives monthly mean sunspots falling from 80 in April 2015 to about 10 after 30 months. Which listed estimate is closest for April 2016?",
+    "choices": [
+      "23",
+      "33",
+      "43",
+      "53"
+    ],
+    "correct": "D",
+    "explanation": "At month 12, the line is near 52, closest to 53.",
+    "visual": true
+  },
+  {
+    "module": 2,
+    "n": 12,
+    "topic": "Linear functions",
+    "stem": "A line has slope −4 and passes through (3,−5). Which equation defines it?",
+    "choices": [
+      "f(x)=3x−5",
+      "f(x)=−4x−5",
+      "f(x)=−4x−4",
+      "f(x)=−4x+7"
+    ],
+    "correct": "D",
+    "explanation": "−5=−4(3)+b gives b=7."
+  },
+  {
+    "module": 2,
+    "n": 13,
+    "topic": "Linear inequalities",
+    "stem": "The shaded region lies right of a dashed line through (0,5) with slope 3. Which inequality defines it?",
+    "choices": [
+      "y<−x/3+5",
+      "y<3x+5",
+      "y>−x/3+5",
+      "y>3x+5"
+    ],
+    "correct": "B",
+    "explanation": "The line is y=3x+5, and a point to its right and below it, such as (5,0), satisfies y<3x+5.",
+    "visual": true
+  },
+  {
+    "module": 2,
+    "n": 14,
+    "topic": "Circle area",
+    "stem": "A circle has radius 4.3 inches and area bπ square inches. Find b.",
+    "choices": [],
+    "correct": "18.49",
+    "explanation": "The area is πr²=π(4.3)²=18.49π."
+  },
+  {
+    "module": 2,
+    "n": 15,
+    "topic": "Systems of inequalities",
+    "stem": "Which listed point satisfies y≤x+8 and y≥−3x−8?",
+    "choices": [
+      "(0,−9)",
+      "(0,9)",
+      "(−5,0)",
+      "(5,0)"
+    ],
+    "correct": "D",
+    "explanation": "At (5,0), 0≤13 and 0≥−23. Each other choice fails one inequality."
+  },
+  {
+    "module": 2,
+    "n": 18,
+    "topic": "Linear equations",
+    "stem": "For (8cx+7)/5=4x−7 to have no solution, find c.",
+    "choices": [
+      "5/2",
+      "2/5",
+      "−2/5",
+      "−5/2"
+    ],
+    "correct": "A",
+    "explanation": "The slopes must match: 8c/5=4, so c=5/2. Their intercepts differ, giving no solution."
+  },
+  {
+    "module": 2,
+    "n": 20,
+    "topic": "Exponential models",
+    "stem": "An account starts at $700, rises 0.6% of its original amount in four months, then increases 0.2% every two months. Which model gives its balance B(x) for x≥4?",
+    "choices": [
+      "704.20(1.002)^((x−4)/2)",
+      "704.20(1.002)^(x/2−4)",
+      "704.20(1.002)^(2x−8)",
+      "704.20(1.002)^(2x−4)"
+    ],
+    "correct": "A",
+    "explanation": "After four months the balance is 700+0.006·700=704.20. Each additional two months multiplies by 1.002, so the exponent is (x−4)/2."
+  },
+  {
+    "module": 2,
+    "n": 21,
+    "topic": "Tangents to circles",
+    "stem": "A circle's center is (−5,5) and a tangent touches it at (6,−1). Which point also lies on the tangent?",
+    "choices": [
+      "(0,11/6)",
+      "(1,16)",
+      "(12,10)",
+      "(17,5)"
+    ],
+    "correct": "C",
+    "explanation": "The radius has slope −6/11, so the tangent has slope 11/6. From (6,−1), moving 6 right and 11 up gives (12,10)."
+  },
+  {
+    "module": 2,
+    "n": 22,
+    "topic": "Discriminant",
+    "stem": "For integer p,w, 4x²−px+w=−85 has exactly one real solution. Which listed w is impossible?",
+    "choices": [
+      "−21",
+      "15",
+      "64",
+      "315"
+    ],
+    "correct": "C",
+    "explanation": "The zero discriminant condition yields p²=16(w+85), so w+85 must be a perfect square. 64+85=149 is not."
+  }
+]

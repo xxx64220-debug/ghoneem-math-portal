@@ -1,0 +1,484 @@
+[
+  {
+    "id": "770026cc-f1d9-51eb-b124-4b4dd75bf90d",
+    "track": "est2",
+    "lesson": "Functions and transformations",
+    "idea": "Solving a fixed-point equation with absolute value"
+  },
+  {
+    "id": "2c4d101b-57da-54c6-b312-53d68f0f522a",
+    "track": "est2",
+    "lesson": "Functions and transformations",
+    "idea": "Interpreting input and output in a function model"
+  },
+  {
+    "id": "5a73282b-5df0-5e11-932b-3da080f93302",
+    "track": "est2",
+    "lesson": "Functions and transformations",
+    "idea": "Finding an inverse relation of a shifted square"
+  },
+  {
+    "id": "0bd86cbf-8704-54be-8c51-08d98401913f",
+    "track": "est2",
+    "lesson": "Functions and transformations",
+    "idea": "Matching a graph to a piecewise formula"
+  },
+  {
+    "id": "427b4627-3d6c-5b2a-8490-8a7cf1272b3e",
+    "track": "est2",
+    "lesson": "Functions and transformations",
+    "idea": "Distinguishing holes from asymptotes in a rational function"
+  },
+  {
+    "id": "435a674f-a11f-544c-a740-04115f2b4810",
+    "track": "est2",
+    "lesson": "Functions and transformations",
+    "idea": "Evaluating nested composite functions"
+  },
+  {
+    "id": "45bccf82-49f4-5b2d-b55d-383451dcdaf2",
+    "track": "est2",
+    "lesson": "Functions and transformations",
+    "idea": "Identifying a vertical stretch of an exponential graph"
+  },
+  {
+    "id": "fc8a09b6-8ecf-5f25-b476-694696e116f0",
+    "track": "est2",
+    "lesson": "Functions and transformations",
+    "idea": "Recognizing origin symmetry of an odd function"
+  },
+  {
+    "id": "0d96db51-5e91-56c8-bbf0-1bcace472c3d",
+    "track": "est2",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Coefficient matching in a difference-of-squares identity"
+  },
+  {
+    "id": "b14f065a-bd3e-506b-ae40-a519eac6959c",
+    "track": "est2",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Deducing an integer from expanded polynomial coefficients"
+  },
+  {
+    "id": "428d6c33-f983-5913-a643-a93a8a466bb3",
+    "track": "est2",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Matching coefficients in a perfect-square identity"
+  },
+  {
+    "id": "38122a5d-9688-5469-9eb4-27bb5f00cb96",
+    "track": "est2",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Using parabola symmetry around a maximum"
+  },
+  {
+    "id": "07012d2a-43af-5685-9f18-bb764cec89b5",
+    "track": "est2",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Evaluating a projectile model from vertex data"
+  },
+  {
+    "id": "d010ff98-e902-5a48-968a-d5561b69b577",
+    "track": "est2",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Finding a Vieta expression invariant under a coefficient change"
+  },
+  {
+    "id": "7ac32843-d3cb-5162-b4d5-f3fae02bec32",
+    "track": "est2",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Counting real roots of a factored polynomial"
+  },
+  {
+    "id": "b277c856-c263-5cf9-b85b-58118b05a14c",
+    "track": "est2",
+    "lesson": "Triangles and similarity",
+    "idea": "Chaining similarity and congruence in an isosceles trapezoid"
+  },
+  {
+    "id": "b927982b-5e81-56d8-a4e4-3de4ff419aab",
+    "track": "est2",
+    "lesson": "Triangles and similarity",
+    "idea": "Resolving the ambiguous sine-law case for area"
+  },
+  {
+    "id": "80c4c753-bdbf-5f83-abc9-4c411d5eff71",
+    "track": "est2",
+    "lesson": "Triangles and similarity",
+    "idea": "Triangle area from coordinate base and height"
+  },
+  {
+    "id": "5d2f5f27-f24a-5124-a7e5-edb068bac5e0",
+    "track": "est2",
+    "lesson": "Triangles and similarity",
+    "idea": "Justifying corresponding angles in a parallel-line proof"
+  },
+  {
+    "id": "5d9d9aa4-0a9f-5f3c-8685-63e22a3d8518",
+    "track": "est2",
+    "lesson": "Triangles and similarity",
+    "idea": "Area of a 30-60-90 triangle from the hypotenuse"
+  },
+  {
+    "id": "0878de38-4f1d-5e94-a9ed-ebbbc6a10bc7",
+    "track": "est2",
+    "lesson": "Triangles and similarity",
+    "idea": "Finding a triangle angle using an interior parallel segment"
+  },
+  {
+    "id": "61c7269a-79f9-5171-9ca0-d5d55ec8a95c",
+    "track": "est2",
+    "lesson": "Triangles and similarity",
+    "idea": "Recovering an equilateral side from its altitude"
+  },
+  {
+    "id": "e85a7456-9b0d-5138-b9b8-5e5537cde9a1",
+    "track": "est2",
+    "lesson": "Inequalities and absolute value",
+    "idea": "Counting solutions of an absolute-value equation"
+  },
+  {
+    "id": "2f8d8c77-2859-5f4c-944e-b203a065d3f0",
+    "track": "est2",
+    "lesson": "Inequalities and absolute value",
+    "idea": "Solving an equal-distance absolute-value equation"
+  },
+  {
+    "id": "9a7dc7ba-ba82-5652-ba95-13a18340dee5",
+    "track": "est2",
+    "lesson": "Inequalities and absolute value",
+    "idea": "Testing a point in a nonlinear inequality system"
+  },
+  {
+    "id": "b67bc54b-cde7-510b-bc7c-172e6e527ecc",
+    "track": "est2",
+    "lesson": "Inequalities and absolute value",
+    "idea": "Describing a region between a parabola and a line"
+  },
+  {
+    "id": "5cb9629f-83da-5cdd-a800-024478c76729",
+    "track": "est2",
+    "lesson": "Inequalities and absolute value",
+    "idea": "Testing a point against three strict inequalities"
+  },
+  {
+    "id": "76a4276d-6846-5db4-9def-0701c8aa763d",
+    "track": "est2",
+    "lesson": "Angles and polygons",
+    "idea": "Parallelogram area from adjacent sides and included angle"
+  },
+  {
+    "id": "7d89850d-590c-56c1-b8d8-4b70c225f599",
+    "track": "est2",
+    "lesson": "Angles and polygons",
+    "idea": "Perimeter of an L-shaped polygon from missing dimensions"
+  },
+  {
+    "id": "fa3cde1c-a38b-5706-bf1d-d72f6f2d6dd5",
+    "track": "est2",
+    "lesson": "Angles and polygons",
+    "idea": "Identifying a non-converse for parallel lines"
+  },
+  {
+    "id": "a1ea88e6-efb5-5c0f-b759-e32ca8acfd7b",
+    "track": "est2",
+    "lesson": "Angles and polygons",
+    "idea": "Combining parallel-line angle transfer with triangle sum"
+  },
+  {
+    "id": "28e44bb3-675e-5c92-bec9-b75f5c48b034",
+    "track": "est2",
+    "lesson": "Trigonometry",
+    "idea": "Locating intersections of sine and cosine graphs by quadrant"
+  },
+  {
+    "id": "77400e2a-a414-5b01-857d-0c94f2e7c901",
+    "track": "est2",
+    "lesson": "Trigonometry",
+    "idea": "Distinguishing exact trig solution families from approximations"
+  },
+  {
+    "id": "3de9cf47-9016-5190-aea4-ee1f303e4019",
+    "track": "est2",
+    "lesson": "Trigonometry",
+    "idea": "Calculating sine from right-triangle side lengths"
+  },
+  {
+    "id": "53c05476-878d-5178-8816-98ded6f8655d",
+    "track": "est2",
+    "lesson": "Linear functions and slope",
+    "idea": "Parameter condition for a linear equation with no solution"
+  },
+  {
+    "id": "5b77caf3-385a-5688-8e1e-15f96eb7aa05",
+    "track": "est2",
+    "lesson": "Linear functions and slope",
+    "idea": "Recognizing an identity with infinitely many solutions"
+  },
+  {
+    "id": "68c1daac-cd10-5dc7-a048-24089b7ede0c",
+    "track": "est2",
+    "lesson": "Linear functions and slope",
+    "idea": "Matching coefficients and constants for an identity"
+  },
+  {
+    "id": "a75cddc1-a40b-5325-b6d9-b9137d171417",
+    "track": "est2",
+    "lesson": "Linear functions and slope",
+    "idea": "Extrapolating a linear table"
+  },
+  {
+    "id": "f9b3d45a-9b2b-5925-b1c8-2c4a1e2acfd3",
+    "track": "est2",
+    "lesson": "Linear functions and slope",
+    "idea": "Testing collinearity relations with symbolic coordinates"
+  },
+  {
+    "id": "95f36f97-7be2-5988-a2f9-fa17d6122050",
+    "track": "est2",
+    "lesson": "Systems of equations",
+    "idea": "Eliminating a variable in a parameterized two-equation system"
+  },
+  {
+    "id": "3e16380f-3640-4941-bcb2-48db723d4f44",
+    "track": "sat",
+    "lesson": "Algebraic expressions and equations",
+    "idea": "Isolating a subject from a formula with a fractional term"
+  },
+  {
+    "id": "28c6aa22-0fb7-4412-8c8d-2217824e9d78",
+    "track": "sat",
+    "lesson": "Algebraic expressions and equations",
+    "idea": "Using nonnegative squares whose sum is zero"
+  },
+  {
+    "id": "9e59abd1-ed34-4770-a32c-27e08bfc16ab",
+    "track": "sat",
+    "lesson": "Algebraic expressions and equations",
+    "idea": "Rearranging a rational formula for a variable"
+  },
+  {
+    "id": "b17ebdf7-f356-4c02-9738-023d4341f912",
+    "track": "sat",
+    "lesson": "Algebraic expressions and equations",
+    "idea": "Identifying a missing factor after distribution"
+  },
+  {
+    "id": "152a5ab8-dc6d-4814-96b8-78336395a00b",
+    "track": "sat",
+    "lesson": "Systems of equations",
+    "idea": "Modeling item count and total cost with a system"
+  },
+  {
+    "id": "1d3c42eb-04f4-4611-b516-3b288d0d10eb",
+    "track": "sat",
+    "lesson": "Systems of equations",
+    "idea": "Selecting the positive intersection of a line and parabola"
+  },
+  {
+    "id": "22d58763-b9a5-422f-97a4-cae26f1e6f10",
+    "track": "sat",
+    "lesson": "Systems of equations",
+    "idea": "Recognizing a no-solution system of parallel lines"
+  },
+  {
+    "id": "230d9f27-4020-47e7-b5fb-fa3897a9261b",
+    "track": "sat",
+    "lesson": "Systems of equations",
+    "idea": "Solving a two-category count-and-cost system"
+  },
+  {
+    "id": "48e5876a-6b64-49c1-8725-a3cc51efbf63",
+    "track": "sat",
+    "lesson": "Systems of equations",
+    "idea": "Finding a possible coordinate product from a nonlinear system"
+  },
+  {
+    "id": "4ff074e2-0470-43dc-9dc7-9fcff89183a1",
+    "track": "sat",
+    "lesson": "Systems of equations",
+    "idea": "Evaluating a linear combination after solving a system"
+  },
+  {
+    "id": "0606b2b5-176d-4f3f-a11c-d13c77b52847",
+    "track": "sat",
+    "lesson": "Linear functions and slope",
+    "idea": "Scaling a linear rate over a time interval"
+  },
+  {
+    "id": "0d6b71b9-3481-4ac0-9ff7-cb6343df3752",
+    "track": "sat",
+    "lesson": "Linear functions and slope",
+    "idea": "Comparing model outputs when a fixed charge cancels"
+  },
+  {
+    "id": "138dea78-0f8a-4e75-9340-91f1c514bc93",
+    "track": "sat",
+    "lesson": "Linear functions and slope",
+    "idea": "Finding a point on a perpendicular line from its intercept"
+  },
+  {
+    "id": "213ca4c5-0223-46e5-bf1c-986734acfc53",
+    "track": "sat",
+    "lesson": "Linear functions and slope",
+    "idea": "Building a first-hour plus additional-hour cost model"
+  },
+  {
+    "id": "4e5ef664-63ec-4348-b43a-5bd60cdf1a89",
+    "track": "sat",
+    "lesson": "Linear functions and slope",
+    "idea": "Recovering fixed fee and unit rate from two data points"
+  },
+  {
+    "id": "02681132-3bc4-463e-8dd8-3d2e391ecc35",
+    "track": "sat",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Using the discriminant for exactly one real intersection"
+  },
+  {
+    "id": "19f1c051-e499-4195-ab05-ea92d2036d71",
+    "track": "sat",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Reading roots and opening direction from factored form"
+  },
+  {
+    "id": "1e8d7052-98ac-44df-a137-bff1a4101b04",
+    "track": "sat",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Accepting either root of a factored grid-in equation"
+  },
+  {
+    "id": "1f5ae1c4-7033-415e-ae23-3c84f126ed43",
+    "track": "sat",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Factoring a difference of fourth powers"
+  },
+  {
+    "id": "20576c86-59ef-4c41-b324-7e6419f4fa79",
+    "track": "sat",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Choosing a polynomial with exactly two positive zeros"
+  },
+  {
+    "id": "231f13e5-d1f9-4595-8a44-c7bed1a815e3",
+    "track": "sat",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Finding a vertex value from factored roots"
+  },
+  {
+    "id": "3448fdac-01c3-4871-b011-c274bd6f47be",
+    "track": "sat",
+    "lesson": "Quadratics and polynomials",
+    "idea": "Subtracting polynomial expressions and finding a coefficient"
+  },
+  {
+    "id": "382d192f-4638-488c-9085-de10e169dc43",
+    "track": "sat",
+    "lesson": "Functions and transformations",
+    "idea": "Translating a parabola horizontally"
+  },
+  {
+    "id": "41dcbd06-8207-4ab4-9f92-38dbdae988ed",
+    "track": "sat",
+    "lesson": "Functions and transformations",
+    "idea": "Combining a horizontal shift with a vertical reflection"
+  },
+  {
+    "id": "48c84b71-a488-44d0-98c7-38259c34bcb6",
+    "track": "sat",
+    "lesson": "Functions and transformations",
+    "idea": "Interpreting a function constant as an initial value"
+  },
+  {
+    "id": "49909356-7635-43d1-8de5-2e840a943008",
+    "track": "sat",
+    "lesson": "Functions and transformations",
+    "idea": "Selecting a parameter for rational-expression cancellation"
+  },
+  {
+    "id": "9d19b57b-a01a-41fc-8e5b-f67600bb3462",
+    "track": "sat",
+    "lesson": "Functions and transformations",
+    "idea": "Evaluating a function over restricted integer inputs"
+  },
+  {
+    "id": "157c9c4e-8b08-4360-a95a-f7521b93e9f3",
+    "track": "sat",
+    "lesson": "Inequalities and absolute value",
+    "idea": "Translating resource and minimum constraints into inequalities"
+  },
+  {
+    "id": "8cc29206-7727-4cd9-a08e-5761366a9fce",
+    "track": "sat",
+    "lesson": "Inequalities and absolute value",
+    "idea": "Minimizing a product mix under a profit inequality"
+  },
+  {
+    "id": "0d27a72a-a77e-453f-af24-a86fcf102415",
+    "track": "sat",
+    "lesson": "Inequalities and absolute value",
+    "idea": "Representing inclusive estimation error with a compound inequality"
+  },
+  {
+    "id": "d4dce377-ac57-4982-a05b-b0549e2003af",
+    "track": "sat",
+    "lesson": "Ratios, percentages and unit conversion",
+    "idea": "Undoing a fixed recording ratio"
+  },
+  {
+    "id": "af2c9ddb-7970-4cc9-a4ab-6c7f218b66b4",
+    "track": "sat",
+    "lesson": "Ratios, percentages and unit conversion",
+    "idea": "Solving inverse variation from a constant product"
+  },
+  {
+    "id": "3b2e96ac-13ab-4237-a876-40cec92d571e",
+    "track": "sat",
+    "lesson": "Triangles and similarity",
+    "idea": "Judging whether information is sufficient for triangle congruence"
+  },
+  {
+    "id": "e8092230-3f69-a033-da8e-76c2259524c5",
+    "track": "sat",
+    "lesson": "Triangles and similarity",
+    "idea": "Ruling out a side equality from unequal base angles"
+  },
+  {
+    "id": "6b24b9ff-1108-4291-9b51-4e3d31a0e194",
+    "track": "sat",
+    "lesson": "Trigonometry",
+    "idea": "Finding a hypotenuse from tangent and vertical height"
+  },
+  {
+    "id": "b3c79ce3-fba9-4ed0-8d6c-53a69e2ef444",
+    "track": "sat",
+    "lesson": "Exponents, radicals and growth",
+    "idea": "Relating two radicals by isolating and squaring"
+  },
+  {
+    "id": "a0454173-a83e-467c-aa30-9bd602639a26",
+    "track": "sat",
+    "lesson": "Statistics and data analysis",
+    "idea": "Interpreting a line-of-best-fit slope in context"
+  },
+  {
+    "id": "c09a1ac8-37f7-4870-931b-64ac5fb657d2",
+    "track": "sat",
+    "lesson": "Desmos calculator guidance",
+    "idea": "Finding a line intersection with a graphing calculator"
+  },
+  {
+    "id": "252f3539-1756-4c52-9581-a99510de5a44",
+    "track": "sat",
+    "lesson": "Logarithms and exponentials",
+    "idea": "Recognizing exponential decay from a remaining fraction"
+  },
+  {
+    "id": "c082373c-ffb4-417c-8e02-8eabee22ed57",
+    "track": "sat",
+    "lesson": "Complex numbers",
+    "idea": "Multiplying complex conjugates"
+  }
+]
+
+

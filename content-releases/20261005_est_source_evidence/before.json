@@ -1,0 +1,577 @@
+[
+  {
+    "id": "02ac14b4-f84e-6e9f-1ab3-1427f41cdef7",
+    "track_id": "est",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "What is the slope of the line passing through A(—3, 44) and B(1, —2)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "—1.5"
+      },
+      {
+        "key": "B",
+        "text": "0.5"
+      },
+      {
+        "key": "C",
+        "text": "1.0"
+      },
+      {
+        "key": "D",
+        "text": "1.5"
+      }
+    ],
+    "assets": {
+      "source_id": "revision_1_august_2026",
+      "source_page": 36,
+      "lesson_subtopic": "Slope from two points",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 36, extracted block 35",
+      "verified_release": "2026-09-20-independent-solution-and-scan-check",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_question_id": "revision_1_august_2026-p36-q81",
+      "release_hold_reason": "Stored point A(−3,44) and B(1,−2) give slope −11.5, absent from the choices. Preserve the original until source coordinates are verified.",
+      "source_library_path": "library/libfile_ba20da2ba34c8191853fed03ef10e742/Revision 1_260823_150138.pdf",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005",
+      "replacement_question_id": "fd8a640f-d351-7cbc-e455-9f2f51709e79"
+    },
+    "created_at": "2026-09-20 11:15:00.498661+00",
+    "correct": "A",
+    "explanation": "Independently solved and checked against the original scanned page and printed choices.",
+    "content_hash": "a42b53d55c8cc69ac8288f660039e92b"
+  },
+  {
+    "id": "331de3d6-88c5-6cf4-3195-fd9efc2019d6",
+    "track_id": "est",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "2- Ai teacher gives a test to his 3 classes. The table below shows the\naverage score for each class. The teacher knows that from each class\nonly one gets the full mark (20 out of 20). The teacher wants to know the\nnew average for the students after removing who get the full mark\nClass name A B C\nNumber of students 30 20 10\nin each class\nAverage score for 15.8 16.2 17.2\neach class",
+    "choices": [
+      {
+        "key": "A",
+        "text": "90.1"
+      },
+      {
+        "key": "B",
+        "text": "15.9"
+      },
+      {
+        "key": "C",
+        "text": "15.1"
+      },
+      {
+        "key": "D",
+        "text": "48.2"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/recovered-331de3d6-88c5-6cf4-3195-fd9efc2019d6.png",
+      "image_alt": "Original graph or table from source page 12",
+      "source_id": "revision_1_august_2026",
+      "source_page": 12,
+      "release_batch": "2026-09-21-source-visual-review",
+      "visual_repair": "source_pdf_crop_2026_09_21",
+      "lesson_subtopic": "Weighted mean after removing observations",
+      "source_reference": "Page 12, extracted block 12",
+      "verified_release": "2026-09-20-independent-solution-and-scan-check",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_question_id": "revision_1_august_2026-p12-q12",
+      "visual_source_file": "Revision 1_260823_150138.pdf",
+      "visual_source_page": 12,
+      "release_hold_reason": "The new mean is 910/57 ≈ 15.9649, or 16.0 to one decimal place. No stored choice is correct; 15.9 is not the rounded result.",
+      "source_library_path": "library/libfile_ba20da2ba34c8191853fed03ef10e742/Revision 1_260823_150138.pdf",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005",
+      "replacement_question_id": "389099ff-c93c-5290-9688-3fc4ea0f5ffa"
+    },
+    "created_at": "2026-09-20 11:15:00.498661+00",
+    "correct": "B",
+    "explanation": "Independently solved and checked against the original scanned page and printed choices.",
+    "content_hash": "d89de44f78295db8a6ef5e12a6e08ce0"
+  },
+  {
+    "id": "43f410ac-41a2-a7a0-09b7-effd44fca3ea",
+    "track_id": "est",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Spinner 1 has sections {1, 2, 3, 4} and Spinner 2 has {1, 2, 3}. Both are\nspun. What is P(the product is even)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1/4"
+      },
+      {
+        "key": "B",
+        "text": "1/3"
+      },
+      {
+        "key": "C",
+        "text": "1/2"
+      },
+      {
+        "key": "D",
+        "text": "2/3"
+      },
+      {
+        "key": "E",
+        "text": "3/4"
+      }
+    ],
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 38,
+      "lesson_subtopic": "Independent spinner outcomes",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 38, extracted block 18",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_question_id": "full_subject_revision_june_2026-p38-q171",
+      "release_hold_reason": "The source lists spinner labels but does not specify equal sector probabilities or independent spins. The value 2/3 requires both assumptions; the probability is otherwise undetermined.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005"
+    },
+    "created_at": "2026-09-20 10:58:58.855467+00",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The source lists spinner labels but does not specify equal sector probabilities or independent spins. The value 2/3 requires both assumptions; the probability is otherwise undetermined.",
+    "content_hash": "f4408d94db5a9b6212e5d8e7e72b4379"
+  },
+  {
+    "id": "492aa09e-a370-8678-c92c-43dbf5eafce1",
+    "track_id": "est",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "A fake die has 6 faces labeled 2, 3, 3, 4, 6, 7. P(prime) = (k − 2)/6. What is the\npositive value of k?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "6"
+      },
+      {
+        "key": "D",
+        "text": "8"
+      }
+    ],
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 43,
+      "lesson_subtopic": "Prime-labelled die probability",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 43, extracted block 47",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_question_id": "full_subject_revision_june_2026-p43-q200",
+      "release_hold_reason": "The source calls this a fake die without stating that faces are equally likely. Counting four prime-labeled faces gives 4/6 only for fair faces; hold this under-specified copy. Preserve the separately corrected explicit-fair-die copy.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005"
+    },
+    "created_at": "2026-09-20 10:58:58.855467+00",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The source calls this a fake die without stating that faces are equally likely. Counting four prime-labeled faces gives 4/6 only for fair faces; hold this under-specified copy. Preserve the separately corrected explicit-fair-die copy.",
+    "content_hash": "e10cd64b5520d8bc47f25adba565e3f1"
+  },
+  {
+    "id": "5a374899-5d5d-d706-1ce4-77197041133e",
+    "track_id": "est",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "A 1.2 m³ pool is filled by 9 gallons. How many gallons fill a 26 m³ pool?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "195"
+      },
+      {
+        "key": "B",
+        "text": "202"
+      },
+      {
+        "key": "C",
+        "text": "223"
+      },
+      {
+        "key": "D",
+        "text": "234"
+      }
+    ],
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 24,
+      "lesson_subtopic": "Unit conversion and proportional reasoning",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 24, extracted block 117",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_question_id": "full_subject_revision_june_2026-p24-q117",
+      "release_hold_reason": "The supplied proportional calculation is 9×26/1.2=195, but the premise equates 1.2 cubic meters with 9 gallons, which is not a valid volume conversion. The intended unit or quantity cannot be recovered from the source; retain the source and hold it.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005"
+    },
+    "created_at": "2026-09-20 10:58:58.855467+00",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The supplied proportional calculation is 9×26/1.2=195, but the premise equates 1.2 cubic meters with 9 gallons, which is not a valid volume conversion. The intended unit or quantity cannot be recovered from the source; retain the source and hold it.",
+    "content_hash": "25287e9828b5e90878a9c48c9a3a1539"
+  },
+  {
+    "id": "92118004-2f60-6326-dab8-e6ad8b7911e7",
+    "track_id": "est",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "The simplified form of A(x) is:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "2x*-x-6"
+      },
+      {
+        "key": "B",
+        "text": "2x?-x+6"
+      },
+      {
+        "key": "C",
+        "text": "2x*+x-6"
+      },
+      {
+        "key": "D",
+        "text": "4x*-x-6"
+      }
+    ],
+    "assets": {
+      "source_id": "revision_1_august_2026",
+      "source_page": 31,
+      "lesson_subtopic": "Expanding and simplifying polynomial expressions",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 31, extracted block 15",
+      "verified_release": "2026-09-20-independent-solution-and-scan-check",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_question_id": "revision_1_august_2026-p31-q57",
+      "release_hold_reason": "The question asks to simplify A(x) but provides no definition of A(x); option powers are OCR-corrupted. Preserve the source until its missing expression is verified.",
+      "source_library_path": "library/libfile_ba20da2ba34c8191853fed03ef10e742/Revision 1_260823_150138.pdf",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005",
+      "replacement_question_id": "53c77113-7a68-6837-4af9-b5d4594962cb"
+    },
+    "created_at": "2026-09-20 11:15:00.498661+00",
+    "correct": "A",
+    "explanation": "Independently solved and checked against the original scanned page and printed choices.",
+    "content_hash": "767efaa0a8ba49527ddec2af6d03d77c"
+  },
+  {
+    "id": "9f479ecd-a687-b0be-fc29-ace016e04fff",
+    "track_id": "est",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Nada invests $6,000 in an account earning r% interest compounded yearly.\nAfter 8 years the total is $8,950.95. What is r?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "1"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "7"
+      }
+    ],
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 20,
+      "lesson_subtopic": "Compound interest and an implied rate",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 20, extracted block 94",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_question_id": "full_subject_revision_june_2026-p20-q94",
+      "release_hold_reason": "The stated amount requires r=100((8950.95/6000)^(1/8)−1), approximately 5.13%. At 5%, the balance is 8864.73, not 8950.95. No listed rate satisfies the data; the source does not specify rounding the rate to a whole percent.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005"
+    },
+    "created_at": "2026-09-20 10:58:58.855467+00",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The stated amount requires r=100((8950.95/6000)^(1/8)−1), approximately 5.13%. At 5%, the balance is 8864.73, not 8950.95. No listed rate satisfies the data; the source does not specify rounding the rate to a whole percent.",
+    "content_hash": "5a4ad45eb4c4deac3761382f52c6b6e0"
+  },
+  {
+    "id": "b7c33115-0e83-acfe-d2e7-e5dd4364c922",
+    "track_id": "est",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "P(scoring a penalty) = 0.3. A player takes 3 shots. What is P(he scores all of\nthem)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.027"
+      },
+      {
+        "key": "B",
+        "text": "0.343"
+      },
+      {
+        "key": "C",
+        "text": "0.540"
+      },
+      {
+        "key": "D",
+        "text": "0.90"
+      }
+    ],
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 38,
+      "lesson_subtopic": "Independent repeated trials",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 38, extracted block 19",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_question_id": "full_subject_revision_june_2026-p38-q172",
+      "release_hold_reason": "The source gives marginal success probability 0.3 but does not establish independent shots. All-three probability is 0.027 under independence, but can be 0.3 for perfectly correlated shots. Hold rather than invent independence.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005"
+    },
+    "created_at": "2026-09-20 10:58:58.855467+00",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: The source gives marginal success probability 0.3 but does not establish independent shots. All-three probability is 0.027 under independence, but can be 0.3 for perfectly correlated shots. Hold rather than invent independence.",
+    "content_hash": "9ff859459ab73ecf2205dcaeab6f377e"
+  },
+  {
+    "id": "c05c0419-86ae-2ebd-9084-98d200f2ac66",
+    "track_id": "est",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "How many three-digit odd numbers have an even hundreds digit? Digits may be repeated.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "20"
+      },
+      {
+        "key": "B",
+        "text": "200"
+      },
+      {
+        "key": "C",
+        "text": "1150"
+      },
+      {
+        "key": "D",
+        "text": "500"
+      }
+    ],
+    "assets": {
+      "source_id": "revision_2_june_2026_a",
+      "source_page": 23,
+      "duplicate_of": "9e6d84d4-b90c-52df-c728-2dfb12abc7d7",
+      "content_review": {
+        "batch": "2026-09-25-source-recovery-review",
+        "method": "Independent mathematical solution and second-pass check.",
+        "status": "verified_duplicate",
+        "details": "Grammar repaired; independently enumerated all integers from 100 through 999. Correct key changed from D (500) to B (200)."
+      },
+      "lesson_subtopic": "Counting digit-restricted numbers",
+      "source_reference": "Page 23, extracted block 5",
+      "verified_release": "2026-09-20-independent-solution-and-scan-check",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_question_id": "revision_2_june_2026_a-p23-q23",
+      "release_hold_reason": "Duplicate of reviewed question 9e6d84d4-b90c-52df-c728-2dfb12abc7d7",
+      "source_library_path": "library/libfile_ef9f0b1667b48191bd8143933b32d0f3/REVISION 2_260630_194855.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005"
+    },
+    "created_at": "2026-09-20 11:15:00.498661+00",
+    "correct": "B",
+    "explanation": "The hundreds digit can be 2, 4, 6, or 8: 4 choices. The tens digit can be any digit: 10 choices. The units digit must be 1, 3, 5, 7, or 9: 5 choices. With repetition allowed, there are 4 × 10 × 5 = 200 such numbers.",
+    "content_hash": "2fbb4368a0568db311cd80b26cb9b4b1"
+  },
+  {
+    "id": "d82839fb-e31c-2d6b-0a23-de7e03d23e35",
+    "track_id": "est",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "If the ratio of boys to girls is 5:2 and the total\nnumber of students is 4550 and 105 of the girls\nwear glasses how many girls not wearing glasses?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1195"
+      },
+      {
+        "key": "B",
+        "text": "1300"
+      },
+      {
+        "key": "C",
+        "text": "3250"
+      },
+      {
+        "key": "D",
+        "text": "4445"
+      }
+    ],
+    "assets": {
+      "source_id": "revision_2_june_2026_a",
+      "source_page": 23,
+      "duplicate_of": "1ea4fe04-4a95-fdea-7323-77b5f1558942",
+      "lesson_subtopic": "Sharing a total in a ratio",
+      "source_reference": "Page 23, extracted block 1",
+      "verified_release": "2026-09-20-independent-solution-and-scan-check",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_question_id": "revision_2_june_2026_a-p23-q22",
+      "release_hold_reason": "Duplicate of reviewed question",
+      "source_library_path": "library/libfile_ef9f0b1667b48191bd8143933b32d0f3/REVISION 2_260630_194855.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005"
+    },
+    "created_at": "2026-09-20 11:15:00.498661+00",
+    "correct": "A",
+    "explanation": "Independently solved and checked against the original scanned page and printed choices.",
+    "content_hash": "ae6f7542446770db1d5742fd1e2fe9d5"
+  },
+  {
+    "id": "dc220155-bbb4-ddc2-6f65-aa31fc55dd7a",
+    "track_id": "est",
+    "topic": "Ratios, percentages and unit conversion",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "X and Y are inversly proportional, when x=4\ny=5, what is the value of y*when x =3? (calc)",
+    "choices": [
+      {
+        "key": "A",
+        "text": "44.44 Kye &\nKae"
+      },
+      {
+        "key": "B",
+        "text": "6.667 %7-~ 6 a:"
+      },
+      {
+        "key": "C",
+        "text": "25 S¢"
+      },
+      {
+        "key": "D",
+        "text": "9"
+      }
+    ],
+    "assets": {
+      "source_id": "revision_2_june_2026_a",
+      "source_page": 14,
+      "lesson_subtopic": "Inverse proportion and squared values",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 14, extracted block 8",
+      "verified_release": "2026-09-20-independent-solution-and-scan-check",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_question_id": "revision_2_june_2026_a-p14-q12",
+      "release_hold_reason": "The requested power is stored as y* and the choices contain OCR annotation fragments. The original exponent must be verified; a separately authored squared-value adaptation is available.",
+      "source_library_path": "library/libfile_ef9f0b1667b48191bd8143933b32d0f3/REVISION 2_260630_194855.pdf",
+      "answer_review_status": "blocked_source_verification",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005",
+      "replacement_question_id": "91126e02-c74e-55ea-a4ce-0157f5cbf3fe"
+    },
+    "created_at": "2026-09-20 11:15:00.498661+00",
+    "correct": "A",
+    "explanation": "Independently solved and checked against the original scanned page and printed choices.",
+    "content_hash": "1fed43ecc767d85166325723f23621cf"
+  },
+  {
+    "id": "efd7a835-6f42-cb9a-1a06-07232cdab400",
+    "track_id": "est",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "A teacher gives a test to 3 classes: Class A (30 students, avg 15.8), Class B\n(20 students, avg 16.2), Class C (10 students, avg 17.2). One student from each\nclass scored 20/20. Find the new average after removing those three students.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "50.7"
+      },
+      {
+        "key": "B",
+        "text": "15.9"
+      },
+      {
+        "key": "C",
+        "text": "15.1"
+      },
+      {
+        "key": "D",
+        "text": "48.2"
+      }
+    ],
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 22,
+      "lesson_subtopic": "Weighted mean after removing observations",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 22, extracted block 106",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_question_id": "full_subject_revision_june_2026-p22-q106",
+      "release_hold_reason": "Original total=30(15.8)+20(16.2)+10(17.2)=970. Removing 60 points and 3 students gives 910/57=15.964912..., or 16.0 to one decimal, not the keyed 15.9. None of the choices matches.",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005"
+    },
+    "created_at": "2026-09-20 10:58:58.855467+00",
+    "correct": {
+      "void": true,
+      "reason": "June source mathematical ambiguity; see explanation"
+    },
+    "explanation": "Not scorable: Original total=30(15.8)+20(16.2)+10(17.2)=970. Removing 60 points and 3 students gives 910/57=15.964912..., or 16.0 to one decimal, not the keyed 15.9. None of the choices matches.",
+    "content_hash": "490279da803a77dad9f10aebd3a57e13"
+  }
+]

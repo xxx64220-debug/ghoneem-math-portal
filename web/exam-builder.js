@@ -12,7 +12,7 @@ function examPickerModel(questions, initialIds = [], track = '') {
       return pool.filter(q => q.track_id === this.track && (this.selectedOnly || (
         (!this.topic || q.topic === this.topic) && (!this.difficulty || q.difficulty === this.difficulty) &&
         (!this.type || q.type === this.type) && words.every(word =>
-          [q.topic, q.stem, q.assets?.source_code, q.assets?.source_question_id, q.assets?.source_document, q.id].join(' ').toLocaleLowerCase().includes(word))
+          [q.topic, q.assets?.lesson_subtopic, q.stem, q.assets?.source_code, q.assets?.source_question_id, q.assets?.source_document, q.id].join(' ').toLocaleLowerCase().includes(word))
       )));
     },
     pageData() {
@@ -89,8 +89,8 @@ async function editExam(x = {}, initialQuestionIds = []) {
     <section class="exam-picker" aria-label="Choose exam questions">
       <div class="builder-heading"><h3>Question bank</h3><strong id="eselected" role="status" aria-live="polite"></strong></div>
       <div class="builder-tabs">${button('ebrowse','Browse all questions')}${button('ereviewSelected','Selected questions')}</div>
-      <div id="builderFilters"><div class="field"><label for="efilter">Find questions</label><input id="efilter" type="search" placeholder="Search question, topic, or source code"></div>
-      <div class="builder-filters">${select('etopic','Topic',[['','All topics']])}${select('edifficulty','Difficulty',[['','All levels'],['easy','Easy'],['medium','Medium'],['hard','Hard']])}${select('eqtype','Question type',[['','All types'],['mcq','Multiple choice'],['grid_in','Numeric answer']])}</div>${button('eclearFilters','Clear filters')}</div>
+      <div id="builderFilters"><div class="field"><label for="efilter">Find questions</label><input id="efilter" type="search" placeholder="Search question, lesson, or source code"></div>
+      <div class="builder-filters">${select('etopic','Lesson',[['','All lessons']])}${select('edifficulty','Difficulty',[['','All levels'],['easy','Easy'],['medium','Medium'],['hard','Hard']])}${select('eqtype','Question type',[['','All types'],['mcq','Multiple choice'],['grid_in','Numeric answer']])}</div>${button('eclearFilters','Clear filters')}</div>
       <p id="eorderHint" class="hint" hidden>Use Move up or Move down to arrange your review order.${x.shuffle!==false?' Student question order is shuffled.':''}</p>
       <div class="builder-toolbar">${button('eaddPage','Add this page')}${select('epageSize','Per page',[['25','25'],['50','50'],['100','100']],'25')}<p id="eresults" class="hint" aria-live="polite"></p></div>
       <div class="builder-pagination"><button type="button" class="btn-sm" data-page-step="-1">Previous</button><label for="epage">Page <input id="epage" type="number" min="1" value="1"></label><span id="epages"></span><button type="button" class="btn-sm" data-page-step="1">Next</button></div>
@@ -102,7 +102,7 @@ async function editExam(x = {}, initialQuestionIds = []) {
   if (x.id) $('et').disabled = true;
   function topics() {
     const names = [...new Set(questions.filter(q => q.track_id === model.track).map(q => q.topic).filter(Boolean))].sort((a,b) => a.localeCompare(b));
-    $('etopic').innerHTML = '<option value="">All topics</option>' + names.map(t => `<option value="${esc(t)}">${esc(t)}</option>`).join('');
+    $('etopic').innerHTML = '<option value="">All lessons</option>' + names.map(t => `<option value="${esc(t)}">${esc(t)}</option>`).join('');
   }
   function paint() {
     const {total,pages,start,rows} = model.pageData();
@@ -126,7 +126,7 @@ async function editExam(x = {}, initialQuestionIds = []) {
         <p class="builder-topic">${esc(q.topic || 'Uncategorized')}</p><div class="builder-excerpt">${esc(q.stem)}</div>
         <details data-preview="${esc(q.id)}" ${expanded.has(q.id)?'open data-loaded="true"':''}><summary>Preview full question & figures</summary><div class="builder-preview-slot">${expanded.has(q.id)?examQuestionPreview(q):''}</div></details>
         ${model.selectedOnly ? `<div class="builder-order"><button type="button" class="btn-sm" data-move="${esc(q.id)}" data-delta="-1" ${index===0?'disabled':''} aria-label="Move question ${index+1} up">Move up</button><button type="button" class="btn-sm" data-move="${esc(q.id)}" data-delta="1" ${index===selectedIds.length-1?'disabled':''} aria-label="Move question ${index+1} down">Move down</button></div>` : ''}</article>`;
-    }).join('') : `<div class="empty">${model.selectedOnly ? 'No questions selected yet. Choose Browse all questions to begin.' : 'No questions match these filters. Try another topic or clear the filters.'}</div>`;
+    }).join('') : `<div class="empty">${model.selectedOnly ? 'No questions selected yet. Choose Browse all questions to begin.' : 'No questions match these filters. Try another lesson or clear the filters.'}</div>`;
     // Render complete equations before CSS limits the visible excerpt. Slicing
     // the source can leave an unmatched delimiter or half of a fraction.
     $('eqs').querySelectorAll('.builder-excerpt').forEach(renderQuestionMath);

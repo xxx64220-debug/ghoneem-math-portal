@@ -10,7 +10,7 @@ begin
  if role_='instructor' and not exists(select 1 from public.instructor_tracks where user_id=p_actor and track_id=track_) then raise exception 'forbidden_track';end if;
  select * into c from public.portal_track_controls where track_id=track_;
  if p_action='revision.list' then
-  select coalesce(jsonb_agg(jsonb_build_object('id',r.question_id,'lesson',r.lesson,'idea',r.idea,'difficulty',r.difficulty,'active',r.active,'source',coalesce(q.assets->>'source_code',q.assets->>'code',''),'stem',q.stem,'ready',r.fingerprint=md5(jsonb_build_array(q.stem,q.choices,q.assets,k.correct,k.explanation)::text) and nullif(q.assets->>'release_hold_reason','') is null) order by r.lesson,r.idea,r.question_id),'[]') into data_
+  select coalesce(jsonb_agg(jsonb_build_object('id',r.question_id,'lesson',r.lesson,'idea',r.idea,'difficulty',r.difficulty,'active',r.active,'source',coalesce(q.assets->>'source_code',q.assets->>'code',''),'stem',q.stem,'ready',r.fingerprint=public.revision_question_fingerprint(q.stem,q.choices,q.assets,k.correct,k.explanation) and nullif(q.assets->>'release_hold_reason','') is null) order by r.lesson,r.idea,r.question_id),'[]') into data_
   from public.revision_items r join public.questions q on q.id=r.question_id join public.question_keys k on k.question_id=q.id where q.track_id=track_;
   return jsonb_build_object('visible',c.revision_visible,'items',data_);
  elsif p_action='quiz.list' then
@@ -32,7 +32,7 @@ begin
   select array_agg(x::uuid) into ids_ from jsonb_array_elements_text(p_data->'ids') x;
   if coalesce(cardinality(ids_),0) not between 1 and 1000 or (select count(distinct x) from unnest(ids_) x)<>cardinality(ids_) then raise exception 'select_questions';end if;
   if (select count(*) from public.revision_items r join public.questions q on q.id=r.question_id where r.question_id=any(ids_) and q.track_id=track_)<>cardinality(ids_) then raise exception 'question_track_mismatch';end if;
-  if (p_data->>'active')::boolean and exists(select 1 from public.revision_items r join public.questions q on q.id=r.question_id join public.question_keys k on k.question_id=q.id where r.question_id=any(ids_) and (r.fingerprint<>md5(jsonb_build_array(q.stem,q.choices,q.assets,k.correct,k.explanation)::text) or nullif(q.assets->>'release_hold_reason','') is not null)) then raise exception 'questions_need_review';end if;
+  if (p_data->>'active')::boolean and exists(select 1 from public.revision_items r join public.questions q on q.id=r.question_id join public.question_keys k on k.question_id=q.id where r.question_id=any(ids_) and (r.fingerprint<>public.revision_question_fingerprint(q.stem,q.choices,q.assets,k.correct,k.explanation) or nullif(q.assets->>'release_hold_reason','') is not null)) then raise exception 'questions_need_review';end if;
   update public.revision_items set active=(p_data->>'active')::boolean where question_id=any(ids_);
   data_:=jsonb_build_object('count',cardinality(ids_),'active',(p_data->>'active')::boolean);
  elsif p_action='quiz.save' then

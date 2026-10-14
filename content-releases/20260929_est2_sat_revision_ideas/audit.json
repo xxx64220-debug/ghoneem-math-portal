@@ -1,0 +1,41 @@
+{
+  "questions": 80,
+  "ideas": 80,
+  "tracks": {
+    "est2": 40,
+    "sat": 40
+  },
+  "lessons": {
+    "est2": {
+      "Algebraic expressions and equations": 3,
+      "Area and perimeter": 7,
+      "Circles": 13,
+      "Exponents, radicals and growth": 2,
+      "Logarithms and exponentials": 1,
+      "Logic and sets": 2,
+      "Probability and conditional probability": 1,
+      "Sequences": 1,
+      "Statistics and data analysis": 2,
+      "Systems of equations": 1,
+      "Vectors": 1,
+      "Volume and surface area": 6
+    },
+    "sat": {
+      "Algebraic expressions and equations": 2,
+      "Circles": 2,
+      "Exponents, radicals and growth": 2,
+      "Functions and transformations": 7,
+      "Inequalities and absolute value": 4,
+      "Linear functions and slope": 5,
+      "Polynomial division and remainder": 1,
+      "Probability and conditional probability": 1,
+      "Quadratics and polynomials": 8,
+      "Ratios, percentages and unit conversion": 4,
+      "Statistics and data analysis": 1,
+      "Systems of equations": 2,
+      "Trigonometry": 1
+    }
+  },
+  "classification_only": true,
+  "new_answer_certification": false
+}

@@ -1,0 +1,1316 @@
+[
+  {
+    "id": "0f903815-6ab3-765a-f5af-2e1c3e13fdf6",
+    "hash": "c61ea2d6ef5dc9402f93a0c6e4cd1d93",
+    "source": "full_subject_revision_june_2026-p21-q104",
+    "before_topic": "Algebraic expressions and equations",
+    "topic": "Algebraic expressions and equations",
+    "skill": "Rearranging a formula",
+    "prior_held": false
+  },
+  {
+    "id": "1890be68-8663-1492-3d35-35cb4f360677",
+    "hash": "f0821edf021d8060b889309fba02e504",
+    "source": "full_subject_revision_june_2026-p49-q215",
+    "before_topic": "Algebraic expressions and equations",
+    "topic": "Exponents, radicals and growth",
+    "skill": "Products of exponential exponents",
+    "prior_held": false
+  },
+  {
+    "id": "cce52abe-c3f7-b219-9ce0-595c47a6e573",
+    "hash": "110e5f4d951689118cde538e4397b8e6",
+    "source": "full_subject_revision_june_2026-p23-q113",
+    "before_topic": "Algebraic expressions and equations",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Counting repeated quantities",
+    "prior_held": false
+  },
+  {
+    "id": "e7862c9b-d69c-1e79-6895-4ce92428e341",
+    "hash": "ec4c9a12e8288895986716d62c5d9683",
+    "source": "revision_1_august_2026-p33-q68",
+    "before_topic": "Algebraic expressions and equations",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Counting repeated quantities",
+    "prior_held": false
+  },
+  {
+    "id": "780d9a51-b361-652f-37d0-aa35977216dc",
+    "hash": "4f5edce28e0463d1fd843d9af5b212c2",
+    "source": "revision_1_august_2026-p21-q23",
+    "before_topic": "Complex numbers",
+    "topic": "Complex numbers",
+    "skill": "Multiplying complex numbers",
+    "prior_held": false
+  },
+  {
+    "id": "7dde3e4f-583b-331c-ed99-7ac7f9a8aae7",
+    "hash": "e640de2904d5328f9db080131e74b488",
+    "source": "full_subject_revision_june_2026-p21-q102",
+    "before_topic": "Exponents, radicals and growth",
+    "topic": "Exponents, radicals and growth",
+    "skill": "Exponential equations with a common base",
+    "prior_held": false
+  },
+  {
+    "id": "af3034ee-819a-148b-c861-e787740be105",
+    "hash": "4eee57ca85996d08cb74fa31fe34144e",
+    "source": "full_subject_revision_june_2026-p52-q231",
+    "before_topic": "Exponents, radicals and growth",
+    "topic": "Exponents, radicals and growth",
+    "skill": "Simplifying radical quotients",
+    "prior_held": false
+  },
+  {
+    "id": "d2f717a4-ec5f-294b-fa31-d5622b829735",
+    "hash": "9f84e7104b33afd5b4fa92fa0a105fbf",
+    "source": "revision_2_march_2026-p42-q53",
+    "before_topic": "Exponents, radicals and growth",
+    "topic": "Exponents, radicals and growth",
+    "skill": "Repeated percentage depreciation",
+    "prior_held": false
+  },
+  {
+    "id": "ddf9abdb-fe34-8936-159c-0329934198af",
+    "hash": "197781479498a38d74b7226cbf0fca14",
+    "source": "full_subject_revision_june_2026-p21-q103",
+    "before_topic": "Exponents, radicals and growth",
+    "topic": "Exponents, radicals and growth",
+    "skill": "Simplifying fractional powers",
+    "prior_held": false
+  },
+  {
+    "id": "e281cdae-aef5-657c-69e9-554747f3d822",
+    "hash": "da37b1e6ead42484697f2e06ad7325b3",
+    "source": "full_subject_revision_june_2026-p42-q197",
+    "before_topic": "Exponents, radicals and growth",
+    "topic": "Complex numbers",
+    "skill": "Multiplying complex numbers",
+    "prior_held": false
+  },
+  {
+    "id": "2764f3de-d5e5-a200-4547-723cfb85514d",
+    "hash": "e74174230f6557093e93a0bede823bde",
+    "source": "full_subject_revision_june_2026-p23-q114",
+    "before_topic": "Functions and transformations",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Unit rates from an annual-cost table",
+    "prior_held": false
+  },
+  {
+    "id": "4565a65a-62c5-c3fe-ceeb-1eefd40906d9",
+    "hash": "f471d0e31573f33973dde34853ed7f3a",
+    "source": "full_subject_revision_june_2026-p15-q69",
+    "before_topic": "Functions and transformations",
+    "topic": "Polynomial division and remainder",
+    "skill": "Factor theorem and an unknown coefficient",
+    "prior_held": false
+  },
+  {
+    "id": "602d9a30-0e5e-bcb7-6abd-209fb4e5796d",
+    "hash": "f2af6d9b19ccd8d65845cb42713e2f59",
+    "source": "est2_dec_2025_bayoumy_collection-p12-q36",
+    "before_topic": "Functions and transformations",
+    "topic": "Functions and transformations",
+    "skill": "Reflection and translation of a point",
+    "prior_held": false
+  },
+  {
+    "id": "9053b06a-14e0-86b2-1616-31fc90726ae2",
+    "hash": "0c24bab7c24a4f2dfb30549df10d7a8b",
+    "source": "full_subject_revision_june_2026-p21-q100",
+    "before_topic": "Functions and transformations",
+    "topic": "Algebraic expressions and equations",
+    "skill": "Adding rational expressions",
+    "prior_held": false
+  },
+  {
+    "id": "ba14a4df-65bd-7452-ecf4-095386faa7d5",
+    "hash": "38c28a59b24769c8220dbb0085d6bb9f",
+    "source": "full_subject_revision_june_2026-p51-q225",
+    "before_topic": "Functions and transformations",
+    "topic": "Quadratics and polynomials",
+    "skill": "Quadratic minimum from two points",
+    "prior_held": false
+  },
+  {
+    "id": "038993d1-b753-c0ba-9570-01f8ab6124e0",
+    "hash": "3d625912a10d463b8976c769f4cfba8b",
+    "source": "full_subject_revision_june_2026-p4-q9",
+    "before_topic": "Inequalities and absolute value",
+    "topic": "Inequalities and absolute value",
+    "skill": "Evaluating absolute-value expressions",
+    "prior_held": false
+  },
+  {
+    "id": "0a95bfb6-30df-c3c0-d33c-e5a15adfd76c",
+    "hash": "674b8135f085513c2df1f6b13f35b8c0",
+    "source": "full_subject_revision_june_2026-p3-q3",
+    "before_topic": "Inequalities and absolute value",
+    "topic": "Inequalities and absolute value",
+    "skill": "Intersection of linear inequalities",
+    "prior_held": false
+  },
+  {
+    "id": "2da6a0db-dc8d-da18-6b03-abb5a6ba324e",
+    "hash": "7ded461c229f0603ec00e9ab68f87e01",
+    "source": "full_subject_revision_june_2026-p4-q13",
+    "before_topic": "Inequalities and absolute value",
+    "topic": "Inequalities and absolute value",
+    "skill": "Integer solutions of a strict inequality",
+    "prior_held": false
+  },
+  {
+    "id": "2f057983-74a3-6267-d482-0657bd8fd289",
+    "hash": "756c869a6e72dbb492fb6b707a6d27cf",
+    "source": "full_subject_revision_june_2026-p5-q14",
+    "before_topic": "Inequalities and absolute value",
+    "topic": "Inequalities and absolute value",
+    "skill": "Rearranging a linear inequality",
+    "prior_held": false
+  },
+  {
+    "id": "34e89931-0119-9d4d-1ee6-428ac10dd58c",
+    "hash": "3feb28704e61b74094947e22b794f4a3",
+    "source": "full_subject_revision_june_2026-p14-q67",
+    "before_topic": "Inequalities and absolute value",
+    "topic": "Quadratics and polynomials",
+    "skill": "Polynomial roots and absolute value",
+    "prior_held": false
+  },
+  {
+    "id": "61408892-9860-9860-2cb4-17acb360d1d3",
+    "hash": "612fb0c2ddc418473381d46ec2c1fabe",
+    "source": "revision_1_august_2026-p38-q87",
+    "before_topic": "Inequalities and absolute value",
+    "topic": "Inequalities and absolute value",
+    "skill": "Evaluating absolute-value expressions",
+    "prior_held": false
+  },
+  {
+    "id": "ce7da225-b505-2b6d-8475-5b0334030662",
+    "hash": "510bbfdfdc472cf29ace04de6b2ccc99",
+    "source": "est2_dec_2025_bayoumy_collection-p3-q5",
+    "before_topic": "Inequalities and absolute value",
+    "topic": "Complex numbers",
+    "skill": "Modulus of a difference of complex numbers",
+    "prior_held": false
+  },
+  {
+    "id": "e005a2dc-43ee-db63-b7b9-7abe96e36d8a",
+    "hash": "3d1be3e4e5346e04e336bb566174ff49",
+    "source": "full_subject_revision_june_2026-p25-q126",
+    "before_topic": "Inequalities and absolute value",
+    "topic": "Inequalities and absolute value",
+    "skill": "Revenue inequalities",
+    "prior_held": false
+  },
+  {
+    "id": "f59ed58d-bca3-663e-c3bc-6064a50324f1",
+    "hash": "afa1de2aa090619023d8c701d32367aa",
+    "source": "full_subject_revision_june_2026-p35-q154",
+    "before_topic": "Inequalities and absolute value",
+    "topic": "Statistics and data analysis",
+    "skill": "Frequencies and percentages in a data set",
+    "prior_held": false
+  },
+  {
+    "id": "ffc560d8-9449-2a74-0a35-8145154bf3dd",
+    "hash": "6dc5bb9ff427d685b78ea3901da4842d",
+    "source": "full_subject_revision_june_2026-p5-q19",
+    "before_topic": "Inequalities and absolute value",
+    "topic": "Inequalities and absolute value",
+    "skill": "Comparing fixed and recurring costs",
+    "prior_held": false
+  },
+  {
+    "id": "02ac14b4-f84e-6e9f-1ab3-1427f41cdef7",
+    "hash": "27761e69332bec733df0b3bb08446295",
+    "source": "revision_1_august_2026-p36-q81",
+    "before_topic": "Linear functions and slope",
+    "topic": "Linear functions and slope",
+    "skill": "Slope from two points",
+    "prior_held": false
+  },
+  {
+    "id": "0c8b1b7f-bcd6-11b2-0db3-de291d7e7df4",
+    "hash": "6773fd397d5133809db6d0bfc310fa9f",
+    "source": "full_subject_revision_june_2026-p6-q21",
+    "before_topic": "Linear functions and slope",
+    "topic": "Linear functions and slope",
+    "skill": "Parallel-line slopes",
+    "prior_held": false
+  },
+  {
+    "id": "0fb55610-9253-9fb0-6f08-8a415b6edece",
+    "hash": "bc20b5cafe168861fb959668da1dc48c",
+    "source": "full_subject_revision_june_2026-p7-q30",
+    "before_topic": "Linear functions and slope",
+    "topic": "Linear functions and slope",
+    "skill": "Perpendicular-line slopes",
+    "prior_held": false
+  },
+  {
+    "id": "20546978-a28f-0222-64e6-d904469699de",
+    "hash": "8ac50a4bd2646631140279c0bb1ba191",
+    "source": "full_subject_revision_june_2026-p8-q31",
+    "before_topic": "Linear functions and slope",
+    "topic": "Linear functions and slope",
+    "skill": "Magnitude of vertical change",
+    "prior_held": false
+  },
+  {
+    "id": "2805d575-dd4d-9d99-caed-11e92c8f4319",
+    "hash": "a50aaa3ce5092b8029953078c15df6a6",
+    "source": "full_subject_revision_june_2026-p8-q33",
+    "before_topic": "Linear functions and slope",
+    "topic": "Linear functions and slope",
+    "skill": "Intercepts from a linear equation",
+    "prior_held": false
+  },
+  {
+    "id": "3e877e6c-e4b0-1cbd-f722-be84652bb252",
+    "hash": "3a2e381bc2dfa3785f569bfb5c85d974",
+    "source": "full_subject_revision_june_2026-p3-q1",
+    "before_topic": "Linear functions and slope",
+    "topic": "Algebraic expressions and equations",
+    "skill": "Solving a linear equation and evaluating an expression",
+    "prior_held": false
+  },
+  {
+    "id": "69f790b6-d543-1560-f54a-74230103bcb6",
+    "hash": "5a6404fcc0c8a37fb608077df9eb269c",
+    "source": "est2_dec_2025_bayoumy_collection-p2-q1",
+    "before_topic": "Linear functions and slope",
+    "topic": "Triangles and similarity",
+    "skill": "Distance formula in three dimensions",
+    "prior_held": false
+  },
+  {
+    "id": "6b45ebf2-a789-192b-53a7-36eb9d7d00d7",
+    "hash": "da4e7fc19c7d94c6aec546a0a987aa19",
+    "source": "full_subject_revision_june_2026-p25-q124",
+    "before_topic": "Linear functions and slope",
+    "topic": "Linear functions and slope",
+    "skill": "Constant deceleration and elapsed time",
+    "prior_held": false
+  },
+  {
+    "id": "8d657bd9-2af8-6080-a05f-648df6a8e08c",
+    "hash": "1b02221583dce5208991e716b209aada",
+    "source": "full_subject_revision_june_2026-p20-q95",
+    "before_topic": "Linear functions and slope",
+    "topic": "Exponents, radicals and growth",
+    "skill": "Comparing linear and exponential growth",
+    "prior_held": false
+  },
+  {
+    "id": "9152e080-7860-0a08-6c60-fa7fae27aea6",
+    "hash": "f48cd21f26709aa73ba71f79441010b6",
+    "source": "full_subject_revision_june_2026-p17-q80",
+    "before_topic": "Linear functions and slope",
+    "topic": "Linear functions and slope",
+    "skill": "Missing values in a linear table",
+    "prior_held": false
+  },
+  {
+    "id": "a5b3f146-dc6c-6e28-7e9a-0901df83743d",
+    "hash": "a9ed9ce854a1d9daa7fa2ef8229725c4",
+    "source": "revision_1_august_2026-p36-q79",
+    "before_topic": "Linear functions and slope",
+    "topic": "Algebraic expressions and equations",
+    "skill": "Solving a linear equation and evaluating an expression",
+    "prior_held": false
+  },
+  {
+    "id": "dfcdf4e1-e3ea-b087-d0a1-f45011f89210",
+    "hash": "813bd4d72f48b80eaa0126d074a3d027",
+    "source": "full_subject_revision_june_2026-p22-q109",
+    "before_topic": "Linear functions and slope",
+    "topic": "Linear functions and slope",
+    "skill": "Comparing fixed and per-use costs",
+    "prior_held": false
+  },
+  {
+    "id": "eeb2f6e3-95dc-b0e0-0138-94ad87e976b1",
+    "hash": "88f6f7456cf225bb200f86d7a845795a",
+    "source": "full_subject_revision_june_2026-p8-q34",
+    "before_topic": "Linear functions and slope",
+    "topic": "Linear functions and slope",
+    "skill": "Distance between axis intercepts",
+    "prior_held": false
+  },
+  {
+    "id": "fd8a640f-d351-7cbc-e455-9f2f51709e79",
+    "hash": "6072ef6b044e17f198f4863f5cb2883c",
+    "source": "full_subject_revision_june_2026-p7-q27",
+    "before_topic": "Linear functions and slope",
+    "topic": "Linear functions and slope",
+    "skill": "Slope from two points",
+    "prior_held": false
+  },
+  {
+    "id": "ff77c776-a33d-c23f-442c-abe35ff84a02",
+    "hash": "4f26809f71c47f569bd2bbc1be1d73da",
+    "source": "est2_dec_2025_bayoumy_collection-p6-q15",
+    "before_topic": "Linear functions and slope",
+    "topic": "Triangles and similarity",
+    "skill": "Midpoints and segment ratios",
+    "prior_held": false
+  },
+  {
+    "id": "5f4596db-8716-9089-beee-613287b2dd84",
+    "hash": "3a8e928650594f685068ed3c34d8754a",
+    "source": "full_subject_revision_june_2026-p19-q89",
+    "before_topic": "Logarithms and exponentials",
+    "topic": "Logarithms and exponentials",
+    "skill": "Natural logarithms and exponentials",
+    "prior_held": false
+  },
+  {
+    "id": "a4c68116-825f-4a37-9f49-1c20eaa92e6e",
+    "hash": "c2eab3750df5f256cb49a7997d566171",
+    "source": "stats_probability_revision_may_2026-p15-q49",
+    "before_topic": "Logic and sets",
+    "topic": "Logic and sets",
+    "skill": "Set union, intersection and absorption",
+    "prior_held": false
+  },
+  {
+    "id": "047a3ac6-0099-ffff-5739-295fe5ab768a",
+    "hash": "d355469ff7ecbbcb706a98b8350cd906",
+    "source": "full_subject_revision_june_2026-p38-q170",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Marginal probability from a two-way table",
+    "prior_held": false
+  },
+  {
+    "id": "163b33a8-34e6-0fd3-f8ab-87a5683e7064",
+    "hash": "732384a06054461dc30cfbb464389a4e",
+    "source": "full_subject_revision_june_2026-p40-q181",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Fundamental counting principle",
+    "prior_held": false
+  },
+  {
+    "id": "2b6279f9-5d84-c436-70d9-15a48e7e1395",
+    "hash": "75d8551e8abbe6339ed7131a6f537929",
+    "source": "full_subject_revision_june_2026-p37-q167",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Complementary probability",
+    "prior_held": false
+  },
+  {
+    "id": "39b15b16-e7af-da0a-faeb-a0fb2ed99a96",
+    "hash": "43f9d9afad77bd49d8b066e93edeb696",
+    "source": "full_subject_revision_june_2026-p37-q168",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Sum of two die rolls",
+    "prior_held": false
+  },
+  {
+    "id": "4277b4b9-e680-c4e9-0c47-f7053ac2d50c",
+    "hash": "f29cc655426ab6cbf1c9d41bac76a163",
+    "source": "full_subject_revision_june_2026-p40-q182",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Combinations with a restricted colour count",
+    "prior_held": false
+  },
+  {
+    "id": "43f410ac-41a2-a7a0-09b7-effd44fca3ea",
+    "hash": "c9c0c38e10d94a61d18f5d25b1b5a90b",
+    "source": "full_subject_revision_june_2026-p38-q171",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Independent spinner outcomes",
+    "prior_held": true
+  },
+  {
+    "id": "492aa09e-a370-8678-c92c-43dbf5eafce1",
+    "hash": "06249bf5530d247e10d68f1535668d88",
+    "source": "full_subject_revision_june_2026-p43-q200",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Prime-labelled die probability",
+    "prior_held": true
+  },
+  {
+    "id": "51e89417-b50f-821f-3636-a72164aaead5",
+    "hash": "00bcf42e992bb6b65ca054c0efde75bc",
+    "source": "full_subject_revision_june_2026-p37-q166",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Probability from a colour distribution",
+    "prior_held": false
+  },
+  {
+    "id": "8a2ed657-7340-f2c3-118f-fa2205210590",
+    "hash": "33bfde2095cbd0f23272475a05159e12",
+    "source": "full_subject_revision_june_2026-p39-q178",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Conditional probability in a two-way table",
+    "prior_held": false
+  },
+  {
+    "id": "935147fe-dd28-39df-b93c-0aca8a27c43b",
+    "hash": "9e074155c5705e5f4abdbdc31571ca8d",
+    "source": "full_subject_revision_june_2026-p45-q205",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Combined pass rates",
+    "prior_held": false
+  },
+  {
+    "id": "9badc4b9-1ce7-0197-39c3-dd2af99bf949",
+    "hash": "a41c191d2fc336a7b7fe6fb71259448a",
+    "source": "full_subject_revision_june_2026-p54-q243",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Selecting a committee with combinations",
+    "prior_held": false
+  },
+  {
+    "id": "9e6d84d4-b90c-52df-c728-2dfb12abc7d7",
+    "hash": "b95e7d7a6e78bb4e8b62db3fe439fdd6",
+    "source": "revision_2_march_2026-p23-q27",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Counting digit-restricted numbers",
+    "prior_held": false
+  },
+  {
+    "id": "a3352964-cc90-47c9-09e6-9392de081943",
+    "hash": "986a1690a17563e7900b83118a6a7c47",
+    "source": "full_subject_revision_june_2026-p39-q180",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Fundamental counting principle",
+    "prior_held": false
+  },
+  {
+    "id": "b7c33115-0e83-acfe-d2e7-e5dd4364c922",
+    "hash": "a51b2c08d6407761e2d7db68080e71f3",
+    "source": "full_subject_revision_june_2026-p38-q172",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Independent repeated trials",
+    "prior_held": true
+  },
+  {
+    "id": "c05c0419-86ae-2ebd-9084-98d200f2ac66",
+    "hash": "7a3ff24718ad980a53209742e92d3456",
+    "source": "revision_2_june_2026_a-p23-q23",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Counting digit-restricted numbers",
+    "prior_held": true
+  },
+  {
+    "id": "de3bd434-fbf5-cc4b-8128-98d693754c81",
+    "hash": "5df898920bf46b1c070ad973b96e4c71",
+    "source": "est2_dec_2025_bayoumy_collection-p8-q21",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Counting without repeated digits",
+    "prior_held": false
+  },
+  {
+    "id": "eb22a74a-de0b-ffe1-75f8-cda019471cc4",
+    "hash": "9240b040817fcf48f34af80fd0278169",
+    "source": "full_subject_revision_june_2026-p38-q175",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Conditional probability with transfers",
+    "prior_held": false
+  },
+  {
+    "id": "ef395edb-aa9e-b096-ddc2-3ef74b48e7ba",
+    "hash": "e5f703e14b114e2b73be5774053ac043",
+    "source": "full_subject_revision_june_2026-p39-q176",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Complementary probability with transfers",
+    "prior_held": false
+  },
+  {
+    "id": "f012ee9e-3769-ab86-d503-0128850d8082",
+    "hash": "206eaa1857556bc171a7241413e4db8a",
+    "source": "full_subject_revision_june_2026-p39-q177",
+    "before_topic": "Probability and conditional probability",
+    "topic": "Probability and conditional probability",
+    "skill": "Marginal probability from a two-way table",
+    "prior_held": false
+  },
+  {
+    "id": "0009abf2-0392-09f4-5263-4cf7b050595f",
+    "hash": "2a553f9a8754b95ff1bdf43a7aaa437f",
+    "source": "est2_dec_2025_bayoumy_collection-p12-q35",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Constant term in a binomial expansion",
+    "prior_held": false
+  },
+  {
+    "id": "199d6976-2b71-905e-9aec-889720bf2f80",
+    "hash": "17bf101b0af501a130b36a3ffaa5a612",
+    "source": "full_subject_revision_june_2026-p51-q226",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Product of cubic roots",
+    "prior_held": false
+  },
+  {
+    "id": "526e6269-3020-cb56-9dca-44be52eadc0c",
+    "hash": "0d98b0befb17107aed2a913d36edacb1",
+    "source": "full_subject_revision_june_2026-p16-q74",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Polynomial roots and multiplicity",
+    "prior_held": false
+  },
+  {
+    "id": "53c77113-7a68-6837-4af9-b5d4594962cb",
+    "hash": "1ebf905bf795fd8972b542f3f6a16b86",
+    "source": "full_subject_revision_june_2026-p21-q101",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Expanding and simplifying polynomial expressions",
+    "prior_held": false
+  },
+  {
+    "id": "72d0a047-5093-1c92-898a-e73713ff3fd1",
+    "hash": "63c6ce39526c83bef27d59e0f89c0a52",
+    "source": "full_subject_revision_june_2026-p13-q57",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Vertex of a quadratic",
+    "prior_held": false
+  },
+  {
+    "id": "7662fcda-78f2-2fc0-e624-1ef56a3597ec",
+    "hash": "bcb39298c1617b69d5ae827baf3f0246",
+    "source": "full_subject_revision_june_2026-p16-q77",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Polynomial degree and end behaviour",
+    "prior_held": false
+  },
+  {
+    "id": "8389f658-e4d8-87f5-69ed-76d6c6a12a19",
+    "hash": "557ab86b1385395b43a042f76120f994",
+    "source": "full_subject_revision_june_2026-p15-q68",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Matching polynomial coefficients",
+    "prior_held": false
+  },
+  {
+    "id": "8e5cf006-fe41-7bae-e676-e2354a6916a9",
+    "hash": "20ca9a3f03bd92beb19a6b2f5ed4059c",
+    "source": "full_subject_revision_june_2026-p21-q105",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Combining like polynomial terms",
+    "prior_held": false
+  },
+  {
+    "id": "91a56f20-a3cb-dfc4-74dc-483e5c31e0c3",
+    "hash": "67063b344a0d00b6cb2cf43ff56bb25f",
+    "source": "full_subject_revision_june_2026-p13-q60",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Factored form and x-intercepts",
+    "prior_held": false
+  },
+  {
+    "id": "92118004-2f60-6326-dab8-e6ad8b7911e7",
+    "hash": "6a0d2d581b8861e527f64ef9f6f73f46",
+    "source": "revision_1_august_2026-p31-q57",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Expanding and simplifying polynomial expressions",
+    "prior_held": false
+  },
+  {
+    "id": "9221d0a8-55b7-3c0c-9628-5e9cec68556f",
+    "hash": "6be08bea70cdf3daa72ef3514897fe08",
+    "source": "full_subject_revision_june_2026-p50-q223",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Reciprocals of quadratic roots",
+    "prior_held": false
+  },
+  {
+    "id": "92f77626-cf96-fa75-d172-b57c96a2bb24",
+    "hash": "1e1eb4dd9167b5538c9c4e4e1946e5b6",
+    "source": "full_subject_revision_june_2026-p10-q45",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Quadratic formula",
+    "prior_held": false
+  },
+  {
+    "id": "9e01458f-697d-02a2-77d3-885d3574a493",
+    "hash": "9cc319407e6b1c44d6f34adc0ae23c82",
+    "source": "est2_dec_2025_bayoumy_collection-p7-q19",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Angles and polygons",
+    "skill": "Perimeter of a regular polygon",
+    "prior_held": false
+  },
+  {
+    "id": "a0f10f59-0430-6e3f-42d2-08880e35d6ad",
+    "hash": "f10a5d6d273c920504ef6e57119a146e",
+    "source": "full_subject_revision_june_2026-p11-q50",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Discriminant of a quadratic",
+    "prior_held": false
+  },
+  {
+    "id": "a8a7de68-e9a8-f3ea-9b48-531681cf5c0f",
+    "hash": "87af4d2e99d44725ff69b3c775ad6102",
+    "source": "full_subject_revision_june_2026-p11-q48",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Vertex from factored form",
+    "prior_held": false
+  },
+  {
+    "id": "b0c804f6-a7ff-914e-04e6-f3468ceceac2",
+    "hash": "7a9e12ed820f6282af0862f8f90578ac",
+    "source": "full_subject_revision_june_2026-p11-q47",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Increasing interval of a quadratic",
+    "prior_held": false
+  },
+  {
+    "id": "c3f89d73-eead-c715-ff52-152a275fdd7c",
+    "hash": "35b8aca0ff37841d75ec56114e533ecc",
+    "source": "full_subject_revision_june_2026-p55-q250",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Consecutive-integer product equations",
+    "prior_held": false
+  },
+  {
+    "id": "d62887a6-b09c-b8b0-690d-bfcbb25cd067",
+    "hash": "a6606d5ade320d9482cd25bd7e7217de",
+    "source": "full_subject_revision_june_2026-p10-q46",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Sum and product of quadratic roots",
+    "prior_held": false
+  },
+  {
+    "id": "fbc2a5e8-34dc-7805-9aa0-33f8a329c674",
+    "hash": "ccd3d7668d4ec65d6d7adf601ea1fb63",
+    "source": "full_subject_revision_june_2026-p48-q212",
+    "before_topic": "Quadratics and polynomials",
+    "topic": "Quadratics and polynomials",
+    "skill": "Cubic sum identity",
+    "prior_held": false
+  },
+  {
+    "id": "0e673807-c4b8-3ff2-8a89-3f504a5912ce",
+    "hash": "2daa74b6721e52017ce719957687f3af",
+    "source": "revision_1_august_2026-p36-q77",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Percentage increase",
+    "prior_held": false
+  },
+  {
+    "id": "119f2069-177f-fd3c-3606-035c46264b67",
+    "hash": "9d5a087d1f821587eaf04de7c188847f",
+    "source": "full_subject_revision_june_2026-p41-q192",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Unit rates and whole-unit rounding",
+    "prior_held": false
+  },
+  {
+    "id": "1ea4fe04-4a95-fdea-7323-77b5f1558942",
+    "hash": "59bb97ec26b8ea6a8848ad7933cfdcbd",
+    "source": "revision_2_march_2026-p23-q26",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Sharing a total in a ratio",
+    "prior_held": false
+  },
+  {
+    "id": "1f157430-f01c-294b-c4ef-36929bf5ddf8",
+    "hash": "706aae6772797ea02c27e46566dec01d",
+    "source": "stats_probability_revision_may_2026-p13-q42",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Unit rates and whole-unit rounding",
+    "prior_held": false
+  },
+  {
+    "id": "1f72859c-385b-f913-17bc-b4b8c5cd941a",
+    "hash": "541d8e9c3f025772caf962784dc82a78",
+    "source": "full_subject_revision_june_2026-p42-q194",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Combining two ratios",
+    "prior_held": false
+  },
+  {
+    "id": "2e4bb919-4756-092d-97d1-452a82d2ba47",
+    "hash": "3e5022b048975076a456c11fcc9d1e46",
+    "source": "full_subject_revision_june_2026-p23-q111",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Metric mass conversion and rounding",
+    "prior_held": false
+  },
+  {
+    "id": "3273c3c8-0d1c-baa4-34fc-e849e60cefab",
+    "hash": "dccc705fae17eae86308435ea1847181",
+    "source": "revision_2_june_2026_a-p11-q8",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Statistics and data analysis",
+    "skill": "Frequencies and percentages in a data set",
+    "prior_held": false
+  },
+  {
+    "id": "3dc5b47c-0b0d-9686-0fc4-9a79f25d8b14",
+    "hash": "19333ca4d4787eb8d4886aefd751d81d",
+    "source": "full_subject_revision_june_2026-p41-q190",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Inverse proportion and squared values",
+    "prior_held": false
+  },
+  {
+    "id": "3de301a2-6d2c-786d-47f9-b81759234824",
+    "hash": "1f0fc4bbf79610de873450c5f8153748",
+    "source": "full_subject_revision_june_2026-p36-q164",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Reverse percentages",
+    "prior_held": false
+  },
+  {
+    "id": "453996b6-bc31-fcd2-450b-b21f5830f666",
+    "hash": "7a900fa96dacf4c596eea27286f72cb3",
+    "source": "revision_1_august_2026-p33-q66",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Simple interest",
+    "prior_held": false
+  },
+  {
+    "id": "45fbdea4-d2a4-22ba-7e49-93191e045499",
+    "hash": "a3fea8386df23f51aea9d2cccc4f0759",
+    "source": "full_subject_revision_june_2026-p42-q195",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Ratio sharing followed by a percentage change",
+    "prior_held": false
+  },
+  {
+    "id": "4fac987e-226d-2ef6-dfc6-3b1044ce875c",
+    "hash": "4ee2ac707f584385ef3572150a9dbc27",
+    "source": "revision_1_august_2026-p31-q58",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Multiplying quantities and unit costs",
+    "prior_held": false
+  },
+  {
+    "id": "54af8b9e-4b62-aa3b-ccae-ef683965a459",
+    "hash": "50b3b0c2590d26d9ad412cdfe1e2a3ed",
+    "source": "stats_probability_revision_may_2026-p13-q41",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Inverse proportion",
+    "prior_held": false
+  },
+  {
+    "id": "5a374899-5d5d-d706-1ce4-77197041133e",
+    "hash": "6d2f2eecfd5aec803d671738c3cbadb8",
+    "source": "full_subject_revision_june_2026-p24-q117",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Unit conversion and proportional reasoning",
+    "prior_held": true
+  },
+  {
+    "id": "5abbdf25-1b55-ae5d-d62f-aac68756ba39",
+    "hash": "77205f0a0a54d0f3b60695f48c2dcc8d",
+    "source": "full_subject_revision_june_2026-p25-q123",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Successive percentages",
+    "prior_held": false
+  },
+  {
+    "id": "5d07ec0c-0ca3-6938-27e3-b165fd4a984e",
+    "hash": "b8d8235fa1f6db43bf618a8deedd5be6",
+    "source": "full_subject_revision_june_2026-p22-q108",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Multiplying quantities and percentage profit",
+    "prior_held": false
+  },
+  {
+    "id": "65408451-9d7d-abf1-e23d-11cdc92006e2",
+    "hash": "0afc06092b2f835c507c2191a9e31cff",
+    "source": "revision_2_march_2026-p40-q49",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Successive percentages",
+    "prior_held": false
+  },
+  {
+    "id": "67dfd3cb-8a11-2c47-7a57-20a7c3e9a895",
+    "hash": "57e4b041cc1600f9ede5fea6e5ccc005",
+    "source": "full_subject_revision_june_2026-p24-q119",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Reverse percentage discounts",
+    "prior_held": false
+  },
+  {
+    "id": "6c44b350-f141-d931-54cb-ea6b248be437",
+    "hash": "c27cec48824cdf8a24684634b4164471",
+    "source": "full_subject_revision_june_2026-p54-q245",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Combined work rates",
+    "prior_held": false
+  },
+  {
+    "id": "77961f5b-00ea-1df9-79a8-74ea9af0d7ce",
+    "hash": "5a5600e29aab68a30342dc148cbe64fc",
+    "source": "full_subject_revision_june_2026-p45-q208",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Multiplying quantities and unit costs",
+    "prior_held": false
+  },
+  {
+    "id": "7f231779-be71-2f87-fd43-50ba14636043",
+    "hash": "0973129f1ea7712cdc346effc47eac20",
+    "source": "stats_probability_revision_may_2026-p13-q43",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Comparing typing rates",
+    "prior_held": false
+  },
+  {
+    "id": "855228b6-6cf0-30d9-bbaa-c3222fd51a33",
+    "hash": "4edbde226980510119c862330ded5d3b",
+    "source": "est2_dec_2025_bayoumy_collection-p13-q40",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Comparing typing rates",
+    "prior_held": false
+  },
+  {
+    "id": "8a1fbba4-ac9f-1c5a-99e1-d4838576e40e",
+    "hash": "6c9dfa90becc81a563dbd36d351cdcfd",
+    "source": "revision_1_august_2026-p27-q43",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Work rates with scheduled breaks",
+    "prior_held": false
+  },
+  {
+    "id": "8f837c16-8096-c128-2509-410a190123ba",
+    "hash": "ddf7d0f2c58cef2cd19e52a8c39b993b",
+    "source": "full_subject_revision_june_2026-p24-q121",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Time-unit conversion",
+    "prior_held": false
+  },
+  {
+    "id": "9210d3e2-d311-4739-94dc-722187eb7726",
+    "hash": "ab52958783a8da328a42717c2405753f",
+    "source": "est2_dec_2025_bayoumy_collection-p5-q14",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Ratio sharing followed by a percentage change",
+    "prior_held": false
+  },
+  {
+    "id": "93290e68-223f-4f69-8e55-646f49598d24",
+    "hash": "f976c0df44be69c38aba2af249a17162",
+    "source": "stats_probability_revision_may_2026-p13-q40",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Inverse proportion and squared values",
+    "prior_held": false
+  },
+  {
+    "id": "99d9f602-75d6-705c-2f6f-59dcfd44a8f1",
+    "hash": "45b1799aa999a6450d4e17a3b972c157",
+    "source": "full_subject_revision_june_2026-p24-q118",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Unit rates",
+    "prior_held": false
+  },
+  {
+    "id": "9f479ecd-a687-b0be-fc29-ace016e04fff",
+    "hash": "2d7722ceb1c9f8c12d9a850726fa2445",
+    "source": "full_subject_revision_june_2026-p20-q94",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Compound interest and an implied rate",
+    "prior_held": true
+  },
+  {
+    "id": "b5d0264f-cdb5-458b-1352-0c81f5e5ed68",
+    "hash": "24a0a1051d1c4c45af16e879d596870c",
+    "source": "full_subject_revision_june_2026-p23-q112",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Percentage increase",
+    "prior_held": false
+  },
+  {
+    "id": "bb35af6f-dc1e-4600-14ee-bef2842b7a08",
+    "hash": "44f274d1e266ea81bec83d9ac0ecbd27",
+    "source": "full_subject_revision_june_2026-p23-q116",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Unit costs after a percentage discount",
+    "prior_held": false
+  },
+  {
+    "id": "c279cde1-ee45-6874-b30c-b937462859d5",
+    "hash": "fb5126a6d9fe8e348088b87290f143dc",
+    "source": "full_subject_revision_june_2026-p41-q191",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Inverse proportion",
+    "prior_held": false
+  },
+  {
+    "id": "d82839fb-e31c-2d6b-0a23-de7e03d23e35",
+    "hash": "e259959b2ff5dc379c1fbf37d26f511b",
+    "source": "revision_2_june_2026_a-p23-q22",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Sharing a total in a ratio",
+    "prior_held": true
+  },
+  {
+    "id": "d8f3d9c0-7810-a4bc-1906-8d2034b41084",
+    "hash": "789acdb49602e4c2d910943618b33a40",
+    "source": "revision_1_august_2026-p37-q82",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Metric mass conversion and rounding",
+    "prior_held": false
+  },
+  {
+    "id": "d9eaf651-01cd-43e5-9584-347818be4b43",
+    "hash": "77bc7e0e13b484651fd9927af8f78c4f",
+    "source": "stats_probability_revision_may_2026-p14-q45",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Ratio sharing followed by a percentage change",
+    "prior_held": false
+  },
+  {
+    "id": "dc220155-bbb4-ddc2-6f65-aa31fc55dd7a",
+    "hash": "be45ba12299056eba869aa10e4f2dde1",
+    "source": "revision_2_june_2026_a-p14-q12",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Inverse proportion and squared values",
+    "prior_held": false
+  },
+  {
+    "id": "e773194a-5f49-6be4-2600-4c9790f93f05",
+    "hash": "0abba24adc2d527792434318d8ce9273",
+    "source": "full_subject_revision_june_2026-p24-q122",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Comparing unit prices",
+    "prior_held": false
+  },
+  {
+    "id": "e851ee2a-cfce-dded-0dab-559461b37b4d",
+    "hash": "035c7d937963f5054da0c6d9ecfd450c",
+    "source": "full_subject_revision_june_2026-p22-q110",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Simple interest",
+    "prior_held": false
+  },
+  {
+    "id": "edf79aee-bc14-b3fc-e76b-d1a9b2f6c787",
+    "hash": "2cd75121c4b7b4930b9ea7c82a107208",
+    "source": "full_subject_revision_june_2026-p25-q128",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Equating percentages of different quantities",
+    "prior_held": false
+  },
+  {
+    "id": "eeb38a2e-18d6-eb61-76d3-ed298e1a5a82",
+    "hash": "e26f0ea5fce23e6d2ba2f9fd1ea6a4ed",
+    "source": "full_subject_revision_june_2026-p23-q115",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Percentage tax on combined revenue",
+    "prior_held": false
+  },
+  {
+    "id": "eebb1246-cf63-8815-f193-aaaab55b1f60",
+    "hash": "c1788d4731982339be4609fe93da531c",
+    "source": "full_subject_revision_june_2026-p44-q204",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Ratios from grouped pass and fail counts",
+    "prior_held": false
+  },
+  {
+    "id": "f7dc0e49-02fd-efc0-91d5-27b6fd577708",
+    "hash": "c6943320d4d579e68fa64da29cd9a86e",
+    "source": "full_subject_revision_june_2026-p42-q193",
+    "before_topic": "Ratios, percentages and unit conversion",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Comparing typing rates",
+    "prior_held": false
+  },
+  {
+    "id": "331de3d6-88c5-6cf4-3195-fd9efc2019d6",
+    "hash": "944555657a2160cd5c99f5c178583ef1",
+    "source": "revision_1_august_2026-p12-q12",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Weighted mean after removing observations",
+    "prior_held": false
+  },
+  {
+    "id": "3d034377-153b-e9d1-19cc-331147ea5328",
+    "hash": "9777f819c2c8bc546d190e385297e3c2",
+    "source": "stats_probability_revision_may_2026-p4-q12",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Solving for an unknown from a mean",
+    "prior_held": false
+  },
+  {
+    "id": "3f51d40a-1836-d2b7-6c57-75db63864a5c",
+    "hash": "32f520a43b161550f6ec42274f7a0038",
+    "source": "full_subject_revision_june_2026-p28-q143",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Interquartile range",
+    "prior_held": false
+  },
+  {
+    "id": "57b18771-9dde-5a59-093a-aeb023b30cd8",
+    "hash": "681f3aa2265f01f018552814de880659",
+    "source": "full_subject_revision_june_2026-p35-q158",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Mean after adding an observation",
+    "prior_held": false
+  },
+  {
+    "id": "614833f0-5d71-f2b2-5a61-fcc45e48f827",
+    "hash": "d28e4853c6eb3de504e479bb5c832c3d",
+    "source": "full_subject_revision_june_2026-p29-q146",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Reading a stem-and-leaf plot",
+    "prior_held": false
+  },
+  {
+    "id": "755b22cf-15da-c622-6884-494b3961c10b",
+    "hash": "e5615bbc0684c5a71df2795624c85cbc",
+    "source": "est2_dec_2025_bayoumy_collection-p8-q20",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Reading a line of best fit",
+    "prior_held": false
+  },
+  {
+    "id": "7c28c31f-43b2-d0aa-e2c5-f4f4bafba8b4",
+    "hash": "18afdefab71007ee88f07766737a6e13",
+    "source": "full_subject_revision_june_2026-p45-q207",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Prediction from a regression equation",
+    "prior_held": false
+  },
+  {
+    "id": "8b144389-f978-f4ef-f233-6c6155e883cf",
+    "hash": "98404487e8c03489fc1e46af4e67ac3d",
+    "source": "full_subject_revision_june_2026-p36-q161",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Solving for an unknown from a mean",
+    "prior_held": false
+  },
+  {
+    "id": "92209c3f-418e-e955-7232-5dda771812e6",
+    "hash": "d5972b6dd12ab83dfe8b537076f0d3d2",
+    "source": "full_subject_revision_june_2026-p55-q247",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Ratios, percentages and unit conversion",
+    "skill": "Average speed for equal distances",
+    "prior_held": false
+  },
+  {
+    "id": "954cc02c-362c-e738-45e7-3f14a6baa73b",
+    "hash": "5d0c4e5ed31600b74763b16262780ad3",
+    "source": "full_subject_revision_june_2026-p35-q157",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Interquartile range",
+    "prior_held": false
+  },
+  {
+    "id": "b7fa00cd-57b9-024d-cf05-b7d6b03c11bd",
+    "hash": "5a1d61375995c35729ae4d25ec7e801d",
+    "source": "stats_probability_revision_may_2026-p3-q7",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Interquartile range",
+    "prior_held": false
+  },
+  {
+    "id": "e03d05c9-65fc-b6f9-fcc8-59b05b5c48b6",
+    "hash": "4ba0f6f015733266ad56983514629613",
+    "source": "full_subject_revision_june_2026-p30-q149",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Positive correlation",
+    "prior_held": false
+  },
+  {
+    "id": "e2171e94-e185-f144-2a14-86d79ca63f5e",
+    "hash": "091dcfc812600e9851ef86bafc463f3a",
+    "source": "revision_2_june_2026_a-p24-q25",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Quartiles and a derived ratio",
+    "prior_held": false
+  },
+  {
+    "id": "ee4ea9e6-1920-5d2b-e819-4a342449335f",
+    "hash": "6eb83cc82c1aad894cacac0a0dbb2098",
+    "source": "full_subject_revision_june_2026-p35-q156",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Interquartile range",
+    "prior_held": false
+  },
+  {
+    "id": "efd7a835-6f42-cb9a-1a06-07232cdab400",
+    "hash": "99bc5c6506b2a0a76dc14ac97b96161b",
+    "source": "full_subject_revision_june_2026-p22-q106",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Weighted mean after removing observations",
+    "prior_held": true
+  },
+  {
+    "id": "f70c52fa-51f6-55fb-78ec-819384f00cfe",
+    "hash": "33fb6543f02a63a7ea1b15a27ae28ac2",
+    "source": "full_subject_revision_june_2026-p28-q142",
+    "before_topic": "Statistics and data analysis",
+    "topic": "Statistics and data analysis",
+    "skill": "Unknown data value and interquartile range",
+    "prior_held": false
+  },
+  {
+    "id": "0d8d4ea3-be1f-bc84-5db9-316ab2d458d7",
+    "hash": "192c845a49de83b11ebd6cb0294e9ebb",
+    "source": "full_subject_revision_june_2026-p9-q40",
+    "before_topic": "Systems of equations",
+    "topic": "Systems of equations",
+    "skill": "Intersection of two linear equations",
+    "prior_held": false
+  },
+  {
+    "id": "3d04ee5a-546e-9107-f8bf-dc80eed704dc",
+    "hash": "d96c2d5c494eae9f6cafcc94e1a82385",
+    "source": "full_subject_revision_june_2026-p55-q249",
+    "before_topic": "Systems of equations",
+    "topic": "Systems of equations",
+    "skill": "Digit-reversal equations",
+    "prior_held": false
+  },
+  {
+    "id": "3de5a1c7-1a19-ae66-5ea2-17ea62dd9dd3",
+    "hash": "1993d3185e6ca699a31225e4e8636f74",
+    "source": "full_subject_revision_june_2026-p10-q43",
+    "before_topic": "Systems of equations",
+    "topic": "Systems of equations",
+    "skill": "Pairwise intersections of three lines",
+    "prior_held": false
+  },
+  {
+    "id": "736b73a7-b271-2230-f923-6af6b4d7e405",
+    "hash": "ec26f8878b474d305f520f9ca539d5d3",
+    "source": "full_subject_revision_june_2026-p9-q39",
+    "before_topic": "Systems of equations",
+    "topic": "Systems of equations",
+    "skill": "Elimination in a system of equations",
+    "prior_held": false
+  },
+  {
+    "id": "9d510e8d-3762-17a9-be27-a589ab9c06c9",
+    "hash": "ca6e80d8782d4cdc8cde2ea235404ca0",
+    "source": "full_subject_revision_june_2026-p10-q42",
+    "before_topic": "Systems of equations",
+    "topic": "Systems of equations",
+    "skill": "Substitution in a system of equations",
+    "prior_held": false
+  },
+  {
+    "id": "9e12af86-37aa-d094-77cc-d9e189b953fc",
+    "hash": "535490c46b38a12426b035ae401beee0",
+    "source": "full_subject_revision_june_2026-p4-q8",
+    "before_topic": "Systems of equations",
+    "topic": "Systems of equations",
+    "skill": "Sum-and-difference equations",
+    "prior_held": false
+  },
+  {
+    "id": "a84c30ba-15e4-0ac0-d2d6-4c7a4081fdd4",
+    "hash": "d2a806fdce8a68fd90415aa1eacb5095",
+    "source": "full_subject_revision_june_2026-p9-q38",
+    "before_topic": "Systems of equations",
+    "topic": "Systems of equations",
+    "skill": "An unknown coefficient in a system",
+    "prior_held": false
+  },
+  {
+    "id": "ac498126-7c07-e7ec-9af0-dab03da65cc6",
+    "hash": "780bb7db1961e3e6ca17f7bbec3e502a",
+    "source": "full_subject_revision_june_2026-p55-q248",
+    "before_topic": "Systems of equations",
+    "topic": "Systems of equations",
+    "skill": "Age equations",
+    "prior_held": false
+  },
+  {
+    "id": "fa73e62f-9f29-3327-9864-8bb9382e0435",
+    "hash": "72a16e782676d72cd60b9d37e845521b",
+    "source": "full_subject_revision_june_2026-p9-q37",
+    "before_topic": "Systems of equations",
+    "topic": "Systems of equations",
+    "skill": "Elimination in a system of equations",
+    "prior_held": false
+  }
+]

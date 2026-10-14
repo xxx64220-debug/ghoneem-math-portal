@@ -1,0 +1,802 @@
+[
+  {
+    "exercise": 1,
+    "n": 1,
+    "page": 63,
+    "rect": [
+      80,
+      145,
+      470,
+      655
+    ],
+    "stem": "The graph shown crosses the y-axis at which point?",
+    "choices": [
+      "(−3,0)",
+      "(7,0)",
+      "(0,−3)",
+      "(0,7)"
+    ],
+    "correct": "D",
+    "explanation": "The source graph crosses the y-axis at (0,7)."
+  },
+  {
+    "exercise": 1,
+    "n": 2,
+    "page": 63,
+    "rect": [
+      80,
+      655,
+      470,
+      1145
+    ],
+    "stem": "The table gives f(0)=20, f(1)=21, f(3)=29. Which function could define f?",
+    "choices": [
+      "$f(x)=20x$",
+      "$f(x)=x+20$",
+      "$f(x)=x-20$",
+      "$f(x)=x^2+20$"
+    ],
+    "correct": "D",
+    "explanation": "x²+20 gives 20,21,29 at the three inputs."
+  },
+  {
+    "exercise": 1,
+    "n": 3,
+    "page": 63,
+    "rect": [
+      490,
+      145,
+      875,
+      665
+    ],
+    "stem": "At what x does the graphed exponential function equal 0?",
+    "choices": [
+      "−4",
+      "−3",
+      "0",
+      "2"
+    ],
+    "correct": "D",
+    "explanation": "Its x-intercept is (2,0), so f(2)=0."
+  },
+  {
+    "exercise": 1,
+    "n": 4,
+    "page": 63,
+    "rect": [
+      490,
+      665,
+      875,
+      920
+    ],
+    "stem": "What is the y-coordinate of the y-intercept of $y=-4(1/2)^x+9$?",
+    "choices": [],
+    "correct": "5",
+    "explanation": "At x=0, (1/2)^0=1 and y=−4+9=5."
+  },
+  {
+    "exercise": 1,
+    "n": 5,
+    "page": 63,
+    "rect": [
+      490,
+      920,
+      875,
+      1150
+    ],
+    "stem": "For $f(x)=(16+x^2)/(2x)$, what is f(−4)?",
+    "choices": [
+      "−8",
+      "−4",
+      "4",
+      "8"
+    ],
+    "correct": "B",
+    "explanation": "Substitute −4: (16+16)/(−8)=−4."
+  },
+  {
+    "exercise": 1,
+    "n": 6,
+    "page": 64,
+    "rect": [
+      80,
+      90,
+      460,
+      465
+    ],
+    "stem": "A ball’s height is $h(t)=150-16t^2$ feet t seconds after falling. What does h(3)=6 mean?",
+    "choices": [
+      "3 feet above ground after 6 seconds",
+      "3 feet below platform after 6 seconds",
+      "6 feet above ground after 3 seconds",
+      "6 feet below platform after 3 seconds"
+    ],
+    "correct": "C",
+    "explanation": "h is height above ground, so h(3)=6 means 6 feet high after 3 seconds."
+  },
+  {
+    "exercise": 1,
+    "n": 7,
+    "page": 64,
+    "rect": [
+      80,
+      465,
+      460,
+      735
+    ],
+    "stem": "If $f(x)=x^2$, for which c is f(c)<c?",
+    "choices": [
+      "$1/2$",
+      "1",
+      "$3/2$",
+      "2"
+    ],
+    "correct": "A",
+    "explanation": "The inequality c²<c holds for 0<c<1, including 1/2."
+  },
+  {
+    "exercise": 1,
+    "n": 8,
+    "page": 64,
+    "rect": [
+      80,
+      735,
+      460,
+      1120
+    ],
+    "stem": "If $f(x)=4x-3$ and $g(x)=3x+5$, which equals f(8)?",
+    "choices": [
+      "g(1)",
+      "g(3)",
+      "g(5)",
+      "g(8)"
+    ],
+    "correct": "D",
+    "explanation": "f(8)=29 and g(8)=3·8+5=29."
+  },
+  {
+    "exercise": 1,
+    "n": 9,
+    "page": 64,
+    "rect": [
+      475,
+      90,
+      875,
+      605
+    ],
+    "stem": "On the graphed piecewise function, if f(a)=f(3), which could be a?",
+    "choices": [
+      "−4",
+      "−3",
+      "−2",
+      "1"
+    ],
+    "correct": "B",
+    "explanation": "The graph gives f(3)=−2 and also f(−3)=−2."
+  },
+  {
+    "exercise": 1,
+    "n": 10,
+    "page": 64,
+    "rect": [
+      475,
+      605,
+      875,
+      895
+    ],
+    "stem": "If $f(x)=x^2+1$ and $g(x)=x^2-1$, what is f(g(2))?",
+    "choices": [
+      "3",
+      "5",
+      "10",
+      "17"
+    ],
+    "correct": "C",
+    "explanation": "g(2)=3 and f(3)=9+1=10."
+  },
+  {
+    "exercise": 1,
+    "n": 11,
+    "page": 64,
+    "rect": [
+      475,
+      895,
+      875,
+      1150
+    ],
+    "stem": "If $f(x)=3x+2$ and $g(x)=f(2x)-1$, what is g(10)?",
+    "choices": [],
+    "correct": "61",
+    "explanation": "g(10)=f(20)−1=(3·20+2)−1=61."
+  },
+  {
+    "exercise": 1,
+    "n": 12,
+    "page": 65,
+    "rect": [
+      80,
+      90,
+      470,
+      710
+    ],
+    "stem": "The graphed pressure y versus elevation x has y-intercept about 100 kPa. Which contextual interpretation is correct?",
+    "choices": [
+      "Pressure at sea level about 35 kPa",
+      "Pressure at sea level about 100 kPa",
+      "Pressure at 35 km about 0 kPa",
+      "Pressure at 100 km about 0 kPa"
+    ],
+    "correct": "B",
+    "explanation": "The y-intercept is pressure when elevation x=0, or sea level, about 100 kPa."
+  },
+  {
+    "exercise": 1,
+    "n": 13,
+    "page": 65,
+    "rect": [
+      80,
+      710,
+      470,
+      1100
+    ],
+    "stem": "If $f(x)=-3x+5$ and $(1/2)f(a)=10$, what is a?",
+    "choices": [
+      "−8",
+      "−5",
+      "5",
+      "8"
+    ],
+    "correct": "B",
+    "explanation": "f(a)=20, so −3a+5=20 and a=−5."
+  },
+  {
+    "exercise": 1,
+    "n": 14,
+    "page": 65,
+    "rect": [
+      480,
+      90,
+      875,
+      390
+    ],
+    "stem": "A function has exactly two x-intercepts (r,0),(s,0), with positive r,s. Which could define f?",
+    "choices": [
+      "$(x+r)(x+s)$",
+      "$x(x+r)(x+s)$",
+      "$(x-r)(x-s)$",
+      "$x(x-r)(x-s)$"
+    ],
+    "correct": "C",
+    "explanation": "The roots must be r and s; the factor x in choice D would add a third root at zero."
+  },
+  {
+    "exercise": 1,
+    "n": 15,
+    "page": 65,
+    "rect": [
+      480,
+      390,
+      875,
+      920
+    ],
+    "stem": "The graphed function is $y=3^x+b$. What is b?",
+    "choices": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "correct": "B",
+    "explanation": "Its y-intercept is 3, so 3^0+b=1+b=3 and b=2."
+  },
+  {
+    "exercise": 1,
+    "n": 16,
+    "page": 66,
+    "rect": [
+      75,
+      90,
+      460,
+      630
+    ],
+    "stem": "For $f(x)=x(x+2)(x+6)$, which table lists zeros of y=f(x−2)?",
+    "choices": [
+      "−8,−4,−2",
+      "−4,0,2",
+      "−2,0,4",
+      "2,4,8"
+    ],
+    "correct": "B",
+    "explanation": "Set x−2 equal to the zeros −6,−2,0. The new zeros are −4,0,2."
+  },
+  {
+    "exercise": 1,
+    "n": 17,
+    "page": 66,
+    "rect": [
+      75,
+      630,
+      460,
+      1150
+    ],
+    "stem": "Which displayed equation could define the graph with double x-intercepts −2 and 3 and y-intercept about 72?",
+    "choices": [
+      "$(x+2)^2(x-3)^2$",
+      "$(x-2)^2(x+3)^2$",
+      "$2(x+2)^2(x-3)^2$",
+      "$2(x-2)^2(x+3)^2$"
+    ],
+    "correct": "C",
+    "explanation": "The roots require (x+2)²(x−3)². Multiplying by 2 gives f(0)=72."
+  },
+  {
+    "exercise": 1,
+    "n": 18,
+    "page": 66,
+    "rect": [
+      475,
+      90,
+      875,
+      380
+    ],
+    "stem": "For $f(x)=(x+2)(x-2)^2$, −2≤p≤2, which is NOT a possible value of f(p)?",
+    "choices": [
+      "12",
+      "8",
+      "4",
+      "0"
+    ],
+    "correct": "A",
+    "explanation": "On the interval, the maximum is 256/27≈9.48, so 12 is impossible."
+  },
+  {
+    "exercise": 1,
+    "n": 19,
+    "page": 66,
+    "rect": [
+      475,
+      380,
+      875,
+      690
+    ],
+    "stem": "If $f(x+1)=(1/4)f(x)$, which could define f?",
+    "choices": [
+      "$(1/4)(1/8)^x$",
+      "$8(1/4)^x$",
+      "$8(4)^x$",
+      "$(1/4)(8)^x$"
+    ],
+    "correct": "B",
+    "explanation": "A base of 1/4 multiplies output by 1/4 when x increases by 1."
+  },
+  {
+    "exercise": 1,
+    "n": 20,
+    "page": 66,
+    "rect": [
+      475,
+      690,
+      875,
+      1120
+    ],
+    "stem": "If $f(x)=ax^2+b$, with f(0)=−2, f(1)=3, f(2)=18, what is f(3)?",
+    "choices": [
+      "23",
+      "39",
+      "43",
+      "56"
+    ],
+    "correct": "C",
+    "explanation": "b=−2, a=5 from f(1)=3; f(3)=5·9−2=43."
+  },
+  {
+    "exercise": 2,
+    "n": 1,
+    "page": 67,
+    "rect": [
+      80,
+      145,
+      470,
+      595
+    ],
+    "stem": "An advertisement’s revenue g(x) depends on views x. What does $g(2000)=18000$ mean?",
+    "choices": [
+      "2,000 clicks produce $18,000",
+      "2,000 views produce $18,000",
+      "18,000 views produce $2,000",
+      "18,000 clicks produce $2,000"
+    ],
+    "correct": "B",
+    "explanation": "The input x counts views; 2,000 views produce revenue of $18,000."
+  },
+  {
+    "exercise": 2,
+    "n": 2,
+    "page": 67,
+    "rect": [
+      80,
+      595,
+      470,
+      835
+    ],
+    "stem": "For $f(x)=(x+18)/(x-6)$, what x gives f(x)=−1?",
+    "choices": [],
+    "correct": "-6",
+    "explanation": "x+18=−(x−6), so 2x=−12 and x=−6."
+  },
+  {
+    "exercise": 2,
+    "n": 3,
+    "page": 67,
+    "rect": [
+      80,
+      835,
+      470,
+      1120
+    ],
+    "stem": "If $g(x)=\\sqrt{3x}$ and g(a)=6, what is a?",
+    "choices": [
+      "3",
+      "6",
+      "9",
+      "12"
+    ],
+    "correct": "D",
+    "explanation": "Square √(3a)=6 to get 3a=36, so a=12."
+  },
+  {
+    "exercise": 2,
+    "n": 4,
+    "page": 67,
+    "rect": [
+      480,
+      145,
+      875,
+      590
+    ],
+    "stem": "How many x-values give f(x)=3 on the shown piecewise graph?",
+    "choices": [
+      "Two",
+      "Three",
+      "Four",
+      "Five"
+    ],
+    "correct": "C",
+    "explanation": "A horizontal line at y=3 meets four distinct pieces/points of the graph."
+  },
+  {
+    "exercise": 2,
+    "n": 5,
+    "page": 67,
+    "rect": [
+      480,
+      590,
+      875,
+      1110
+    ],
+    "stem": "For $f(x)=a^{-x}/b$, positive a,b, what is its y-intercept?",
+    "choices": [
+      "$(0,1/b)$",
+      "$(0,a/b)$",
+      "$(0,1/(ab))$",
+      "(0,1)"
+    ],
+    "correct": "A",
+    "explanation": "f(0)=a^0/b=1/b."
+  },
+  {
+    "exercise": 2,
+    "n": 6,
+    "page": 68,
+    "rect": [
+      75,
+      90,
+      465,
+      435
+    ],
+    "stem": "A table lists g(1)=5 and f(1)=3. If g(c)=5, what is f(c)?",
+    "choices": [
+      "−2",
+      "3",
+      "5",
+      "6"
+    ],
+    "correct": "B",
+    "explanation": "The table shows c=1 is the input giving g(c)=5; f(1)=3."
+  },
+  {
+    "exercise": 2,
+    "n": 7,
+    "page": 68,
+    "rect": [
+      75,
+      435,
+      465,
+      790
+    ],
+    "stem": "For $f(x)=-x(x-a)(x+a)(x+b)^2$, positive a,b with a≠b, how many distinct zeros?",
+    "choices": [
+      "Two",
+      "Three",
+      "Four",
+      "Five"
+    ],
+    "correct": "C",
+    "explanation": "The distinct zeros are 0, a, −a, and −b."
+  },
+  {
+    "exercise": 2,
+    "n": 8,
+    "page": 68,
+    "rect": [
+      75,
+      790,
+      465,
+      1140
+    ],
+    "stem": "If f reaches a maximum at (3,f(3)) and g(x)=f(x)+7, where does g reach its maximum?",
+    "choices": [
+      "$(10,f(10)+7)$",
+      "$(f(3),f(3)+7)$",
+      "$(3,f(10))$",
+      "$(3,f(3)+7)$"
+    ],
+    "correct": "D",
+    "explanation": "A vertical shift by 7 keeps the maximizing input x=3 and raises the output by 7."
+  },
+  {
+    "exercise": 2,
+    "n": 9,
+    "page": 68,
+    "rect": [
+      475,
+      90,
+      875,
+      630
+    ],
+    "stem": "Given the displayed downward parabola f and $g(x)=(x+3)(x-1)$, for which x is f(x)>g(x)?",
+    "choices": [
+      "−3",
+      "−2",
+      "1",
+      "2"
+    ],
+    "correct": "B",
+    "explanation": "At x=−2 the source graph gives f(−2)≈1.5, while g(−2)=−3."
+  },
+  {
+    "exercise": 2,
+    "n": 10,
+    "page": 68,
+    "rect": [
+      475,
+      630,
+      875,
+      1120
+    ],
+    "stem": "From the table, f(3)=4 is the only value 4. If g(x)=2f(x), what k satisfies g(k)=8?",
+    "choices": [
+      "2",
+      "3",
+      "4",
+      "8"
+    ],
+    "correct": "B",
+    "explanation": "g(k)=8 means f(k)=4; table gives k=3."
+  },
+  {
+    "exercise": 2,
+    "n": 11,
+    "page": 69,
+    "rect": [
+      80,
+      90,
+      465,
+      395
+    ],
+    "stem": "For $f(x)=(x+3)(12-x)/x$, if f(a−9)=0, what is greatest possible a?",
+    "choices": [],
+    "correct": "21",
+    "explanation": "Zeros are x=−3 and x=12 (x=0 excluded). Thus a=6 or 21; greatest is 21."
+  },
+  {
+    "exercise": 2,
+    "n": 12,
+    "page": 69,
+    "rect": [
+      80,
+      395,
+      465,
+      665
+    ],
+    "stem": "If $g(x)=(x-8)/2$ and the graph passes through (20,c),(c,d), what is d?",
+    "choices": [
+      "−5",
+      "−1",
+      "3",
+      "6"
+    ],
+    "correct": "B",
+    "explanation": "c=g(20)=6, so d=g(6)=(6−8)/2=−1."
+  },
+  {
+    "exercise": 2,
+    "n": 13,
+    "page": 69,
+    "rect": [
+      80,
+      665,
+      465,
+      910
+    ],
+    "stem": "With y-intercept (0,12) and x-intercepts (−3,0),(2,0), which could define f?",
+    "choices": [
+      "$(x+3)^2(x-2)$",
+      "$(x+3)(x-2)^2$",
+      "$(x-3)^2(x+2)$",
+      "$(x-3)(x+2)^2$"
+    ],
+    "correct": "B",
+    "explanation": "Choice B has the given roots and f(0)=3·4=12."
+  },
+  {
+    "exercise": 2,
+    "n": 14,
+    "page": 69,
+    "rect": [
+      80,
+      910,
+      465,
+      1150
+    ],
+    "stem": "If $f(x)=\\sqrt{x-2}$, which equals f(18)−f(11)?",
+    "choices": [
+      "f(3)",
+      "f(5)",
+      "f(6)",
+      "f(7)"
+    ],
+    "correct": "A",
+    "explanation": "f(18)=4, f(11)=3, difference 1=f(3)."
+  },
+  {
+    "exercise": 2,
+    "n": 15,
+    "page": 69,
+    "rect": [
+      480,
+      90,
+      875,
+      655
+    ],
+    "stem": "The shown parabola has $y=a(x+3)(x+b)$, roots −3 and 4, y-intercept −4. What is ab?",
+    "choices": [
+      "−2",
+      "$-4/3$",
+      "$1/2$",
+      "8"
+    ],
+    "correct": "B",
+    "explanation": "b=−4. At x=0, −4=a·3·(−4), so a=1/3 and ab=−4/3."
+  },
+  {
+    "exercise": 2,
+    "n": 16,
+    "page": 69,
+    "rect": [
+      480,
+      655,
+      875,
+      1100
+    ],
+    "stem": "If $f(x)=(11/3)x+34$, $g(x)=(5/3)x-8$, and h=f−g, what is h’s x-intercept?",
+    "choices": [],
+    "correct": "-21",
+    "explanation": "h(x)=2x+42. Setting it to 0 gives x=−21."
+  },
+  {
+    "exercise": 2,
+    "n": 17,
+    "page": 70,
+    "rect": [
+      55,
+      90,
+      460,
+      440
+    ],
+    "stem": "If $f(x)=125a^x-b$ has y-intercept (0,b−3), what is b?",
+    "choices": [],
+    "correct": "64",
+    "explanation": "125−b=b−3, so 2b=128 and b=64."
+  },
+  {
+    "exercise": 2,
+    "n": 18,
+    "page": 70,
+    "rect": [
+      55,
+      440,
+      460,
+      780
+    ],
+    "stem": "For $f(x)=(x+32)/(x+b)$, if f(−8)=4, what is f(10)?",
+    "choices": [],
+    "correct": "7/4",
+    "explanation": "24/(b−8)=4 implies b=14; f(10)=42/24=7/4."
+  },
+  {
+    "exercise": 2,
+    "n": 19,
+    "page": 70,
+    "rect": [
+      55,
+      780,
+      460,
+      1140
+    ],
+    "stem": "For $f(x)=7(4)^{-x}+13$, which must hold? I. f(x)>7; II. f(x)≤20",
+    "choices": [
+      "I only",
+      "II only",
+      "Neither I nor II",
+      "I and II"
+    ],
+    "correct": "A",
+    "explanation": "f(x)>13 always, so I holds. At x=−2, f(x)=125>20, disproving II."
+  },
+  {
+    "exercise": 2,
+    "n": 20,
+    "page": 70,
+    "rect": [
+      480,
+      90,
+      875,
+      450
+    ],
+    "stem": "If $f(x)=ba^x$, $g(x)=f(x+2)$, and f passes through (0,36) and (−3,9/16), which defines g?",
+    "choices": [
+      "$216·3^x$",
+      "$324·3^x$",
+      "$288·4^x$",
+      "$576·4^x$"
+    ],
+    "correct": "D",
+    "explanation": "b=36 and 36/a³=9/16 imply a=4. Thus g(x)=36·4²·4^x=576·4^x."
+  },
+  {
+    "exercise": 2,
+    "n": 21,
+    "page": 70,
+    "rect": [
+      480,
+      450,
+      875,
+      795
+    ],
+    "stem": "If $f(x)=a\\sqrt x+b$, f has x-intercept 16, and f(x)−10 has x-intercept 9, what is b?",
+    "choices": [],
+    "correct": "40",
+    "explanation": "4a+b=0 and 3a+b=10. Subtract to get a=−10, then b=40."
+  },
+  {
+    "exercise": 2,
+    "n": 22,
+    "page": 70,
+    "rect": [
+      480,
+      795,
+      875,
+      1140
+    ],
+    "stem": "If $f(x)=b\\sqrt{a-x}+7\\sqrt{a-x}$, f(16)=0 and f(9)>0, which could be a+b?",
+    "choices": [
+      "−3",
+      "7",
+      "9",
+      "15"
+    ],
+    "correct": "D",
+    "explanation": "f(9)>0 implies b>−7 and a>9. Thus f(16)=0 forces a=16, giving a+b>9; only 15 qualifies."
+  }
+]

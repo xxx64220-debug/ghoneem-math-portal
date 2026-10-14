@@ -1,0 +1,49 @@
+{
+  "source": "SAT Valley September 2026 predictions",
+  "sha256": "4a9e4676c5588802d579110119ab125bf5980a71bc103a960231722a641d05ee",
+  "total_source_questions": 24,
+  "existing_sat_bank_before": 918,
+  "new_verified": 21,
+  "released_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    20,
+    21,
+    22,
+    23
+  ],
+  "held": [
+    {
+      "n": 18,
+      "page": 18,
+      "reason": "Source expression 6x⁴+35x+11 cannot be represented as (3x²+j)(2x²+k): the x term conflicts with the proposed even-power factorization. Worked solution silently treats it as 35x²."
+    },
+    {
+      "n": 19,
+      "page": 19,
+      "reason": "Source angle diagram is required and its label relationships were not safely recoverable as a standalone question."
+    },
+    {
+      "n": 24,
+      "page": 24,
+      "reason": "Defining g(x) equation is absent in the rendered page image; OCR alone cannot validate it."
+    }
+  ],
+  "duplicate_sources": "The 15- and 16-page August International II PDFs are parallel copies of 44 prompts; 43 corrected/verified versions already exist in SAT, and the defective original M2 Q18 is absent. August Prep (44), MSET008 (50), and the 120 detected CB IDs in the 129-page packet already occur in the graded bank.",
+  "limitations": "This September release excludes the 413-page SAT Panda book, both March PDFs, and the 100-page Elite May PDF. The March and Elite files now have separate audited intakes; the Panda exercise import remains outstanding."
+}

@@ -30,14 +30,24 @@ jobs:
         run: |
           node --test \
             tests/admin_question_reports.test.cjs \
+            tests/hardest_questions.test.cjs \
+            tests/finals_diagnosis.test.cjs \
             tests/client_state.test.cjs \
             tests/cors.test.cjs \
             tests/daily_streak.test.cjs \
             tests/exam_builder.test.cjs \
             tests/final_revision.test.cjs \
+            tests/lesson_taxonomy.test.cjs \
             tests/revision_formulas.test.cjs \
             tests/portal_notifications.test.cjs \
             tests/practice_figures.test.cjs
+
+      - name: Run EST English passage client regressions
+        run: |
+          npm ci --prefix tests/english-runtime --ignore-scripts --no-audit --no-fund
+          node --test tests/english_reading.test.cjs
+          node --test tests/svg_figures.test.cjs
+          node --test tests/group_planning_ui.test.cjs
 
       - name: Run source archive UI regression when its checked-in inputs exist
         run: |
@@ -52,8 +62,46 @@ jobs:
           python -m compileall -q scripts tests content-releases
           if [ -d content ]; then python -m compileall -q content; fi
 
+      - name: Verify June remaining-record mathematics and guarded repairs offline
+        run: |
+          python tests/june_remaining_review.py
+          python tests/revision_contamination_review.py
+          npm ci --prefix tests/june-review-runtime --ignore-scripts --no-audit --no-fund
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/june_remaining_review_db.cjs
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/group_exam_evidence_db.cjs
+
+      - name: Verify preserved SAT intake and private worked-page controls offline
+        run: |
+          python tests/sat_pr6_records.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/panda_private_worked_pages_db.cjs
+
       - name: Run EST release arithmetic and content checks when source data exists
         run: |
+          python scripts/build-est1-revision-ideas.py
+          python tests/est1_revision_ideas.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est1_revision_ideas_db.cjs
+          python scripts/build-est2-sat-revision-ideas.py
+          python tests/est2_sat_revision_ideas.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est2_sat_revision_ideas_db.cjs
+          python tests/est2_sat_revision_ideas_20260930.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est2_sat_revision_ideas_20260930_db.cjs
+          python tests/final_revision_prune.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/final_revision_prune_db.cjs
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/question_reliability_db.cjs
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/source_recovery_db.cjs
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/admin_bank_page_db.cjs
+          python scripts/build_remaining_skill_review.py
+          python tests/remaining_skill_review_math.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/remaining_skill_review_db.cjs
+          python tests/est_source_evidence_math.py
+          python tests/est_notes_20261005_math.py
+          python tests/original_est_practice_math.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/original_est_practice_db.cjs
+          python tests/clean_notes_math.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/clean_notes_db.cjs
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est_source_evidence_db.cjs
+          python tests/reviewed_exam_versions_math.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/reviewed_exam_versions_db.cjs
           if [ -f content/est-banks-2026/reviewed-bank.json ]; then
             python tests/est_bank_2026.py
           else
@@ -69,6 +117,27 @@ jobs:
           else
             echo "SKIP: tests/est_september_2026.py needs content/est-september-2026/release-bank.json and dist/."
           fi
+
+  browser-smoke:
+    name: Local SAT and EST English browser checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: npm ci --prefix tests/browser --ignore-scripts --no-audit --no-fund
+      - run: cd tests/browser && npx playwright install --with-deps chromium
+      - run: npm test --prefix tests/browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: browser-smoke-results
+          path: tests/browser/test-results/
+          retention-days: 7
 
   postgres:
     name: Isolated PostgreSQL checks
@@ -162,7 +231,11 @@ jobs:
           psql -v ON_ERROR_STOP=1 -f supabase/sql/portal_upgrade.sql
           psql -v ON_ERROR_STOP=1 -f supabase/sql/fair_exam_keys.sql
           psql -v ON_ERROR_STOP=1 -f supabase/sql/pending_exam_grading.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/sql/numeric_range_keys.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/sql/hardest_question_loading.sql
           for test in \
+            tests/numeric_range_keys.sql \
+            tests/hardest_questions.sql \
             tests/daily_streak.sql \
             tests/pending_grading.sql \
             tests/student_progress.sql \
@@ -189,8 +262,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          # Apply the actual dependency chain, then the guard last: the controls
-          # release replaces daily_state and would otherwise erase the guard.
+          # Controls replaces daily_state; apply the quality guard last.
           for support_sql in \
             content-releases/2026-09-27-final-revision-schema.sql \
             content-releases/2026-09-27-revision-focus-schema.sql \
@@ -222,3 +294,122 @@ jobs:
           else
             echo "SKIP: tests/est_september_2026.sql needs the September release import SQL and release-bank source fixture."
           fi
+
+      - name: Verify guarded lesson-taxonomy corrections in isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          psql -v ON_ERROR_STOP=1 -f content-releases/2026-09-27-final-revision-schema.sql
+          psql -v ON_ERROR_STOP=1 -f tests/lesson_taxonomy_corrections_fixture.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/20260929_lesson_taxonomy_corrections/apply.sql
+          psql -v ON_ERROR_STOP=1 -f tests/lesson_taxonomy_corrections.sql
+          if psql -v ON_ERROR_STOP=1 -f content-releases/20260929_lesson_taxonomy_corrections/apply.sql; then
+            echo "ERROR: lesson-taxonomy correction rerun was not rejected"
+            exit 1
+          fi
+          echo "PASS: lesson-taxonomy correction rerun was rejected"
+
+      - name: Verify revision taxonomy fingerprint repair in isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          PGDATABASE=postgres dropdb --if-exists portal_revision_ci
+          PGDATABASE=postgres createdb portal_revision_ci
+          export PGDATABASE=portal_revision_ci
+          psql -v ON_ERROR_STOP=1 -f tests/00_shim.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/000_preflight.sql
+          for migration in \
+            supabase/migrations/001_schema.sql \
+            supabase/migrations/002_functions.sql \
+            supabase/migrations/003_policies.sql \
+            supabase/migrations/004_seed.sql \
+            supabase/migrations/005_function_hardening.sql; do
+            psql -v ON_ERROR_STOP=1 -f "$migration"
+          done
+          psql -v ON_ERROR_STOP=1 -f content-releases/2026-09-27-final-revision-schema.sql
+          psql -v ON_ERROR_STOP=1 -f tests/revision_taxonomy_fingerprint_fixture.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/20260929_revision_taxonomy_fingerprint/apply.sql
+          psql -v ON_ERROR_STOP=1 -f tests/revision_taxonomy_fingerprint.sql
+          if psql -v ON_ERROR_STOP=1 -f content-releases/20260929_revision_taxonomy_fingerprint/apply.sql; then
+            echo "ERROR: revision taxonomy fingerprint repair rerun was not rejected"
+            exit 1
+          fi
+          echo "PASS: revision taxonomy fingerprint repair rerun was rejected"
+
+      - name: Verify EST I revision idea expansion in isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          PGDATABASE=postgres dropdb --if-exists portal_est1_ideas_ci
+          PGDATABASE=postgres createdb portal_est1_ideas_ci
+          export PGDATABASE=portal_est1_ideas_ci
+          psql -v ON_ERROR_STOP=1 -f tests/00_shim.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/000_preflight.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/001_schema.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/2026-09-27-final-revision-schema.sql
+          psql -v ON_ERROR_STOP=1 -f tests/est1_revision_ideas_fixture.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/20260929_est1_revision_ideas/apply.sql
+          psql -v ON_ERROR_STOP=1 -f tests/est1_revision_ideas.sql
+          if psql -v ON_ERROR_STOP=1 -f content-releases/20260929_est1_revision_ideas/apply.sql; then
+            echo "ERROR: EST I revision idea release rerun was not rejected"
+            exit 1
+          fi
+          echo "PASS: EST I revision idea release rerun was rejected"
+
+      - name: Verify SAT and EST II revision idea expansion in isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          PGDATABASE=postgres dropdb --if-exists portal_est2_sat_ideas_ci
+          PGDATABASE=postgres createdb portal_est2_sat_ideas_ci
+          export PGDATABASE=portal_est2_sat_ideas_ci
+          psql -v ON_ERROR_STOP=1 -f tests/00_shim.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/000_preflight.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/001_schema.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/2026-09-27-final-revision-schema.sql
+          psql -v ON_ERROR_STOP=1 -f tests/est2_sat_revision_ideas_fixture.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/20260929_est2_sat_revision_ideas/apply.sql
+          psql -v ON_ERROR_STOP=1 -f tests/est2_sat_revision_ideas.sql
+          if psql -v ON_ERROR_STOP=1 -f content-releases/20260929_est2_sat_revision_ideas/apply.sql; then
+            echo "ERROR: SAT and EST II revision idea release rerun was not rejected"
+            exit 1
+          fi
+          echo "PASS: SAT and EST II revision idea release rerun was rejected"
+
+      - name: Verify second SAT and EST II revision idea expansion in isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          PGDATABASE=postgres dropdb --if-exists portal_est2_sat_ideas_2_ci
+          PGDATABASE=postgres createdb portal_est2_sat_ideas_2_ci
+          export PGDATABASE=portal_est2_sat_ideas_2_ci
+          psql -v ON_ERROR_STOP=1 -f tests/00_shim.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/000_preflight.sql
+          psql -v ON_ERROR_STOP=1 -f supabase/migrations/001_schema.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/2026-09-27-final-revision-schema.sql
+          psql -v ON_ERROR_STOP=1 -f tests/est2_sat_revision_ideas_20260930_fixture.sql
+          psql -v ON_ERROR_STOP=1 -f content-releases/20260930_est2_sat_revision_ideas/apply.sql
+          psql -v ON_ERROR_STOP=1 -f tests/est2_sat_revision_ideas_20260930.sql
+          if psql -v ON_ERROR_STOP=1 -f content-releases/20260930_est2_sat_revision_ideas/apply.sql; then
+            echo "ERROR: second SAT and EST II revision idea release rerun was not rejected"
+            exit 1
+          fi
+          echo "PASS: second SAT and EST II revision idea release rerun was rejected"
+
+      - name: Verify Final Revision representative pruning in isolation
+        shell: bash
+        run: |
+          set -euo pipefail
+          PGDATABASE=postgres dropdb --if-exists portal_revision_prune_ci
+          PGDATABASE=postgres createdb portal_revision_prune_ci
+          export PGDATABASE=portal_revision_prune_ci
+          psql -v ON_ERROR_STOP=1 -f tests/final_revision_prune_fixture.sql
+          fixture_checksum="$(psql -v ON_ERROR_STOP=1 -Atc "select md5(string_agg(q.track_id||'|'||r.question_id::text||'|'||r.lesson||'|'||r.idea||'|'||r.difficulty||'|'||r.programmes::text||'|'||r.fingerprint||'|'||r.active::text||'|'||r.focus::text,';' order by r.question_id)) from revision_items r join questions q on q.id=r.question_id where r.active")"
+          sed "s/e7baafb3a3ce792eb2f7401ea4efba1b/$fixture_checksum/" content-releases/20260930_final_revision_prune/apply.sql > /tmp/final_revision_prune_apply.sql
+          psql -v ON_ERROR_STOP=1 -f /tmp/final_revision_prune_apply.sql
+          psql -v ON_ERROR_STOP=1 -f tests/final_revision_prune.sql
+          if psql -v ON_ERROR_STOP=1 -f /tmp/final_revision_prune_apply.sql; then
+            echo "ERROR: Final Revision representative release rerun was not rejected"
+            exit 1
+          fi
+          echo "PASS: Final Revision representative release rerun was rejected"

@@ -1,0 +1,7 @@
+{
+  "name": "june-review-isolated-runtime",
+  "private": true,
+  "dependencies": {
+    "@electric-sql/pglite": "0.3.14"
+  }
+}

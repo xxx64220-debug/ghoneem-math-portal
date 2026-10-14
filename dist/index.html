@@ -192,6 +192,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 @media(max-width:560px){.formula-lesson-list{grid-template-columns:1fr}.formula-lesson{padding:16px}.formula-diagram-grid{grid-template-columns:1fr}.formula-key-point p{font-size:17px}}
 </style>
 <link rel="stylesheet" href="/daily-challenge.css">
+<link rel="stylesheet" href="/english-reading.css">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#14243E">
 <meta name="mobile-web-app-capable" content="yes">
@@ -270,6 +271,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js"></script>
 <script src="/daily-challenge.js"></script>
+<script src="/lesson-taxonomy.js"></script>
 <script src="/revision-formulas.js"></script>
 <script src="/final-revision.js"></script>
 <script>
@@ -314,6 +316,9 @@ function math(el) {
   });
 }
 const FRIENDLY = {
+  exam_content_under_review: 'This exam is being checked by your instructor. Your saved results are safe; choose another exam for now.',
+  question_content_under_review: 'This question is being checked. Return to practice and choose another set.',
+  daily_content_under_review: 'Today’s quiz is being checked by your instructor. Your existing points are safe; try lesson practice for now.',
   revision_hidden: 'Your instructor has hidden final revision for this track.',
   report_limit_try_later: 'You have sent several reports recently. Please try again later.',
   no_revision_questions: 'No questions match these filters. Choose another lesson or difficulty.',
@@ -457,11 +462,11 @@ function scoreTrend(){
 }
 function assessmentRow(e,options={}){
  const a=e.last,live=a?.status==='in_progress',done=a&&!live;
- const locked=options?.locked===true;
- const label=live?'Resume':done?'Review':locked?'Complete Module 1':'Start';
+ const locked=options?.locked===true,underReview=e.content_ready===false;
+ const label=done?'Review':underReview?'Under review':live?'Resume':locked?'Complete Module 1':'Start';
  const practice=e.assessment_type==='lesson_exam';
  const score=done?`<span class="badge done">${a.score == null ? 'Awaiting grading' : a.score+'/'+a.total}</span>`:'';
- return `<div class="exam-row"><div style="flex:1;min-width:170px"><h3>${esc(e.title)}</h3><div class="meta">${e.questions} questions · ${live&&a.untimed?'No time limit':Math.round(e.duration_seconds/60)+' min'}${practice?' · Repeatable':''}${!e.open&&!live?' · Not open':''}${done?' · Completed':''}</div></div>${score}${practice&&!live&&e.open?`<label class="practice-mode">Timer<select data-timer="${e.id}" aria-label="Timer for ${esc(e.title)}"><option value="untimed">No time limit</option><option value="timed">Timed (${Math.round(e.duration_seconds/60)} min)</option></select></label>`:''}<button class="btn" ${done?`data-review="${a.id}"`:`data-start="${e.id}"`} ${(!done&&!live&&locked)||(!done&&!live&&!e.open)?'disabled':''}>${label}</button>${done&&(practice||e.retake_available)&&e.open?`<button class="btn" data-start="${e.id}">${practice?'Practice again':'Start retake'}</button>`:''}</div>`;
+ return `<div class="exam-row"><div style="flex:1;min-width:170px"><h3>${esc(e.title)}</h3><div class="meta">${e.questions} questions · ${live&&a.untimed?'No time limit':Math.round(e.duration_seconds/60)+' min'}${practice?' · Repeatable':''}${underReview?' · Content under review':!e.open&&!live?' · Not open':''}${done?' · Completed':''}</div></div>${score}${practice&&!live&&e.open&&!underReview?`<label class="practice-mode">Timer<select data-timer="${e.id}" aria-label="Timer for ${esc(e.title)}"><option value="untimed">No time limit</option><option value="timed">Timed (${Math.round(e.duration_seconds/60)} min)</option></select></label>`:''}<button class="btn" ${done?`data-review="${a.id}"`:`data-start="${e.id}"`} ${(!done&&underReview)||(!done&&!live&&locked)||(!done&&!live&&!e.open)?'disabled':''}>${label}</button>${done&&(practice||e.retake_available)&&e.open&&!underReview?`<button class="btn" data-start="${e.id}">${practice?'Practice again':'Start retake'}</button>`:''}</div>`;
 }
 function assessmentSection(type){
  const rows=DASH.exams.filter(e=>e.assessment_type===type).sort((a,b)=>DASH.examSort==='questions'?b.questions-a.questions:DASH.examSort==='status'?Number(b.open)-Number(a.open)||String(a.title).localeCompare(String(b.title)):String(a.title).localeCompare(String(b.title),undefined,{numeric:true,sensitivity:'base'}));
@@ -469,7 +474,7 @@ function assessmentSection(type){
 }
 function moduleState(e){
  const a=e?.last,live=a?.status==='in_progress',done=a&&!live;
- return {a,live,done,label:live?'Resume':done?'Review':'Start'};
+ return {a,live,done,label:done?'Review':e.content_ready===false?'Under review':live?'Resume':'Start'};
 }
 function fullExamSection(){
  const modules=DASH.exams.filter(e=>e.assessment_type==='full_exam');
@@ -492,7 +497,7 @@ function fullExamSection(){
   const complete=s1.done&&s2.done&&s1.a.score!=null&&s2.a.score!=null;
   const title=(m1?.title||'SAT Practice Exam').replace(/\s+[—-]\s+Module\s+1$/i,'');
   const combined=complete?`${s1.a.score+s2.a.score}/${s1.a.total+s2.a.total}`:'—';
-  const row=(e,s,locked)=>`<div class="exam-row module-row"><div style="flex:1;min-width:170px"><h3>Module ${e.module_number}</h3><div class="meta">${e.questions} questions · 35 min${locked?' · Complete Module 1 first':''}</div></div>${s.done?`<span class="badge done">${s.a.score==null?'Awaiting grading':s.a.score+'/'+s.a.total}</span>`:''}<button class="btn" ${s.done?`data-review="${s.a.id}"`:`data-start="${e.id}"`} ${locked||(!s.done&&!s.live&&!e.open)?'disabled':''}>${s.label}</button></div>`;
+  const row=(e,s,locked)=>`<div class="exam-row module-row"><div style="flex:1;min-width:170px"><h3>Module ${e.module_number}</h3><div class="meta">${e.questions} questions · 35 min${e.content_ready===false?' · Content under review':locked?' · Complete Module 1 first':''}</div></div>${s.done?`<span class="badge done">${s.a.score==null?'Awaiting grading':s.a.score+'/'+s.a.total}</span>`:''}<button class="btn" ${s.done?`data-review="${s.a.id}"`:`data-start="${e.id}"`} ${locked||(!s.done&&e.content_ready===false)||(!s.done&&!s.live&&!e.open)?'disabled':''}>${s.label}</button></div>`;
   return `<article class="dash-panel exam-pair"><div class="dash-heading"><div><h2>${esc(title)}</h2><p class="dash-note">2 modules · 22 questions each · 35 minutes per module</p></div><div class="pair-score"><span>Combined</span><strong>${combined}</strong></div></div>${row(m1,s1,false)}${row(m2,s2,!s1.done)}</article>`;
  }).join('');
  return `<div class="full-exam-intro"><h2>SAT practice exams</h2><p>Each exam has two separately timed 35-minute modules. Complete Module 1 to unlock Module 2; your combined result is out of 44.</p></div>${pairHtml}${singles.length?`<section class="dash-panel"><h2>Other full exams</h2>${singles.map(assessmentRow).join('')}</section>`:''}${!pairs.length&&!singles.length?'<div class="dash-empty">No full exams are assigned yet.</div>':''}`;
@@ -559,6 +564,39 @@ function renderPalette() {
   $('progress').textContent = `${done} of ${qs.length} answered`;
 }
 
+// The English import stores an entire marked passage in assets.html, and
+// the separate question in stem. Never infer boundaries from prose or length.
+function englishPassage(q, track) {
+  const a = q.assets;
+  if (track !== 'est_eng' || typeof a?.html !== 'string') return '';
+  const doc = new DOMParser().parseFromString(a.html, 'text/html');
+  const root = doc.body.firstElementChild;
+  if (doc.body.children.length !== 1 || !root?.classList.contains('est-passage') ||
+      [...doc.body.childNodes].some(n => n.nodeType === 3 && n.textContent.trim())) return '';
+  const tags = new Set('div span p br b i strong em u mark sup sub figure figcaption img'.split(' '));
+  for (const el of [root, ...root.querySelectorAll('*')]) {
+    if (!tags.has(el.localName)) { el.remove(); continue; }
+    const src = el.getAttribute('src'), alt = el.getAttribute('alt');
+    for (const attr of [...el.attributes]) el.removeAttribute(attr.name);
+    if (el.localName === 'img') {
+      if (!src || !(/^https:\/\//.test(src) || /^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\s]+$/.test(src))) { el.remove(); continue; }
+      el.setAttribute('src', src); el.setAttribute('alt', alt || a.image_alt || 'Passage illustration');
+    }
+  }
+  root.className = 'est-passage';
+  return root.outerHTML;
+}
+function readingQuestion(q, track, answers = '', stemHtml = `<div class="stem">${esc(q.stem)}</div>`) {
+  const passage = englishPassage(q, track);
+  if (!passage) return stemHtml + figure(q.assets) + answers;
+  // Keep other assets, but do not render the passage a second time as a figure.
+  const rest = {...q.assets}; delete rest.html;
+  return `<div class="english-reading"><details class="english-passage-pane" open>
+    <summary>Read passage${q.assets.passage_title ? ': ' + esc(q.assets.passage_title) : ''}<span class="reading-toggle" aria-hidden="true"> · Show / hide</span></summary>
+    <div class="english-passage-body">${passage}</div></details>
+    <section class="english-question-pane" aria-label="Question and answers">${stemHtml}${figure(rest)}${answers}</section></div>`;
+}
+
 function renderQ() {
   const q = ST.run.questions[ST.idx];
   let body;
@@ -573,7 +611,7 @@ function renderQ() {
   $('qcard').innerHTML = `<div class="qhead"><span class="qnum">QUESTION ${ST.idx + 1}</span>
     <span class="qnum" style="color:var(--accent)">${esc(q.topic || '')}</span></div>
     ${ST.run.exam?.track_id==='est'?'<p class="dash-note" style="margin-bottom:14px"><a href="/exams/est-march-2026/reference.png" target="_blank" rel="noopener">Formula reference ↗</a></p>':''}
-    <div class="stem">${esc(q.stem)}</div>${figure(q.assets)}${body}${reportButton(q.id,'exam question')}`;
+    ${readingQuestion(q,ST.run.exam?.track_id||ST.track?.id,body)}${reportButton(q.id,'exam question')}`;
   math($('qcard'));
 
   $('qcard').querySelectorAll('.choice').forEach(b =>
@@ -679,11 +717,10 @@ function paintReview(r,nextExamId=null) {
   } else {
     html += (r.items || []).map((it, i) => `<div class="rev ${it.correct?.void ? 'excluded' : it.is_correct ? 'right' : 'wrong'}">
       <span class="tag">${i + 1} · ${it.correct?.void ? 'EXCLUDED FROM SCORING' : it.is_correct ? 'CORRECT' : 'INCORRECT'}</span>
-      <div class="stem" style="margin:9px 0 0;font-size:16px">${esc(it.stem)}</div>
-      ${figure(it.assets)}
+      ${readingQuestion(it,r.exam?.track_id||ST.track?.id,`
       ${it.type==='mcq'?`<div class="review-choices">${(it.choices||[]).map(c=>`<div class="review-choice"><b>${esc(c.key)}.</b><span>${esc(c.text)}</span></div>`).join('')}</div>`:''}
       <div class="ans"><div><b>Your answer:</b> ${esc(fmt(it.response)) || '<i>blank</i>'}</div><div><b>Correct:</b> ${esc(fmt(it.correct))}</div></div>
-      ${it.explanation ? `<div class="exp">${esc(it.explanation)}</div>` : ''}${reportButton(it.id||it.question_id,'exam review')}</div>`).join('');
+      ${it.explanation ? `<div class="exp">${esc(it.explanation)}</div>` : ''}`,`<div class="stem" style="margin:9px 0 0;font-size:16px">${esc(it.stem)}</div>`)}${reportButton(it.id||it.question_id,'exam review')}</div>`).join('');
   }
   html += `<div class="nav" style="margin-top:22px">${nextExamId?'<button class="btn" id="nextModuleBtn">Start Module 2</button>':''}<button class="btn" id="backBtn">Back to exams</button></div>`;
   $('vReview').innerHTML = html;
@@ -754,7 +791,17 @@ function figure(a) {
   if (!a) return '';
   let out = '';
   const figures=Array.isArray(a.figure)?a.figure:[a.figure];
-  for(const src of figures){if(typeof src==='string'&&(/^(https:\/\/)/.test(src)||/^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\s]+$/.test(src)))out+=`<div class="fig"><img src="${esc(src)}" alt="${esc(a.figure_caption||'Question diagram')}" style="max-width:100%;height:auto"></div>`;}
+  for(const src of figures){
+    if(typeof src!=='string')continue;
+    if(/^data:image\/svg\+xml;base64,[A-Za-z0-9+/=\s]+$/.test(src)){
+      try{
+        const bytes=Uint8Array.from(atob(src.slice(src.indexOf(',')+1)),c=>c.charCodeAt(0));
+        const markup=new TextDecoder('utf-8',{fatal:true}).decode(bytes);
+        const parsed=new DOMParser().parseFromString(markup,'image/svg+xml');
+        if(!parsed.querySelector('parsererror')&&parsed.documentElement.localName==='svg')out+=`<div class="fig">${cleanMarkup(markup)}</div>`;
+      }catch{}
+    }else if(/^(https:\/\/)/.test(src)||/^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\s]+$/.test(src))out+=`<div class="fig"><img src="${esc(src)}" alt="${esc(a.figure_caption||'Question diagram')}" style="max-width:100%;height:auto"></div>`;
+  }
   if (a.figspec) out += `<div class="fig">${cleanMarkup(drawFig(a.figspec))}</div>`;
   if (a.html)    out += `<div class="fig fig-table">${cleanMarkup(ent(a.html))}</div>`;
   if(a.svg) out+=`<div class="fig">${cleanMarkup(a.svg)}</div>`;
@@ -787,6 +834,7 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 </script>
 <script src="/portal-controls.js"></script>
 <script src="/exam-activity.js"></script>
+<link rel="stylesheet" href="/portal-navigation.css">
+<script src="/portal-navigation.js"></script>
 </body>
 </html>
-

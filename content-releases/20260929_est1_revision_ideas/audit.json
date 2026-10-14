@@ -1,0 +1,16 @@
+{
+  "questions": 60,
+  "ideas": 60,
+  "lessons": {
+    "Angles and polygons": 11,
+    "Area and perimeter": 10,
+    "Logic and sets": 5,
+    "Matrices": 2,
+    "Logarithms and exponentials": 5,
+    "Polynomial division and remainder": 5,
+    "Sequences": 10,
+    "Volume and surface area": 12
+  },
+  "classification_only": true,
+  "new_answer_certification": false
+}

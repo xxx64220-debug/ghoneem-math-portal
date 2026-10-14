@@ -1,0 +1,40 @@
+{
+  "questions": 80,
+  "ideas": 80,
+  "tracks": {
+    "est2": 40,
+    "sat": 40
+  },
+  "lessons": {
+    "est2": {
+      "Angles and polygons": 4,
+      "Functions and transformations": 8,
+      "Inequalities and absolute value": 5,
+      "Linear functions and slope": 5,
+      "Quadratics and polynomials": 7,
+      "Systems of equations": 1,
+      "Triangles and similarity": 7,
+      "Trigonometry": 3
+    },
+    "sat": {
+      "Algebraic expressions and equations": 4,
+      "Complex numbers": 1,
+      "Desmos calculator guidance": 1,
+      "Exponents, radicals and growth": 1,
+      "Functions and transformations": 5,
+      "Inequalities and absolute value": 3,
+      "Linear functions and slope": 5,
+      "Logarithms and exponentials": 1,
+      "Quadratics and polynomials": 7,
+      "Ratios, percentages and unit conversion": 2,
+      "Statistics and data analysis": 1,
+      "Systems of equations": 6,
+      "Triangles and similarity": 2,
+      "Trigonometry": 1
+    }
+  },
+  "classification_only": true,
+  "new_answer_certification": false
+}
+
+

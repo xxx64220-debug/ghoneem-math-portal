@@ -63,7 +63,7 @@ begin
   'correct',k.correct,'explanation',k.explanation)),'[]') into candidates
  from public.revision_items r join public.questions q on q.id=r.question_id join public.question_keys k on k.question_id=q.id
  where r.active and (p_track<>'est' or q.track_id='est') and jsonb_typeof(k.correct) in ('string','array') and nullif(q.assets->>'release_hold_reason','') is null
- and r.fingerprint=md5(jsonb_build_array(q.stem,q.choices,q.assets,k.correct,k.explanation)::text);
+ and r.fingerprint=public.revision_question_fingerprint(q.stem,q.choices,q.assets,k.correct,k.explanation);
  select coalesce(jsonb_object_agg(a.key,true),'{}') into seen
  from (select distinct a.key from public.revision_sessions rs cross join lateral jsonb_each(rs.answers) a
        where rs.user_id=p_user) a;
