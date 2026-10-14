@@ -97,6 +97,8 @@ jobs:
           python tests/est_notes_20261005_math.py
           python tests/original_est_practice_math.py
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/original_est_practice_db.cjs
+          python tests/est_math_review_20261015.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est_math_review_20261015_db.cjs
           python tests/clean_notes_math.py
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/clean_notes_db.cjs
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/est_source_evidence_db.cjs

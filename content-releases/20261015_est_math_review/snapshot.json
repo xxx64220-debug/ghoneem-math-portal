@@ -1,0 +1,3726 @@
+{
+  "counts": [
+    {
+      "track_id": "est",
+      "total": 2824,
+      "held": 159,
+      "solved_ready": 61,
+      "solved_all": 61,
+      "pending_ready": 2604,
+      "pending_published": 1454,
+      "held_published": 4,
+      "unclassified": 0
+    },
+    {
+      "track_id": "est2",
+      "total": 1387,
+      "held": 12,
+      "solved_ready": 12,
+      "solved_all": 12,
+      "pending_ready": 1363,
+      "pending_published": 1234,
+      "held_published": 3,
+      "unclassified": 0
+    }
+  ],
+  "distributions": [
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-28-independent-solution-and-source-check",
+      "ready": true,
+      "n": 573
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "",
+      "ready": true,
+      "n": 424
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-26-independent-paper-review",
+      "ready": true,
+      "n": 319
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "ready": true,
+      "n": 251
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-21-source-keyed-and-grader-verified",
+      "ready": true,
+      "n": 245
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-20-full-revision-source-key",
+      "ready": true,
+      "n": 221
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "ready": true,
+      "n": 209
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "",
+      "ready": false,
+      "n": 114
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-25-held-question-review",
+      "ready": true,
+      "n": 96
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-20-independent-solution-and-source-page-check",
+      "ready": true,
+      "n": 61
+    },
+    {
+      "track_id": "est",
+      "status": "independently_solved",
+      "release": "20261006-original-est-practice",
+      "ready": true,
+      "n": 50
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-29-independent-solution-and-source-check",
+      "ready": true,
+      "n": 50
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-14-batch-05",
+      "ready": true,
+      "n": 44
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-20-independent-solution-and-scan-check",
+      "ready": true,
+      "n": 29
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "ready": false,
+      "n": 23
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-25-visual-question-review",
+      "ready": true,
+      "n": 14
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-14-batch-04",
+      "ready": true,
+      "n": 10
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-20-full-revision-source-key",
+      "ready": false,
+      "n": 10
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "20261005_uploaded_notes_est_bank",
+      "ready": true,
+      "n": 10
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-14-batch-01",
+      "ready": true,
+      "n": 9
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-14-batch-02",
+      "ready": true,
+      "n": 9
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-25-source-recovery-review",
+      "ready": true,
+      "n": 8
+    },
+    {
+      "track_id": "est",
+      "status": "independently_solved",
+      "release": "20261005-reviewed-exam-versions",
+      "ready": true,
+      "n": 8
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-14-batch-03",
+      "ready": true,
+      "n": 8
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-25-independent-solution-and-original-page-check",
+      "ready": true,
+      "n": 6
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-25-standalone-question-review",
+      "ready": true,
+      "n": 4
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "20261005_uploaded_notes_est_bank",
+      "ready": false,
+      "n": 4
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-20-independent-solution-and-scan-check",
+      "ready": false,
+      "n": 3
+    },
+    {
+      "track_id": "est",
+      "status": "independently_solved",
+      "release": "20261013_est_pending",
+      "ready": true,
+      "n": 2
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "20261005-clean-notes",
+      "ready": true,
+      "n": 2
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-25-complete-givens-question-review",
+      "ready": true,
+      "n": 1
+    },
+    {
+      "track_id": "est",
+      "status": "verified_duplicate",
+      "release": "2026-09-20-independent-solution-and-scan-check",
+      "ready": false,
+      "n": 1
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "2026-09-28-independent-solution-and-source-check",
+      "ready": false,
+      "n": 1
+    },
+    {
+      "track_id": "est",
+      "status": "blocked_source_verification",
+      "release": "2026-09-20-independent-solution-and-scan-check",
+      "ready": false,
+      "n": 1
+    },
+    {
+      "track_id": "est",
+      "status": "independently_solved",
+      "release": "20261005-remaining-skill-review",
+      "ready": true,
+      "n": 1
+    },
+    {
+      "track_id": "est",
+      "status": "",
+      "release": "20261004-source-recovery",
+      "ready": true,
+      "n": 1
+    },
+    {
+      "track_id": "est",
+      "status": "source_verified_no_correct_choice",
+      "release": "2026-09-20-independent-solution-and-scan-check",
+      "ready": false,
+      "n": 1
+    },
+    {
+      "track_id": "est",
+      "status": "source_verified_rounding_hold",
+      "release": "2026-09-20-independent-solution-and-scan-check",
+      "ready": false,
+      "n": 1
+    },
+    {
+      "track_id": "est2",
+      "status": "",
+      "release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "ready": true,
+      "n": 687
+    },
+    {
+      "track_id": "est2",
+      "status": "",
+      "release": "2026-09-21-source-keyed-and-grader-verified",
+      "ready": true,
+      "n": 263
+    },
+    {
+      "track_id": "est2",
+      "status": "",
+      "release": "2026-09-26-independent-paper-review",
+      "ready": true,
+      "n": 232
+    },
+    {
+      "track_id": "est2",
+      "status": "",
+      "release": "2026-09-25-standalone-question-review",
+      "ready": true,
+      "n": 62
+    },
+    {
+      "track_id": "est2",
+      "status": "",
+      "release": "2026-09-25-held-question-review",
+      "ready": true,
+      "n": 46
+    },
+    {
+      "track_id": "est2",
+      "status": "",
+      "release": "2026-09-25-complete-givens-question-review",
+      "ready": true,
+      "n": 29
+    },
+    {
+      "track_id": "est2",
+      "status": "",
+      "release": "2026-09-29-independent-solution-and-source-check",
+      "ready": true,
+      "n": 24
+    },
+    {
+      "track_id": "est2",
+      "status": "",
+      "release": "2026-09-28-independent-solution-and-source-check",
+      "ready": true,
+      "n": 19
+    },
+    {
+      "track_id": "est2",
+      "status": "blocked_source_verification",
+      "release": "",
+      "ready": false,
+      "n": 12
+    },
+    {
+      "track_id": "est2",
+      "status": "independently_solved",
+      "release": "20261005-reviewed-exam-versions",
+      "ready": true,
+      "n": 8
+    },
+    {
+      "track_id": "est2",
+      "status": "independently_solved",
+      "release": "20261013_pending_math",
+      "ready": true,
+      "n": 4
+    },
+    {
+      "track_id": "est2",
+      "status": "",
+      "release": "",
+      "ready": true,
+      "n": 1
+    }
+  ],
+  "holds": [
+    {
+      "id": "3556fa31-7c75-76db-d8d7-9ee22d7c3867",
+      "track_id": "est",
+      "topic": "Exponents, radicals and growth",
+      "stem": "If \\(3^{x+2}-3^x=216\\), what is the value of \\(x\\)?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 10fab705-da9f-6719-ec0d-3297d5afae40; old content retained for active exam",
+      "status": null,
+      "ready": false,
+      "uses": 1
+    },
+    {
+      "id": "22a42973-8e94-0307-7341-5a98290fdaf9",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "If x − 3 and x + 2 are both factors of the polynomial p(x), which of the\nfollowing could be p(x)?",
+      "code": null,
+      "hold": "Both A=x(x−3)(x+2) and D=(x+1)(x−3)(x+2) contain the required factors. The single-answer source is ambiguous.",
+      "status": null,
+      "ready": false,
+      "uses": 1
+    },
+    {
+      "id": "38dae603-01c3-93f3-000f-2d8610facd6a",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "(2a − 14)x² + 5b − cx = 2x² − (4x + 5c)b for all x. What is the value of a + 8b + c?",
+      "code": null,
+      "hold": "Source ambiguity: coefficient identity permits both 5 and 8; a missing condition requires clarification.",
+      "status": null,
+      "ready": false,
+      "uses": 1
+    },
+    {
+      "id": "44d81c11-3760-7638-292b-77268461e4b5",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Q106. A teacher gives a test to 3 classes: Class A (30 students, avg 15.8), Class B\n (20 students, avg 16.2), Class C (10 students, avg 17.2). One student from each\n class scored 20/20. Find the new average after removing those three students.",
+      "code": null,
+      "hold": "Original total=30(15.8)+20(16.2)+10(17.2)=970. Removing 60 points and 3 students gives 910/57=15.964912..., or 16.0 to one decimal, not the keyed 15.9. None of the choices matches.",
+      "status": null,
+      "ready": false,
+      "uses": 1
+    },
+    {
+      "id": "22fcb51c-a090-4629-b240-5016302526ea",
+      "track_id": "est",
+      "topic": "Algebraic expressions and equations",
+      "stem": "If $3r+\\dfrac{x+r}{2}=5(3y-r)$, what is $r$ in terms of $x$ and $y$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question dd9f27d4-f98c-42fd-b525-97a8f4a9bbe7",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "25045271-3abf-4704-b875-5170c809be32",
+      "track_id": "est",
+      "topic": "Algebraic expressions and equations",
+      "stem": "$x$ and $y$ are two even natural numbers. Which of the following can be an odd integer less than $x$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question a0cdf644-4a72-4d35-9962-168659a9cb43",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "a0f350c7-39ab-4fce-86ec-e645afb0fe82",
+      "track_id": "est",
+      "topic": "Algebraic expressions and equations",
+      "stem": "Mazen consumed 600 calories at breakfast and 1,200 calories at lunch. He then went to the gym and burned 350 calories. If his daily net calorie intake should be 1,600 calories, how many calories should he consume at dinner?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 737eb45b-3997-467b-9161-746f60289aa7",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "ae758aeb-a068-4dd4-98a2-4ec171d05b20",
+      "track_id": "est",
+      "topic": "Algebraic expressions and equations",
+      "stem": "Mazen consumed 600 calories at breakfast and 1,200 calories at lunch. He then went to the gym and burned 350 calories. If his daily net calorie intake should be 1,600 calories, how many calories should he consume at dinner?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 737eb45b-3997-467b-9161-746f60289aa7",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c9b67539-9bd7-4bdf-b889-cda45ad017ab",
+      "track_id": "est",
+      "topic": "Algebraic expressions and equations",
+      "stem": "$x$ and $y$ are two even natural numbers. Which of the following can be an odd integer less than $x$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question a0cdf644-4a72-4d35-9962-168659a9cb43",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "f3c018b6-faf1-4516-ac6e-d15c5146c602",
+      "track_id": "est",
+      "topic": "Algebraic expressions and equations",
+      "stem": "If $3r+\\dfrac{x+r}{2}=5(3y-r)$, what is $r$ in terms of $x$ and $y$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question dd9f27d4-f98c-42fd-b525-97a8f4a9bbe7",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "45256925-491f-4876-96f4-9351b68abf64",
+      "track_id": "est",
+      "topic": "Angles and polygons",
+      "stem": "$x°$, $(2x+1)°$, $(3x-15)°$, and $(x+4)°$ are the measures of the angles in a quadrilateral. What is the value of $x$, to the nearest tenth?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 76a51dde-067c-4926-a828-be1cf7af3f91",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "6c0e7f5b-cbb7-4956-b94a-d34e6ba5b550",
+      "track_id": "est",
+      "topic": "Angles and polygons",
+      "stem": "The sum of two adjacent angles is $66°$. If one angle measures $(x+3)°$ and the other is twice the first, the value of $x$ is:",
+      "code": null,
+      "hold": "Duplicate of reviewed question 92e15839-3140-4f23-8378-52385eece54a",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "7471c9bd-6dde-4cb5-ba8d-2eb5a641d909",
+      "track_id": "est",
+      "topic": "Angles and polygons",
+      "stem": "$x°$, $(2x+1)°$, $(3x-15)°$, and $(x+4)°$ are the measures of the angles in a quadrilateral. What is the value of $x$, to the nearest tenth?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 76a51dde-067c-4926-a828-be1cf7af3f91",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "d43920ff-9830-433f-b2f1-aecbdbcbeb9a",
+      "track_id": "est",
+      "topic": "Angles and polygons",
+      "stem": "The sum of two adjacent angles is $66°$. If one angle measures $(x+3)°$ and the other is twice the first, the value of $x$ is:",
+      "code": null,
+      "hold": "Duplicate of reviewed question 92e15839-3140-4f23-8378-52385eece54a",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "09db6d05-7a79-95c3-2167-ca294f7015d3",
+      "track_id": "est",
+      "topic": "Circles",
+      "stem": "A circle has center O and radius 2.5 cm. Points A, B, and M lie on the circle, and ∠AMB = 45°. H is the foot of the perpendicular from O to chord AB. What is the approximate length of OH?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 0206316c-d965-375c-e648-fabe95f2c315",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "15a2f16b-64f2-42d4-b6d0-edfee98962c3",
+      "track_id": "est",
+      "topic": "Circles",
+      "stem": "Consider a circle $C$ with radius equal to 4 cm. $\\overset{\\frown}{MN}$ is an arc of the circle with a length of $2\\pi$ cm. What is the area of this arc sector?",
+      "code": null,
+      "hold": "Duplicate of reviewed question a75c197d-80c9-4e59-a39c-df924f7cc000",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "4303079b-1b94-558e-951e-b84b32c61fe4",
+      "track_id": "est",
+      "topic": "Circles",
+      "stem": "In the xy-plane, x² + y² − 2kx + 4y − 3k² = 0 is the equation of a circle with center (1/2, −2) and radius √5. What is k?\nRecord your answer as a number.",
+      "code": null,
+      "hold": "Duplicate of reviewed question 8326565d-6af6-507f-9e4f-f07daf00e3a5",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "75c404bb-cc1f-4ad8-8fa0-4ce4f50620f3",
+      "track_id": "est",
+      "topic": "Circles",
+      "stem": "Consider a circle $C$ with radius equal to 4 cm. $\\overset{\\frown}{MN}$ is an arc of the circle with a length of $2\\pi$ cm. What is the area of this arc sector?",
+      "code": null,
+      "hold": "Duplicate of reviewed question a75c197d-80c9-4e59-a39c-df924f7cc000",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "b790b995-29fa-bde7-76ec-e0bba55d90bb",
+      "track_id": "est",
+      "topic": "Circles",
+      "stem": "In the figure, circle C has center O and radius 4 cm. A and K are endpoints of a diameter. AE is tangent to the circle at A, so AE is perpendicular to OA. H lies on OK with OH = 1.6 cm. B lies on the circle with BH perpendicular to OK, and B, O, E lie on one straight line. (Figure not drawn to scale",
+      "code": null,
+      "hold": "Duplicate of reviewed question",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "ba73ebd6-fc48-3f20-4799-49f55a3bfc87",
+      "track_id": "est",
+      "topic": "Circles",
+      "stem": "In the figure, circle C has center O and radius 4 cm. A and K are endpoints of a diameter. AE is tangent to the circle at A, so AE is perpendicular to OA. H lies on OK with OH = 1.6 cm. B lies on the circle with BH perpendicular to OK, and B, O, E lie on one straight line. (Figure not drawn to scale",
+      "code": null,
+      "hold": "Duplicate of reviewed question",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "33780e2a-671c-4c08-9021-64d03a97fca1",
+      "track_id": "est",
+      "topic": "Complex numbers",
+      "stem": "If $i=\\sqrt{-1}$, which of the following is/are equivalent to $A=2i(i-3)(3i-1)$? I. $A=2i(-10i)$. II. $A=2i(-6-10i)$. III. $A=20$.",
+      "code": null,
+      "hold": "Duplicate of reviewed question c829a0d6-efc6-4d0b-9c62-c50c9526f15c",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "9f169b78-4f23-4795-8987-bf3830aeaf13",
+      "track_id": "est",
+      "topic": "Complex numbers",
+      "stem": "If $i=\\sqrt{-1}$, which of the following is/are equivalent to $A=2i(i-3)(3i-1)$? I. $A=2i(-10i)$. II. $A=2i(-6-10i)$. III. $A=20$.",
+      "code": null,
+      "hold": "Duplicate of reviewed question c829a0d6-efc6-4d0b-9c62-c50c9526f15c",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "85c1a958-f531-4e56-9216-eab37a137ddf",
+      "track_id": "est",
+      "topic": "Exponents, radicals and growth",
+      "stem": "What is the value of the radicand in the simplified form of $\\sqrt[3]{8a^4b^3}\\times\\sqrt[3]{ab^5}$ if $a=2$ and $b=-1$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question e1df2dd5-ab82-4b1d-ad6d-f149aabb8168",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "8b49f44f-873a-43a9-ba29-749f038f968c",
+      "track_id": "est",
+      "topic": "Exponents, radicals and growth",
+      "stem": "What is the value of the radicand in the simplified form of $\\sqrt[3]{8a^4b^3}\\times\\sqrt[3]{ab^5}$ if $a=2$ and $b=-1$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question e1df2dd5-ab82-4b1d-ad6d-f149aabb8168",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "be7ee2ea-bf38-4cc6-a4c9-d50ad3a92ecd",
+      "track_id": "est",
+      "topic": "Exponents, radicals and growth",
+      "stem": "Which of the following is not correct regarding the graph of $f$ with equation $f(x)=\\sqrt{3x-9}$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 59feb81f-932b-4d4c-9d7c-b8e3054e31d6",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "f9c26728-4a8b-44dc-9f46-b2077a04934d",
+      "track_id": "est",
+      "topic": "Exponents, radicals and growth",
+      "stem": "Which of the following is not correct regarding the graph of $f$ with equation $f(x)=\\sqrt{3x-9}$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 59feb81f-932b-4d4c-9d7c-b8e3054e31d6",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "17d51818-4920-40d2-b020-b81f7a27ec63",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Given a function $f$ defined by $f(x)=\\dfrac{2x+5}{3x-6}$, which of the following statements is/are true about the graph of $f$? I. It has a vertical asymptote at $x=2$. II. It has an oblique asymptote at $y=\\frac23x$. III. It does not have a horizontal asymptote.",
+      "code": null,
+      "hold": "Duplicate of reviewed question 180011a7-9715-4d89-b883-7f302da31dc3",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "1b9f821a-f99f-5ea7-8f1d-97f2c4ce6217",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "A $6000 investment compounded annually grows to approximately $8950.95 after 8 years. Which annual interest rate is consistent with this amount?",
+      "code": "PSD 132",
+      "hold": "Exact 5% gives 6000×1.05^8 = 8864.732662734377, not 8950.95. The exact implied rate is approximately 5.1271123%; the prompt does not specify rounding to a whole percent. Replaced by the explicitly rounded instructor adaptation.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "1e2ba5b3-206b-44fe-af9b-81b46f8f99d2",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Given two functions $f$ and $g$ defined by $f(x)=3x+1$ and $g(x)=\\dfrac{2x^2-3}{6x+2}$, where $x\\ge0$, what is the solution of $(f\\times g)(x)=\\dfrac12$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 8e5b717e-b360-4884-b6e9-20ca8cf0b3fc",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "2b373e26-ee16-4300-93f5-3df50385c9bf",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Which of the following statements is true about $A(x)=\\dfrac{2x}{(3x-1)^2}$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 7ec7a1c0-0881-41c0-aa2f-eaf390774c05",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "4bed87c1-3dec-45dc-9682-e90ee04b11d4",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "If $\\dfrac{3}{x+5}+\\dfrac{7}{2x-1}=\\dfrac{ax+b}{(x+5)(2x-1)}$ for every $x>\\frac12$, where $a$ and $b$ are two constants, what is the value of $a+b$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 3e5c6802-d23a-4a72-8a1f-2ba89c24658b",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "6400648f-073c-2340-38d1-4cf9ba47294d",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Q78. A table contains values of a linear function: x: 1, 0, 2, 5 → f(x): 0, 3, −3, −12.\n What is f(−3) + f(3)?",
+      "code": null,
+      "hold": "Duplicate of reviewed question e3e53853-3359-ecc8-69de-770b68d0825e",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "74877fe0-5355-4753-a1af-54fa5eb26756",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "If $f(x)=3x^2-4x+1$, $g(x)=3x+4$, and $h(x)=x^2+\\frac23x$, what is the value of $(f+g)(h(3))$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 19b8f282-c4d1-4e0e-aca0-0366db03df90",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "81316cfa-f5b1-48fd-b23f-79e8ce63678a",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "If $\\dfrac{3}{x+5}+\\dfrac{7}{2x-1}=\\dfrac{ax+b}{(x+5)(2x-1)}$ for every $x>\\frac12$, where $a$ and $b$ are two constants, what is the value of $a+b$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 3e5c6802-d23a-4a72-8a1f-2ba89c24658b",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "87d2c7c8-347d-4c63-b018-1a54af790991",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Given a function $f$ defined by $f(x)=\\dfrac{2x+5}{3x-6}$, which of the following statements is/are true about the graph of $f$? I. It has a vertical asymptote at $x=2$. II. It has an oblique asymptote at $y=\\frac23x$. III. It does not have a horizontal asymptote.",
+      "code": null,
+      "hold": "Duplicate of reviewed question 180011a7-9715-4d89-b883-7f302da31dc3",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "882548b5-1447-43bc-93b9-b92e2eb0104f",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Given the points $A(-3,4)$, $M(3,10)$, and $H(2,b)$, where $b$ is a real number, if $H$ lies on the line $AM$, then the value of $b$ equals:",
+      "code": null,
+      "hold": "Duplicate of reviewed question 4e32b616-18e3-469b-932e-3e179d412e44",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "8896aba3-a121-8529-4df4-f8d3a7dcee7c",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Which function is represented by the graph?",
+      "code": null,
+      "hold": "Duplicate of reviewed question",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "9004d19e-45aa-4536-a034-3cc44001ef2a",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Which of the following statements is true about $A(x)=\\dfrac{2x}{(3x-1)^2}$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 7ec7a1c0-0881-41c0-aa2f-eaf390774c05",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "bd91fe55-32f0-50b9-b82b-fc0319f6911a",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "The table shows values of the linear function f.\n\nx | f(x)\n1 | m\n2 | 6\n3 | n\n\nWhat is the value of m + n?\nRecord your answer as a number.",
+      "code": null,
+      "hold": "Duplicate of reviewed question fae07470-1620-5315-91e4-062864f8847c",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c6c9bae9-65f3-4f48-bda3-5473399bb792",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Given the points $A(-3,4)$, $M(3,10)$, and $H(2,b)$, where $b$ is a real number, if $H$ lies on the line $AM$, then the value of $b$ equals:",
+      "code": null,
+      "hold": "Duplicate of reviewed question 4e32b616-18e3-469b-932e-3e179d412e44",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "f2bccdc3-9906-4be5-8ffc-67e2b35f9970",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Given two functions $f$ and $g$ defined by $f(x)=3x+1$ and $g(x)=\\dfrac{2x^2-3}{6x+2}$, where $x\\ge0$, what is the solution of $(f\\times g)(x)=\\dfrac12$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 8e5b717e-b360-4884-b6e9-20ca8cf0b3fc",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "fa17aafb-28a7-42a5-99fd-12dec3275a93",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "If $f(x)=3x^2-4x+1$, $g(x)=3x+4$, and $h(x)=x^2+\\frac23x$, what is the value of $(f+g)(h(3))$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 19b8f282-c4d1-4e0e-aca0-0366db03df90",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "016399c7-de62-4d71-8605-a6c1785ca742",
+      "track_id": "est",
+      "topic": "Inequalities and absolute value",
+      "stem": "What is the local minimum of the graph of $g(x)=2|2x-1|$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 107f5f18-aefc-4a49-ba3a-b7f9986b2d14",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "0c30b18b-b264-4d3b-8eb4-ee5bdcd4814b",
+      "track_id": "est",
+      "topic": "Inequalities and absolute value",
+      "stem": "$y+3x\\le-2$\n\nWhich of the following statements is/are true regarding the graph of the inequality above? I. It represents the region above the line of equation $y=-3x-2$. II. It passes through $(1,-5)$. III. All points with a negative y-coordinate are in the solution set of the inequality.",
+      "code": null,
+      "hold": "Duplicate of reviewed question da3860c5-e3bf-44a8-a071-e9ee66f67fab",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "1f07c7fd-383a-4023-b9ae-a20687341d92",
+      "track_id": "est",
+      "topic": "Inequalities and absolute value",
+      "stem": "$y+3x\\le-2$\n\nWhich of the following statements is/are true regarding the graph of the inequality above? I. It represents the region above the line of equation $y=-3x-2$. II. It passes through $(1,-5)$. III. All points with a negative y-coordinate are in the solution set of the inequality.",
+      "code": null,
+      "hold": "Duplicate of reviewed question da3860c5-e3bf-44a8-a071-e9ee66f67fab",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "25341cd9-57d3-529c-bd83-36eae2d1f3a7",
+      "track_id": "est",
+      "topic": "Inequalities and absolute value",
+      "stem": "EST I Math — March 2026 · Question 23. Select the answer from the original question below.",
+      "code": null,
+      "hold": "Original single-answer question has two distinct valid answers B and D; excluded pending a verified unambiguous replacement.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "462eb9ea-b1ed-4847-8c36-c619bf95e4d6",
+      "track_id": "est",
+      "topic": "Inequalities and absolute value",
+      "stem": "What is the largest possible integer in the solution set of $3(2x+1)<4(x+1)$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question c2502ac8-bb14-481e-9ccb-47a3cda31eb6",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "5897957c-9bcf-4011-a520-2da9ae369b89",
+      "track_id": "est",
+      "topic": "Inequalities and absolute value",
+      "stem": "Which of the following is the greatest integer that satisfies the solution set of $|x+5|>5x$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question f8598ff4-4d8c-4659-925e-1cb3e254143b",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "68632c3b-a82c-4ef4-9132-0b7c5bf1dd28",
+      "track_id": "est",
+      "topic": "Inequalities and absolute value",
+      "stem": "What is the largest possible integer in the solution set of $3(2x+1)<4(x+1)$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question c2502ac8-bb14-481e-9ccb-47a3cda31eb6",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "6ce8b7f9-39aa-4c62-95d7-a086d5e21014",
+      "track_id": "est",
+      "topic": "Inequalities and absolute value",
+      "stem": "What is the local minimum of the graph of $g(x)=2|2x-1|$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 107f5f18-aefc-4a49-ba3a-b7f9986b2d14",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "af00bc58-9c69-4a5f-ac37-11c0e025e4ea",
+      "track_id": "est",
+      "topic": "Inequalities and absolute value",
+      "stem": "Which of the following is the greatest integer that satisfies the solution set of $|x+5|>5x$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question f8598ff4-4d8c-4659-925e-1cb3e254143b",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "02ac14b4-f84e-6e9f-1ab3-1427f41cdef7",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "What is the slope of the line passing through A(—3, 44) and B(1, —2)?",
+      "code": null,
+      "hold": "Stored point A(−3,44) and B(1,−2) give slope −11.5, absent from the choices. Preserve the original until source coordinates are verified.",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "1f177352-cfe8-4f0e-a6dc-d45ca1f5c7f1",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "Last month, Brenda tutored three students for 5 hours each and sold 30 items at Store X. What is the total wage Brenda is expected to receive?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 7eba47a1-f413-4116-904c-3e840975b578",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "3d2afd6c-01ee-48b1-bffe-1b3e47e00db9",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "If Brenda tutors one student for 2 hours per day during the month of July and wants to earn a total of $2,740 by the end of the month, how many items must she sell at Store X?",
+      "code": null,
+      "hold": "Duplicate of reviewed question a28abda3-98dd-460f-8487-0b621414006d",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "65e3ba7c-80f7-4854-a2b4-c369a508ea08",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "Given the points $S(9,-3)$ and $T(12,a)$, where $a$ is a real number, and knowing that $N(10.5,-4)$ is the midpoint of $\\overline{ST}$, then the length of $\\overline{ST}$ is equal to:",
+      "code": null,
+      "hold": "Duplicate of reviewed question 472db6cc-49fa-4bca-b4de-0688580a0d44",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "8629ddee-c6b1-e1c4-2285-e9c02e337627",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "Which of the following has infinitely many solutions?",
+      "code": null,
+      "hold": "B holds for −11/3<x<−1, an infinite interval; D holds for every real x because an absolute value is nonnegative. A and C each have one solution. A single-answer D key is invalid; the existing explicitly multiple-valid-answer copy is sound.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "a964eb66-adb3-46fc-b043-d032de8e30cd",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "Last month, Brenda tutored three students for 5 hours each and sold 30 items at Store X. What is the total wage Brenda is expected to receive?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 7eba47a1-f413-4116-904c-3e840975b578",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c00096a7-16c5-499b-933e-0e997627160f",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "Given the points $S(9,-3)$ and $T(12,a)$, where $a$ is a real number, and knowing that $N(10.5,-4)$ is the midpoint of $\\overline{ST}$, then the length of $\\overline{ST}$ is equal to:",
+      "code": null,
+      "hold": "Duplicate of reviewed question 472db6cc-49fa-4bca-b4de-0688580a0d44",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c5a0f869-cd8f-4f5d-859b-00c1ab261da1",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "If Brenda tutors one student for 2 hours per day during the month of July and wants to earn a total of $2,740 by the end of the month, how many items must she sell at Store X?",
+      "code": null,
+      "hold": "Duplicate of reviewed question a28abda3-98dd-460f-8487-0b621414006d",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "ccafeee4-a6a8-442a-8331-44c86c6fb5c2",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "Last month, Brenda tutored three students for 5 hours each and sold 30 items at Store X. What is the total wage Brenda is expected to receive?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 7eba47a1-f413-4116-904c-3e840975b578",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "ce2258e9-a83b-a947-3290-7cac213933ca",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "Q94. Nada invests $6,000 in an account earning r% interest compounded yearly.\n After 8 years the total is $8,950.95. What is r?",
+      "code": null,
+      "hold": "The stated amount requires r=100((8950.95/6000)^(1/8)−1), approximately 5.13%. At 5%, the balance is 8864.73, not 8950.95. No listed rate satisfies the data; the source does not specify rounding the rate to a whole percent.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "d734bf83-7cbd-5bd2-b857-db3656c5018d",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "EST I Math — March 2026 · Question 35. Select the answer from the original question below.",
+      "code": null,
+      "hold": "Original March question 35 gives points (-3,44),(1,-2), whose slope is -11.5; no offered answer matches. Existing void key retained.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "e7ef8a6a-3155-57ad-ae60-fda29c2e525a",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "In the xy-plane, the line through (3, m) and (m, 12) passes through the origin. Which value could m be?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 85e6d3ea-8ba1-525c-adaa-0863635ce1c8",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "ee8b6a5b-6f5e-b1a0-e10f-31ebf42f3eab",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "Segments AD and BC intersect at O, and AB is parallel to CD. In the diagram, AB = 3.2, CD = 8, AO = y, OD = x − 2, CO = x + 3, and OB = 2z. If x = 7, what is y + z?",
+      "code": null,
+      "hold": "Duplicate of reviewed question e62de9ee-a646-600a-720c-b74f9f96657c",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "f484bd71-1b2c-4f0a-bf9b-58fc57947031",
+      "track_id": "est",
+      "topic": "Linear functions and slope",
+      "stem": "If Brenda tutors one student for 2 hours per day during the month of July and wants to earn a total of $2,740 by the end of the month, how many items must she sell at Store X?",
+      "code": null,
+      "hold": "Duplicate of reviewed question a28abda3-98dd-460f-8487-0b621414006d",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "0928b5ac-0e19-8c0a-e3c4-b8d234a2657e",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "A survey records 150 females who agree, 70 females who disagree, 200 males who agree, and 50 males who disagree. One respondent is selected uniformly at random. Which choice is closest to the probability that the respondent is male?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 047a3ac6-0099-ffff-5739-295fe5ab768a",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "198b4993-cbb6-4fb3-81fb-1e46714f4aef",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "A box contains 11 marbles: 3 blue, 4 red, and the rest are yellow. Two marbles are drawn at random without replacement. Given that at least one of the drawn marbles is yellow, what is the probability that both drawn marbles are yellow?",
+      "code": null,
+      "hold": "Duplicate of reviewed question dbb6e27f-d3fe-44f4-90d5-748ae4fa7eaf",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "43f410ac-41a2-a7a0-09b7-effd44fca3ea",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "Spinner 1 has sections {1, 2, 3, 4} and Spinner 2 has {1, 2, 3}. Both are\nspun. What is P(the product is even)?",
+      "code": null,
+      "hold": "The source lists spinner labels but does not specify equal sector probabilities or independent spins. The value 2/3 requires both assumptions; the probability is otherwise undetermined.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "492aa09e-a370-8678-c92c-43dbf5eafce1",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "A fake die has 6 faces labeled 2, 3, 3, 4, 6, 7. P(prime) = (k − 2)/6. What is the\npositive value of k?",
+      "code": null,
+      "hold": "The source calls this a fake die without stating that faces are equally likely. Counting four prime-labeled faces gives 4/6 only for fair faces; hold this under-specified copy. Preserve the separately corrected explicit-fair-die copy.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "61eac12e-c038-2d48-0ec1-73799e970b50",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "There are 101 local boys, 60 expatriate boys, 125 local girls, and 34 expatriate girls. One student is selected uniformly at random. Which choice is closest to the probability that the student is a boy?",
+      "code": null,
+      "hold": "Duplicate of reviewed question f012ee9e-3769-ab86-d503-0128850d8082",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "870d65e2-1dc9-1bd5-a564-e58ec48dd0c6",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "Question 14. A security system opens a gate using a code of three digits followed by two letters.\n The digits chosen from 2, 5, 6, 7, 8, and the letters from 𝐴, 𝐵, 𝐶, and 𝐷. If the\n repetition of digits and letters is not allowed, then the probability that the code\n includes the digit 6 and the lett",
+      "code": null,
+      "hold": "Duplicate of reviewed question",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "9957502d-04d6-c636-3947-31d2ed2ffc04",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "Q19. P(scoring a penalty) = 0.3. A player takes 3 shots. What is P(he scores all of\n them)?",
+      "code": null,
+      "hold": "The source gives marginal success probability 0.3 but does not establish independent shots. All-three probability is 0.027 under independence, but can be 0.3 for perfectly correlated shots. Hold rather than invent independence.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "b7c33115-0e83-acfe-d2e7-e5dd4364c922",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "P(scoring a penalty) = 0.3. A player takes 3 shots. What is P(he scores all of\nthem)?",
+      "code": null,
+      "hold": "The source gives marginal success probability 0.3 but does not establish independent shots. All-three probability is 0.027 under independence, but can be 0.3 for perfectly correlated shots. Hold rather than invent independence.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c02f7507-92d3-f33e-4ded-994ed325ba84",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "A race has five employees, one from each salary class: [5, 7), [7, 9), [9, 11), [11, 13), and [13, 15) thousand dollars. Exactly one employee wins. The first-class representative wins with probability p, and each successive class has half the preceding probability. What is the probability that the r",
+      "code": null,
+      "hold": "Duplicate of reviewed question",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c05c0419-86ae-2ebd-9084-98d200f2ac66",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "How many three-digit odd numbers have an even hundreds digit? Digits may be repeated.",
+      "code": null,
+      "hold": "Duplicate of reviewed question 9e6d84d4-b90c-52df-c728-2dfb12abc7d7",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c3716f84-305b-4ecf-9594-481f95c9360f",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "The table gives annual salaries for all 200 employees in a company. One employee is selected at random. What is the probability that the employee is a man earning at least $11,000 per year?",
+      "code": null,
+      "hold": "Duplicate of reviewed question",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "e2e3c4e9-aa7d-4168-bbf5-007515dfdd35",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "A box contains 11 marbles: 3 blue, 4 red, and the rest are yellow. Two marbles are drawn at random without replacement. Given that at least one of the drawn marbles is yellow, what is the probability that both drawn marbles are yellow?",
+      "code": null,
+      "hold": "Duplicate of reviewed question dbb6e27f-d3fe-44f4-90d5-748ae4fa7eaf",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "f261981f-0ca6-dd5c-3c34-02b3fb328909",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "In the diagram, O is the center of a circle of radius 3 cm. AM is tangent to the circle at A, and the ray OM meets the circle at B. If ∠AOM = 60°, BM = x, and AM = y, what is x/y?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 4a0890d1-7165-67ed-1781-93089669c120",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "fb385f7e-c71c-22d8-3c30-05a7ad9269c5",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "stem": "Q18. Spinner 1 has sections {1, 2, 3, 4} and Spinner 2 has {1, 2, 3}. Both are\n spun. What is P(the product is even)?",
+      "code": null,
+      "hold": "The source lists spinner labels but does not specify equal sector probabilities or independent spins. The value 2/3 requires both assumptions; the probability is otherwise undetermined.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "27b08061-7d65-40eb-b02f-64cdffc24799",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "$y=a(x-1)(x+4)$\n\nThe vertex of the graph of $y=a(x-1)(x+4)$ is $(m,12.5)$. The value of $m$ is:",
+      "code": null,
+      "hold": "Duplicate of reviewed question b7833b79-0365-476f-9f2f-7956636d68dd",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "4a703321-1f7d-4f6f-9517-b0ccf92a0420",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "Given a function $f$ defined by $f(x)=-5x^4+3x^3$, which of the following statements is/are true about the graph of $f$? I. As $x$ approaches $-\\infty$, $f(x)$ approaches $+\\infty$. II. $\\left(\\frac35,0\\right)$ is an x-intercept. III. The function $f$ is decreasing on $\\left(-\\infty,\\frac9{20}\\right",
+      "code": null,
+      "hold": "Duplicate of reviewed question f7ee50e7-27fa-477a-b2ff-0c21ffadaa22",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "6f21717d-1d72-46bd-84f2-e71768fd64c3",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "Given the equation $2x^2+ax+1=0$, where $a$ is a real number, the sum of the solutions of the equation, $x_1$ and $x_2$, is $-4$. If $x_1<x_2$, which of the following is $x_1$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question f8a374ca-71ec-4120-889e-646eecffeedf",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "7ad5f2a5-5bcd-4143-abcb-9d283cbf8cb5",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "Given $A(x)=9x^2-ax+1$ and $B(x)=x^2+bx+25$, where $a$ and $b$ are positive real numbers, and if $A(x)$ and $B(x)$ represent perfect squares by having equal roots, what is the value of $a+b$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 7d53b756-c842-4ac4-bd37-6343bcdcfb0b",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "87be171a-483d-4d9c-bdf8-f21dadb14e99",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "$3x^2-150m+25mx-18x$\n\nWhich of the following is the factored form of the polynomial above?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 1b63c75f-91a6-4e43-b977-fb58585632a7",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "92118004-2f60-6326-dab8-e6ad8b7911e7",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "A(x) = (2x − 3)(2x + 3) − (2x² + x − 3). The simplified form of A(x) is:",
+      "code": null,
+      "hold": "Duplicate of source-verified canonical question 53c77113-7a68-6837-4af9-b5d4594962cb; source text recovered on 2026-10-05.",
+      "status": "verified_duplicate",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "afefa4e1-e0f2-4ec5-a5ad-45fb08d91d4a",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "Given a function $f$ defined by $f(x)=-5x^4+3x^3$, which of the following statements is/are true about the graph of $f$? I. As $x$ approaches $-\\infty$, $f(x)$ approaches $+\\infty$. II. $\\left(\\frac35,0\\right)$ is an x-intercept. III. The function $f$ is decreasing on $\\left(-\\infty,\\frac9{20}\\right",
+      "code": null,
+      "hold": "Duplicate of reviewed question f7ee50e7-27fa-477a-b2ff-0c21ffadaa22",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "bf70abe0-00eb-43b2-97ab-61be57c32127",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "$y=a(x-1)(x+4)$\n\nThe vertex of the graph of $y=a(x-1)(x+4)$ is $(m,12.5)$. The value of $m$ is:",
+      "code": null,
+      "hold": "Duplicate of reviewed question b7833b79-0365-476f-9f2f-7956636d68dd",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c6055147-5d3b-41fa-8a2f-991be1cf9280",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "$3x^2-150m+25mx-18x$\n\nWhich of the following is the factored form of the polynomial above?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 1b63c75f-91a6-4e43-b977-fb58585632a7",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c9f24a7b-7b26-490d-b225-aee00bc4a901",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "Given $A(x)=9x^2-ax+1$ and $B(x)=x^2+bx+25$, where $a$ and $b$ are positive real numbers, and if $A(x)$ and $B(x)$ represent perfect squares by having equal roots, what is the value of $a+b$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 7d53b756-c842-4ac4-bd37-6343bcdcfb0b",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "cee9c7d1-307b-60d3-afd0-4347ea1bc2aa",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "Q65. (2a − 14)x² + 5b − cx = 2x² − (4x + 5c)b for all x. What is the value of a + 8b + c?",
+      "code": null,
+      "hold": "Source ambiguity: coefficient identity permits both 5 and 8; a missing condition requires clarification.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "dba94174-dfce-f518-cbb3-76d958d73bea",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "Q76. If x − 3 and x + 2 are both factors of the polynomial p(x), which of the\n following could be p(x)?",
+      "code": null,
+      "hold": "Both A=x(x−3)(x+2) and D=(x+1)(x−3)(x+2) contain the required factors. The single-answer source is ambiguous.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "efd81f77-6192-4e01-8c18-7853f98a9fc3",
+      "track_id": "est",
+      "topic": "Quadratics and polynomials",
+      "stem": "Given the equation $2x^2+ax+1=0$, where $a$ is a real number, the sum of the solutions of the equation, $x_1$ and $x_2$, is $-4$. If $x_1<x_2$, which of the following is $x_1$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question f8a374ca-71ec-4120-889e-646eecffeedf",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "00858c9b-1dd1-5bb3-7ca9-36307cd63d78",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "Q117. A 1.2 m³ pool is filled by 9 gallons. How many gallons fill a 26 m³ pool?",
+      "code": null,
+      "hold": "The supplied proportional calculation is 9×26/1.2=195, but the premise equates 1.2 cubic meters with 9 gallons, which is not a valid volume conversion. The intended unit or quantity cannot be recovered from the source; retain the source and hold it.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "04a96153-4bf9-46d8-b6dc-423d7fbd413e",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "The perimeter of a triangle is 126 cm. The sides of this triangle are in the ratio of $4:6:8$. What is the measure of the longest side of this triangle?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 086050df-5582-411f-a578-5d02204201ab",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "3f699d88-4173-48e6-b9d3-66d022643e9f",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "378 is 18% of:",
+      "code": null,
+      "hold": "Duplicate of reviewed question d112ef95-4091-4958-9e94-16c3bb63ee2d",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "5a374899-5d5d-d706-1ce4-77197041133e",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "A 1.2 m³ pool is filled by 9 gallons. How many gallons fill a 26 m³ pool?",
+      "code": null,
+      "hold": "The supplied proportional calculation is 9×26/1.2=195, but the premise equates 1.2 cubic meters with 9 gallons, which is not a valid volume conversion. The intended unit or quantity cannot be recovered from the source; retain the source and hold it.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "673c2d0f-4569-40c3-a97c-3d0a6753ae25",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "Zein bought a sofa at a 15% discount. After a year, he sold it for half the price he had paid, receiving $637.50. What was the original price of the sofa?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 291f703e-6d62-49d0-a42a-f1b7adac8b6f",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "7443883a-bb18-43d0-997b-99b380de1d3f",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "A shirt originally costs $40. It was discounted by 10% the first time, then by 20%. What is the final price of the shirt?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 9d5d4d67-583a-4cc4-b944-8c78e10ac39d",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "906544a8-f570-4d7c-9c62-2eefa79f2456",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "If $45\\ km/h = a\\ m/min$, what is the value of $a$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 6a6091af-804c-4629-88a3-b5ba5b6cdba9",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "9f479ecd-a687-b0be-fc29-ace016e04fff",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "Nada invests $6,000 in an account earning r% interest compounded yearly.\nAfter 8 years the total is $8,950.95. What is r?",
+      "code": null,
+      "hold": "The stated amount requires r=100((8950.95/6000)^(1/8)−1), approximately 5.13%. At 5%, the balance is 8864.73, not 8950.95. No listed rate satisfies the data; the source does not specify rounding the rate to a whole percent.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "aeb57b6c-4830-41bf-8e7d-f894af4ee868",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "The perimeter of a triangle is 126 cm. The sides of this triangle are in the ratio of $4:6:8$. What is the measure of the longest side of this triangle?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 086050df-5582-411f-a578-5d02204201ab",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "b4816b3b-64d2-4f99-a484-5fb11ef22d4c",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "378 is 18% of:",
+      "code": null,
+      "hold": "Duplicate of reviewed question d112ef95-4091-4958-9e94-16c3bb63ee2d",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "bbba6fb0-9daa-5cf1-9374-3f80b7460810",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "From 2018 to 2019, the amount in Julia’s bank account increased by 22.5% to $14,325. To the nearest dollar, what was the amount in her account in 2018?",
+      "code": null,
+      "hold": "Duplicate of reviewed question efdb7a84-048c-5e44-a1a6-074ff654b0c3",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "bc72c79a-4cf3-4c5b-b683-b37917feb2b9",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "If $y$ varies inversely as $x^2$ and $y=12$ when $x=5$, what is the value of $y$ when $x=4$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 2e0e8018-db72-4af0-93f2-7adc0061da33",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "be507dd8-d608-59a3-970e-10e05284131b",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "EST I Math — March 2026 · Question 4. Select the answer from the original question below.",
+      "code": null,
+      "hold": "Original March question 4 prints ambiguous Honda revenue 117,00. Literal tax 51803.4 is not offered; assuming an extra zero changes the source. Existing void key retained.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c5b39981-f58c-5d56-b5b2-79f1702ad1da",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "EST I Math — March 2026 · Question 27. Select the answer from the original question below.",
+      "code": null,
+      "hold": "Original March question 27 equates 1.2 cubic meters of water to 9 gallons. These units describe incompatible amounts; proportional arithmetic 195 does not certify the physical statement. No guessed unit repair.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "cc6ae410-7aaa-6f51-b993-12f706dd83b9",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "Triangles ABC and PQR are similar, with corresponding hypotenuses AC = 10 and PR = 5. What is the ratio of the side lengths of triangle ABC to triangle PQR?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 2b67b368-6cc0-de15-383a-529d8b5f4d3c",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "d39c95bb-cef8-4b45-95c8-4d639aa2e5db",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "Zein bought a sofa at a 15% discount. After a year, he sold it for half the price he had paid, receiving $637.50. What was the original price of the sofa?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 291f703e-6d62-49d0-a42a-f1b7adac8b6f",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "d66b7198-6601-4da8-972e-68ce0e10b749",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "If $y$ varies inversely as $x^2$ and $y=12$ when $x=5$, what is the value of $y$ when $x=4$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 2e0e8018-db72-4af0-93f2-7adc0061da33",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "d68ed399-d42d-4702-b068-696b6cafdb50",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "If $45\\ km/h = a\\ m/min$, what is the value of $a$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 6a6091af-804c-4629-88a3-b5ba5b6cdba9",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "d82839fb-e31c-2d6b-0a23-de7e03d23e35",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "If the ratio of boys to girls is 5:2 and the total\nnumber of students is 4550 and 105 of the girls\nwear glasses how many girls not wearing glasses?",
+      "code": null,
+      "hold": "Duplicate of reviewed question",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "dc220155-bbb4-ddc2-6f65-aa31fc55dd7a",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "X and Y are inversely proportional. When x = 4, y = 5. What is the value of y² when x = 3? (Calculator)",
+      "code": null,
+      "hold": "Source exponent and choices recovered. Exact y² = 400/9; printed 44.44 is approximate and the source omits a rounding instruction. Keep the explicit-rounding adaptation in assessments.",
+      "status": "source_verified_rounding_hold",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "ee7c7c74-feac-4471-8883-5898e62b6267",
+      "track_id": "est",
+      "topic": "Ratios, percentages and unit conversion",
+      "stem": "A shirt originally costs $40. It was discounted by 10% the first time, then by 20%. What is the final price of the shirt?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 9d5d4d67-583a-4cc4-b944-8c78e10ac39d",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "012953d9-9f2e-4122-b07f-75e7ff909622",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Which of the following equations represents the line of best fit shown above?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 398db93a-09e9-4ff1-8ba6-67485a363e7d",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "09102b32-d6ff-4043-9c77-611dd798f20b",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Which of the following statements is true about the data collected?",
+      "code": null,
+      "hold": "Duplicate of reviewed question c7e937f1-4c14-4051-bcd5-886b8660edaf",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "1145684f-4bbd-4026-ab7e-6f8af35b4637",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "A school has 2,400 students. A random sample of 100 students is chosen. In this sample, 4 students are in their final year, 20 students are aged between 10 and 12 years, and the remaining students are in kindergarten.\n\nTwo of the kindergarten students in the sample are leaving the school at the end ",
+      "code": null,
+      "hold": "Duplicate of reviewed question 21e58927-49b7-407c-92b2-7cac2b01c563",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "1b7c9bbf-93a4-45fe-afc9-625fbbcface6",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "A school has 2,400 students. A random sample of 100 students is chosen. In this sample, 4 students are in their final year, 20 students are aged between 10 and 12 years, and the remaining students are in kindergarten.\n\nIf the sample represents the actual repartition of students, how many of the regi",
+      "code": null,
+      "hold": "Duplicate of reviewed question ef3deab3-6f0b-46aa-9e95-931d1dbe1079",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "25a46515-88bc-4196-965b-053f3ff345a3",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Which of the following statements is true about the data collected?",
+      "code": null,
+      "hold": "Duplicate of reviewed question c7e937f1-4c14-4051-bcd5-886b8660edaf",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "29e05088-11d9-4285-980b-2de5d6694f89",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "$3,\\ 5,\\ 5,\\ 7,\\ 11,\\ 13,\\ 19,\\ 19,\\ 19,\\ 20,\\ 22,\\ 25,\\ 30$\n\nFor the set of data above, $m$ is the mean, $n$ is the mode, and $a$ is the range. What is the value of $26mn-13a$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question fd562fce-cf95-44d9-a5ca-2403651ea357",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "3270c8d0-d369-4687-a508-850c43de4319",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Estimate the mean score using the midpoint of each class, weighted by its frequency. What is the estimated mean, rounded to two decimal places?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 25ec3343-5fdc-49c1-a75b-60a62d1f2957",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "331de3d6-88c5-6cf4-3195-fd9efc2019d6",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "2- Ai teacher gives a test to his 3 classes. The table below shows the\naverage score for each class. The teacher knows that from each class\nonly one gets the full mark (20 out of 20). The teacher wants to know the\nnew average for the students after removing who get the full mark\nClass name A B C\nNum",
+      "code": null,
+      "hold": "The new mean is 910/57 ≈ 15.9649, or 16.0 to one decimal place. No stored choice is correct; 15.9 is not the rounded result.",
+      "status": "source_verified_no_correct_choice",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "3960e30f-51a5-4b17-84c4-33519e0254cf",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Which of the following equations represents the line of best fit shown above?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 398db93a-09e9-4ff1-8ba6-67485a363e7d",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "3afcf08d-7ec9-4edc-b59b-c7c410b6a20f",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "If the sample represents the actual repartition of students, how many of the registered students in the school are presumably in their final year?",
+      "code": null,
+      "hold": "Duplicate of reviewed question ef3deab3-6f0b-46aa-9e95-931d1dbe1079",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "3ca738e7-efb3-4305-8fd4-2703af0e1a8e",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Bashar travelled to Dubai for 5 days. He had $3,400 at the beginning of the trip and returned home with $150 left. On average, how much money did he spend per day?",
+      "code": null,
+      "hold": "Duplicate of reviewed question ac0dadeb-e3a0-4813-9089-343232f1f639",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "524c6dbf-8c1b-4c8e-82f9-d0ef30ba70cf",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "The teacher bought chocolate bars for each student who scored 14 or more on this exam. If each chocolate bar costs $3.11, how much did the teacher pay?",
+      "code": null,
+      "hold": "Duplicate of reviewed question d44b3133-60ac-4393-8ed6-d7a00b14d9ec",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "55ad614d-c6dc-4b8f-b68e-86e0e1c4a95e",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Using the line of best fit shown, which choice is closest to the predicted height, in centimeters, of a cylinder with radius 11 cm?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 65a9f4f6-e6f2-465f-b63b-e1734a9026b3",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "56a4a156-e7c2-4787-88e8-6a8182d9b5a5",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "A school has 2,400 students. A random sample of 100 students is chosen. In this sample, 4 students are in their final year, 20 students are aged between 10 and 12 years, and the remaining students are in kindergarten.\n\nTwo of the kindergarten students in the sample are leaving the school at the end ",
+      "code": null,
+      "hold": "Duplicate of reviewed question 21e58927-49b7-407c-92b2-7cac2b01c563",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "574d7529-6572-4cc9-81d1-0b31ffc9c1bb",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "A school has 2,400 students. A random sample of 100 students is chosen. In this sample, 4 students are in their final year, 20 students are aged between 10 and 12 years, and the remaining students are in kindergarten.\n\nIf the sample represents the actual repartition of students, how many of the regi",
+      "code": null,
+      "hold": "Duplicate of reviewed question ef3deab3-6f0b-46aa-9e95-931d1dbe1079",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "5fa1c7bd-7853-485d-b4ab-148b0a4aa00d",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "The teacher bought chocolate bars for each student who scored 14 or more on this exam. If each chocolate bar costs $3.11, how much did the teacher pay?",
+      "code": null,
+      "hold": "Duplicate of reviewed question d44b3133-60ac-4393-8ed6-d7a00b14d9ec",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "6bcc7a8a-d32a-4fa7-83f5-e535265c633a",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Two of the kindergarten students in the sample are leaving the school at the end of the academic year. Approximately, what is the expected total number of kindergarten students leaving the school by the end of the academic year?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 21e58927-49b7-407c-92b2-7cac2b01c563",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "6c51c996-fef9-4e17-892c-038c35428871",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Which of the following statements is true about the data collected?",
+      "code": null,
+      "hold": "Duplicate of reviewed question c7e937f1-4c14-4051-bcd5-886b8660edaf",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "787f6f78-7427-42fc-89e9-f9df3e4c0a14",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Ghassan took three Chemistry tests in Term 1 and achieved an average score of 88 out of 100. In Term 2, he took two Chemistry tests, scoring 90 and 88. In Term 3, he will take one final Chemistry test. If all tests carry equal weight, what is the minimum score Ghassan must obtain so that his overall",
+      "code": null,
+      "hold": "Duplicate of reviewed question b7e2c60e-a39d-42a9-93ac-5d5c7dd8cf3f",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "7c177a28-05bf-4d3b-9558-f23e1a6b460c",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Estimate the mean score using the midpoint of each class, weighted by its frequency. What is the estimated mean, rounded to two decimal places?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 25ec3343-5fdc-49c1-a75b-60a62d1f2957",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "855deeb1-fd4b-3673-3528-a52fde5f19e5",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Q6. Three people have heights 160, 170, 180 cm. One leaves and another joins,\n and the new mean is 175 cm. What is the new person's height?",
+      "code": null,
+      "hold": "Original total=510 and new total=525, so the new person is 15 cm taller than the person who left. Possibilities are 175,185,195; the departing person is unspecified. A unique height cannot be inferred even though 185 is the only listed possibility.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "8d191406-f760-fa40-c64e-376509666eb9",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Three people have heights 160, 170, 180 cm. One leaves and another joins,\nand the new mean is 175 cm. What is the new person's height?",
+      "code": null,
+      "hold": "Original total=510 and new total=525, so the new person is 15 cm taller than the person who left. Possibilities are 175,185,195; the departing person is unspecified. A unique height cannot be inferred even though 185 is the only listed possibility.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "99a592c9-b6a7-4236-9d99-cca7479a05b7",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Using the line of best fit shown, which choice is closest to the predicted height, in centimeters, of a cylinder with radius 11 cm?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 65a9f4f6-e6f2-465f-b63b-e1734a9026b3",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "9d518c85-bd86-da3e-5088-2a124586478e",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Triangle ABC has a right angle at A, with AB = 5 cm and AC = 12 cm. M is the midpoint of BC. What is AM?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 9272e9c8-617d-3356-56fc-7efe2133aaa9",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "a105fd71-7ea7-4e61-a76a-6a4ff1195c3d",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Which of the following equations represents the line of best fit shown above?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 398db93a-09e9-4ff1-8ba6-67485a363e7d",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "a7240d8b-d309-4c3b-990e-89e7edcb7c54",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "$3,\\ 5,\\ 5,\\ 7,\\ 11,\\ 13,\\ 19,\\ 19,\\ 19,\\ 20,\\ 22,\\ 25,\\ 30$\n\nFor the set of data above, $m$ is the mean, $n$ is the mode, and $a$ is the range. What is the value of $26mn-13a$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question fd562fce-cf95-44d9-a5ca-2403651ea357",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "a95c3b19-616b-45f1-b640-7e793996930b",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Estimate the mean score using the midpoint of each class, weighted by its frequency. What is the estimated mean, rounded to two decimal places?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 25ec3343-5fdc-49c1-a75b-60a62d1f2957",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "b2bcb12c-85fb-4e65-a2d6-86a37aa0769a",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Using the line of best fit shown, which choice is closest to the predicted height, in centimeters, of a cylinder with radius 11 cm?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 65a9f4f6-e6f2-465f-b63b-e1734a9026b3",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c1d09894-ab0e-4c00-a6d4-30d5db9dfe29",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Bashar travelled to Dubai for 5 days. He had $3,400 at the beginning of the trip and returned home with $150 left. On average, how much money did he spend per day?",
+      "code": null,
+      "hold": "Duplicate of reviewed question ac0dadeb-e3a0-4813-9089-343232f1f639",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c92713df-aaee-66c6-4926-ec20f2fb383e",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "For the data set 12, 3, 10, 44, 10, 4, 13, what is the mean minus the median?",
+      "code": null,
+      "hold": "Duplicate of reviewed question a6d8c98f-561a-1aff-ad67-512f43432c1b",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "dd9f429d-9f5c-4d8d-86dc-1b0e4d0d92f7",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "The teacher bought chocolate bars for each student who scored 14 or more on this exam. If each chocolate bar costs $3.11, how much did the teacher pay?",
+      "code": null,
+      "hold": "Duplicate of reviewed question d44b3133-60ac-4393-8ed6-d7a00b14d9ec",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "efd7a835-6f42-cb9a-1a06-07232cdab400",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "A teacher gives a test to 3 classes: Class A (30 students, avg 15.8), Class B\n(20 students, avg 16.2), Class C (10 students, avg 17.2). One student from each\nclass scored 20/20. Find the new average after removing those three students.",
+      "code": null,
+      "hold": "Original total=30(15.8)+20(16.2)+10(17.2)=970. Removing 60 points and 3 students gives 910/57=15.964912..., or 16.0 to one decimal, not the keyed 15.9. None of the choices matches.",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "f0aee2ca-7cc0-ea13-e39e-9ba74871cd4f",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "15, 16, 17, y, 20, 21, 24, 20\n\nThe mean of these eight values is 20. What is their median?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 7a4a6596-2c8a-414f-9d88-81704184baf3",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "f4ad17e3-f347-407a-8d0d-e3c841c43098",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "stem": "Ghassan took three Chemistry tests in Term 1 and achieved an average score of 88 out of 100. In Term 2, he took two Chemistry tests, scoring 90 and 88. In Term 3, he will take one final Chemistry test. If all tests carry equal weight, what is the minimum score Ghassan must obtain so that his overall",
+      "code": null,
+      "hold": "Duplicate of reviewed question b7e2c60e-a39d-42a9-93ac-5d5c7dd8cf3f",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "1b2578f1-e044-4f97-a9dd-6cf48dd7ed37",
+      "track_id": "est",
+      "topic": "Systems of equations",
+      "stem": "$\\begin{cases}3x-y=15\\\\6x+2y=18\\end{cases}$\n\nThe solution of the system of equations above can be represented by the pair $(a,b)$, where $a$ and $b$ are two real numbers. What is the value of $b$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question f8e4b1f7-e95d-4b24-b6bd-c043184d5cc3",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "2c1b6729-2f91-4aa3-97f3-7aff2695868c",
+      "track_id": "est",
+      "topic": "Systems of equations",
+      "stem": "$\\begin{cases}3x-y=15\\\\6x+2y=18\\end{cases}$\n\nThe solution of the system of equations above can be represented by the pair $(a,b)$, where $a$ and $b$ are two real numbers. What is the value of $b$?",
+      "code": null,
+      "hold": "Duplicate of reviewed question f8e4b1f7-e95d-4b24-b6bd-c043184d5cc3",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "50c92a41-9c9a-432f-9240-6ef9da7b8760",
+      "track_id": "est",
+      "topic": "Systems of equations",
+      "stem": "The sum of two numbers is 41 and their product is 408. The largest number is:",
+      "code": null,
+      "hold": "Duplicate of reviewed question adc99a21-d5a9-400d-ab86-238002b46df7",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "56c0d0ac-2589-4c36-b5bc-2236b81ca4d0",
+      "track_id": "est",
+      "topic": "Systems of equations",
+      "stem": "If $2x+3y=9a$ and $-3x+11=20$, then $3a-y=$",
+      "code": null,
+      "hold": "Duplicate of reviewed question 01c6070b-4640-4af0-94ce-2c278fe3010f",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "6386f68c-4644-4865-8c47-07427c4e0eab",
+      "track_id": "est",
+      "topic": "Systems of equations",
+      "stem": "If $2x+3y=9a$ and $-3x+11=20$, then $3a-y=$",
+      "code": null,
+      "hold": "Duplicate of reviewed question 01c6070b-4640-4af0-94ce-2c278fe3010f",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "73d7637f-e4bc-4394-bd59-0af55a93a9d7",
+      "track_id": "est",
+      "topic": "Systems of equations",
+      "stem": "Consider the graph of the linear function $f$ shown above. If the graph of $g(x)=-2x+\\frac12$ is represented on the same coordinate plane, the point of intersection of both graphs is:",
+      "code": null,
+      "hold": "Duplicate of reviewed question 30a77293-dfc4-4446-be96-6a178328d57f",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "c948f632-4737-417c-b9df-38a129b16607",
+      "track_id": "est",
+      "topic": "Systems of equations",
+      "stem": "Consider the graph of the linear function $f$ shown above. If the graph of $g(x)=-2x+\\frac12$ is represented on the same coordinate plane, the point of intersection of both graphs is:",
+      "code": null,
+      "hold": "Duplicate of reviewed question 30a77293-dfc4-4446-be96-6a178328d57f",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "efdccb49-5fc4-466b-bffa-0a8e9728f17d",
+      "track_id": "est",
+      "topic": "Systems of equations",
+      "stem": "The sum of two numbers is 41 and their product is 408. The largest number is:",
+      "code": null,
+      "hold": "Duplicate of reviewed question adc99a21-d5a9-400d-ab86-238002b46df7",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "fb2dc84a-7598-4b0a-b62f-2c7e0d2ff538",
+      "track_id": "est",
+      "topic": "Systems of equations",
+      "stem": "Consider the graph of the linear function $f$ shown above. If the graph of $g(x)=-2x+\\frac12$ is represented on the same coordinate plane, the point of intersection of both graphs is:",
+      "code": null,
+      "hold": "Duplicate of reviewed question 30a77293-dfc4-4446-be96-6a178328d57f",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "4b03311e-c655-a42b-07f4-d509b21592f4",
+      "track_id": "est",
+      "topic": "Trigonometry",
+      "stem": "Simplify \\(\\frac{20\\sin x\\cos x}{3}\\times\\frac{\\tan x+\\cot x}{4}\\), for values of x where the expression is defined.",
+      "code": null,
+      "hold": "Duplicate of reviewed question",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "00dcbc61-f9e7-4aa5-b19b-641ef779e7c8",
+      "track_id": "est",
+      "topic": "Volume and surface area",
+      "stem": "A square cardboard has a perimeter of 200 cm. Squares with sides of length $x$ cm are cut out from each corner, and the remaining are folded up to form an open-top box of volume 5,808 cm$^3$. What can be the surface area of the resulting box?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 97e7ec91-bdd4-4517-86ea-952262bcf640",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "8473c20d-9547-45a5-8f4c-f67b0d639b56",
+      "track_id": "est",
+      "topic": "Volume and surface area",
+      "stem": "A square cardboard has a perimeter of 200 cm. Squares with sides of length $x$ cm are cut out from each corner, and the remaining are folded up to form an open-top box of volume 5,808 cm$^3$. What can be the surface area of the resulting box?",
+      "code": null,
+      "hold": "Duplicate of reviewed question 97e7ec91-bdd4-4517-86ea-952262bcf640",
+      "status": null,
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "e66b07e7-ae80-5b66-a025-bb6f27c972a6",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "[Figure: Graph of f(x) rising from lower left through (−5,0), crossing y-axis at 4, peaking near x = 1, dipping to a minimum at x = 3, then rising again.]\nAt which interval is the function f(x) decreasing?",
+      "code": null,
+      "hold": "Original figure or source-layout review needed",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 2
+    },
+    {
+      "id": "e390176d-dc15-5440-8f9c-c89f7706e604",
+      "track_id": "est2",
+      "topic": "Circles",
+      "stem": "[Figure: Circle with inscribed figure; AD is a chord across top with H on arc AD; AB vertical-ish chord at left with arrow; BC chord at bottom; CD chord at right; E on BC; arrows on AB, HE-line, and AD indicating parallels.]\nIn the figure: If m∠HEC = 2y + 10, m∠D = y + 20, then m∠B =",
+      "code": null,
+      "hold": "Original figure or source-layout review needed",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 1
+    },
+    {
+      "id": "30eec906-1afb-5d4e-afd6-a9f868417e15",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "[Figure: graph of g(x), a wavy cubic-like curve crossing the x-axis at −2, 1, and 3.]\nIf f(x) = k(x)/g(x), g(x) is represented by the graph above, then the domain of f(x) is ……",
+      "code": null,
+      "hold": "Original figure or source-layout review needed",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 1
+    },
+    {
+      "id": "6d671cad-0f53-5e10-abaf-6d1328031b81",
+      "track_id": "est2",
+      "topic": "Circles",
+      "stem": "[Figure: Circle with chords AB and CD intersecting inside the circle at 80°; A right, B lower right, C lower left, D upper left.]\nIn the figure: If m arc AB = 60°, then m arc DC =",
+      "code": null,
+      "hold": "Original figure or source-layout review needed",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "0476278a-01ae-54ce-816f-c8e7687e3849",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "[Figure: f(x) shown as an increasing, concave-down curve through the origin in the first quadrant. Four graphs A–D: A same shape as f; B decreasing curve in second quadrant; C increasing concave-up curve through origin; D decreasing curve in third/fourth quadrant.]\nFor the function f(x) shown, which",
+      "code": null,
+      "hold": "Original figure or source-layout review needed",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "3611425e-4860-524c-92d1-62c1bc11cea2",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "The entire graph of a function, F, is shown in the standard (x,y) coordinate plane below. One of the following sets is the range of the function. Which set is it?\n[Figure: discrete points at approximately (0, 6), (1, 4), (2, 2), (3, 0), (4, 2), (5, 4), (6, 6).]",
+      "code": null,
+      "hold": "Original figure or source-layout review needed",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "ca0b3c27-5617-532d-93ce-30461e2b7d10",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "[Figure: Shaded region above the line through (0,0) and (6,2) and to the right of the vertical line x = 6.]\nA portion of which of the following systems of inequalities is represented by the shaded region of the graph?",
+      "code": null,
+      "hold": "Original figure or source-layout review needed",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "18d69e89-5353-5b6d-8cfb-21c17bee472b",
+      "track_id": "est2",
+      "topic": "Inequalities and absolute value",
+      "stem": "y = f(x) is graphed in Figure 4. Which of the following is the graph of y = |f(x)| ?\n[Figure 4: a line with positive slope crossing the x-axis left of the origin and the y-axis above the origin. Choices: (A) line with a downward branch added (sideways V); (B) an X shape; (C) a V shape — the part of ",
+      "code": null,
+      "hold": "Original figure or source-layout review needed; Numeric response format requires grader review",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "af3e8f2a-c43e-54d4-98c3-7c5fabf452e7",
+      "track_id": "est2",
+      "topic": "Linear functions and slope",
+      "stem": "[Figure: Coordinate plane with points A in Quadrant II, B in Quadrant I, C in Quadrant III, D and E in Quadrant IV.]\nIn the figure, for which point (x, y) is the product xy the greatest?",
+      "code": null,
+      "hold": "Original figure or source-layout review needed",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "6d0331ad-05ab-510f-bc57-ee2a951cc94a",
+      "track_id": "est2",
+      "topic": "Triangles and similarity",
+      "stem": "[Figure: Triangles ABC and ABD share side AB; BC and AD cross at E. Given angles: ∠BAC = 45°, ∠ABD = 20°, ∠ACB = 33°, ∠ADB = 80°, x = ∠DBC. Note: figure not drawn to scale.]\nIn the figure, ABC and ABD are triangles. What is the value of x?",
+      "code": null,
+      "hold": "Original figure or source-layout review needed",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "75a90933-fefc-5852-a2e5-c49a4e399855",
+      "track_id": "est2",
+      "topic": "Triangles and similarity",
+      "stem": "[Figure: Triangle ACB with A at top, C bottom left, B bottom right; D on CB; segment AD drawn.]\n△ACD ~ △BCA because of:",
+      "code": null,
+      "hold": "Original figure or source-layout review needed",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 0
+    },
+    {
+      "id": "4c8d39ac-bfe5-57d2-9308-69a417ad3fdc",
+      "track_id": "est2",
+      "topic": "Trigonometry",
+      "stem": "[Figure: sinusoidal graph with maximum 3 and minimum −3, passing through the origin, completing one full period by x = π/2.]\nWhich of the following could be the equation of the above graph?",
+      "code": null,
+      "hold": "Original figure or source-layout review needed",
+      "status": "blocked_source_verification",
+      "ready": false,
+      "uses": 0
+    }
+  ],
+  "published_holds": [
+    {
+      "id": "44d81c11-3760-7638-292b-77268461e4b5",
+      "track_id": "est",
+      "stem": "Q106. A teacher gives a test to 3 classes: Class A (30 students, avg 15.8), Class B\n (20 students, avg 16.2), Class C (10 students, avg 17.2). One student from each\n class scored 20/20. Find the new average after removing those three students.",
+      "choices": [
+        {
+          "key": "A",
+          "text": "50.7"
+        },
+        {
+          "key": "B",
+          "text": "15.9"
+        },
+        {
+          "key": "C",
+          "text": "15.1"
+        },
+        {
+          "key": "D",
+          "text": "48.2"
+        }
+      ],
+      "assets": {
+        "source_id": "ghoneem_full_revision_jun_2026",
+        "source_page": 22,
+        "visual_page": 22,
+        "content_audit": "2026-09-25-format-and-grading-review",
+        "visual_bucket": "question-sources",
+        "lesson_subtopic": "Area, surface area, and volume",
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "source_reference": "106",
+        "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+        "curriculum_lesson": "Statistics and data analysis",
+        "source_pdf_bucket": "question-sources",
+        "visual_asset_kind": "authoritative_source_pdf_page",
+        "source_question_id": "ghoneem_full_revision_jun_2026-q00104",
+        "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+        "release_hold_reason": "Original total=30(15.8)+20(16.2)+10(17.2)=970. Removing 60 points and 3 students gives 910/57=15.964912..., or 16.0 to one decimal, not the keyed 15.9. None of the choices matches.",
+        "lesson_original_topic": "Area, surface area, and volume",
+        "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+        "lesson_taxonomy_version": "20260929",
+        "replacement_question_id": "389099ff-c93c-5290-9688-3fc4ea0f5ffa",
+        "replacement_review_note": "Original source remains held. The linked standalone question is an independently checked practice version, not a claim that the original source has been recovered.",
+        "pending_math_disposition": "covered_by_verified_version",
+        "replacement_review_release": "20261013_est_pending"
+      },
+      "correct": {
+        "void": true,
+        "reason": "June source mathematical ambiguity; see explanation"
+      },
+      "explanation": "Not scorable: Original total=30(15.8)+20(16.2)+10(17.2)=970. Removing 60 points and 3 students gives 910/57=15.964912..., or 16.0 to one decimal, not the keyed 15.9. None of the choices matches.",
+      "hash": "c7cfc75fe661964029126512f24cc2a3",
+      "exams": [
+        {
+          "id": "6653e8e3-d9b4-4dfb-b8d2-2f8c29ab7b49",
+          "held": null,
+          "title": "Area, surface area, and volume — Reviewed practice 1 — Historical version (held)"
+        }
+      ]
+    },
+    {
+      "id": "3556fa31-7c75-76db-d8d7-9ee22d7c3867",
+      "track_id": "est",
+      "stem": "If \\(3^{x+2}-3^x=216\\), what is the value of \\(x\\)?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "2"
+        },
+        {
+          "key": "B",
+          "text": "3"
+        },
+        {
+          "key": "C",
+          "text": "4"
+        },
+        {
+          "key": "D",
+          "text": "5"
+        }
+      ],
+      "assets": {
+        "source": "EST & SAT Math Full-Subject Revision — June 2026",
+        "source_id": "full_subject_revision_june_2026",
+        "source_page": 48,
+        "duplicate_of": "10fab705-da9f-6719-ec0d-3297d5afae40",
+        "recheck_date": "2026-09-28",
+        "lesson_subtopic": "Algebra",
+        "recheck_outcome": "superseded_active_copy",
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "source_reference": "Page 48, extracted block 6",
+        "verified_release": "2026-09-20-full-revision-source-key",
+        "curriculum_lesson": "Exponents, radicals and growth",
+        "source_question_id": "full_subject_revision_june_2026-p48-q214",
+        "release_hold_reason": "Duplicate of reviewed question 10fab705-da9f-6719-ec0d-3297d5afae40; old content retained for active exam",
+        "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+        "lesson_original_topic": "Algebra",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "B",
+      "explanation": "The source prints 3^(x+2)−3^x=216. Factoring gives 8·3^x=216, so 3^x=27 and x=3.",
+      "hash": "6e7653d6938a1dea9a61142f0b410fd0",
+      "exams": [
+        {
+          "id": "ce7d75b2-2195-43f8-b3a6-28f02951fcff",
+          "held": null,
+          "title": "Algebra — Reviewed practice 1 — Historical version (held)"
+        }
+      ]
+    },
+    {
+      "id": "e390176d-dc15-5440-8f9c-c89f7706e604",
+      "track_id": "est2",
+      "stem": "[Figure: Circle with inscribed figure; AD is a chord across top with H on arc AD; AB vertical-ish chord at left with arrow; BC chord at bottom; CD chord at right; E on BC; arrows on AB, HE-line, and AD indicating parallels.]\nIn the figure: If m∠HEC = 2y + 10, m∠D = y + 20, then m∠B =",
+      "choices": [
+        {
+          "key": "A",
+          "text": "50"
+        },
+        {
+          "key": "B",
+          "text": "60"
+        },
+        {
+          "key": "C",
+          "text": "80"
+        },
+        {
+          "key": "D",
+          "text": "110"
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "book_t7.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+        "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+        "curriculum_lesson": "Circles",
+        "hold_recheck_date": "2026-09-29",
+        "hold_recheck_note": "The transcription does not unambiguously identify the parallel segments or inscribed-angle positions. The proposed 110° depends on those relationships, so a source diagram is required.",
+        "source_question_id": "T7-07",
+        "release_hold_reason": "Original figure or source-layout review needed",
+        "answer_review_status": "blocked_source_verification",
+        "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+        "lesson_taxonomy_version": "20260929",
+        "replacement_question_id": "0a045c5e-457c-567a-8771-4af81d8c27d1",
+        "replacement_review_note": "Original source remains held. The linked standalone question is an independently checked practice version, not a claim that the original source has been recovered.",
+        "pending_math_disposition": "covered_by_verified_version",
+        "replacement_review_release": "20261013_est_pending"
+      },
+      "correct": "D",
+      "explanation": "Source-keyed answer from book_t7.md (T7-07).",
+      "hash": "9706db59f27a802cbac772e92d5b54bc",
+      "exams": [
+        {
+          "id": "4460296b-f0c3-49e3-94d5-ac54e9699a7b",
+          "held": null,
+          "title": "EST II Math Level 2 — Full Practice Exam 06 — Historical version (held)"
+        }
+      ]
+    },
+    {
+      "id": "30eec906-1afb-5d4e-afd6-a9f868417e15",
+      "track_id": "est2",
+      "stem": "[Figure: graph of g(x), a wavy cubic-like curve crossing the x-axis at −2, 1, and 3.]\nIf f(x) = k(x)/g(x), g(x) is represented by the graph above, then the domain of f(x) is ……",
+      "choices": [
+        {
+          "key": "A",
+          "text": "all real numbers"
+        },
+        {
+          "key": "B",
+          "text": "all real numbers except −1, 2"
+        },
+        {
+          "key": "C",
+          "text": "all real numbers except −1, 1, 3"
+        },
+        {
+          "key": "D",
+          "text": "all real numbers except 1, −2, 3"
+        },
+        {
+          "key": "E",
+          "text": "we can not determine the domain"
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "book_t6.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "fff115dbcac720ded29af3b5a3d4e954934e7afdc285b7b3e484aee7cfdf97a9",
+        "lesson_subtopic": "Rational, Radical, Exponential & Logarithmic Functions",
+        "curriculum_lesson": "Functions and transformations",
+        "hold_recheck_date": "2026-09-29",
+        "hold_recheck_note": "The zeros −2,1,3 of g would be excluded from the quotient domain, but the numerator function k and its domain are not supplied. D requires an unstated all-real numerator domain; E may be appropriate if the omission is intentional. Original complete prompt is needed.",
+        "source_question_id": "T6-11",
+        "release_hold_reason": "Original figure or source-layout review needed",
+        "answer_review_status": "blocked_source_verification",
+        "lesson_original_topic": "Rational, Radical, Exponential & Logarithmic Functions",
+        "lesson_taxonomy_version": "20260929",
+        "replacement_question_id": "72635b0f-4b09-569a-9252-f5a637e87693",
+        "replacement_review_note": "Original source remains held. The linked standalone question is an independently checked practice version, not a claim that the original source has been recovered.",
+        "pending_math_disposition": "covered_by_verified_version",
+        "replacement_review_release": "20261013_est_pending"
+      },
+      "correct": "D",
+      "explanation": "Source-keyed answer from book_t6.md (T6-11).",
+      "hash": "9871a83ff723a9e3716466447df08f6d",
+      "exams": [
+        {
+          "id": "af9c0e48-b6f4-57bb-aca2-cdf47b70c297",
+          "held": null,
+          "title": "EST II Math Level 2 — Full Practice Exam 03 — Historical version (held)"
+        }
+      ]
+    },
+    {
+      "id": "e66b07e7-ae80-5b66-a025-bb6f27c972a6",
+      "track_id": "est2",
+      "stem": "[Figure: Graph of f(x) rising from lower left through (−5,0), crossing y-axis at 4, peaking near x = 1, dipping to a minimum at x = 3, then rising again.]\nAt which interval is the function f(x) decreasing?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "−5 < x < 1"
+        },
+        {
+          "key": "B",
+          "text": "1 < x < 3"
+        },
+        {
+          "key": "C",
+          "text": "x > 3"
+        },
+        {
+          "key": "D",
+          "text": "x < 3"
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "book_t7.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+        "lesson_subtopic": "Functions, Transformations & Graphs",
+        "curriculum_lesson": "Functions and transformations",
+        "hold_recheck_date": "2026-09-29",
+        "hold_recheck_note": "If the extrema occur exactly at x=1 and x=3 as suggested, the decreasing interval is (1,3). The transcription says near x=1 and supplies no original graph, so the exact boundaries remain unverified.",
+        "source_question_id": "T7-28",
+        "release_hold_reason": "Original figure or source-layout review needed",
+        "answer_review_status": "blocked_source_verification",
+        "lesson_original_topic": "Functions, Transformations & Graphs",
+        "lesson_taxonomy_version": "20260929",
+        "replacement_question_id": "5dd53760-0cb1-5181-a2f5-157ec53ccdfd",
+        "replacement_review_note": "Original source remains held. The linked standalone question is an independently checked practice version, not a claim that the original source has been recovered.",
+        "pending_math_disposition": "covered_by_verified_version",
+        "replacement_review_release": "20261013_est_pending"
+      },
+      "correct": "B",
+      "explanation": "Source-keyed answer from book_t7.md (T7-28).",
+      "hash": "f64108858ee337a3674569a66449581c",
+      "exams": [
+        {
+          "id": "116ec26f-d77c-5a99-ac2e-392107313ee1",
+          "held": null,
+          "title": "EST II Math Level 2 — Full Practice Exam 02 — Historical version (held)"
+        },
+        {
+          "id": "4460296b-f0c3-49e3-94d5-ac54e9699a7b",
+          "held": null,
+          "title": "EST II Math Level 2 — Full Practice Exam 06 — Historical version (held)"
+        }
+      ]
+    },
+    {
+      "id": "38dae603-01c3-93f3-000f-2d8610facd6a",
+      "track_id": "est",
+      "stem": "(2a − 14)x² + 5b − cx = 2x² − (4x + 5c)b for all x. What is the value of a + 8b + c?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "11"
+        },
+        {
+          "key": "B",
+          "text": "7"
+        },
+        {
+          "key": "C",
+          "text": "5"
+        },
+        {
+          "key": "D",
+          "text": "3"
+        }
+      ],
+      "assets": {
+        "source": "EST & SAT Math Full-Subject Revision — June 2026",
+        "source_id": "full_subject_revision_june_2026",
+        "source_page": 14,
+        "content_review": "2026-09-29-revision-contamination",
+        "lesson_subtopic": "Algebra",
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "source_reference": "Page 14, extracted block 65",
+        "curriculum_lesson": "Quadratics and polynomials",
+        "source_question_id": "full_subject_revision_june_2026-p14-q65",
+        "content_review_page": 14,
+        "release_hold_reason": "Source ambiguity: coefficient identity permits both 5 and 8; a missing condition requires clarification.",
+        "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+        "content_review_source": "DOC-20260623-WA0016_260916_184619.pdf",
+        "lesson_original_topic": "Algebra",
+        "lesson_taxonomy_version": "20260929",
+        "replacement_question_id": "a90c5ace-692f-5209-aa94-5d48703d5018",
+        "replacement_review_note": "Original source remains held. The linked standalone question is an independently checked practice version, not a claim that the original source has been recovered.",
+        "pending_math_disposition": "covered_by_verified_version",
+        "replacement_review_release": "20261013_est_pending"
+      },
+      "correct": {
+        "void": true,
+        "reason": "Source ambiguity: coefficient identity permits both 5 and 8; a missing condition requires clarification."
+      },
+      "explanation": "This question is ambiguous as written. Matching coefficients gives a = 8, c = 4b, and b(1 + c) = 0. If b = 0, then c = 0 and a + 8b + c = 8. If c = −1, then b = −1/4 and the value is 5. The source omits a condition that would select one branch. Excluded from scoring pending clarification.",
+      "hash": "3b094992b0b3b91521356c02e4da3688",
+      "exams": [
+        {
+          "id": "ce7d75b2-2195-43f8-b3a6-28f02951fcff",
+          "held": null,
+          "title": "Algebra — Reviewed practice 1 — Historical version (held)"
+        }
+      ]
+    },
+    {
+      "id": "22a42973-8e94-0307-7341-5a98290fdaf9",
+      "track_id": "est",
+      "stem": "If x − 3 and x + 2 are both factors of the polynomial p(x), which of the\nfollowing could be p(x)?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "p(x) = x³ − x² − 6x"
+        },
+        {
+          "key": "B",
+          "text": "p(x) = x³ + x² − 6x"
+        },
+        {
+          "key": "C",
+          "text": "p(x) = x³ − 5x² + 6x"
+        },
+        {
+          "key": "D",
+          "text": "p(x) = x³ − 7x − 6"
+        }
+      ],
+      "assets": {
+        "source": "EST & SAT Math Full-Subject Revision — June 2026",
+        "source_id": "full_subject_revision_june_2026",
+        "source_page": 16,
+        "lesson_subtopic": "Algebra",
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "source_reference": "Page 16, extracted block 76",
+        "verified_release": "2026-09-20-full-revision-source-key",
+        "curriculum_lesson": "Quadratics and polynomials",
+        "source_question_id": "full_subject_revision_june_2026-p16-q76",
+        "release_hold_reason": "Both A=x(x−3)(x+2) and D=(x+1)(x−3)(x+2) contain the required factors. The single-answer source is ambiguous.",
+        "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+        "lesson_original_topic": "Algebra",
+        "lesson_taxonomy_version": "20260929",
+        "replacement_question_id": "779824f6-5c74-529d-9918-49eaa8d4145d",
+        "replacement_review_note": "Original source remains held. The linked standalone question is an independently checked practice version, not a claim that the original source has been recovered.",
+        "pending_math_disposition": "covered_by_verified_version",
+        "replacement_review_release": "20261013_est_pending"
+      },
+      "correct": {
+        "void": true,
+        "reason": "June source mathematical ambiguity; see explanation"
+      },
+      "explanation": "Not scorable: Both A=x(x−3)(x+2) and D=(x+1)(x−3)(x+2) contain the required factors. The single-answer source is ambiguous.",
+      "hash": "79e7ac89689f45f8b79686e5d00fdc97",
+      "exams": [
+        {
+          "id": "ce7d75b2-2195-43f8-b3a6-28f02951fcff",
+          "held": null,
+          "title": "Algebra — Reviewed practice 1 — Historical version (held)"
+        }
+      ]
+    }
+  ],
+  "selected": [
+    {
+      "id": "d7382f65-3983-5856-9dc1-77c74649b060",
+      "track_id": "est",
+      "topic": "Probability and conditional probability",
+      "type": "grid_in",
+      "stem": "[Table: CP-c24-02 — 450 shirts by color and size: Gray (S 55, M 80, L 30, total 165); Navy (45, 70, 20, 135); Black (50, 65, 35, 150); Total (150, 215, 85, 450)]\nThe table summarizes the distribution of color and size for 450 shirts. If one of these shirts is selected at random, what is the probability of selecting a gray shirt? (Express your answer as a decimal or fraction, not as a percent.)",
+      "choices": [],
+      "assets": {
+        "image": "https://math.portal.ghoneem.com/assets/question-bank/CP-c24-02.png",
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "image_alt": "Original graph, diagram, or table for CP-c24-02",
+        "source_file": "panda.md",
+        "image_sha256": "05227d00457402ad72b1abf2e4909e687837b8a5383ca25c9f9b3bc756b8c483",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "content_audit": "2026-09-25-format-and-grading-review",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "visual_repair": "original_archive_image_2026_09_21",
+        "lesson_subtopic": "Statistics, Probability & Data Analysis",
+        "visual_verified": true,
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Probability and conditional probability",
+        "source_question_id": "CP-c24-02",
+        "lesson_original_topic": "Statistics, Probability & Data Analysis",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": [
+        "11/30",
+        ".367"
+      ],
+      "explanation": "Source-keyed answer from panda.md (CP-c24-02).",
+      "hash": "2ddb280293252c7061c4ee0011ee6367",
+      "active_uses": 2
+    },
+    {
+      "id": "eff0c0d0-c903-507f-aec1-c373512262b7",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "type": "grid_in",
+      "stem": "[Table: CP-c25-02 — Value/Frequency: 17 → 15, 19 → 21, 23 → 27, 28 → 33]\nWhat is the range of the data set represented in the frequency table?",
+      "choices": [],
+      "assets": {
+        "image": "https://math.portal.ghoneem.com/assets/question-bank/CP-c25-02.png",
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "image_alt": "Original graph, diagram, or table for CP-c25-02",
+        "source_file": "panda.md",
+        "image_sha256": "0638f03cca9aa18c42b629c0cb59e0bb0ca98f9035053332335eced8b8dc214e",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "visual_repair": "original_archive_image_2026_09_21",
+        "lesson_subtopic": "Statistics, Probability & Data Analysis",
+        "visual_verified": true,
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Statistics and data analysis",
+        "source_question_id": "CP-c25-02",
+        "lesson_original_topic": "Statistics, Probability & Data Analysis",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "11",
+      "explanation": "Source-keyed answer from panda.md (CP-c25-02).",
+      "hash": "8f46de6dc6b5df8b3c46abf442823137",
+      "active_uses": 2
+    },
+    {
+      "id": "fb99d96f-8a7d-566c-adb8-7124ee051d8b",
+      "track_id": "est",
+      "topic": "Statistics and data analysis",
+      "type": "grid_in",
+      "stem": "A local youth organization sold cookies in five different neighborhoods. The bar graph shows the number of cookies sold in each of the five neighborhoods. How many more cookies were sold in neighborhoods 2 and 4 than were sold in neighborhoods 1, 3, and 5?",
+      "choices": [],
+      "assets": {
+        "image": "https://math.portal.ghoneem.com/assets/question-bank/CP-c23-03.png",
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "image_alt": "Original graph, diagram, or table for CP-c23-03",
+        "source_file": "panda.md",
+        "image_sha256": "0b3c5144449d05d943325cdbbb85bf428e35abcb9bdf81778b9403ed7996fbb5",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "visual_repair": "original_archive_image_2026_09_21",
+        "lesson_subtopic": "Statistics, Probability & Data Analysis",
+        "visual_verified": true,
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Statistics and data analysis",
+        "source_question_id": "CP-c23-03",
+        "lesson_original_topic": "Statistics, Probability & Data Analysis",
+        "lesson_taxonomy_version": "20260929",
+        "original_figure_transcript": "[Figure: CP-c23-03 — bar graph of cookies sold in five neighborhoods: 1 = 254, 2 = 447, 3 = 315, 4 = 388, 5 = 122]\nA local youth organization sold cookies in five different neighborhoods. The bar graph shows the number of cookies sold in each of the five neighborhoods. How many more cookies were sold in neighborhoods 2 and 4 than were sold in neighborhoods 1, 3, and 5?"
+      },
+      "correct": "144",
+      "explanation": "Source-keyed answer from panda.md (CP-c23-03).",
+      "hash": "fb1e5b565def10adf7328fb7aac7f06c",
+      "active_uses": 2
+    },
+    {
+      "id": "baf1be6c-0206-5a97-907e-8d10f22325c3",
+      "track_id": "est",
+      "topic": "Area and perimeter",
+      "type": "grid_in",
+      "stem": "Q19. A = (7/2)(9 + x). The function A gives the area, in square inches, of a trapezoid with a height of 7 inches, a shorter base of 9 inches, and a longer base of x inches. If the length of the longer base is increased by 5 inches, by how many square inches does the area of the trapezoid increase?",
+      "choices": [],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "panda.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "content_audit": "2026-09-25-format-and-grading-review",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "lesson_subtopic": "Statistics, Probability & Data Analysis",
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Area and perimeter",
+        "source_question_id": "CP-c07-19",
+        "lesson_original_topic": "Statistics, Probability & Data Analysis",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": [
+        "35/2",
+        "17.5"
+      ],
+      "explanation": "Source-keyed answer from panda.md (CP-c07-19).",
+      "hash": "4f11fc42f344d1435c0e6cdb9e72a297",
+      "active_uses": 1
+    },
+    {
+      "id": "036596b5-b3bd-509e-9426-045798147b53",
+      "track_id": "est",
+      "topic": "Circles",
+      "type": "grid_in",
+      "stem": "Q14. x² + 2x + y² − 8y = 64. The graph of the given equation in the xy-plane is a circle. What is the length of the circle's radius?",
+      "choices": [],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "panda.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "content_audit": "2026-09-25-format-and-grading-review",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Circles",
+        "source_question_id": "CP-c19-14",
+        "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "9",
+      "explanation": "Source-keyed answer from panda.md (CP-c19-14).",
+      "hash": "6102e6497b7fab0fccbef2f47938ca9d",
+      "active_uses": 1
+    },
+    {
+      "id": "1d301f6a-b67f-5f26-9b69-962b99b8e7ba",
+      "track_id": "est",
+      "topic": "Circles",
+      "type": "grid_in",
+      "stem": "Q11. Point P is the center of a circle. The measure of arc QR on this circle is 144°. What is the measure, in degrees, of angle PQR?",
+      "choices": [],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "panda.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Circles",
+        "source_question_id": "CP-c19-11",
+        "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "18",
+      "explanation": "Source-keyed answer from panda.md (CP-c19-11).",
+      "hash": "ea85408a97b9fca58c01703faf351536",
+      "active_uses": 1
+    },
+    {
+      "id": "5ba9bacc-7141-5a2d-888a-639f025db330",
+      "track_id": "est",
+      "topic": "Circles",
+      "type": "grid_in",
+      "stem": "Q16. x² + y² + 7x + y = −7/2. The given equation represents a circle in the xy-plane. What is the length of the radius of the circle?",
+      "choices": [],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "panda.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Circles",
+        "source_question_id": "CP-c19-30",
+        "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "3",
+      "explanation": "Source-keyed answer from panda.md (CP-c19-30).",
+      "hash": "99a5dae4b003878dab2d526773ba5474",
+      "active_uses": 1
+    },
+    {
+      "id": "6b30b08f-b6a7-5607-8bc1-745990b52c63",
+      "track_id": "est",
+      "topic": "Circles",
+      "type": "grid_in",
+      "stem": "Q12. A circle in the xy-plane has the equation (x + 4)² + (y + 6)² = k, where k is a constant. This circle intersects the x-axis at exactly one point. What is the value of k?",
+      "choices": [],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "panda.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Circles",
+        "source_question_id": "CP-c19-12",
+        "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "36",
+      "explanation": "Source-keyed answer from panda.md (CP-c19-12).",
+      "hash": "2d79e3ad526147aa23adcbacf352672c",
+      "active_uses": 1
+    },
+    {
+      "id": "83b9dd96-da0a-577d-b12b-8505b2e79ed7",
+      "track_id": "est",
+      "topic": "Circles",
+      "type": "grid_in",
+      "stem": "Q3. Angles APB and AQB are inscribed in the circle shown. The measure of angle APB is 40°. What is the measure, in degrees, of angle AQB?",
+      "choices": [],
+      "assets": {
+        "image": "https://math.portal.ghoneem.com/assets/question-bank/CP-c19-17.png",
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "image_alt": "Original graph, diagram, or table for CP-c19-17",
+        "source_file": "panda.md",
+        "image_sha256": "9f815d31b576fe85a565798ac6f30aa27cfba2d6fc99802b0595e4ad3893a1c3",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "visual_repair": "original_archive_image_2026_09_21",
+        "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+        "visual_verified": true,
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Circles",
+        "source_question_id": "CP-c19-17",
+        "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+        "lesson_taxonomy_version": "20260929",
+        "original_figure_transcript": "[Figure: CP-c19-17 — circle with inscribed angles APB and AQB]\nQ3. Angles APB and AQB are inscribed in the circle shown. The measure of angle APB is 40°. What is the measure, in degrees, of angle AQB?"
+      },
+      "correct": "40",
+      "explanation": "Source-keyed answer from panda.md (CP-c19-17).",
+      "hash": "efbd6754c821ba3cbe23779f5b764411",
+      "active_uses": 1
+    },
+    {
+      "id": "94f1a23f-47ec-51b5-a2d6-f6ba5d90e9b4",
+      "track_id": "est",
+      "topic": "Circles",
+      "type": "grid_in",
+      "stem": "Q11. The circle shown has center O and a radius of length 16. Diameter AB bisects CD at point E, and CD = 28. If the length of OE can be written in the form 2√k, where k is an integer, what is the value of k?",
+      "choices": [],
+      "assets": {
+        "image": "https://math.portal.ghoneem.com/assets/question-bank/CP-c19-25.png",
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "image_alt": "Original graph, diagram, or table for CP-c19-25",
+        "source_file": "panda.md",
+        "image_sha256": "e3a83c9ab02e3ca81a58c03b53acba7991d5c35d19242cdb6e74b7c5848c4b23",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "visual_repair": "original_archive_image_2026_09_21",
+        "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+        "visual_verified": true,
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Circles",
+        "source_question_id": "CP-c19-25",
+        "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+        "lesson_taxonomy_version": "20260929",
+        "original_figure_transcript": "[Figure: CP-c19-25 — circle with center O and radius 16; diameter AB bisects CD at E; CD = 28]\nQ11. The circle shown has center O and a radius of length 16. Diameter AB bisects CD at point E, and CD = 28. If the length of OE can be written in the form 2√k, where k is an integer, what is the value of k?"
+      },
+      "correct": "15",
+      "explanation": "Source-keyed answer from panda.md (CP-c19-25).",
+      "hash": "0d0c024382f195b04568e6a95371e96a",
+      "active_uses": 1
+    },
+    {
+      "id": "9bed4a53-42c9-55fd-83ea-10d195e5c6d1",
+      "track_id": "est",
+      "topic": "Circles",
+      "type": "grid_in",
+      "stem": "Q8. In the xy-plane, circle A is defined by the equation (x − 3)² + (y − 4)² = 16, and circle B is defined by the equation (x − 3)² + (y − 4)² = n, where n is a constant. The diameter of circle B is 48 units longer than the diameter of circle A. What is the value of n?",
+      "choices": [],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "panda.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Circles",
+        "source_question_id": "CP-c19-22",
+        "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "784",
+      "explanation": "Source-keyed answer from panda.md (CP-c19-22).",
+      "hash": "6294acc8f9f9385b45f01b2345a3856f",
+      "active_uses": 1
+    },
+    {
+      "id": "ad88ac81-7bc2-541b-b92e-74905931834a",
+      "track_id": "est",
+      "topic": "Circles",
+      "type": "grid_in",
+      "stem": "Q12. In the xy-plane, a circle with a radius of 1 has its center at (9, −12). This circle can be represented by the equation x² + y² + ax + by + c = 0, where a, b, and c are constants. What is the value of a + b + c?",
+      "choices": [],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "panda.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+        "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+        "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+        "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+        "curriculum_lesson": "Circles",
+        "source_question_id": "CP-c19-26",
+        "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "230",
+      "explanation": "Source-keyed answer from panda.md (CP-c19-26).",
+      "hash": "5ec75104ac87e9bccda0de4bd7dd3bb1",
+      "active_uses": 1
+    },
+    {
+      "id": "e41ce9db-abef-59a7-891a-333b0351d8dc",
+      "track_id": "est2",
+      "topic": "Sequences",
+      "stem": "A pattern of dots is shown in the four figures below.\nIf the pattern continues, which expression can be used to find the total number of dots in Figure n?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "3n − 5"
+        },
+        {
+          "key": "B",
+          "text": "2n + 2"
+        },
+        {
+          "key": "C",
+          "text": "2n + 3"
+        },
+        {
+          "key": "D",
+          "text": "3n − 1"
+        }
+      ],
+      "assets": {
+        "image": "https://math.portal.ghoneem.com/assets/question-bank/MG-13.png",
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "image_alt": "Original graph, diagram, or table for MG-13",
+        "source_file": "moh_geo.md",
+        "image_sha256": "fb2b678236b804248199880bd4ae655f7aba90ee2708f5615c0635c7aee2953b",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "fd550cf9acb0c34c08b3bebd88f0b67714179fd7b1d4644f694d4388df535983",
+        "visual_repair": "original_archive_image_2026_09_21",
+        "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+        "visual_verified": true,
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Sequences",
+        "source_question_id": "MG-13",
+        "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+        "lesson_taxonomy_version": "20260929",
+        "original_figure_transcript": "A pattern of dots is shown in the four figures below.\n[Figure: Figure 1 has 2 dots; Figure 2 has 5 dots; Figure 3 has 8 dots; Figure 4 has 11 dots.]\nIf the pattern continues, which expression can be used to find the total number of dots in Figure n?"
+      },
+      "correct": "D",
+      "explanation": "Source-keyed answer from moh_geo.md (MG-13).",
+      "active_uses": 13,
+      "hash": "232364c9c22d909e3e10bb4fce54d901"
+    },
+    {
+      "id": "eb2a4e07-46c8-5430-b960-d9798d986dcb",
+      "track_id": "est2",
+      "topic": "Quadratics and polynomials",
+      "stem": "A baker determined the annual profit in dollars from selling pies using p(n) = 52n − 0.05n², where n is the number of pies sold. What is the annual profit if the baker sells 400 pies?",
+      "choices": [
+        {
+          "key": "F",
+          "text": "$20,780"
+        },
+        {
+          "key": "G",
+          "text": "$12,800"
+        },
+        {
+          "key": "H",
+          "text": "$28,800"
+        },
+        {
+          "key": "J",
+          "text": "$20,760"
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "book_t8.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "8f03df34fa98881a0531e925df7d2a108b1590182b68af8e273abe0930b44cfb",
+        "lesson_subtopic": "Polynomials & Quadratic Functions",
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Quadratics and polynomials",
+        "source_question_id": "T8-08",
+        "lesson_original_topic": "Polynomials & Quadratic Functions",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "G",
+      "explanation": "Source-keyed answer from book_t8.md (T8-08).",
+      "active_uses": 9,
+      "hash": "e5ad1ba44da41b84957e2775d3b74259"
+    },
+    {
+      "id": "c42fb3d6-3338-5941-b61a-4712f1ecdfc0",
+      "track_id": "est2",
+      "topic": "Algebraic expressions and equations",
+      "stem": "Which of the following is false?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Any rational number is a real number."
+        },
+        {
+          "key": "B",
+          "text": "Any irrational number is a real number."
+        },
+        {
+          "key": "C",
+          "text": "Any real number is an integer."
+        },
+        {
+          "key": "D",
+          "text": "Any integer is a real number."
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "book_t7.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+        "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Algebraic expressions and equations",
+        "source_question_id": "T7-19",
+        "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "C",
+      "explanation": "Source-keyed answer from book_t7.md (T7-19).",
+      "active_uses": 8,
+      "hash": "67f4aac9b57f6f0b74fbaa7c8d60d8e4"
+    },
+    {
+      "id": "a5f5dcab-6e2c-5716-9e68-2ad4c96d5c43",
+      "track_id": "est2",
+      "topic": "Complex numbers",
+      "stem": "If 3x + yi + 4i = 12 + xi + 2i, then x + y =",
+      "choices": [
+        {
+          "key": "A",
+          "text": "3"
+        },
+        {
+          "key": "B",
+          "text": "4"
+        },
+        {
+          "key": "C",
+          "text": "5"
+        },
+        {
+          "key": "D",
+          "text": "6"
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "book_t7.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+        "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Complex numbers",
+        "source_question_id": "T7-17",
+        "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "D",
+      "explanation": "Source-keyed answer from book_t7.md (T7-17).",
+      "active_uses": 8,
+      "hash": "cfb13ed1bfc6ce6a377f2ecbbac7fcd3"
+    },
+    {
+      "id": "f3c606d2-2273-58b1-97db-44fd0e92b79b",
+      "track_id": "est2",
+      "topic": "Exponents, radicals and growth",
+      "stem": "The graph of the exponential function f is shown on the grid below.\nFor what values of x is f(x) > 16 ?",
+      "choices": [
+        {
+          "key": "F",
+          "text": "x > −2"
+        },
+        {
+          "key": "G",
+          "text": "x > 0"
+        },
+        {
+          "key": "H",
+          "text": "−2 < x < 2"
+        },
+        {
+          "key": "J",
+          "text": "∞ < x < −2"
+        }
+      ],
+      "assets": {
+        "image": "https://math.portal.ghoneem.com/assets/question-bank/MA-30.png",
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "image_alt": "Original graph, diagram, or table for MA-30",
+        "source_file": "moh.md",
+        "image_sha256": "2d963a4bae738b9c145bfaf3c45633a8acf573b2c01a3b40b502c65b85417225",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "f99122153ba873fb3a01697b0501e31119af3babff6a9ed2bc0baf050aed1f20",
+        "visual_repair": "original_archive_image_2026_09_21",
+        "lesson_subtopic": "Rational, Radical, Exponential & Logarithmic Functions",
+        "visual_verified": true,
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Exponents, radicals and growth",
+        "source_question_id": "MA-30",
+        "lesson_original_topic": "Rational, Radical, Exponential & Logarithmic Functions",
+        "lesson_taxonomy_version": "20260929",
+        "original_figure_transcript": "The graph of the exponential function f is shown on the grid below.\n[Figure: Increasing exponential passing through (−2, 16) and (0, 32), asymptote y = 0 on the left.]\nFor what values of x is f(x) > 16 ?"
+      },
+      "correct": "F",
+      "explanation": "Source-keyed answer from moh.md (MA-30).",
+      "active_uses": 8,
+      "hash": "5b53886125677fe01c7c131e2407fe7b"
+    },
+    {
+      "id": "51cac9a5-344d-5a98-9412-5ec7b60e65a1",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "Which graph best represents the parent function of y = 4^(x+3) ?\n",
+      "choices": [
+        {
+          "key": "F",
+          "text": "Graph F"
+        },
+        {
+          "key": "G",
+          "text": "Graph G"
+        },
+        {
+          "key": "H",
+          "text": "Graph H"
+        },
+        {
+          "key": "J",
+          "text": "Graph J"
+        }
+      ],
+      "assets": {
+        "image": "https://math.portal.ghoneem.com/assets/question-bank/MA-06.png",
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "image_alt": "Original graph, diagram, or table for MA-06",
+        "source_file": "moh.md",
+        "image_sha256": "a33de59e923a4112cdb71ea548d7bacfa2467501683885db1d6cf81b4bfd5342",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "f99122153ba873fb3a01697b0501e31119af3babff6a9ed2bc0baf050aed1f20",
+        "visual_repair": "original_archive_image_2026_09_21",
+        "lesson_subtopic": "Rational, Radical, Exponential & Logarithmic Functions",
+        "visual_verified": true,
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Functions and transformations",
+        "source_question_id": "MA-06",
+        "lesson_original_topic": "Rational, Radical, Exponential & Logarithmic Functions",
+        "lesson_taxonomy_version": "20260929",
+        "original_figure_transcript": "Which graph best represents the parent function of y = 4^(x+3) ?\n[Figure: Four graphs. F: increasing exponential through (0,1), asymptote y=0 on the left. G: increasing exponential passing below the origin, asymptote y=−1. H: decreasing exponential approaching y=0 on the right. J: decreasing curve below the x-axis approaching y=−1.]"
+      },
+      "correct": "F",
+      "explanation": "Source-keyed answer from moh.md (MA-06).",
+      "active_uses": 8,
+      "hash": "3c663cacc03a967fd74983e1a80fc83d"
+    },
+    {
+      "id": "54f245eb-ef30-55ad-8e0b-1f80bbfb6b1a",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "Which of the following graphs represents the inequality 2x − 8 ≤ x − 4 < 3(x + 6)?\n",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Open circle at −5, closed circle at 4, segment between them"
+        },
+        {
+          "key": "B",
+          "text": "Closed circle at 4, shaded to the left with arrow"
+        },
+        {
+          "key": "C",
+          "text": "Open circle at −12, closed circle at 12, segment between them"
+        },
+        {
+          "key": "D",
+          "text": "Closed circle at 12, shaded to the left with arrow"
+        }
+      ],
+      "assets": {
+        "image": "https://math.portal.ghoneem.com/assets/question-bank/E-21.png",
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "image_alt": "Original graph, diagram, or table for E-21",
+        "source_file": "extra.md",
+        "image_sha256": "21f6cb9022cace878353504f321cfddfaf278b4704eb96ecf010ac131a80d001",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "84ca68dc45b2ef2b31ffef4bf4fca4ef2cb3beb1365109214d65e6b7240c41ea",
+        "visual_repair": "original_archive_image_2026_09_21",
+        "lesson_subtopic": "Functions, Transformations & Graphs",
+        "visual_verified": true,
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Functions and transformations",
+        "source_question_id": "E-21",
+        "lesson_original_topic": "Functions, Transformations & Graphs",
+        "lesson_taxonomy_version": "20260929",
+        "original_figure_transcript": "Which of the following graphs represents the inequality 2x − 8 ≤ x − 4 < 3(x + 6)?\n[Figure: E-21 — four number-line graphs, answer choices A–D]"
+      },
+      "correct": "A",
+      "explanation": "Source-keyed answer from extra.md (E-21).",
+      "active_uses": 7,
+      "hash": "f537e4d4de89d6bb4cfbe79afda34e6c"
+    },
+    {
+      "id": "90d43e8f-5ba9-56f2-9475-0f69e3812478",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "Tickets for the school play cost $6 for an adult and $3 for a student. The school wants to sell at least $1,500 worth of tickets. If x is the number of adult tickets and y is the number of student tickets sold, the shaded region in which of the following graphs includes all combinations of ticket sales of at least $1,500?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Graph with shading below the segment from (0, 250) to (500, 0)"
+        },
+        {
+          "key": "B",
+          "text": "Graph with shading above the segment from (0, 250) to (500, 0)"
+        },
+        {
+          "key": "C",
+          "text": "Graph with shading below the segment from (0, 500) to (250, 0)"
+        },
+        {
+          "key": "D",
+          "text": "Graph with shading above the segment from (0, 500) to (250, 0)"
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "extra.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "84ca68dc45b2ef2b31ffef4bf4fca4ef2cb3beb1365109214d65e6b7240c41ea",
+        "lesson_subtopic": "Functions, Transformations & Graphs",
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Functions and transformations",
+        "source_question_id": "E-11",
+        "lesson_original_topic": "Functions, Transformations & Graphs",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "D",
+      "explanation": "Source-keyed answer from extra.md (E-11).",
+      "active_uses": 7,
+      "hash": "29cf019846e1f28776d32dd5b9e9c4fe"
+    },
+    {
+      "id": "ac64eec4-13f8-547a-bec4-79d9ef9c64ba",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "If f(x) = x² + bx + c cuts the x-axis at the points (2,0) and (6,0), then b =",
+      "choices": [
+        {
+          "key": "A",
+          "text": "−4"
+        },
+        {
+          "key": "B",
+          "text": "−6"
+        },
+        {
+          "key": "C",
+          "text": "−8"
+        },
+        {
+          "key": "D",
+          "text": "−12"
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "book_t7.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+        "lesson_subtopic": "Polynomials & Quadratic Functions",
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Functions and transformations",
+        "source_question_id": "T7-01",
+        "lesson_original_topic": "Polynomials & Quadratic Functions",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "C",
+      "explanation": "Source-keyed answer from book_t7.md (T7-01).",
+      "active_uses": 7,
+      "hash": "8ebde0e9f26f295d71d2743f97d63e1d"
+    },
+    {
+      "id": "d066a625-8ab5-520e-b408-9500344c3141",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "For the functions h and g, which statement is true if h(x) = g(x + 14) − 12 ?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "The graph of h is the result of the graph of g being translated right 14 units and down 12 units."
+        },
+        {
+          "key": "B",
+          "text": "The graph of h is the result of the graph of g being translated left 14 units and down 12 units."
+        },
+        {
+          "key": "C",
+          "text": "The graph of h is the result of the graph of g being translated right 14 units and up 12 units."
+        },
+        {
+          "key": "D",
+          "text": "The graph of h is the result of the graph of g being translated left 14 units and up 12 units."
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "moh.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "f99122153ba873fb3a01697b0501e31119af3babff6a9ed2bc0baf050aed1f20",
+        "lesson_subtopic": "Functions, Transformations & Graphs",
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Functions and transformations",
+        "source_question_id": "MA-29",
+        "lesson_original_topic": "Functions, Transformations & Graphs",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "B",
+      "explanation": "Source-keyed answer from moh.md (MA-29).",
+      "active_uses": 7,
+      "hash": "750ce82e7ad932f504d30b585ae7ce7c"
+    },
+    {
+      "id": "fae9ef36-d45e-5e52-a9bf-77d9d0947102",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "One of the following graphs represents the inequality 2x − 4y > 8 in the standard (x, y) coordinate plane. Which one?\n",
+      "choices": [
+        {
+          "key": "A",
+          "text": "Solid line (slope 1/2, y-intercept −2), shaded above"
+        },
+        {
+          "key": "B",
+          "text": "Dashed line (slope 1/2, y-intercept −2), shaded below"
+        },
+        {
+          "key": "C",
+          "text": "Solid line (slope 1/2, y-intercept −2), shaded above"
+        },
+        {
+          "key": "D",
+          "text": "Solid line, shaded below"
+        }
+      ],
+      "assets": {
+        "image": "https://math.portal.ghoneem.com/assets/question-bank/E-19.png",
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "image_alt": "Original graph, diagram, or table for E-19",
+        "source_file": "extra.md",
+        "image_sha256": "3725a594675b540aac9f652a0b20ac9f477be6c1078399e2a9acc3c35d97e06d",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "84ca68dc45b2ef2b31ffef4bf4fca4ef2cb3beb1365109214d65e6b7240c41ea",
+        "visual_repair": "original_archive_image_2026_09_21",
+        "lesson_subtopic": "Functions, Transformations & Graphs",
+        "visual_verified": true,
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Functions and transformations",
+        "source_question_id": "E-19",
+        "lesson_original_topic": "Functions, Transformations & Graphs",
+        "lesson_taxonomy_version": "20260929",
+        "original_figure_transcript": "One of the following graphs represents the inequality 2x − 4y > 8 in the standard (x, y) coordinate plane. Which one?\n[Figure: E-19 — four shaded half-plane graphs, answer choices A–D]"
+      },
+      "correct": "B",
+      "explanation": "Source-keyed answer from extra.md (E-19).",
+      "active_uses": 7,
+      "hash": "dfa9a201600a5b46b292b7da123e7d07"
+    },
+    {
+      "id": "d8460c16-2bbf-50dd-9ee7-f5728c23bfa7",
+      "track_id": "est2",
+      "topic": "Inequalities and absolute value",
+      "stem": "If x is a positive odd integer and y is a negative odd integer such that |x| ≠ |y|, which of the following must produce a positive even integer?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "yˣ"
+        },
+        {
+          "key": "B",
+          "text": "xʸ"
+        },
+        {
+          "key": "C",
+          "text": "x − y"
+        },
+        {
+          "key": "D",
+          "text": "y²/x"
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "hard.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "b0a0fb727049e45d7472b3b33f3d1323a44072e91a6e39f7f1a553d9099f493a",
+        "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Inequalities and absolute value",
+        "source_question_id": "H-15",
+        "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "C",
+      "explanation": "Source-keyed answer from hard.md (H-15).",
+      "active_uses": 7,
+      "hash": "354c65f6e1969e44bbbf2555cdd42956"
+    },
+    {
+      "id": "bc6ddfad-0cad-5bdd-93fb-dcf0e47eba9b",
+      "track_id": "est2",
+      "topic": "Linear functions and slope",
+      "stem": "The slopes of the sides of quadrilateral ABCD are shown in the table below.\n[Table: Side AB slope 2/5; BC slope −2/5; CD slope 2/5; AD slope −5/2.]\nWhich statement describes the relationships between the sides of the quadrilateral?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "AD is parallel to BC, but AB is not parallel to CD."
+        },
+        {
+          "key": "B",
+          "text": "AB is parallel to CD, but AD is not parallel to BC."
+        },
+        {
+          "key": "C",
+          "text": "AB is parallel to CD, and AD is parallel to BC."
+        },
+        {
+          "key": "D",
+          "text": "AD is not parallel to BC, and AB is not parallel to CD."
+        }
+      ],
+      "assets": {
+        "image": "https://math.portal.ghoneem.com/assets/question-bank/MG-47.png",
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "image_alt": "Original graph, diagram, or table for MG-47",
+        "source_file": "moh_geo.md",
+        "image_sha256": "6f2ca6b63b210db97779c4624f0cfb6ffc2271759e4653aff53573c7a25b70f7",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "fd550cf9acb0c34c08b3bebd88f0b67714179fd7b1d4644f694d4388df535983",
+        "visual_repair": "original_archive_image_2026_09_21",
+        "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+        "visual_verified": true,
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Linear functions and slope",
+        "source_question_id": "MG-47",
+        "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "B",
+      "explanation": "Source-keyed answer from moh_geo.md (MG-47).",
+      "active_uses": 7,
+      "hash": "3c9b8015d9a1b9ed47c541014df79cdd"
+    },
+    {
+      "id": "d3cdc71f-317b-5a67-94f2-43dc1435c99f",
+      "track_id": "est2",
+      "topic": "Logic and sets",
+      "stem": "Matt makes 2 promises:\n1. If I get a job, I will get a new pair of jeans.\n2. If I get a new pair of jeans, I will give away my old pair of jeans.\nAssume Matt keeps his promises and that he does NOT give away his old pair of jeans. Which of the following is a valid conclusion?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "He gets a job and a new pair of jeans."
+        },
+        {
+          "key": "B",
+          "text": "He does NOT get a job and does get a new pair of jeans."
+        },
+        {
+          "key": "C",
+          "text": "He gets a job and does NOT get a new pair of jeans."
+        },
+        {
+          "key": "D",
+          "text": "He does NOT get a job and does NOT get a new pair of jeans."
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "aist.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "e9fd07b1d1b86aee4b6b4a657186e8b73bef5b70d0a2a4adb6ffbc2a04e45d42",
+        "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Logic and sets",
+        "source_question_id": "AI-41",
+        "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "D",
+      "explanation": "Source-keyed answer from aist.md (AI-41).",
+      "active_uses": 7,
+      "hash": "52a1985e74503017e5e161c3dd387c93"
+    },
+    {
+      "id": "69c9be1d-643e-5659-b28b-065217e9fbf6",
+      "track_id": "est2",
+      "topic": "Quadratics and polynomials",
+      "stem": "Which of the following is a solution to 10x² − x = 3 ?",
+      "choices": [
+        {
+          "key": "F",
+          "text": "−1/5"
+        },
+        {
+          "key": "G",
+          "text": "3/5"
+        },
+        {
+          "key": "H",
+          "text": "−3/2"
+        },
+        {
+          "key": "J",
+          "text": "1/2"
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "moh.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "f99122153ba873fb3a01697b0501e31119af3babff6a9ed2bc0baf050aed1f20",
+        "lesson_subtopic": "Polynomials & Quadratic Functions",
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Quadratics and polynomials",
+        "source_question_id": "MA-18",
+        "lesson_original_topic": "Polynomials & Quadratic Functions",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "correct": "G",
+      "explanation": "Source-keyed answer from moh.md (MA-18).",
+      "active_uses": 7,
+      "hash": "e868e03bcb2aba556ad78f060ff4711a"
+    },
+    {
+      "id": "bf3b309d-98d4-592c-bee1-3163c433c847",
+      "track_id": "est",
+      "topic": "Logic and sets",
+      "difficulty": "medium",
+      "type": "mcq",
+      "stem": "Matt makes 2 promises:\n1. If I get a job, I will get a new pair of jeans.\n2. If I get a new pair of jeans, I will give away my old pair of jeans.\nAssume Matt keeps his promises and that he does NOT give away his old pair of jeans. Which of the following is a valid conclusion?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "He gets a job and a new pair of jeans."
+        },
+        {
+          "key": "B",
+          "text": "He does NOT get a job and does get a new pair of jeans."
+        },
+        {
+          "key": "C",
+          "text": "He gets a job and does NOT get a new pair of jeans."
+        },
+        {
+          "key": "D",
+          "text": "He does NOT get a job and does NOT get a new pair of jeans."
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "aist.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "e9fd07b1d1b86aee4b6b4a657186e8b73bef5b70d0a2a4adb6ffbc2a04e45d42",
+        "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Logic and sets",
+        "source_question_id": "AI-41",
+        "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "created_at": "2026-09-21 08:44:13.536604+00",
+      "correct": "D",
+      "explanation": "Source-keyed answer from aist.md (AI-41).",
+      "hash": "4378a64bc968576406d965553ba12929"
+    },
+    {
+      "id": "325130a5-2b69-5b63-bf9c-2fbb1407563a",
+      "track_id": "est",
+      "topic": "Inequalities and absolute value",
+      "difficulty": "medium",
+      "type": "mcq",
+      "stem": "If x is a positive odd integer and y is a negative odd integer such that |x| ≠ |y|, which of the following must produce a positive even integer?",
+      "choices": [
+        {
+          "key": "A",
+          "text": "yˣ"
+        },
+        {
+          "key": "B",
+          "text": "xʸ"
+        },
+        {
+          "key": "C",
+          "text": "x − y"
+        },
+        {
+          "key": "D",
+          "text": "y²/x"
+        }
+      ],
+      "assets": {
+        "source": "Kimi Agent Math PDF Question Bank (4)",
+        "source_file": "hard.md",
+        "import_batch": "est2-kimi-bank-2026-09-21",
+        "release_batch": "2026-09-21-source-visual-review",
+        "source_sha256": "b0a0fb727049e45d7472b3b33f3d1323a44072e91a6e39f7f1a553d9099f493a",
+        "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+        "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+        "curriculum_lesson": "Inequalities and absolute value",
+        "source_question_id": "H-15",
+        "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+        "lesson_taxonomy_version": "20260929"
+      },
+      "created_at": "2026-09-21 08:44:22.133505+00",
+      "correct": "C",
+      "explanation": "Source-keyed answer from hard.md (H-15).",
+      "hash": "cb5063a5dcd98aef4db5aa808b0e5d25"
+    }
+  ]
+}
