@@ -5,7 +5,7 @@
     const tabs=document.querySelector('.student-tabs');
     if(!tabs||document.getElementById('studentSection'))return;
     const destinations=[...tabs.querySelectorAll('[data-view]')];
-    const groups=[['Study',['daily','revision','finalsDiagnosis','mistakes','drill']],['Assessments',['lesson_exam','quiz','full_exam']],['Progress',['overview','history','focus']]];
+    const groups=[['Study',['daily','formulas','revision','finalsDiagnosis','mistakes','drill']],['Assessments',['lesson_exam','quiz','full_exam']],['Progress',['overview','history','focus']]];
     const toolbar=document.createElement('div');toolbar.className='portal-navigation';
     const label=document.createElement('label');label.htmlFor='studentSection';label.textContent='Go to section';
     const select=document.createElement('select');select.id='studentSection';

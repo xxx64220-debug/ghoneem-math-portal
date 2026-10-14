@@ -1,16 +1,16 @@
--- Read-only EST I lesson aggregates. Apply after portal_access, portal_scope,
+-- Read-only track-scoped lesson aggregates for every supported group. Apply after portal_access, portal_scope,
 -- portal_upgrade and pending_exam_grading. No answer keys leave this function.
 begin;
 create or replace function public.staff_group_exam_evidence(p_exam uuid, p_students uuid[])
 returns jsonb language plpgsql stable security definer set search_path = '' as $$
 declare assessment public.exams%rowtype; students jsonb;
 begin
-  if auth.uid() is null or not coalesce(public.is_staff(),false)
-     or not coalesce(public.staff_can_touch_track('est'),false) then
+  if auth.uid() is null or not coalesce(public.is_staff(),false) then
     raise exception 'staff_required' using errcode='42501';
   end if;
   select * into assessment from public.exams
-    where id=p_exam and track_id='est' and assessment_type in ('full_exam','lesson_exam');
+    where id=p_exam and track_id in ('sat','est','est2','est_eng')
+      and public.staff_can_touch_track(track_id) and assessment_type in ('full_exam','lesson_exam');
   if not found then raise exception 'exam_not_available' using errcode='42501'; end if;
   if p_students is null or cardinality(p_students)>100 then
     raise exception 'invalid_student_selection' using errcode='22023';
@@ -19,11 +19,11 @@ begin
   -- student was outside the caller's existing track / group permissions.
   if exists(select 1 from unnest(p_students) u(id) where id is null
     or not coalesce(public.staff_can_read_student(id),false)
-    or not public.is_enrolled(id,'est')
+    or not public.is_enrolled(id,assessment.track_id)
     or not exists(select 1 from public.profiles p where p.id=u.id and p.role='student')
     or (not public.is_admin() and not exists(
       select 1 from public.group_members gm join public.groups g on g.id=gm.group_id
-      where gm.user_id=u.id and g.track_id='est' and g.instructor_id=auth.uid()))) then
+      where gm.user_id=u.id and g.track_id=assessment.track_id and g.instructor_id=auth.uid()))) then
     raise exception 'student_scope_denied' using errcode='42501';
   end if;
 
@@ -52,7 +52,7 @@ begin
         (aa.response is null or aa.response='null'::jsonb or aa.response='""'::jsonb))::int as blank
     from attempts a
     join (select distinct unnest(assessment.question_ids) as id) ids on a.state='available'
-    join public.questions q on q.id=ids.id and q.track_id='est'
+    join public.questions q on q.id=ids.id and q.track_id=assessment.track_id
     join public.question_keys k on k.question_id=q.id
     join public.attempt_results r on r.attempt_id=a.id and r.question_id=q.id
     left join public.attempt_answers aa on aa.attempt_id=a.id and aa.question_id=q.id
@@ -72,7 +72,7 @@ begin
       'attempt_no',a.attempt_no,'submitted_at',a.submitted_at) else null end,
     'lessons',coalesce(l.rows,'[]'::jsonb)) order by a.user_id),'[]'::jsonb)
   into students from attempts a left join lessons l on l.user_id=a.user_id;
-  return jsonb_build_object('exam_id',p_exam,'track_id','est','students',students);
+  return jsonb_build_object('exam_id',p_exam,'track_id',assessment.track_id,'students',students);
 end $$;
 revoke all on function public.staff_group_exam_evidence(uuid,uuid[]) from public,anon;
 grant execute on function public.staff_group_exam_evidence(uuid,uuid[]) to authenticated;

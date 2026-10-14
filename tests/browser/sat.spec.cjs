@@ -36,7 +36,15 @@ test('SAT portal, exam navigation/timer/figures and Final Revision', async ({pag
  await expect(page.locator('#vTracks')).toBeVisible();
  await page.getByRole('button',{name:/SAT Math/}).click();
  await expect(page.locator('#listTitle')).toHaveText('SAT Math');
+ await expect(page.locator('#studentSection')).toHaveValue('daily');
+ await expect(page.locator('#studentSection option[value="finalsDiagnosis"]')).toHaveCount(1);
+ await page.locator('#studentSection').selectOption('quiz');
+ await expect(page.locator('[data-view="quiz"]')).toHaveAttribute('aria-current','page');
+ await expect(page.locator('#navigationLocation')).toContainText('Quizzes');
+ await page.locator('#studentSection').selectOption('overview');
+ await expect(page.locator('#navigationLocation')).toContainText('My progress');
  await page.locator('[data-view="revision"]').click();
+ await expect(page.locator('#studentSection')).toHaveValue('revision');
  await expect(page.locator('.revision-lesson')).toContainText('Linear functions');
  expect(revisionRequested).toBe(true);
  await expect(page.locator('[data-revision-start="10"]')).toBeEnabled();

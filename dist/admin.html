@@ -111,13 +111,13 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 
 <nav class="tabs hidden" id="tabs"><div class="wrap">
   <button class="tab on" data-v="overview">Overview</button>
-  <button class="tab" data-v="quizAdmin">Daily quizzes</button><button class="tab" data-v="revisionAdmin">Final revision</button><button class="tab" data-v="reportsAdmin">Reports</button><button class="tab" data-v="integrityAdmin">Exam activity</button>
+  <button class="tab" data-v="formulasAdmin">Formulas / rules</button><button class="tab" data-v="quizAdmin">Daily quizzes</button><button class="tab" data-v="revisionAdmin">Final revision</button><button class="tab" data-v="reportsAdmin">Reports</button><button class="tab" data-v="integrityAdmin">Exam activity</button>
   <button class="tab" data-v="students">Students</button>
   <button class="tab" data-v="results">Results</button>
   <button class="tab" data-v="lessons">Class heatmap</button>
   <button class="tab" data-v="questions">Hardest questions</button>
   <button class="tab" data-v="exams">Exams & assignments</button><button class="tab" data-v="bank">Question bank</button><button class="tab" data-v="groups">Groups</button><button class="tab" data-v="devices">Devices</button><button class="tab" data-v="audit">Audit log</button><button class="tab" data-v="notifications">Notifications</button>
-</div><div class="wrap admin-section-nav"><label for="adminSection">Go to section</label><select id="adminSection"><optgroup label="Teaching"><option value="overview">Overview</option><option value="quizAdmin">Daily quizzes</option><option value="revisionAdmin">Final revision</option><option value="reportsAdmin">Reports</option><option value="integrityAdmin">Exam activity</option><option value="exams">Exams &amp; assignments</option><option value="bank">Question bank</option></optgroup><optgroup label="Students"><option value="students">Students</option><option value="results">Results</option><option value="lessons">Class heatmap</option><option value="questions">Hardest questions</option><option value="groups">Groups</option></optgroup><optgroup label="Settings"><option value="devices">Devices</option><option value="audit">Audit log</option><option value="notifications">Notifications</option></optgroup></select></div></nav>
+</div><div class="wrap admin-section-nav"><label for="adminSection">Go to section</label><select id="adminSection"><optgroup label="Teaching"><option value="overview">Overview</option><option value="formulasAdmin">Formulas / rules</option><option value="quizAdmin">Daily quizzes</option><option value="revisionAdmin">Final revision</option><option value="reportsAdmin">Reports</option><option value="integrityAdmin">Exam activity</option><option value="exams">Exams &amp; assignments</option><option value="bank">Question bank</option></optgroup><optgroup label="Students"><option value="students">Students</option><option value="results">Results</option><option value="lessons">Class heatmap</option><option value="questions">Hardest questions</option><option value="groups">Groups</option></optgroup><optgroup label="Settings"><option value="devices">Devices</option><option value="audit">Audit log</option><option value="notifications">Notifications</option></optgroup></select></div></nav>
 
 <section id="vLogin" class="login">
   <h1 style="font-size:28px;margin-bottom:5px">Instructor sign in</h1>
@@ -134,8 +134,10 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 
 <dialog id="editor"></dialog>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js"></script>
-<script src="hardest-questions.js?v=20261004-group"></script>
+<link rel="stylesheet" href="/formula-reference.css?v=20261012">
 <script src="/lesson-taxonomy.js"></script>
+<script src="/revision-formulas.js?v=20261012-all-groups"></script>
+<script src="hardest-questions.js?v=20261015-diagnosis-evidence"></script>
 <script>
 /* ============================ CONFIG ============================ */
 const SB_URL = 'https://wfhurjyouemahvkcfkdz.supabase.co';
@@ -146,6 +148,7 @@ const EMAIL_DOMAIN = 'students.ghoneem-math.com';
 const sb = supabase.createClient(SB_URL, SB_KEY);
 const hardestReport = HardestQuestions.create(sb);
 let hardestRequest = 0;
+let hardestCycle = 'current';
 const fnBase = SB_URL + '/functions/v1';
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -376,8 +379,8 @@ async function lessons(){
 
 async function questions(offset=0,refresh=false){
   const request=++hardestRequest;
-  const scope={user:ST.me.id,track:ST.track};
-  const current=()=>request===hardestRequest&&ST.view==='questions'&&ST.track===scope.track&&ST.me?.id===scope.user;
+  const scope={user:ST.me.id,track:ST.track,cycle:hardestCycle};
+  const current=()=>request===hardestRequest&&ST.view==='questions'&&ST.track===scope.track&&ST.me?.id===scope.user&&hardestCycle===scope.cycle;
   hardestReport.cancel();
   $('view').innerHTML = `
     <div class="head"><h2>Hardest questions</h2><div class="sp"></div>
@@ -385,6 +388,7 @@ async function questions(offset=0,refresh=false){
       <button class="btn-sm" id="pdfBtn">Export PDF</button>
       <button class="btn-sm" id="csvBtn">Export CSV</button></div>
     <p class="hint" style="margin-bottom:12px">Ranked within each track by real student success rate. Review key flags mean at least 10 attempts and under 20% correct; they are prompts for a human check, not proof of a bad answer key. Exports include all ranked questions for the selected track.</p>
+    <div class="control-bar"><div class="field"><label for="hardCycle">Trial cycle</label><select id="hardCycle"><option value="current">Current cycle</option><option value="all">All history</option></select></div>${ST.me.role==='admin'?'<button class="btn-sm" id="hardArchive">Archive and start new cycle</button>':''}</div><p id="hardCycleNote" class="hint">Current cycle counts new exam attempts and completed daily quizzes. Previous scores and results are preserved.</p>
     <p id="hardStatus" class="hint" role="status" aria-live="polite">Loading questions…</p>
     <div id="hardRows" aria-busy="true"></div>
     <div class="head hidden" id="hardPaging">
@@ -394,6 +398,27 @@ async function questions(offset=0,refresh=false){
   $('pdfBtn').disabled=$('csvBtn').disabled=true;
   $('hardRefresh').onclick=()=>questions(0,true);
   try{
+    let cycleRows=[];
+    if(typeof sb!=='undefined'){
+      const {data,error}=await sb.from('hardest_cycles').select('id,track_id,title,starts_at,ends_at').order('created_at',{ascending:false});
+      if(!current())return;if(error)throw error;cycleRows=(data||[]).filter(x=>!scope.track||x.track_id===scope.track);
+      $('hardCycle').innerHTML='<option value="current">Current cycle</option><option value="all">All history</option>'+(ST.me.role==='admin'?cycleRows.filter(x=>x.ends_at).map(x=>`<option value="${esc(x.id)}">${esc(x.track_id.toUpperCase())} · ${esc(x.title)}</option>`).join(''):'');
+      if(!['current','all'].includes(scope.cycle)&&!cycleRows.some(x=>x.id===scope.cycle&&x.ends_at)){hardestCycle='current';return questions(0,true);}
+      $('hardCycle').value=scope.cycle;
+      $('hardCycle').onchange=()=>{hardestCycle=$('hardCycle').value;questions(0,true);};
+      const chosen=cycleRows.find(x=>x.id===scope.cycle);
+      $('hardCycleNote').textContent=chosen?`Archived: ${chosen.title} · Closed ${new Date(chosen.ends_at).toLocaleString()} · Frozen success rates and question text.`:scope.cycle==='all'?'All historical responses, including retakes. No scores or records are deleted.':'Current cycle counts exams started after its opening and daily quizzes completed after its opening. Older in-progress exams remain in All history.';
+      if($('hardArchive')){
+        $('hardArchive').disabled=!scope.track;
+        $('hardArchive').title=scope.track?'':'Choose one track before starting a cycle.';
+        $('hardArchive').onclick=()=>{
+          const open=cycleRows.find(x=>!x.ends_at&&x.track_id===scope.track);
+          dialog('Archive current cycle',field('hardArchiveTitle','Name for the completed trial',`Trial ending ${new Date().toLocaleDateString()}`)+'<p class="hint">Save the current report, question text, choices and figures. Start a fresh report for new attempts. Past results and student scores remain available.</p>',async()=>{
+            const {error}=await sb.rpc('staff_archive_hardest_cycle',{p_track:scope.track,p_title:val('hardArchiveTitle'),p_expected_cycle:open?.id||null});if(error)throw error;hardestReport.clear();hardestCycle='current';if(ST.view==='questions')await questions(0,true);
+          },'Save archive and start cycle');
+        };
+      }
+    }
     const page=await hardestReport.page(scope,offset,{refresh});
     if(!current())return;
     const rows=page.rows;
@@ -419,8 +444,8 @@ async function questions(offset=0,refresh=false){
       try{
         const all=await hardestReport.all(scope,count=>{if(current())$('hardStatus').textContent=`Preparing export: ${count} questions…`;});
         if(!current()){report?.close();return;}
-        if(kind==='pdf')questionPdf(all,report,scope.track);
-        else csv(all.map(r=>({rank:r.rank,source:r.sources,track:r.track_id,lesson:r.lesson,question_id:r.question_id,question:r.stem,attempts:r.answered_by,correct:r.got_it_right,wrong:r.got_it_wrong,success_rate:`${Number(r.percent_correct).toFixed(1)}%`,review_key:Number(r.answered_by)>=10&&Number(r.percent_correct)<20})), 'hardest-questions');
+        if(kind==='pdf')questionPdf(all,report,scope.track,$('hardCycle').selectedOptions?.[0]?.textContent||scope.cycle);
+        else csv(all.map(r=>({cycle:$('hardCycle').selectedOptions?.[0]?.textContent||scope.cycle,rank:r.rank,source:r.sources,track:r.track_id,lesson:r.lesson,question_id:r.question_id,question:r.stem,attempts:r.answered_by,correct:r.got_it_right,wrong:r.got_it_wrong,success_rate:`${Number(r.percent_correct).toFixed(1)}%`,review_key:Number(r.answered_by)>=10&&Number(r.percent_correct)<20})), 'hardest-questions');
         $('hardStatus').textContent=`Export ready: ${all.length} questions.`;
       }catch(e){report?.close();if(current())$('hardStatus').textContent=`Could not export: ${e.message||e}`;}
       finally{if(current())$('pdfBtn').disabled=$('csvBtn').disabled=false;}
@@ -467,7 +492,7 @@ function csv(rows, name){
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 
-function questionPdf(rows, report=null, trackId=ST.track){
+function questionPdf(rows, report=null, trackId=ST.track, cycleLabel='All history'){
   if (!rows.length) return alert('There are no completed answers to export yet.');
   const track = trackId ? trackId.toUpperCase() : 'ALL TRACKS';
   const generated = new Date().toLocaleString();
@@ -476,7 +501,7 @@ function questionPdf(rows, report=null, trackId=ST.track){
   const body = rows.map(r=>`<tr><td>#${r.rank}</td><td>${esc(r.sources)}</td><td>${esc(r.lesson)}</td><td>${esc(r.stem)}</td><td>${r.answered_by}</td><td>${r.got_it_right}</td><td>${r.got_it_wrong}</td><td><b>${Number(r.percent_correct).toFixed(1)}%</b></td></tr>`).join('');
   report.document.write(`<!doctype html><html><head><meta charset="utf-8"><title>Hardest Questions — ${esc(track)}</title><style>
     @page{size:A4 landscape;margin:12mm}*{box-sizing:border-box}body{font:11px/1.4 Arial,sans-serif;color:#171a1f;margin:0}h1{font:700 24px Georgia,serif;color:#14243e;margin:0 0 4px}.meta{color:#5f6672;margin-bottom:14px}.actions{margin-bottom:14px}button{padding:8px 12px;border:1px solid #bbb;border-radius:6px;background:#fff}table{width:100%;border-collapse:collapse;table-layout:fixed}th{background:#14243e;color:#fff;text-align:left;padding:7px 6px}td{padding:7px 6px;border-bottom:1px solid #ddd;vertical-align:top;overflow-wrap:anywhere}th:nth-child(1){width:5%}th:nth-child(2){width:11%}th:nth-child(3){width:13%}th:nth-child(4){width:42%}th:nth-child(n+5){width:7%}tr{break-inside:avoid}@media print{.actions{display:none}}
-  </style></head><body><div class="actions"><button onclick="window.print()">Print / Save as PDF</button></div><h1>Hardest Questions</h1><div class="meta">${esc(track)} · Ranked by lowest success rate · Generated ${esc(generated)}</div><table><thead><tr><th>Rank</th><th>Source</th><th>Lesson</th><th>Question</th><th>Attempts</th><th>Correct</th><th>Wrong</th><th>Success</th></tr></thead><tbody>${body}</tbody></table>
+  </style></head><body><div class="actions"><button onclick="window.print()">Print / Save as PDF</button></div><h1>Hardest Questions</h1><div class="meta">${esc(track)} · ${esc(cycleLabel)} · Ranked by lowest success rate · Generated ${esc(generated)}</div><table><thead><tr><th>Rank</th><th>Source</th><th>Lesson</th><th>Question</th><th>Attempts</th><th>Correct</th><th>Wrong</th><th>Success</th></tr></thead><tbody>${body}</tbody></table>
 </body></html>`);
   report.document.close();
   setTimeout(() => report.print(), 300);
@@ -513,10 +538,11 @@ async function getRows(table,track=false,columns='*',orderBy='',eqField='',eqVal
 const wrapTable=html=>`<div class="table-wrap">${html}</div>`;
 async function editQuestion(x={}){
  let key={};if(x.id){const {data,error}=await sb.from('question_keys').select('*').eq('question_id',x.id).single();if(error){alert(error.message);return;}key=data;}
- dialog(x.id?'Edit question':'Add question',select('qt','Track',tracks(),x.track_id||ST.track)+`<div id="questionLessonField">${questionLessonMarkup(x.track_id||ST.track,x.topic)}</div>`+field('qskill','Detailed skill',x.assets?.lesson_subtopic||x.assets?.skill||'')+field('qsourceCode','Source code',x.assets?.source_code||x.assets?.source_question_id||'')+select('qtype','Answer type',[['mcq','Multiple choice'],['grid_in','Student response']],x.type)+select('qd','Difficulty',[['easy','Easy'],['medium','Medium'],['hard','Hard']],x.difficulty||'medium')+area('qstem','Question',x.stem)+area('qchoices','Choices — one per line, in display order',(x.choices||[]).map(c=>c.text).join('\n'))+field('qcorrect','Correct answer — choice letter, or accepted numeric answers separated by ;',key.correct?.void?'Excluded from scoring':Array.isArray(key.correct)?key.correct.join('; '):key.correct)+area('qexplain','Worked explanation',key.explanation)+area('qassets','Diagrams and tables (assets JSON; optional)',JSON.stringify(x.assets||{})),async()=>{
+ dialog(x.id?'Edit question':'Add question',verifiedBankVersionMarkup(x)+select('qt','Track',tracks(),x.track_id||ST.track)+`<div id="questionLessonField">${questionLessonMarkup(x.track_id||ST.track,x.topic)}</div>`+field('qskill','Detailed skill',x.assets?.lesson_subtopic||x.assets?.skill||'')+field('qsourceCode','Source code',x.assets?.source_code||x.assets?.source_question_id||'')+select('qtype','Answer type',[['mcq','Multiple choice'],['grid_in','Student response']],x.type)+select('qd','Difficulty',[['easy','Easy'],['medium','Medium'],['hard','Hard']],x.difficulty||'medium')+area('qstem','Question',x.stem)+area('qchoices','Choices — one per line, in display order',(x.choices||[]).map(c=>c.text).join('\n'))+field('qcorrect','Correct answer — choice letter, or accepted numeric answers separated by ;',key.correct?.void?'Excluded from scoring':Array.isArray(key.correct)?key.correct.join('; '):key.correct)+area('qexplain','Worked explanation',key.explanation)+area('qassets','Diagrams and tables (assets JSON; optional)',JSON.stringify(x.assets||{})),async()=>{
  const type=val('qtype');const choices=val('qchoices').split('\n').filter(Boolean).map((text,i)=>({key:String.fromCharCode(65+i),text}));
  await mutation('question.save',{id:x.id,track_id:val('qt'),topic:canonicalMathLesson(val('qt'),val('qtopic')),type,difficulty:val('qd'),stem:val('qstem'),choices:type==='mcq'?choices:[],correct:type==='mcq'?val('qcorrect').toUpperCase():val('qcorrect').split(';').map(x=>x.trim()),explanation:val('qexplain'),assets:{...(jval('qassets')||{}),lesson_subtopic:val('qskill'),source_code:val('qsourceCode'),...(MATH_LESSONS[val('qt')]?{curriculum_lesson:canonicalMathLesson(val('qt'),val('qtopic'))}:{})}});
  });if(x.id)$('qt').disabled=true;else $('qt').onchange=()=>{$('questionLessonField').innerHTML=questionLessonMarkup(val('qt'),'');};
+ const verifiedButton=$('openVerifiedBankVersion');if(verifiedButton)verifiedButton.onclick=async()=>{verifiedButton.disabled=true;try{await openVerifiedBankVersion(x);}catch(e){if($('verifiedVersionError'))$('verifiedVersionError').textContent=e.message||'Could not open the verified version.';}finally{verifiedButton.disabled=false;}};
 }
 function importQuestions(){
  dialog('Import a question bank',select('it','Track',tracks(),ST.track)+`<p class="hint">Upload a JSON array with up to 500 questions. Each needs stem, type, correct, and choices for multiple choice. Math questions must include topic using a lesson name from the Add question list. Optional: difficulty, explanation, assets. All questions are checked before any are imported.</p><a href="/question-bank-example.json" download>Download an example</a><div class="field" style="margin-top:16px"><label for="ifile">Question-bank file</label><input id="ifile" type="file" accept=".json,application/json" required></div>`,async()=>{
@@ -531,7 +557,7 @@ async function exams(){
  const rows=await getRows('exams'),assignments=await getRows('assignments');
  const categoryName={lesson_exam:'Lesson exam',quiz:'Quiz',full_exam:'Full exam'};
  $('view').innerHTML=`<div class="head"><h2>Exams & assignments</h2><span class="hint">${rows.length} exams available to you</span><div class="sp"></div><button class="btn" id="newExam">Create exam</button></div><div class="control-bar"><div class="field"><label for="examTrack">Track</label><select id="examTrack"><option value="">All tracks</option>${ST.tracks.map(t=>`<option value="${esc(t.id)}" ${ST.track===t.id?'selected':''}>${esc(t.name)}</option>`).join('')}</select></div><div class="field search"><label for="examSearch">Search exams</label><input id="examSearch" placeholder="Exam title"></div><div class="field"><label for="examType">Category</label><select id="examType"><option value="">All categories</option><option value="lesson_exam">Lesson exams</option><option value="quiz">Quizzes</option><option value="full_exam">Full exams</option></select></div><div class="field"><label for="examStatus">Availability</label><select id="examStatus"><option value="">All exams</option><option value="live">Published</option><option value="draft">Draft</option><option value="assigned">Assigned</option><option value="unassigned">Not assigned</option></select></div><div class="field"><label for="examSort">Sort by</label><select id="examSort"><option value="title">Title A–Z</option><option value="track">Track then title</option><option value="category">Category then title</option><option value="questions_desc">Most questions</option><option value="newest">Newest created</option></select></div></div><p id="examCount" class="hint" style="margin-bottom:12px"></p><div id="examTable"></div><p class="hint" style="margin-top:16px">Publish an exam and assign it to a student or group. A closing time delays worked answers until the window ends. EST is calculator-allowed throughout. Full papers use raw marks until an exact score conversion is provided.</p>`;
- const paint=()=>{const track=val('examTrack'),needle=val('examSearch').toLowerCase(),type=val('examType'),status=val('examStatus'),sort=val('examSort');const shown=rows.filter(x=>{const n=assignments.filter(a=>a.exam_id===x.id).length;return(!track||x.track_id===track)&&x.title.toLowerCase().includes(needle)&&(!type||x.assessment_type===type)&&(!status||(status==='live'?x.is_published:status==='draft'?!x.is_published:status==='assigned'?n>0:n===0));}).sort((a,b)=>sort==='track'?sortText(a.track_id,b.track_id)||sortText(a.title,b.title):sort==='category'?sortText(categoryName[a.assessment_type],categoryName[b.assessment_type])||sortText(a.title,b.title):sort==='questions_desc'?b.question_ids.length-a.question_ids.length:sort==='newest'?sortText(b.created_at,a.created_at):sortText(a.title,b.title));$('examCount').textContent=`${shown.length} of ${rows.length} exams shown`;$('examTable').innerHTML=wrapTable(`<table><thead><tr><th>Track</th><th>Exam</th><th>Category</th><th>Questions</th><th>Minutes</th><th>Assignments</th><th>Status</th><th>Actions</th></tr></thead><tbody>${shown.map(x=>`<tr><td>${esc(x.track_id.toUpperCase())}</td><td>${esc(x.title)}</td><td><select aria-label="Category for ${esc(x.title)}" data-classify="${x.id}">${Object.entries(categoryName).map(([v,t])=>`<option value="${v}" ${x.assessment_type===v?'selected':''}>${t}</option>`).join('')}</select></td><td>${x.question_ids.length}</td><td>${Math.round(x.duration_seconds/60)}</td><td>${assignments.filter(a=>a.exam_id===x.id).length}</td><td><span class="pill ${x.is_published?'ok':''}">${x.is_published?'Published':'Draft'}</span></td><td><button class="btn-sm" data-ex-practice="${x.id}">Teach / practise — no timer</button> <button class="btn-sm" data-ex-edit="${x.id}">Edit</button> <button class="btn-sm" data-ex-assign="${x.id}">Assign</button> <button class="btn-sm" data-ex-progress="${x.id}">Progress</button> <button class="btn-sm" data-ex-pub="${x.id}">${x.is_published?'Unpublish':'Publish'}</button> <button class="btn-sm" data-ex-release="${x.id}">Release review</button></td></tr>`).join('')}</tbody></table>`);bind();};
+ const paint=()=>{const track=val('examTrack'),needle=val('examSearch').toLowerCase(),type=val('examType'),status=val('examStatus'),sort=val('examSort');const shown=rows.filter(x=>{const n=assignments.filter(a=>a.exam_id===x.id).length;return(!track||x.track_id===track)&&x.title.toLowerCase().includes(needle)&&(!type||x.assessment_type===type)&&(!status||(status==='live'?x.is_published:status==='draft'?!x.is_published:status==='assigned'?n>0:n===0));}).sort((a,b)=>sort==='track'?sortText(a.track_id,b.track_id)||sortText(a.title,b.title):sort==='category'?sortText(categoryName[a.assessment_type],categoryName[b.assessment_type])||sortText(a.title,b.title):sort==='questions_desc'?b.question_ids.length-a.question_ids.length:sort==='newest'?sortText(b.created_at,a.created_at):sortText(a.title,b.title));$('examCount').textContent=`${shown.length} of ${rows.length} exams shown`;$('examTable').innerHTML=wrapTable(`<table><thead><tr><th>Track</th><th>Exam</th><th>Category</th><th>Questions</th><th>Minutes</th><th>Assignments</th><th>Status</th><th>Actions</th></tr></thead><tbody>${shown.map(x=>`<tr><td>${esc(x.track_id.toUpperCase())}</td><td>${esc(x.title)}</td><td><select aria-label="Category for ${esc(x.title)}" data-classify="${x.id}">${Object.entries(categoryName).map(([v,t])=>`<option value="${v}" ${x.assessment_type===v?'selected':''}>${t}</option>`).join('')}</select></td><td>${x.question_ids.length}</td><td>${Math.round(x.duration_seconds/60)}</td><td>${assignments.filter(a=>a.exam_id===x.id).length}</td><td><span class="pill ${x.is_published?'ok':''}">${x.is_published?'Published':'Draft'}</span></td><td><button class="btn-sm" data-ex-practice="${x.id}">Teach / practise — no timer</button> <button class="btn-sm" data-ex-edit="${x.id}">Edit</button> <button class="btn-sm" data-ex-assign="${x.id}">Assign</button> <button class="btn-sm" data-ex-progress="${x.id}">Progress</button> <button class="btn-sm" data-ex-pub="${x.id}">${x.is_published?'Unpublish':'Publish'}</button> <button class="btn-sm" data-ex-release="${x.id}">Release review</button></td></tr>`).join('')}</tbody></table>`);bind();window.AdminBulk?.mount('exams',shown,$('examTable').querySelector('table'));};
  const bind=()=>{
  $('newExam').onclick=()=>editExam();
  document.querySelectorAll('[data-ex-practice]').forEach(b=>b.onclick=()=>openTeachingExam(rows.find(x=>x.id===b.dataset.exPractice)));
@@ -585,6 +611,7 @@ async function students(){
  },'Create account');
  document.querySelectorAll('[data-user]').forEach(b=>b.onclick=()=>manageUser(rows.find(x=>x.user_id===b.dataset.user)));
  document.querySelectorAll('[data-delete-user]').forEach(b=>b.onclick=()=>deleteAccount(rows.find(x=>x.user_id===b.dataset.deleteUser)));
+ window.AdminBulk?.mount('accounts',rows,$('view').querySelector('table'));
 }
 function deleteAccount(u){
  if(ST.me.role!=='admin'||u.role==='admin'||u.user_id===ST.me.id)return;
@@ -614,6 +641,7 @@ async function devices(){
  if(ST.me.role!=='admin'){$('view').innerHTML='<div class="empty">Device management is available to administrators.</div>';return;}
  const [rows,users]=await Promise.all([getRows('device_sessions'),getRows('roster')]);
  $('view').innerHTML=`<div class="head"><h2>Devices</h2></div><p class="hint" style="margin-bottom:16px">Up to three active sign-ins per account. Revocation blocks that session from exams and answer saves.</p>${wrapTable(`<table><tr><th>Account</th><th>Device</th><th>Last seen</th><th></th></tr>${rows.map(d=>`<tr><td>${esc(users.find(u=>u.user_id===d.user_id)?.email||d.user_id)}</td><td>${esc(d.user_agent.slice(0,110))}</td><td>${esc(new Date(d.last_seen).toLocaleString())}</td><td>${d.revoked_at?'Revoked':`<button class="btn-sm" data-revoke="${d.id}">Revoke</button>`}</td></tr>`).join('')}</table>`)}`;
+ window.AdminBulk?.mount('devices',rows,$('view').querySelector('table'));
  document.querySelectorAll('[data-revoke]').forEach(b=>b.onclick=async()=>{if(!confirm('Revoke access from this device?'))return;try{await mutation('device.revoke',{id:b.dataset.revoke});await render();}catch(e){alert(e.message);}});
 }
 async function audit(){
@@ -634,10 +662,19 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 <script src="/est-source-review.js"></script>
 <script src="/instructor-practice.js"></script>
 <script src="/exam-builder.js"></script>
-<script src="/admin-bank.js?v=20261005"></script>
+<script src="/verified-bank-version.js?v=20261013"></script>
+<script src="/admin-bank.js?v=20261015"></script>
 <script src="/admin-controls.js"></script>
 <script src="/admin-exam-activity.js"></script>
 <link rel="stylesheet" href="/portal-navigation.css">
 <script src="/portal-navigation.js"></script>
+<link rel="stylesheet" href="/portal-management.css?v=20261010">
+<script src="/portal-management.js?v=20261015-feature-audit"></script>
+<link rel="stylesheet" href="/student-management.css?v=20261015">
+<script src="/student-management.js?v=20261015-groups"></script>
+<link rel="stylesheet" href="/group-management.css?v=20261015">
+<script src="/group-management.js?v=20261015-all-lessons"></script>
+<link rel="stylesheet" href="/admin-bulk.css?v=20261015">
+<script src="/admin-bulk.js?v=20261015"></script>
 </body>
 </html>

@@ -57,8 +57,21 @@ test('exports include every page past 1000 rows and reject partial results',asyn
 test('late report completion cannot replace another section',async()=>{
   const html=fs.readFileSync('web/admin.html','utf8'),code=html.slice(html.indexOf('async function questions('),html.indexOf('\nasync function exams(){'));
   const nodes=new Map();const node=id=>{if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',setAttribute(){}});return nodes.get(id);};
-  let release;const ctx={ST:{me:{id:'admin'},view:'questions',track:'sat'},hardestRequest:0,hardestReport:{cancel(){},page(){return new Promise(r=>release=r);}},$:node};
+  let release;const ctx={ST:{me:{id:'admin'},view:'questions',track:'sat'},hardestRequest:0,hardestCycle:'current',hardestReport:{cancel(){},page(){return new Promise(r=>release=r);}},$:node};
   vm.createContext(ctx);vm.runInContext(code,ctx);const task=vm.runInContext('questions()',ctx);
   ctx.ST.view='students';node('view').innerHTML='Students';release({rows:data(1),hasMore:false});await task;
   assert.equal(node('view').innerHTML,'Students');assert.equal(node('hardRows').innerHTML,'');
+});
+
+
+test('cycle sources and caches remain separate for current, archived and all history',async()=>{
+ const sb=mock(()=>({data:data(1)})),report=create(sb);
+ for(const cycle of ['current','archive-id','all'])await report.page({...scope,cycle});
+ assert.deepEqual(sb.calls.map(x=>x.table),['hardest_current_questions','hardest_archived_questions','question_difficulty']);
+ assert.equal(sb.calls[1].cycle_id,'archive-id');
+ for(const cycle of ['current','archive-id','all'])await report.page({...scope,cycle});
+ assert.equal(sb.calls.length,3);
+ await report.page({...scope,cycle:'current'},0,{refresh:true});
+ assert.equal(sb.calls.length,4);
+ await report.page({...scope,cycle:'archive-id'});assert.equal(sb.calls.length,4);
 });

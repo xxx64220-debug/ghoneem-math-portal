@@ -8,7 +8,7 @@ const source = fs.readFileSync(path.join(__dirname, '..', 'web', 'revision-formu
 const context = vm.createContext({ ST: { track: { id: 'sat' } }, REV: { formulaLesson: '' } });
 vm.runInContext(source, context, { filename: 'revision-formulas.js' });
 
-test('every course lesson resolves to a complete formula lesson and an accessible diagram', () => {
+test('every course lesson has rules, examples and notes; math lessons have accessible diagrams', () => {
   const result = vm.runInContext(`Object.fromEntries(Object.entries(REVISION_FORMULA_TRACKS).map(([track, course]) => [track, course.lessons.map(name => ({name, lesson: REVISION_FORMULA_LESSONS[name], svg: REVISION_FORMULA_SVG[REVISION_FORMULA_LESSONS[name]?.visual]}))]))`, context);
   for (const [track, entries] of Object.entries(result)) {
     assert.ok(entries.length >= 12, `${track} course is missing lesson coverage`);
@@ -17,7 +17,7 @@ test('every course lesson resolves to a complete formula lesson and an accessibl
       assert.ok(lesson.formulas.length >= 2, `${name} needs formula coverage`);
       assert.ok((lesson.examples || [lesson.example]).join(' ').length > 10, `${name} needs a worked example`);
       assert.ok((Array.isArray(lesson.notes) ? lesson.notes : [lesson.notes]).join(' ').length > 10, `${name} needs usage notes`);
-      assert.match(svg, /<svg[\s\S]*?role="img"[\s\S]*?aria-label=/, `${name} needs an accessible diagram`);
+      if (track !== 'est_eng') assert.match(svg, /<svg[\s\S]*?role="img"[\s\S]*?aria-label=/, `${name} needs an accessible diagram`);
     }
   }
 });
@@ -45,7 +45,7 @@ test('lesson diagrams are self-contained SVG and lesson text is HTML-escaped', (
   assert.equal(escaped, '&lt;script&gt;&amp;&quot;');
 });
 
-test('Formula lessons button switches the revision panel into the formula catalogue', () => {
+test('Formula lessons shortcut opens the separate reference without changing revision state', () => {
   const buttons = [];
   const document = {
     querySelectorAll(selector) {
@@ -59,14 +59,18 @@ test('Formula lessons button switches the revision panel into the formula catalo
   vm.runInContext(fs.readFileSync(path.join(__dirname, '..', 'web', 'final-revision.js'), 'utf8'), integration, { filename: 'final-revision.js' });
   vm.runInContext(source, integration, { filename: 'revision-formulas.js' });
   vm.runInContext("REV.data={items:[]}; REV.track='sat';", integration);
-  integration.paintDashboardContent = () => { integration.rendered = vm.runInContext('revisionPanel()', integration); };
+  integration.setDashboardView = view => { integration.DASH.view = view; integration.rendered = vm.runInContext('revisionFormulaPanel({standalone:true})', integration); };
+  vm.runInContext("REV.session={marker:'saved'};REV.lesson='Circles';",integration);
   const button = { onclick: null };
   buttons.push(button);
   vm.runInContext('wireRevision()', integration);
   assert.equal(vm.runInContext('REV.mode', integration), 'questions');
   button.onclick();
-  assert.equal(vm.runInContext('REV.mode', integration), 'formulas');
-  assert.match(integration.rendered, /Formula lessons/);
+  assert.equal(integration.DASH.view, 'formulas');
+  assert.equal(vm.runInContext('REV.mode', integration), 'questions');
+  assert.equal(vm.runInContext('REV.session.marker', integration), 'saved');
+  assert.equal(vm.runInContext('REV.lesson', integration), 'Circles');
+  assert.match(integration.rendered, /Formulas/);
   assert.match(integration.rendered, /Digital SAT Math/);
 });
 
@@ -134,4 +138,23 @@ test('separate formula rules and notes onto individual lines', () => {
   assert.ok((noteList.match(/<li>/g) || []).length >= 5, 'circle notes become separate note rows');
   assert.ok((ruleList.match(/<li>/g) || []).length >= 8, 'semicolon-separated formula clauses become separate list rows');
   assert.ok((noteList.match(/<li>/g) || []).length >= 5, 'semicolon-separated notes become separate list rows');
+});
+
+test('worked examples agree with independently calculated slope, vertex, circle, counting and complex arithmetic',()=>{
+ const lesson=name=>vm.runInContext(`REVISION_FORMULA_LESSONS[${JSON.stringify(name)}]`,context);
+ const slope=(2-1)/(5-0);assert.equal(slope,1/5);assert.match(lesson('Linear functions and slope').example,/m = 1\/5/);
+ const h=-(-4)/(2*1),k=h*h-4*h+1;assert.deepEqual([h,k],[2,-3]);assert.match(lesson('Quadratics and polynomials').example,/vertex is \(2, −3\)/);
+ const radiusSquared=(-6/2)**2+(4/2)**2+12;assert.equal(radiusSquared,25);assert(lesson('Circles').examples.some(x=>x.includes('(x − 3)² + (y + 2)² = 25')));
+ const fact=n=>n<2?1:n*fact(n-1);assert.equal(fact(8)/(fact(2)*fact(6)),28);assert.equal(fact(8)/fact(6),56);
+ assert.match(lesson('Probability, permutations and combinations').example,/8C2 = 28.*8P2 = 56/);
+ const denominator=2*2+3*3,real=5*2+10*3,imaginary=10*2-5*3;
+ assert.deepEqual([real,imaginary,denominator],[40,5,13]);assert.match(lesson('Complex numbers').example,/40\/13 \+ \(5\/13\)i/);
+ assert.equal(2.5*24*60*60,216000);assert(lesson('Unit conversions').examples.some(x=>x.includes('216,000 s')));
+});
+
+test('SAT calculator restrictions retain valid curly-brace inputs',()=>{
+ const lesson=vm.runInContext("REVISION_FORMULA_LESSONS['Desmos calculator guidance']",context);
+ const text=[...lesson.formulas,...lesson.examples,...lesson.notes].join(' ');
+ assert.match(text,/y=2x\{0<x<10\}/);
+ assert.doesNotMatch(text,/y=2x\(0<x<10\)/);
 });

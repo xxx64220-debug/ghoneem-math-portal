@@ -1,0 +1,87 @@
+{
+  "date": "2026-10-10",
+  "tracks": [
+    "sat",
+    "est",
+    "est2",
+    "est_eng"
+  ],
+  "isolatedDatabaseGates": 129,
+  "clientRegressionChecks": 92,
+  "additionalChecks": [
+    "Hardest cycles",
+    "Group exam evidence",
+    "Paginated question bank",
+    "Merged SAT report/content audit"
+  ],
+  "preservation": {
+    "before": [
+      {
+        "object": "questions",
+        "total": 7339,
+        "digest": "26f2d6b475b1c5c3fd4a742b6f772ab2"
+      },
+      {
+        "object": "keys",
+        "total": 7339,
+        "digest": "6beebb0b8b5b00777f212c2c01a291f6"
+      },
+      {
+        "object": "archives",
+        "total": 1699,
+        "digest": "588b8fab95befb688d6f66e51ecbc7c3"
+      },
+      {
+        "object": "enrollments",
+        "total": 80,
+        "digest": "bc39157185c4e9599c1ebda618017d0b"
+      },
+      {
+        "object": "profiles",
+        "total": 52,
+        "digest": "02e91f094c1c10606c75f95c373577f0"
+      }
+    ],
+    "after": [
+      {
+        "object": "questions",
+        "total": 7339,
+        "digest": "26f2d6b475b1c5c3fd4a742b6f772ab2"
+      },
+      {
+        "object": "keys",
+        "total": 7339,
+        "digest": "6beebb0b8b5b00777f212c2c01a291f6"
+      },
+      {
+        "object": "archives",
+        "total": 1699,
+        "digest": "588b8fab95befb688d6f66e51ecbc7c3"
+      },
+      {
+        "object": "enrollments",
+        "total": 80,
+        "digest": "bc39157185c4e9599c1ebda618017d0b"
+      },
+      {
+        "object": "profiles",
+        "total": 52,
+        "digest": "02e91f094c1c10606c75f95c373577f0"
+      }
+    ],
+    "functions": 18,
+    "matched": true
+  },
+  "functionsVerified": 18,
+  "notificationVersion": 3,
+  "domain": "https://math.portal.ghoneem.com",
+  "browserVerification": "Signed-in phone/desktop visual verification pending: browser control unavailable.",
+  "migrations": [
+    "portal_course_management_core_20261010",
+    "portal_course_management_quizzes_20261010",
+    "portal_course_management_access_20261010",
+    "portal_course_management_report_scope_20261010"
+  ],
+  "legacyAccountEditor": "Preserved unchanged",
+  "mergedSourceCommit": "bdd1511b5e643c3a34939ab009aa63c7a2f2c6e9"
+}

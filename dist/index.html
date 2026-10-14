@@ -272,8 +272,8 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js"></script>
 <script src="/daily-challenge.js"></script>
 <script src="/lesson-taxonomy.js"></script>
-<script src="/revision-formulas.js"></script>
-<script src="/final-revision.js"></script>
+<script src="/revision-formulas.js?v=20261012-all-groups"></script>
+<script src="/final-revision.js?v=20261012-all-groups"></script>
 <script>
 /* ============================ CONFIG ============================ */
 const SB_URL = 'https://wfhurjyouemahvkcfkdz.supabase.co';
@@ -332,7 +332,7 @@ const FRIENDLY = {
   attempt_limit_reached: 'You have already used your attempt on this exam. Ask your instructor for a retake.',
   previous_module_required: 'Complete Module 1 before starting Module 2.',
   not_assigned_or_window_closed: 'This exam is not open for you right now.',
-  not_enrolled_in_track: 'You are not enrolled in this track.',
+  not_enrolled_in_track: 'Practice access is unavailable or has ended. Your saved results remain available; contact your instructor to renew.',
   exam_not_published: 'This exam has not been released yet.',
   account_suspended: 'This account is suspended. Contact your instructor.',
   not_enough_topic_history: 'Complete at least three questions in a topic first, then we can identify your weakest topics.',
@@ -399,20 +399,23 @@ async function openTrack(t){
  $('listSub').textContent='Your assessments, progress, and next steps.';
  show('vList');$('examList').innerHTML='<p class="dash-empty" role="status">Loading your progress…</p>';
  try{
-  const [{ok,json},controls]=await Promise.all([fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}`}),fn('portal-controls',{method:'POST',body:{action:'settings',data:{track:t.id}}})]);
+  const [{ok,json},controls,course]=await Promise.all([fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}`}),fn('portal-controls',{method:'POST',body:{action:'settings',data:{track:t.id}}}),sb.rpc('my_course_access')]);
+  if(course.error)throw new Error(course.error.message);
+  const access=(course.data||[]).find(x=>x.track_id===t.id);
+  if(!access)throw new Error('Course access is unavailable.');
   if(!controls.ok)throw new Error(friendly(controls.json.error));
   if(request!==dashboardRequest)return;
   if(!ok)throw new Error(friendly(json.error));
   DAILY_DRAFT={};DRILL_DRAFT={};
-  DASH={...DASH,revisionVisible:controls.json.revision_visible,view:'daily',daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyPage:0,historyType:'all',searchTerm:'',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],summary:json.dashboard?.summary||{}};
+  DASH={...DASH,access,revisionVisible:controls.json.revision_visible,view:access.practice_open?'daily':'history',daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyPage:0,historyType:'all',searchTerm:'',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],summary:json.dashboard?.summary||{}};
   paintDashboard();
-  refreshDaily();
+  if(access.practice_open)refreshDaily();
  }catch(e){if(request===dashboardRequest){$('examList').innerHTML=`<div class="dash-empty" role="alert">${esc(e.message)}<br><button class="btn" id="retryDashboard">Try again</button></div>`;$('retryDashboard').onclick=()=>openTrack(t);}}
 }
-function setDashboardView(view){if(view==='revision'&&DASH.revisionVisible===false)return;DASH.view=view;DASH.searchTerm='';DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();if(view==='drill'&&!DASH.drill)refreshDrill();if(view==='revision'&&!REV.data)refreshRevision();}
+function setDashboardView(view){if(DASH.access?.practice_open===false&&!['history','overview','focus','full_exam','formulas','finalsDiagnosis'].includes(view))view='history';if(view==='revision'&&DASH.revisionVisible===false)return;DASH.view=view;DASH.searchTerm='';DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();if(view==='drill'&&!DASH.drill)refreshDrill();if(view==='revision'&&!REV.data)refreshRevision();}
 function paintDashboard(){
- const tabs=[...(['sat','est','est2'].includes(ST.track?.id)&&DASH.revisionVisible!==false?[['revision','Final revision']]:[]),['daily','Daily practice'],['mistakes','Mistake notebook'],['drill','Weak-topic drill'],['overview','My progress'],['lesson_exam','Lesson exams'],['quiz','Quizzes'],['full_exam','Full exams'],['history','Exam history'],['focus','Lesson focus']];
- $('examList').innerHTML=`<nav class="student-tabs" aria-label="Student dashboard">${tabs.map(([id,name])=>`<button class="student-tab ${id==='revision'?'revision-highlight':''} ${!DASH.searchTerm&&DASH.view===id?'active':''}" data-view="${id}" aria-current="${!DASH.searchTerm&&DASH.view===id?'page':'false'}">${name}${ASSESSMENTS[id]?` <span>${DASH.exams.filter(e=>e.assessment_type===id).length}</span>`:''}</button>`).join('')}</nav><div class="review-menu"><button class="btn-ghost" data-go="overview">Main menu</button>${reportButton('','dashboard')}</div><div class="dashboard-search"><label for="dashboardSearch">Find an exam or lesson</label><input type="search" id="dashboardSearch" autocomplete="off" placeholder="Search exams, results, or lessons" value="${esc(DASH.searchTerm||'')}"></div><div id="dashboardContent" aria-live="polite"></div>`;
+ const tabs=[['formulas',ST.track?.id==='est_eng'?'Rules reference':'Formulas'],...(['sat','est','est2'].includes(ST.track?.id)&&DASH.revisionVisible!==false?[['revision','Final revision']]:[]),['daily','Daily practice'],['mistakes','Mistake notebook'],['drill','Weak-topic drill'],['overview','My progress'],['lesson_exam','Lesson exams'],['quiz','Quizzes'],['full_exam','Full exams'],['history','Exam history'],['focus','Lesson focus']].filter(([id])=>DASH.access?.practice_open!==false||['history','overview','focus','formulas'].includes(id)||(id==='full_exam'&&DASH.access?.can_finish));
+ $('examList').innerHTML=`<nav class="student-tabs" aria-label="Student dashboard">${tabs.map(([id,name])=>`<button class="student-tab ${id==='revision'?'revision-highlight':''} ${!DASH.searchTerm&&DASH.view===id?'active':''}" data-view="${id}" aria-current="${!DASH.searchTerm&&DASH.view===id?'page':'false'}">${name}${ASSESSMENTS[id]?` <span>${DASH.exams.filter(e=>e.assessment_type===id).length}</span>`:''}</button>`).join('')}</nav><div class="review-menu"><button class="btn-ghost" data-go="overview">Main menu</button>${reportButton('','dashboard')}</div><div class="dashboard-search"><label for="dashboardSearch">Find an exam or lesson</label><input type="search" id="dashboardSearch" autocomplete="off" placeholder="Search exams, results, or lessons" value="${esc(DASH.searchTerm||'')}"></div>${DASH.access?`<aside class="course-access-note" aria-label="Course access"><b>${esc(DASH.access.course_label||ST.track.name)}</b> · ${DASH.access.practice_open?'Practice access active':DASH.access.status==='paused'?'Practice access paused':DASH.access.starts_at&&new Date(DASH.access.starts_at)>new Date()?'Practice starts '+dateText(DASH.access.starts_at):'Practice access ended'}${DASH.access.ends_at?' · Ends '+esc(new Date(DASH.access.ends_at).toLocaleString('en-GB',{timeZone:'Africa/Cairo'}))+' Cairo':''}${!DASH.access.practice_open?'<p>Your saved results remain available. Contact your instructor to renew course access.</p>':''}${DASH.access.can_finish&&!DASH.access.practice_open?'<p>You can finish the exam already in progress through its deadline.</p>':''}</aside>`:''}<div id="dashboardContent" aria-live="polite"></div>`;
  document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setDashboardView(b.dataset.view));
  $('dashboardSearch').oninput=e=>{DASH.searchTerm=e.target.value;document.querySelectorAll('[data-view]').forEach(b=>{const active=!DASH.searchTerm.trim()&&b.dataset.view===DASH.view;b.classList.toggle('active',active);b.setAttribute('aria-current',active?'page':'false');});paintDashboardContent();};
  paintDashboardContent();
@@ -420,6 +423,7 @@ function paintDashboard(){
 function paintDashboardContent(){
  const content=$('dashboardContent');
  if(DASH.searchTerm?.trim())content.innerHTML=searchSection();
+ else if(DASH.view==='formulas')content.innerHTML=formulasPanel();
  else if(DASH.view==='revision')content.innerHTML=revisionPanel();
  else if(DASH.view==='daily')content.innerHTML=dailyPanel();
  else if(DASH.view==='mistakes')content.innerHTML=mistakesPanel();
@@ -431,10 +435,23 @@ function paintDashboardContent(){
  else content.innerHTML=focusSection();
  math(content);
  wireDashboard();
+ if(!DASH.searchTerm?.trim()&&DASH.view==='formulas')wireFormulas();
  if(!DASH.searchTerm?.trim()&&DASH.view==='revision')wireRevision();
  if(!DASH.searchTerm?.trim()&&DASH.view==='daily')wireDaily();
  if(!DASH.searchTerm?.trim()&&DASH.view==='mistakes')wireMistakes();
  if(!DASH.searchTerm?.trim()&&DASH.view==='drill')wireDrill();
+}
+// Reference selection is separate from the saved question-practice state.
+let FORMULAS={track:null,lesson:''};
+function formulasPanel(){
+ const track=ST.track?.id;if(FORMULAS.track!==track)FORMULAS={track,lesson:''};
+ return revisionFormulaPanel({track,selectedLesson:FORMULAS.lesson,standalone:true});
+}
+function wireFormulas(){
+ document.querySelectorAll('[data-formula-lesson]').forEach(b=>b.onclick=()=>{FORMULAS.lesson=b.dataset.formulaLesson;paintDashboardContent();});
+ document.querySelector('[data-reference-main]')?.addEventListener('click',()=>setDashboardView('overview'));
+ const practice=document.querySelector('[data-formulas-to-questions]');
+ if(practice){practice.disabled=DASH.access?.practice_open===false||(ST.track?.id!=='est_eng'&&DASH.revisionVisible===false);practice.onclick=()=>setDashboardView(ST.track?.id==='est_eng'?'drill':'revision');}
 }
 function searchSection(){
  const term=DASH.searchTerm.trim().toLocaleLowerCase();
@@ -779,10 +796,12 @@ function drawFig(spec) {
 }
 function cleanMarkup(markup){
  const doc=new DOMParser().parseFromString(markup,'text/html');
- const tags=new Set('svg g path line rect circle ellipse polygon polyline text tspan defs marker table thead tbody tr th td caption colgroup col div span p br b i strong em sup sub'.split(' '));
- const attrs=new Set('viewBox xmlns d x y x1 y1 x2 y2 cx cy r rx ry width height points fill stroke stroke-width transform text-anchor dominant-baseline font-size font-style colspan rowspan scope role aria-label'.toLowerCase().split(' '));
+ const tags=new Set('svg g path line rect circle ellipse polygon polyline text tspan defs marker table thead tbody tr th td caption colgroup col div span p br b i strong em sup sub u mark figure figcaption img'.split(' '));
+ const attrs=new Set('viewBox xmlns d x y x1 y1 x2 y2 cx cy r rx ry width height points fill stroke stroke-width transform text-anchor dominant-baseline font-size font-style colspan rowspan scope role aria-label src alt'.toLowerCase().split(' '));
  for(const el of [...doc.body.querySelectorAll('*')]){
   if(!tags.has(el.localName)){el.remove();continue;}
+  if(el.localName==='img'&&!(/^(https:\/\/)/.test(el.getAttribute('src')||'')||/^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\s]+$/.test(el.getAttribute('src')||''))){el.remove();continue;}
+  if(el.localName!=='img'){el.removeAttribute('src');el.removeAttribute('alt');}
   for(const a of [...el.attributes])if(!attrs.has(a.name.toLowerCase())||/url\s*\(|javascript:/i.test(a.value))el.removeAttribute(a.name);
  }
  return doc.body.innerHTML;
@@ -803,7 +822,7 @@ function figure(a) {
     }else if(/^(https:\/\/)/.test(src)||/^data:image\/(png|jpeg|jpg|webp|gif);base64,[A-Za-z0-9+/=\s]+$/.test(src))out+=`<div class="fig"><img src="${esc(src)}" alt="${esc(a.figure_caption||'Question diagram')}" style="max-width:100%;height:auto"></div>`;
   }
   if (a.figspec) out += `<div class="fig">${cleanMarkup(drawFig(a.figspec))}</div>`;
-  if (a.html)    out += `<div class="fig fig-table">${cleanMarkup(ent(a.html))}</div>`;
+  if (a.html) out += a.passage_title?`<div class="english-passage" lang="en" dir="ltr" aria-label="${esc(a.passage_title)}">${cleanMarkup(ent(a.html))}</div>`:`<div class="fig fig-table">${cleanMarkup(ent(a.html))}</div>`;
   if(a.svg) out+=`<div class="fig">${cleanMarkup(a.svg)}</div>`;
   if(a.image&&/^https:\/\//.test(a.image))out+=`<div class="fig"><img src="${esc(a.image)}" alt="${esc(a.image_alt || 'Question diagram')}" style="max-width:100%;height:auto"></div>`;
   if((a.source_question||a.source_code) && a.image && /^https:\/\//.test(a.image))out+=`<p style="margin:8px 0 18px;font-size:14px"><a href="${esc(a.image)}" target="_blank" rel="noopener">${a.source_question?'Enlarge original question':'Enlarge diagram'}</a></p>`;
@@ -832,9 +851,11 @@ const updateTopButton=()=>topButton.classList.toggle('show',window.scrollY>420);
 window.addEventListener('scroll',updateTopButton,{passive:true});
 topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 </script>
-<script src="/portal-controls.js"></script>
+<script src="/portal-controls.js?v=20261015-diagnosis-evidence"></script>
 <script src="/exam-activity.js"></script>
 <link rel="stylesheet" href="/portal-navigation.css">
-<script src="/portal-navigation.js"></script>
+<script src="/portal-navigation.js?v=20261012-all-groups"></script>
+<link rel="stylesheet" href="/portal-management.css?v=20261010">
+<script src="/portal-management.js?v=20261010"></script>
 </body>
 </html>
