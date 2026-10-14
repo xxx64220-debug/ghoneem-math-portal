@@ -1,0 +1,67 @@
+{
+  "project": "wfhurjyouemahvkcfkdz",
+  "release": {
+    "at": "2026-10-14T23:43:41.61945+00:00",
+    "id": 20202,
+    "meta": {
+      "added": 1,
+      "archived": 172,
+      "est_archived": 159,
+      "exam_repairs": 8,
+      "preservation": {
+        "attempts": "8c36c6302cbc37b30d18ddd4ac466558",
+        "enrollments": "4b9888662714d2683c95ffd92282f921",
+        "group_members": "490de03c992258e167fde9babc1861a2",
+        "revision_items": "8eeefd2ae7429573bd6ce8e3344b4a6a",
+        "attempt_answers": "40019045b929926d03bb932f3701194e",
+        "attempt_results": "cbed3c0e619fddfdecb1ffc520149420",
+        "revision_sessions": "543df6923b316164950bda11b847ca18"
+      },
+      "est2_archived": 13,
+      "new_question_id": "d224713e-da71-5966-81d2-910764d7cd04",
+      "new_exam_versions": 1,
+      "new_question_hash": "fd43b2b5bd769201f5bc8645fd8c0545",
+      "replacement_links": 172,
+      "source_status_repairs": 15
+    }
+  },
+  "bad_corrected_exams": 0,
+  "replacement_failures": 0,
+  "changed_original_keys": 0,
+  "archive_hash_mismatches": 0,
+  "stale_ready_source_labels": 0,
+  "counts": [
+    {
+      "track_id": "est",
+      "total": 2665,
+      "eligible": 2665,
+      "held": 0,
+      "explicit_solved": 75
+    },
+    {
+      "track_id": "est2",
+      "total": 1375,
+      "eligible": 1375,
+      "held": 0,
+      "explicit_solved": 27
+    }
+  ],
+  "published_blocked_historical_only": [
+    {
+      "track_id": "est",
+      "historical": true,
+      "n": 2
+    },
+    {
+      "track_id": "est2",
+      "historical": true,
+      "n": 4
+    }
+  ],
+  "cache_checks": {
+    "current_daily_track_rows": 0,
+    "current_daily_group_rows": 0,
+    "old_unanswered_drills_blocked_by_existing_guards": 2,
+    "historical_notebook_rows_filtered_by_existing_eligibility": 16
+  }
+}
