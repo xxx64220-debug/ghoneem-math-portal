@@ -1,9 +1,10 @@
+const {withCourseAccess}=require('./fixture-access.cjs');
 const {test,expect}=require('@playwright/test');
 const history=[{id:'attempt-open',exam_id:'exam-1',title:'Reviewed exam',assessment_type:'full_exam',attempt_no:2,status:'graded',score:1,total:2,percent:50,review_open:true,submitted_at:'2026-10-02T08:00:00Z'},
 {id:'attempt-locked',exam_id:'exam-1',title:'Locked exam',assessment_type:'full_exam',attempt_no:1,status:'graded',score:1,total:2,percent:50,review_open:false}];
 const items=[{id:'circle-1',assets:{curriculum_lesson:'Circles'},is_correct:false,response:''},{id:'circle-2',assets:{curriculum_lesson:'Circles'},is_correct:true,response:'A'},
 {id:'held',assets:{curriculum_lesson:'Circles'},is_correct:false,correct:{void:true}}];
-const sdk=`window.supabase={createClient(){const session={access_token:'local-fixture',user:{id:'fixture-student'}};return {auth:{onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}}),getSession:async()=>({data:{session}}),getUser:async()=>({data:{user:session.user}})},from:()=>{const q={select:()=>q,eq:()=>q,gte:()=>q,lt:async()=>{await new Promise(r=>setTimeout(r,100));return {data:[],error:null}}};return q;}}}};`;
+const sdk=withCourseAccess(`window.supabase={createClient(){const session={access_token:'local-fixture',user:{id:'fixture-student'}};return {auth:{onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}}),getSession:async()=>({data:{session}}),getUser:async()=>({data:{user:session.user}})},from:()=>{const q={select:()=>q,eq:()=>q,gte:()=>q,lt:async()=>{await new Promise(r=>setTimeout(r,100));return {data:[],error:null}}};return q;}}}};`);
 for(const [track,name,duration] of [['sat','SAT Math',4200],['est','EST Math',4500],['est2','EST II Math',3600]])test(track+' formulas and exam diagnosis preserve track content and fit desktop/mobile',async({page,context})=>{
  const tracks=[{id:track,name,exams_available:1,attempts_done:2}];
  const exam={id:'exam-1',title:'Exam fixture',track_id:track,assessment_type:'full_exam',duration_seconds:duration};
