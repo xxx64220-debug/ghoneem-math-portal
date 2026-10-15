@@ -5,17 +5,17 @@ const roster='abcdefg'.split('').map(user_id=>({user_id,role:'student',full_name
 const lessons=['Circles','Linear equations','Statistics'].flatMap((lesson,i)=>['abcdef'[2*i],'abcdef'[2*i+1]].flatMap(user_id=>[
  {user_id,lesson,questions_seen:3,percent:20+i*10},{user_id,lesson:'Functions',questions_seen:3,percent:90}
 ]));
-async function report({failure=false,visible=true,ready=true,delay=null,rpc=null}={}){
+async function report({failure=false,visible=true,ready=true,delay=null,rpc=null,track='est'}={}){
  const dom=new JSDOM('<nav class="tabs"><div class="wrap"></div></nav><div id="view"></div>',{runScripts:'outside-only',url:'http://localhost/'});
  const w=dom.window,reads=[],actions=[];
- w.ST={view:'finalsDiagnosisAdmin'};w.render=()=>{};w.syncAdminNavigation=()=>{};w.csv=()=>{};
- const fixtures={roster,student_by_lesson:lessons,results_feed:[],groups:[{id:'seven',name:'Seven',track_id:'est'}],group_members:roster.map(x=>({group_id:'seven',user_id:x.user_id})),exams:[{id:'retest',title:'EST I Final Weakness Retest — Oct 2026',is_published:true,track_id:'est',question_ids:Array(25).fill('q'),duration_seconds:2100,assessment_type:'lesson_exam'},{id:'exam2',title:'Second exam',track_id:'est',assessment_type:'full_exam'}]};
+ w.ST={view:'finalsDiagnosisAdmin',track};w.render=()=>{};w.syncAdminNavigation=()=>{};w.csv=()=>{};
+ const fixtures={roster:roster.map(x=>({...x,tracks:track})),student_by_lesson:lessons.map(x=>({...x,track_id:track})),results_feed:[],groups:[{id:'seven',name:'Seven',track_id:track}],group_members:roster.map(x=>({group_id:'seven',user_id:x.user_id})),exams:[{id:'retest',title:'EST I Final Weakness Retest — Oct 2026',is_published:true,track_id:track,question_ids:Array(25).fill('q'),duration_seconds:2100,assessment_type:'lesson_exam'},{id:'exam2',title:'Second exam',track_id:track,assessment_type:'full_exam'}]};
  w.q=table=>{let bounds=[0,499];const query={eq:()=>query,order:()=>query,range:(a,b)=>{bounds=[a,b];return query;},then:async resolve=>{
    reads.push(table);if(delay&&table==='groups')await delay;
    return resolve(failure&&['groups','group_members','exams'].includes(table)?{error:new Error('Offline')}:{data:(fixtures[table]||[]).slice(bounds[0],bounds[1]+1)});
  }};return query;};
  w.portalControl=async(action,data)=>{actions.push({action,data});if(failure)throw new Error('Offline');return {visible,items:['Circles','Linear equations','Statistics'].map(lesson=>({lesson,active:true,ready}))};};
- w.sb={rpc:async(name,data)=>{actions.push({action:name,data});return rpc?rpc(name,data):{data:{exam_id:data.p_exam,track_id:'est',students:[]}};}};
+ w.sb={rpc:async(name,data)=>{actions.push({action:name,data});return rpc?rpc(name,data):{data:{exam_id:data.p_exam,track_id:track,students:[]}};}};
  w.eval(source);await new Promise(resolve=>w.setTimeout(resolve,10));await w.render();
  return {dom,w,reads,actions,open:()=>w.document.getElementById('finalsGroupView').onclick()};
 }
@@ -70,7 +70,7 @@ test('selected exam replaces overall weaknesses, counts misses above 60%, and se
  }finally{f.dom.window.close();}
 });
 test('failed and incomplete exam reads never fall back to overall evidence and retry safely',async()=>{
- let calls=0;const f=await report({rpc:async(_,data)=>{calls++;if(calls===1)throw new Error('Offline');if(calls===2)return {data:{exam_id:data.p_exam,track_id:'est',students:[]}};return response(data);}});
+ let calls=0;const f=await report({rpc:async(_,data)=>{calls++;if(calls===1)throw new Error('Offline');if(calls===2)return {data:{exam_id:data.p_exam,track_id:track,students:[]}};return response(data);}});
  try{await f.open();await choose(f,'retest');const d=f.w.document,p=d.getElementById('finalsGroupPlan');assert.match(p.textContent,/Could not load/);assert(!p.textContent.includes('Circles'));
  await d.getElementById('finalsExamRetry').onclick();assert.match(p.textContent,/Could not load/);
  await d.getElementById('finalsExamRetry').onclick();assert.match(p.textContent,/Triangles/);
@@ -84,5 +84,33 @@ test('late exam requests cannot overwrite a newer scope, membership or page',asy
  const d=f.w.document,p=d.getElementById('finalsGroupPlan');assert.match(p.textContent,/New exam/);assert(!p.textContent.includes('Old exam'));
  const member=d.querySelector('[data-finals-student="a"]');member.checked=false;member.onchange();await choose(f,'');pending[2].resolve(response(pending[2].data,'Stale membership'));await new Promise(r=>setImmediate(r));assert(!p.textContent.includes('Stale membership'));assert.match(p.textContent,/6 students selected/);
  await choose(f,'retest');f.w.ST.view='results';d.getElementById('view').textContent='Other page';pending[3].resolve(response(pending[3].data));await new Promise(r=>setImmediate(r));assert.equal(d.getElementById('view').textContent,'Other page');
+ }finally{f.dom.window.close();}
+});
+
+for (const track of ['sat','est','est2','est_eng']) test('group diagnosis and exact exam evidence stay in '+track,async()=>{
+ const f=await report({track,rpc:async(_,data)=>({data:{...response(data).data,track_id:track}})});
+ try {await f.open();const p=f.w.document.getElementById('finalsGroupPlan');
+ assert.equal(p.querySelectorAll('.finals-cluster').length,3);
+ if(track==='est_eng'){assert.equal(f.actions.filter(x=>x.action==='revision.list').length,0);assert(p.querySelector('[data-finals-formulas]'));}
+ else assert.equal(f.actions.find(x=>x.action==='revision.list').data.track,track);
+ await choose(f,'retest');assert.match(p.textContent,/Triangles/);
+ assert.equal(f.actions.find(x=>x.action==='staff_group_exam_evidence').data.p_exam,'retest');
+ }finally{f.dom.window.close();}
+});
+test('cross-course exam evidence is rejected without falling back',async()=>{
+ const f=await report({track:'sat',rpc:async(_,data)=>response(data)});
+ try{await f.open();await choose(f,'retest');const p=f.w.document.getElementById('finalsGroupPlan');assert.match(p.textContent,/Could not load/);assert(!p.textContent.includes('Circles'));}finally{f.dom.window.close();}
+});
+test('late exact exam evidence cannot repaint a newly selected course',async()=>{
+ let complete;const f=await report({rpc:(_,data)=>new Promise(resolve=>complete=()=>resolve(response(data)))});
+ try{await f.open();await choose(f,'retest');const p=f.w.document.getElementById('finalsGroupPlan');f.w.ST.track='sat';complete();await new Promise(r=>setImmediate(r));assert(!p.textContent.includes('Triangles'));}finally{f.dom.window.close();}
+});
+
+test('late failed staff report cannot replace a new course report',async()=>{
+ const f=await report();try{
+ let release;const gate=new Promise(r=>release=r),original=f.w.q;
+ f.w.q=()=>{const q={eq:()=>q,order:()=>q,range:async()=>{await gate;return {error:new Error('Old course offline')};}};return q;};
+ const old=f.w.render();f.w.ST.track='sat';f.w.q=original;await f.w.render();release();await old;
+ const text=f.w.document.getElementById('view').textContent;assert.match(text,/SAT Math/);assert(!text.includes('Old course offline'));
  }finally{f.dom.window.close();}
 });

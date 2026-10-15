@@ -1,0 +1,21 @@
+do $guard$ begin
+if md5(pg_get_functiondef('public.attempt_is_mine(uuid,uuid)'::regprocedure))<>'9bffc3cbae64e8972a69a7b9db7b1082' then raise exception 'management preflight: attempt_is_mine changed; refresh release';end if;
+if md5(pg_get_functiondef('public.attempt_review(uuid,uuid)'::regprocedure))<>'e303f416d7121df42f4a3628760b61cb' then raise exception 'management preflight: attempt_review changed; refresh release';end if;
+if md5(pg_get_functiondef('public.student_dashboard(uuid,text)'::regprocedure))<>'498f3d79293b135fc9e7a26866fb53d8' then raise exception 'management preflight: student_dashboard changed; refresh release';end if;
+if md5(pg_get_functiondef('public.my_tracks(uuid)'::regprocedure))<>'7b8bc5b2c6a2b8c19056861bcc84e439' then raise exception 'management preflight: my_tracks changed; refresh release';end if;
+if md5(pg_get_functiondef('public.portal_student_controls(uuid,text,jsonb)'::regprocedure))<>'f122333baf6e5d0a1d492af03bac3e65' then raise exception 'management preflight: portal_student_controls changed; refresh release';end if;
+if md5(pg_get_functiondef('public.attempt_live_for(uuid,uuid)'::regprocedure))<>'6ab02d9ef14431d7dd5dda2a55629ca7' then raise exception 'management preflight: attempt_live_for changed; refresh release';end if;
+if md5(pg_get_functiondef('portal_private.guard_answer()'::regprocedure))<>'3e11510f84f6d812a172c2b38ea52c96' then raise exception 'management preflight: guard_answer changed; refresh release';end if;
+if md5(pg_get_functiondef('public.portal_submit(uuid,uuid,text)'::regprocedure))<>'8e9d14ec633afeb65274b05dea89bb99' then raise exception 'management preflight: portal_submit changed; refresh release';end if;
+if md5(pg_get_functiondef('public.portal_start_attempt(uuid,uuid,boolean)'::regprocedure))<>'bb75e509e4c8233f0709911a43acdcef' then raise exception 'management preflight: portal_start_attempt changed; refresh release';end if;
+if md5(pg_get_functiondef('public.daily_state(uuid,text)'::regprocedure))<>'e048a5f94884add3c06c24ab4deddaa8' then raise exception 'management preflight: daily_state changed; refresh release';end if;
+if md5(pg_get_functiondef('public.daily_submit(uuid,text,jsonb)'::regprocedure))<>'d8ab4aaa2af0e63e61aefceb575cf0cf' then raise exception 'management preflight: daily_submit changed; refresh release';end if;
+if md5(pg_get_functiondef('public.final_revision(uuid,text,text,jsonb)'::regprocedure))<>'9152fe78ea9ba38bdd6618f2975b4e96' then raise exception 'management preflight: final_revision changed; refresh release';end if;
+if md5(pg_get_functiondef('public.practice_drill_start(uuid,text)'::regprocedure))<>'3a411026c7262e2b550759744bdfa3fd' then raise exception 'management preflight: practice_drill_start changed; refresh release';end if;
+if md5(pg_get_functiondef('public.new_exam(text,text,integer,integer,text,boolean,boolean,text,boolean)'::regprocedure))<>'bb2429c0407b46076a16d43c1fdb3722' then raise exception 'management preflight: new_exam changed; refresh release';end if;
+if md5(pg_get_functiondef('public.student_daily_quiz_mistakes(uuid,text)'::regprocedure))<>'c4e60eaf91dce3c13f9a02afa89a7ffc' then raise exception 'management preflight: student_daily_quiz_mistakes changed; refresh release';end if;
+if md5(pg_get_functiondef('public.my_exams(uuid,text)'::regprocedure))<>'22a7814cad3f359fc4cfcbcfc96f8131' then raise exception 'management preflight: my_exams changed; refresh release';end if;
+if md5(pg_get_functiondef('public.portal_push_collect()'::regprocedure))<>'e9a41529ec2f7106831c1b65104e449f' then raise exception 'management preflight: portal_push_collect changed; refresh release';end if;
+if md5(pg_get_functiondef('public.portal_push_announce(uuid,uuid,text,text,text)'::regprocedure))<>'368b2caf8c125ce8a10198c509191924' then raise exception 'management preflight: portal_push_announce changed; refresh release';end if;
+if md5(pg_get_functiondef('public.is_enrolled(uuid,text)'::regprocedure))<>'fb4c5e8f4354cf2a6dcb5f252f91a8cf' then raise exception 'management preflight: is_enrolled changed';end if;
+end $guard$;

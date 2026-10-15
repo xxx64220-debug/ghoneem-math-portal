@@ -1,0 +1,92 @@
+[
+  {
+    "name": "attempt_is_mine",
+    "signature": "public.attempt_is_mine(uuid,uuid)",
+    "hash": "9bffc3cbae64e8972a69a7b9db7b1082"
+  },
+  {
+    "name": "attempt_review",
+    "signature": "public.attempt_review(uuid,uuid)",
+    "hash": "e303f416d7121df42f4a3628760b61cb"
+  },
+  {
+    "name": "student_dashboard",
+    "signature": "public.student_dashboard(uuid,text)",
+    "hash": "498f3d79293b135fc9e7a26866fb53d8"
+  },
+  {
+    "name": "my_tracks",
+    "signature": "public.my_tracks(uuid)",
+    "hash": "7b8bc5b2c6a2b8c19056861bcc84e439"
+  },
+  {
+    "name": "portal_student_controls",
+    "signature": "public.portal_student_controls(uuid,text,jsonb)",
+    "hash": "f122333baf6e5d0a1d492af03bac3e65"
+  },
+  {
+    "name": "attempt_live_for",
+    "signature": "public.attempt_live_for(uuid,uuid)",
+    "hash": "6ab02d9ef14431d7dd5dda2a55629ca7"
+  },
+  {
+    "name": "guard_answer",
+    "signature": "portal_private.guard_answer()",
+    "hash": "3e11510f84f6d812a172c2b38ea52c96"
+  },
+  {
+    "name": "portal_submit",
+    "signature": "public.portal_submit(uuid,uuid,text)",
+    "hash": "8e9d14ec633afeb65274b05dea89bb99"
+  },
+  {
+    "name": "portal_start_attempt",
+    "signature": "public.portal_start_attempt(uuid,uuid,boolean)",
+    "hash": "bb75e509e4c8233f0709911a43acdcef"
+  },
+  {
+    "name": "daily_state",
+    "signature": "public.daily_state(uuid,text)",
+    "hash": "e048a5f94884add3c06c24ab4deddaa8"
+  },
+  {
+    "name": "daily_submit",
+    "signature": "public.daily_submit(uuid,text,jsonb)",
+    "hash": "d8ab4aaa2af0e63e61aefceb575cf0cf"
+  },
+  {
+    "name": "final_revision",
+    "signature": "public.final_revision(uuid,text,text,jsonb)",
+    "hash": "9152fe78ea9ba38bdd6618f2975b4e96"
+  },
+  {
+    "name": "practice_drill_start",
+    "signature": "public.practice_drill_start(uuid,text)",
+    "hash": "3a411026c7262e2b550759744bdfa3fd"
+  },
+  {
+    "name": "new_exam",
+    "signature": "public.new_exam(text,text,integer,integer,text,boolean,boolean,text,boolean)",
+    "hash": "bb2429c0407b46076a16d43c1fdb3722"
+  },
+  {
+    "name": "student_daily_quiz_mistakes",
+    "signature": "public.student_daily_quiz_mistakes(uuid,text)",
+    "hash": "c4e60eaf91dce3c13f9a02afa89a7ffc"
+  },
+  {
+    "name": "my_exams",
+    "signature": "public.my_exams(uuid,text)",
+    "hash": "22a7814cad3f359fc4cfcbcfc96f8131"
+  },
+  {
+    "name": "portal_push_collect",
+    "signature": "public.portal_push_collect()",
+    "hash": "e9a41529ec2f7106831c1b65104e449f"
+  },
+  {
+    "name": "portal_push_announce",
+    "signature": "public.portal_push_announce(uuid,uuid,text,text,text)",
+    "hash": "368b2caf8c125ce8a10198c509191924"
+  }
+]

@@ -63,7 +63,7 @@ test('group plan coordinates the saved seven-person class and opens existing les
 test('hidden revision and missing retest are disclosed without invented practice links',async({page,context})=>{
  const audit=await setup(page,context,{visible:false,noRetest:true});await page.locator('#finalsGroupView').click();
  await expect(page.locator('#finalsGroupPlan')).toContainText('Final Revision is hidden from students.');
- await expect(page.locator('#finalsGroupPlan')).toContainText('October weakness retest is not currently published.');
+ await expect(page.locator('#finalsGroupPlan')).toContainText('No weakness retest or diagnosis assessment is currently published.');
  await expect(page.locator('[data-finals-revision]')).toHaveCount(0);await expect(page.locator('[data-finals-retest]')).toHaveCount(0);
  expect(audit.errors).toEqual([]);expect(audit.unexpected).toEqual([]);
 });

@@ -20,7 +20,7 @@ async function main(){
  for(const u of students.slice(0,8))await db.query('insert into group_members(group_id,user_id) values($1,$2)',[group,u]);
  const questions=Array.from({length:12},(_,i)=>id(100+i));
  for(let i=0;i<questions.length;i++){
-  await db.query("insert into questions(id,track_id,stem,topic,assets) values($1,'est','Synthetic question',$2,$3::jsonb)",[questions[i],i<6?'Fallback':'',JSON.stringify(i<5?{curriculum_lesson:'Circles'}:i>=6&&i<10?{curriculum_lesson:'Functions'}:{})]);
+  await db.query("insert into questions(id,track_id,stem,topic,assets) values($1,'est','Synthetic question',$2,$3::jsonb)",[questions[i],i<6?'Fallback':'',JSON.stringify(i<5?{curriculum_lesson:'Circles'}:i===5?{curriculum_lesson:'   '}:i>=6&&i<10?{curriculum_lesson:'Functions'}:{})]);
   await db.query('insert into question_keys(question_id,correct,explanation) values($1,$2::jsonb,$3)',[questions[i],i===4?' {"void":true}':'"A"','PRIVATE ANSWER EXPLANATION']);
  }
  await db.query("insert into exams(id,track_id,title,duration_seconds,question_ids,is_published,assessment_type) values($1,'est','Synthetic exact exam',2100,$2::uuid[],true,'lesson_exam')",[exam,[...questions,questions[0]]]);
@@ -47,8 +47,31 @@ async function main(){
  await db.query("insert into exams(id,track_id,title,duration_seconds,question_ids) values($1,'est','Synthetic exact exam',2100,$2::uuid[])",[id(51),questions]);
  await db.query("insert into exams(id,track_id,title,duration_seconds,assessment_type) values($1,'sat','Other track',2100,'full_exam')",[id(52)]);
  await db.query("insert into attempts(user_id,exam_id,attempt_no,shuffle_seed,deadline_at,status,score,total,submitted_at,review_unlocks_at) values($1,$2,1,1,now(),'graded',10,10,'2090-01-01','2020-01-01')",[students[0],id(51)]);
+ // All course fixtures use the same function signature; the exam determines scope.
+ const courseFixtures=[];
+ for(const [i,track] of ['sat','est2','est_eng'].entries()){
+  const e=id(600+i),q=id(610+i),g=id(620+i);
+  await db.query('insert into tracks(id,name) values($1,$1) on conflict do nothing',[track]);
+  await db.query('insert into instructor_tracks(user_id,track_id) values($1,$2)',[staff,track]);
+  await db.query('insert into groups(id,name,track_id,instructor_id) values($1,$2,$3,$4)',[g,track+' class',track,staff]);
+  await db.query('insert into enrollments(user_id,track_id) values($1,$2)',[students[0],track]);
+  await db.query('insert into group_members(group_id,user_id) values($1,$2)',[g,students[0]]);
+  await db.query("insert into questions(id,track_id,stem,topic) values($1,$2,'Synthetic question','Course lesson')",[q,track]);
+  await db.query("insert into question_keys(question_id,correct) values($1,'\"A\"'::jsonb)",[q]);
+  await db.query("insert into exams(id,track_id,title,duration_seconds,question_ids,is_published,assessment_type) values($1,$2,'Same title across courses',2100,$3::uuid[],true,'full_exam')",[e,track,[q,questions[0]]]);
+  const a=id(630+i);
+  await db.query("insert into attempts(id,user_id,exam_id,attempt_no,shuffle_seed,deadline_at,status,score,total,submitted_at,review_unlocks_at) values($1,$2,$3,1,1,now(),'graded',0,1,now(),'2020-01-01')",[a,students[0],e]);
+  await db.query('insert into attempt_results(attempt_id,question_id,is_correct) values($1,$2,false),($1,$3,false)',[a,q,questions[0]]);
+  courseFixtures.push({e,track});
+ }
  const snapshot=()=>scalar("select jsonb_build_object('attempts',(select jsonb_agg(to_jsonb(a) order by id) from attempts a),'results',(select jsonb_agg(to_jsonb(r) order by attempt_id,question_id) from attempt_results r),'answers',(select jsonb_agg(to_jsonb(a) order by attempt_id,question_id) from attempt_answers a),'assignments',(select jsonb_agg(to_jsonb(a) order by id) from assignments a),'keys',(select jsonb_agg(to_jsonb(k) order by question_id) from question_keys k))");
  const before=await snapshot();await login(staff);await db.exec('set role authenticated');
+ for(const {e,track} of courseFixtures){
+  const data=await scalar('select staff_group_exam_evidence($1,$2::uuid[])',[e,[students[0]]]);
+  assert.equal(data.track_id,track);assert.equal(data.students[0].state,'available');assert.equal(data.students[0].lessons.length,1,'foreign-course question excluded');
+  assert.equal(data.students[0].lessons[0].lesson,'Course lesson');assert.equal(data.students[0].lessons[0].seen,1);
+  await assert.rejects(()=>scalar('select staff_group_exam_evidence($1,$2::uuid[])',[e,[students[1]]]),/student_scope_denied/);
+ }
  let evidence=await rpc(students.slice(0,8));assert.equal(evidence.students.length,8);
  const a=evidence.students.find(x=>x.user_id===students[0]);assert.equal(a.attempt.id,latest);assert.notEqual(a.attempt.id,old);
  assert.equal(evidence.students.find(x=>x.user_id===students[6]).attempt.id,tie);
@@ -68,7 +91,7 @@ async function main(){
  await assert.rejects(()=>rpc([students[8]]),/student_scope_denied/);await assert.rejects(()=>rpc([students[0],id(999)]),/student_scope_denied/);
  await assert.rejects(()=>rpc([null]),/student_scope_denied/);await assert.rejects(()=>rpc(Array(101).fill(students[0])),/invalid_student_selection/);
  await assert.rejects(()=>scalar('select staff_group_exam_evidence($1,$2::uuid[])',[id(999),[students[0]]]),/exam_not_available/);
- await assert.rejects(()=>scalar('select staff_group_exam_evidence($1,$2::uuid[])',[id(52),[students[0]]]),/exam_not_available/);
+ assert.equal((await scalar('select staff_group_exam_evidence($1,$2::uuid[])',[id(52),[students[0]]])).track_id,'sat');
  assert.equal((await rpc([students[0],students[0]])).students.length,1);
  await db.exec('reset role');
  for(const policy of ['score_only','instructor_release']){await db.query('update exams set review_policy=$2 where id=$1',[exam,policy]);await db.exec('set role authenticated');assert.equal((await rpc([students[0]])).students[0].state,'locked');await db.exec('reset role');}
@@ -80,7 +103,7 @@ async function main(){
  await login(students[0]);await assert.rejects(()=>rpc([students[0]]),/staff_required/);
  await db.query("select set_config('request.jwt.claims',$1,false)",[JSON.stringify({sub:students[0],user_role:'admin',user_metadata:{role:'admin'}})]);await assert.rejects(()=>rpc([students[0]]),/staff_required/);
  await login(admin);assert.equal((await rpc(students)).students.length,9);
- await db.exec('reset role');await db.query('delete from instructor_tracks where user_id=$1',[staff]);await login(staff);await db.exec('set role authenticated');await assert.rejects(()=>rpc([students[0]]),/staff_required/);
+ await db.exec('reset role');await db.query('delete from instructor_tracks where user_id=$1',[staff]);await login(staff);await db.exec('set role authenticated');await assert.rejects(()=>rpc([students[0]]),/exam_not_available/);
  await db.exec('reset role');assert.equal(await scalar("select has_function_privilege('anon','public.staff_group_exam_evidence(uuid,uuid[])','EXECUTE')"),false);
  assert.deepEqual(await snapshot(),before,'staff reads must preserve all grades, attempts, answers, assignments and keys');
  console.log('PASS: isolated staff scopes, latest exact attempts, review locks, scored-only distinct aggregates, student-plan parity, no answer keys or writes');

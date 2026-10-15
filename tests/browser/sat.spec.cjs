@@ -1,3 +1,4 @@
+const {withCourseAccess}=require('./fixture-access.cjs');
 const { test, expect } = require('@playwright/test');
 const tracks = [{ id:'sat', name:'SAT Math', exams_available:1, attempts_done:0 }, { id:'est', name:'EST Math', exams_available:0, attempts_done:0 }];
 const exam = { id:'smoke-exam', title:'Synthetic SAT smoke exam', track_id:'sat', assessment_type:'full_exam', questions:2, duration_seconds:2100, open:true };
@@ -8,7 +9,7 @@ const questions = [
  { id:'smoke-q2', topic:'Linear equations', stem:'Solve 2x = 8.', type:'grid_in', assets:{html:'<table><tr><th>x</th><th>2x</th></tr><tr><td>4</td><td>8</td></tr></table>'} }
 ];
 // Replace only the SDK boundary; execute the checked-in portal scripts unchanged.
-const sdk = `window.supabase={createClient(){const session={access_token:'synthetic-local-only',user:{id:'smoke-user'}};return {auth:{onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}}),getSession:async()=>({data:{session}}),getUser:async()=>({data:{user:session.user}})},from:()=>({upsert:async rows=>{window.__savedAnswers=(window.__savedAnswers||[]).concat(rows);return {error:null}}})}}};`;
+const sdk = withCourseAccess(`window.supabase={createClient(){const session={access_token:'synthetic-local-only',user:{id:'smoke-user'}};return {auth:{onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}}),getSession:async()=>({data:{session}}),getUser:async()=>({data:{user:session.user}})},from:()=>({upsert:async rows=>{window.__savedAnswers=(window.__savedAnswers||[]).concat(rows);return {error:null}}})}}};`);
 test('SAT portal, exam navigation/timer/figures and Final Revision', async ({page,context}) => {
  const errors=[], unexpected=[]; let revisionRequested=false;
  page.on('pageerror', e=>errors.push(e.message));
@@ -36,7 +37,15 @@ test('SAT portal, exam navigation/timer/figures and Final Revision', async ({pag
  await expect(page.locator('#vTracks')).toBeVisible();
  await page.getByRole('button',{name:/SAT Math/}).click();
  await expect(page.locator('#listTitle')).toHaveText('SAT Math');
+ await expect(page.locator('#studentSection')).toHaveValue('daily');
+ await expect(page.locator('#studentSection option[value="finalsDiagnosis"]')).toHaveCount(1);
+ await page.locator('#studentSection').selectOption('quiz');
+ await expect(page.locator('[data-view="quiz"]')).toHaveAttribute('aria-current','page');
+ await expect(page.locator('#navigationLocation')).toContainText('Quizzes');
+ await page.locator('#studentSection').selectOption('overview');
+ await expect(page.locator('#navigationLocation')).toContainText('SAT Math / Progress');
  await page.locator('[data-view="revision"]').click();
+ await expect(page.locator('#studentSection')).toHaveValue('revision');
  await expect(page.locator('.revision-lesson')).toContainText('Linear functions');
  expect(revisionRequested).toBe(true);
  await expect(page.locator('[data-revision-start="10"]')).toBeEnabled();

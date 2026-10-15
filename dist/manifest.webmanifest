@@ -1,0 +1,32 @@
+{
+  "id": "/",
+  "name": "Ghoneem Math Portal",
+  "short_name": "Ghoneem Math",
+  "description": "SAT, EST and ACT practice with Eng Abdelrahman Ghoneem.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FBFAF7",
+  "theme_color": "#14243E",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icons/portal-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/portal-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/portal-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

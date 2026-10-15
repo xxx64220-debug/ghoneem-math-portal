@@ -1,0 +1,13 @@
+const {test}=require('node:test'),assert=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
+const id='00000000-0000-4000-8000-000000000002';
+function setup(overrides={}){
+ const original={track_id:'est',assets:{release_hold_reason:'Ambiguous',replacement_question_id:id}},reads=[];
+ let opened,closed=0;
+ const target={id,track_id:'est',type:'mcq',choices:[{key:'A',text:'1'},{key:'B',text:'2'}],assets:{verified_release:'checked'},...overrides};
+ const ctx=vm.createContext({sb:{from(table){const args={table};const builder={select(cols){args.cols=cols;return builder;},eq(k,v){args[k]=v;return builder;},async single(){reads.push(args);return{data:table==='questions'?target:{correct:'A',explanation:'Independent solution'}};}};return builder;}},$:()=>({open:true,close(){closed++;}}),openTeachingExam:async q=>{opened=q;}});
+ vm.runInContext(fs.readFileSync('web/verified-bank-version.js','utf8'),ctx);return{ctx,original,reads,opened:()=>opened,closed:()=>closed};
+}
+test('held original opens linked version with live same-track and key checks; no writes',async()=>{const s=setup();assert.match(s.ctx.verifiedBankVersionMarkup(s.original),/type="button"/);await s.ctx.openVerifiedBankVersion(s.original);assert.equal(s.closed(),1);assert.deepEqual(Array.from(s.opened().question_ids),[id]);assert.equal(s.reads.length,2);assert.equal(s.reads[0].track_id,'est');assert.ok(s.reads.every(r=>r.table==='questions'||r.table==='question_keys'));});
+test('ready originals and missing/malformed links have no preview action',()=>{const s=setup();for(const q of [{assets:{}},{assets:{replacement_question_id:id}},{assets:{release_hold_reason:'held',replacement_question_id:'<script>'}}])assert.equal(s.ctx.verifiedBankVersionMarkup(q),'');});
+test('stale hold, removed version and cross-track target are rejected before closing editor',async()=>{for(const override of [{track_id:'est2'},{assets:{release_hold_reason:'New defect',verified_release:'yes'}},{assets:{bank_removed:true,verified_release:'yes'}},{assets:{}}]){const s=setup(override);await assert.rejects(s.ctx.openVerifiedBankVersion(s.original),/unavailable/);assert.equal(s.closed(),0);assert.equal(s.opened(),undefined);}});
+test('web/dist helper and editor integration stay identical and add only read-only preview',()=>{assert.equal(fs.readFileSync('web/verified-bank-version.js','utf8'),fs.readFileSync('dist/verified-bank-version.js','utf8'));const s=fs.readFileSync('web/admin.html','utf8');assert.equal(s,fs.readFileSync('dist/admin.html','utf8'));assert.match(s,/verifiedBankVersionMarkup\(x\)/);assert.match(s,/openVerifiedBankVersion\(x\)/);assert.match(s,/verified-bank-version\.js\?v=20261013/);});

@@ -30,9 +30,9 @@ function finalsExamLessons(items){
  for(const q of items||[]){
   if(q.correct?.void||typeof q.is_correct!=='boolean'||!q.id||seen.has(q.id))continue;
   seen.add(q.id);
-  const lesson=String(q.assets?.curriculum_lesson||q.topic||'').trim();
+  const lesson=String(q.assets?.curriculum_lesson||'').trim()||String(q.topic||'').trim();
   const key=lesson||'Unclassified questions';
-  if(!groups.has(key))groups.set(key,{lesson:key,classified:!!lesson,seen:0,correct:0,missed:0,blank:0});
+  if(!groups.has(key))groups.set(key,{lesson:key,classified:!!lesson&&!['Unclassified questions','Mixed / untagged'].includes(lesson),seen:0,correct:0,missed:0,blank:0});
   const row=groups.get(key);row.seen++;if(q.is_correct)row.correct++;else{row.missed++;if(q.response==null||q.response==='')row.blank++;}
  }
  return [...groups.values()].map(x=>({...x,percent:Math.round(100*x.correct/x.seen)})).sort((a,b)=>b.missed-a.missed||a.percent-b.percent||a.lesson.localeCompare(b.lesson));
@@ -67,7 +67,7 @@ function finalsExamLessons(items){
   if(!examReview)return out+'</section>';
   const rows=finalsExamLessons(examReview.items),missed=rows.filter(x=>x.missed>0);
   out+='<p class="dash-notice">'+(!rows.length?'No scored question evidence is available yet.':missed.length?'Start with the missed lessons below, then retest using unseen questions.':'No mistakes in the available scored questions. Keep these lessons fresh with mixed practice.')+'</p>';
-  out+=rows.length?'<div class="lesson-grid">'+rows.map(x=>'<article class="lesson-card '+(x.missed?'focus':'strong')+'"><h3>'+esc(x.lesson)+'</h3><p>'+x.correct+'/'+x.seen+' correct · '+x.percent+'%</p><p>'+x.missed+' missed'+(x.blank?' · '+x.blank+' unanswered':'')+'</p>'+(x.seen<3?'<p class="dash-note">Limited evidence: fewer than 3 questions in this exam.</p>':'')+(x.missed&&x.classified?'<button class="btn-ghost" data-diagnosis-revision="'+esc(x.lesson)+'" '+(DASH.revisionVisible===false?'disabled':'')+'>Study this in Final Revision</button>':'')+(!x.classified?'<p class="dash-note">Lesson metadata is unavailable. Review these questions with your instructor.</p>':'')+'</article>').join('')+'</div>':'<p class="dash-empty">No scored question results are available for this exam.</p>';
+  out+=rows.length?'<div class="lesson-grid">'+rows.map(x=>'<article class="lesson-card '+(x.missed?'focus':'strong')+'"><h3>'+esc(x.lesson)+'</h3><p>'+x.correct+'/'+x.seen+' correct · '+x.percent+'%</p><p>'+x.missed+' missed'+(x.blank?' · '+x.blank+' unanswered':'')+'</p>'+(x.seen<3?'<p class="dash-note">Limited evidence: fewer than 3 questions in this exam.</p>':'')+(x.missed&&x.classified?studyActions(x.lesson):'')+(!x.classified?'<p class="dash-note">Lesson metadata is unavailable. Review these questions with your instructor.</p>':'')+'</article>').join('')+'</div>':'<p class="dash-empty">No scored question results are available for this exam.</p>';
   return out+'<p class="dash-note">Excluded or ungraded questions are not used in this study plan.</p><button class="btn-ghost" data-review="'+esc(selected.id)+'">Review this exam</button></section>';
  }
  async function loadFinalsExam(id){
@@ -85,8 +85,14 @@ function finalsExamLessons(items){
  }
 
  function finalsBottom(){
-   return (DASH.lessons||[]).filter(x=>Number(x.seen)>=3&&x.percent!=null)
-     .sort((a,b)=>Number(a.percent)-Number(b.percent)||Number(b.seen)-Number(a.seen)).slice(0,3);
+   const lessons=new Map(),track=ST.track?.id;
+   for(const x of DASH.lessons||[]){
+     const lesson=String(x.lesson||'').trim(),seen=Number(x.seen),percent=Number(x.percent);
+     if((x.track_id&&x.track_id!==track)||!lesson||['Mixed / untagged','Unclassified questions'].includes(lesson)||x.percent==null||String(x.percent).trim()===''||!Number.isFinite(percent)||percent<0||percent>100||!Number.isFinite(seen)||seen<3)continue;
+     const prior=lessons.get(lesson);
+     if(!prior||seen>prior.seen||(seen===prior.seen&&percent<prior.percent))lessons.set(lesson,{...x,lesson,seen,percent});
+   }
+   return [...lessons.values()].sort((a,b)=>a.percent-b.percent||b.seen-a.seen||(a.lesson<b.lesson?-1:a.lesson>b.lesson?1:0)).slice(0,3);
  }
  function finalsLatest(){
    return (DASH.history||[]).find(x=>x.assessment_type==='full_exam'&&x.percent!=null)
@@ -94,17 +100,23 @@ function finalsExamLessons(items){
  }
  function finalsPacing(latest){
    if(!latest)return '—';
-   const exam=(DASH.exams||[]).find(x=>x.title===latest.title);
+   const exam=(DASH.exams||[]).find(x=>x.id===latest.exam_id);
    if(!exam||!latest.time_used)return 'Recorded at exam level only';
    const used=Math.round(Number(latest.time_used)/60),allowed=Math.round(Number(exam.duration_seconds||0)/60);
    return allowed?used+'m / '+allowed+'m':'Recorded at exam level only';
+ }
+ function studyActions(lesson){
+   const disabled=DASH.access?.practice_open===false;
+   const reference='<button class="btn-ghost" data-diagnosis-formulas="'+esc(lesson)+'">'+(ST.track?.id==='est_eng'?'Review rules':'Review formulas')+'</button>';
+   const practice=ST.track?.id==='est_eng'?'<button class="btn-ghost" data-go="drill" '+(disabled?'disabled':'')+'>Practise weak topics</button>':'<button class="btn-ghost" data-diagnosis-revision="'+esc(lesson)+'" '+(disabled||DASH.revisionVisible===false?'disabled':'')+'>Practise in Final Revision</button>';
+   return reference+practice;
  }
  function finalsDiagnosisPanel(){
    const latest=finalsLatest(),bottom=finalsBottom();
    const topics=bottom.length?bottom.map(x=>esc(x.lesson)+' '+x.percent+'%').join('<br>'):'More reviewed questions needed';
    const score=latest?(latest.score==null?'Awaiting grading':latest.score+'/'+latest.total+' · '+latest.percent+'%'):'No completed assessment yet';
    const repeats=finalsLoading?'Loading…':finalsRepeat==null?'Open Mistake Notebook for repeat history':finalsRepeat+' active repeat-error question'+(finalsRepeat===1?'':'s');
-   return '<section class="dash-panel finals-diagnosis"><div class="dash-heading"><h2>Finals diagnosis</h2><span class="badge">EST I final week</span></div>'+
+   return '<section class="dash-panel finals-diagnosis"><div class="dash-heading"><h2>Diagnosis</h2><span class="badge">'+esc(ST.track?.name||ST.track?.id||'')+'</span></div>'+
     '<p class="dash-note">Use this as a decision sheet: diagnose first, then teach only the bottom 2–3 skills. It does not replace Final Revision, Mistake Notebook, or Weak-topic Drill.</p>'+
     '<div class="student-table"><table><thead><tr><th>Score</th><th>Topic accuracy</th><th>Error type</th><th>Slow questions</th><th>Repeat errors</th></tr></thead><tbody><tr>'+
     '<td><b>'+score+'</b><span class="history-detail">'+(latest?esc(latest.title):'Complete a mock first')+'</span></td>'+
@@ -112,29 +124,29 @@ function finalsExamLessons(items){
     '<td><b>Teacher review</b><span class="history-detail">C / A / R / D / T / X</span></td>'+
     '<td><b>Not individually measured</b><span class="history-detail">Whole-attempt pacing: '+finalsPacing(latest)+'</span></td>'+
     '<td><b>'+repeats+'</b><span class="history-detail">RPT = the same question/pattern keeps returning</span></td></tr></tbody></table></div>'+
-    '<div class="diagnosis-bottom"><h3>Bottom skills to fix first</h3>'+(bottom.length?bottom.map((x,i)=>'<article class="lesson-card '+esc(x.priority)+'"><div class="lesson-card-top"><h3>'+(i+1)+'. '+esc(x.lesson)+'</h3><span class="priority-label">'+x.percent+'%</span></div><p>'+x.correct+'/'+x.seen+' distinct reviewed questions correct. Repair this skill, then retest with unseen mixed questions.</p><button class="btn-ghost" data-diagnosis-revision="'+esc(x.lesson)+'" '+(DASH.revisionVisible===false?'disabled':'')+'>Practise this in Final Revision</button></article>').join(''):'<div class="dash-empty">Complete enough reviewed questions to identify reliable bottom skills.</div>')+'</div>'+
+    '<div class="diagnosis-bottom"><h3>Bottom skills to fix first</h3>'+(bottom.length?bottom.map((x,i)=>'<article class="lesson-card '+esc(x.priority)+'"><div class="lesson-card-top"><h3>'+(i+1)+'. '+esc(x.lesson)+'</h3><span class="priority-label">'+x.percent+'%</span></div><p>'+x.correct+'/'+x.seen+' distinct reviewed questions correct. Repair this skill, then retest with unseen mixed questions.</p>'+studyActions(x.lesson)+'</article>').join(''):'<div class="dash-empty">Complete enough reviewed questions to identify reliable bottom skills.</div>')+'</div>'+
     finalsExamPanel()+
-    '<div class="diagnosis-legend"><h3>Error codes</h3><p><b>C</b> — Concept &nbsp; <b>A</b> — Algebra/calculation &nbsp; <b>R</b> — Reading &nbsp; <b>D</b> — Calculator &nbsp; <b>T</b> — Timing &nbsp; <b>X</b> — Careless &nbsp; <b>RPT</b> — Repeat mistake</p><p class="dash-note">C/A/R/D/T/X are intentionally teacher-classified after reviewing the work; the portal does not guess a cause from a wrong answer.</p></div>'+
-    '<div class="dash-notice"><strong>Final-week rule:</strong> Do not immediately reteach everything missed. Identify the bottom 2–3 skills, repair them, then retest.</div></section>';
+    '<div class="diagnosis-legend"><h3>Error codes</h3><p><b>C</b> — Concept &nbsp; <b>A</b> — '+(ST.track?.id==='est_eng'?'Grammar/application':'Algebra/calculation')+' &nbsp; <b>R</b> — Reading &nbsp; <b>D</b> — '+(ST.track?.id==='est_eng'?'Not applicable in English':'Calculator')+' &nbsp; <b>T</b> — Timing &nbsp; <b>X</b> — Careless &nbsp; <b>RPT</b> — Repeat mistake</p><p class="dash-note">C/A/R/D/T/X are intentionally teacher-classified after reviewing the work; the portal does not guess a cause from a wrong answer.</p></div>'+
+    '<div class="dash-notice"><strong>Study rule:</strong> Do not immediately reteach everything missed. Identify the bottom 2–3 skills, repair them, then retest.</div></section>';
  }
  async function loadFinalsRepeats(){
    if(finalsLoading||finalsLoaded)return;finalsLoading=true;const context=DASH.history,track=ST.track?.id;
    try{
-     const {data,error}=await sb.from('practice_notebook').select('question_id,tries,correct_streak').gte('tries',2).lt('correct_streak',2);
+     const {data,error}=await sb.from('practice_notebook').select('question_id,tries,correct_streak,questions!inner(track_id)').eq('questions.track_id',track).gte('tries',2).lt('correct_streak',2);
      if(error)throw error;if(context===DASH.history&&track===ST.track?.id)finalsRepeat=(data||[]).length;
    }catch(_){if(context===DASH.history&&track===ST.track?.id)finalsRepeat=null;}
    finally{if(context===DASH.history&&track===ST.track?.id){finalsLoading=false;finalsLoaded=true;if(DASH.view==='finalsDiagnosis')paintDashboardContent();}}
  }
  paintDashboard=function(){
    syncFinalsContext();basePaintDashboard();
-   if(ST.track?.id!=='est')return;
+   if(!['sat','est','est2','est_eng'].includes(ST.track?.id))return;
    const nav=document.querySelector('.student-tabs');if(!nav||nav.querySelector('[data-view="finalsDiagnosis"]'))return;
-   const b=document.createElement('button');b.className='student-tab '+(DASH.view==='finalsDiagnosis'?'active':'');b.dataset.view='finalsDiagnosis';b.textContent='Finals diagnosis';
+   const b=document.createElement('button');b.className='student-tab '+(!DASH.searchTerm?.trim()&&DASH.view==='finalsDiagnosis'?'active':'');b.dataset.view='finalsDiagnosis';b.textContent='Diagnosis';b.setAttribute('aria-current',!DASH.searchTerm&&DASH.view==='finalsDiagnosis'?'page':'false');
    b.onclick=()=>setDashboardView('finalsDiagnosis');nav.insertBefore(b,nav.firstChild);
  };
  paintDashboardContent=function(){
-   syncFinalsContext();if(DASH.view!=='finalsDiagnosis')return basePaintDashboardContent();
+   syncFinalsContext();if(DASH.view!=='finalsDiagnosis'||DASH.searchTerm?.trim())return basePaintDashboardContent();
    const content=document.getElementById('dashboardContent');if(!content)return;
-   content.innerHTML=finalsDiagnosisPanel();wireDashboard();document.querySelectorAll('[data-diagnosis-revision]').forEach(b=>b.onclick=async()=>{if(DASH.revisionVisible===false)return;const lesson=b.dataset.diagnosisRevision;setDashboardView('revision');if(!REV.data)await refreshRevision();REV.collection='all';REV.level='mixed';REV.lesson=lesson;revisionPaint();});document.querySelectorAll('[data-diagnosis-exam]').forEach(b=>b.onclick=()=>loadFinalsExam(b.dataset.diagnosisExam));loadFinalsRepeats();
+   content.innerHTML=finalsDiagnosisPanel();wireDashboard();if(typeof math==='function')math(content);document.querySelectorAll('[data-diagnosis-formulas]').forEach(b=>b.onclick=()=>{setDashboardView('formulas');if(typeof FORMULAS!=='undefined'){FORMULAS.lesson=b.dataset.diagnosisFormulas;paintDashboardContent();}});document.querySelectorAll('[data-diagnosis-revision]').forEach(b=>b.onclick=async()=>{if(DASH.revisionVisible===false||DASH.access?.practice_open===false)return;const lesson=b.dataset.diagnosisRevision,track=ST.track?.id;setDashboardView('revision');if(!REV.data)await refreshRevision();if(DASH.view!=='revision'||track!==ST.track?.id)return;REV.collection='all';REV.level='mixed';REV.lesson=lesson;revisionPaint();});document.querySelectorAll('[data-diagnosis-exam]').forEach(b=>b.onclick=()=>loadFinalsExam(b.dataset.diagnosisExam));loadFinalsRepeats();
  };
 })();
