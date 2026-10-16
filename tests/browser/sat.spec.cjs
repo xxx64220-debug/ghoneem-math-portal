@@ -10,11 +10,18 @@ const questions = [
 ];
 // Replace only the SDK boundary; execute the checked-in portal scripts unchanged.
 const sdk = withCourseAccess(`window.supabase={createClient(){const session={access_token:'synthetic-local-only',user:{id:'smoke-user'}};return {auth:{onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}}),getSession:async()=>({data:{session}}),getUser:async()=>({data:{user:session.user}})},from:()=>({upsert:async rows=>{window.__savedAnswers=(window.__savedAnswers||[]).concat(rows);return {error:null}}})}}};`);
-test('SAT portal, exam navigation/timer/figures and Final Revision', async ({page,context}) => {
+for (const calculatorMode of ['unconfigured','authorized-fixture','failed-load']) {
+test(`SAT portal, exam navigation/timer/figures and calculator ${calculatorMode}`,  async ({page,context}) => {
  const errors=[], unexpected=[]; let revisionRequested=false;
  page.on('pageerror', e=>errors.push(e.message));
  await context.route('**/*', async route=>{
   const url=new URL(route.request().url());
+  if(url.pathname==='/sat-calculator-config.js' && calculatorMode!=='unconfigured') return route.fulfill({contentType:'application/javascript',body:'window.GHONEEM_DESMOS={productionAuthorized:true,apiKey:"local-fixture-only"};'});
+  if(url.hostname==='www.desmos.com') {
+   if(calculatorMode==='failed-load') return route.abort();
+   if(calculatorMode==='unconfigured') { unexpected.push(url.href); return route.abort(); }
+   return route.fulfill({contentType:'application/javascript',body:'window.Desmos={GraphingCalculator(host){host.innerHTML=`<input aria-label="Calculator expression">`;return {resize(){},destroy(){host.replaceChildren()}}}};'});
+  }
   if(url.origin==='http://127.0.0.1:4173')return route.continue();
   if(url.href===graph)return route.fulfill({contentType:'image/svg+xml',body:graphSvg});
   if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:sdk});
@@ -83,11 +90,35 @@ test('SAT portal, exam navigation/timer/figures and Final Revision', async ({pag
  await expect(page.locator('#satDesmos')).toBeVisible();
  await expect(page.locator('#satDesmos')).toHaveAttribute('href','https://www.desmos.com/testing/collegeboard/graphing');
  await expect(page.locator('#satDesmos')).toHaveAttribute('rel',/noopener/);
- // Also handles a future embed without permitting an external network request.
- for(const frame of await page.locator('#vRun iframe[src*="desmos"]').all())await expect(frame).toBeVisible();
+ const panel=page.locator('#satCalculatorPanel');
+ await expect(panel).toBeHidden();
+ const calculatorBefore=await page.locator('#clock').textContent();
+ await page.locator('#satCalculatorToggle').click();
+ await expect(panel).toBeVisible();
+ await expect(page.locator('#satCalculatorToggle')).toHaveAttribute('aria-expanded','true');
+ if(calculatorMode==='authorized-fixture') await page.getByLabel('Calculator expression').fill('y=x');
+ else await expect(page.locator('#satCalculatorStatus')).toContainText(calculatorMode==='failed-load'?'could not load':'unavailable');
+ const compactBounds=await panel.boundingBox();
+ await page.locator('#satCalculatorSize').click();
+ await expect(page.locator('#satCalculatorSize')).toHaveAttribute('aria-pressed','true');
+ const bounds=await panel.boundingBox();expect(bounds.width).toBeGreaterThan(200);
+ expect(bounds.width>compactBounds.width || bounds.height>compactBounds.height).toBe(true);
+ expect(bounds.x+bounds.width).toBeLessThanOrEqual(page.viewportSize().width+1);
+ await page.locator('#prevBtn').click();
+ await expect(page.locator('.choice[data-k="A"]')).toHaveClass(/sel/);
+ await page.locator('#nextBtn').click();await expect(page.locator('#gin')).toHaveValue('4');
+ await expect(page.locator('#clock')).not.toHaveText(calculatorBefore,{timeout:4000});
+ expect(seconds(await page.locator('#clock').textContent())).toBeLessThan(seconds(calculatorBefore));
+ await page.locator('#satCalculatorClose').click();await expect(panel).toBeHidden();
+ await expect(page.locator('#satCalculatorToggle')).toBeFocused();
+ await page.locator('#satCalculatorToggle').click();
+ if(calculatorMode==='authorized-fixture') await expect(page.getByLabel('Calculator expression')).toHaveValue('y=x');
+ await page.locator('#satCalculatorClose').press('Escape');await expect(panel).toBeHidden();
  const layout=await page.evaluate(()=>({width:document.documentElement.clientWidth,content:document.documentElement.scrollWidth}));
  expect(layout.content,JSON.stringify(layout)).toBeLessThanOrEqual(page.viewportSize().width+1);
  const calculator=await page.locator('#satDesmos').boundingBox();
  expect(calculator.x+calculator.width).toBeLessThanOrEqual(page.viewportSize().width+1);
  expect(errors).toEqual([]);expect(unexpected).toEqual([]);
 });
+
+}
