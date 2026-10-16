@@ -52,6 +52,7 @@ jobs:
       - name: Check integrated navigation, accounts, subscriptions, groups and bulk actions
         run: |
           npm ci --prefix tests/passage-runtime --ignore-scripts --no-audit --no-fund
+          node tests/sat_calculator.test.cjs
           node --test tests/all_course_navigation.test.cjs tests/admin_bulk.test.cjs tests/group_console.test.cjs tests/group_management_ui.test.cjs tests/hardest_cycles_ui.test.cjs tests/navigation.test.cjs tests/portal_management_ui.test.cjs tests/student_groups.test.cjs tests/student_management_ui.test.cjs tests/verified_bank_version.test.cjs
 
       - name: Run source archive UI regression when its checked-in inputs exist

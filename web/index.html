@@ -248,10 +248,16 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
     <span class="clock" id="clock">--:--</span>
     <span class="saving" id="saving"></span>
     <div class="spacer"></div>
+    <button type="button" class="btn-ghost hidden" id="satCalculatorToggle" aria-expanded="false" aria-controls="satCalculatorPanel">Calculator</button>
     <a class="btn-ghost hidden" id="satDesmos" href="https://www.desmos.com/testing/collegeboard/graphing" target="_blank" rel="noopener noreferrer" aria-label="Open official SAT Desmos graphing calculator in a new tab">SAT Desmos ↗</a>
     <button class="btn-ghost" id="flagBtn">Flag</button>
     <button class="btn btn-accent" id="finishBtn">Submit exam</button>
   </div></div>
+  <aside id="satCalculatorPanel" hidden role="region" aria-labelledby="satCalculatorTitle">
+    <div class="calculator-toolbar"><strong id="satCalculatorTitle">Graphing calculator</strong><button type="button" id="satCalculatorSize" class="btn-ghost" aria-label="Enlarge calculator" aria-pressed="false">Enlarge</button><button type="button" id="satCalculatorClose" class="btn-ghost">Close calculator</button></div>
+    <p id="satCalculatorStatus" role="status">Use the official SAT calculator link above while the in-exam calculator is unavailable.</p>
+    <div id="satCalculatorHost"></div>
+  </aside>
   <div class="wrap">
     <div class="palette" id="palette"></div>
     <div class="qcard" id="qcard"></div>
@@ -270,6 +276,9 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 <footer class="pg"><b>Abdelrahman Ghoneem</b> &nbsp;|&nbsp; 01116004434</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js"></script>
+<link rel="stylesheet" href="/sat-calculator.css">
+<script src="/sat-calculator-config.js"></script>
+<script src="/sat-calculator.js"></script>
 <script src="/daily-challenge.js"></script>
 <script src="/lesson-taxonomy.js"></script>
 <script src="/revision-formulas.js?v=20261012-all-groups"></script>
@@ -550,6 +559,7 @@ async function startExam(examId, untimed=false) {
   json.exam.id=examId;
   ST.run = json; ST.idx = 0; ST.flags = new Set();
   $('satDesmos').classList.toggle('hidden',json.exam.track_id!=='sat');
+  window.SatCalculator.start(json.exam.track_id==='sat');
   // Server time is authoritative; measure the offset once and count from it.
   ST.skew = new Date(json.attempt.server_now).getTime() - Date.now();
   restorePending(); startClock(); renderPalette(); renderQ(); show('vRun');if(typeof startExamActivity==='function')startExamActivity(json);
