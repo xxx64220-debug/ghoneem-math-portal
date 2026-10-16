@@ -87,4 +87,3 @@ begin
  jsonb_build_object('archived',172,'est_archived',159,'est2_archived',13,'replacement_links',172,'added',1,'exam_repairs',8,'new_exam_versions',1,'source_status_repairs',15,'preservation',snapshot_after_,'new_question_id',p_->'question'->>'id','new_question_hash',(select md5(jsonb_build_object('q',to_jsonb(q),'k',to_jsonb(k))::text) from public.questions q join public.question_keys k on k.question_id=q.id where q.id=(p_->'question'->>'id')::uuid)));
 end $cleanup$;
 commit;
-

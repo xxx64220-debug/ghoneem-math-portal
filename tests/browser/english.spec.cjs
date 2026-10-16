@@ -1,9 +1,10 @@
+const {withCourseAccess}=require('./fixture-access.cjs');
 const { test, expect } = require('@playwright/test');
 // Synthetic text in the observed import topology: one marked assets.html root,
 // metadata divs, source paragraphs, numbered annotations, and an illustration.
 // No production content fetch or guessed passage boundary is used.
 const passage = '<div class="est-passage"><div>Module 2 · Passage 1</div><div>Fixture passage</div><div>by Fixture author</div><p>First source paragraph.</p><p><b>[2]</b> <u>Underlined source text</u> <mark>[3]</mark><br>Next source line.</p><figure><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPAAAACMCAIAAADN17N/AAAEXUlEQVR4nO3dy00jQRRGYRiRC2tyQCIZAiAEAiCZkchh1gThlRdsZ1FSyTJ0Vbu76j7+Pt8Kjfzodp+5rvJYw/3p/H0HqPjjfQDASAQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQ977vz49DLqOIBLX//+brsjExpSCBpSdi05qs1vEMCl/YtYJjSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkELSg57cP70NwQ9A6Ljs+bNNjvuAPd6Xgn01/vr+6HZMHJrSCxjw+2qgmaH3Pbx/HyZqg01sZ60GaJujcfs10ad18hFFN0Ik1am7sBbWbJuisurP58/21MapnHZY3gtbxa75HW34QdEo/W2ysMQ41qgk6n20VHmRUE3QyN32ssf5mMk0TdCZ7aq431h7VBJ3btq9qCI9qgk7jpo1gl+pOkaBzmBSZ3vKDoBPYv3RuEBvVBB3d1Jq7D5huVBN0PpO+s6+xUzxE0Imux5WxG8EugQ/1xIOu1yDFxbjidcypR/X96fy9+c71V7zE/KVBNqvPSSIc/FK+8w5jf1GyE3rpYsSfMXcxam48Y+Tlh2bQ7Zc77MVo8HpjSfehnmDQa17oyDPGeCO4RqJRrRb01etbBkyiGRPwkIosO0WpoH/W/OvPjbv4CrJ0XpLiQz2doBs1L/1JvWOEixG85ir4qBYJultz/fMUo7oIWHMR+WVUCHplzd0bOF6MgBvBrpjveOmDvrXm9s1cLob7VNss4KjOHfS2muuNI1yMLEvnhlDTIXHQe2ru3svmSgjUXMTZKWYNekjN7fu6DJiMNRdBPtRLGfTAmusj2I/qjBvBLvdRnS/o4TV3H2rGlci7Eexamg42f12TBT2v5vYDjn3TlFk6N3idTqagZ9dcH3bqqD5CzcXlK2l2gmmCtqm5+/gzlgqSNVfGZ5cjaOOa28+yZ/khuRHssjzHBEG71Fyfa+CoFt4IxhE9aMeau096U6DHWTr7Ch10hJrbT71y+UHNZuIGHafmegADlx/up6MqaNDRaq42NH3MjaCXiEGHrbm4afnBRtBYuKCD11ysXH6wdLYXK+gUNVftpqnZRaCgc9Vc3LSkTnFG2UUJOmPNRWP5cXUzg4NBiKDz1lxlPGZJ/kEL1Fw0jjzvSaXjHLRMzcXVFybLz9lPKhfPoMVqrtb8F2SYxC1o1ZoLsdNJxCdo7ZrhyCFoasY81kFTM6YyDZqaMZtd0NQMA0ZBUzNsGAXNR7OwYbfk4J/NYMB0U0jNmM3/y0nAQAQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQQNKQ9DHuXx6WXI4wA7MaEhhaAh5f50/vY+BmAYJjSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSkEDSk/AeP/BiAW5BvCQAAAABJRU5ErkJggg==" alt="Fixture illustration"><figcaption>Source caption</figcaption></figure></div>';
-const sdk = `window.supabase={createClient(){const session={access_token:'synthetic-local-only',user:{id:'smoke-user'}};return {auth:{onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}}),getSession:async()=>({data:{session}}),getUser:async()=>({data:{user:session.user}})},from:()=>({upsert:async rows=>{window.__savedAnswers=(window.__savedAnswers||[]).concat(rows);return {error:null}}})}}};`;
+const sdk = withCourseAccess(`window.supabase={createClient(){const session={access_token:'synthetic-local-only',user:{id:'smoke-user'}};return {auth:{onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}}),getSession:async()=>({data:{session}}),getUser:async()=>({data:{user:session.user}})},from:()=>({upsert:async rows=>{window.__savedAnswers=(window.__savedAnswers||[]).concat(rows);return {error:null}}})}}};`);
 
 for (const track of ['est_eng','sat','est','est2']) {
  test(`${track}: passage layout, interaction and review`, async ({page,context}, testInfo) => {
@@ -67,8 +68,8 @@ for (const track of ['est_eng','sat','est','est2']) {
   await page.screenshot({path:testInfo.outputPath('passage.png'),fullPage:true});
  } else {
   await expect(page.locator('#qcard .english-reading')).toHaveCount(0);
-  // Even marked HTML remains a generic figure for each math track.
-  await expect(page.locator('#qcard .fig')).toContainText('First source paragraph.');
+  // Marked source text keeps its readable fallback, without the English split pane.
+  await expect(page.locator('#qcard .english-passage')).toContainText('First source paragraph.');
   await expect(page.locator('#qcard .english-passage-pane')).toHaveCount(0);
  }
  await page.locator('#qcard .choice[data-k="A"]').click();

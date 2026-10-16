@@ -40,7 +40,6 @@ function revisionCollections(){return `<nav class="revision-collections" aria-la
 function revisionPanel(){
  if(REV.loading||(!REV.data&&!REV.error))return '<section class="dash-panel"><h2>Final revision</h2><p role="status">Loading revision questions…</p></section>';
  if(!REV.data)return `<section class="dash-panel"><h2>Final revision</h2><p role="alert">${esc(REV.error)}</p><button class="btn" data-revision-refresh>Try again</button></section>`;
- if(REV.mode==='formulas')return revisionFormulaPanel();
  if(REV.session)return revisionSessionPanel();
  const rows=revisionRows(),lessons=[...new Set(rows.map(q=>q.lesson))].sort();
  const selected=rows.filter(q=>!REV.lesson||q.lesson===REV.lesson),ideaCount=new Set(selected.map(q=>q.lesson+'|'+q.idea)).size;
@@ -68,9 +67,8 @@ async function revisionStart(count,lesson=REV.lesson,retry=null){
 }
 function wireRevision(){
  document.querySelector('[data-revision-main]')?.addEventListener('click',()=>{if(!REV.busy)setDashboardView('overview');});
- document.querySelectorAll('[data-revision-formulas]').forEach(b=>b.onclick=()=>{if(REV.busy)return;REV.mode='formulas';REV.error='';revisionPaint();});
- document.querySelector('[data-formulas-to-questions]')?.addEventListener('click',()=>{REV.mode='questions';revisionPaint();});
- document.querySelectorAll('[data-formula-lesson]').forEach(b=>b.onclick=()=>{REV.formulaLesson=b.dataset.formulaLesson;revisionPaint();});
+ document.querySelectorAll('[data-revision-formulas]').forEach(b=>b.onclick=()=>{if(REV.busy)return;setDashboardView('formulas');});
+
  document.querySelectorAll('[data-revision-collection]').forEach(b=>b.onclick=()=>{if(REV.busy)return;REV.collection=b.dataset.revisionCollection;REV.lesson='';REV.level='mixed';REV.error='';revisionPaint();});
  document.querySelector('[data-revision-resume]')?.addEventListener('click',()=>{REV.session=REV.data.session;REV.index=Math.max(0,REV.session.questions.findIndex(q=>!q.feedback));REV.draft='';REV.error='';revisionPaint();});
  document.querySelector('[data-revision-refresh]')?.addEventListener('click',refreshRevision);

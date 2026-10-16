@@ -85,4 +85,3 @@ async function main(){
  console.log('PASS: exact production fingerprints; atomic late-conflict/key/revision rejection; 28 records, two choice repairs, unchanged accepted keys and all history/assessments; numeric grader and MCQ checks; source metadata preserved; revision fingerprint refreshed; replay and guarded rollback.');
  await db.close();
 }main().catch(async e=>{console.error(e);await db.close();process.exitCode=1});
-

@@ -1,4 +1,4 @@
-// Formula lessons for the Final Revision tab. Source wording is retained where
+// Standalone course formula and rules reference. Source wording is retained where
 // correct; formulas below use explicit conditions and corrected notation.
 // This file contains only authored curriculum content, never student data.
 const REVISION_FORMULA_TRACKS = {
@@ -285,12 +285,16 @@ function revisionFormulaRuleLines(value) {
     .map(line => line.replace(/^([a-z]{2,})(?=\b)/, word => word[0].toUpperCase() + word.slice(1)));
 }
 
-function revisionFormulaPanel() {
-  const course = REVISION_FORMULA_TRACKS[ST.track?.id];
+function revisionFormulaPanel({track=ST.track?.id,selectedLesson=typeof REV!=='undefined'?REV.formulaLesson:'',standalone=false}={}) {
+  const course = REVISION_FORMULA_TRACKS[track];
   if (!course) return '<section class="dash-panel"><h2>Formula lessons</h2><p>Choose a SAT or EST track to view its lessons.</p></section>';
   const names = course.lessons.filter(name => REVISION_FORMULA_LESSONS[name]);
-  const selected = REV.formulaLesson && names.includes(REV.formulaLesson) ? REV.formulaLesson : names[0];
-  const variant = ST.track?.id === 'est2' ? {'Trigonometry':'Trigonometry and trig graphs','Functions and transformations':'Functions, inverses and asymptotes','Circles':'Circles and power of a point','Probability and conditional probability':'Probability, permutations and combinations'}[selected] : null;
+  let requested=selectedLesson;
+  if(requested&&!names.includes(requested)&&typeof canonicalMathLesson==='function'){try{requested=canonicalMathLesson(track,requested);}catch(_){}}
+  const cardsFor=selected=>names.map(name=>`<button type="button" class="formula-lesson-link ${name===selected?'selected':''}" data-formula-lesson="${revisionFormulaEscape(name)}">${revisionFormulaEscape(name)}</button>`).join('');
+  if(requested&&!names.includes(requested))return `<section class="dash-panel formula-panel"><div class="review-menu"><button class="btn-ghost" data-reference-main>← Main menu</button></div><h2>${track==='est_eng'?'English rules':'Formulas'}</h2><div class="formula-layout"><nav class="formula-lesson-list" aria-label="Reference lessons">${cardsFor('')}</nav><article class="formula-lesson"><h3>${revisionFormulaEscape(selectedLesson)}</h3><p>No exact reference match is available for this lesson. Choose the relevant lesson from the list or review the question with your instructor.</p></article></div></section>`;
+  const selected = requested || names[0];
+  const variant = track === 'est2' ? {'Trigonometry':'Trigonometry and trig graphs','Functions and transformations':'Functions, inverses and asymptotes','Circles':'Circles and power of a point','Probability and conditional probability':'Probability, permutations and combinations'}[selected] : null;
   const lesson = REVISION_FORMULA_LESSONS[variant || selected];
   const cards = names.map(name => `<button type="button" class="formula-lesson-link ${name === selected ? 'selected' : ''}" data-formula-lesson="${revisionFormulaEscape(name)}" aria-current="${name === selected ? 'true' : 'false'}">${revisionFormulaEscape(name)}</button>`).join('');
   const facts = course.facts.map(item => `<li>${revisionFormulaEscape(item)}</li>`).join('');
@@ -302,7 +306,7 @@ function revisionFormulaPanel() {
   const examples = Array.isArray(lesson.examples) ? lesson.examples : [lesson.example];
   const noteLines = (Array.isArray(lesson.notes) ? lesson.notes : [lesson.notes]).flatMap(revisionFormulaRuleLines);
   const notes = `<ul class="formula-note-list">${noteLines.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul>`;
-  return `<section class="dash-panel revision-panel formula-panel"><div class="review-menu"><button class="btn-ghost" data-revision-main>← Main menu</button></div><div class="dash-heading"><h2>Formula lessons</h2><span class="revision-badge">${revisionFormulaEscape(course.title)}</span></div><p class="dash-note">${revisionFormulaEscape(course.intro)}</p><details class="formula-course-notes"><summary>Track notes and exam data</summary><ul>${facts}</ul></details><div class="formula-layout"><nav class="formula-lesson-list" aria-label="Formula lessons">${cards}</nav><article class="formula-lesson"><h3>${revisionFormulaEscape(selected)}</h3><section class="formula-key-point" aria-label="Main point"><span class="formula-section-label">Main point</span>${keyPointLines.map(item=>`<p>${revisionFormulaEscape(item)}</p>`).join('')}</section>${diagrams?`<section class="formula-visual-section"><h4>Visual guide</h4><div class="formula-diagram-grid">${diagrams}</div></section>`:''}<section class="formula-content-section"><h4>Rules and formulas</h4><ul class="formula-list">${ruleLines.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul></section><section class="formula-example"><h4>Worked example</h4>${examples.map(item=>`<p>${revisionFormulaEscape(item)}</p>`).join('')}</section><section class="formula-notes"><h4>Notes and common traps</h4>${notes}</section><p class="dash-note formula-provenance">Prepared by Eng. Abdelrahman Ghoneem. Core lesson topics are organized from the supplied revision PDFs; added clarifications are written to state conditions and avoid ambiguous shorthand.</p></article></div><div class="review-menu"><button type="button" class="btn" data-formulas-to-questions>← Question practice</button></div></section>`;
+  return `<section class="dash-panel revision-panel formula-panel"><div class="review-menu"><button class="btn-ghost" ${standalone?'data-reference-main':'data-revision-main'}>← Main menu</button></div><div class="dash-heading"><h2>${track==='est_eng'?'English rules':standalone?'Formulas':'Formula lessons'}</h2><span class="revision-badge">${revisionFormulaEscape(course.title)}</span></div><p class="dash-note">${revisionFormulaEscape(course.intro)}</p><details class="formula-course-notes"><summary>Track notes and exam data</summary><ul>${facts}</ul></details><div class="formula-layout"><nav class="formula-lesson-list" aria-label="${track==='est_eng'?'English rules topics':'Formula lessons'}">${cards}</nav><article class="formula-lesson"><h3>${revisionFormulaEscape(selected)}</h3><section class="formula-key-point" aria-label="Main point"><span class="formula-section-label">Main point</span>${keyPointLines.map(item=>`<p>${revisionFormulaEscape(item)}</p>`).join('')}</section>${diagrams?`<section class="formula-visual-section"><h4>Visual guide</h4><div class="formula-diagram-grid">${diagrams}</div></section>`:''}<section class="formula-content-section"><h4>${track==='est_eng'?'Reading and language rules':'Rules and formulas'}</h4><ul class="formula-list">${ruleLines.map(item=>`<li>${revisionFormulaEscape(item)}</li>`).join('')}</ul></section><section class="formula-example"><h4>Worked example</h4>${examples.map(item=>`<p>${revisionFormulaEscape(item)}</p>`).join('')}</section><section class="formula-notes"><h4>Notes and common traps</h4>${notes}</section><p class="dash-note formula-provenance">${track==='est_eng'?'English reference rules and examples are authored to match the portal question-bank topics.':'Prepared by Eng. Abdelrahman Ghoneem. Core lesson topics are organized from the supplied revision PDFs; added clarifications are written to state conditions and avoid ambiguous shorthand.'}</p></article></div><div class="review-menu"><button type="button" class="btn" data-formulas-to-questions>${track==='est_eng'?'Weak-topic practice':'← Question practice'}</button></div></section>`;
 }
 
 // Use the same visible lesson names as the bank when the shared catalogue is loaded.
@@ -349,3 +353,170 @@ if (typeof MATH_LESSONS !== 'undefined') {
   });
   for (const [track,names] of Object.entries(MATH_LESSONS)) REVISION_FORMULA_TRACKS[track].lessons=[...names];
 }
+
+// English references match the existing question-bank topic names.
+REVISION_FORMULA_TRACKS.est_eng={
+  "title": "EST English",
+  "intro": "Use these reading and language rules alongside your English question bank. Select the exact lesson identified in Diagnosis, then check the rule against the passage or sentence.",
+  "facts": [
+    "Reading questions use the information in the passage, including its qualifications and evidence.",
+    "Language questions require both grammatical correctness and the intended meaning. These are study rules, not official exam-format claims."
+  ],
+  "lessons": [
+    "RC · Central idea and summary",
+    "RC · Details and textual evidence",
+    "RC · Inference and conclusions",
+    "RC · Purpose, tone and point of view",
+    "RC · Vocabulary in context",
+    "RC · Evaluating reasoning and graphics",
+    "EOI · Transitions and conjunctions",
+    "EOI · Word choice in context",
+    "EOI · Adding and supporting information",
+    "EOI · Organization and sentence placement",
+    "EOI · Concision, style and tone",
+    "SEC · Punctuation and sentence boundaries",
+    "SEC · Pronouns and agreement",
+    "SEC · Verb tense and form",
+    "SEC · Word forms, modifiers and parallelism",
+    "SEC · Possessives and plurals",
+    "SEC · Prepositions and idioms"
+  ]
+};
+Object.assign(REVISION_FORMULA_LESSONS,{
+  "RC · Central idea and summary": {
+    "formulas": [
+      "Identify the claim that explains the whole passage; a correct detail alone is not necessarily the central idea.",
+      "A summary keeps the main claim and essential support, omitting examples that are not needed to explain it."
+    ],
+    "example": "If a passage explains how a new method reduces waste and gives two trials as evidence, summarize the method and result rather than only the first trial.",
+    "notes": "Check every part of an answer against the whole passage. Avoid adding a conclusion the author never makes."
+  },
+  "RC · Details and textual evidence": {
+    "formulas": [
+      "Find the exact sentence or evidence that supports the requested detail.",
+      "Distinguish what the passage states from what you know outside the passage; the answer must fit the stated information."
+    ],
+    "example": "If the text says a survey covered three coastal towns, an answer claiming it covered the entire country is too broad.",
+    "notes": "An answer can repeat words from the passage and still distort their meaning. Check qualifiers, quantities and comparisons."
+  },
+  "RC · Inference and conclusions": {
+    "formulas": [
+      "Choose a conclusion that follows from the text, even when it is not stated word for word.",
+      "Prefer the least speculative answer supported by the evidence; strong words such as always or never require strong support."
+    ],
+    "example": "If every tested sample weakened in heat, infer that heat weakened the tested samples, not that every material must weaken in heat.",
+    "notes": "An inference is supported reasoning, not a prediction based on outside knowledge. Separate possibility from necessity."
+  },
+  "RC · Purpose, tone and point of view": {
+    "formulas": [
+      "Ask what the author or quoted speaker is trying to do: explain, challenge, illustrate, qualify or persuade.",
+      "Determine tone from the language and argument, and distinguish the author's view from a view being reported."
+    ],
+    "example": "A sentence beginning with a limitation after a positive result may qualify the claim rather than reject the entire study.",
+    "notes": "Read the surrounding sentences. A quotation may present an opposing view that the author later questions."
+  },
+  "RC · Vocabulary in context": {
+    "formulas": [
+      "Replace the target word with the proposed meaning and reread the sentence.",
+      "Use the passage's context to choose the intended sense, not merely the most familiar dictionary definition."
+    ],
+    "example": "In 'the findings support the theory,' support means provide evidence for, rather than physically hold up.",
+    "notes": "Check whether the replacement preserves the sentence's logical meaning, grammar and tone."
+  },
+  "RC · Evaluating reasoning and graphics": {
+    "formulas": [
+      "Identify the claim being tested, then use the relevant evidence or graph values to judge it.",
+      "Check axis labels, units, legend, time period and comparison groups before reading a graph."
+    ],
+    "example": "A graph of percentages cannot establish which group has more people unless the group sizes are also known.",
+    "notes": "Correlation alone does not establish causation. A result from a sample may need further evidence before being generalized."
+  },
+  "EOI · Transitions and conjunctions": {
+    "formulas": [
+      "Choose a transition for the relationship between ideas: addition, contrast, cause, result, example or sequence.",
+      "Read both sides of the transition; grammar alone cannot determine whether the ideas contrast or support each other."
+    ],
+    "example": "'The method is expensive. However, it saves time' marks a contrast between cost and benefit.",
+    "notes": "Do not choose a transition because it sounds formal. Confirm the logical connection in the actual passage."
+  },
+  "EOI · Word choice in context": {
+    "formulas": [
+      "Choose wording that conveys the intended meaning precisely and fits the sentence structure.",
+      "Check connotation and register as well as the literal definition of a word."
+    ],
+    "example": "'The evidence suggests' expresses a tentative conclusion; 'proves' makes a stronger claim that needs stronger support.",
+    "notes": "Similar words are not always interchangeable. Check the relationship between the chosen word and nearby nouns or verbs."
+  },
+  "EOI · Adding and supporting information": {
+    "formulas": [
+      "An added sentence should support the paragraph's specific purpose with relevant information.",
+      "Prefer details that develop the point; remove material that is interesting but unrelated to that point."
+    ],
+    "example": "A paragraph comparing fuel efficiency needs a detail about fuel use, not an unrelated fact about vehicle color.",
+    "notes": "For evidence questions, verify that the detail actually supports the stated claim and does not contradict the passage."
+  },
+  "EOI · Organization and sentence placement": {
+    "formulas": [
+      "Place a sentence where its references and logical role make sense.",
+      "Introductions should prepare for the details that follow; conclusions should follow the evidence they summarize."
+    ],
+    "example": "A sentence using 'this discovery' should come after the discovery has been introduced clearly.",
+    "notes": "Check pronouns, repeated terms and chronology. Avoid moving a sentence so that it refers to an idea not yet introduced."
+  },
+  "EOI · Concision, style and tone": {
+    "formulas": [
+      "Remove unnecessary repetition while preserving the intended meaning.",
+      "Use wording consistent with the passage's tone and maintain the information needed for its purpose."
+    ],
+    "example": "'Because of the fact that' can usually be shortened to 'because' without changing meaning.",
+    "notes": "The shortest answer is not automatically best. It must remain grammatical, precise and complete."
+  },
+  "SEC · Punctuation and sentence boundaries": {
+    "formulas": [
+      "Two independent clauses need a period, a semicolon, or a comma with a coordinating conjunction.",
+      "A colon normally follows a complete clause and introduces an explanation, example or list; a comma alone cannot join two complete clauses."
+    ],
+    "example": "'The trial ended; the team reviewed the results' joins two complete clauses correctly. 'The trial ended, the team reviewed the results' is a comma splice.",
+    "notes": "Identify complete clauses before choosing punctuation. A comma may separate a dependent opening clause from the main clause."
+  },
+  "SEC · Pronouns and agreement": {
+    "formulas": [
+      "A pronoun should refer clearly to its intended antecedent and agree with it where number matters.",
+      "Make a verb agree with the grammatical subject, not a nearby noun in a prepositional phrase."
+    ],
+    "example": "'The list of results is complete' uses is because the subject is list. 'The results are complete' uses are.",
+    "notes": "Check whether a pronoun has more than one possible referent. Preserve the intended person, number and case."
+  },
+  "SEC · Verb tense and form": {
+    "formulas": [
+      "Choose the verb form that fits the time relationships and structure of the sentence.",
+      "Keep tenses consistent unless a change in time requires a change; use the required participle after an auxiliary verb."
+    ],
+    "example": "'By the time the team arrived, the test had ended' places the ending before another past event.",
+    "notes": "Do not change tense merely because a nearby sentence uses a different one. Read the full timeline and the grammatical construction."
+  },
+  "SEC · Word forms, modifiers and parallelism": {
+    "formulas": [
+      "Use adjectives to modify nouns and adverbs where the construction requires them; place modifiers next to what they describe.",
+      "Keep items in a parallel list in the same grammatical form."
+    ],
+    "example": "'The task involves measuring, recording and comparing' keeps three parallel verb forms.",
+    "notes": "An introductory modifier must describe the subject that follows. Avoid a sentence that accidentally assigns an action to the wrong subject."
+  },
+  "SEC · Possessives and plurals": {
+    "formulas": [
+      "Use an apostrophe for possession, not for an ordinary plural noun.",
+      "A singular possessive normally adds 's; a regular plural ending in s normally adds an apostrophe after s."
+    ],
+    "example": "'The student's answer' belongs to one student; 'the students' answers' belongs to several students.",
+    "notes": "Its is possessive; it's means it is or it has. Determine the meaning before choosing the form."
+  },
+  "SEC · Prepositions and idioms": {
+    "formulas": [
+      "Choose the preposition required by the meaning and the standard construction.",
+      "Check the whole phrase; a literal translation from another language may not use the same preposition in English."
+    ],
+    "example": "'Interested in the result' and 'responsible for the result' use different prepositions with different adjectives.",
+    "notes": "For an idiom, test the complete expression rather than judging a preposition in isolation. Keep the intended relationship clear."
+  }
+});

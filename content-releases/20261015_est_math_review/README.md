@@ -115,4 +115,3 @@ successful and conflict-rejected rollback. No test connects to production.
 To rebuild the release, materialize the exact supplied archive into
 `../sources/archive` and run `python3 content-releases/20261015_est_math_review/build.py`.
 CI runs the committed packet's math and isolated SQL tests without the archive.
-

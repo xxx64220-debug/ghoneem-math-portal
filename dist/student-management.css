@@ -1,0 +1,7 @@
+.student-admin-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.student-admin-tabs .on{background:var(--navy);color:#fff}
+.student-course-summary{margin-bottom:8px}.student-course-summary small{display:block;color:var(--muted);margin-top:4px}
+.student-course-card{margin:18px 0;padding:16px;border:1px solid var(--line);border-radius:10px}.student-course-card legend{font-weight:700;color:var(--navy)}
+.student-course-card [data-course-fields][hidden]{display:none}.student-course-card .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.student-course-card h3{margin:12px 0;font-size:16px}.student-course-card [type=checkbox]{width:20px;height:20px;padding:0}
+#studentSetupProgress{margin-top:14px;color:var(--navy)}
+@media(max-width:600px){.student-admin-tabs button{flex:1;min-height:44px}.student-course-card{padding:12px}.student-course-card .grid{grid-template-columns:1fr}}

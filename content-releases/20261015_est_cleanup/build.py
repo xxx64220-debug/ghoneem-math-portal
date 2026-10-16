@@ -41,4 +41,3 @@ packet={'archive':archive,'question':new,'exams':exams,'sources':sources,'member
 (D/'apply.sql').write_text((D/'apply.template.sql').read_text().replace('__PACKET__',"'"+json.dumps(packet,ensure_ascii=False).replace("'","''")+"'::jsonb"))
 (D/'rollback.sql').write_text((D/'rollback.template.sql').read_text().replace('__PACKET__',"'"+json.dumps(packet,ensure_ascii=False).replace("'","''")+"'::jsonb"))
 print('Built: 172 archives (159 EST I, 13 EST II), 172 usable replacement links, 1 explicit adaptation, 8 assessment repairs (7 unused, 1 new version), 15 archive-status corrections.')
-

@@ -112,4 +112,3 @@ production rollback was run.
 Rebuild with `python3 content-releases/20261015_est_cleanup/build.py`.
 The required authentic source image is already committed. SQL must only be
 applied to the exact guarded before state; this release is already complete.
-

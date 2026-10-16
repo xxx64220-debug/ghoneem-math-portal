@@ -19,4 +19,3 @@ begin
  insert into audit_log(action,target_type,target_id,meta) values('content.est_math_review_20261015.rollback','content_release','20261015_est_math_review',jsonb_build_object('restored',n_));
 end $rollback$;
 commit;
-

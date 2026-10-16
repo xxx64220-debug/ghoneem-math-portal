@@ -3,6 +3,14 @@ import {admin, requireUser, ApiError, serve, json} from '../_shared/http.ts';
 import {origins,validEndpoint,validKeys} from './policy.ts';
 const db=admin();
 function check(result:any){if(result.error)throw new ApiError('notification_service_error',500);return result.data;}
+async function hasCurrentCourseAccess(userId:string, trackId:string|null=null){
+ let q=db.from('enrollments').select('track_id').eq('user_id',userId).eq('status','active');
+ if(trackId)q=q.eq('track_id',trackId);
+ for(const e of (check(await q)||[])){
+  if(check(await db.rpc('is_enrolled',{p_user:userId,p_track:e.track_id})))return true;
+ }
+ return false;
+}
 async function work(config:any){
  check(await db.rpc('portal_push_collect'));
  const jobs=check(await db.rpc('portal_push_claim'))||[];
@@ -14,11 +22,10 @@ async function work(config:any){
   let allowed=p?.status==='active' && validEndpoint(s.endpoint) && origins.has(s.origin);
   if(j.kind==='exam')allowed=allowed&&s.exams&&!!check(await db.rpc('student_assignment_for',{p_exam:j.exam_id,p_user:s.user_id}));
   if(j.kind==='result')allowed=allowed&&s.results;
-  if(j.kind==='reminder')allowed=allowed&&s.reminders;
+  if(j.kind==='reminder')allowed=allowed&&s.reminders&&await hasCurrentCourseAccess(s.user_id);
   if(j.kind==='announcement'){
    const c=check(await db.from('portal_push_campaigns').select('track_id').eq('id',j.campaign_id).single());
-   let q=db.from('enrollments').select('track_id').eq('user_id',s.user_id).eq('status','active'); if(c.track_id)q=q.eq('track_id',c.track_id);
-   const en=check(await q);allowed=allowed&&en.length>0;
+   allowed=allowed&&await hasCurrentCourseAccess(s.user_id,c.track_id);
   }
   if(!allowed){check(await db.from('portal_push_queue').update({status:'skipped'}).eq('id',j.id));continue;}
   try {

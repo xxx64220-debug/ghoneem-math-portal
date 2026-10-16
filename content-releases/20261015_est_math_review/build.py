@@ -63,4 +63,3 @@ assert len(out)==28
 (D/'packet.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
 (D/'apply.sql').write_text((D/'apply.template.sql').read_text().replace('__PACKET__',"'"+json.dumps(out,ensure_ascii=False).replace("'","''")+"'"))
 print('Built 28 independently reviewed records: 14 EST I and 14 EST II; two source-proven choice repairs; no changed accepted answers.')
-

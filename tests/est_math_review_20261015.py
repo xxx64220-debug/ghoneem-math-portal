@@ -69,4 +69,3 @@ for q in p:
   assert hashlib.sha256(image.read_bytes()).hexdigest()==q['evidence']['image_sha256']
 assert len(p)==28 and sum(q['track_id']=='est' for q in p)==14
 print('PASS: 28 records, exact arithmetic, roots, all MCQ alternatives, inequalities at boundaries, logic truth table, numeric equivalents and source-image hashes.')
-

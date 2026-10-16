@@ -49,6 +49,12 @@ jobs:
           node --test tests/svg_figures.test.cjs
           node --test tests/group_planning_ui.test.cjs
 
+      - name: Check integrated navigation, accounts, subscriptions, groups and bulk actions
+        run: |
+          npm ci --prefix tests/passage-runtime --ignore-scripts --no-audit --no-fund
+          node tests/sat_calculator.test.cjs
+          node --test tests/all_course_navigation.test.cjs tests/admin_bulk.test.cjs tests/group_console.test.cjs tests/group_management_ui.test.cjs tests/hardest_cycles_ui.test.cjs tests/navigation.test.cjs tests/portal_management_ui.test.cjs tests/student_groups.test.cjs tests/student_management_ui.test.cjs tests/verified_bank_version.test.cjs
+
       - name: Run source archive UI regression when its checked-in inputs exist
         run: |
           if [ -f content/est-september-2026/review-archive.json ] && [ -d dist ]; then
@@ -69,6 +75,12 @@ jobs:
           npm ci --prefix tests/june-review-runtime --ignore-scripts --no-audit --no-fund
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/june_remaining_review_db.cjs
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/group_exam_evidence_db.cjs
+
+      - name: Check course access, payments, groups, daily quizzes and trial cycles offline
+        run: |
+          node tests/portal_management_db.cjs
+          node tests/group_isolation_db.cjs
+          node tests/hardest_cycles_db.cjs
 
       - name: Verify preserved SAT intake and private worked-page controls offline
         run: |
@@ -257,6 +269,27 @@ jobs:
           else
             echo "SKIP: tests/fair_exam_keys.sql needs the imported 50-question March 2026 exam fixture."
           fi
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Run September 28 daily quiz database and client regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Controls replaces daily_state; apply the quality guard last.
+          for support_sql in \
+            content-releases/2026-09-27-final-revision-schema.sql \
+            content-releases/2026-09-27-revision-focus-schema.sql \
+            content-releases/2026-09-28-portal-controls.sql \
+            supabase/migrations/20260928_daily_quiz_placeholder_guard.sql; do
+            psql -X -v ON_ERROR_STOP=1 -f "$support_sql"
+          done
+          export DAILY_QUIZ_TEST_PAYLOAD="$RUNNER_TEMP/daily-quiz-quality.json"
+          psql -X -qAt -v ON_ERROR_STOP=1 -f tests/daily_quiz_quality.sql > "$DAILY_QUIZ_TEST_PAYLOAD"
+          node --test tests/daily_quiz_quality.test.cjs
+          bash tests/daily_quiz_mutations.sh
 
       - name: Run EST release database gates when source fixtures exist
         shell: bash

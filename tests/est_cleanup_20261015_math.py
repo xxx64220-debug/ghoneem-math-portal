@@ -28,4 +28,3 @@ for e in p['exams']:
 assert len(p['sources'])==15
 assert sum(x['status']=='excluded' for x in p['sources'])==14
 print('PASS: monotone exponential inequality, all four choices/endpoints, authentic embedded PNG; 172 reversible archives, 133 duplicates, 8 single-item substitutions and 15 source-label corrections.')
-

@@ -92,4 +92,3 @@ async function main(){
  console.log('PASS: 172 archive fingerprints, same-track replacements, 7 unused exam edits + 1 history-preserving version, identical keys/results/answers/audiences/timers, source statuses, embedded-figure eligibility, late-source atomic rollback, concurrent history/member guards replay refusal and safe rollback preserving history with draft assessments.');
  await db.close();
 }main().catch(async e=>{console.error(e);await db.close();process.exitCode=1});
-

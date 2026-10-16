@@ -56,4 +56,3 @@ begin
   jsonb_build_object('reviewed',28,'est',14,'est2',14,'choice_repairs',2,'keys_changed',0,'preservation',preservation_after_));
 end $review$;
 commit;
-
