@@ -1,7 +1,9 @@
 const assert=require('node:assert/strict');
 const fs=require('node:fs');
-const {JSDOM}=require('./passage-runtime/node_modules/jsdom');
+let JSDOM;try { ({JSDOM}=require('./english-runtime/node_modules/jsdom')); } catch { ({JSDOM}=require('./passage-runtime/node_modules/jsdom')); }
 const html=fs.readFileSync('web/index.html','utf8');
+assert.match(html, /src="\/sat-calculator.js"/);
+assert.match(html, /href="\/sat-calculator.css"/);
 const script=fs.readFileSync('web/sat-calculator.js','utf8');
 (async()=>{
  for(const mode of ['disabled','demo','authorized','failed']){
