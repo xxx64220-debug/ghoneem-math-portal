@@ -1,0 +1,761 @@
+[
+  {
+    "id": "036596b5-b3bd-509e-9426-045798147b53",
+    "track_id": "est",
+    "source_code": "CP-c19-14",
+    "before_hash": "6102e6497b7fab0fccbef2f47938ca9d",
+    "choices": [],
+    "correct": "9",
+    "explanation": "Complete both squares: (x + 1)² + (y − 4)² = 64 + 1 + 16 = 81. Therefore the radius is √81 = 9.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c19-14",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "1d301f6a-b67f-5f26-9b69-962b99b8e7ba",
+    "track_id": "est",
+    "source_code": "CP-c19-11",
+    "before_hash": "ea85408a97b9fca58c01703faf351536",
+    "choices": [],
+    "correct": "18",
+    "explanation": "Radii PQ and PR are equal, so triangle PQR is isosceles. Its central angle QPR equals the 144° minor arc QR. Each base angle is (180° − 144°)/2 = 18°.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c19-11",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "325130a5-2b69-5b63-bf9c-2fbb1407563a",
+    "track_id": "est",
+    "source_code": "H-15",
+    "before_hash": "cb5063a5dcd98aef4db5aa808b0e5d25",
+    "choices": [
+      {
+        "key": "A",
+        "text": "yˣ"
+      },
+      {
+        "key": "B",
+        "text": "xʸ"
+      },
+      {
+        "key": "C",
+        "text": "x − y"
+      },
+      {
+        "key": "D",
+        "text": "y²/x"
+      }
+    ],
+    "correct": "C",
+    "explanation": "Since x > 0 and y < 0 are odd integers, x − y = x + |y| is positive and even. For example x = 3 and y = −1 satisfies the conditions but makes A = −1, B = 1/3 and D = 1/3, so none of those must be a positive even integer. The unique answer is C.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "hard.md",
+      "source_sha256": "b0a0fb727049e45d7472b3b33f3d1323a44072e91a6e39f7f1a553d9099f493a",
+      "source_question_id": "H-15",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "5ba9bacc-7141-5a2d-888a-639f025db330",
+    "track_id": "est",
+    "source_code": "CP-c19-30",
+    "before_hash": "99a5dae4b003878dab2d526773ba5474",
+    "choices": [],
+    "correct": "3",
+    "explanation": "Complete the squares: (x + 7/2)² + (y + 1/2)² = −7/2 + 49/4 + 1/4 = 9. The radius is 3.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c19-30",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "6b30b08f-b6a7-5607-8bc1-745990b52c63",
+    "track_id": "est",
+    "source_code": "CP-c19-12",
+    "before_hash": "2d79e3ad526147aa23adcbacf352672c",
+    "choices": [],
+    "correct": "36",
+    "explanation": "Set y = 0 at an x-axis intersection: (x + 4)² = k − 36. Exactly one real x occurs only when k − 36 = 0, so k = 36 (the tangent point is (−4, 0)).",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c19-12",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "83b9dd96-da0a-577d-b12b-8505b2e79ed7",
+    "track_id": "est",
+    "source_code": "CP-c19-17",
+    "before_hash": "efbd6754c821ba3cbe23779f5b764411",
+    "choices": [],
+    "correct": "40",
+    "explanation": "The source diagram puts P and Q on the same side of chord AB. Both inscribed angles APB and AQB intercept the same arc AB, so they are equal. Hence angle AQB = 40°.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c19-17",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted.",
+      "image_file": "CP-c19-17.png",
+      "image_sha256": "9f815d31b576fe85a565798ac6f30aa27cfba2d6fc99802b0595e4ad3893a1c3",
+      "visual_review": "Original archive crop visually inspected and compared with the mathematical solution."
+    }
+  },
+  {
+    "id": "94f1a23f-47ec-51b5-a2d6-f6ba5d90e9b4",
+    "track_id": "est",
+    "source_code": "CP-c19-25",
+    "before_hash": "0d0c024382f195b04568e6a95371e96a",
+    "choices": [],
+    "correct": "15",
+    "explanation": "A diameter through the midpoint E of chord CD is perpendicular to that chord. Thus CE = 14 and OC = 16. By Pythagoras, OE² = 16² − 14² = 60, so OE = 2√15. Therefore k = 15.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c19-25",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted.",
+      "image_file": "CP-c19-25.png",
+      "image_sha256": "e3a83c9ab02e3ca81a58c03b53acba7991d5c35d19242cdb6e74b7c5848c4b23",
+      "visual_review": "Original archive crop visually inspected and compared with the mathematical solution."
+    }
+  },
+  {
+    "id": "9bed4a53-42c9-55fd-83ea-10d195e5c6d1",
+    "track_id": "est",
+    "source_code": "CP-c19-22",
+    "before_hash": "6294acc8f9f9385b45f01b2345a3856f",
+    "choices": [],
+    "correct": "784",
+    "explanation": "Circle A has radius 4 and diameter 8. Circle B has diameter 8 + 48 = 56 and radius 28. Its radius squared is n = 28² = 784.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c19-22",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "ad88ac81-7bc2-541b-b92e-74905931834a",
+    "track_id": "est",
+    "source_code": "CP-c19-26",
+    "before_hash": "5ec75104ac87e9bccda0de4bd7dd3bb1",
+    "choices": [],
+    "correct": "230",
+    "explanation": "Expand (x − 9)² + (y + 12)² = 1 to obtain x² + y² − 18x + 24y + 224 = 0. Thus a + b + c = −18 + 24 + 224 = 230.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c19-26",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "baf1be6c-0206-5a97-907e-8d10f22325c3",
+    "track_id": "est",
+    "source_code": "CP-c07-19",
+    "before_hash": "4f11fc42f344d1435c0e6cdb9e72a297",
+    "choices": [],
+    "correct": [
+      "35/2",
+      "17.5"
+    ],
+    "explanation": "Only the longer base changes. A(x + 5) − A(x) = (7/2)[(9 + x + 5) − (9 + x)] = 35/2 = 17.5 square inches.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c07-19",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "bf3b309d-98d4-592c-bee1-3163c433c847",
+    "track_id": "est",
+    "source_code": "AI-41",
+    "before_hash": "4378a64bc968576406d965553ba12929",
+    "choices": [
+      {
+        "key": "A",
+        "text": "He gets a job and a new pair of jeans."
+      },
+      {
+        "key": "B",
+        "text": "He does NOT get a job and does get a new pair of jeans."
+      },
+      {
+        "key": "C",
+        "text": "He gets a job and does NOT get a new pair of jeans."
+      },
+      {
+        "key": "D",
+        "text": "He does NOT get a job and does NOT get a new pair of jeans."
+      }
+    ],
+    "correct": "D",
+    "explanation": "Let J mean getting a job, N mean getting new jeans and G mean giving away the old jeans. The promises are J ⇒ N and N ⇒ G. Since G is false, contraposition gives N false, then J false. Thus D follows.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "aist.md",
+      "source_sha256": "e9fd07b1d1b86aee4b6b4a657186e8b73bef5b70d0a2a4adb6ffbc2a04e45d42",
+      "source_question_id": "AI-41",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "d7382f65-3983-5856-9dc1-77c74649b060",
+    "track_id": "est",
+    "source_code": "CP-c24-02",
+    "before_hash": "2ddb280293252c7061c4ee0011ee6367",
+    "choices": [],
+    "correct": [
+      "11/30",
+      ".367"
+    ],
+    "explanation": "There are 165 gray shirts out of 450 shirts. Thus P(gray) = 165/450 = 11/30 = 0.3666.... The recorded rounded decimal 0.367 and the exact fraction 11/30 are accepted; a percent is not requested.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c24-02",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted.",
+      "image_file": "CP-c24-02.png",
+      "image_sha256": "05227d00457402ad72b1abf2e4909e687837b8a5383ca25c9f9b3bc756b8c483",
+      "visual_review": "Original archive crop visually inspected and compared with the mathematical solution."
+    }
+  },
+  {
+    "id": "eff0c0d0-c903-507f-aec1-c373512262b7",
+    "track_id": "est",
+    "source_code": "CP-c25-02",
+    "before_hash": "8f46de6dc6b5df8b3c46abf442823137",
+    "choices": [],
+    "correct": "11",
+    "explanation": "Range is the largest data value minus the smallest, regardless of frequency: 28 − 17 = 11.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c25-02",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted.",
+      "image_file": "CP-c25-02.png",
+      "image_sha256": "0638f03cca9aa18c42b629c0cb59e0bb0ca98f9035053332335eced8b8dc214e",
+      "visual_review": "Original archive crop visually inspected and compared with the mathematical solution."
+    }
+  },
+  {
+    "id": "fb99d96f-8a7d-566c-adb8-7124ee051d8b",
+    "track_id": "est",
+    "source_code": "CP-c23-03",
+    "before_hash": "fb1e5b565def10adf7328fb7aac7f06c",
+    "choices": [],
+    "correct": "144",
+    "explanation": "The original bars show 254, 447, 315, 388 and 122 cookies. Neighborhoods 2 and 4 sold 447 + 388 = 835; neighborhoods 1, 3 and 5 sold 254 + 315 + 122 = 691. The difference is 835 − 691 = 144.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "panda.md",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "source_question_id": "CP-c23-03",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted.",
+      "image_file": "CP-c23-03.png",
+      "image_sha256": "0b3c5144449d05d943325cdbbb85bf428e35abcb9bdf81778b9403ed7996fbb5",
+      "visual_review": "Original archive crop visually inspected and compared with the mathematical solution."
+    }
+  },
+  {
+    "id": "51cac9a5-344d-5a98-9412-5ec7b60e65a1",
+    "track_id": "est2",
+    "source_code": "MA-06",
+    "before_hash": "3c663cacc03a967fd74983e1a80fc83d",
+    "choices": [
+      {
+        "key": "F",
+        "text": "Graph F"
+      },
+      {
+        "key": "G",
+        "text": "Graph G"
+      },
+      {
+        "key": "H",
+        "text": "Graph H"
+      },
+      {
+        "key": "J",
+        "text": "Graph J"
+      }
+    ],
+    "correct": "F",
+    "explanation": "The parent is y = 4ˣ. It is positive and increasing, passes through (0, 1), and approaches y = 0 to the left. The archive image shows precisely these properties in graph F. Graph G is shifted down; H decreases; J decreases and is shifted down.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "moh.md",
+      "source_sha256": "f99122153ba873fb3a01697b0501e31119af3babff6a9ed2bc0baf050aed1f20",
+      "source_question_id": "MA-06",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted.",
+      "image_file": "MA-06.png",
+      "image_sha256": "a33de59e923a4112cdb71ea548d7bacfa2467501683885db1d6cf81b4bfd5342",
+      "visual_review": "Original archive crop visually inspected and compared with the mathematical solution."
+    }
+  },
+  {
+    "id": "54f245eb-ef30-55ad-8e0b-1f80bbfb6b1a",
+    "track_id": "est2",
+    "source_code": "E-21",
+    "before_hash": "f537e4d4de89d6bb4cfbe79afda34e6c",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Open circle at −11, closed circle at 4, segment between them"
+      },
+      {
+        "key": "B",
+        "text": "Closed circle at 4, shaded to the left with arrow"
+      },
+      {
+        "key": "C",
+        "text": "Open circle at −11, closed circle at 12, segment between them"
+      },
+      {
+        "key": "D",
+        "text": "Closed circle at 12, shaded to the left with arrow"
+      }
+    ],
+    "correct": "A",
+    "explanation": "Both inequalities must hold. From 2x − 8 ≤ x − 4, obtain x ≤ 4. From x − 4 < 3(x + 6), obtain −22 < 2x, so x > −11. Their intersection is −11 < x ≤ 4: the source image's graph A has an open endpoint at −11 and a closed endpoint at 4.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "extra.md",
+      "source_sha256": "84ca68dc45b2ef2b31ffef4bf4fca4ef2cb3beb1365109214d65e6b7240c41ea",
+      "source_question_id": "E-21",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted.",
+      "image_file": "E-21.png",
+      "image_sha256": "21f6cb9022cace878353504f321cfddfaf278b4704eb96ecf010ac131a80d001",
+      "visual_review": "Original archive crop visually inspected and compared with the mathematical solution.",
+      "repair": "Restore both open-endpoint descriptions from the authentic number-line crop; markdown transcription is incorrect."
+    }
+  },
+  {
+    "id": "69c9be1d-643e-5659-b28b-065217e9fbf6",
+    "track_id": "est2",
+    "source_code": "MA-18",
+    "before_hash": "e868e03bcb2aba556ad78f060ff4711a",
+    "choices": [
+      {
+        "key": "F",
+        "text": "−1/5"
+      },
+      {
+        "key": "G",
+        "text": "3/5"
+      },
+      {
+        "key": "H",
+        "text": "−3/2"
+      },
+      {
+        "key": "J",
+        "text": "1/2"
+      }
+    ],
+    "correct": "G",
+    "explanation": "Bring all terms to one side: 10x² − x − 3 = (5x − 3)(2x + 1) = 0. Thus x = 3/5 or x = −1/2. Of the listed values −1/5, 3/5, −3/2 and 1/2, only 3/5 is a root, so G is correct.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "moh.md",
+      "source_sha256": "f99122153ba873fb3a01697b0501e31119af3babff6a9ed2bc0baf050aed1f20",
+      "source_question_id": "MA-18",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "90d43e8f-5ba9-56f2-9475-0f69e3812478",
+    "track_id": "est2",
+    "source_code": "E-11",
+    "before_hash": "29cf019846e1f28776d32dd5b9e9c4fe",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Graph with shading below the segment from (0, 250) to (500, 0)"
+      },
+      {
+        "key": "B",
+        "text": "Graph with shading above the segment from (0, 250) to (500, 0)"
+      },
+      {
+        "key": "C",
+        "text": "Graph with shading below the segment from (0, 500) to (250, 0)"
+      },
+      {
+        "key": "D",
+        "text": "Graph with shading above the segment from (0, 500) to (250, 0)"
+      }
+    ],
+    "correct": "D",
+    "explanation": "Revenue is 6x + 3y dollars. The requirement is 6x + 3y ≥ 1500, or y ≥ 500 − 2x, with nonnegative ticket counts. The boundary passes through (0, 500) and (250, 0); shading above it, including the boundary, is choice D.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "extra.md",
+      "source_sha256": "84ca68dc45b2ef2b31ffef4bf4fca4ef2cb3beb1365109214d65e6b7240c41ea",
+      "source_question_id": "E-11",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "a5f5dcab-6e2c-5716-9e68-2ad4c96d5c43",
+    "track_id": "est2",
+    "source_code": "T7-17",
+    "before_hash": "cfb13ed1bfc6ce6a377f2ecbbac7fcd3",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "6"
+      }
+    ],
+    "correct": "D",
+    "explanation": "Equating real parts gives 3x = 12, so x = 4. Equating imaginary parts gives y + 4 = x + 2 = 6, so y = 2. Therefore x + y = 6, choice D.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "book_t7.md",
+      "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+      "source_question_id": "T7-17",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "ac64eec4-13f8-547a-bec4-79d9ef9c64ba",
+    "track_id": "est2",
+    "source_code": "T7-01",
+    "before_hash": "8ebde0e9f26f295d71d2743f97d63e1d",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−4"
+      },
+      {
+        "key": "B",
+        "text": "−6"
+      },
+      {
+        "key": "C",
+        "text": "−8"
+      },
+      {
+        "key": "D",
+        "text": "−12"
+      }
+    ],
+    "correct": "C",
+    "explanation": "The monic polynomial with roots 2 and 6 is (x − 2)(x − 6) = x² − 8x + 12. Hence b = −8, choice C.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "book_t7.md",
+      "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+      "source_question_id": "T7-01",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "bc6ddfad-0cad-5bdd-93fb-dcf0e47eba9b",
+    "track_id": "est2",
+    "source_code": "MG-47",
+    "before_hash": "3c9b8015d9a1b9ed47c541014df79cdd",
+    "choices": [
+      {
+        "key": "A",
+        "text": "AD is parallel to BC, but AB is not parallel to CD."
+      },
+      {
+        "key": "B",
+        "text": "AB is parallel to CD, but AD is not parallel to BC."
+      },
+      {
+        "key": "C",
+        "text": "AB is parallel to CD, and AD is parallel to BC."
+      },
+      {
+        "key": "D",
+        "text": "AD is not parallel to BC, and AB is not parallel to CD."
+      }
+    ],
+    "correct": "B",
+    "explanation": "Parallel nonvertical lines have equal slopes. AB and CD both have slope 2/5. AD has slope −5/2, which differs from BC's −2/5. Therefore only B correctly describes the parallel pairs.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "moh_geo.md",
+      "source_sha256": "fd550cf9acb0c34c08b3bebd88f0b67714179fd7b1d4644f694d4388df535983",
+      "source_question_id": "MG-47",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted.",
+      "image_file": "MG-47.png",
+      "image_sha256": "6f2ca6b63b210db97779c4624f0cfb6ffc2271759e4653aff53573c7a25b70f7",
+      "visual_review": "Original archive crop visually inspected and compared with the mathematical solution."
+    }
+  },
+  {
+    "id": "c42fb3d6-3338-5941-b61a-4712f1ecdfc0",
+    "track_id": "est2",
+    "source_code": "T7-19",
+    "before_hash": "67f4aac9b57f6f0b74fbaa7c8d60d8e4",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Any rational number is a real number."
+      },
+      {
+        "key": "B",
+        "text": "Any irrational number is a real number."
+      },
+      {
+        "key": "C",
+        "text": "Any real number is an integer."
+      },
+      {
+        "key": "D",
+        "text": "Any integer is a real number."
+      }
+    ],
+    "correct": "C",
+    "explanation": "Rational numbers, irrational numbers and integers are all real. The statement that every real number is an integer is false; for example, 1/2 is real and is not an integer. Therefore C is the only false statement.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "book_t7.md",
+      "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+      "source_question_id": "T7-19",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "d066a625-8ab5-520e-b408-9500344c3141",
+    "track_id": "est2",
+    "source_code": "MA-29",
+    "before_hash": "750ce82e7ad932f504d30b585ae7ce7c",
+    "choices": [
+      {
+        "key": "A",
+        "text": "The graph of h is the result of the graph of g being translated right 14 units and down 12 units."
+      },
+      {
+        "key": "B",
+        "text": "The graph of h is the result of the graph of g being translated left 14 units and down 12 units."
+      },
+      {
+        "key": "C",
+        "text": "The graph of h is the result of the graph of g being translated right 14 units and up 12 units."
+      },
+      {
+        "key": "D",
+        "text": "The graph of h is the result of the graph of g being translated left 14 units and up 12 units."
+      }
+    ],
+    "correct": "B",
+    "explanation": "Replacing x by x + 14 moves the graph 14 units left. Subtracting 12 moves it 12 units down. Therefore B describes h.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "moh.md",
+      "source_sha256": "f99122153ba873fb3a01697b0501e31119af3babff6a9ed2bc0baf050aed1f20",
+      "source_question_id": "MA-29",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "d3cdc71f-317b-5a67-94f2-43dc1435c99f",
+    "track_id": "est2",
+    "source_code": "AI-41",
+    "before_hash": "52a1985e74503017e5e161c3dd387c93",
+    "choices": [
+      {
+        "key": "A",
+        "text": "He gets a job and a new pair of jeans."
+      },
+      {
+        "key": "B",
+        "text": "He does NOT get a job and does get a new pair of jeans."
+      },
+      {
+        "key": "C",
+        "text": "He gets a job and does NOT get a new pair of jeans."
+      },
+      {
+        "key": "D",
+        "text": "He does NOT get a job and does NOT get a new pair of jeans."
+      }
+    ],
+    "correct": "D",
+    "explanation": "Let J mean getting a job, N mean getting new jeans and G mean giving away the old jeans. The promises are J ⇒ N and N ⇒ G. Since G is false, contraposition gives N false, then J false. Thus D follows.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "aist.md",
+      "source_sha256": "e9fd07b1d1b86aee4b6b4a657186e8b73bef5b70d0a2a4adb6ffbc2a04e45d42",
+      "source_question_id": "AI-41",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "d8460c16-2bbf-50dd-9ee7-f5728c23bfa7",
+    "track_id": "est2",
+    "source_code": "H-15",
+    "before_hash": "354c65f6e1969e44bbbf2555cdd42956",
+    "choices": [
+      {
+        "key": "A",
+        "text": "yˣ"
+      },
+      {
+        "key": "B",
+        "text": "xʸ"
+      },
+      {
+        "key": "C",
+        "text": "x − y"
+      },
+      {
+        "key": "D",
+        "text": "y²/x"
+      }
+    ],
+    "correct": "C",
+    "explanation": "Since x > 0 and y < 0 are odd integers, x − y = x + |y| is positive and even. For example x = 3 and y = −1 satisfies the conditions but makes A = −1, B = 1/3 and D = 1/3, so none of those must be a positive even integer. The unique answer is C.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "hard.md",
+      "source_sha256": "b0a0fb727049e45d7472b3b33f3d1323a44072e91a6e39f7f1a553d9099f493a",
+      "source_question_id": "H-15",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "e41ce9db-abef-59a7-891a-333b0351d8dc",
+    "track_id": "est2",
+    "source_code": "MG-13",
+    "before_hash": "232364c9c22d909e3e10bb4fce54d901",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3n − 5"
+      },
+      {
+        "key": "B",
+        "text": "2n + 2"
+      },
+      {
+        "key": "C",
+        "text": "2n + 3"
+      },
+      {
+        "key": "D",
+        "text": "3n − 1"
+      }
+    ],
+    "correct": "D",
+    "explanation": "The visible first three figures contain 2, 5 and 8 dots, and the archive records 11 for Figure 4. Each step adds 3, so the stated continuing pattern has 2 + 3(n − 1) = 3n − 1 dots. Among the four choices, only D matches even the first two figures.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "moh_geo.md",
+      "source_sha256": "fd550cf9acb0c34c08b3bebd88f0b67714179fd7b1d4644f694d4388df535983",
+      "source_question_id": "MG-13",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted.",
+      "image_file": "MG-13.png",
+      "image_sha256": "fb2b678236b804248199880bd4ae655f7aba90ee2708f5615c0635c7aee2953b",
+      "visual_review": "Original archive crop visually inspected and compared with the mathematical solution.",
+      "visual_limit": "The supplied crop clips part of Figure 4. The fully visible first three figures suffice to select D uniquely; the archive text records 11 for Figure 4. No missing pixels were reconstructed."
+    }
+  },
+  {
+    "id": "eb2a4e07-46c8-5430-b960-d9798d986dcb",
+    "track_id": "est2",
+    "source_code": "T8-08",
+    "before_hash": "e5ad1ba44da41b84957e2775d3b74259",
+    "choices": [
+      {
+        "key": "F",
+        "text": "$20,780"
+      },
+      {
+        "key": "G",
+        "text": "$12,800"
+      },
+      {
+        "key": "H",
+        "text": "$28,800"
+      },
+      {
+        "key": "J",
+        "text": "$20,760"
+      }
+    ],
+    "correct": "G",
+    "explanation": "Substitute n = 400: p(400) = 52(400) − 0.05(400²) = 20,800 − 8,000 = 12,800 dollars. Only G gives this value.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "book_t8.md",
+      "source_sha256": "8f03df34fa98881a0531e925df7d2a108b1590182b68af8e273abe0930b44cfb",
+      "source_question_id": "T8-08",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted."
+    }
+  },
+  {
+    "id": "fae9ef36-d45e-5e52-a9bf-77d9d0947102",
+    "track_id": "est2",
+    "source_code": "E-19",
+    "before_hash": "dfa9a201600a5b46b292b7da123e7d07",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Dashed line (slope 1/2, y-intercept −2), shaded above"
+      },
+      {
+        "key": "B",
+        "text": "Dashed line (slope 1/2, y-intercept −2), shaded below"
+      },
+      {
+        "key": "C",
+        "text": "Solid line (slope 1/2, y-intercept −2), shaded above"
+      },
+      {
+        "key": "D",
+        "text": "Solid line (slope 1/2, y-intercept −2), shaded below"
+      }
+    ],
+    "correct": "B",
+    "explanation": "Rearrange 2x − 4y > 8. Dividing −4y > 8 − 2x by −4 reverses the inequality: y < x/2 − 2. The boundary is dashed because the inequality is strict, and the region is below it. The original image labels this graph B.",
+    "evidence": {
+      "archive_library_id": "libfile_bf57f23ca344819199a3207a9fbcf774",
+      "source_file": "extra.md",
+      "source_sha256": "84ca68dc45b2ef2b31ffef4bf4fca4ef2cb3beb1365109214d65e6b7240c41ea",
+      "source_question_id": "E-19",
+      "scope": "Independent solution of complete stored prompt, choices and accepted answers; checked against the exact user-uploaded archive. Original publisher PDF fidelity is not asserted.",
+      "image_file": "E-19.png",
+      "image_sha256": "3725a594675b540aac9f652a0b20ac9f477be6c1078399e2a9acc3c35d97e06d",
+      "visual_review": "Original archive crop visually inspected and compared with the mathematical solution.",
+      "repair": "Restore boundary style and missing line parameters from the authentic half-plane crop; A was incorrectly described as solid."
+    }
+  }
+]

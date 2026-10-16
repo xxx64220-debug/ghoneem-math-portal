@@ -1,0 +1,1117 @@
+[
+  {
+    "id": "036596b5-b3bd-509e-9426-045798147b53",
+    "track_id": "est",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "type": "grid_in",
+    "stem": "Q14. x² + 2x + y² − 8y = 64. The graph of the given equation in the xy-plane is a circle. What is the length of the circle's radius?",
+    "choices": [],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "panda.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "content_audit": "2026-09-25-format-and-grading-review",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Circles",
+      "source_question_id": "CP-c19-14",
+      "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:25.070737+00",
+    "correct": "9",
+    "explanation": "Source-keyed answer from panda.md (CP-c19-14).",
+    "hash": "6102e6497b7fab0fccbef2f47938ca9d"
+  },
+  {
+    "id": "1d301f6a-b67f-5f26-9b69-962b99b8e7ba",
+    "track_id": "est",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "type": "grid_in",
+    "stem": "Q11. Point P is the center of a circle. The measure of arc QR on this circle is 144°. What is the measure, in degrees, of angle PQR?",
+    "choices": [],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "panda.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Circles",
+      "source_question_id": "CP-c19-11",
+      "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:25.070737+00",
+    "correct": "18",
+    "explanation": "Source-keyed answer from panda.md (CP-c19-11).",
+    "hash": "ea85408a97b9fca58c01703faf351536"
+  },
+  {
+    "id": "325130a5-2b69-5b63-bf9c-2fbb1407563a",
+    "track_id": "est",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "If x is a positive odd integer and y is a negative odd integer such that |x| ≠ |y|, which of the following must produce a positive even integer?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "yˣ"
+      },
+      {
+        "key": "B",
+        "text": "xʸ"
+      },
+      {
+        "key": "C",
+        "text": "x − y"
+      },
+      {
+        "key": "D",
+        "text": "y²/x"
+      }
+    ],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "hard.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "b0a0fb727049e45d7472b3b33f3d1323a44072e91a6e39f7f1a553d9099f493a",
+      "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "source_question_id": "H-15",
+      "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:22.133505+00",
+    "correct": "C",
+    "explanation": "Source-keyed answer from hard.md (H-15).",
+    "hash": "cb5063a5dcd98aef4db5aa808b0e5d25"
+  },
+  {
+    "id": "5ba9bacc-7141-5a2d-888a-639f025db330",
+    "track_id": "est",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "type": "grid_in",
+    "stem": "Q16. x² + y² + 7x + y = −7/2. The given equation represents a circle in the xy-plane. What is the length of the radius of the circle?",
+    "choices": [],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "panda.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Circles",
+      "source_question_id": "CP-c19-30",
+      "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:25.070737+00",
+    "correct": "3",
+    "explanation": "Source-keyed answer from panda.md (CP-c19-30).",
+    "hash": "99a5dae4b003878dab2d526773ba5474"
+  },
+  {
+    "id": "6b30b08f-b6a7-5607-8bc1-745990b52c63",
+    "track_id": "est",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "type": "grid_in",
+    "stem": "Q12. A circle in the xy-plane has the equation (x + 4)² + (y + 6)² = k, where k is a constant. This circle intersects the x-axis at exactly one point. What is the value of k?",
+    "choices": [],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "panda.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Circles",
+      "source_question_id": "CP-c19-12",
+      "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:25.070737+00",
+    "correct": "36",
+    "explanation": "Source-keyed answer from panda.md (CP-c19-12).",
+    "hash": "2d79e3ad526147aa23adcbacf352672c"
+  },
+  {
+    "id": "83b9dd96-da0a-577d-b12b-8505b2e79ed7",
+    "track_id": "est",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "type": "grid_in",
+    "stem": "Q3. Angles APB and AQB are inscribed in the circle shown. The measure of angle APB is 40°. What is the measure, in degrees, of angle AQB?",
+    "choices": [],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/CP-c19-17.png",
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "image_alt": "Original graph, diagram, or table for CP-c19-17",
+      "source_file": "panda.md",
+      "image_sha256": "9f815d31b576fe85a565798ac6f30aa27cfba2d6fc99802b0595e4ad3893a1c3",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "visual_repair": "original_archive_image_2026_09_21",
+      "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+      "visual_verified": true,
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Circles",
+      "source_question_id": "CP-c19-17",
+      "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+      "lesson_taxonomy_version": "20260929",
+      "original_figure_transcript": "[Figure: CP-c19-17 — circle with inscribed angles APB and AQB]\nQ3. Angles APB and AQB are inscribed in the circle shown. The measure of angle APB is 40°. What is the measure, in degrees, of angle AQB?"
+    },
+    "created_at": "2026-09-21 08:44:25.070737+00",
+    "correct": "40",
+    "explanation": "Source-keyed answer from panda.md (CP-c19-17).",
+    "hash": "efbd6754c821ba3cbe23779f5b764411"
+  },
+  {
+    "id": "94f1a23f-47ec-51b5-a2d6-f6ba5d90e9b4",
+    "track_id": "est",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "type": "grid_in",
+    "stem": "Q11. The circle shown has center O and a radius of length 16. Diameter AB bisects CD at point E, and CD = 28. If the length of OE can be written in the form 2√k, where k is an integer, what is the value of k?",
+    "choices": [],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/CP-c19-25.png",
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "image_alt": "Original graph, diagram, or table for CP-c19-25",
+      "source_file": "panda.md",
+      "image_sha256": "e3a83c9ab02e3ca81a58c03b53acba7991d5c35d19242cdb6e74b7c5848c4b23",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "visual_repair": "original_archive_image_2026_09_21",
+      "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+      "visual_verified": true,
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Circles",
+      "source_question_id": "CP-c19-25",
+      "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+      "lesson_taxonomy_version": "20260929",
+      "original_figure_transcript": "[Figure: CP-c19-25 — circle with center O and radius 16; diameter AB bisects CD at E; CD = 28]\nQ11. The circle shown has center O and a radius of length 16. Diameter AB bisects CD at point E, and CD = 28. If the length of OE can be written in the form 2√k, where k is an integer, what is the value of k?"
+    },
+    "created_at": "2026-09-21 08:44:25.070737+00",
+    "correct": "15",
+    "explanation": "Source-keyed answer from panda.md (CP-c19-25).",
+    "hash": "0d0c024382f195b04568e6a95371e96a"
+  },
+  {
+    "id": "9bed4a53-42c9-55fd-83ea-10d195e5c6d1",
+    "track_id": "est",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "type": "grid_in",
+    "stem": "Q8. In the xy-plane, circle A is defined by the equation (x − 3)² + (y − 4)² = 16, and circle B is defined by the equation (x − 3)² + (y − 4)² = n, where n is a constant. The diameter of circle B is 48 units longer than the diameter of circle A. What is the value of n?",
+    "choices": [],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "panda.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Circles",
+      "source_question_id": "CP-c19-22",
+      "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:25.070737+00",
+    "correct": "784",
+    "explanation": "Source-keyed answer from panda.md (CP-c19-22).",
+    "hash": "6294acc8f9f9385b45f01b2345a3856f"
+  },
+  {
+    "id": "ad88ac81-7bc2-541b-b92e-74905931834a",
+    "track_id": "est",
+    "topic": "Circles",
+    "difficulty": "medium",
+    "type": "grid_in",
+    "stem": "Q12. In the xy-plane, a circle with a radius of 1 has its center at (9, −12). This circle can be represented by the equation x² + y² + ax + by + c = 0, where a, b, and c are constants. What is the value of a + b + c?",
+    "choices": [],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "panda.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Circles",
+      "source_question_id": "CP-c19-26",
+      "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:25.070737+00",
+    "correct": "230",
+    "explanation": "Source-keyed answer from panda.md (CP-c19-26).",
+    "hash": "5ec75104ac87e9bccda0de4bd7dd3bb1"
+  },
+  {
+    "id": "baf1be6c-0206-5a97-907e-8d10f22325c3",
+    "track_id": "est",
+    "topic": "Area and perimeter",
+    "difficulty": "easy",
+    "type": "grid_in",
+    "stem": "Q19. A = (7/2)(9 + x). The function A gives the area, in square inches, of a trapezoid with a height of 7 inches, a shorter base of 9 inches, and a longer base of x inches. If the length of the longer base is increased by 5 inches, by how many square inches does the area of the trapezoid increase?",
+    "choices": [],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "panda.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "content_audit": "2026-09-25-format-and-grading-review",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "lesson_subtopic": "Statistics, Probability & Data Analysis",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Area and perimeter",
+      "source_question_id": "CP-c07-19",
+      "lesson_original_topic": "Statistics, Probability & Data Analysis",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:23.381161+00",
+    "correct": [
+      "35/2",
+      "17.5"
+    ],
+    "explanation": "Source-keyed answer from panda.md (CP-c07-19).",
+    "hash": "4f11fc42f344d1435c0e6cdb9e72a297"
+  },
+  {
+    "id": "bf3b309d-98d4-592c-bee1-3163c433c847",
+    "track_id": "est",
+    "topic": "Logic and sets",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Matt makes 2 promises:\n1. If I get a job, I will get a new pair of jeans.\n2. If I get a new pair of jeans, I will give away my old pair of jeans.\nAssume Matt keeps his promises and that he does NOT give away his old pair of jeans. Which of the following is a valid conclusion?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "He gets a job and a new pair of jeans."
+      },
+      {
+        "key": "B",
+        "text": "He does NOT get a job and does get a new pair of jeans."
+      },
+      {
+        "key": "C",
+        "text": "He gets a job and does NOT get a new pair of jeans."
+      },
+      {
+        "key": "D",
+        "text": "He does NOT get a job and does NOT get a new pair of jeans."
+      }
+    ],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "aist.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "e9fd07b1d1b86aee4b6b4a657186e8b73bef5b70d0a2a4adb6ffbc2a04e45d42",
+      "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Logic and sets",
+      "source_question_id": "AI-41",
+      "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:13.536604+00",
+    "correct": "D",
+    "explanation": "Source-keyed answer from aist.md (AI-41).",
+    "hash": "4378a64bc968576406d965553ba12929"
+  },
+  {
+    "id": "d7382f65-3983-5856-9dc1-77c74649b060",
+    "track_id": "est",
+    "topic": "Probability and conditional probability",
+    "difficulty": "medium",
+    "type": "grid_in",
+    "stem": "[Table: CP-c24-02 — 450 shirts by color and size: Gray (S 55, M 80, L 30, total 165); Navy (45, 70, 20, 135); Black (50, 65, 35, 150); Total (150, 215, 85, 450)]\nThe table summarizes the distribution of color and size for 450 shirts. If one of these shirts is selected at random, what is the probability of selecting a gray shirt? (Express your answer as a decimal or fraction, not as a percent.)",
+    "choices": [],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/CP-c24-02.png",
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "image_alt": "Original graph, diagram, or table for CP-c24-02",
+      "source_file": "panda.md",
+      "image_sha256": "05227d00457402ad72b1abf2e4909e687837b8a5383ca25c9f9b3bc756b8c483",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "content_audit": "2026-09-25-format-and-grading-review",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "visual_repair": "original_archive_image_2026_09_21",
+      "lesson_subtopic": "Statistics, Probability & Data Analysis",
+      "visual_verified": true,
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Probability and conditional probability",
+      "source_question_id": "CP-c24-02",
+      "lesson_original_topic": "Statistics, Probability & Data Analysis",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:26.44436+00",
+    "correct": [
+      "11/30",
+      ".367"
+    ],
+    "explanation": "Source-keyed answer from panda.md (CP-c24-02).",
+    "hash": "2ddb280293252c7061c4ee0011ee6367"
+  },
+  {
+    "id": "eff0c0d0-c903-507f-aec1-c373512262b7",
+    "track_id": "est",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "type": "grid_in",
+    "stem": "[Table: CP-c25-02 — Value/Frequency: 17 → 15, 19 → 21, 23 → 27, 28 → 33]\nWhat is the range of the data set represented in the frequency table?",
+    "choices": [],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/CP-c25-02.png",
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "image_alt": "Original graph, diagram, or table for CP-c25-02",
+      "source_file": "panda.md",
+      "image_sha256": "0638f03cca9aa18c42b629c0cb59e0bb0ca98f9035053332335eced8b8dc214e",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "visual_repair": "original_archive_image_2026_09_21",
+      "lesson_subtopic": "Statistics, Probability & Data Analysis",
+      "visual_verified": true,
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_question_id": "CP-c25-02",
+      "lesson_original_topic": "Statistics, Probability & Data Analysis",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:26.44436+00",
+    "correct": "11",
+    "explanation": "Source-keyed answer from panda.md (CP-c25-02).",
+    "hash": "8f46de6dc6b5df8b3c46abf442823137"
+  },
+  {
+    "id": "fb99d96f-8a7d-566c-adb8-7124ee051d8b",
+    "track_id": "est",
+    "topic": "Statistics and data analysis",
+    "difficulty": "medium",
+    "type": "grid_in",
+    "stem": "A local youth organization sold cookies in five different neighborhoods. The bar graph shows the number of cookies sold in each of the five neighborhoods. How many more cookies were sold in neighborhoods 2 and 4 than were sold in neighborhoods 1, 3, and 5?",
+    "choices": [],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/CP-c23-03.png",
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "image_alt": "Original graph, diagram, or table for CP-c23-03",
+      "source_file": "panda.md",
+      "image_sha256": "0b3c5144449d05d943325cdbbb85bf428e35abcb9bdf81778b9403ed7996fbb5",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "source_sha256": "e120378a8127836a41962876a763889bbb1df92d70c90242206130acfa43e008",
+      "visual_repair": "original_archive_image_2026_09_21",
+      "lesson_subtopic": "Statistics, Probability & Data Analysis",
+      "visual_verified": true,
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "verified_release": "2026-09-21-source-keyed-and-grader-verified",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_question_id": "CP-c23-03",
+      "lesson_original_topic": "Statistics, Probability & Data Analysis",
+      "lesson_taxonomy_version": "20260929",
+      "original_figure_transcript": "[Figure: CP-c23-03 — bar graph of cookies sold in five neighborhoods: 1 = 254, 2 = 447, 3 = 315, 4 = 388, 5 = 122]\nA local youth organization sold cookies in five different neighborhoods. The bar graph shows the number of cookies sold in each of the five neighborhoods. How many more cookies were sold in neighborhoods 2 and 4 than were sold in neighborhoods 1, 3, and 5?"
+    },
+    "created_at": "2026-09-21 08:44:26.44436+00",
+    "correct": "144",
+    "explanation": "Source-keyed answer from panda.md (CP-c23-03).",
+    "hash": "fb1e5b565def10adf7328fb7aac7f06c"
+  },
+  {
+    "id": "51cac9a5-344d-5a98-9412-5ec7b60e65a1",
+    "track_id": "est2",
+    "topic": "Functions and transformations",
+    "difficulty": "hard",
+    "type": "mcq",
+    "stem": "Which graph best represents the parent function of y = 4^(x+3) ?\n",
+    "choices": [
+      {
+        "key": "F",
+        "text": "Graph F"
+      },
+      {
+        "key": "G",
+        "text": "Graph G"
+      },
+      {
+        "key": "H",
+        "text": "Graph H"
+      },
+      {
+        "key": "J",
+        "text": "Graph J"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/MA-06.png",
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "image_alt": "Original graph, diagram, or table for MA-06",
+      "source_file": "moh.md",
+      "image_sha256": "a33de59e923a4112cdb71ea548d7bacfa2467501683885db1d6cf81b4bfd5342",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "f99122153ba873fb3a01697b0501e31119af3babff6a9ed2bc0baf050aed1f20",
+      "visual_repair": "original_archive_image_2026_09_21",
+      "lesson_subtopic": "Rational, Radical, Exponential & Logarithmic Functions",
+      "visual_verified": true,
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Functions and transformations",
+      "source_question_id": "MA-06",
+      "lesson_original_topic": "Rational, Radical, Exponential & Logarithmic Functions",
+      "lesson_taxonomy_version": "20260929",
+      "original_figure_transcript": "Which graph best represents the parent function of y = 4^(x+3) ?\n[Figure: Four graphs. F: increasing exponential through (0,1), asymptote y=0 on the left. G: increasing exponential passing below the origin, asymptote y=−1. H: decreasing exponential approaching y=0 on the right. J: decreasing curve below the x-axis approaching y=−1.]"
+    },
+    "created_at": "2026-09-21 08:44:06.105185+00",
+    "correct": "F",
+    "explanation": "Source-keyed answer from moh.md (MA-06).",
+    "hash": "3c663cacc03a967fd74983e1a80fc83d"
+  },
+  {
+    "id": "54f245eb-ef30-55ad-8e0b-1f80bbfb6b1a",
+    "track_id": "est2",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Which of the following graphs represents the inequality 2x − 8 ≤ x − 4 < 3(x + 6)?\n",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Open circle at −5, closed circle at 4, segment between them"
+      },
+      {
+        "key": "B",
+        "text": "Closed circle at 4, shaded to the left with arrow"
+      },
+      {
+        "key": "C",
+        "text": "Open circle at −12, closed circle at 12, segment between them"
+      },
+      {
+        "key": "D",
+        "text": "Closed circle at 12, shaded to the left with arrow"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/E-21.png",
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "image_alt": "Original graph, diagram, or table for E-21",
+      "source_file": "extra.md",
+      "image_sha256": "21f6cb9022cace878353504f321cfddfaf278b4704eb96ecf010ac131a80d001",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "84ca68dc45b2ef2b31ffef4bf4fca4ef2cb3beb1365109214d65e6b7240c41ea",
+      "visual_repair": "original_archive_image_2026_09_21",
+      "lesson_subtopic": "Functions, Transformations & Graphs",
+      "visual_verified": true,
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Functions and transformations",
+      "source_question_id": "E-21",
+      "lesson_original_topic": "Functions, Transformations & Graphs",
+      "lesson_taxonomy_version": "20260929",
+      "original_figure_transcript": "Which of the following graphs represents the inequality 2x − 8 ≤ x − 4 < 3(x + 6)?\n[Figure: E-21 — four number-line graphs, answer choices A–D]"
+    },
+    "created_at": "2026-09-21 08:44:06.105185+00",
+    "correct": "A",
+    "explanation": "Source-keyed answer from extra.md (E-21).",
+    "hash": "f537e4d4de89d6bb4cfbe79afda34e6c"
+  },
+  {
+    "id": "69c9be1d-643e-5659-b28b-065217e9fbf6",
+    "track_id": "est2",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Which of the following is a solution to 10x² − x = 3 ?",
+    "choices": [
+      {
+        "key": "F",
+        "text": "−1/5"
+      },
+      {
+        "key": "G",
+        "text": "3/5"
+      },
+      {
+        "key": "H",
+        "text": "−3/2"
+      },
+      {
+        "key": "J",
+        "text": "1/2"
+      }
+    ],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "moh.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "f99122153ba873fb3a01697b0501e31119af3babff6a9ed2bc0baf050aed1f20",
+      "lesson_subtopic": "Polynomials & Quadratic Functions",
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_question_id": "MA-18",
+      "lesson_original_topic": "Polynomials & Quadratic Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:06.105185+00",
+    "correct": "G",
+    "explanation": "Source-keyed answer from moh.md (MA-18).",
+    "hash": "e868e03bcb2aba556ad78f060ff4711a"
+  },
+  {
+    "id": "90d43e8f-5ba9-56f2-9475-0f69e3812478",
+    "track_id": "est2",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Tickets for the school play cost $6 for an adult and $3 for a student. The school wants to sell at least $1,500 worth of tickets. If x is the number of adult tickets and y is the number of student tickets sold, the shaded region in which of the following graphs includes all combinations of ticket sales of at least $1,500?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Graph with shading below the segment from (0, 250) to (500, 0)"
+      },
+      {
+        "key": "B",
+        "text": "Graph with shading above the segment from (0, 250) to (500, 0)"
+      },
+      {
+        "key": "C",
+        "text": "Graph with shading below the segment from (0, 500) to (250, 0)"
+      },
+      {
+        "key": "D",
+        "text": "Graph with shading above the segment from (0, 500) to (250, 0)"
+      }
+    ],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "extra.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "84ca68dc45b2ef2b31ffef4bf4fca4ef2cb3beb1365109214d65e6b7240c41ea",
+      "lesson_subtopic": "Functions, Transformations & Graphs",
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Functions and transformations",
+      "source_question_id": "E-11",
+      "lesson_original_topic": "Functions, Transformations & Graphs",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:06.105185+00",
+    "correct": "D",
+    "explanation": "Source-keyed answer from extra.md (E-11).",
+    "hash": "29cf019846e1f28776d32dd5b9e9c4fe"
+  },
+  {
+    "id": "a5f5dcab-6e2c-5716-9e68-2ad4c96d5c43",
+    "track_id": "est2",
+    "topic": "Complex numbers",
+    "difficulty": "hard",
+    "type": "mcq",
+    "stem": "If 3x + yi + 4i = 12 + xi + 2i, then x + y =",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "4"
+      },
+      {
+        "key": "C",
+        "text": "5"
+      },
+      {
+        "key": "D",
+        "text": "6"
+      }
+    ],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t7.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+      "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Complex numbers",
+      "source_question_id": "T7-17",
+      "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:06.856742+00",
+    "correct": "D",
+    "explanation": "Source-keyed answer from book_t7.md (T7-17).",
+    "hash": "cfb13ed1bfc6ce6a377f2ecbbac7fcd3"
+  },
+  {
+    "id": "ac64eec4-13f8-547a-bec4-79d9ef9c64ba",
+    "track_id": "est2",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "If f(x) = x² + bx + c cuts the x-axis at the points (2,0) and (6,0), then b =",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−4"
+      },
+      {
+        "key": "B",
+        "text": "−6"
+      },
+      {
+        "key": "C",
+        "text": "−8"
+      },
+      {
+        "key": "D",
+        "text": "−12"
+      }
+    ],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t7.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+      "lesson_subtopic": "Polynomials & Quadratic Functions",
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Functions and transformations",
+      "source_question_id": "T7-01",
+      "lesson_original_topic": "Polynomials & Quadratic Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:05.303431+00",
+    "correct": "C",
+    "explanation": "Source-keyed answer from book_t7.md (T7-01).",
+    "hash": "8ebde0e9f26f295d71d2743f97d63e1d"
+  },
+  {
+    "id": "bc6ddfad-0cad-5bdd-93fb-dcf0e47eba9b",
+    "track_id": "est2",
+    "topic": "Linear functions and slope",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "The slopes of the sides of quadrilateral ABCD are shown in the table below.\n[Table: Side AB slope 2/5; BC slope −2/5; CD slope 2/5; AD slope −5/2.]\nWhich statement describes the relationships between the sides of the quadrilateral?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "AD is parallel to BC, but AB is not parallel to CD."
+      },
+      {
+        "key": "B",
+        "text": "AB is parallel to CD, but AD is not parallel to BC."
+      },
+      {
+        "key": "C",
+        "text": "AB is parallel to CD, and AD is parallel to BC."
+      },
+      {
+        "key": "D",
+        "text": "AD is not parallel to BC, and AB is not parallel to CD."
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/MG-47.png",
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "image_alt": "Original graph, diagram, or table for MG-47",
+      "source_file": "moh_geo.md",
+      "image_sha256": "6f2ca6b63b210db97779c4624f0cfb6ffc2271759e4653aff53573c7a25b70f7",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "fd550cf9acb0c34c08b3bebd88f0b67714179fd7b1d4644f694d4388df535983",
+      "visual_repair": "original_archive_image_2026_09_21",
+      "lesson_subtopic": "Coordinate Geometry, Circles & Conics",
+      "visual_verified": true,
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_question_id": "MG-47",
+      "lesson_original_topic": "Coordinate Geometry, Circles & Conics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:09.589498+00",
+    "correct": "B",
+    "explanation": "Source-keyed answer from moh_geo.md (MG-47).",
+    "hash": "3c9b8015d9a1b9ed47c541014df79cdd"
+  },
+  {
+    "id": "c42fb3d6-3338-5941-b61a-4712f1ecdfc0",
+    "track_id": "est2",
+    "topic": "Algebraic expressions and equations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Which of the following is false?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Any rational number is a real number."
+      },
+      {
+        "key": "B",
+        "text": "Any irrational number is a real number."
+      },
+      {
+        "key": "C",
+        "text": "Any real number is an integer."
+      },
+      {
+        "key": "D",
+        "text": "Any integer is a real number."
+      }
+    ],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t7.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "0fb6c459b96ac5b60a4c189de7328ebcb6d3bb964b72869331be58aa609b2ef5",
+      "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Algebraic expressions and equations",
+      "source_question_id": "T7-19",
+      "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:06.856742+00",
+    "correct": "C",
+    "explanation": "Source-keyed answer from book_t7.md (T7-19).",
+    "hash": "67f4aac9b57f6f0b74fbaa7c8d60d8e4"
+  },
+  {
+    "id": "d066a625-8ab5-520e-b408-9500344c3141",
+    "track_id": "est2",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "For the functions h and g, which statement is true if h(x) = g(x + 14) − 12 ?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "The graph of h is the result of the graph of g being translated right 14 units and down 12 units."
+      },
+      {
+        "key": "B",
+        "text": "The graph of h is the result of the graph of g being translated left 14 units and down 12 units."
+      },
+      {
+        "key": "C",
+        "text": "The graph of h is the result of the graph of g being translated right 14 units and up 12 units."
+      },
+      {
+        "key": "D",
+        "text": "The graph of h is the result of the graph of g being translated left 14 units and up 12 units."
+      }
+    ],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "moh.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "f99122153ba873fb3a01697b0501e31119af3babff6a9ed2bc0baf050aed1f20",
+      "lesson_subtopic": "Functions, Transformations & Graphs",
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Functions and transformations",
+      "source_question_id": "MA-29",
+      "lesson_original_topic": "Functions, Transformations & Graphs",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:09.589498+00",
+    "correct": "B",
+    "explanation": "Source-keyed answer from moh.md (MA-29).",
+    "hash": "750ce82e7ad932f504d30b585ae7ce7c"
+  },
+  {
+    "id": "d3cdc71f-317b-5a67-94f2-43dc1435c99f",
+    "track_id": "est2",
+    "topic": "Logic and sets",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "Matt makes 2 promises:\n1. If I get a job, I will get a new pair of jeans.\n2. If I get a new pair of jeans, I will give away my old pair of jeans.\nAssume Matt keeps his promises and that he does NOT give away his old pair of jeans. Which of the following is a valid conclusion?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "He gets a job and a new pair of jeans."
+      },
+      {
+        "key": "B",
+        "text": "He does NOT get a job and does get a new pair of jeans."
+      },
+      {
+        "key": "C",
+        "text": "He gets a job and does NOT get a new pair of jeans."
+      },
+      {
+        "key": "D",
+        "text": "He does NOT get a job and does NOT get a new pair of jeans."
+      }
+    ],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "aist.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "e9fd07b1d1b86aee4b6b4a657186e8b73bef5b70d0a2a4adb6ffbc2a04e45d42",
+      "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Logic and sets",
+      "source_question_id": "AI-41",
+      "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:42:28.553907+00",
+    "correct": "D",
+    "explanation": "Source-keyed answer from aist.md (AI-41).",
+    "hash": "52a1985e74503017e5e161c3dd387c93"
+  },
+  {
+    "id": "d8460c16-2bbf-50dd-9ee7-f5728c23bfa7",
+    "track_id": "est2",
+    "topic": "Inequalities and absolute value",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "If x is a positive odd integer and y is a negative odd integer such that |x| ≠ |y|, which of the following must produce a positive even integer?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "yˣ"
+      },
+      {
+        "key": "B",
+        "text": "xʸ"
+      },
+      {
+        "key": "C",
+        "text": "x − y"
+      },
+      {
+        "key": "D",
+        "text": "y²/x"
+      }
+    ],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "hard.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "b0a0fb727049e45d7472b3b33f3d1323a44072e91a6e39f7f1a553d9099f493a",
+      "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "source_question_id": "H-15",
+      "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:06.105185+00",
+    "correct": "C",
+    "explanation": "Source-keyed answer from hard.md (H-15).",
+    "hash": "354c65f6e1969e44bbbf2555cdd42956"
+  },
+  {
+    "id": "e41ce9db-abef-59a7-891a-333b0351d8dc",
+    "track_id": "est2",
+    "topic": "Sequences",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "A pattern of dots is shown in the four figures below.\nIf the pattern continues, which expression can be used to find the total number of dots in Figure n?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3n − 5"
+      },
+      {
+        "key": "B",
+        "text": "2n + 2"
+      },
+      {
+        "key": "C",
+        "text": "2n + 3"
+      },
+      {
+        "key": "D",
+        "text": "3n − 1"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/MG-13.png",
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "image_alt": "Original graph, diagram, or table for MG-13",
+      "source_file": "moh_geo.md",
+      "image_sha256": "fb2b678236b804248199880bd4ae655f7aba90ee2708f5615c0635c7aee2953b",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "fd550cf9acb0c34c08b3bebd88f0b67714179fd7b1d4644f694d4388df535983",
+      "visual_repair": "original_archive_image_2026_09_21",
+      "lesson_subtopic": "Sequences, Complex Numbers & Advanced Algebra",
+      "visual_verified": true,
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Sequences",
+      "source_question_id": "MG-13",
+      "lesson_original_topic": "Sequences, Complex Numbers & Advanced Algebra",
+      "lesson_taxonomy_version": "20260929",
+      "original_figure_transcript": "A pattern of dots is shown in the four figures below.\n[Figure: Figure 1 has 2 dots; Figure 2 has 5 dots; Figure 3 has 8 dots; Figure 4 has 11 dots.]\nIf the pattern continues, which expression can be used to find the total number of dots in Figure n?"
+    },
+    "created_at": "2026-09-21 08:44:09.589498+00",
+    "correct": "D",
+    "explanation": "Source-keyed answer from moh_geo.md (MG-13).",
+    "hash": "232364c9c22d909e3e10bb4fce54d901"
+  },
+  {
+    "id": "eb2a4e07-46c8-5430-b960-d9798d986dcb",
+    "track_id": "est2",
+    "topic": "Quadratics and polynomials",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "A baker determined the annual profit in dollars from selling pies using p(n) = 52n − 0.05n², where n is the number of pies sold. What is the annual profit if the baker sells 400 pies?",
+    "choices": [
+      {
+        "key": "F",
+        "text": "$20,780"
+      },
+      {
+        "key": "G",
+        "text": "$12,800"
+      },
+      {
+        "key": "H",
+        "text": "$28,800"
+      },
+      {
+        "key": "J",
+        "text": "$20,760"
+      }
+    ],
+    "assets": {
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "source_file": "book_t8.md",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "8f03df34fa98881a0531e925df7d2a108b1590182b68af8e273abe0930b44cfb",
+      "lesson_subtopic": "Polynomials & Quadratic Functions",
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_question_id": "T8-08",
+      "lesson_original_topic": "Polynomials & Quadratic Functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "created_at": "2026-09-21 08:44:06.856742+00",
+    "correct": "G",
+    "explanation": "Source-keyed answer from book_t8.md (T8-08).",
+    "hash": "e5ad1ba44da41b84957e2775d3b74259"
+  },
+  {
+    "id": "f3c606d2-2273-58b1-97db-44fd0e92b79b",
+    "track_id": "est2",
+    "topic": "Exponents, radicals and growth",
+    "difficulty": "hard",
+    "type": "mcq",
+    "stem": "The graph of the exponential function f is shown on the grid below.\nFor what values of x is f(x) > 16 ?",
+    "choices": [
+      {
+        "key": "F",
+        "text": "x > −2"
+      },
+      {
+        "key": "G",
+        "text": "x > 0"
+      },
+      {
+        "key": "H",
+        "text": "−2 < x < 2"
+      },
+      {
+        "key": "J",
+        "text": "∞ < x < −2"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/MA-30.png",
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "image_alt": "Original graph, diagram, or table for MA-30",
+      "source_file": "moh.md",
+      "image_sha256": "2d963a4bae738b9c145bfaf3c45633a8acf573b2c01a3b40b502c65b85417225",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "f99122153ba873fb3a01697b0501e31119af3babff6a9ed2bc0baf050aed1f20",
+      "visual_repair": "original_archive_image_2026_09_21",
+      "lesson_subtopic": "Rational, Radical, Exponential & Logarithmic Functions",
+      "visual_verified": true,
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "source_question_id": "MA-30",
+      "lesson_original_topic": "Rational, Radical, Exponential & Logarithmic Functions",
+      "lesson_taxonomy_version": "20260929",
+      "original_figure_transcript": "The graph of the exponential function f is shown on the grid below.\n[Figure: Increasing exponential passing through (−2, 16) and (0, 32), asymptote y = 0 on the left.]\nFor what values of x is f(x) > 16 ?"
+    },
+    "created_at": "2026-09-21 08:44:09.589498+00",
+    "correct": "F",
+    "explanation": "Source-keyed answer from moh.md (MA-30).",
+    "hash": "5b53886125677fe01c7c131e2407fe7b"
+  },
+  {
+    "id": "fae9ef36-d45e-5e52-a9bf-77d9d0947102",
+    "track_id": "est2",
+    "topic": "Functions and transformations",
+    "difficulty": "medium",
+    "type": "mcq",
+    "stem": "One of the following graphs represents the inequality 2x − 4y > 8 in the standard (x, y) coordinate plane. Which one?\n",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Solid line (slope 1/2, y-intercept −2), shaded above"
+      },
+      {
+        "key": "B",
+        "text": "Dashed line (slope 1/2, y-intercept −2), shaded below"
+      },
+      {
+        "key": "C",
+        "text": "Solid line (slope 1/2, y-intercept −2), shaded above"
+      },
+      {
+        "key": "D",
+        "text": "Solid line, shaded below"
+      }
+    ],
+    "assets": {
+      "image": "https://math.portal.ghoneem.com/assets/question-bank/E-19.png",
+      "source": "Kimi Agent Math PDF Question Bank (4)",
+      "image_alt": "Original graph, diagram, or table for E-19",
+      "source_file": "extra.md",
+      "image_sha256": "3725a594675b540aac9f652a0b20ac9f477be6c1078399e2a9acc3c35d97e06d",
+      "import_batch": "est2-kimi-bank-2026-09-21",
+      "release_batch": "2026-09-21-source-visual-review",
+      "source_sha256": "84ca68dc45b2ef2b31ffef4bf4fca4ef2cb3beb1365109214d65e6b7240c41ea",
+      "visual_repair": "original_archive_image_2026_09_21",
+      "lesson_subtopic": "Functions, Transformations & Graphs",
+      "visual_verified": true,
+      "verified_release": "2026-09-21-source-keyed-and-visual-availability-check",
+      "curriculum_lesson": "Functions and transformations",
+      "source_question_id": "E-19",
+      "lesson_original_topic": "Functions, Transformations & Graphs",
+      "lesson_taxonomy_version": "20260929",
+      "original_figure_transcript": "One of the following graphs represents the inequality 2x − 4y > 8 in the standard (x, y) coordinate plane. Which one?\n[Figure: E-19 — four shaded half-plane graphs, answer choices A–D]"
+    },
+    "created_at": "2026-09-21 08:44:06.105185+00",
+    "correct": "B",
+    "explanation": "Source-keyed answer from extra.md (E-19).",
+    "hash": "dfa9a201600a5b46b292b7da123e7d07"
+  }
+]

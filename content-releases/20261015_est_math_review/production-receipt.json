@@ -1,0 +1,944 @@
+{
+  "project": "wfhurjyouemahvkcfkdz",
+  "release": {
+    "at": "2026-10-14T23:31:04.048058+00:00",
+    "id": 20006,
+    "meta": {
+      "est": 14,
+      "est2": 14,
+      "reviewed": 28,
+      "keys_changed": 0,
+      "preservation": {
+        "exams": "d3c3a5cb98b15b0c722804aa0e03e616",
+        "attempts": "8c36c6302cbc37b30d18ddd4ac466558",
+        "assignments": "eb747bdcfd6c0c1a064cc1487754d837",
+        "enrollments": "4b9888662714d2683c95ffd92282f921",
+        "group_members": "490de03c992258e167fde9babc1861a2",
+        "attempt_answers": "40019045b929926d03bb932f3701194e",
+        "attempt_results": "cbed3c0e619fddfdecb1ffc520149420",
+        "revision_sessions": "543df6923b316164950bda11b847ca18"
+      },
+      "choice_repairs": 2
+    }
+  },
+  "reviewed": 28,
+  "changed_keys": 0,
+  "choice_repairs": 2,
+  "stale_revision": 0,
+  "ineligible_reviewed": 0,
+  "after_hash_mismatches": 0,
+  "counts": [
+    {
+      "track_id": "est",
+      "total": 2824,
+      "held": 159,
+      "eligible": 2665,
+      "independently_solved": 75,
+      "eligible_without_explicit_solved_status": 2590
+    },
+    {
+      "track_id": "est2",
+      "total": 1387,
+      "held": 12,
+      "eligible": 1375,
+      "independently_solved": 26,
+      "eligible_without_explicit_solved_status": 1349
+    }
+  ],
+  "source_archive_summary": [
+    {
+      "track_id": "est",
+      "review_status": "defective_choices",
+      "n": 5,
+      "duplicates": 0,
+      "no_linked_question": 5,
+      "eligible_linked": 0
+    },
+    {
+      "track_id": "est",
+      "review_status": "duplicate",
+      "n": 94,
+      "duplicates": 94,
+      "no_linked_question": 0,
+      "eligible_linked": 94
+    },
+    {
+      "track_id": "est",
+      "review_status": "excluded",
+      "n": 9,
+      "duplicates": 0,
+      "no_linked_question": 9,
+      "eligible_linked": 0
+    },
+    {
+      "track_id": "est",
+      "review_status": "needs_source_reconstruction",
+      "n": 9,
+      "duplicates": 0,
+      "no_linked_question": 9,
+      "eligible_linked": 0
+    },
+    {
+      "track_id": "est",
+      "review_status": "needs_source_repair",
+      "n": 7,
+      "duplicates": 0,
+      "no_linked_question": 7,
+      "eligible_linked": 0
+    },
+    {
+      "track_id": "est",
+      "review_status": "not_a_question",
+      "n": 1,
+      "duplicates": 0,
+      "no_linked_question": 1,
+      "eligible_linked": 0
+    },
+    {
+      "track_id": "est",
+      "review_status": "ready",
+      "n": 822,
+      "duplicates": 4,
+      "no_linked_question": 0,
+      "eligible_linked": 820
+    },
+    {
+      "track_id": "est",
+      "review_status": "worked_missing_choice",
+      "n": 2,
+      "duplicates": 0,
+      "no_linked_question": 2,
+      "eligible_linked": 0
+    },
+    {
+      "track_id": "est2",
+      "review_status": "needs_source_reconstruction",
+      "n": 3,
+      "duplicates": 0,
+      "no_linked_question": 3,
+      "eligible_linked": 0
+    },
+    {
+      "track_id": "est2",
+      "review_status": "ready",
+      "n": 29,
+      "duplicates": 0,
+      "no_linked_question": 0,
+      "eligible_linked": 16
+    }
+  ],
+  "prior_release_receipts": [
+    {
+      "id": 19492,
+      "action": "question.clean_notes_20261005",
+      "target_id": "20261005-clean-notes",
+      "at": "2026-10-05 12:22:21.558671+00",
+      "meta": {
+        "source_sha256": "1e6cf0ca15d3f96ff5491f27decb93ec3bf685d2ce26d134b64feb50824abb8e",
+        "inserted_count": 2,
+        "reconciled_count": 14,
+        "imported_duplicates_held": 4,
+        "unrelated_records_preserved": true
+      }
+    },
+    {
+      "id": 19527,
+      "action": "question.original_est_practice_20261006",
+      "target_id": "20261006-original-est-practice",
+      "at": "2026-10-06 11:31:51.60839+00",
+      "meta": {
+        "figures": 13,
+        "content_origin": "instructor_authored",
+        "inserted_count": 50,
+        "pack_questions": 24,
+        "web_idea_questions": 26,
+        "existing_questions_and_keys_preserved": true
+      }
+    }
+  ],
+  "next_priority": [
+    {
+      "id": "d3e283a5-20e7-5c69-8f4c-3016d9bb7f7d",
+      "track_id": "est",
+      "topic": "Circles",
+      "stem": "Q14. In the xy-plane, the points (−4, 3) and (8, 3) are endpoints of a diameter of a circle. An equation of this circle is (x − a)² + (y − b)² = c², where a, b, and c are positive constants. What is the value of a + b + c?",
+      "code": "CP-c19-28",
+      "explanation": "Source-keyed answer from panda.md (CP-c19-28).",
+      "active_uses": 1,
+      "rn": 1
+    },
+    {
+      "id": "e497c357-1c98-5920-9746-d50e7a4f830c",
+      "track_id": "est",
+      "topic": "Circles",
+      "stem": "Q9. The circle shown has center O, and points A, B, and C lie on the circle. The measure of angle BAO is 38° and the measure of angle BCO is 25°. What is the measure, in degrees, of arc AC?",
+      "code": "CP-c19-23",
+      "explanation": "Source-keyed answer from panda.md (CP-c19-23).",
+      "active_uses": 1,
+      "rn": 2
+    },
+    {
+      "id": "1150eb38-a3de-5732-af84-08acb048f01f",
+      "track_id": "est",
+      "topic": "Exponents, radicals and growth",
+      "stem": "Q3. x² + x − 5 = 0. One solution to the given equation can be written as (√k − 1)/2, where k is a constant. What is the value of k?",
+      "code": "CP-c12-19",
+      "explanation": "Source-keyed answer from panda.md (CP-c12-19).",
+      "active_uses": 1,
+      "rn": 3
+    },
+    {
+      "id": "22a14fb7-5fe4-5d8c-9d8a-65091e2f9037",
+      "track_id": "est",
+      "topic": "Exponents, radicals and growth",
+      "stem": "Q11. x² − 12x + 6 = 0. One solution to the given equation can be written as 6 + √n, where n is a constant. What is the value of n?",
+      "code": "CP-c12-11",
+      "explanation": "Source-keyed answer from panda.md (CP-c12-11).",
+      "active_uses": 1,
+      "rn": 4
+    },
+    {
+      "id": "5127ce60-6545-57e8-9f16-b8308ccd0d41",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Q4. g(x) = −5x² − 16x + 4. The given equation defines the function g. For what value of x does g(x) reach its maximum?",
+      "code": "CP-c16-04",
+      "explanation": "Source-keyed answer from panda.md (CP-c16-04).",
+      "active_uses": 1,
+      "rn": 5
+    },
+    {
+      "id": "766ed806-f4f5-5822-9ad6-93318c8636c8",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Q17. The function g is defined by g(x) = ax² + bx + c, where a, b, and c are constants. The graph of y = g(x) in the xy-plane passes through the points (−4, 0) and (8, 0). If the sum of b and c is equal to 14, what is the value of a?",
+      "code": "CP-c16-35",
+      "explanation": "Source-keyed answer from panda.md (CP-c16-35).",
+      "active_uses": 1,
+      "rn": 6
+    },
+    {
+      "id": "a2f0f711-08c9-5d63-ba2d-a2b15c2b889b",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Q3. f(x) = x² − 24x + 180. For a manufacturer of x-ray machines, the cost per unit, in thousands of dollars, can be modeled by the given function f, where x is the weekly number of units produced, and 0 ≤ x ≤ 30. How many units should the manufacturer produce each week to minimize the cost per unit?",
+      "code": "CP-c16-21",
+      "explanation": "Source-keyed answer from panda.md (CP-c16-21).",
+      "active_uses": 1,
+      "rn": 7
+    },
+    {
+      "id": "da186648-5c74-5e50-a765-022b3498d333",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Q17. T(x) = (2x + 9)/5. The function T models the time, in seconds, it takes to load a web page with x images. According to the model, by how many seconds does each image increase the load time of a web page?",
+      "code": "CP-c07-17",
+      "explanation": "Source-keyed answer from panda.md (CP-c07-17).",
+      "active_uses": 1,
+      "rn": 8
+    },
+    {
+      "id": "e1c56855-5017-5b22-9005-cb6f556d70e4",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "The graph models the gas mileage of a car, in miles per gallon, as a function of its speed, in miles per hour. Based on the model, how many gallons of gas are needed to drive this car for 5 hours at a constant speed of 30 miles per hour?",
+      "code": "CP-c23-19",
+      "explanation": "Source-keyed answer from panda.md (CP-c23-19).",
+      "active_uses": 1,
+      "rn": 9
+    },
+    {
+      "id": "f24f21a5-2b9a-555f-abb8-123ecdd77eef",
+      "track_id": "est",
+      "topic": "Functions and transformations",
+      "stem": "Q3. v(t) = −17(t − 26)² + 14,750. The given function v models the value, in dollars, of an artifact t years after its excavation. According to this model, how many years after its excavation was the value of the artifact the greatest?",
+      "code": "CP-c16-03",
+      "explanation": "Source-keyed answer from panda.md (CP-c16-03).",
+      "active_uses": 1,
+      "rn": 10
+    },
+    {
+      "id": "f3c606d2-2273-58b1-97db-44fd0e92b79b",
+      "track_id": "est2",
+      "topic": "Exponents, radicals and growth",
+      "stem": "The graph of the exponential function f is shown on the grid below.\nFor what values of x is f(x) > 16 ?",
+      "code": "MA-30",
+      "explanation": "Source-keyed answer from moh.md (MA-30).",
+      "active_uses": 8,
+      "rn": 1
+    },
+    {
+      "id": "37069cc7-8a35-54f1-8e2e-86a00d897843",
+      "track_id": "est2",
+      "topic": "Sequences",
+      "stem": "In a sequence of numbers, a₃ = 0, a₄ = 6, a₅ = 12, a₆ = 18, and a₇ = 24. Based on this information, which equation can be used to find the nth term in the sequence, aₙ?",
+      "code": "H-04",
+      "explanation": "Source-keyed answer from hard.md (H-04).",
+      "active_uses": 7,
+      "rn": 2
+    },
+    {
+      "id": "9bce0d8f-5f16-5e78-9454-e3e5b1cbffd6",
+      "track_id": "est2",
+      "topic": "Sequences",
+      "stem": "In an arithmetic sequence, the 3rd and 10th terms are 54 and 68. What is the 21st term?",
+      "code": "T7-11",
+      "explanation": "Source-keyed answer from book_t7.md (T7-11).",
+      "active_uses": 7,
+      "rn": 3
+    },
+    {
+      "id": "10c00605-6112-5d46-8e89-283fb4f9bca7",
+      "track_id": "est2",
+      "topic": "Systems of equations",
+      "stem": "Find the intersection of the pair of sets.\nW = The set of whole numbers\nP = The set of nonzero integers",
+      "code": "H-12",
+      "explanation": "Source-keyed answer from hard.md (H-12).",
+      "active_uses": 7,
+      "rn": 4
+    },
+    {
+      "id": "cae0fc9a-2635-5ed5-987a-6f9bd676f1a7",
+      "track_id": "est2",
+      "topic": "Complex numbers",
+      "stem": "If a + bi = (1 + i)³, then a + b =",
+      "code": "T7-15",
+      "explanation": "Source-keyed answer from book_t7.md (T7-15).",
+      "active_uses": 6,
+      "rn": 5
+    },
+    {
+      "id": "0cd188ad-bf15-5f68-b626-ed7b548a4955",
+      "track_id": "est2",
+      "topic": "Exponents, radicals and growth",
+      "stem": "If 2√(xa⁴) + a√(2a²) = 7a²√2, then x =",
+      "code": "T5-12",
+      "explanation": "Source-keyed answer from book_t5.md (T5-12).",
+      "active_uses": 6,
+      "rn": 6
+    },
+    {
+      "id": "9d80b5dc-c770-557c-b16c-0b4697a0c1c8",
+      "track_id": "est2",
+      "topic": "Exponents, radicals and growth",
+      "stem": "Which expression is equivalent to (45m⁻⁶p²v¹²)/(15m⁻²p⁸v⁻⁴) for all values of m, p, and v where the expression is defined?",
+      "code": "T8-13",
+      "explanation": "Source-keyed answer from book_t8.md (T8-13).",
+      "active_uses": 6,
+      "rn": 7
+    },
+    {
+      "id": "0459ec40-cb94-533d-94da-0e825e38d1e5",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "The graph of linear function k passes through the points (−7, 0) and (1, 8). Which statement must be true?",
+      "code": "T8-35",
+      "explanation": "Source-keyed answer from book_t8.md (T8-35).",
+      "active_uses": 6,
+      "rn": 8
+    },
+    {
+      "id": "0ad4e32b-d62d-59c4-a754-d2716c34f33b",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "What is the greatest value in the domain of the function graphed below?\n",
+      "code": "MA-47",
+      "explanation": "Source-keyed answer from moh.md (MA-47).",
+      "active_uses": 6,
+      "rn": 9
+    },
+    {
+      "id": "0ad854ec-becc-5f4f-b5e6-327f51f94f38",
+      "track_id": "est2",
+      "topic": "Functions and transformations",
+      "stem": "What is the range of f(x) = x² + 1 ?",
+      "code": "MA-43",
+      "explanation": "Source-keyed answer from moh.md (MA-43).",
+      "active_uses": 6,
+      "rn": 10
+    }
+  ],
+  "remaining_source_items": [
+    {
+      "id": "clean:HOA 234",
+      "track_id": "est",
+      "source_code": "HOA 234",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 141,
+      "review_status": "ready",
+      "review_note": "1+2+3+4+5=15; also 5*6/2=15.",
+      "question_id": "fdb00d7a-f3b3-5ee3-ad95-73d30e5a838c",
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:PSD 132",
+      "track_id": "est",
+      "source_code": "PSD 132",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 249,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original PDF visually checked; isolated complete question and independently verified the solution.\nWorked solution: The model is 6000(1+r)⁸=8950.95. At r=0.05, the amount is 6000·1.05⁸≈8950.95. Thus the rate is 5%.",
+      "question_id": "1b9f821a-f99f-5ea7-8f1d-97f2c4ce6217",
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:GTC 077",
+      "track_id": "est",
+      "source_code": "GTC 077",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 417,
+      "review_status": "worked_missing_choice",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. Visually checked page 417. 3x−6y=2 has slope 1/2. Choice C, 2y−x=2, has slope 1/2 and a different intercept. Choice D is absent; keep held until the complete source is recovered.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:MIX 025",
+      "track_id": "est",
+      "source_code": "MIX 025",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 432,
+      "review_status": "worked_missing_choice",
+      "review_note": "Rechecked 2026-09-29. Original page 433 confirms |3x−8|=−6 has no real solutions (D), but the numerator of choice C is also missing in this fuller original. A replacement distractor must not be invented.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:GTC 064",
+      "track_id": "est",
+      "source_code": "GTC 064",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 407,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. Both questions are defective in the original page. Q28 gives right-triangle legs AB=12.2 and BC=6 but altitude foot AD=9; these conflict, because the legs require AC≈13.596 and AD=AB²/AC≈10.947, not 9. Q29 literally reads 6≤2x−1≤5, which is impossible, and its four number-line choices are indistinguishable. No intended numerical/letter answer can be verified.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:HOA 026",
+      "track_id": "est",
+      "source_code": "HOA 026",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 22,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. Original PDF visually rechecked. Page 22 leaves the commission rule above 10 TV sales ambiguous. For 12 sales, 1550 assumes continued commission on all 12; 1530 assumes commission capped at 10; 1430 assumes base plus bonus only. The following h(x) question is cut off. Retained hold rather than inventing a payment rule.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:HOA 112",
+      "track_id": "est",
+      "source_code": "HOA 112",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 69,
+      "review_status": "needs_source_repair",
+      "review_note": "Rechecked 2026-09-29. Full original page 408 confirms the ambiguous identity. Comparing coefficients gives a=8, c=4b, and b(1+c)=0. Both (b,c)=(0,0) and (−1/4,−1) satisfy it, giving a+8b+c=8 or 5. No b≠0 condition is stated. Kept excluded.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:HOA 137",
+      "track_id": "est",
+      "source_code": "HOA 137",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 84,
+      "review_status": "needs_source_repair",
+      "review_note": "Rechecked 2026-09-29. Full original page 427 confirms the inconsistent polynomial identity. Leading, cubic, linear and constant coefficients force b²=4, z+f=9/2, a²=32/9 and zf=729/32. These force the quadratic coefficient to be 6305/72 instead of 5. No values satisfy the full identity; selecting b=2 from the leading term alone is invalid.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:HOA 144",
+      "track_id": "est",
+      "source_code": "HOA 144",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 87,
+      "review_status": "defective_choices",
+      "review_note": "Rechecked 2026-09-29. Full original page 433 repeats (2i+3)(i+5)=7i+m. The left side equals 13+13i, so m=13+6i. None of the real choices 17,13,15,11 is correct. Kept excluded.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:HOA 146",
+      "track_id": "est",
+      "source_code": "HOA 146",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 88,
+      "review_status": "needs_source_repair",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. For g(x)=2x²+10x−10, g(x)=2 has solutions x=1 and x=−6. The quadratic is not one-to-one on the reals and no branch domain is stated. Thus g⁻¹(2) is not well-defined; do not approve −6 merely because it is listed.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:HOA 186",
+      "track_id": "est",
+      "source_code": "HOA 186",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 108,
+      "review_status": "defective_choices",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. Visually checked page 108. 2(x+8)+3(x−5)=(x−2)(x+7) reduces to x²=15, whose exact solutions are ±sqrt(15). None of the listed choices is exact. −3.9 is only a one-decimal approximation to one root; the source does not request rounding or restrict the sign. Kept unscored pending a corrected source.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:HOA 221",
+      "track_id": "est",
+      "source_code": "HOA 221",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 132,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. The radical bar is absent in this crop. Read as √x+2=2 the answer is x=0 (C), while the matching earlier question HOA 194 clearly shows √(x+2)=2 and gives x=2 (A). Because this copy’s scope cannot be confirmed, do not merge conflicting interpretations or approve a letter; retain the clear HOA 194 version.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:HOA 233",
+      "track_id": "est",
+      "source_code": "HOA 233",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 141,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. The source asks for f(−2) but gives f′(x)=(2x−5)(x+1). An arbitrary integration constant prevents determining f(−2). If the prime is a typo, f(−2)=9, but this cannot be silently assumed. Retain pending a corrected source.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:MIX 026",
+      "track_id": "est",
+      "source_code": "MIX 026",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 432,
+      "review_status": "needs_source_repair",
+      "review_note": "Rechecked 2026-09-29. Full original page 433 still says consecutive numbers without positivity. Products 12·13 and (−13)(−12) are both 156, giving sums 25 and −25. Only 25 is listed. The source does not determine a unique sum; kept excluded.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:MIX 049",
+      "track_id": "est",
+      "source_code": "MIX 049",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 445,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. The shared graph in MIX 048 gives arrival at the shop at 9:15 and a 20-minute stop, hence departure at 9:35. The return-speed clause is clipped, so the arrival time home cannot be determined. The drawn vertical drop is not a physically valid constant-speed return journey; do not infer the answer from the choices.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:PAM 040",
+      "track_id": "est",
+      "source_code": "PAM 040",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 330,
+      "review_status": "defective_choices",
+      "review_note": "Rechecked 2026-09-29. Original page 106 restored. Graph is voltage in V against current in mA, with slope 16/40=0.4 V/mA (400 Ω in SI units). Its physical inverse is I_mA=2.5U or I_A=U/400. All choices are instead written as U in terms of I; no choice gives the inverse using the graphed units and variable roles. Kept excluded pending corrected inverse labels/units.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:PAM 053",
+      "track_id": "est",
+      "source_code": "PAM 053",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 339,
+      "review_status": "defective_choices",
+      "review_note": "Rechecked 2026-09-29. Full original page 414 recovered. Simplification gives (x²−10x−26)/(10(x+3)), x≠4,−3. BOTH A and B are equivalent: A numerator x³−14x²+14x+104=(x−4)(x²−10x−26), and its denominator is 10(x−4)(x+3). Thus there are two correct original choices; kept excluded.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:PSD 026",
+      "track_id": "est",
+      "source_code": "PSD 026",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 165,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. The source gives a 15% overall test-error rate, but does not specify how many errors are false positives versus false negatives, or precisely which denominator the 15% uses. An overall error rate alone does not determine the number actually healthy in the age group. The original answer labels also repeat A. Retain pending complete test/outcome information.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:PSD 091",
+      "track_id": "est",
+      "source_code": "PSD 091",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 218,
+      "review_status": "defective_choices",
+      "review_note": "Rechecked 2026-09-29. Full original page 105 recovered: German 25%, Swiss 45%, no dog 35%. Even assuming these are the only dog types, intersection is 5%, and P(Swiss|German)=5/25=0.2. I claims 11%, II claims 0.8, and III claims 0.05 as a conditional probability. None of the combinations is correct. Without the two-type assumption, the intersection is even less determined. Kept excluded.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:PSD 093",
+      "track_id": "est",
+      "source_code": "PSD 093",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 220,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. This crop contains only the upper portion of a shared chart. The axes, lower data, actual question and choices are absent. It is not a complete question and remains excluded.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:PSD 098",
+      "track_id": "est",
+      "source_code": "PSD 098",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 224,
+      "review_status": "needs_source_repair",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. “Cheapest” is ambiguous without specifying total spending versus cost per MB. Over 3 months, totals are $36,$48,$75,$90, so A minimizes spending. Including eligible one-time bonuses, data totals are 4000,6550,10200,12000 MB, so B has the lowest cost per MB (about $0.007328). Preserve both calculations and hold for clarification of the intended quantity.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:PSD 130",
+      "track_id": "est",
+      "source_code": "PSD 130",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 247,
+      "review_status": "needs_source_repair",
+      "review_note": "Rechecked 2026-09-29. Full original page 412 restores Dalia’s initial score 70. A repeated observed 15% increase gives 70·1.15²=92.575≈93 (D), whereas treating 15% as a continuous rate gives 70e^0.3≈94.49, absent from the choices. The wording mixes these models. The adjacent email-graph question still asks an undefined “average rate of age” and offers fractions while requesting a whole number. Neither is released without correcting the wording.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:PSD 144",
+      "track_id": "est",
+      "source_code": "PSD 144",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 256,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. The box plot labels Q1=65 and Q3=80, but asks for an exact count above 85. A box plot does not supply that count, and neither the upper whisker value nor raw scores are provided. Do not assume that 25% exceed 85; retain as insufficient information.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:PSD 191",
+      "track_id": "est",
+      "source_code": "PSD 191",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 283,
+      "review_status": "needs_source_repair",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. The text states AD=BC=CD, which directly gives AD/BC=1, absent from the options. For distinct interior points it is also geometrically inconsistent. The likely intended AB=BC=CD would give 3, but that is a different premise and cannot be treated as verified without a corrected original.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "clean:PSD 217",
+      "track_id": "est",
+      "source_code": "PSD 217",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_page": 303,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. Original full PDF page visually rechecked. The rational function equals 1+2/(x−1), with vertical/horizontal asymptotes x=1,y=1 and intercepts (−1,0),(0,−1). The graph choices are missing; no answer letter can be verified.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2dec:q37",
+      "track_id": "est2",
+      "source_code": "EST2-L2-DEC2020-Q37",
+      "source_document": "EST II - Math Level 2 - December 2020.pdf",
+      "source_page": 12,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Added the required positive-integer restriction.\nWorked solution: Since 6!=720, the fraction is 12m/720=m/60. It is an integer exactly when m is a multiple of 60. The least positive such integer is 60.",
+      "question_id": "8bd77556-4760-58d9-b07b-93aeba048af6",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2june:q02",
+      "track_id": "est2",
+      "source_code": "EST2-L2-JUN2021-Q02",
+      "source_document": "EST II - Math Level 2 - June 2021.pdf",
+      "source_page": 2,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Corrected the printed −1.65 rounding to −1.66, consistently across the distractors, and stated the rounding precision.\nWorked solution: Unit length requires 1/16+(3m+4)²=1. Hence 3m+4=±√15/4 and m=(−16±√15)/12. The roots are approximately −1.010585 and −1.656082, which round to −1.01 and −1.66.",
+      "question_id": "dc963911-a748-5368-a85d-40227434e37c",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2june:q15",
+      "track_id": "est2",
+      "source_code": "EST2-L2-JUN2021-Q15",
+      "source_document": "EST II - Math Level 2 - June 2021.pdf",
+      "source_page": 5,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Restored the source graph and scoped the question to the three line formulas, which uniquely identify E without assuming missing endpoint markers.\nWorked solution: The left segment has slope 1 and passes through (−3,0), giving y=x+3. The middle segment has slope 2 and y-intercept −1, giving y=2x−1. The right segment has slope −1/2 and passes through (4,0), giving y=−x/2+2. Only E has all three expressions. The source does not mark endpoint inclusion clearly, so the prompt deliberately asks about the segments away from the breakpoints.",
+      "question_id": "0bd86cbf-8704-54be-8c51-08d98401913f",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2june:q24",
+      "track_id": "est2",
+      "source_code": "EST2-L2-JUN2021-Q24",
+      "source_document": "EST II - Math Level 2 - June 2021.pdf",
+      "source_page": 7,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Specified sample standard deviation, the convention matching the source choices.\nWorked solution: The sample mean is 278/7≈39.714286. The sum of squared deviations is 2194/7≈313.428571. Divide by n−1=6 to get sample variance 1097/21≈52.238095. Half the square root is approximately 3.6138, which rounds to 3.61.",
+      "question_id": "6d879c43-fa32-59d5-8fd3-bf7d2620c678",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2june:q32",
+      "track_id": "est2",
+      "source_code": "EST2-L2-JUN2021-Q32",
+      "source_document": "EST II - Math Level 2 - June 2021.pdf",
+      "source_page": 9,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Added “each greater than 1” to exclude the original alternatives involving 1, such as 1×11×21.\nWorked solution: The prime factorization is 231=3×7×11. Because all three factors are integers greater than 1, each must contain at least one prime factor. There are exactly three prime factors, so the three integers must be 3, 7, and 11 in some order. Their sum is 21.",
+      "question_id": "6ac3fdb6-0f06-5c8f-90ee-9c3e43f1cb6b",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2june:q34",
+      "track_id": "est2",
+      "source_code": "EST2-L2-JUN2021-Q34",
+      "source_document": "EST II - Math Level 2 - June 2021.pdf",
+      "source_page": 9,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Explicitly distinguished exact solutions from rounded approximations, resolving the B/E precision ambiguity.\nWorked solution: Use sin 2x=2sin x cos x to factor the equation as sin x(3+4cos x)=0. Its full solution is x=kπ or x=±arccos(−3/4)+2kπ, where k is an integer. Every x=−2πn is an exact solution. The values 2.42 and 3.86 are rounded approximations, not exact values of arccos(−3/4) or its other branch, so the other listed families do not consist of exact solutions.",
+      "question_id": "77400e2a-a414-5b01-857d-0c94f2e7c901",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2june:q39",
+      "track_id": "est2",
+      "source_code": "EST2-L2-JUN2021-Q39",
+      "source_document": "EST II - Math Level 2 - June 2021.pdf",
+      "source_page": 10,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Transcribed all diagram data into the stem and corrected A from 15.89 to 15.90. The wording “could” correctly accommodates the two SSA triangles.\nWorked solution: By the sine rule, sin B=12sin(28°)/7.5≈0.7511545. Thus B≈48.6905° or 131.3095°, and C≈103.3095° or 20.6905°. The area is (1/2)(12)(7.5)sin C. The two possibilities are approximately 43.7913 and 15.8994 cm², rounding to 43.79 and 15.90. Only 15.90 is listed.",
+      "question_id": "b927982b-5e81-56d8-a4e4-3de4ff419aab",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2may:q22",
+      "track_id": "est2",
+      "source_code": "EST2-L2-MAY2021-Q22",
+      "source_document": "EST II - Math Level 2 - May 2021.pdf",
+      "source_page": 9,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Corrected D from “above” to “below”; the original D and E were both true. Original text is preserved in the audit backup.\nWorked solution: Factor x²−1=(x−1)(x+1). For x≠±1, f(x)=(x+3)/[(x²+1)(x+1)]. Cancellation creates a hole at x=1, with limiting y-value 1. There is one vertical asymptote, x=−1; the horizontal asymptote is y=0; and the x-intercept is −3. For x<−3 both x+3 and x+1 are negative, so f(x)>0. Only E is true after correcting D.",
+      "question_id": "427b4627-3d6c-5b2a-8490-8a7cf1272b3e",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2may:q32",
+      "track_id": "est2",
+      "source_code": "EST2-L2-MAY2021-Q32",
+      "source_document": "EST II - Math Level 2 - May 2021.pdf",
+      "source_page": 13,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Added nonverticality, which supplies the missing a+b≠0 restriction. Answer asks for the general expression, not a special parameter coincidence.\nWorked solution: The slope is (3a−3b)/(a²−b²)=3/(a+b). Nonverticality ensures a+b≠0. Substituting (a²,3a) into y=mx+c gives c=3a−3a²/(a+b)=3ab/(a+b). This is the general expression in A.",
+      "question_id": "ec415335-137b-5aa1-9159-f0f2621a503f",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2may:q47",
+      "track_id": "est2",
+      "source_code": "EST2-L2-MAY2021-Q47",
+      "source_document": "EST II - Math Level 2 - May 2021.pdf",
+      "source_page": 17,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Added the normal-distribution assumption and expressed the answer as a fraction to match the printed options.\nWorked solution: A normal distribution is symmetric about its mean, with half its probability on each side. Equivalently z=(100−100)/16=0, whose cumulative probability is 0.50. The corresponding percentile is the 50th.",
+      "question_id": "0f3e0356-c659-54d2-a982-45ec57e1a515",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2oct:q03",
+      "track_id": "est2",
+      "source_code": "EST2-L2-OCT2020-Q03",
+      "source_document": "EST II - Math Level 2 - October 2020.pdf",
+      "source_page": 3,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Specified degrees, the missing convention required by the source answer choices.\nWorked solution: First g(2)=3√7. Next h(3√7)=(3√7)²−3=63−3=60. Finally f(60)=−3cos60°=−3/2=−1.5. The angle unit is explicitly degrees.",
+      "question_id": "435a674f-a11f-544c-a740-04115f2b4810",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2oct:q22",
+      "track_id": "est2",
+      "source_code": "EST2-L2-OCT2020-Q22",
+      "source_document": "EST II - Math Level 2 - October 2020.pdf",
+      "source_page": 7,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Specified distinct cards and one card per friend, resolving the source’s ambiguous distribution rule.\nWorked solution: Choose the first friend’s card in 8 ways, the second’s in 7, then 6, 5, and 4 ways for the remaining friends. The product is 8×7×6×5×4=6720. This is P(8,5), because both cards and recipients are distinct.",
+      "question_id": "030fc279-24b3-570c-b6f9-11997fb78d8b",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2oct:q31",
+      "track_id": "est2",
+      "source_code": "EST2-L2-OCT2020-Q31",
+      "source_document": "EST II - Math Level 2 - October 2020.pdf",
+      "source_page": 9,
+      "review_status": "ready",
+      "review_note": "Rechecked 2026-09-28. Original source image decrypted, hash checked, and visually inspected. Corrected choice E’s arithmetic and explicitly stated compound growth and rounding. This is a mathematical model using the source data, not a claim about measured population.\nWorked solution: The annual growth factor is 1+0.0059=1.0059. There are 2021−2018=3 years of growth, so the prediction is 1,427,647,786(1.0059)³≈1,453,066,534.279. Rounding gives 1,453,066,534.",
+      "question_id": "c7bdeee7-9368-58cd-a5b4-8f9ac3a31302",
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l1june:q05",
+      "track_id": "est2",
+      "source_code": "EST2-L1-JUN2021-Q05",
+      "source_document": "EST II - Math Level 1 - June 2021.pdf",
+      "source_page": 2,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. Original source image visually checked again. Original diagram has no numerical side length. From tanβ=2/3, the sides are 2k, 3k, k√13 for any k>0. Both √13 and 2√13 are possible hypotenuse lengths. A source side length is required; no unique answer can be verified.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l1oct:q45",
+      "track_id": "est2",
+      "source_code": "EST2-L1-OCT2021-Q45",
+      "source_document": "EST II - Math Level 1 - October 2021.pdf",
+      "source_page": 16,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. Original source image visually checked again. For a real angle θ, cos(π/2−θ)=sinθ cannot equal 2/√3>1. There is no real solution. The formal value 4/3 is not a valid answer to the printed premise. Kept excluded pending correction of the source constant.",
+      "question_id": null,
+      "duplicate_of": null
+    },
+    {
+      "id": "est2-papers-2026-09-26:l2oct:q04",
+      "track_id": "est2",
+      "source_code": "EST2-L2-OCT2020-Q04",
+      "source_document": "EST II - Math Level 2 - October 2020.pdf",
+      "source_page": 3,
+      "review_status": "needs_source_reconstruction",
+      "review_note": "Rechecked 2026-09-29. Recheck of the available source evidence and full-exam search did not resolve this item. Original source image visually checked again. The source crop and PDF contain no shaded-region diagram or description. Curved hemisphere area is 2πr² and total area is 3πr², but neither defines an arbitrary shaded subset. An original diagram is required; no answer can be verified.",
+      "question_id": null,
+      "duplicate_of": null
+    }
+  ],
+  "held_replacements": [
+    {
+      "id": "e390176d-dc15-5440-8f9c-c89f7706e604",
+      "track_id": "est2",
+      "source_code": "T7-07",
+      "replacement_id": "0a045c5e-457c-567a-8771-4af81d8c27d1",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "af3e8f2a-c43e-54d4-98c3-7c5fabf452e7",
+      "track_id": "est2",
+      "source_code": "T10-16",
+      "replacement_id": "11019720-158e-563c-87f9-c07b40dff753",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "18d69e89-5353-5b6d-8cfb-21c17bee472b",
+      "track_id": "est2",
+      "source_code": "T3-22",
+      "replacement_id": "1d24488a-6071-5e3a-97ba-87cf4829b95a",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "ca0b3c27-5617-532d-93ce-30461e2b7d10",
+      "track_id": "est2",
+      "source_code": "T10-10",
+      "replacement_id": "334f352c-f96e-5d91-84f8-e02f942a0ede",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "44d81c11-3760-7638-292b-77268461e4b5",
+      "track_id": "est",
+      "source_code": "ghoneem_full_revision_jun_2026-q00104",
+      "replacement_id": "389099ff-c93c-5290-9688-3fc4ea0f5ffa",
+      "replacement_track": "est",
+      "replacement_ready": true
+    },
+    {
+      "id": "6d0331ad-05ab-510f-bc57-ee2a951cc94a",
+      "track_id": "est2",
+      "source_code": "T7-36",
+      "replacement_id": "41d9cd4f-4bb4-51ac-9e3a-b2443167a1b2",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "e66b07e7-ae80-5b66-a025-bb6f27c972a6",
+      "track_id": "est2",
+      "source_code": "T7-28",
+      "replacement_id": "5dd53760-0cb1-5181-a2f5-157ec53ccdfd",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "30eec906-1afb-5d4e-afd6-a9f868417e15",
+      "track_id": "est2",
+      "source_code": "T6-11",
+      "replacement_id": "72635b0f-4b09-569a-9252-f5a637e87693",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "22a42973-8e94-0307-7341-5a98290fdaf9",
+      "track_id": "est",
+      "source_code": "full_subject_revision_june_2026-p16-q76",
+      "replacement_id": "779824f6-5c74-529d-9918-49eaa8d4145d",
+      "replacement_track": "est",
+      "replacement_ready": true
+    },
+    {
+      "id": "6d671cad-0f53-5e10-abaf-6d1328031b81",
+      "track_id": "est2",
+      "source_code": "T7-08",
+      "replacement_id": "7d54a13b-bb06-5718-bbff-83932573a393",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "0476278a-01ae-54ce-816f-c8e7687e3849",
+      "track_id": "est2",
+      "source_code": "T7-21",
+      "replacement_id": "805e770b-9b8c-5149-a77d-d36467c2cc9f",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "38dae603-01c3-93f3-000f-2d8610facd6a",
+      "track_id": "est",
+      "source_code": "full_subject_revision_june_2026-p14-q65",
+      "replacement_id": "a90c5ace-692f-5209-aa94-5d48703d5018",
+      "replacement_track": "est",
+      "replacement_ready": true
+    },
+    {
+      "id": "75a90933-fefc-5852-a2e5-c49a4e399855",
+      "track_id": "est2",
+      "source_code": "T9-34",
+      "replacement_id": "c3eb47cf-ca18-5a8a-8f5d-24a1245644ce",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "3611425e-4860-524c-92d1-62c1bc11cea2",
+      "track_id": "est2",
+      "source_code": "T9-19",
+      "replacement_id": "cbf071f1-5132-5782-881e-64fbcbc1d6e7",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "4c8d39ac-bfe5-57d2-9308-69a417ad3fdc",
+      "track_id": "est2",
+      "source_code": "T6-18",
+      "replacement_id": "e0fb54f8-499e-52d1-b418-07bb64159ddf",
+      "replacement_track": "est2",
+      "replacement_ready": true
+    },
+    {
+      "id": "3556fa31-7c75-76db-d8d7-9ee22d7c3867",
+      "track_id": "est",
+      "source_code": "full_subject_revision_june_2026-p48-q214",
+      "replacement_id": null,
+      "replacement_track": null,
+      "replacement_ready": false
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "question_id": "bf3b309d-98d4-592c-bee1-3163c433c847",
+    "lesson": "Logic and sets",
+    "idea": "Chained conditionals and contraposition",
+    "difficulty": "medium",
+    "programmes": [
+      "est"
+    ],
+    "fingerprint": "ca545a04e5a909b4a894541c42d279be",
+    "active": true,
+    "focus": {
+      "release": "20260929-est1-idea-expansion",
+      "takeaway": "Key skill: Chained conditionals and contraposition.",
+      "collections": [
+        "unique"
+      ],
+      "math_format": "plain",
+      "bank_occurrences": 1
+    }
+  }
+]
