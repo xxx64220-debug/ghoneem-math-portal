@@ -98,9 +98,11 @@ test(`SAT portal, exam navigation/timer/figures and calculator ${calculatorMode}
  await expect(page.locator('#satCalculatorToggle')).toHaveAttribute('aria-expanded','true');
  if(calculatorMode==='authorized-fixture') await page.getByLabel('Calculator expression').fill('y=x');
  else await expect(page.locator('#satCalculatorStatus')).toContainText(calculatorMode==='failed-load'?'could not load':'unavailable');
+ const compactBounds=await panel.boundingBox();
  await page.locator('#satCalculatorSize').click();
  await expect(page.locator('#satCalculatorSize')).toHaveAttribute('aria-pressed','true');
  const bounds=await panel.boundingBox();expect(bounds.width).toBeGreaterThan(200);
+ expect(bounds.width>compactBounds.width || bounds.height>compactBounds.height).toBe(true);
  expect(bounds.x+bounds.width).toBeLessThanOrEqual(page.viewportSize().width+1);
  await page.locator('#prevBtn').click();
  await expect(page.locator('.choice[data-k="A"]')).toHaveClass(/sel/);
