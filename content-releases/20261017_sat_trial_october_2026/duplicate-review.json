@@ -1,0 +1,643 @@
+{
+  "existing_sat_rows_reviewed": 2184,
+  "new_unique_questions": 137,
+  "source_occurrences": 142,
+  "internal_duplicates": [
+    {
+      "ref": "P1-M2H-12",
+      "canonical": "P1-M2E-05"
+    },
+    {
+      "ref": "P1-M2H-17",
+      "canonical": "P1-M2E-20"
+    },
+    {
+      "ref": "P2-M1-08",
+      "canonical": "P1-M1-08"
+    },
+    {
+      "ref": "P2-M2H-09",
+      "canonical": "P2-M2E-04"
+    },
+    {
+      "ref": "P2-M2H-13",
+      "canonical": "P2-M2E-19"
+    }
+  ],
+  "exact_existing_matches": 0,
+  "method": "Normalized stem, choices, numerical givens, requested output and graph context. Near matches retained only when mathematics/values or requested outputs differ. Generic graph stems are compared together with choices/figures.",
+  "nearest_existing_candidates": [
+    {
+      "ref": "P1-M1-01",
+      "candidate_id": "9810c4dd-eb64-419a-8fc4-d5463e55b7ec",
+      "similarity": 0.776,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-02",
+      "candidate_id": "73fbe7f1-7ac1-49f9-a86b-a07fbe205c9b",
+      "similarity": 0.569,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-04",
+      "candidate_id": "482cce33-e881-53d7-baef-e9faa6737a6d",
+      "similarity": 0.93,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-05",
+      "candidate_id": "6236d60a-e4a7-40ea-9504-ceacf783e3a3",
+      "similarity": 0.786,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-08",
+      "candidate_id": "e8603994-ac69-50a0-a31a-78995d48a43c",
+      "similarity": 0.615,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-09",
+      "candidate_id": "700e1e31-1fb1-5174-908f-59d4599de3b0",
+      "similarity": 0.69,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-10",
+      "candidate_id": "32ae6607-414c-5c73-84f6-bb9399c1e2a7",
+      "similarity": 0.76,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-11",
+      "candidate_id": "402a6a35-890f-440f-b6ac-48b378946ae0",
+      "similarity": 1.0,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-12",
+      "candidate_id": "8e2394c8-38d6-47e4-abe6-5e10f33a4874",
+      "similarity": 0.565,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-15",
+      "candidate_id": "b18f2a3d-941e-5ee7-92f4-f883d6c69473",
+      "similarity": 0.526,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-16",
+      "candidate_id": "df6bf14b-9ad7-5be7-bd8e-48d41f727674",
+      "similarity": 0.54,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-17",
+      "candidate_id": "b138af09-b749-5a77-8ed6-56bfa554362c",
+      "similarity": 0.552,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-19",
+      "candidate_id": "92ee4f92-86ed-56e7-afe2-27d971ad36a8",
+      "similarity": 0.634,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-20",
+      "candidate_id": "c54ed0a0-1a89-4412-933e-c3100cee2c81",
+      "similarity": 0.537,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-21",
+      "candidate_id": "6c644c27-6247-430e-a692-61a719f7aabe",
+      "similarity": 0.699,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-22",
+      "candidate_id": "104c1c3d-f405-4d15-bc84-5bb38b39e3de",
+      "similarity": 0.713,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-23",
+      "candidate_id": "75cadf2c-7cc3-579c-8920-3e10f4736f28",
+      "similarity": 0.646,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M1-24",
+      "candidate_id": "9f2d6b91-c8bb-52b4-a845-ccec7edc393e",
+      "similarity": 0.821,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-01",
+      "candidate_id": "a3dfcc66-39ad-4f2f-81c8-234d4be10beb",
+      "similarity": 0.599,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-02",
+      "candidate_id": "75cadf2c-7cc3-579c-8920-3e10f4736f28",
+      "similarity": 0.533,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-03",
+      "candidate_id": "ef836766-ce9b-5685-84bb-717ef3dadaa5",
+      "similarity": 0.667,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-05",
+      "candidate_id": "f3cd1404-19c4-550a-beaf-61bed626a5ae",
+      "similarity": 0.537,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-06",
+      "candidate_id": "48286528-0526-5fed-a818-279c33842fc1",
+      "similarity": 0.75,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-10",
+      "candidate_id": "482cce33-e881-53d7-baef-e9faa6737a6d",
+      "similarity": 0.944,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-11",
+      "candidate_id": "dd93c995-153c-5edd-a254-81b681538f0c",
+      "similarity": 0.733,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-14",
+      "candidate_id": "d2ec91e2-324d-4b55-8f53-b28d7afae42f",
+      "similarity": 0.67,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-15",
+      "candidate_id": "3cd83a24-2b19-4d67-ad47-2ba5d80ebcf4",
+      "similarity": 0.833,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-17",
+      "candidate_id": "6870579f-7938-456c-905b-920fd84d8d85",
+      "similarity": 0.812,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-18",
+      "candidate_id": "2388a635-676b-421d-8853-9ef1de3f98b7",
+      "similarity": 0.882,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-19",
+      "candidate_id": "0f0cae7e-0840-53bf-824f-4d1bc440c853",
+      "similarity": 0.865,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-20",
+      "candidate_id": "4dd7f8e5-2ee1-5d91-a808-70c5746d6213",
+      "similarity": 0.554,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-21",
+      "candidate_id": "4c7fafb6-7c64-46b8-950b-d87df6a13303",
+      "similarity": 0.726,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-22",
+      "candidate_id": "f8463af7-a7b2-5506-b125-642b6c5fd019",
+      "similarity": 0.684,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-23",
+      "candidate_id": "ab12e0e0-d7ee-485c-85d0-d81ef02fcdcf",
+      "similarity": 0.764,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-24",
+      "candidate_id": "ecaca6cc-14f7-4c5c-a6be-884432b3538f",
+      "similarity": 0.565,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2E-25",
+      "candidate_id": "badd6e67-5136-58ea-bfa8-0f0a94ff393f",
+      "similarity": 0.894,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-01",
+      "candidate_id": "29ace4de-cda1-4f25-983f-45c7c44a96ef",
+      "similarity": 0.76,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-02",
+      "candidate_id": "cc0cf778-c337-5745-8d41-1ea3949a0b7b",
+      "similarity": 0.583,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-04",
+      "candidate_id": "ca5c78f9-f43a-4838-ad3a-bc7f89da8c80",
+      "similarity": 0.705,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-05",
+      "candidate_id": "609547b6-81f5-5204-b48d-32f07d6a77a8",
+      "similarity": 0.8,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-06",
+      "candidate_id": "3a388650-a781-5b81-835d-341d62402e2d",
+      "similarity": 0.655,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-07",
+      "candidate_id": "6db71d2e-cd08-5e65-a188-3c10eff278fb",
+      "similarity": 0.741,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-08",
+      "candidate_id": "23e101de-9323-55bc-9c8c-de949d508e77",
+      "similarity": 0.667,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-09",
+      "candidate_id": "ab12e0e0-d7ee-485c-85d0-d81ef02fcdcf",
+      "similarity": 0.702,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-13",
+      "candidate_id": "dedae662-a2e5-5e25-bcc0-18c17b0ec7f6",
+      "similarity": 0.72,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-14",
+      "candidate_id": "53bfd9ec-094c-462e-9392-0c1380f2555f",
+      "similarity": 0.667,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-16",
+      "candidate_id": "38ac2f4c-92cf-474d-b25d-ecd423db3758",
+      "similarity": 0.664,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-18",
+      "candidate_id": "a443a041-cac2-43fb-89c5-19e7039d8f56",
+      "similarity": 0.621,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-19",
+      "candidate_id": "dedae662-a2e5-5e25-bcc0-18c17b0ec7f6",
+      "similarity": 0.719,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-21",
+      "candidate_id": "92ee4f92-86ed-56e7-afe2-27d971ad36a8",
+      "similarity": 0.739,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-23",
+      "candidate_id": "4008a822-d4af-4922-b1e8-2d9187d825bb",
+      "similarity": 0.589,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-24",
+      "candidate_id": "b7c56e90-fed0-4989-98b5-79850742b0d4",
+      "similarity": 0.547,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-25",
+      "candidate_id": "7fa17c7d-24cf-4598-959d-6fe70218a262",
+      "similarity": 0.532,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-26",
+      "candidate_id": "9e52c55d-1052-58b2-8825-e2eeeaf6e8ff",
+      "similarity": 0.571,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P1-M2H-27",
+      "candidate_id": "f5a65eb4-3aeb-46de-b3c5-763b3948a460",
+      "similarity": 0.545,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-01",
+      "candidate_id": "23e101de-9323-55bc-9c8c-de949d508e77",
+      "similarity": 0.754,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-02",
+      "candidate_id": "8abfd8f3-83cc-51a3-b584-75c146567c1c",
+      "similarity": 0.575,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-03",
+      "candidate_id": "bc0ca266-3a8c-5147-baa4-196e32a7bf95",
+      "similarity": 0.941,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-04",
+      "candidate_id": "270e56c4-92c4-5af0-afba-b6fa2af31633",
+      "similarity": 0.737,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-06",
+      "candidate_id": "18777d3c-ce72-514b-909b-8fd9ceae530c",
+      "similarity": 0.755,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-09",
+      "candidate_id": "32ae6607-414c-5c73-84f6-bb9399c1e2a7",
+      "similarity": 0.76,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-10",
+      "candidate_id": "402a6a35-890f-440f-b6ac-48b378946ae0",
+      "similarity": 0.897,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-11",
+      "candidate_id": "53bfd9ec-094c-462e-9392-0c1380f2555f",
+      "similarity": 0.711,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-12",
+      "candidate_id": "2bd2db8d-3695-58d9-97ba-ac59e51a345b",
+      "similarity": 0.541,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-13",
+      "candidate_id": "7f189985-e47d-427e-ab15-64c7817c163a",
+      "similarity": 0.657,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-14",
+      "candidate_id": "df6bf14b-9ad7-5be7-bd8e-48d41f727674",
+      "similarity": 0.55,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-15",
+      "candidate_id": "9b9bf5b6-88a7-4b4e-9bcf-dfde71f4baed",
+      "similarity": 0.558,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-16",
+      "candidate_id": "2858c0a1-be6f-52ff-b922-b0cf062cd02d",
+      "similarity": 0.714,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-17",
+      "candidate_id": "3a388650-a781-5b81-835d-341d62402e2d",
+      "similarity": 0.63,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-18",
+      "candidate_id": "92ee4f92-86ed-56e7-afe2-27d971ad36a8",
+      "similarity": 0.661,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-19",
+      "candidate_id": "b0edf76e-aa2e-5ab7-9c21-564109872815",
+      "similarity": 0.548,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-20",
+      "candidate_id": "1c04eab4-cd69-442f-b15d-57f4cd83a298",
+      "similarity": 0.687,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-21",
+      "candidate_id": "1ef8acf5-73a4-4419-813e-6acb018dd0ce",
+      "similarity": 0.686,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M1-22",
+      "candidate_id": "9e52c55d-1052-58b2-8825-e2eeeaf6e8ff",
+      "similarity": 0.925,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-02",
+      "candidate_id": "37ea3588-19ba-5064-96ab-8efd66257310",
+      "similarity": 0.875,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-03",
+      "candidate_id": "2af1e613-d4ae-4b36-9a42-2ef16611b6c9",
+      "similarity": 0.638,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-04",
+      "candidate_id": "18777d3c-ce72-514b-909b-8fd9ceae530c",
+      "similarity": 0.746,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-05",
+      "candidate_id": "a3dfcc66-39ad-4f2f-81c8-234d4be10beb",
+      "similarity": 0.599,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-09",
+      "candidate_id": "af0a8ded-43ec-44f1-b14e-8145941ad644",
+      "similarity": 0.943,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-10",
+      "candidate_id": "47398a7b-32d2-5f7d-810b-1d2c2c2df29a",
+      "similarity": 0.624,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-13",
+      "candidate_id": "23e101de-9323-55bc-9c8c-de949d508e77",
+      "similarity": 0.754,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-15",
+      "candidate_id": "7f63ef20-c3a8-486e-9b41-a07ac6c28435",
+      "similarity": 0.558,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-16",
+      "candidate_id": "0f0cae7e-0840-53bf-824f-4d1bc440c853",
+      "similarity": 0.811,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-17",
+      "candidate_id": "18777d3c-ce72-514b-909b-8fd9ceae530c",
+      "similarity": 0.75,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-18",
+      "candidate_id": "c03395b6-8f0f-5321-956a-25c5c2abf9a9",
+      "similarity": 0.734,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-20",
+      "candidate_id": "badd6e67-5136-58ea-bfa8-0f0a94ff393f",
+      "similarity": 0.974,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-21",
+      "candidate_id": "6698149a-8d77-4845-96c5-7954f812eecf",
+      "similarity": 0.552,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2E-22",
+      "candidate_id": "fe98ecc5-40c9-4f63-9001-e1da89337e16",
+      "similarity": 0.712,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-01",
+      "candidate_id": "29ace4de-cda1-4f25-983f-45c7c44a96ef",
+      "similarity": 0.76,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-03",
+      "candidate_id": "861e3544-4cd9-5931-9a1a-3e72e3918458",
+      "similarity": 0.864,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-04",
+      "candidate_id": "ad42bc94-0b8e-5e74-b45f-f22fdf0343cc",
+      "similarity": 0.729,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-07",
+      "candidate_id": "f763d2a4-786f-5429-a05a-80ed4825fae4",
+      "similarity": 0.822,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-08",
+      "candidate_id": "39a1add5-f195-47b3-bc96-fdaa147dab8d",
+      "similarity": 0.779,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-12",
+      "candidate_id": "23e101de-9323-55bc-9c8c-de949d508e77",
+      "similarity": 0.618,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-14",
+      "candidate_id": "7c755041-bd5f-55f7-86e7-66a21b1b0bf0",
+      "similarity": 0.727,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-15",
+      "candidate_id": "a443a041-cac2-43fb-89c5-19e7039d8f56",
+      "similarity": 0.621,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-17",
+      "candidate_id": "b321961f-08d2-4420-8764-28088c7becbe",
+      "similarity": 0.548,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-18",
+      "candidate_id": "4008a822-d4af-4922-b1e8-2d9187d825bb",
+      "similarity": 0.638,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-19",
+      "candidate_id": "f676ab13-85c4-465b-9389-6190ac44057c",
+      "similarity": 0.71,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-20",
+      "candidate_id": "4f61d156-e1b9-5d45-a207-aaf86e06635c",
+      "similarity": 0.622,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-21",
+      "candidate_id": "f5a65eb4-3aeb-46de-b3c5-763b3948a460",
+      "similarity": 0.545,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    },
+    {
+      "ref": "P2-M2H-22",
+      "candidate_id": "786a8b36-680e-5cdc-a480-dedc1cdf1969",
+      "similarity": 0.644,
+      "decision": "distinct: mathematical givens, requested output or choices differ"
+    }
+  ]
+}

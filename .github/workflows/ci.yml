@@ -87,6 +87,11 @@ jobs:
           python tests/sat_pr6_records.py
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/panda_private_worked_pages_db.cjs
 
+      - name: Verify October 2026 SAT trial intake offline
+        run: |
+          python tests/sat_trial_october_2026_math.py
+          PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/sat_trial_october_2026_db.cjs
+
       - name: Run EST release arithmetic and content checks when source data exists
         run: |
           python scripts/build-est1-revision-ideas.py
