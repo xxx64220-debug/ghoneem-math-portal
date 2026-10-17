@@ -1,0 +1,23 @@
+[
+  {
+    "ref": "P2-M1-18",
+    "printed": "B 1/122",
+    "verified": "B, 1/√2"
+  },
+  {
+    "ref": "P2-M2E-03",
+    "printed": "B 2/552",
+    "verified": "B, 2/5"
+  },
+  {
+    "ref": "P2-M2E-04",
+    "also": "P2-M2H-09",
+    "printed": "D (0,217)",
+    "verified": "D, (0,2/17)"
+  },
+  {
+    "ref": "P2-M2H-08",
+    "printed": "B 1/1991",
+    "verified": "B, 1/9"
+  }
+]
