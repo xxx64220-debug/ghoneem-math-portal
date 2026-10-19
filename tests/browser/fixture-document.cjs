@@ -8,6 +8,7 @@ async function fixtureDocument(route) {
   const response = await route.fetch();
   const body = (await response.text()).replace(/<(?:script|link)\b[^>]*(?:src|href)="https:\/\/cdn\.jsdelivr\.net\/[^>]+>/g,
     tag => tag.replace(/ integrity="[^"]+"/g, ''));
-  return route.fulfill({response, body});
+  const {securityHeaders} = await import('../../hosting/portal-response.mjs');
+  return route.fulfill({response, body, headers:{...response.headers(),...securityHeaders}});
 }
 module.exports = {fixtureDocument};
