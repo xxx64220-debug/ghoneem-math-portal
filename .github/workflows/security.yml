@@ -33,6 +33,7 @@ jobs:
       - name: Check public artifacts, hostile markup, math, exports and CORS
         run: |
           node scripts/security-public.cjs
+          node --test tests/response_headers.test.mjs
           node --test tests/security.test.cjs tests/auth_security.test.cjs tests/cors.test.cjs tests/svg_figures.test.cjs tests/english_reading.test.cjs
       - name: Check account, subscription and group authorization in disposable PostgreSQL
         run: |
