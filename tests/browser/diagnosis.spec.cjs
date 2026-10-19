@@ -101,7 +101,7 @@ test('instructor diagnosis downloads safe CSV from the displayed EST roster',asy
  const downloadPromise=page.waitForEvent('download');await page.locator('#finalsDiagnosisCsv').click();const download=await downloadPromise;
  expect(download.suggestedFilename()).toMatch(/^est-diagnosis-\d{4}-\d{2}-\d{2}\.csv$/);
  const body=require('fs').readFileSync(await download.path(),'utf8');
- expect(body.startsWith('\ufeffstudent,latest_score,percent,time_seconds,')).toBe(true);
+ expect(body.startsWith('\ufeff"student","latest_score","percent","time_seconds",')).toBe(true);
  expect(body).toContain('"\'=Student, ""A"""');expect(body).toContain('"1/4","25","0","Circles 25%"');
  expect(body).toContain('"No attempts","No completed EST I Math attempt"');expect(body).not.toContain('Other track');expect(body).not.toContain('Limited');
  expect(errors).toEqual([]);expect(unexpected).toEqual([]);
