@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "me-tracks",
+    "before_version": 6,
+    "after_version": 7,
+    "verify_jwt": false
+  },
+  {
+    "slug": "start-attempt",
+    "before_version": 5,
+    "after_version": 6,
+    "verify_jwt": false
+  },
+  {
+    "slug": "submit-attempt",
+    "before_version": 4,
+    "after_version": 5,
+    "verify_jwt": false
+  },
+  {
+    "slug": "attempt-review",
+    "before_version": 4,
+    "after_version": 5,
+    "verify_jwt": false
+  },
+  {
+    "slug": "grant-retake",
+    "before_version": 4,
+    "after_version": 5,
+    "verify_jwt": false
+  },
+  {
+    "slug": "admin-users",
+    "before_version": 4,
+    "after_version": 5,
+    "verify_jwt": false
+  },
+  {
+    "slug": "enrollments",
+    "before_version": 4,
+    "after_version": 5,
+    "verify_jwt": false
+  },
+  {
+    "slug": "staff-console",
+    "before_version": 3,
+    "after_version": 4,
+    "verify_jwt": true
+  },
+  {
+    "slug": "daily-challenge",
+    "before_version": 5,
+    "after_version": 6,
+    "verify_jwt": true
+  },
+  {
+    "slug": "admin-delete-user",
+    "before_version": 1,
+    "after_version": 2,
+    "verify_jwt": false
+  },
+  {
+    "slug": "portal-notifications",
+    "before_version": 3,
+    "after_version": 4,
+    "verify_jwt": false
+  },
+  {
+    "slug": "final-revision",
+    "before_version": 3,
+    "after_version": 4,
+    "verify_jwt": true
+  },
+  {
+    "slug": "portal-controls",
+    "before_version": 1,
+    "after_version": 2,
+    "verify_jwt": true
+  },
+  {
+    "slug": "exam-activity",
+    "before_version": 1,
+    "after_version": 2,
+    "verify_jwt": true
+  },
+  {
+    "slug": "student-groups",
+    "before_version": 2,
+    "after_version": 3,
+    "verify_jwt": true
+  }
+]

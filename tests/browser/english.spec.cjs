@@ -1,3 +1,4 @@
+const {fixtureDocument}=require('./fixture-document.cjs');
 const {withCourseAccess}=require('./fixture-access.cjs');
 const { test, expect } = require('@playwright/test');
 // Synthetic text in the observed import topology: one marked assets.html root,
@@ -15,11 +16,11 @@ for (const track of ['est_eng','sat','est','est2']) {
  page.on('pageerror',e=>errors.push(e.message));
  await context.route('**/*', async route=>{
   const url=new URL(route.request().url());
-  if(url.origin==='http://127.0.0.1:4173')return route.continue();
+  if(url.origin==='http://127.0.0.1:4173')return fixtureDocument(route);
   
-  if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:sdk});
+  if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:sdk});
   // Optional CDN styling/fonts/math are offline in this smoke test.
-  if(url.hostname==='fonts.googleapis.com' || (url.hostname==='cdn.jsdelivr.net' && url.pathname.startsWith('/npm/katex@0.16.9/dist/')))return route.fulfill({body:'',contentType:route.request().resourceType()==='script'?'application/javascript':'text/css'});
+  if(url.hostname==='fonts.googleapis.com' || (url.hostname==='cdn.jsdelivr.net' && url.pathname.startsWith('/npm/katex@0.18.2/dist/')))return route.fulfill({body:'',contentType:route.request().resourceType()==='script'?'application/javascript':'text/css'});
   if(url.hostname==='wfhurjyouemahvkcfkdz.supabase.co' && url.pathname.startsWith('/functions/v1/')){
    const name=url.pathname.split('/').pop();let data;
    if(name==='me-tracks')data=url.search?{exams:[exam],dashboard:{}}:{role:'student',tracks};
