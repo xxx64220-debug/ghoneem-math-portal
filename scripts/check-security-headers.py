@@ -23,8 +23,9 @@ def probe(path):
         response = error
     with response:
         actual = {name: response.headers.get(name) for name in EXPECTED}
-        passed = response.status == (404 if path == "/.env" else 200) and actual == EXPECTED
-        return {"path": path, "status": response.status, "passed": passed, "headers": actual}
+        binary = path.endswith(".png")
+        passed = response.status == (404 if path == "/.env" else 200) and (response.headers.get("Content-Type", "").startswith("image/png") if binary else actual == EXPECTED)
+        return {"path": path, "status": response.status, "passed": passed, "scope": "host-served PNG availability" if binary else "all five application headers", "headers": actual}
 
 
 if __name__ == "__main__":

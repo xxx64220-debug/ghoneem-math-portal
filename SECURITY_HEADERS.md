@@ -29,9 +29,12 @@ original project ID are retained. `portal-static/` preserves the prior static
 input; `scripts/prepare-portal-assets.mjs` overlays current `web/` edits and emits
 54 text responses plus 1,519 binary assets. All binary build hashes were compared
 against their source, and every bundled text response was compared byte-for-byte.
-Binary responses pass through the platform ASSETS binding and receive the same
-headers. No separate upstream proxy, secret, bucket, project or custom domain is
-created.
+Binary forwarding adds the same headers when an ASSETS binding invokes the
+handler. The current hosting adapter serves PNG and other binary files before
+the Worker, so their responses do not receive these extra headers. Live checks
+separately verify their MIME type and availability; all original binary bytes are
+preserved. HTML, scripts, styles, SVG, JSON and error responses receive the five
+headers. No separate upstream proxy, secret, bucket, project or domain is created.
 
 Publishing changes must use the existing Site's source/build workflow. A raw
 static deployment from an older GitHub checkout does not install this response
@@ -46,9 +49,12 @@ Validation:
   responses, method rejection and binary forwarding.
 - `.github/workflows/security.yml` runs these regressions with the existing
   security checks; no CI test connects to production.
-- `python scripts/check-security-headers.py --allow-live-read-only` checks actual
-  headers on the root, administrator routes, service worker, calculator script,
-  stylesheet, question diagram and missing private-file path.
+- `python scripts/check-security-headers.py --allow-live-read-only` checks all five
+  headers on seven application/error routes and separately checks the host-served
+  PNG's status and MIME type. The script reports each check's scope explicitly.
+- Browser fixtures apply the exact response policy during the existing journeys;
+  a new desktop/tablet/mobile test verifies direct administrator access works and
+  iframe embedding is blocked by the browser.
 
 Managed browser tooling is unavailable in this local environment. The response
 tests exercise the bundled worker directly; existing browser journeys remain
