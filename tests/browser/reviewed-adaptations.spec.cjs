@@ -1,3 +1,4 @@
+const {fixtureDocument}=require('./fixture-document.cjs');
 const {test,expect}=require('@playwright/test');
 const {withCourseAccess}=require('./fixture-access.cjs');
 const rows=require('../../content-releases/20261005_reviewed_exam_versions/adaptations.json');
@@ -5,7 +6,7 @@ test('every corrected question and eight diagrams render across exam and practic
  test.setTimeout(90000);const errors=[],blocked=[];page.on('pageerror',e=>errors.push(e.message));
  const sdk=withCourseAccess(`window.supabase={createClient(){const session={access_token:'synthetic-local-only',user:{id:'test-student'}};return {auth:{onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}}),getSession:async()=>({data:{session}})},from:()=>({upsert:async()=>({error:null})})}}};`);
  await context.route('**/*',async route=>{
-  const url=new URL(route.request().url());if(url.origin==='http://127.0.0.1:4173')return route.continue();
+  const url=new URL(route.request().url());if(url.origin==='http://127.0.0.1:4173')return fixtureDocument(route);
   if(url.hostname==='cdn.jsdelivr.net'&&url.pathname.includes('supabase-js'))return route.fulfill({contentType:'application/javascript',body:sdk});
   if(url.hostname==='fonts.googleapis.com'||url.hostname==='cdn.jsdelivr.net')return route.fulfill({body:'',contentType:route.request().resourceType()==='script'?'application/javascript':'text/css'});
   if(url.hostname==='wfhurjyouemahvkcfkdz.supabase.co'&&url.pathname.startsWith('/functions/v1/')){

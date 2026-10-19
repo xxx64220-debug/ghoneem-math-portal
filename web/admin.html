@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="base-uri 'none'; object-src 'none'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Instructor Console — Abdelrahman Ghoneem</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -83,9 +85,9 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 @media(max-width:640px){header.top .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px}.brand{grid-column:1/-1;max-width:none;font-size:18px}.brand span{font-size:12px;letter-spacing:.08em}.sp{display:none}#trackSel{min-width:0!important;width:100%!important}#outBtn{min-height:44px}.tab{padding:12px;font-size:14px;min-height:48px}nav.tabs .wrap{padding-left:8px;padding-right:8px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{padding:16px 12px}.stat .k{font-size:12px}.stat .v{font-size:28px}.head h2{font-size:23px}.btn,.btn-sm{min-height:44px}.card,dialog{padding:18px}.table-wrap th,.table-wrap td{padding:12px;line-height:1.6}.table-wrap{border-radius:9px}.teaching-options button{padding:14px}.teaching .actions button{flex:1}.grid .field{min-width:0}}
 @media(max-width:640px){.control-bar{display:grid;grid-template-columns:minmax(0,1fr);padding:12px}.control-bar .field,.control-bar .field.search{min-width:0;width:100%}.control-bar>.btn{width:100%}.head{align-items:flex-start}.head>.btn,.head>.btn-sm{flex:1 1 150px}.question-select{max-height:45vh}dialog{width:calc(100vw - 16px);max-width:none;padding:16px}.back-to-top{right:12px;bottom:12px}.actions>.btn,.actions>.btn-sm{flex:1 1 130px}}
 </style>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/katex.min.css" integrity="sha384-qArEAQvOPs1o7K1iAybhs66g8nYTXVt4VLOQ3abu+OMLJyPNfaH4Wpko0X2epHJ+" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/katex.min.js" integrity="sha384-IHT6Yddb0KLCzZaxQ/so1j3xkJ8R6hOkCR06ma9NDHGn0Z4ClKcGtQ6qqsflRPxR" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#14243E">
 <meta name="mobile-web-app-capable" content="yes">
@@ -133,7 +135,7 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
 
 <dialog id="editor"></dialog>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js" integrity="sha384-K0oxqktRvaThvYgGL4G+OK2Ih6VS6Uyu7j3+7WJgp/uWM0Yv6Xi4YEiw0BB+mPfi" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/formula-reference.css?v=20261012">
 <script src="/lesson-taxonomy.js"></script>
 <script src="/revision-formulas.js?v=20261012-all-groups"></script>
@@ -483,8 +485,13 @@ async function exams(){
 function csv(rows, name){
   if (!rows.length) return;
   const cols = Object.keys(rows[0]);
-  const cell = v => `"${String(v ?? '').replace(/^[=+@-]/,x=>"'"+x).replace(/"/g,'""')}"`;
-  const body = '\ufeff' + [cols.join(',')].concat(rows.map(r => cols.map(c => cell(r[c])).join(','))).join('\r\n');
+  const cell = v => {
+    const text = String(v ?? '');
+    // Spreadsheet applications may ignore whitespace/control characters before a formula.
+    const unsafe = typeof v !== 'number' && (/^[\s\u0000-\u001f\u007f]*[=+@-]/.test(text) || /^[\t\r\n]/.test(text));
+    return `"${(unsafe ? "'" + text : text).replace(/"/g,'""')}"`;
+  };
+  const body = '\ufeff' + [cols.map(cell).join(',')].concat(rows.map(r => cols.map(c => cell(r[c])).join(','))).join('\r\n');
   const a = document.createElement('a');
   a.href = URL.createObjectURL(new Blob([body], {type:'text/csv'}));
   a.download = `${name}-${new Date().toISOString().slice(0,10)}.csv`;

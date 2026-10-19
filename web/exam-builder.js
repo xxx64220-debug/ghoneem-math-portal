@@ -48,7 +48,7 @@ function questionHoldLabel(q) {
 }
 
 function renderQuestionMath(el) {
-  if (window.renderMathInElement) window.renderMathInElement(el, {delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});
+  if (window.renderMathInElement) window.renderMathInElement(el, {delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false,trust:false,maxExpand:1000,maxSize:20});
 }
 
 async function editExam(x = {}, initialQuestionIds = []) {
