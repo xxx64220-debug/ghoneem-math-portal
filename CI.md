@@ -1,5 +1,9 @@
 # Continuous integration
 
+Currency and math regressions use real KaTeX and a DOM, including the reported
+book-price question and the student/staff rendering paths. See
+`MATH_RENDERING.md`; `tests/portal_math.test.cjs` runs in the English runtime step.
+
 `.github/workflows/ci.yml` runs on pull requests targeting `main` and pushes to
 `main`. It runs the built-in Node regression tests, compiles the repository's
 Python files, and runs the checked-in EST arithmetic/data gates when their
@@ -127,3 +131,4 @@ app switching, PWA installation and opted-in notification display. Mobile
 viewport emulation does not establish those device behaviors.
 
 EST English coverage and fixture provenance are documented in `ENGLISH_READING.md`. Eight additional Chromium cases check English layout/formatting, collapse/reopen, answers, navigation and review, and unchanged SAT/EST I/EST II math paths.
+
