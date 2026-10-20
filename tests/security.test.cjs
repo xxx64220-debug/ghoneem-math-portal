@@ -60,9 +60,11 @@ test('KaTeX rejects malicious links, HTML attributes and inherited trust', () =>
 
 test('student math adapter sets explicit trust and expansion limits', () => {
   let options;
-  const c = vm.createContext({window:{renderMathInElement(){}},renderMathInElement:(_el,opts) => {options = opts;}});
+  const dom = new JSDOM('<main></main>', {runScripts:'outside-only'}), c = dom.getInternalVMContext();
+  c.renderMathInElement=(_el,opts)=>{options=opts;};
+  vm.runInContext(read('web/portal-math.js'),c);
   vm.runInContext(student.slice(student.indexOf('function math(el)'), student.indexOf('const FRIENDLY')), c);
-  c.math({});
+  c.math(c.document.querySelector('main'));
   assert.equal(options.trust,false); assert.equal(options.maxExpand,1000); assert.equal(options.maxSize,20);
 });
 
@@ -113,3 +115,4 @@ test('credential scanner detects private keys and service JWTs without rejecting
   assert(!containsSecret('SUPABASE_SERVICE_ROLE_KEY'));
   assert(checkPublic('web') > 0);
 });
+

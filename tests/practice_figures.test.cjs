@@ -29,9 +29,9 @@ c.DASH.daily={track:'est',quiz:items,checklist:{},leaderboard:[],completed:false
 assert.equal(c.figure({image:'javascript:alert(1)',figure:'javascript:alert(1)'}),'');
 assert.equal(c.figure(null),'');
 const mathCode=html.slice(html.indexOf('function math(el)'),html.indexOf('const FRIENDLY'));
-c.window={renderMathInElement:true};c.renderMathInElement=(el,options)=>{c.mathOptions=options};
+c.window={PortalMath:{render:el=>{c.mathTarget=el;}}};
 vm.runInContext(mathCode,c);c.math({});
-assert.ok(c.mathOptions.delimiters.some(d=>d.left==='\\('&&d.right==='\\)'));
-assert.ok(c.mathOptions.delimiters.some(d=>d.left==='\\['&&d.right==='\\]'));
+assert.ok(c.mathTarget,'student practice delegates to the shared math renderer');
 assert.match(html,/math\(content\);/);
 console.log('PASS: notebook, daily quiz and drill use the exam renderer, preserve question-to-image mapping, hide keys and recognize parenthesized math.');
+
