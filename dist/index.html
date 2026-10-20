@@ -279,6 +279,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js" integrity="sha384-K0oxqktRvaThvYgGL4G+OK2Ih6VS6Uyu7j3+7WJgp/uWM0Yv6Xi4YEiw0BB+mPfi" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/sat-calculator.css">
+<script src="/portal-math.js?v=20261021-currency"></script>
 <script src="/sat-calculator-config.js"></script>
 <script src="/sat-calculator.js"></script>
 <script src="/daily-challenge.js"></script>
@@ -321,10 +322,7 @@ function show(id) {
   window.scrollTo(0, 0);
 }
 function math(el) {
-  if (window.renderMathInElement) renderMathInElement(el, {
-    delimiters: [{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false},{left:'\\[',right:'\\]',display:true}],
-    throwOnError: false, trust: false, maxExpand: 1000, maxSize: 20,
-  });
+  if (window.PortalMath) window.PortalMath.render(el);
 }
 const FRIENDLY = {
   exam_content_under_review: 'This exam is being checked by your instructor. Your saved results are safe; choose another exam for now.',
@@ -871,3 +869,4 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 <script src="/portal-management.js?v=20261015-feature-audit"></script>
 </body>
 </html>
+

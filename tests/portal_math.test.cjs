@@ -116,6 +116,7 @@ test('both pages load the same helper before application code, and its packaged 
   assert.ok(page.indexOf('/portal-math.js')<page.indexOf('const SB_URL'));
  }
  if(fs.existsSync('portal-static'))assert.equal(read('web/portal-math.js'),read('portal-static/portal-math.js'));
+ if(fs.existsSync('dist/index.html'))assert.equal(read('web/portal-math.js'),read('dist/portal-math.js'));
  for(const file of fs.readdirSync('web').filter(name=>/\.(?:js|html)$/.test(name)&&name!=='portal-math.js')){
   assert.doesNotMatch(read('web/'+file),/renderMathInElement\s*\(/,file+' must use the shared renderer');
  }
