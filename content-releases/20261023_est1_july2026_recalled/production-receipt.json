@@ -1,0 +1,53 @@
+{
+  "exam": {
+    "id": "8f824625-f09c-5bbc-8a93-1f4c8ce8f669",
+    "ready": true,
+    "title": "EST I - July 2026 Recalled Questions - Verified Practice (10Q / 20 min)",
+    "seconds": 1200,
+    "published": true,
+    "questions": 10,
+    "scoring_map": null,
+    "assessment_type": "lesson_exam"
+  },
+  "audit": {
+    "at": "2026-10-23T16:55:27.041698+00:00",
+    "id": 20419,
+    "meta": {
+      "exam_id": "8f824625-f09c-5bbc-8a93-1f4c8ce8f669",
+      "held_count": 1,
+      "question_ids": [
+        "f3454f11-6ff5-5df6-a27b-4a8cd2a3f3bd",
+        "e6101b30-588f-518a-b548-475121698bea",
+        "3b8234cd-fbd1-5cbe-a0cf-44cbaa608954",
+        "797e4220-c8de-5a40-a8e8-ddd9ddf20bd2",
+        "8b2b384c-b101-542f-b5c4-9773e817b756",
+        "61a18238-a332-5336-9e26-a1fdd70d70b3",
+        "a3c98044-01bc-5a19-a01e-51a757823e0c",
+        "96a0565b-8002-5ba0-9167-1e96bb4cd07f",
+        "004faf2a-8526-5fe0-89c5-a535d9fa3ec2",
+        "35d6badd-01c8-54dc-8a4a-426f8b7b2db7"
+      ],
+      "verified_count": 10,
+      "assignment_count": 3,
+      "held_question_id": "de71a180-b7e4-5aaa-8263-dd21d4b88811",
+      "original_pdf_sha256": "b24ce3930562833e6f81edc483be164f18b006319f1b60adbf9b726006bee4d9",
+      "no_student_attempts_changed": true,
+      "existing_questions_preserved": true
+    },
+    "action": "question.est1_july2026_recalled_20261023"
+  },
+  "daily_eligible": 10,
+  "held_questions": 1,
+  "assigned_groups": [
+    "Alex online",
+    "December est math sunday Wednesday 4.30",
+    "EST Math — all students"
+  ],
+  "cross_track_groups": 0,
+  "verified_questions": 10,
+  "student_availability": {
+    "can_open_exam": 41,
+    "eligible_enrollments": 41
+  },
+  "individual_assignments": 0
+}
