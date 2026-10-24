@@ -1,12 +1,13 @@
+const {fixtureDocument}=require('./fixture-document.cjs');
 const {test,expect}=require('@playwright/test');
 const questions=Array.from({length:351},(_,i)=>({entry_id:'q'+i,question_id:'q'+i,code:'CODE-'+String(i).padStart(3,'0'),topic:'Algebra',skill:'Linear equations',stem:'Synthetic question '+i,type:'mcq',difficulty:'medium',ready:i!==0,unclassified:false,review_status:i===0?'review':'source_checked',hold_reason:i===0?'Ambiguous source':'',priority:i===0?1:3,published_uses:0,verified_release:'fixture'}));
 async function setup(page,context){
  const calls=[],reads=[],errors=[],unexpected=[];let fail=false;
  page.on('pageerror',e=>errors.push(e.message));
  await context.route('**/*',async route=>{
-  const url=new URL(route.request().url());if(url.origin==='http://127.0.0.1:4173')return route.continue();
-  if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:`window.supabase={createClient(){return {auth:{getSession:async()=>({data:{session:null}}),getUser:async()=>({data:{user:null}}),onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}})},rpc:async(name,args)=>{const r=await fetch('https://fixture.invalid/rpc',{method:'POST',body:JSON.stringify({name,args})});return r.json()},from(table){const filters=[];const q={select:()=>q,eq:(k,v)=>{filters.push([k,v]);return q},single:async()=>{const r=await fetch('https://fixture.invalid/detail',{method:'POST',body:JSON.stringify({table,filters})});return r.json()}};return q}}}};`});
-  if(url.hostname==='fonts.googleapis.com'||(url.hostname==='cdn.jsdelivr.net'&&url.pathname.startsWith('/npm/katex@0.16.9/dist/')))return route.fulfill({body:'',contentType:route.request().resourceType()==='script'?'application/javascript':'text/css'});
+  const url=new URL(route.request().url());if(url.origin==='http://127.0.0.1:4173')return fixtureDocument(route);
+  if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:`window.supabase={createClient(){return {auth:{getSession:async()=>({data:{session:null}}),getUser:async()=>({data:{user:null}}),onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}})},rpc:async(name,args)=>{const r=await fetch('https://fixture.invalid/rpc',{method:'POST',body:JSON.stringify({name,args})});return r.json()},from(table){const filters=[];const q={select:()=>q,eq:(k,v)=>{filters.push([k,v]);return q},single:async()=>{const r=await fetch('https://fixture.invalid/detail',{method:'POST',body:JSON.stringify({table,filters})});return r.json()}};return q}}}};`});
+  if(url.hostname==='fonts.googleapis.com'||(url.hostname==='cdn.jsdelivr.net'&&url.pathname.startsWith('/npm/katex@0.18.2/dist/')))return route.fulfill({body:'',contentType:route.request().resourceType()==='script'?'application/javascript':'text/css'});
   if(url.href==='https://fixture.invalid/rpc'){
    const body=JSON.parse(route.request().postData());calls.push(body);if(body.name!=='admin_bank_page'){unexpected.push(body.name);return route.abort();}
    if(fail){fail=false;return route.fulfill({json:{data:null,error:{message:'Offline fixture'}}});}

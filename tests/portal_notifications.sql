@@ -36,6 +36,18 @@ begin
  update public.portal_push_queue set status='pending',attempts=0,created_at=now()-interval '25 hours' where id=j;
  perform public.portal_push_claim();
  if not exists(select 1 from public.portal_push_queue where id=j and status='failed' and attempts=0 and error='delivery_expired') then raise exception 'expired notification claimed';end if;
+ update public.portal_push_queue set status='pending',attempts=1,created_at=now(),next_attempt=now()+interval '5 minutes' where id=j;
+ perform public.portal_push_claim();
+ if not exists(select 1 from public.portal_push_queue where id=j and status='pending' and attempts=1) then raise exception 'retry backoff ignored';end if;
+ update public.portal_push_queue set attempts=0,created_at=now()-interval '24 hours',next_attempt=now() where id=j;
+ perform public.portal_push_claim();
+ if not exists(select 1 from public.portal_push_queue where id=j and status='sending' and attempts=1 and next_attempt=now()+interval '5 minutes') then raise exception '24-hour boundary or lease duration changed';end if;
+ update public.portal_push_queue set created_at=now()-interval '24 hours 1 second' where id=j;
+ perform public.portal_push_claim();
+ if not exists(select 1 from public.portal_push_queue where id=j and status='sending' and attempts=1) then raise exception 'live expired lease changed by claim';end if;
+ update public.portal_push_queue set next_attempt=now() where id=j;
+ perform public.portal_push_claim();
+ if not exists(select 1 from public.portal_push_queue where id=j and status='failed' and attempts=1 and error='delivery_expired') then raise exception 'expired lease reclaimed';end if;
  insert into public.portal_push_queue(subscription_id,event_key,kind,title,body)
  select s,'batch:'||i,'test','test','test' from generate_series(1,12) i;
  select count(*) into n from public.portal_push_claim();

@@ -83,7 +83,7 @@ test('editor saves selected IDs in chosen order and retains existing exam settin
  const longStem='A complete equation must survive a long question. '.repeat(5)+'$y=\\frac{2x^2+12x+c}{3}$';
  const bankRows=questions.map(q=>q.id==='q2575'?{...q,stem:longStem}:q);
  let onSave,saved;const reads=[];
- const c={...context,window:{renderMathInElement:(el,options)=>rendered.push({el,options})},$:node,ST:{track:'est',tracks:[{id:'est',name:'EST'}]},getRows:async(...args)=>{reads.push(args);return bankRows;},
+ const c={...context,window:{PortalMath:{render:el=>rendered.push(el)}},$:node,ST:{track:'est',tracks:[{id:'est',name:'EST'}]},getRows:async(...args)=>{reads.push(args);return bankRows;},
   field:()=>'',select:()=>'',area:()=>'',tracks:()=>[],val:id=>String(node(id).value),jval:()=>({0:200,2:800}),
   dialog(title,body,save){onSave=save;node('editor').innerHTML=body;},mutation:async(action,data)=>{saved={action,data};},confirm:()=>true,alert:message=>{throw Error(message)}};
  vm.createContext(c);vm.runInContext(code,c);
@@ -92,8 +92,9 @@ test('editor saves selected IDs in chosen order and retains existing exam settin
  node('etitle').value='Revision';node('emins').value='60';node('etype').value='full_exam';node('ereview').value='score_only';
  node('efilter').value='EST-2575';node('efilter').oninput();assert.match(node('eqs').innerHTML,/q2575/);
  assert.ok(node('eqs').innerHTML.includes(esc(longStem)),'excerpt retains complete math source beyond the old 220-character cutoff');
- assert.ok(rendered.some(call=>call.el===node('excerpt')&&call.options.delimiters.some(d=>d.left==='$')),'visible excerpts are passed through the math renderer');
+ assert.ok(rendered.includes(node('excerpt')),'visible excerpts are passed through the protected math renderer');
  node('eaddPage').onclick();node('ereviewSelected').onclick();assert.match(node('eqs').innerHTML,/Selected · #3/);
  await onSave();assert.equal(saved.action,'exam.save');assert.deepEqual(Array.from(saved.data.question_ids),['q2000','q2','q2575']);
  assert.equal(saved.data.duration_seconds,3600);assert.equal(saved.data.is_published,true);assert.equal(saved.data.review_policy,'score_only');assert.equal(saved.data.scoring_map[2],800);
 });
+

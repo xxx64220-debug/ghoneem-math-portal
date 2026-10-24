@@ -1,3 +1,4 @@
+const {fixtureDocument}=require('./fixture-document.cjs');
 const {withCourseAccess}=require('./fixture-access.cjs');
 const { test, expect } = require('@playwright/test');
 const tracks = [{ id:'sat', name:'SAT Math', exams_available:1, attempts_done:0 }, { id:'est', name:'EST Math', exams_available:0, attempts_done:0 }];
@@ -22,11 +23,11 @@ test(`SAT portal, exam navigation/timer/figures and calculator ${calculatorMode}
    if(calculatorMode==='unconfigured') { unexpected.push(url.href); return route.abort(); }
    return route.fulfill({contentType:'application/javascript',body:'window.Desmos={GraphingCalculator(host){host.innerHTML=`<input aria-label="Calculator expression">`;return {resize(){},destroy(){host.replaceChildren()}}}};'});
   }
-  if(url.origin==='http://127.0.0.1:4173')return route.continue();
+  if(url.origin==='http://127.0.0.1:4173')return fixtureDocument(route);
   if(url.href===graph)return route.fulfill({contentType:'image/svg+xml',body:graphSvg});
-  if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:sdk});
+  if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:sdk});
   // Optional CDN styling/fonts/math are offline in this smoke test.
-  if(url.hostname==='fonts.googleapis.com' || (url.hostname==='cdn.jsdelivr.net' && url.pathname.startsWith('/npm/katex@0.16.9/dist/')))return route.fulfill({body:'',contentType:route.request().resourceType()==='script'?'application/javascript':'text/css'});
+  if(url.hostname==='fonts.googleapis.com' || (url.hostname==='cdn.jsdelivr.net' && url.pathname.startsWith('/npm/katex@0.18.2/dist/')))return route.fulfill({body:'',contentType:route.request().resourceType()==='script'?'application/javascript':'text/css'});
   if(url.hostname==='wfhurjyouemahvkcfkdz.supabase.co' && url.pathname.startsWith('/functions/v1/')){
    const name=url.pathname.split('/').pop();let data;
    if(name==='me-tracks')data=url.search?{exams:[exam],dashboard:{}}:{role:'student',tracks};

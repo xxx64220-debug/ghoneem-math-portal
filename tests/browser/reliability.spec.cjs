@@ -1,10 +1,11 @@
+const {fixtureDocument}=require('./fixture-document.cjs');
 const {withCourseAccess}=require('./fixture-access.cjs');
 const {test,expect}=require('@playwright/test');
 test('under-review cards preserve history; SVG graphs render safely in every practice surface',async({page,context})=>{
  const errors=[],blocked=[];page.on('pageerror',e=>errors.push(e.message));
  const sdk=withCourseAccess(`window.supabase={createClient(){const session={access_token:'synthetic-local-only',user:{id:'test-student'}};return {auth:{onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}}),getSession:async()=>({data:{session}})},from:()=>({upsert:async()=>({error:null})})}}};`);
  await context.route('**/*',async route=>{
-  const url=new URL(route.request().url());if(url.origin==='http://127.0.0.1:4173')return route.continue();
+  const url=new URL(route.request().url());if(url.origin==='http://127.0.0.1:4173')return fixtureDocument(route);
   if(url.href==='https://math.portal.ghoneem.com/assets/question-figures/elite-m2-q21-20261004.png')return route.fulfill({path:require('node:path').join(__dirname,'../../web/assets/question-figures/elite-m2-q21-20261004.png'),contentType:'image/png'});
   if(url.hostname==='math.portal.ghoneem.com'&&/^\/assets\/question-figures\/(mset006-q49|maya-choice-graphs)-20261004\.png$/.test(url.pathname))return route.fulfill({path:require('node:path').join(__dirname,'../../web',url.pathname),contentType:'image/png'});
   if(url.hostname==='cdn.jsdelivr.net'&&url.pathname.includes('supabase-js'))return route.fulfill({contentType:'application/javascript',body:sdk});

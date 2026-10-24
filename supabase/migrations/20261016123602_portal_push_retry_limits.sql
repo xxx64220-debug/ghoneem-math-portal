@@ -1,4 +1,6 @@
 -- Bound crash recovery as well as ordinary provider-failure retries.
+-- Already applied in production as 20261016123602 / portal_push_retry_limits.
+-- Keep this ledger identity; do not replay against the existing project.
 -- No subscription, preference, credential, campaign or student data is changed.
 create or replace function public.portal_push_claim()
 returns setof public.portal_push_queue

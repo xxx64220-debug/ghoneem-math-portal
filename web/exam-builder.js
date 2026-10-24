@@ -48,7 +48,7 @@ function questionHoldLabel(q) {
 }
 
 function renderQuestionMath(el) {
-  if (window.renderMathInElement) window.renderMathInElement(el, {delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false},{left:'$',right:'$',display:false}],throwOnError:false});
+  if (window.PortalMath) window.PortalMath.render(el);
 }
 
 async function editExam(x = {}, initialQuestionIds = []) {
@@ -186,3 +186,4 @@ async function editExam(x = {}, initialQuestionIds = []) {
   };
   topics();paint();
 }
+
