@@ -1,0 +1,70 @@
+{
+  "project_id": "wfhurjyouemahvkcfkdz",
+  "release": "20261017-sat-trial-october-2026",
+  "audit": {
+    "id": 20245,
+    "at": "2026-10-17 10:16:18.722576+00",
+    "action": "question.sat_trial_20261017",
+    "target_id": "20261017-sat-trial-october-2026",
+    "meta": {
+      "label": "SAT Trial 2026 October",
+      "figures": 25,
+      "grid_in": 31,
+      "inserted_count": 137,
+      "daily_eligible_mcq": 106,
+      "source_occurrences": 142,
+      "existing_fingerprint": "a6b35696879bcd6e616b756986ad0009",
+      "linked_repeated_occurrences": 5,
+      "existing_questions_and_keys_preserved": true
+    }
+  },
+  "baseline": {
+    "keys": 7586,
+    "exams": 553,
+    "groups": 7,
+    "attempts": 321,
+    "assignments": 606,
+    "enrollments": 81,
+    "revision_items": 2436,
+    "question_counts": {
+      "est": 3475,
+      "sat": 2184,
+      "est2": 1587,
+      "est_eng": 340
+    },
+    "release_already_applied": 0
+  },
+  "verification": {
+    "expected": 137,
+    "found": 137,
+    "mismatches": 0,
+    "practice_ready": 137,
+    "daily_ready": 106,
+    "grid_in": 31,
+    "exact_figures": 25,
+    "source_occurrences": 142
+  },
+  "after": {
+    "keys": 7723,
+    "exams": 553,
+    "groups": 7,
+    "attempts": 321,
+    "assignments": 606,
+    "enrollments": 81,
+    "revision_items": 2436,
+    "question_counts": {
+      "est": 3475,
+      "sat": 2321,
+      "est2": 1587,
+      "est_eng": 340
+    },
+    "old_questions_and_keys_fingerprint": "a6b35696879bcd6e616b756986ad0009"
+  },
+  "checks": {
+    "existing_questions_and_keys_unchanged": true,
+    "existing_exams_assignments_attempts_enrollments_groups_revision_counts_unchanged": true,
+    "source_math": "137 independently solved; source figures and givens visually checked",
+    "isolated_database": "passed success, key matching, eligibility, private-key roles, replay and late-failure rollback tests",
+    "runtime_deployment_required": false
+  }
+}
