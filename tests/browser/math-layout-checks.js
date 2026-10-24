@@ -82,7 +82,7 @@ window.mathLayoutChecks = (() => {
   await preview(1);await preview(0);
   const issues=[];
   if(!document.querySelector('.choice[data-k="B"].sel'))issues.push('Selected response lost on navigation');
-  if(document.getElementById('flagBtn').getAttribute('aria-pressed')!=='true')issues.push('Flag lost on navigation');
+  if(!ST.flags.has(window.mathAuditCases[0].id)||!document.querySelector('#palette [data-i="0"].flagged'))issues.push('Flag lost on navigation');
   for(let i=0;i<180&&document.getElementById('clock').textContent===clockStart;i++)await pause();
   const seconds=text=>text.split(':').reduce((n,v)=>n*60+Number(v),0);
   if(!(seconds(document.getElementById('clock').textContent)<seconds(clockStart)))issues.push('Timer stopped or reset');
