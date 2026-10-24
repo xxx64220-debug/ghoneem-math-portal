@@ -45,6 +45,7 @@ jobs:
       - name: Run EST English passage client regressions
         run: |
           npm ci --prefix tests/english-runtime --ignore-scripts --no-audit --no-fund
+          node --test tests/portal_math.test.cjs
           node --test tests/english_reading.test.cjs
           node --test tests/svg_figures.test.cjs
           node --test tests/group_planning_ui.test.cjs
@@ -434,3 +435,4 @@ jobs:
             exit 1
           fi
           echo "PASS: Final Revision representative release rerun was rejected"
+

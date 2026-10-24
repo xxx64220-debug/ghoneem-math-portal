@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "jsdom": "26.1.0",
-    "katex": "0.16.9"
+    "katex": "0.18.2"
   }
 }

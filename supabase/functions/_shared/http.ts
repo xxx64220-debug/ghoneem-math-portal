@@ -2,7 +2,7 @@
 //  SAT & EST Exam Portal — shared Edge Function helpers
 //  Abdelrahman Ghoneem | 01116004434
 // =====================================================================
-import { createClient, SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.45.0";
+import { createClient, SupabaseClient } from "https://esm.sh/@supabase/supabase-js@2.50.0";
 
 const URL_ = Deno.env.get("SUPABASE_URL")!;
 const ANON = Deno.env.get("SUPABASE_ANON_KEY")!;
