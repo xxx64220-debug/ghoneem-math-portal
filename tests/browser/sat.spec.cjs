@@ -17,7 +17,7 @@ test(`SAT portal, exam navigation/timer/figures and calculator ${calculatorMode}
  page.on('pageerror', e=>errors.push(e.message));
  await context.route('**/*', async route=>{
   const url=new URL(route.request().url());
-  if(url.pathname==='/sat-calculator-config.js' && calculatorMode!=='unconfigured') return route.fulfill({contentType:'application/javascript',body:'window.GHONEEM_DESMOS={productionAuthorized:true,apiKey:"local-fixture-only"};'});
+  if(url.pathname==='/sat-calculator-config.js') return route.fulfill({contentType:'application/javascript',body:calculatorMode==='unconfigured'?'window.GHONEEM_DESMOS={productionAuthorized:false,apiKey:""};':'window.GHONEEM_DESMOS={productionAuthorized:true,apiKey:"local-fixture-only"};'});
   if(url.hostname==='www.desmos.com') {
    if(calculatorMode==='failed-load') return route.abort();
    if(calculatorMode==='unconfigured') { unexpected.push(url.href); return route.abort(); }

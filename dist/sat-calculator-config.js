@@ -1,3 +1,3 @@
-// Activate only after the owner verifies Desmos production permission for this
-// portal origin and supplies its own production key. Never use a demo key.
-window.GHONEEM_DESMOS = Object.freeze({ productionAuthorized: false, apiKey: '' });
+// Portal owner confirmed production permission for math.portal.ghoneem.com
+// and supplied this browser API key on 16 October 2026.
+window.GHONEEM_DESMOS = Object.freeze({ productionAuthorized: true, apiKey: '03a9e95a6c2e4af7810e6940542897f8' });
