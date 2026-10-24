@@ -71,11 +71,25 @@ begin
  end if;
  update portal_push_queue set status='failed',error='delivery_expired' where status in ('pending','sending') and created_at<now()-interval '24 hours';
 end $$;
-create function public.portal_push_claim() returns setof public.portal_push_queue language sql security invoker set search_path=public as $$
+create function public.portal_push_claim()
+returns setof public.portal_push_queue
+language plpgsql security invoker set search_path=public as $$
+begin
+ -- A live lease may still be delivering its third attempt. Wait for it to end.
+ update portal_push_queue
+ set status='failed',error=case when created_at<now()-interval '24 hours'
+   then 'delivery_expired' else 'retry_limit_reached' end
+ where status in ('pending','sending') and next_attempt<=now()
+   and (attempts>=3 or created_at<now()-interval '24 hours');
+ return query
  update portal_push_queue set status='sending',attempts=attempts+1,next_attempt=now()+interval '5 minutes'
- where id in (select id from portal_push_queue where (status='pending' or (status='sending' and next_attempt<now())) and next_attempt<=now() order by created_at for update skip locked limit 10)
- returning *;
-$$;
+ where id in (
+  select id from portal_push_queue
+  where status in ('pending','sending') and next_attempt<=now()
+   and attempts<3 and created_at>=now()-interval '24 hours'
+  order by created_at,id for update skip locked limit 10
+ ) returning *;
+end $$;
 create function public.portal_push_announce(p_actor uuid,p_id uuid,p_title text,p_body text,p_track text default null) returns int language plpgsql security invoker set search_path=public as $$
 declare n int;
 begin

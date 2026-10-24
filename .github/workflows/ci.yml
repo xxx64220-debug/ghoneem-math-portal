@@ -263,6 +263,7 @@ jobs:
             tests/student_progress.sql \
             tests/untimed_lessons.sql \
             tests/admin_delete_user.sql \
+            tests/portal_notification_retry_migration.sql \
             tests/portal_notifications.sql \
             tests/upgrade_acceptance.sql \
             tests/upgrade_adversarial.sql \
