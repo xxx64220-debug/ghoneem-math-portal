@@ -1,0 +1,56 @@
+[
+  {
+    "id": "b81f9c48-ec9f-59d0-a21e-d65547b86a1e",
+    "stem": "For \\(A=\\begin{pmatrix}2&0\\\\0&55\\end{pmatrix}\\), what is the entry in row 2, column 2 of \\(A^{-1}\\)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "\\(\\frac{111}{55}\\)"
+      },
+      {
+        "key": "B",
+        "text": "\\(\\frac{-54}{55}\\)"
+      },
+      {
+        "key": "C",
+        "text": "\\(\\frac{1}{55}\\)"
+      },
+      {
+        "key": "D",
+        "text": "\\(\\frac{56}{55}\\)"
+      }
+    ],
+    "type": "mcq",
+    "topic": "Matrices",
+    "assets": {},
+    "fixture_source": "content-releases/20261017_category_expansion/selected.json"
+  },
+  {
+    "id": "4dd7f8e5-2ee1-5d91-a808-70c5746d6213",
+    "stem": "In triangle ABC, D lies on AB and E lies on BC, with DE parallel to AC. The diagram labels BD = x and AD = y. If x/y = 3/2 and DE = 57, what is the length of AC?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "114"
+      },
+      {
+        "key": "B",
+        "text": "95"
+      },
+      {
+        "key": "C",
+        "text": "90"
+      },
+      {
+        "key": "D",
+        "text": "38"
+      }
+    ],
+    "type": "mcq",
+    "topic": "Triangles and similarity",
+    "assets": {
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 330\"><g fill=\"none\" stroke=\"#172b45\" stroke-width=\"2\"><path d=\"M60 275L240 40L420 275Z M168 134L312 134\"/></g><g font-size=\"20\" fill=\"#172b45\"><text x=\"38\" y=\"299\">A</text><text x=\"231\" y=\"29\">B</text><text x=\"423\" y=\"299\">C</text><text x=\"143\" y=\"130\">D</text><text x=\"317\" y=\"130\">E</text><text x=\"180\" y=\"76\">x</text><text x=\"106\" y=\"211\">y</text></g><text x=\"130\" y=\"322\" font-size=\"15\">Figure not drawn to scale</text></svg>"
+    },
+    "fixture_source": "content-releases/20261012_sat_sources/reviewed-candidates.json"
+  }
+]

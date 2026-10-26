@@ -32,3 +32,11 @@ Run locally with:
 ```sh
 node --test tests/portal_math.test.cjs tests/exam_builder.test.cjs tests/practice_figures.test.cjs
 ```
+
+The [24 October browser audit](docs/MATH_RENDERING_VISUAL_AUDIT_20261024.md)
+checks actual exam/review layouts at desktop, tablet and mobile widths with real
+KaTeX fonts. `web/portal-math-layout.css` prevents fraction/radical glyphs from
+being clipped by scrollable question and answer containers. The focused
+`tests/browser/math-rendering.spec.cjs` suite covers glyph bounds, currency,
+matrices, tables, diagrams and navigation state. See the audit for reproduction
+and physical-device verification limits.

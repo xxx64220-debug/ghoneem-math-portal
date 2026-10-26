@@ -1,0 +1,11 @@
+/* overflow-x:auto also makes overflow-y:auto. KaTeX fraction/radical glyphs
+   can extend beyond an ordinary text line box. Give mathematical content
+   vertical breathing room, retaining local horizontal scrolling for wide math.
+   Currency-only prose does not acquire any extra spacing. */
+.stem:has(.katex),.daily-stem:has(.katex),.daily-solution:has(.katex),
+.mistake-explanation:has(.katex),.teaching-question:has(.katex),
+.builder-stem:has(.katex),.builder-choices li:has(.katex),.rev .exp:has(.katex),
+.choice-text:has(.katex),.daily-option>span:has(.katex),.review-choice>span:has(.katex){
+ min-width:0;max-width:100%;overflow-x:auto;overflow-wrap:anywhere;
+ padding-block:.35em;
+}
