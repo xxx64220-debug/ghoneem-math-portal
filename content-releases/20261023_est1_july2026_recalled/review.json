@@ -1,0 +1,30 @@
+{
+  "source": "https://minshawymath.com/est-july-2026-collected-questions/",
+  "original_pdf_sha256": "b24ce3930562833e6f81edc483be164f18b006319f1b60adbf9b726006bee4d9",
+  "eligible_items": [
+    1,
+    2,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11
+  ],
+  "held_items": [
+    3
+  ],
+  "corrections": {
+    "2": "Symbolic shaded area is 70-2x-x^2/2. Clarified rectangle/triangle prompt and authored MCQ choices; original graphic retained.",
+    "7": "Largest mode 40, median 21, product 840. Replaced incorrect option D=474 with D=840."
+  },
+  "provenance": "Incomplete teacher-recalled collection, not an official complete exam or exact original-item transcription.",
+  "source_figure_files": {
+    "source-q2.jpg": "fc9f6eeb58128f69d078d2d7ce167f32f82a87c1ac2aadc5ba572db89a8aaa01",
+    "source-q3.jpg": "dcef418b7e18fcd6a9b982010b16d7a3da67d2871fc76aa478c682987d7efb0b",
+    "source-triangle.jpg": "e5c5837edf9d8ca1fd4f3cd70a19e91e28308527111aaea59cf8ec9b22c52203"
+  },
+  "original_local_numbers_not_official_numbers": true
+}
