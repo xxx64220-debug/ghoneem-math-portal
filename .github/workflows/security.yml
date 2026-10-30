@@ -38,6 +38,6 @@ jobs:
       - name: Check account, subscription and group authorization in disposable PostgreSQL
         run: |
           node --test tests/device-access.test.mjs tests/device-ui.test.cjs tests/device-edge.test.cjs
+          node --test tests/my_exams_performance.test.mjs tests/private_policy_functions.test.mjs tests/oct30_question_repairs.test.cjs
           node tests/portal_management_db.cjs
           node tests/group_isolation_db.cjs
-

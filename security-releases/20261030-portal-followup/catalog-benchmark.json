@@ -1,0 +1,58 @@
+[
+  {
+    "phase": "after",
+    "track": "est",
+    "ms": 1381,
+    "exams": 318,
+    "hash": "3ac7474ad64572987f0c1c6de47c1e0a"
+  },
+  {
+    "phase": "before",
+    "track": "est",
+    "ms": 3973,
+    "exams": 318,
+    "hash": "3ac7474ad64572987f0c1c6de47c1e0a"
+  },
+  {
+    "phase": "after",
+    "track": "est_eng",
+    "ms": 228,
+    "exams": 61,
+    "hash": "d090b59e216d408678f640cc1b32215a"
+  },
+  {
+    "phase": "before",
+    "track": "est_eng",
+    "ms": 850,
+    "exams": 61,
+    "hash": "d090b59e216d408678f640cc1b32215a"
+  },
+  {
+    "phase": "after",
+    "track": "est2",
+    "ms": 1064,
+    "exams": 219,
+    "hash": "d6a681f0a53c787d4f19d51290cd53f2"
+  },
+  {
+    "phase": "before",
+    "track": "est2",
+    "ms": 2955,
+    "exams": 219,
+    "hash": "d6a681f0a53c787d4f19d51290cd53f2"
+  },
+  {
+    "phase": "after",
+    "track": "sat",
+    "ms": 1077,
+    "exams": 198,
+    "hash": "1a7787b277e3a38cd975ac66584f703c"
+  },
+  {
+    "phase": "before",
+    "track": "sat",
+    "ms": 3540,
+    "exams": 198,
+    "hash": "1a7787b277e3a38cd975ac66584f703c"
+  }
+]

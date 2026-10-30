@@ -1,0 +1,208 @@
+[
+  {
+    "schema": "portal_private",
+    "proname": "attempt_course_access",
+    "args": "p_attempt uuid, p_user uuid, p_submit boolean",
+    "definition": "CREATE OR REPLACE FUNCTION portal_private.attempt_course_access(p_attempt uuid, p_user uuid, p_submit boolean DEFAULT false)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public', 'pg_temp'\nAS $function$\n select exists(select 1 from public.attempts a join public.exams x on x.id=a.exam_id\n join public.enrollments e on e.user_id=a.user_id and e.track_id=x.track_id\n join public.profiles p on p.id=a.user_id join public.tracks t on t.id=x.track_id\n where a.id=p_attempt and a.user_id=p_user and p.role='student' and p.status='active' and e.status='active' and t.is_active\n and (public.is_enrolled(p_user,x.track_id) or (\n e.ends_at is not null and a.started_at<e.ends_at and (e.starts_at is null or a.started_at>=e.starts_at)\n and now()<case when isfinite(a.deadline_at) then a.deadline_at+case when p_submit then interval '1 day' else interval '0' end\n else e.ends_at+interval '2 hours' end)));\n$function$\n",
+    "authenticated": false,
+    "anon": false
+  },
+  {
+    "schema": "portal_private",
+    "proname": "exam_content_ready",
+    "args": "p_ids uuid[], p_track text",
+    "definition": "CREATE OR REPLACE FUNCTION portal_private.exam_content_ready(p_ids uuid[], p_track text)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public', 'pg_temp'\nAS $function$\n select coalesce(cardinality(p_ids),0) between 1 and 200\n and (select count(distinct id) from unnest(p_ids) id)=cardinality(p_ids)\n and (select count(*) from questions q join question_keys k on k.question_id=q.id\n  where q.id=any(p_ids) and portal_private.question_eligible(q,k,p_track,false))=cardinality(p_ids)\n$function$\n",
+    "authenticated": false,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "act2_collection_search",
+    "args": "p_search text, p_category text, p_subject text",
+    "definition": "CREATE OR REPLACE FUNCTION public.act2_collection_search(p_search text DEFAULT ''::text, p_category text DEFAULT ''::text, p_subject text DEFAULT ''::text)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare result_ jsonb;\nbegin\n perform portal_private.require_current_session();\n if not public.act2_collection_staff() then raise exception 'forbidden'; end if;\n if length(coalesce(p_search,''))>200 then raise exception 'invalid_search'; end if;\n select coalesce(jsonb_agg(to_jsonb(r) order by r.category,r.filename),'[]'::jsonb) into result_ from (\n select d.id,d.filename,d.category,d.subject,d.notes,d.page_count,d.size_bytes,\n coalesce((select jsonb_agg((v->>'page')::int order by (v->>'page')::int)\n from jsonb_array_elements(d.page_text) v where coalesce(p_search,'')<>'' and strpos(lower(v->>'text'),lower(p_search))>0),'[]'::jsonb) matching_pages\n from public.act2_collection_documents d\n where (coalesce(p_category,'')='' or d.category=p_category) and (coalesce(p_subject,'')='' or d.subject=p_subject)\n and (coalesce(p_search,'')='' or strpos(lower(concat_ws(' ',d.filename,d.notes,d.category,d.subject)),lower(p_search))>0\n or exists(select 1 from jsonb_array_elements(d.page_text) v where strpos(lower(v->>'text'),lower(p_search))>0))\n ) r;\n return result_;\nend $function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "act2_collection_staff",
+    "args": "",
+    "definition": "CREATE OR REPLACE FUNCTION public.act2_collection_staff()\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\n select exists(select 1 from public.profiles p where p.id=auth.uid() and p.status='active'\n and (p.role='admin' or (p.role='instructor' and exists(select 1 from public.instructor_tracks t where t.user_id=p.id and t.track_id='act2'))));\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "admin_bank_page",
+    "args": "p_track text, p_scope text, p_search text, p_lesson text, p_status text, p_sort text, p_page integer, p_size integer",
+    "definition": "CREATE OR REPLACE FUNCTION public.admin_bank_page(p_track text, p_scope text DEFAULT 'questions'::text, p_search text DEFAULT ''::text, p_lesson text DEFAULT ''::text, p_status text DEFAULT ''::text, p_sort text DEFAULT 'priority'::text, p_page integer DEFAULT 0, p_size integer DEFAULT 50)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare role_ text; result_ jsonb;\nbegin\n perform portal_private.require_current_session();\n select role into role_ from public.profiles where id=auth.uid() and status='active';\n if auth.uid() is null or role_ is null or role_ not in ('admin','instructor') then raise exception 'forbidden'; end if;\n if nullif(p_track,'') is null then raise exception 'choose_track'; end if;\n if role_='instructor' and not exists(select 1 from public.instructor_tracks where user_id=auth.uid() and track_id=p_track) then raise exception 'forbidden_track'; end if;\n if p_scope is null or p_sort is null or p_status is null or p_scope not in ('questions','source') or p_sort not in ('priority','topic','code','type','difficulty')\n  or p_status not in ('','ready','review','unclassified','pending','independently_solved','source_checked')\n  or p_page is null or p_page not between 0 and 100000 or p_size is null or p_size not between 1 and 100\n  or length(coalesce(p_search,''))>200 then raise exception 'invalid_bank_filter'; end if;\n with usage_ as materialized (\n  select qid,count(distinct e.id)::int uses from public.exams e cross join lateral unnest(e.question_ids) qid\n  where e.track_id=p_track and e.is_published group by qid\n ), bank_ as materialized (\n  select q.id,q.track_id,q.topic,q.type,q.difficulty,left(q.stem,180) stem,\n   coalesce(nullif(q.assets->>'source_code',''),nullif(q.assets->>'source_question_id',''),q.id::text) code,\n   coalesce(q.assets->>'source_document',q.assets->>'source_file',q.assets->>'source','') source,\n   coalesce(nullif(btrim(q.assets->>'lesson_subtopic'),''),q.assets->>'skill','') skill,\n   coalesce(q.assets->>'release_hold_reason','') hold_reason,\n   coalesce(q.assets->>'verified_release','') verified_release,\n   coalesce(q.assets->>'answer_review_status','') answer_review_status,\n   portal_private.question_eligible(q,k,p_track,false) ready,\n   nullif(btrim(q.topic),'') is null or q.topic ilike '%classification%' or coalesce(nullif(btrim(q.assets->>'lesson_subtopic'),''),nullif(btrim(q.assets->>'skill'),'')) is null or coalesce(q.assets->>'lesson_subtopic'='Needs classification',false) unclassified,\n   coalesce(u.uses,0) published_uses,\n   lower(concat_ws(' ',q.id::text,q.topic,q.stem,q.assets->>'lesson_subtopic',q.assets->>'skill',q.assets->>'source_file',q.assets->>'source_code',q.assets->>'source_question_id',q.assets->>'source',q.assets->>'source_document',q.assets->>'release_hold_reason')) search_text\n  from public.questions q left join public.question_keys k on k.question_id=q.id left join usage_ u on u.qid=q.id\n  where q.track_id=p_track and lower(coalesce(q.assets->>'bank_removed','false'))<>'true'\n ), labelled_ as materialized (\n  select b.*,case when not ready then 'review' when answer_review_status='independently_solved' then 'independently_solved'\n   when verified_release<>'' then 'source_checked' else 'pending' end review_status,\n   case when not ready then 1 when unclassified then 2 when answer_review_status<>'independently_solved' then 3 else 4 end priority\n  from bank_ b\n ), entries_ as materialized (\n  select b.id::text entry_id,b.id question_id,b.code,b.source,null::int source_page,b.topic,b.stem,b.type,b.difficulty,b.skill,\n   b.ready,b.unclassified,b.hold_reason,b.review_status,b.priority,b.published_uses,b.verified_release,b.search_text,''::text duplicate_of\n  from labelled_ b where p_scope='questions'\n  union all\n  select s.id::text,b.id,s.source_code,s.source_document,s.source_page,coalesce(b.topic,s.source_section,''),coalesce(b.stem,''),coalesce(b.type,''),coalesce(b.difficulty,''),coalesce(b.skill,''),\n   coalesce(b.ready,false),coalesce(b.unclassified,true),coalesce(nullif(b.hold_reason,''),case when not coalesce(b.ready,false) then s.review_status else '' end),\n   case when coalesce(b.ready,false) then b.review_status else 'review' end,\n   case when not coalesce(b.ready,false) then 1 else b.priority end,coalesce(b.published_uses,0),coalesce(b.verified_release,''),\n   lower(concat_ws(' ',s.id::text,s.source_code,s.source_section,s.source_document,b.search_text)),coalesce(s.duplicate_of::text,'')\n  from public.est_source_review s left join labelled_ b on b.id=s.question_id where p_scope='source' and s.track_id=p_track\n ), filtered_ as materialized (\n  select * from entries_ where (coalesce(p_lesson,'')='' or topic=p_lesson)\n   and (coalesce(p_search,'')='' or strpos(search_text,lower(p_search))>0)\n   and (p_status='' or (p_status='ready' and ready) or (p_status='unclassified' and unclassified) or review_status=p_status)\n ), page_ as (\n  select * from filtered_ order by\n   case when p_sort='priority' then priority end,case when p_sort='priority' then published_uses end desc,\n   case when p_sort='code' then code when p_sort='type' then type when p_sort='difficulty' then difficulty else topic end,code,entry_id\n  limit p_size offset p_page*p_size\n ) select jsonb_build_object('total',(select count(*) from filtered_),'page',p_page,'size',p_size,\n  'items',coalesce((select jsonb_agg(to_jsonb(p)-'search_text' order by\n   case when p_sort='priority' then priority end,case when p_sort='priority' then published_uses end desc,\n   case when p_sort='code' then code when p_sort='type' then type when p_sort='difficulty' then difficulty else topic end,code,entry_id) from page_ p),'[]'::jsonb),\n  'lessons',coalesce((select jsonb_agg(topic order by topic) from (select distinct topic from entries_ where topic<>'') l),'[]'::jsonb),\n  'summary',jsonb_build_object('total',(select count(*) from entries_),'held',(select count(*) from entries_ where not ready),\n   'unclassified',(select count(*) from entries_ where unclassified),'independently_solved',(select count(*) from entries_ where review_status='independently_solved')))\n into result_;\n return result_;\nend $function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "attempt_is_mine",
+    "args": "p_attempt uuid, p_user uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.attempt_is_mine(p_attempt uuid, p_user uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n select exists(select 1 from attempts a join exams e on e.id=a.exam_id where a.id=p_attempt and a.user_id=p_user and course_history_access(p_user,e.track_id));\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "attempt_live_for",
+    "args": "p_attempt uuid, p_user uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.attempt_live_for(p_attempt uuid, p_user uuid)\n RETURNS boolean\n LANGUAGE sql\n SECURITY DEFINER\n SET search_path TO 'public', 'pg_temp'\nAS $function$\n select p_user=auth.uid() and portal_private.current_session_allowed()\n and exists(select 1 from public.attempts a where a.id=p_attempt and a.user_id=p_user and a.status='in_progress'\n and clock_timestamp()<a.deadline_at and portal_private.attempt_course_access(p_attempt,p_user,false))\n and exists(select 1 from portal_private.attempt_devices l where l.attempt_id=p_attempt and l.user_id=p_user\n and l.session_id=nullif(auth.jwt()->>'session_id','')::uuid);\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "attempt_review_open",
+    "args": "p_attempt uuid, p_user uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.attempt_review_open(p_attempt uuid, p_user uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select exists (select 1 from public.attempts a\n                  where a.id = p_attempt and a.user_id = p_user\n                    and a.status in ('submitted','graded','expired')\n                    and a.review_unlocks_at is not null\n                    and now() >= a.review_unlocks_at);\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "attempt_track",
+    "args": "p_attempt uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.attempt_track(p_attempt uuid)\n RETURNS text\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select e.track_id from public.attempts a join public.exams e on e.id = a.exam_id\n   where a.id = p_attempt;\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "exam_assigned_to",
+    "args": "p_exam uuid, p_user uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.exam_assigned_to(p_exam uuid, p_user uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select exists (\n    select 1 from public.assignments a\n     where a.exam_id = p_exam\n       and (a.user_id = p_user\n            or exists (select 1 from public.group_members gm\n                        where gm.group_id = a.group_id and gm.user_id = p_user)));\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "exam_track",
+    "args": "p_exam uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.exam_track(p_exam uuid)\n RETURNS text\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select track_id from public.exams where id = p_exam;\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "group_track",
+    "args": "p_group uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.group_track(p_group uuid)\n RETURNS text\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select track_id from public.groups where id = p_group;\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "in_group",
+    "args": "p_group uuid, p_user uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.in_group(p_group uuid, p_user uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select exists (select 1 from public.group_members gm\n                  where gm.group_id = p_group and gm.user_id = p_user);\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "is_admin",
+    "args": "",
+    "definition": "CREATE OR REPLACE FUNCTION public.is_admin()\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select public.jwt_role() = 'admin';\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "is_enrolled",
+    "args": "p_user uuid, p_track text",
+    "definition": "CREATE OR REPLACE FUNCTION public.is_enrolled(p_user uuid, p_track text)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public', 'pg_temp'\nAS $function$\n select exists(select 1 from public.enrollments e join public.profiles p on p.id=e.user_id join public.tracks t on t.id=e.track_id\n where e.user_id=p_user and e.track_id=p_track and e.status='active' and p.status='active' and p.role='student' and t.is_active\n and (e.starts_at is null or e.starts_at<=now()) and (e.ends_at is null or now()<e.ends_at));\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "is_staff",
+    "args": "",
+    "definition": "CREATE OR REPLACE FUNCTION public.is_staff()\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select public.jwt_role() in ('instructor','admin');\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "my_exams",
+    "args": "p_user uuid, p_track text",
+    "definition": "CREATE OR REPLACE FUNCTION public.my_exams(p_user uuid, p_track text)\n RETURNS jsonb\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select coalesce(jsonb_agg(jsonb_build_object(\n           'id', e.id, 'title', e.title, 'assessment_type', e.assessment_type, 'duration_seconds', e.duration_seconds,\n           'questions', coalesce(array_length(e.question_ids,1), 0),\n           'exam_set_code',e.exam_set_code,'module_number',e.module_number,'module_count',e.module_count,\n           'content_ready',portal_private.exam_content_ready(e.question_ids,e.track_id),\n           'open', public.student_assignment_for(e.id, p_user) is not null and portal_private.exam_content_ready(e.question_ids,e.track_id),\n           'attempts', (select count(*) from public.attempts a where a.user_id=p_user and a.exam_id=e.id),\n           'max_attempts', case when e.assessment_type='lesson_exam' then null else 1 end,\n           'repeatable', e.assessment_type='lesson_exam',\n           'allow_untimed', e.assessment_type='lesson_exam',\n           'retake_available', public.is_enrolled(p_user,p_track) and (e.assessment_type='lesson_exam' or exists(select 1 from retake_grants g where g.user_id=p_user and g.exam_id=e.id and g.consumed_at is null and (g.expires_at is null or g.expires_at>now()))),\n           'last', (select jsonb_build_object('id',a.id,'status',a.status,'untimed',a.deadline_at='infinity'::timestamptz,'score',a.score,'total',a.total,'scaled_score',a.scaled_score)\n                      from public.attempts a where a.user_id=p_user and a.exam_id=e.id order by a.attempt_no desc limit 1)\n         ) order by e.created_at), '[]'::jsonb)\n    from public.exams e\n   where e.track_id=p_track and e.is_published and (public.is_enrolled(p_user,p_track) or exists(select 1 from public.attempts a where a.exam_id=e.id and a.user_id=p_user and a.status='in_progress' and portal_private.attempt_course_access(a.id,p_user,false)))\n     and exists (select 1 from public.assignments a where a.exam_id=e.id and\n       (a.user_id=p_user or exists(select 1 from public.group_members gm where gm.group_id=a.group_id and gm.user_id=p_user)));\n$function$\n",
+    "authenticated": false,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "question_track",
+    "args": "p_question uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.question_track(p_question uuid)\n RETURNS text\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select track_id from public.questions where id = p_question;\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "registration_review",
+    "args": "p_actor uuid, p_id uuid, p_data jsonb",
+    "definition": "CREATE OR REPLACE FUNCTION public.registration_review(p_actor uuid, p_id uuid, p_data jsonb)\n RETURNS jsonb\n LANGUAGE plpgsql\n SET search_path TO ''\nAS $function$\ndeclare r public.student_registration_requests;t text;g uuid;starts timestamptz;ends timestamptz;decision text;\nbegin\n if not exists(select 1 from public.profiles where id=p_actor and role='admin' and status='active') then raise exception 'admin_required'; end if;\n select * into r from public.student_registration_requests where id=p_id for update;\n if not found then raise exception 'request_not_found'; end if;\n decision:=p_data->>'decision';\n if decision is null or decision not in ('approved','rejected') then raise exception 'invalid_decision'; end if;\n if r.status=decision then return jsonb_build_object('status',r.status); end if;\n if r.status<>'pending' then raise exception 'request_already_reviewed'; end if;\n if not exists(select 1 from public.profiles where id=r.user_id and role='student' and status='suspended') then raise exception 'account_changed_refresh'; end if;\n if decision='approved' then\n  t:=p_data->>'track_id';g:=nullif(p_data->>'group_id','')::uuid;starts:=nullif(p_data->>'starts_at','')::timestamptz;ends:=nullif(p_data->>'ends_at','')::timestamptz;\n  if not exists(select 1 from public.tracks where id=t and is_active) then raise exception 'invalid_track'; end if;\n  if g is not null and not exists(select 1 from public.groups where id=g and track_id=t) then raise exception 'group_course_mismatch'; end if;\n  if ends is not null and ends<=coalesce(starts,now()) then raise exception 'end_must_follow_start'; end if;\n  if exists(select 1 from public.enrollments where user_id=r.user_id) then raise exception 'account_changed_refresh'; end if;\n  perform public.enrol_student(r.user_id,t,p_actor);\n  update public.enrollments set starts_at=starts,ends_at=ends,course_label=coalesce((select name from public.groups where id=g),'') where user_id=r.user_id and track_id=t;\n  if g is not null then insert into public.group_members(group_id,user_id) values(g,r.user_id) on conflict do nothing; end if;\n  update public.profiles set status='active' where id=r.user_id;\n end if;\n update public.student_registration_requests set status=decision,reviewed_at=now(),reviewed_by=p_actor,approved_group_id=g where id=r.id;\n insert into public.audit_log(actor_id,action,target_type,target_id,meta) values(p_actor,'registration.'||decision,'user',r.user_id::text,jsonb_build_object('request_id',r.id,'track_id',t,'group_id',g));\n return jsonb_build_object('status',decision);\nend $function$\n",
+    "authenticated": false,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "staff_can_read_attempt",
+    "args": "p_attempt uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.staff_can_read_attempt(p_attempt uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n select exists(select 1 from attempts a join exams e on e.id=a.exam_id where a.id=p_attempt and staff_can_touch_track(e.track_id) and staff_can_read_student(a.user_id));\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "staff_can_read_student",
+    "args": "p_user uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.staff_can_read_student(p_user uuid)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n select is_admin() or (jwt_role()='instructor' and exists(select 1 from group_members gm join groups g on g.id=gm.group_id join instructor_tracks it on it.track_id=g.track_id and it.user_id=auth.uid() where gm.user_id=p_user and g.instructor_id=auth.uid()));\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "staff_can_touch_track",
+    "args": "p_track text",
+    "definition": "CREATE OR REPLACE FUNCTION public.staff_can_touch_track(p_track text)\n RETURNS boolean\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select public.is_admin()\n      or (public.jwt_role() = 'instructor'\n          and exists (select 1 from public.instructor_tracks it\n                       where it.user_id = auth.uid() and it.track_id = p_track));\n$function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "staff_diagnosis",
+    "args": "p_track text",
+    "definition": "CREATE OR REPLACE FUNCTION public.staff_diagnosis(p_track text)\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare students jsonb;\nbegin\n perform portal_private.require_current_session();\n if auth.uid() is null or not coalesce(public.is_staff(),false) then raise exception 'staff_required' using errcode='42501'; end if;\n if p_track not in ('sat','est','est2','est_eng','act2') or p_track is null\n  or not coalesce(public.staff_can_touch_track(p_track),false) then raise exception 'track_scope_denied' using errcode='42501'; end if;\n with roster as materialized (\n  select p.* from public.profiles p join public.enrollments en on en.user_id=p.id and en.track_id=p_track\n  where p.role='student' and not p.is_test and public.course_history_access(p.id,p_track)\n   and public.staff_can_read_student(p.id) and (public.is_admin() or exists(\n    select 1 from public.groups g join public.group_members gm on gm.group_id=g.id\n    where gm.user_id=p.id and g.track_id=p_track and g.instructor_id=auth.uid()))\n ), lesson_reports as materialized (\n  select b.* from portal_private.diagnosis_lessons_batch(\n   (select coalesce(array_agg(id),'{}'::uuid[]) from roster),p_track) b\n )\n select coalesce(jsonb_agg(jsonb_build_object('user_id',p.id,'full_name',p.full_name,'role','student','tracks',p_track,\n  'practice_open',public.is_enrolled(p.id,p_track),\n  'lessons',coalesce(l.lessons,'[]'::jsonb),\n  'daily_groups',portal_private.diagnosis_daily(p.id,p_track,auth.uid()),\n  'latest',a.row,\n  'repeat_questions',(select count(*) from public.practice_notebook n join public.questions q on q.id=n.question_id\n    join public.question_keys k on k.question_id=q.id where n.user_id=p.id and n.tries>=2 and n.correct_streak<2\n      and portal_private.question_eligible(q,k,p_track,false))\n ) order by p.full_name,p.id),'[]'::jsonb) into students\n from roster p left join lesson_reports l on l.user_id=p.id\n left join lateral (\n  select jsonb_build_object('id',a.id,'title',e.title,'assessment_type',e.assessment_type,'attempt_no',a.attempt_no,\n   'score',a.score,'total',a.total,'percent',round(100.0*a.score/nullif(a.total,0)),'time_used',a.time_used,\n   'submitted_at',a.submitted_at,'answered_count',(select count(*) from public.attempt_answers aa where aa.attempt_id=a.id\n    and aa.response is not null and aa.response not in ('null'::jsonb,'\"\"'::jsonb))) as row\n  from public.attempts a join public.exams e on e.id=a.exam_id\n  where a.user_id=p.id and e.track_id=p_track and a.status in ('submitted','graded','expired')\n  order by a.submitted_at desc nulls last,a.attempt_no desc,a.id desc limit 1\n ) a on true;\n return jsonb_build_object('track_id',p_track,'students',students);\nend $function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "staff_group_exam_evidence",
+    "args": "p_exam uuid, p_students uuid[]",
+    "definition": "CREATE OR REPLACE FUNCTION public.staff_group_exam_evidence(p_exam uuid, p_students uuid[])\n RETURNS jsonb\n LANGUAGE plpgsql\n STABLE SECURITY DEFINER\n SET search_path TO ''\nAS $function$\ndeclare assessment public.exams%rowtype; students jsonb;\nbegin\n perform portal_private.require_current_session();\n  if auth.uid() is null or not coalesce(public.is_staff(),false) then\n    raise exception 'staff_required' using errcode='42501';\n  end if;\n  select * into assessment from public.exams\n    where id=p_exam and track_id in ('sat','est','est2','est_eng','act2')\n      and public.staff_can_touch_track(track_id) and assessment_type in ('full_exam','lesson_exam');\n  if not found then raise exception 'exam_not_available' using errcode='42501'; end if;\n  if p_students is null or cardinality(p_students)>100 then\n    raise exception 'invalid_student_selection' using errcode='22023';\n  end if;\n  -- Reject the whole request, including nonexistent IDs, without leaking which\n  -- student was outside the caller's existing track / group permissions.\n  if exists(select 1 from unnest(p_students) u(id) where id is null\n    or not coalesce(public.staff_can_read_student(id),false)\n    or not public.is_enrolled(id,assessment.track_id)\n    or not exists(select 1 from public.profiles p where p.id=u.id and p.role='student')\n    or (not public.is_admin() and not exists(\n      select 1 from public.group_members gm join public.groups g on g.id=gm.group_id\n      where gm.user_id=u.id and g.track_id=assessment.track_id and g.instructor_id=auth.uid()))) then\n    raise exception 'student_scope_denied' using errcode='42501';\n  end if;\n\n  with chosen as (select distinct u.id from unnest(p_students) u(id) join public.profiles p on p.id=u.id where not p.is_test),\n  attempts as (\n    select c.id as user_id, a.id, a.attempt_no, a.submitted_at,\n      case when a.id is null then\n        case when exists(select 1 from public.attempts pending where pending.user_id=c.id\n          and pending.exam_id=p_exam and pending.status in ('submitted','graded','expired'))\n          then 'ungraded' else 'missing' end\n        when a.score is null then 'ungraded'\n        when not exists(select 1 from public.attempt_answers aa where aa.attempt_id=a.id\n          and aa.response is not null and aa.response not in ('null'::jsonb,'\"\"'::jsonb)) then 'no_responses'\n        when assessment.review_policy<>'full_review' or a.review_unlocks_at is null\n          or a.review_unlocks_at>now() then 'locked' else 'available' end as state\n    from chosen c left join lateral (\n      select a.* from public.attempts a where a.user_id=c.id and a.exam_id=p_exam\n        and a.status in ('submitted','graded','expired')\n      order by a.submitted_at desc nulls last, a.attempt_no desc, a.id desc limit 1\n    ) a on true\n  ), lesson_counts as (\n    -- DISTINCT exam IDs mirrors the student plan's seen-ID guard. Only stored\n    -- boolean results count; no regrading, answer matching or timing inference.\n    select a.user_id, coalesce(nullif(btrim(q.assets->>'curriculum_lesson'),''),\n        nullif(btrim(q.topic),''),'Unclassified questions') as lesson,\n      count(*)::int as seen, count(*) filter(where r.is_correct)::int as correct,\n      count(*) filter(where not r.is_correct)::int as missed,\n      count(*) filter(where not r.is_correct and\n        (aa.response is null or aa.response='null'::jsonb or aa.response='\"\"'::jsonb))::int as blank\n    from attempts a\n    join (select distinct unnest(assessment.question_ids) as id) ids on a.state='available'\n    join public.questions q on q.id=ids.id and q.track_id=assessment.track_id\n    join public.question_keys k on k.question_id=q.id\n    join public.attempt_results r on r.attempt_id=a.id and r.question_id=q.id\n    left join public.attempt_answers aa on aa.attempt_id=a.id and aa.question_id=q.id\n    where r.is_correct is not null and portal_private.question_eligible(q,k,assessment.track_id,false)\n    group by a.user_id, coalesce(nullif(btrim(q.assets->>'curriculum_lesson'),''),\n        nullif(btrim(q.topic),''),'Unclassified questions')\n  ), lessons as (\n    select user_id, jsonb_agg(jsonb_build_object('lesson',lesson,\n      'classified',lesson not in ('Unclassified questions','Mixed / untagged'),\n      'seen',seen,'correct',correct,'missed',missed,'blank',blank,\n      'percent',round(100.0*correct/seen)) order by missed desc,\n        round(100.0*correct/seen), lesson collate \"C\") as rows\n    from lesson_counts group by user_id\n  )\n  select coalesce(jsonb_agg(jsonb_build_object('user_id',a.user_id,'state',a.state,\n    'attempt',case when a.id is not null then jsonb_build_object('id',a.id,\n      'attempt_no',a.attempt_no,'submitted_at',a.submitted_at) else null end,\n    'lessons',coalesce(l.rows,'[]'::jsonb)) order by a.user_id),'[]'::jsonb)\n  into students from attempts a left join lessons l on l.user_id=a.user_id;\n  return jsonb_build_object('exam_id',p_exam,'track_id',assessment.track_id,'students',students);\nend $function$\n",
+    "authenticated": true,
+    "anon": false
+  },
+  {
+    "schema": "public",
+    "proname": "student_assignment_for",
+    "args": "p_exam uuid, p_user uuid",
+    "definition": "CREATE OR REPLACE FUNCTION public.student_assignment_for(p_exam uuid, p_user uuid)\n RETURNS uuid\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select a.id\n    from public.assignments a\n    join public.exams e on e.id = a.exam_id\n   where a.exam_id = p_exam\n     and e.is_published\n     and public.is_enrolled(p_user, e.track_id)\n     and (a.user_id = p_user\n          or exists (select 1 from public.group_members gm\n                      where gm.group_id = a.group_id and gm.user_id = p_user))\n     and (a.open_at  is null or now() >= a.open_at)\n     and (a.close_at is null or now() <= a.close_at)\n   order by a.close_at nulls last\n   limit 1;\n$function$\n",
+    "authenticated": false,
+    "anon": false
+  },
+  {
+    "schema": "portal_private",
+    "proname": "question_eligible",
+    "args": "p_q questions, p_k question_keys, p_track text, p_daily boolean",
+    "definition": "CREATE OR REPLACE FUNCTION portal_private.question_eligible(p_q questions, p_k question_keys, p_track text, p_daily boolean DEFAULT false)\n RETURNS boolean\n LANGUAGE plpgsql\n IMMUTABLE\n SET search_path TO 'public', 'pg_temp'\nAS $function$\ndeclare visual_ boolean; figures_ jsonb;\nbegin\n if p_q.id is null or p_q.track_id is distinct from p_track or p_k.question_id is distinct from p_q.id\n  or nullif(btrim(p_q.stem),'') is null or nullif(btrim(p_k.explanation),'') is null\n  or nullif(btrim(p_q.assets->>'release_hold_reason'),'') is not null\n  or lower(coalesce(p_q.assets->>'bank_removed','false'))='true'\n  or coalesce(p_k.correct->>'void','false')='true'\n then return false; end if;\n figures_:=case jsonb_typeof(p_q.assets->'figure') when 'array' then p_q.assets->'figure'\n  when 'string' then jsonb_build_array(p_q.assets->'figure') else '[]'::jsonb end;\n visual_:=exists(select 1 from jsonb_array_elements_text(figures_) f where\n  f ~ '^https://' or f ~ '^data:image/(png|jpeg|jpg|webp|gif|svg\\+xml);base64,[A-Za-z0-9+/=[:space:]]+$')\n  or coalesce(p_q.assets->>'image','') ~ '^https://'\n  or nullif(btrim(p_q.assets->>'svg'),'') is not null\n  or nullif(btrim(p_q.assets->>'html'),'') is not null\n  or (jsonb_typeof(p_q.assets->'figspec')='object' and p_q.assets->'figspec'<>'{}'::jsonb);\n visual_:=coalesce(visual_,false);\n if lower(coalesce(p_q.assets->>'figure_required','false'))='true' and not visual_ then return false; end if;\n if p_q.type='mcq' then\n  if jsonb_typeof(p_q.choices) is distinct from 'array' then return false; end if;\n  if jsonb_array_length(p_q.choices) not between 2 and 8\n   or exists(select 1 from jsonb_array_elements(p_q.choices) c where nullif(btrim(c->>'key'),'') is null)\n   or (select count(distinct c->>'key') from jsonb_array_elements(p_q.choices) c)<>jsonb_array_length(p_q.choices)\n  then return false; end if;\n  if jsonb_typeof(p_k.correct)='string' then\n   if not exists(select 1 from jsonb_array_elements(p_q.choices) c where c->>'key'=p_k.correct#>>'{}') then return false; end if;\n  elsif jsonb_typeof(p_k.correct)='array' then\n   if jsonb_array_length(p_k.correct)=0 or exists(select 1 from jsonb_array_elements(p_k.correct) a\n    where jsonb_typeof(a)<>'string' or not exists(select 1 from jsonb_array_elements(p_q.choices) c where c->>'key'=a#>>'{}')) then return false; end if;\n  else return false; end if;\n  if not visual_ and exists(select 1 from jsonb_array_elements(p_q.choices) c where\n   nullif(btrim(c->>'text'),'') is null or c->>'text' ilike '%in the original question%') then return false; end if;\n elsif p_q.type='grid_in' then\n  if jsonb_typeof(p_k.correct) in ('string','number') then\n   if nullif(btrim(p_k.correct#>>'{}'),'') is null then return false; end if;\n  elsif jsonb_typeof(p_k.correct)='array' then\n   if jsonb_array_length(p_k.correct)=0 or exists(select 1 from jsonb_array_elements(p_k.correct) a\n    where jsonb_typeof(a) not in ('string','number') or nullif(btrim(a#>>'{}'),'') is null) then return false; end if;\n  else return false; end if;\n else return false; end if;\n if p_daily then\n  if p_q.type<>'mcq' or jsonb_typeof(p_k.correct)<>'string' or jsonb_array_length(p_q.choices)<4\n   or nullif(p_q.assets->>'verified_release','') is null\n   or exists(select 1 from jsonb_array_elements(p_q.choices) c where nullif(btrim(c->>'text'),'') is null\n    or c->>'text' ilike '%in the original question%') then return false; end if;\n end if;\n return true;\nend $function$\n"
+  }
+]

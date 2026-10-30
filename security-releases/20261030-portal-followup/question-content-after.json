@@ -1,0 +1,170 @@
+[
+  {
+    "id": "a9c9dcc4-509f-445b-9cb8-8658dc4551ac",
+    "track_id": "sat",
+    "type": "grid_in",
+    "topic": "Ratios, percentages and unit conversion",
+    "stem": "The line graph shows the total amount of snow, in inches, recorded each year in Washington, DC, from 2003 to 2015. If \\(p\\%\\) is the percent decrease in the annual snowfall from 2003 to 2007, what is the value of \\(p\\)?",
+    "choices": [],
+    "assets": {
+      "source": "Official-style &middot; ID 0231050d",
+      "legacy_index": 13,
+      "lesson_subtopic": "Percentages",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "lesson_original_topic": "Percentages",
+      "lesson_taxonomy_version": "20260929",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 300\" role=\"img\" aria-label=\"Washington DC annual snowfall, 2003 to 2015; 2003: 40 inches; 2007: 10 inches\"><rect width=\"400\" height=\"300\" fill=\"white\"/><text x=\"200\" y=\"19\" font-size=\"16\" text-anchor=\"middle\" fill=\"#18283f\">Annual snowfall (inches)</text><line x1=\"48\" y1=\"230\" x2=\"380\" y2=\"230\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"39\" y=\"235\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">0</text><line x1=\"48\" y1=\"200\" x2=\"380\" y2=\"200\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"39\" y=\"205\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">10</text><line x1=\"48\" y1=\"170\" x2=\"380\" y2=\"170\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"39\" y=\"175\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">20</text><line x1=\"48\" y1=\"140\" x2=\"380\" y2=\"140\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"39\" y=\"145\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">30</text><line x1=\"48\" y1=\"110\" x2=\"380\" y2=\"110\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"39\" y=\"115\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">40</text><line x1=\"48\" y1=\"80\" x2=\"380\" y2=\"80\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"39\" y=\"85\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">50</text><line x1=\"48\" y1=\"50\" x2=\"380\" y2=\"50\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"39\" y=\"55\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">60</text><line x1=\"48\" y1=\"50\" x2=\"48\" y2=\"230\" stroke=\"#18283f\" stroke-width=\"1\"/><line x1=\"48\" y1=\"230\" x2=\"380\" y2=\"230\" stroke=\"#18283f\" stroke-width=\"1\"/><polyline points=\"58,110 84,194 110,191 136,191 162,200 188,215 214,209 240,62 266,194 292,224 318,221 344,134 370,176\" fill=\"none\" stroke=\"#18283f\" stroke-width=\"2\"/><circle cx=\"58\" cy=\"110\" r=\"3\" fill=\"#18283f\"/><text x=\"58\" y=\"253\" font-size=\"14\" text-anchor=\"middle\" fill=\"#18283f\">2003</text><circle cx=\"84\" cy=\"194\" r=\"3\" fill=\"#18283f\"/><circle cx=\"110\" cy=\"191\" r=\"3\" fill=\"#18283f\"/><text x=\"110\" y=\"253\" font-size=\"14\" text-anchor=\"middle\" fill=\"#18283f\">2005</text><circle cx=\"136\" cy=\"191\" r=\"3\" fill=\"#18283f\"/><circle cx=\"162\" cy=\"200\" r=\"3\" fill=\"#18283f\"/><text x=\"162\" y=\"253\" font-size=\"14\" text-anchor=\"middle\" fill=\"#18283f\">2007</text><circle cx=\"188\" cy=\"215\" r=\"3\" fill=\"#18283f\"/><circle cx=\"214\" cy=\"209\" r=\"3\" fill=\"#18283f\"/><text x=\"214\" y=\"253\" font-size=\"14\" text-anchor=\"middle\" fill=\"#18283f\">2009</text><circle cx=\"240\" cy=\"62\" r=\"3\" fill=\"#18283f\"/><circle cx=\"266\" cy=\"194\" r=\"3\" fill=\"#18283f\"/><text x=\"266\" y=\"253\" font-size=\"14\" text-anchor=\"middle\" fill=\"#18283f\">2011</text><circle cx=\"292\" cy=\"224\" r=\"3\" fill=\"#18283f\"/><circle cx=\"318\" cy=\"221\" r=\"3\" fill=\"#18283f\"/><text x=\"318\" y=\"253\" font-size=\"14\" text-anchor=\"middle\" fill=\"#18283f\">2013</text><circle cx=\"344\" cy=\"134\" r=\"3\" fill=\"#18283f\"/><circle cx=\"370\" cy=\"176\" r=\"3\" fill=\"#18283f\"/><text x=\"370\" y=\"253\" font-size=\"14\" text-anchor=\"middle\" fill=\"#18283f\">2015</text><text x=\"200\" y=\"280\" font-size=\"15\" text-anchor=\"middle\" fill=\"#18283f\">Year</text><text x=\"66\" y=\"98\" font-size=\"14\" text-anchor=\"start\" fill=\"#18283f\">(2003, 40)</text><text x=\"130\" y=\"152\" font-size=\"14\" text-anchor=\"start\" fill=\"#18283f\">(2007, 10)</text></svg>",
+      "figure_review": {
+        "date": "2026-10-30",
+        "method": "Vector redraw of existing plotted values with readable year labels; labelled comparison values preserved."
+      }
+    },
+    "correct": [
+      75
+    ],
+    "explanation": "Snowfall fell from 40 inches in 2003 to 10 inches in 2007. Percent decrease: \\(\\frac{40-10}{40}\\times100=75\\). So \\(p=75\\).",
+    "question_hash": "4783d85a1308997512e02ea96308b210",
+    "key_hash": "5c27ae90cf5ad71340facefe277bc64c"
+  },
+  {
+    "id": "d29b13cd-c9c1-5285-2c63-6cea6a4bf68c",
+    "track_id": "est",
+    "type": "mcq",
+    "topic": "Linear functions and slope",
+    "stem": "Q32. The water level of a river is 34 feet and it is receding at a rate of 0.5 foot per\n day. Which equation represents the water level w after d days, and in how many\n days will the level be 26 feet?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "w = 34d + 0.5; in 16 days"
+      },
+      {
+        "key": "B",
+        "text": "w = −0.5d − 34; in 120 days"
+      },
+      {
+        "key": "C",
+        "text": "w = 34d − 0.5; in 120 days"
+      },
+      {
+        "key": "D",
+        "text": "w = −0.5d + 34; in 16 days"
+      }
+    ],
+    "assets": {
+      "source_id": "ghoneem_full_revision_jun_2026",
+      "source_page": 8,
+      "visual_page": 8,
+      "content_audit": "2026-09-25-format-and-grading-review",
+      "visual_bucket": "question-sources",
+      "lesson_subtopic": "Linear word problems",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "32",
+      "verified_release": "2026-09-20-reviewed-answer-and-visual-gates",
+      "curriculum_lesson": "Linear functions and slope",
+      "source_pdf_bucket": "question-sources",
+      "visual_asset_kind": "authoritative_source_pdf_page",
+      "source_question_id": "ghoneem_full_revision_jun_2026-q00031",
+      "visual_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_original_topic": "Ratios, rates, and proportions",
+      "source_pdf_object_path": "DOC-20260623-WA0016_260909_203219_1_.pdf",
+      "lesson_taxonomy_version": "20261030"
+    },
+    "correct": "D",
+    "explanation": "The initial water level is 34 feet and it decreases by 0.5 foot each day, so w = 34 − 0.5d. To find when it reaches 26 feet, solve 26 = 34 − 0.5d: 0.5d = 8, hence d = 16 days. This is a linear function with intercept 34 and slope −0.5.",
+    "question_hash": "159723f496027c90b1a8ff6b2ac454f7",
+    "key_hash": "e308103c56efb1fc924f338473a4f613"
+  },
+  {
+    "id": "e773194a-5f49-6be4-2600-4c9790f93f05",
+    "track_id": "est",
+    "type": "mcq",
+    "topic": "Ratios, percentages and unit conversion",
+    "stem": "A 120-gram bag of chips sold for $3.25. The bag was reduced by 10% (to\n108 g) and its price became $3.00. How did the price per gram change?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "It dropped by 1/36 of a dollar"
+      },
+      {
+        "key": "B",
+        "text": "It dropped by 13/480 of a dollar"
+      },
+      {
+        "key": "C",
+        "text": "It doubled"
+      },
+      {
+        "key": "D",
+        "text": "It increased by about 2.56%"
+      }
+    ],
+    "assets": {
+      "source": "EST & SAT Math Full-Subject Revision — June 2026",
+      "source_id": "full_subject_revision_june_2026",
+      "source_page": 24,
+      "lesson_subtopic": "Comparing unit prices",
+      "reviewed_release": "2026-09-21-grader-format-source-and-deduplication-check",
+      "source_reference": "Page 24, extracted block 122",
+      "verified_release": "2026-09-20-full-revision-source-key",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_question_id": "full_subject_revision_june_2026-p24-q122",
+      "source_library_path": "library/libfile_e3a383e888208191abcb57b2b4bcde0d/DOC-20260623-WA0016_260916_184619.pdf",
+      "lesson_original_topic": "Needs classification",
+      "lesson_taxonomy_version": "20261005",
+      "wording_review": "2026-10-30: Confirmed 108 g and replaced vague option D with the independently calculated percentage increase; key unchanged."
+    },
+    "correct": "D",
+    "explanation": "The reduced mass is 120 × 0.90 = 108 g. The old price per gram is 3.25/120 = 13/480 dollar; the new price is 3/108 = 1/36 dollar. The increase is 1/1440 dollar per gram. Relative to the old unit price, this is (1/1440)/(13/480) × 100 = 100/39%, approximately 2.56%. Answer D.",
+    "question_hash": "c7a03403c4ef210bcc3e14a909944f56",
+    "key_hash": "38f5cd08064b46314020745b12993589"
+  },
+  {
+    "id": "2ab2712a-3d29-54e5-ace7-8911594c715f",
+    "track_id": "est",
+    "type": "mcq",
+    "topic": "Statistics and data analysis",
+    "stem": "Using the histogram, which fraction is closest to the number of cases below age 10 divided by the number above age 80?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "10/80"
+      },
+      {
+        "key": "B",
+        "text": "215/410"
+      },
+      {
+        "key": "C",
+        "text": "410/215"
+      },
+      {
+        "key": "D",
+        "text": "80/10"
+      }
+    ],
+    "assets": {
+      "source": "reviewed-bank-20260928",
+      "source_code": "PSD 025:Q16",
+      "source_page": 164,
+      "answer_review": "2026-09-28-independent-solution-and-source-check",
+      "lesson_subtopic": "Statistics, Probability & Data Analysis",
+      "source_document": "Math_Question_Bank_Ghoneem_Clean.pdf",
+      "source_review_id": "clean:PSD 025",
+      "verified_release": "2026-09-28-independent-solution-and-source-check",
+      "curriculum_lesson": "Statistics and data analysis",
+      "verification_note": "Split from the original shared crop; original PDF visually checked and solution independently verified.",
+      "lesson_original_topic": "Statistics, Probability & Data Analysis",
+      "lesson_taxonomy_version": "20260929",
+      "svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 355\" role=\"img\" aria-label=\"Approximate histogram of cases by age group, redrawn from source PDF page 164\"><rect width=\"400\" height=\"355\" fill=\"white\"/><text x=\"200\" y=\"19\" font-size=\"16\" text-anchor=\"middle\" fill=\"#18283f\">Cases by age group</text><line x1=\"70.0\" y1=\"40\" x2=\"70.0\" y2=\"256\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"70.0\" y=\"276\" font-size=\"13\" text-anchor=\"middle\" fill=\"#18283f\">0</text><line x1=\"120.0\" y1=\"40\" x2=\"120.0\" y2=\"256\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"120.0\" y=\"276\" font-size=\"13\" text-anchor=\"middle\" fill=\"#18283f\">500</text><line x1=\"170.0\" y1=\"40\" x2=\"170.0\" y2=\"256\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"170.0\" y=\"276\" font-size=\"13\" text-anchor=\"middle\" fill=\"#18283f\">1000</text><line x1=\"220.0\" y1=\"40\" x2=\"220.0\" y2=\"256\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"220.0\" y=\"276\" font-size=\"13\" text-anchor=\"middle\" fill=\"#18283f\">1500</text><line x1=\"270.0\" y1=\"40\" x2=\"270.0\" y2=\"256\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"270.0\" y=\"276\" font-size=\"13\" text-anchor=\"middle\" fill=\"#18283f\">2000</text><line x1=\"320.0\" y1=\"40\" x2=\"320.0\" y2=\"256\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"320.0\" y=\"276\" font-size=\"13\" text-anchor=\"middle\" fill=\"#18283f\">2500</text><line x1=\"370.0\" y1=\"40\" x2=\"370.0\" y2=\"256\" stroke=\"#d9dee5\" stroke-width=\"1\"/><text x=\"370.0\" y=\"276\" font-size=\"13\" text-anchor=\"middle\" fill=\"#18283f\">3000</text><text x=\"62\" y=\"56\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">0–10</text><rect x=\"70\" y=\"40\" width=\"41.0\" height=\"23\" fill=\"#506780\"/><text x=\"62\" y=\"80\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">10–20</text><rect x=\"70\" y=\"64\" width=\"100.0\" height=\"23\" fill=\"#506780\"/><text x=\"62\" y=\"104\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">20–30</text><rect x=\"70\" y=\"88\" width=\"287.5\" height=\"23\" fill=\"#506780\"/><text x=\"62\" y=\"128\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">30–40</text><rect x=\"70\" y=\"112\" width=\"235.0\" height=\"23\" fill=\"#506780\"/><text x=\"62\" y=\"152\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">40–50</text><rect x=\"70\" y=\"136\" width=\"172.5\" height=\"23\" fill=\"#506780\"/><text x=\"62\" y=\"176\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">50–60</text><rect x=\"70\" y=\"160\" width=\"137.5\" height=\"23\" fill=\"#506780\"/><text x=\"62\" y=\"200\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">60–70</text><rect x=\"70\" y=\"184\" width=\"80.0\" height=\"23\" fill=\"#506780\"/><text x=\"62\" y=\"224\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">70–80</text><rect x=\"70\" y=\"208\" width=\"43.0\" height=\"23\" fill=\"#506780\"/><text x=\"62\" y=\"248\" font-size=\"14\" text-anchor=\"end\" fill=\"#18283f\">80+</text><rect x=\"70\" y=\"232\" width=\"21.5\" height=\"23\" fill=\"#506780\"/><text x=\"220\" y=\"298\" font-size=\"15\" text-anchor=\"middle\" fill=\"#18283f\">Number of cases</text><text x=\"200\" y=\"323\" font-size=\"12\" text-anchor=\"middle\" fill=\"#18283f\">Approximate counts redrawn from the source.</text><text x=\"200\" y=\"341\" font-size=\"12\" text-anchor=\"middle\" fill=\"#18283f\">Age groups are shown on the left.</text></svg>",
+      "figure_review": {
+        "date": "2026-10-30",
+        "method": "Approximate bar proportions redrawn from original PDF page 164, PSD 025 Q16; original scan has no exact count labels. Approximation visibly labelled.",
+        "source_library_id": "libfile_0600c921942c8191b1b31d6472db5544"
+      }
+    },
+    "correct": "C",
+    "explanation": "The under-10 bar is about 400 cases and the over-80 bar about 200, so the requested ratio is about 2. Of the choices, 410/215≈1.907 is closest. The reversed fraction uses the wrong order; 10/80 and 80/10 compare age cutoffs instead of case counts.",
+    "question_hash": "e8b54addfed3b073ec8393f01cc27c4d",
+    "key_hash": "04f1dedc09f18dabd86c4a4733263f8c"
+  }
+]

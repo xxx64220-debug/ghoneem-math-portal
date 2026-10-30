@@ -1,0 +1,134 @@
+{
+  "rpcComparisons": [
+    {
+      "phase": "after",
+      "check_name": "bank",
+      "hash": "5ae2219738ead4b15e9e57951dcb2730"
+    },
+    {
+      "phase": "before",
+      "check_name": "bank",
+      "hash": "5ae2219738ead4b15e9e57951dcb2730"
+    },
+    {
+      "phase": "after",
+      "check_name": "collection",
+      "hash": "353c372cfdf1dc63d38b53dcaa031d09"
+    },
+    {
+      "phase": "before",
+      "check_name": "collection",
+      "hash": "353c372cfdf1dc63d38b53dcaa031d09"
+    },
+    {
+      "phase": "after",
+      "check_name": "evidence",
+      "hash": "f57d8f80cc02c26b3fe43f9b29935f8c"
+    },
+    {
+      "phase": "before",
+      "check_name": "evidence",
+      "hash": "f57d8f80cc02c26b3fe43f9b29935f8c"
+    },
+    {
+      "phase": "after",
+      "check_name": "policy_nodes",
+      "hash": "0993abfc0d905139bf62194d88f8b0d1"
+    },
+    {
+      "phase": "before",
+      "check_name": "policy_nodes",
+      "hash": "0993abfc0d905139bf62194d88f8b0d1"
+    },
+    {
+      "phase": "after",
+      "check_name": "profile_policy",
+      "hash": "3cb46ad242cc96125447626b8e27c653"
+    },
+    {
+      "phase": "before",
+      "check_name": "profile_policy",
+      "hash": "3cb46ad242cc96125447626b8e27c653"
+    }
+  ],
+  "deployment": [
+    {
+      "result": {
+        "migrations": [
+          {
+            "name": "optimize_student_exam_catalog",
+            "version": "20261030195815"
+          },
+          {
+            "name": "isolate_privileged_policy_functions",
+            "version": "20261030200350"
+          }
+        ],
+        "catalog_config": [
+          "search_path=public, pg_temp",
+          "plan_cache_mode=force_custom_plan",
+          "jit=off",
+          "work_mem=16MB"
+        ],
+        "reviewed_reports": [
+          {
+            "id": "850dd77a-69f6-490b-8b8e-785accbdefc0",
+            "status": "dismissed"
+          },
+          {
+            "id": "0ff17bef-0d0c-4493-a376-f373c4beb7d3",
+            "status": "resolved"
+          },
+          {
+            "id": "d4c3d546-7b12-42a7-95ec-8486ae614985",
+            "status": "resolved"
+          },
+          {
+            "id": "3d9cd586-804a-4997-be4a-e8a61340bbc6",
+            "status": "dismissed"
+          },
+          {
+            "id": "2e7613e7-6ade-4d81-b55f-27bef8152a0b",
+            "status": "resolved"
+          }
+        ],
+        "repaired_questions": [
+          {
+            "id": "2ab2712a-3d29-54e5-ace7-8911594c715f",
+            "svg": true,
+            "topic": "Statistics and data analysis",
+            "correct": "C",
+            "eligible": true
+          },
+          {
+            "id": "a9c9dcc4-509f-445b-9cb8-8658dc4551ac",
+            "svg": true,
+            "topic": "Ratios, percentages and unit conversion",
+            "correct": [
+              75
+            ],
+            "eligible": true
+          },
+          {
+            "id": "d29b13cd-c9c1-5285-2c63-6cea6a4bf68c",
+            "svg": false,
+            "topic": "Linear functions and slope",
+            "correct": "D",
+            "eligible": true
+          },
+          {
+            "id": "e773194a-5f49-6be4-2600-4c9790f93f05",
+            "svg": false,
+            "topic": "Ratios, percentages and unit conversion",
+            "correct": "D",
+            "eligible": true
+          }
+        ],
+        "catalog_service_only": true,
+        "open_question_reports": 0,
+        "pending_registrations": 0,
+        "privileged_public_authenticated": 0
+      }
+    }
+  ]
+}

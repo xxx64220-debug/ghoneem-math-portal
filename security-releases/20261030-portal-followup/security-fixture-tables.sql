@@ -1,0 +1,10 @@
+create table public.assignments(id uuid,exam_id uuid,group_id uuid,user_id uuid,open_at timestamp with time zone,close_at timestamp with time zone,created_at timestamp with time zone);
+create table public.attempts(id uuid,user_id uuid,exam_id uuid,assignment_id uuid,attempt_no integer,shuffle_seed bigint,status text,started_at timestamp with time zone,deadline_at timestamp with time zone,submitted_at timestamp with time zone,review_unlocks_at timestamp with time zone,score integer,scaled_score integer,total integer,time_used integer,ip text,user_agent text);
+create table public.enrollments(user_id uuid,track_id text,status text,enrolled_at timestamp with time zone,enrolled_by uuid,starts_at timestamp with time zone,ends_at timestamp with time zone,course_label text,payment_status text,access_version bigint,daily_group_id uuid);
+create table public.exams(id uuid,track_id text,title text,duration_seconds integer,question_ids uuid[],shuffle boolean,review_policy text,max_attempts integer,is_published boolean,created_at timestamp with time zone,is_full_length boolean,scoring_map jsonb,assessment_type text,exam_set_code text,module_number integer,module_count integer);
+create table public.group_members(group_id uuid,user_id uuid);
+create table public.groups(id uuid,track_id text,name text,instructor_id uuid,created_at timestamp with time zone,target_exam_date date,course_starts_on date,course_ends_on date,teaching_plan text,plan_version bigint,daily_lessons text[]);
+create table public.instructor_tracks(user_id uuid,track_id text);
+create table public.profiles(id uuid,full_name text,role text,status text,created_at timestamp with time zone,email text,is_test boolean);
+create table public.questions(id uuid,track_id text,topic text,difficulty text,type text,stem text,choices jsonb,assets jsonb,created_at timestamp with time zone);
+create table public.tracks(id text,name text,theme jsonb,scoring jsonb,default_duration_seconds integer,is_active boolean,created_at timestamp with time zone);
