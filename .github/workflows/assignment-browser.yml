@@ -1,0 +1,33 @@
+name: Assignment browser regressions
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: assignment-browser-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  assignment-browser:
+    name: Assignment Chromium, Firefox and WebKit
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci --prefix tests/browser --ignore-scripts --no-audit --no-fund
+      - run: cd tests/browser && npx playwright install --with-deps chromium firefox webkit
+      - run: cd tests/browser && npx playwright test --config playwright.assignments.config.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: assignment-browser-results
+          path: tests/browser/test-results/
+          retention-days: 14

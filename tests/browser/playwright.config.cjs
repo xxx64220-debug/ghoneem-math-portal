@@ -1,6 +1,6 @@
 const { defineConfig } = require('@playwright/test');
 module.exports = defineConfig({
-  testDir: '.', testMatch: '*.spec.cjs', timeout: 30000, retries: 0,
+  testDir: '.', testMatch: '*.spec.cjs', testIgnore: 'exam-assignments.spec.cjs', timeout: 30000, retries: 0,
   use: { baseURL: 'http://127.0.0.1:4173', serviceWorkers: 'block', trace: 'retain-on-failure' },
   projects: [
     { name: 'desktop', use: { browserName: 'chromium', viewport: { width: 1280, height: 800 } } },
