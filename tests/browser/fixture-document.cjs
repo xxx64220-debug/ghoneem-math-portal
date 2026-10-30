@@ -1,7 +1,7 @@
 // Only synthetic browser fixtures alter CDN content. Remove that content's SRI
 // from LOCAL test documents; production SRI is verified against locked bytes by
 // tests/security.test.cjs. No external request is made by this helper.
-async function fixtureDocument(route) {
+async function fixtureDocument(route, transform=body=>body) {
   const req = route.request();
   if (new URL(req.url()).origin !== 'http://127.0.0.1:4173') throw new Error('Fixture document must be local');
   if (req.resourceType() !== 'document') return route.continue();
@@ -9,6 +9,6 @@ async function fixtureDocument(route) {
   const body = (await response.text()).replace(/<(?:script|link)\b[^>]*(?:src|href)="https:\/\/cdn\.jsdelivr\.net\/[^>]+>/g,
     tag => tag.replace(/ integrity="[^"]+"/g, ''));
   const {securityHeaders} = await import('../../hosting/portal-response.mjs');
-  return route.fulfill({response, body, headers:{...response.headers(),...securityHeaders}});
+  return route.fulfill({response, body:transform(body), headers:{...response.headers(),...securityHeaders}});
 }
 module.exports = {fixtureDocument};

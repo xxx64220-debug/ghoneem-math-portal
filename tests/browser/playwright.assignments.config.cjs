@@ -1,5 +1,5 @@
 const base=require('./playwright.config.cjs');
-module.exports={...base,testMatch:'exam-assignments.spec.cjs',testIgnore:[],timeout:45000,workers:2,
+module.exports={...base,testMatch:'exam-assignments.spec.cjs',testIgnore:[],timeout:45000,workers:2,maxFailures:3,
  use:{...base.use,timezoneId:'Africa/Cairo',screenshot:'only-on-failure'},
  projects:[
   {name:'chromium-desktop',use:{browserName:'chromium',viewport:{width:1280,height:800}}},
@@ -11,4 +11,4 @@ module.exports={...base,testMatch:'exam-assignments.spec.cjs',testIgnore:[],time
   {name:'firefox-narrow',use:{browserName:'firefox',viewport:{width:390,height:844}}},
   {name:'webkit-desktop',use:{browserName:'webkit',viewport:{width:1280,height:800}}},
   {name:'webkit-mobile',use:{browserName:'webkit',viewport:{width:390,height:844},isMobile:true,hasTouch:true}}
- ]};
+ ].flatMap(project=>[project,{...project,name:'deployed-'+project.name,metadata:{deployedLayout:true}}])};
