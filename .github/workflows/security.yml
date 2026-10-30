@@ -22,12 +22,12 @@ jobs:
           node-version: 24
       - name: Install locked verification dependencies without lifecycle scripts
         run: |
-          for runtime in english-runtime passage-runtime june-review-runtime security-runtime browser; do
+          for runtime in english-runtime passage-runtime june-review-runtime security-runtime device-runtime browser; do
             npm ci --prefix tests/$runtime --ignore-scripts --no-audit --no-fund
           done
       - name: Reject known vulnerable production and verification dependencies
         run: |
-          for runtime in english-runtime passage-runtime june-review-runtime security-runtime browser; do
+          for runtime in english-runtime passage-runtime june-review-runtime security-runtime device-runtime browser; do
             npm audit --prefix tests/$runtime --audit-level=low
           done
       - name: Check public artifacts, hostile markup, math, exports and CORS
@@ -37,5 +37,7 @@ jobs:
           node --test tests/security.test.cjs tests/auth_security.test.cjs tests/cors.test.cjs tests/svg_figures.test.cjs tests/english_reading.test.cjs
       - name: Check account, subscription and group authorization in disposable PostgreSQL
         run: |
+          node --test tests/device-access.test.mjs tests/device-ui.test.cjs tests/device-edge.test.cjs
           node tests/portal_management_db.cjs
           node tests/group_isolation_db.cjs
+

@@ -6,7 +6,7 @@ import { serve, json, requireUser, admin, sqlError, ApiError, clientIp } from ".
 Deno.serve(serve(async (req) => {
   if (req.method !== "POST") throw new ApiError("method_not_allowed", 405);
   const me = await requireUser(req);
-  const { exam_id, untimed } = await req.json().catch(() => ({}));
+  const { exam_id, untimed, transfer } = await req.json().catch(() => ({}));
   if (!exam_id) throw new ApiError("exam_id_required", 400);
 
   if (me.role !== 'student') throw new ApiError('student_account_required',403);
@@ -14,7 +14,7 @@ Deno.serve(serve(async (req) => {
   const {error:limit} = await db.rpc('portal_rate_limit',{p_user:me.id,p_action:'start'});
   if(limit) throw new ApiError('rate_limit_exceeded',429);
 
-  const { data: att, error } = await db.rpc("portal_start_attempt", { p_exam: exam_id, p_user: me.id, p_untimed: untimed === true });
+  const { data: att, error } = await db.rpc("portal_start_on_device", { p_exam: exam_id, p_user: me.id, p_session: me.sessionId, p_untimed: untimed === true, p_transfer: transfer === true });
   if (error) throw sqlError(error);
 
   await db.from("attempts").update({ ip: clientIp(req), user_agent: req.headers.get("user-agent") })
@@ -35,3 +35,4 @@ Deno.serve(serve(async (req) => {
   }
   return json(payload, 201);
 }));
+
