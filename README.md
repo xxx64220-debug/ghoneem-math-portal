@@ -4,7 +4,10 @@ Live student portal: https://math.portal.ghoneem.com/
 
 Instructor console: https://math.portal.ghoneem.com/admin.html
 
-Read [RELEASE.md](RELEASE.md) for the current delivered features, verification, content status, and remaining requirements. This release extends the existing Supabase-backed portal and preserves its data.
+Read the [October 30 repository synchronization](docs/REPOSITORY_SYNC_2026-10-30.md)
+for the current source checkpoint, verification and deployment boundaries.
+[RELEASE.md](RELEASE.md) retains the earlier release history. This repository
+extends the existing Supabase-backed portal and preserves its data.
 
 Staff can manage questions, import a JSON question bank, compose and assign exams, manage accounts and groups, grant retakes, and view reports directly from the console. See `web/question-bank-example.json` for the supported import format. Correct answers and explanations stay server-side until review opens.
 

@@ -6,6 +6,12 @@
 <meta http-equiv="Content-Security-Policy" content="base-uri 'none'; object-src 'none'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Instructor Console — Abdelrahman Ghoneem</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="script" href="/revision-formulas.js?v=20261024-no-source-links" fetchpriority="low">
+<link rel="preload" as="script" href="/lesson-exam-catalog.js?v=20261024-est1-no-logs" fetchpriority="low">
+
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#14243E;--navy2:#1D3155;--gold:#C9A227;--gold-soft:#F3E8C4;
@@ -101,6 +107,8 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 <link rel="stylesheet" href="/exam-builder.css">
 <link rel="stylesheet" href="/portal-controls.css?v=20261004-group">
 <link rel="stylesheet" href="/admin-bank.css?v=20261005">
+<link rel="stylesheet" href="/portal-responsive.css?v=20261030-responsive">
+<link rel="stylesheet" href="/lesson-exams.css?v=20261021">
 <link rel="stylesheet" href="/portal-math-layout.css?v=20261024-glyphs">
 <link rel="stylesheet" href="/portal-devices.css?v=20261030">
 <script src="/portal-devices.js?v=20261030"></script>
@@ -141,9 +149,10 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js" integrity="sha384-K0oxqktRvaThvYgGL4G+OK2Ih6VS6Uyu7j3+7WJgp/uWM0Yv6Xi4YEiw0BB+mPfi" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/formula-reference.css?v=20261012">
 <script src="/portal-math.js?v=20261021-currency"></script>
-<script src="/lesson-taxonomy.js"></script>
-<script src="/revision-formulas.js?v=20261012-all-groups"></script>
-<script src="hardest-questions.js?v=20261015-diagnosis-evidence"></script>
+<script src="/lesson-taxonomy.js?v=20261024-est1-no-logs"></script>
+<script src="/act2-course.js?v=20261023-act2"></script>
+<script src="/revision-formulas.js?v=20261024-no-source-links"></script>
+<script src="hardest-questions.js?v=20261015-diagnosis-timeout-v3"></script>
 <script>
 /* ============================ CONFIG ============================ */
 const SB_URL = 'https://wfhurjyouemahvkcfkdz.supabase.co';
@@ -255,7 +264,7 @@ const trackFilter = (b) => ST.track ? b.eq('track_id', ST.track) : b;
 
 async function overview(){
   const [{data:r},{data:f},{data:x}] = await Promise.all([
-    q('roster').eq('role','student'), trackFilter(q('results_feed')), trackFilter(q('exam_overview'))]);
+    q('roster').eq('role','student').eq('is_test',false), trackFilter(q('results_feed')), trackFilter(q('exam_overview'))]);
   const done = (f||[]).length;
   const avg = done ? Math.round((f||[]).reduce((s,a)=>s+(a.percent||0),0)/done) : null;
   const unassigned = (x||[]).filter(e=>e.is_published && Number(e.assignments)===0 && !/Demo/.test(e.title)).length;
@@ -304,7 +313,7 @@ async function students(){
     </div>
     ${(r||[]).length ? wrapTable(`<table>
       <tr><th>Name</th><th>Sign-in</th><th>Tracks</th><th>Exams</th><th>Last active</th><th>Status</th></tr>` +
-      r.map(s=>`<tr><td>${esc(s.full_name)}</td>
+      r.map(s=>`<tr><td>${esc(s.full_name)}${s.is_test?' <span class="pill warn">TEST ACCOUNT</span>':''}</td>
         <td class="num hint">${esc((s.email||'').split('@')[0])}</td>
         <td><span class="pill">${esc(s.tracks)}</span></td>
         <td class="num">${s.exams_taken}</td>
@@ -416,7 +425,7 @@ async function questions(offset=0,refresh=false){
       $('hardCycle').value=scope.cycle;
       $('hardCycle').onchange=()=>{hardestCycle=$('hardCycle').value;questions(0,true);};
       const chosen=cycleRows.find(x=>x.id===scope.cycle);
-      $('hardCycleNote').textContent=chosen?`Archived: ${chosen.title} · Closed ${new Date(chosen.ends_at).toLocaleString()} · Frozen success rates and question text.`:scope.cycle==='all'?'All historical responses, including retakes. No scores or records are deleted.':'Current cycle counts exams started after its opening and daily quizzes completed after its opening. Older in-progress exams remain in All history.';
+      $('hardCycleNote').textContent=chosen?`Archived: ${chosen.title} · Closed ${new Date(chosen.ends_at).toLocaleString()} · Original frozen snapshot; it may include earlier test activity. For real-student statistics, open Bank usage & cycles and select this trial.`:scope.cycle==='all'?'All historical responses, including retakes. No scores or records are deleted.':'Current cycle counts exams started after its opening and daily quizzes completed after its opening. Older in-progress exams remain in All history.';
       if($('hardArchive')){
         $('hardArchive').disabled=!scope.track;
         $('hardArchive').title=scope.track?'':'Choose one track before starting a cycle.';
@@ -570,8 +579,8 @@ async function exams(){
  // complete catalogue look empty.
  const rows=await getRows('exams'),assignments=await getRows('assignments');
  const categoryName={lesson_exam:'Lesson exam',quiz:'Quiz',full_exam:'Full exam'};
- $('view').innerHTML=`<div class="head"><h2>Exams & assignments</h2><span class="hint">${rows.length} exams available to you</span><div class="sp"></div><button class="btn" id="newExam">Create exam</button></div><div class="control-bar"><div class="field"><label for="examTrack">Track</label><select id="examTrack"><option value="">All tracks</option>${ST.tracks.map(t=>`<option value="${esc(t.id)}" ${ST.track===t.id?'selected':''}>${esc(t.name)}</option>`).join('')}</select></div><div class="field search"><label for="examSearch">Search exams</label><input id="examSearch" placeholder="Exam title"></div><div class="field"><label for="examType">Category</label><select id="examType"><option value="">All categories</option><option value="lesson_exam">Lesson exams</option><option value="quiz">Quizzes</option><option value="full_exam">Full exams</option></select></div><div class="field"><label for="examStatus">Availability</label><select id="examStatus"><option value="">All exams</option><option value="live">Published</option><option value="draft">Draft</option><option value="assigned">Assigned</option><option value="unassigned">Not assigned</option></select></div><div class="field"><label for="examSort">Sort by</label><select id="examSort"><option value="title">Title A–Z</option><option value="track">Track then title</option><option value="category">Category then title</option><option value="questions_desc">Most questions</option><option value="newest">Newest created</option></select></div></div><p id="examCount" class="hint" style="margin-bottom:12px"></p><div id="examTable"></div><p class="hint" style="margin-top:16px">Publish an exam and assign it to a student or group. A closing time delays worked answers until the window ends. EST is calculator-allowed throughout. Full papers use raw marks until an exact score conversion is provided.</p>`;
- const paint=()=>{const track=val('examTrack'),needle=val('examSearch').toLowerCase(),type=val('examType'),status=val('examStatus'),sort=val('examSort');const shown=rows.filter(x=>{const n=assignments.filter(a=>a.exam_id===x.id).length;return(!track||x.track_id===track)&&x.title.toLowerCase().includes(needle)&&(!type||x.assessment_type===type)&&(!status||(status==='live'?x.is_published:status==='draft'?!x.is_published:status==='assigned'?n>0:n===0));}).sort((a,b)=>sort==='track'?sortText(a.track_id,b.track_id)||sortText(a.title,b.title):sort==='category'?sortText(categoryName[a.assessment_type],categoryName[b.assessment_type])||sortText(a.title,b.title):sort==='questions_desc'?b.question_ids.length-a.question_ids.length:sort==='newest'?sortText(b.created_at,a.created_at):sortText(a.title,b.title));$('examCount').textContent=`${shown.length} of ${rows.length} exams shown`;$('examTable').innerHTML=wrapTable(`<table><thead><tr><th>Track</th><th>Exam</th><th>Category</th><th>Questions</th><th>Minutes</th><th>Assignments</th><th>Status</th><th>Actions</th></tr></thead><tbody>${shown.map(x=>`<tr><td>${esc(x.track_id.toUpperCase())}</td><td>${esc(x.title)}</td><td><select aria-label="Category for ${esc(x.title)}" data-classify="${x.id}">${Object.entries(categoryName).map(([v,t])=>`<option value="${v}" ${x.assessment_type===v?'selected':''}>${t}</option>`).join('')}</select></td><td>${x.question_ids.length}</td><td>${Math.round(x.duration_seconds/60)}</td><td>${assignments.filter(a=>a.exam_id===x.id).length}</td><td><span class="pill ${x.is_published?'ok':''}">${x.is_published?'Published':'Draft'}</span></td><td><button class="btn-sm" data-ex-practice="${x.id}">Teach / practise — no timer</button> <button class="btn-sm" data-ex-edit="${x.id}">Edit</button> <button class="btn-sm" data-ex-assign="${x.id}">Assign</button> <button class="btn-sm" data-ex-progress="${x.id}">Progress</button> <button class="btn-sm" data-ex-pub="${x.id}">${x.is_published?'Unpublish':'Publish'}</button> <button class="btn-sm" data-ex-release="${x.id}">Release review</button></td></tr>`).join('')}</tbody></table>`);bind();window.AdminBulk?.mount('exams',shown,$('examTable').querySelector('table'));};
+ $('view').innerHTML=`<div class="head"><h2>Exams & assignments</h2><span class="hint">${rows.length} exams available to you</span><div class="sp"></div><button class="btn" id="newExam">Create exam</button></div><div class="control-bar"><div class="field"><label for="examTrack">Track</label><select id="examTrack"><option value="">All tracks</option>${ST.tracks.map(t=>`<option value="${esc(t.id)}" ${ST.track===t.id?'selected':''}>${esc(t.name)}</option>`).join('')}</select></div><div class="field search"><label for="examSearch">Search exams</label><input id="examSearch" placeholder="Exam title"></div><div class="field"><label for="examType">Category</label><select id="examType"><option value="">All categories</option><option value="lesson_exam">Lesson exams</option><option value="quiz">Quizzes</option><option value="full_exam">Full exams</option></select></div><div class="field"><label for="examStatus">Availability</label><select id="examStatus"><option value="">All exams</option><option value="new_lessons">New lesson exams</option><option value="live">Published</option><option value="draft">Draft</option><option value="assigned">Assigned</option><option value="unassigned">Not assigned</option></select></div><div class="field"><label for="examSort">Sort by</label><select id="examSort"><option value="title">Title A–Z</option><option value="track">Track then title</option><option value="category">Category then title</option><option value="questions_desc">Most questions</option><option value="newest">Newest created</option></select></div></div><p id="examCount" class="hint" style="margin-bottom:12px"></p><div id="examTable"></div><p class="hint" style="margin-top:16px">Publish an exam and assign it to a student or group. A closing time delays worked answers until the window ends. EST is calculator-allowed throughout. Full papers use raw marks until an exact score conversion is provided.</p>`;
+ const paint=()=>{const track=val('examTrack'),needle=val('examSearch').toLowerCase(),type=val('examType'),status=val('examStatus'),sort=val('examSort');const shown=rows.filter(x=>{const n=assignments.filter(a=>a.exam_id===x.id).length;return(!track||x.track_id===track)&&x.title.toLowerCase().includes(needle)&&(!type||x.assessment_type===type)&&(!status||(status==='new_lessons'?window.LessonExamLibrary?.isNew(x):status==='live'?x.is_published:status==='draft'?!x.is_published:status==='assigned'?n>0:n===0));}).sort((a,b)=>sort==='track'?sortText(a.track_id,b.track_id)||sortText(a.title,b.title):sort==='category'?sortText(categoryName[a.assessment_type],categoryName[b.assessment_type])||sortText(a.title,b.title):sort==='questions_desc'?b.question_ids.length-a.question_ids.length:sort==='newest'?sortText(b.created_at,a.created_at):sortText(a.title,b.title));$('examCount').textContent=`${shown.length} of ${rows.length} exams shown`;$('examTable').innerHTML=wrapTable(`<table><thead><tr><th>Track</th><th>Exam</th><th>Category</th><th>Questions</th><th>Minutes</th><th>Assignments</th><th>Status</th><th>Actions</th></tr></thead><tbody>${shown.map(x=>`<tr><td>${esc(x.track_id.toUpperCase())}</td><td>${esc(x.title)}</td><td><select aria-label="Category for ${esc(x.title)}" data-classify="${x.id}">${Object.entries(categoryName).map(([v,t])=>`<option value="${v}" ${x.assessment_type===v?'selected':''}>${t}</option>`).join('')}</select></td><td>${x.question_ids.length}</td><td>${Math.round(x.duration_seconds/60)}</td><td>${assignments.filter(a=>a.exam_id===x.id).length}</td><td><span class="pill ${x.is_published?'ok':''}">${x.is_published?'Published':'Draft'}</span></td><td><button class="btn-sm" data-ex-practice="${x.id}">Teach / practise — no timer</button> <button class="btn-sm" data-ex-edit="${x.id}">Edit</button> <button class="btn-sm" data-ex-assign="${x.id}">Assign</button> <button class="btn-sm" data-ex-progress="${x.id}">Progress</button> <button class="btn-sm" data-ex-pub="${x.id}">${x.is_published?'Unpublish':'Publish'}</button> <button class="btn-sm" data-ex-release="${x.id}">Release review</button></td></tr>`).join('')}</tbody></table>`);bind();window.AdminBulk?.mount('exams',shown,$('examTable').querySelector('table'));};
  const bind=()=>{
  $('newExam').onclick=()=>editExam();
  document.querySelectorAll('[data-ex-practice]').forEach(b=>b.onclick=()=>openTeachingExam(rows.find(x=>x.id===b.dataset.exPractice)));
@@ -669,16 +678,17 @@ window.addEventListener('scroll',updateTopButton,{passive:true});
 topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 </script>
 <script src="/est-source-review.js"></script>
+<script src="/act2-collection.js"></script>
 <script src="/instructor-practice.js"></script>
 <script src="/exam-builder.js"></script>
 <script src="/verified-bank-version.js?v=20261013"></script>
 <script src="/admin-bank.js?v=20261015"></script>
-<script src="/admin-controls.js"></script>
+<script src="/admin-controls.js?v=20261015-group-scores"></script>
 <script src="/admin-exam-activity.js"></script>
-<link rel="stylesheet" href="/portal-navigation.css">
+<link rel="stylesheet" href="/portal-navigation.css?v=20261030-responsive">
 <script src="/portal-navigation.js"></script>
 <link rel="stylesheet" href="/portal-management.css?v=20261010">
-<script src="/portal-management.js?v=20261015-feature-audit"></script>
+<script src="/portal-management.js?v=20261023-act2"></script>
 <link rel="stylesheet" href="/student-management.css?v=20261015">
 <script src="/student-management.js?v=20261015-groups"></script>
 <link rel="stylesheet" href="/group-management.css?v=20261015">
@@ -687,9 +697,8 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 <script src="/group-management.js?v=20261022-students"></script>
 <link rel="stylesheet" href="/admin-bulk.css?v=20261015">
 <script src="/admin-bulk.js?v=20261022-students"></script>
+<script src="/lesson-exam-catalog.js?v=20261024-est1-no-logs"></script>
+<script src="/lesson-exams.js?v=20261030-responsive"></script>
 <script src="/registration-admin.js?v=20261030-secure"></script>
 </body>
 </html>
-
-
-

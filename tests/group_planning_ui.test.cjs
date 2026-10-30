@@ -15,19 +15,19 @@ async function report({failure=false,visible=true,ready=true,delay=null,rpc=null
    return resolve(failure&&['groups','group_members','exams'].includes(table)?{error:new Error('Offline')}:{data:(fixtures[table]||[]).slice(bounds[0],bounds[1]+1)});
  }};return query;};
  w.portalControl=async(action,data)=>{actions.push({action,data});if(failure)throw new Error('Offline');return {visible,items:['Circles','Linear equations','Statistics'].map(lesson=>({lesson,active:true,ready}))};};
- w.sb={rpc:async(name,data)=>{actions.push({action:name,data});return rpc?rpc(name,data):{data:{exam_id:data.p_exam,track_id:track,students:[]}};}};
+ w.sb={rpc:async(name,data)=>{if(name==='staff_diagnosis'){reads.push(name);return {data:{track_id:data.p_track,students:fixtures.roster.map(s=>({...s,tracks:data.p_track,lessons:fixtures.student_by_lesson.filter(x=>x.user_id===s.user_id).map(x=>({...x,seen:x.questions_seen}))}))}};}actions.push({action:name,data});return rpc?rpc(name,data):{data:{exam_id:data.p_exam,track_id:track,students:[]}};}};
  w.eval(source);await new Promise(resolve=>w.setTimeout(resolve,10));await w.render();
  return {dom,w,reads,actions,open:()=>w.document.getElementById('finalsGroupView').onclick()};
 }
 test('group view switches, selects the real class and only reads evidence and resources',async()=>{
  const f=await report();try{
-  assert.equal(f.reads.length,3,'resources are loaded only when group planning opens');await f.open();
+  assert.equal(f.reads.length,1,'scoped snapshot loads before group resources');await f.open();
   const d=f.w.document,p=d.getElementById('finalsGroupPlan');
   assert.equal(d.getElementById('finalsClass').value,'seven');assert.equal(p.querySelectorAll('.finals-cluster').length,3);
   assert.match(p.textContent,/7 students selected/);assert.match(p.querySelector('.finals-insufficient').textContent,/Student g/);
   assert(!p.querySelector('.finals-clusters').textContent.includes('Student g'));assert.match(p.textContent,/25 questions · 35 minutes/);
   d.getElementById('finalsStudentsView').onclick();assert.equal(d.getElementById('finalsGroup').hidden,true);await f.open();
-  assert.equal(f.reads.length,6,'switching views must reuse the loaded resources');assert.equal(f.actions.length,1);assert.equal(f.actions[0].action,'revision.list');assert.equal(f.actions[0].data.track,'est');
+  assert.equal(f.reads.length,4,'switching views must reuse the loaded resources');assert.equal(f.actions.length,1);assert.equal(f.actions[0].action,'revision.list');assert.equal(f.actions[0].data.track,'est');
   const member=d.querySelector('[data-finals-student="a"]');member.checked=false;member.onchange();
   assert.match(p.textContent,/6 students selected/);assert.equal(p.querySelectorAll('.finals-cluster').length,2);
   assert.equal(f.w.localStorage.length,0);assert.equal(f.w.sessionStorage.length,0);
@@ -35,6 +35,7 @@ test('group view switches, selects the real class and only reads evidence and re
 });
 for(const config of [{visible:false},{ready:false},{failure:true}])test('unavailable resources stay explicit '+JSON.stringify(config),async()=>{
  const f=await report(config);try{await f.open();const d=f.w.document,p=d.getElementById('finalsGroupPlan');
+  if(config.failure){for(const b of d.querySelectorAll('[data-finals-student]')){b.checked=true;b.onchange();}}
   assert.equal(p.querySelectorAll('.finals-cluster').length,3);assert.equal(p.querySelectorAll('[data-finals-revision]').length,0);
   assert.match(p.textContent,config.failure?/availability could not be checked/:config.visible===false?/hidden from students/:/No released, ready/);
   if(config.failure)assert.equal(p.querySelectorAll('[data-finals-retest]').length,0);
@@ -108,9 +109,9 @@ test('late exact exam evidence cannot repaint a newly selected course',async()=>
 
 test('late failed staff report cannot replace a new course report',async()=>{
  const f=await report();try{
- let release;const gate=new Promise(r=>release=r),original=f.w.q;
- f.w.q=()=>{const q={eq:()=>q,order:()=>q,range:async()=>{await gate;return {error:new Error('Old course offline')};}};return q;};
- const old=f.w.render();f.w.ST.track='sat';f.w.q=original;await f.w.render();release();await old;
+ let release;const gate=new Promise(r=>release=r),original=f.w.sb.rpc;
+ f.w.sb.rpc=async()=>{await gate;return {error:new Error('Old course offline')};};
+ const old=f.w.render();f.w.ST.track='sat';f.w.sb.rpc=original;await f.w.render();release();await old;
  const text=f.w.document.getElementById('view').textContent;assert.match(text,/SAT Math/);assert(!text.includes('Old course offline'));
  }finally{f.dom.window.close();}
 });

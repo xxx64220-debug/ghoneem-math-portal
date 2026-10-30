@@ -6,12 +6,14 @@ const rows=JSON.parse(fs.readFileSync('content-releases/20260929_lesson_taxonomy
 const corrections=JSON.parse(fs.readFileSync('content-releases/20260929_lesson_taxonomy_corrections/assignments.json','utf8'));
 const correctionById=new Map(corrections.map(x=>[x.id,x]));
 const finalRows=rows.map(x=>correctionById.has(x.id)?{...x,lesson:correctionById.get(x.id).new_lesson}:x);
-test('active lesson names resolve while archived EST I sequences stay excluded from new imports',()=>{
+test('active lesson names resolve while EST I sequences and logarithms stay excluded from new imports',()=>{
  assert.equal(rows.length,6916);assert.equal(new Set(rows.map(x=>x.id)).size,rows.length);
  assert.equal(corrections.length,13);assert.equal(new Set(corrections.map(x=>x.id)).size,corrections.length);
- const archived=finalRows.filter(r=>r.track_id==='est'&&r.lesson==='Sequences');assert.equal(archived.length,28);
+ const archived=finalRows.filter(r=>r.track_id==='est'&&['Sequences','Logarithms and exponentials'].includes(r.lesson));assert.equal(archived.filter(r=>r.lesson==='Sequences').length,28);assert(archived.some(r=>r.lesson==='Logarithms and exponentials'));
  for(const r of finalRows){c.r=r;if(archived.includes(r))assert.throws(()=>vm.runInContext('canonicalMathLesson(r.track_id,r.lesson)',c));else assert.equal(vm.runInContext('canonicalMathLesson(r.track_id,r.lesson)',c),r.lesson);}
- assert.equal(vm.runInContext("REVISION_FORMULA_TRACKS.est.lessons.includes('Sequences')",c),false);
+ for(const name of ['Sequences','Logarithms and exponentials']){c.name=name;assert.equal(vm.runInContext('REVISION_FORMULA_TRACKS.est.lessons.includes(name)',c),false);}
+ for(const label of ['Logarithms','Logarithms and exponentials','Exponents, Radicals & Logarithms']){c.label=label;assert.throws(()=>vm.runInContext("canonicalMathLesson('est',label)",c));}
+ for(const track of ['sat','est2','act2']){c.track=track;assert.equal(vm.runInContext("canonicalMathLesson(track,'Logarithms')",c),'Logarithms and exponentials');}
  assert.equal(vm.runInContext("canonicalMathLesson('est2','Sequences')",c),'Sequences');
  for(const t of ['sat','est','est2']){c.ST.track.id=t;const names=vm.runInContext(`MATH_LESSONS[ST.track.id]`,c);for(const n of names){c.REV.formulaLesson=n;const html=vm.runInContext('revisionFormulaPanel()',c);assert.ok(html.includes(`<h3>${n}</h3>`));assert.ok(!html.includes('>undefined<'));}}
 });

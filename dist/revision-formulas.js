@@ -287,14 +287,14 @@ function revisionFormulaRuleLines(value) {
 
 function revisionFormulaPanel({track=ST.track?.id,selectedLesson=typeof REV!=='undefined'?REV.formulaLesson:'',standalone=false}={}) {
   const course = REVISION_FORMULA_TRACKS[track];
-  if (!course) return '<section class="dash-panel"><h2>Formula lessons</h2><p>Choose a SAT or EST track to view its lessons.</p></section>';
+  if (!course) return '<section class="dash-panel"><h2>Formula lessons</h2><p>Choose a course to view its lessons.</p></section>';
   const names = course.lessons.filter(name => REVISION_FORMULA_LESSONS[name]);
   let requested=selectedLesson;
   if(requested&&!names.includes(requested)&&typeof canonicalMathLesson==='function'){try{requested=canonicalMathLesson(track,requested);}catch(_){}}
   const cardsFor=selected=>names.map(name=>`<button type="button" class="formula-lesson-link ${name===selected?'selected':''}" data-formula-lesson="${revisionFormulaEscape(name)}">${revisionFormulaEscape(name)}</button>`).join('');
   if(requested&&!names.includes(requested))return `<section class="dash-panel formula-panel"><div class="review-menu"><button class="btn-ghost" data-reference-main>← Main menu</button></div><h2>${track==='est_eng'?'English rules':'Formulas'}</h2><div class="formula-layout"><nav class="formula-lesson-list" aria-label="Reference lessons">${cardsFor('')}</nav><article class="formula-lesson"><h3>${revisionFormulaEscape(selectedLesson)}</h3><p>No exact reference match is available for this lesson. Choose the relevant lesson from the list or review the question with your instructor.</p></article></div></section>`;
   const selected = requested || names[0];
-  const variant = track === 'est2' ? {'Trigonometry':'Trigonometry and trig graphs','Functions and transformations':'Functions, inverses and asymptotes','Circles':'Circles and power of a point','Probability and conditional probability':'Probability, permutations and combinations'}[selected] : null;
+  const variant = ['est2','act2'].includes(track) ? {'Trigonometry':'Trigonometry and trig graphs','Functions and transformations':'Functions, inverses and asymptotes','Circles':'Circles and power of a point','Probability and conditional probability':'Probability, permutations and combinations'}[selected] : null;
   const lesson = REVISION_FORMULA_LESSONS[variant || selected];
   const cards = names.map(name => `<button type="button" class="formula-lesson-link ${name === selected ? 'selected' : ''}" data-formula-lesson="${revisionFormulaEscape(name)}" aria-current="${name === selected ? 'true' : 'false'}">${revisionFormulaEscape(name)}</button>`).join('');
   const facts = course.facts.map(item => `<li>${revisionFormulaEscape(item)}</li>`).join('');
@@ -312,6 +312,12 @@ function revisionFormulaPanel({track=ST.track?.id,selectedLesson=typeof REV!=='u
 // Use the same visible lesson names as the bank when the shared catalogue is loaded.
 // Legacy dictionary keys remain available for older saved formula selections.
 if (typeof MATH_LESSONS !== 'undefined') {
+  REVISION_FORMULA_TRACKS.act2 = {
+    title:'ACT 2 Math',
+    intro:'Algebra II and Precalculus practice organized by lesson, with supplemental geometry and number topics from the supplied mixed papers. Begin with the diagnostic, use lesson exams to repair gaps, then take a mixed paper.',
+    facts:['The official ACT International Subject Tests student guide describes Mathematics II as 50 multiple-choice questions in 60 minutes, approximately 25 Algebra II and 25 Precalculus questions, with four choices per question.','Calculator use is allowed under ACT Subject Test calculator rules. Check instructions for your sitting.','Portal papers are practice, not official past papers. The supplied reviewed compilation uses 50 questions in 60 minutes, retains its four- or five-choice source formats, and labels instructor adaptations. Scores are raw totals and percentages, without an inferred ACT scaled score.'],
+    lessons:[]
+  };
   for (const [name, sources] of Object.entries({
     'Ratios, percentages and unit conversion':['Ratios, percentages and unit conversion','Percentages and interest','Ratio, proportion and rates','Unit conversions'],
     'Exponents, radicals and growth':['Exponents, radicals and growth','Exponents and special products']
@@ -351,6 +357,11 @@ if (typeof MATH_LESSONS !== 'undefined') {
       notes:'A limit concerns nearby values; it need not equal the value at the point. Preserve original domain exclusions when cancelling factors.'
     }
   });
+  REVISION_FORMULA_LESSONS['Polar coordinates and parametric equations']={
+    formulas:['Polar coordinates: x = r cos θ and y = r sin θ. Conversely, r² = x² + y²; choose θ using the correct quadrant.','Equivalent representations: (r, θ + 2kπ) and (−r, θ + (2k+1)π) describe the same point for integer k. A negative r points in the opposite direction.','For a complex number z = r(cos θ + i sin θ), multiply moduli and add arguments when multiplying. De Moivre: zⁿ = rⁿ(cos nθ + i sin nθ) for integer n; z ≠ 0 for negative n.','For parametrizations, eliminate t and retain any restrictions from its interval. x = a cos t, y = b sin t gives x²/a² + y²/b² = 1 when a,b ≠ 0.','For r = a cos(nθ) or a sin(nθ), a ≠ 0 and n a positive integer: n petals if n is odd and 2n petals if n is even.'],
+    examples:['For (r,θ) = (4,π/3), x = 2 and y = 2√3.','If x = 2t + 1 and y = 3t − 4, then t = (x − 1)/2 and y = (3x − 11)/2.'],
+    notes:['The equation tan θ = y/x alone does not identify the quadrant; handle x = 0 separately.','For the n-th roots of a nonzero complex number, root arguments are (θ + 2kπ)/n for k = 0,…,n−1; all moduli equal r^(1/n).','Check angle mode and the stated parameter interval. Eliminating a parameter can describe a larger curve than the permitted interval traces.']
+  };
   for (const [track,names] of Object.entries(MATH_LESSONS)) REVISION_FORMULA_TRACKS[track].lessons=[...names];
 }
 

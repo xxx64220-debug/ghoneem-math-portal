@@ -1,3 +1,4 @@
+const PORTAL_STATIC=require('./public-artifact-dir.cjs');
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
 const {JSDOM}=require('./english-runtime/node_modules/jsdom');const source=fs.readFileSync('web/portal-management.js','utf8');
 const flush=()=>new Promise(r=>setImmediate(r));
@@ -50,7 +51,7 @@ test('student sees reference and diagnosis alongside daily destinations and can 
  w.setDashboardView('history');assert(!w.document.querySelector('[data-view="history"]').hidden);assert.equal(w.document.querySelector('#studentSection').value,'history');assert(w.document.querySelector('.portal-skip-link'));dom.window.close();
 });
 test('deployed management files match source and student history has no new-practice controls',()=>{
- for(const f of ['index.html','admin.html','portal-management.js','portal-management.css','daily-challenge.js'])assert.equal(fs.readFileSync('web/'+f,'utf8'),fs.readFileSync('dist/'+f,'utf8'));
+ for(const f of ['index.html','admin.html','portal-management.js','portal-management.css','daily-challenge.js'])assert.equal(fs.readFileSync('web/'+f,'utf8'),fs.readFileSync((PORTAL_STATIC + '/')+f,'utf8'));
  const html=fs.readFileSync('web/index.html','utf8');assert.match(html,/view:access.practice_open\?'daily':'history'/);assert.match(html,/if\(access.practice_open\)refreshDaily\(\)/);assert.match(html,/can_finish/);
  // Parse every inline script independently: markup injection must never terminate a script.
  for(const name of ['index.html','admin.html']){const dom=new JSDOM(fs.readFileSync('web/'+name,'utf8'));for(const script of dom.window.document.querySelectorAll('script:not([src])'))new(require('node:vm').Script)(script.textContent);dom.window.close();}

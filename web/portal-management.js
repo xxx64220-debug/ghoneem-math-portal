@@ -84,7 +84,7 @@
  // Keep the requested reference and diagnosis tabs visible with daily destinations.
  if(typeof paintDashboard==='function'&&el('examList')){
   const paint=paintDashboard;paintDashboard=function(){const result=paint.apply(this,arguments);
-   const primary=new Map([['daily','Today'],['formulas',ST.track?.id==='est_eng'?'Rules reference':'Formulas'],['finalsDiagnosis','Diagnosis'],['revision','Practice'],['mistakes','My mistakes'],['full_exam','Exams'],['overview','Progress']]);
+   const primary=new Map([['daily','Today'],['formulas',ST.track?.id==='est_eng'?'Rules reference':ST.track?.id==='act2'?'Formulas & materials':'Formulas'],['finalsDiagnosis','Diagnosis'],['revision','Practice'],['mistakes','My mistakes'],['full_exam','Exams'],['overview','Progress']]);
    if(!document.querySelector('[data-view="revision"]'))primary.set('lesson_exam','Practice');
    document.querySelectorAll('.student-tabs [data-view]').forEach(b=>{const id=b.dataset.view;
     if(primary.has(id)){b.childNodes[0].textContent=primary.get(id);b.hidden=false;}

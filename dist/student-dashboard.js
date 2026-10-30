@@ -15,7 +15,7 @@ async function openTrack(t){
   const {ok,json}=await fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}`});
   if(request!==dashboardRequest)return;
   if(!ok)throw new Error(friendly(json.error));
-  DASH={...DASH,view:'overview',historyPage:0,historyType:'all',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],summary:json.dashboard?.summary||{}};
+  DASH={...DASH,view:'overview',historyPage:0,historyType:'all',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],dailyGroups:json.dashboard?.daily_groups||[],repeatQuestions:json.dashboard?.repeat_questions??null,summary:json.dashboard?.summary||{}};
   paintDashboard();
  }catch(e){if(request===dashboardRequest){$('examList').innerHTML=`<div class="dash-empty" role="alert">${esc(e.message)}<br><button class="btn" id="retryDashboard">Try again</button></div>`;$('retryDashboard').onclick=()=>openTrack(t);}}
 }

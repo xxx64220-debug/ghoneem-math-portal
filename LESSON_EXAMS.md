@@ -1,0 +1,19 @@
+# Lesson exam library — updated 22 October 2026
+
+Students open their course, then **Lesson exams → New additions**. Lessons start collapsed, with lesson, difficulty, set-number and question-type search. Each new set shows its own edition date. **All available sets** retains older exams in an expandable section; completed attempts remain available through existing history. Staff use the **New lesson exams** filter. The individual-student assignment controls from the current hosted version remain intact.
+
+The current math library contains **64 sets across 61 primary lesson groups**: SAT 16 sets/16 lessons, EST I 21 sets/20 lessons, and EST II 27 sets/25 lessons. It contains 1,584 distinct question IDs and 122 same-course group assignments. The public catalog also retains the 17 English sets, for 81 catalog entries total. These counts describe this lesson library, not every historical assessment in the portal.
+
+Titles use `Course — Canonical lesson — Difficulty · Set NN · Edition date`. Difficulty is an instructor estimate, not a calibration from student scores. Smaller previously reviewed pools keep their actual counts. The four reviewed SAT polynomial-division questions remain inside Quadratics and polynomials Set 01 rather than becoming a short duplicate exam.
+
+## 22 October additions
+
+Two original EST II Math Level 1 practice sets close the Vectors and Limits and continuity coverage gaps. Each contains 25 distinct five-choice questions, a 40-minute timer, existing untimed/repeatable lesson practice, and full review after submission. The default EST II all-students group receives both sets. These are explicitly instructor-authored practice, not past-paper transcriptions. Fifty new stable question IDs and separate instructor-only keys are created; no prior question identity or answer is changed.
+
+Vectors are in the official EST description document's Level 1 content outline (2023 edition, printed page 10). Limits and continuity align with already reviewed Level 1 source examples in the bank: radical limits, difference quotients and continuity of piecewise functions. This release does not infer current full-exam timing from the older outline. It adds no questions from the held Math Level 2 vector/limit records. EST I Matrices remains a gap because its current source records were removed as ACT. EST I sequences stay excluded.
+
+All 50 answers were independently recomputed using symbolic algebra, vector arithmetic and one-/two-sided limits; every five-choice item has exactly one correct alternative. All worked explanations were checked. Seven exact SVG figures/tables were checked for coordinates, arrow directions, open/closed points and entries. The production sanitizer and math renderer render 386 formulas without errors in an isolated DOM. No question text, answers, explanations or question IDs enter the public catalog.
+
+Staging inserts new questions, keys and two unpublished drafts. Activation checks exact payload readback, structural eligibility, same-course group scope, replay protection and unchanged hashes of every existing question, key, exam and assignment before publishing the two drafts and inserting two group assignments. It does not change access policies, memberships, existing assignments, attempts, historical results, source holds or original Drive files. Private release payloads and SQL remain outside the Site checkout.
+
+Validation: 48 focused navigation, lesson-library, taxonomy and staff-assignment DOM checks; all-50 math and rendering checks; disposable PostgreSQL staging/activation checks with wrong-course, held-content, changed-answer and replay rejection; production build. Managed browser preview could not be reached, so authenticated browser QA is unverified. Publication uses the existing Site, Supabase project and custom domain.
