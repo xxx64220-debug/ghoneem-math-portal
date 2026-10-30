@@ -33,6 +33,11 @@ function fixtureFetch(cases){
   const name=url.pathname.split('/').pop();let data;
   if(name==='me-tracks')data=url.search?{exams:[exam],dashboard:{}}:{role:'student',tracks:[{id:track,name:{sat:'SAT Math',est:'EST I Math',est2:'EST II Math'}[track],exams_available:1,attempts_done:0}]};
   else if(name==='portal-controls')data={revision_visible:true};
+  else if(name==='portal-devices'){
+   const body=JSON.parse(init.body);
+   if(body.action!=='register'||!/^[a-f0-9]{64}$/.test(body.data.token))throw Error('Unexpected device fixture request');
+   data={status:'approved',browser_id:'math-browser-fixture',label:'Fixture browser'};
+  }
   else if(name==='daily-challenge')data={date:'2026-10-24',quiz:[],checklist:{},leaderboard:[]};
   else if(name==='start-attempt'){const now=Date.now();data={exam,attempt:{id:'math-audit-local-only',server_now:new Date(now).toISOString(),deadline_at:new Date(now+2100000).toISOString()},questions:structuredClone(cases)};}
   else if(name==='exam-activity')data={accepted:JSON.parse(init.body).data.events.map(e=>e.id)};

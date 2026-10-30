@@ -13,7 +13,7 @@ function data(){
  return {exams,roster,groups,group_members,assignments:[]};
 }
 function sdk(){return `window.supabase={createClient(){return {
- auth:{getSession:async()=>({data:{session:{access_token:'synthetic-assignment-fixture'}}}),getUser:async()=>({data:{user:null}}),onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}})},
+ auth:{getSession:async()=>({data:{session:{access_token:'synthetic-assignment-fixture'}}}),getUser:async()=>{window.fixtureAuthRead=true;return {data:{user:null}}},onAuthStateChange:()=>({data:{subscription:{unsubscribe(){}}}})},
  from(table){const filters=[];let range=null;const q={select:()=>q,eq:(key,value)=>{filters.push([key,value]);return q},order:()=>q,range:(a,b)=>{range=[a,b];return q},then(resolve,reject){return fetch('/__assignment_fixture_read',{method:'POST',body:JSON.stringify({table,filters,range})}).then(r=>r.json()).then(resolve,reject)}};return q},
  rpc:async name=>{throw new Error('Unexpected fixture RPC: '+name)}
 }}};`;}
@@ -39,6 +39,11 @@ async function setup(page,context,{role='admin',existing=[],fail,readFailure=fal
   }
   if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:sdk()});
   if(url.hostname==='fonts.googleapis.com'||(url.hostname==='cdn.jsdelivr.net'&&url.pathname.startsWith('/npm/katex@0.18.2/dist/')))return route.fulfill({body:'',contentType:request.resourceType()==='script'?'application/javascript':'text/css'});
+  if(url.hostname==='wfhurjyouemahvkcfkdz.supabase.co'&&url.pathname==='/functions/v1/portal-devices'){
+   const body=request.postDataJSON();
+   if(body.action!=='register'||!/^[a-f0-9]{64}$/.test(body.data?.token)){audit.unexpected.push(body);return route.abort();}
+   return route.fulfill({json:{status:'approved',browser_id:'synthetic-staff-browser',label:'Assignment fixture browser'}});
+  }
   if(url.hostname==='wfhurjyouemahvkcfkdz.supabase.co'&&url.pathname==='/functions/v1/staff-console'){
    const body=request.postDataJSON();audit.calls.push(body);
    if(body.action!=='assignment.save'||!fixtures.exams.some(e=>e.id===body.data.exam_id)){audit.unexpected.push(body);return route.abort();}
@@ -53,7 +58,7 @@ async function setup(page,context,{role='admin',existing=[],fail,readFailure=fal
   audit.unexpected.push(url.href);return route.abort();
  });
  await page.goto('/admin.html');
- await page.waitForFunction(()=>window.ExamAssignments&&window.GroupManager&&window.AdminBulk);
+ await page.waitForFunction(()=>window.fixtureAuthRead&&window.ExamAssignments&&window.GroupManager&&window.AdminBulk);
  await page.evaluate(async role=>{ST.me={id:'fixture-teacher',role};ST.tracks=[{id:'est',name:'EST Math'}];ST.track='est';ST.view='exams';await render();show(true);},role);
  return audit;
 }
