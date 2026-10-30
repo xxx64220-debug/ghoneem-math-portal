@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-30",
+  "migration": {
+    "version": "20261030151511",
+    "name": "bank_usage_timeout_fix",
+    "status": "applied"
+  },
+  "beforeFunctionMd5": "ca942277173c5628aa8319fed2d86f70",
+  "afterFunctionMd5": "5abf8401399fbff1965a75ded140bf1f",
+  "publicWrapperMd5": "46ea7685bb521f40e8a23bb39df6ad8c",
+  "privateBaselineMs": {
+    "customPlan": 884.413,
+    "genericPlan": 3272.887
+  },
+  "livePublicTimings": [
+    {
+      "track": "sat",
+      "execution_ms": 2089.073
+    },
+    {
+      "track": "est",
+      "execution_ms": 2390.682
+    },
+    {
+      "track": "est2",
+      "execution_ms": 1394.79
+    },
+    {
+      "track": "est_eng",
+      "execution_ms": 235.822
+    },
+    {
+      "track": "act2",
+      "execution_ms": 876.531
+    }
+  ],
+  "reportComparisons": [
+    {
+      "track": "sat",
+      "selected_filter": "all",
+      "page": 0,
+      "report_hash": "fecca0f919adfb1822904eca5ed620be",
+      "unchanged": true
+    },
+    {
+      "track": "est",
+      "selected_filter": "all",
+      "page": 0,
+      "report_hash": "9c6138939f8ef2279438111b066f9a5a",
+      "unchanged": true
+    },
+    {
+      "track": "est2",
+      "selected_filter": "all",
+      "page": 0,
+      "report_hash": "1de030982e984104501c0dc99984392c",
+      "unchanged": true
+    },
+    {
+      "track": "est_eng",
+      "selected_filter": "all",
+      "page": 0,
+      "report_hash": "7558b959d6f3e9242f79897a42b40114",
+      "unchanged": true
+    },
+    {
+      "track": "act2",
+      "selected_filter": "all",
+      "page": 0,
+      "report_hash": "76c2dab0f4990ec4555b54254d4df89e",
+      "unchanged": true
+    },
+    {
+      "track": "sat",
+      "selected_filter": "unused",
+      "page": 0,
+      "report_hash": "fea45c00a8f84f1548c0c95f609a8fc2",
+      "unchanged": true
+    },
+    {
+      "track": "sat",
+      "selected_filter": "underused",
+      "page": 0,
+      "report_hash": "dfceac334559e0df326654929ea7b6c5",
+      "unchanged": true
+    },
+    {
+      "track": "sat",
+      "selected_filter": "hardest",
+      "page": 0,
+      "report_hash": "e9e0f6dc5b093e1ea73899d62366eeea",
+      "unchanged": true
+    },
+    {
+      "track": "sat",
+      "selected_filter": "held",
+      "page": 0,
+      "report_hash": "104cf48728b76824eb2048ee8ed6ddb6",
+      "unchanged": true
+    },
+    {
+      "track": "sat",
+      "selected_filter": "pending",
+      "page": 0,
+      "report_hash": "5c4c06ddd0f93b0dc61a508059d2c1b4",
+      "unchanged": true
+    },
+    {
+      "track": "sat",
+      "selected_filter": "reserve",
+      "page": 0,
+      "report_hash": "047f03d51b66f35ddcd4c1f4cf0a5dda",
+      "unchanged": true
+    },
+    {
+      "track": "sat",
+      "selected_filter": "all",
+      "page": 1,
+      "report_hash": "cd02f09aeeb84f2357af82bd99dd26e7",
+      "unchanged": true
+    }
+  ],
+  "local": {
+    "reportComparisons": 92,
+    "totalGates": 231
+  },
+  "security": {
+    "newAdvisoryFindings": 0
+  },
+  "limits": [
+    "Database execution only; no physical-phone or live browser interaction verified.",
+    "Live before/after checks were separate read transactions; every checksum matched."
+  ]
+}
