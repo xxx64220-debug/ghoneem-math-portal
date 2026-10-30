@@ -46,13 +46,13 @@ export function admin(): SupabaseClient {
   return createClient(URL_, SERVICE, { auth: { persistSession: false } });
 }
 
-export type Caller = { id: string; role: "student" | "instructor" | "admin"; status: string };
+export type Caller = { id: string; role: "student" | "instructor" | "admin"; status: string; sessionId: string };
 
 /**
  * Verifies the caller's JWT and loads their profile.
  * Throws ApiError on a missing/!invalid token or a suspended account.
  */
-export async function requireUser(req: Request): Promise<Caller> {
+export async function requireIdentity(req: Request): Promise<Caller> {
   const auth = req.headers.get("Authorization") ?? "";
   if (!auth.startsWith("Bearer ")) throw new ApiError("missing_token", 401);
 
@@ -72,7 +72,13 @@ export async function requireUser(req: Request): Promise<Caller> {
   let sessionId: string;
   try { sessionId = JSON.parse(atob(token.split('.')[1].replace(/-/g,'+').replace(/_/g,'/'))).session_id; }
   catch { throw new ApiError('invalid_token',401); }
-  if (!sessionId) throw new ApiError('invalid_session',401);
+  if (!sessionId || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(sessionId)) throw new ApiError('invalid_session',401);
+  return { ...prof, sessionId } as Caller;
+}
+
+export async function requireUser(req: Request): Promise<Caller> {
+  const prof = await requireIdentity(req);
+  const sessionId = prof.sessionId;
   const { error: se } = await admin().rpc('portal_session', {p_user:prof.id,p_session:sessionId,p_agent:req.headers.get('user-agent')||''});
   if (se) throw new ApiError(se.message,403);
   return prof as Caller;
@@ -111,6 +117,12 @@ const SQL_STATUS: Record<string, number> = {
   attempt_limit_reached: 403,
   already_submitted: 409,
   attempt_still_live: 409,
+  device_approval_required: 403,
+  device_revoked: 403,
+  invalid_session: 401,
+  exam_on_another_device: 409,
+  exam_transfer_cooldown: 409,
+  reauthentication_required: 403,
 };
 
 /** Extracts the bare error tag from a Postgres error surfaced by PostgREST. */
@@ -142,3 +154,4 @@ export function clientIp(req: Request): string | null {
   const h = req.headers.get("x-forwarded-for");
   return h ? h.split(",")[0].trim() : null;
 }
+

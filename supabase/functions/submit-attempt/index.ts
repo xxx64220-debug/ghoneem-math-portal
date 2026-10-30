@@ -6,7 +6,8 @@ Deno.serve(serve(async req=>{
  const db=admin();
  const {error:limit}=await db.rpc('portal_rate_limit',{p_user:me.id,p_action:'submit'});
  if(limit) throw new ApiError('rate_limit_exceeded',429);
- const {data,error}=await db.rpc('portal_submit',{p_attempt:b.attempt_id,p_user:me.id,p_key:req.headers.get('Idempotency-Key')});
+ const {data,error}=await db.rpc('portal_submit_on_device',{p_attempt:b.attempt_id,p_user:me.id,p_session:me.sessionId,p_key:req.headers.get('Idempotency-Key')});
  if(error) throw sqlError(error);
  return json(data.body,data.status);
 }));
+

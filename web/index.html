@@ -207,6 +207,8 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 <script defer src="/portal-notifications.js"></script>
 <link rel="stylesheet" href="/portal-controls.css">
 <link rel="stylesheet" href="/portal-math-layout.css?v=20261024-glyphs">
+<link rel="stylesheet" href="/portal-devices.css?v=20261030">
+<script src="/portal-devices.js?v=20261030"></script>
 </head>
 <body>
 
@@ -335,7 +337,12 @@ const FRIENDLY = {
   revision_session_not_found: 'This practice set is unavailable. Return to lessons and start a new set.',
   invalid_revision_filter: 'Please choose one of the available revision options.',
   invalid_answer: 'Choose an option or enter a valid answer before checking.',
-  device_limit_reached: 'Three devices are already signed in. Ask your instructor to revoke an old device.',
+  device_limit_reached: 'Your approved-browser limit is full. Open My devices to review it.',
+  device_approval_required: 'Open My devices to request approval for this browser.',
+  exam_on_another_device: 'This exam is controlled by another browser. Resume here to request a transfer.',
+  exam_transfer_cooldown: 'Wait five minutes between exam transfers.',
+  reauthentication_required: 'Please confirm your password to transfer the exam.',
+  invalid_session: 'Your sign-in has ended. Sign in again to continue.',
   device_revoked: 'This device was revoked. Contact your instructor.',
   rate_limit_exceeded: 'Please wait a minute before trying again.',
   invalid_login_credentials: 'That username and password do not match.',
@@ -362,11 +369,13 @@ $('inBtn').onclick = async () => {
   boot();
 };
 $('p').onkeydown = e => { if (e.key === 'Enter') $('inBtn').click(); };
-$('outBtn').onclick = async () => { await window.portalNotificationsBeforeLogout?.(); await sb.auth.signOut(); location.reload(); };
+$('outBtn').onclick = async () => { await window.portalNotificationsBeforeLogout?.(); await sb.auth.signOut({scope:'local'}); location.reload(); };
 $('switchBtn').onclick = () => { if(ST.run){alert('Finish your current exam before switching tracks.');return;} ST.track = null; renderTracks(); show('vTracks'); };
 
 /* ======================== TRACK CHOOSER ======================== */
 async function boot() {
+  PortalDevices.configure({sb,fnBase,key:SB_KEY,resume:boot});
+  if(!await PortalDevices.ensure())return;
   const { ok, json } = await fn('me-tracks');
   if (!ok) { show('vLogin'); $('loginErr').textContent = friendly(json.error); return; }
   if(json.role==='admin'||json.role==='instructor'){ location.href='/admin.html'; return; }
@@ -554,16 +563,35 @@ function wireDashboard(){
 
 
 /* ========================== EXAM RUNNER ========================== */
-async function startExam(examId, untimed=false) {
-  const { ok, json } = await fn('start-attempt', { method: 'POST', body: { exam_id: examId, untimed } });
+async function startExam(examId, untimed=false, transfer=false) {
+  const { ok, json } = await fn('start-attempt', { method: 'POST', body: { exam_id: examId, untimed, transfer } });
+  if(!ok&&json.error==='exam_on_another_device'){
+    if(confirm('This exam is open on another browser. Transfer it here? Only answers already synced will transfer. The original timer continues, and the other browser will stop saving answers.')){
+      if(await PortalDevices.reauthenticate())return startExam(examId,untimed,true);
+    }
+    return;
+  }
   if (!ok) { alert(friendly(json.error)); return openTrack(ST.track); }
   json.exam.id=examId;
-  ST.run = json; ST.idx = 0; ST.flags = new Set();
+  ST.run = json; ST.idx = 0; ST.flags = new Set(); ST.accessBlocked=false;
+  if(transfer){
+    // Never replay an old queue over answers from the other browser, even if storage is full.
+    ST.pendingRecovery=pending.size?JSON.stringify([...pending]):null;
+    try{ST.pendingRecovery=localStorage.getItem(pendingKey())||ST.pendingRecovery;if(ST.pendingRecovery){localStorage.setItem(pendingKey()+'-before-transfer-'+Date.now(),ST.pendingRecovery);localStorage.removeItem(pendingKey());}}catch{}
+    pending.clear();
+  }
   $('satDesmos').classList.toggle('hidden',json.exam.track_id!=='sat');
   window.SatCalculator.start(json.exam.track_id==='sat');
   // Server time is authoritative; measure the offset once and count from it.
   ST.skew = new Date(json.attempt.server_now).getTime() - Date.now();
-  restorePending(); startClock(); renderPalette(); renderQ(); show('vRun');if(typeof startExamActivity==='function')startExamActivity(json);
+  if(!transfer)restorePending();
+  startClock(); renderPalette(); renderQ(); show('vRun');
+  document.getElementById('deviceTransferNotice')?.remove();
+  if(transfer&&ST.pendingRecovery&&ST.pendingRecovery!=='[]'){
+    const notice=document.createElement('div');notice.id='deviceTransferNotice';notice.className='msg';notice.textContent='Earlier unsynced answers on this browser were kept separately to protect the answers you transferred. ';
+    const download=document.createElement('button');download.className='btn-ghost';download.textContent='Download earlier unsynced answers';download.onclick=()=>{const url=URL.createObjectURL(new Blob([ST.pendingRecovery],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='unsynced-answers-'+ST.run.attempt.id+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);};notice.append(download);$('saving').after(notice);
+  }
+  if(typeof startExamActivity==='function')startExamActivity(json);
 }
 
 function startClock() {
@@ -671,11 +699,12 @@ function save(q,value){
  if(submitting||!ST.run||q.response===value)return;
  q.response=value;pending.set(q.id,value);persistPending();renderPalette();
  if(q.type==='mcq')renderQ();
- $('saving').textContent='Saving…';flushAnswers();
+ if(!ST.accessBlocked)$('saving').textContent='Saving…';flushAnswers();
 }
 async function flushAnswers(){
  if(flushing)return flushing;
- if(!ST.run||!pending.size)return true;
+ if(ST.accessBlocked)return false;
+  if(!ST.run||!pending.size)return true;
  flushing=(async()=>{
   while(pending.size){
    const [id,value]=pending.entries().next().value;
@@ -683,7 +712,14 @@ async function flushAnswers(){
     const {error}=await sb.from('attempt_answers').upsert({attempt_id:ST.run.attempt.id,question_id:id,response:value===''?null:value},{onConflict:'attempt_id,question_id'});
     if(error)throw error;
     if(pending.get(id)===value)pending.delete(id);persistPending();
-   }catch{$('saving').textContent='Not synced — retrying when connected';return false;}
+   }catch(e){
+     if(/device_|invalid_session|exam_on_another_device|row-level security/.test(e.message||'')){
+       ST.accessBlocked=true;
+       $('saving').textContent='Saving paused: this browser no longer has exam access. Your unsynced answers are kept here. ';
+       const retry=document.createElement('button');retry.className='btn-ghost';retry.textContent='Resume securely';retry.onclick=()=>startExam(ST.run.exam.id,ST.run.attempt.deadline_at==='infinity');$('saving').append(retry);
+     }else $('saving').textContent='Not synced — retrying when connected';
+     return false;
+    }
   }
   $('saving').textContent='All answers saved';return true;
  })();
@@ -702,7 +738,7 @@ $('flagBtn').onclick = () => {
 $('finishBtn').onclick = () => submitExam(false);
 
 async function submitExam(auto) {
- if(submitting||!ST.run)return;
+ if(submitting||!ST.run||ST.accessBlocked)return;
  captureInput();
  const blank=ST.run.questions.filter(q=>q.response==null||q.response==='').length;
  if(!auto&&!confirm(blank?`${blank} question(s) are blank. Submit your exam?`:'Submit your exam? You cannot change answers afterwards.'))return;
@@ -870,4 +906,5 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 <script src="/portal-management.js?v=20261015-feature-audit"></script>
 </body>
 </html>
+
 
