@@ -1,0 +1,29 @@
+name: Bank usage regression
+on:
+  pull_request:
+    paths:
+      - 'supabase/sql/bank_usage_timeout.sql'
+      - 'supabase/migrations/*bank_usage_timeout_fix.sql'
+      - 'tests/bank_usage_timeout*.cjs'
+      - 'tests/portal_management_db.cjs'
+      - 'content-releases/20261030_bank_usage_timeout/**'
+      - '.github/workflows/bank-usage.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'supabase/sql/bank_usage_timeout.sql'
+      - 'tests/bank_usage_timeout*.cjs'
+      - 'tests/portal_management_db.cjs'
+      - '.github/workflows/bank-usage.yml'
+permissions:
+  contents: read
+jobs:
+  postgres-fixture:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci --prefix tests/june-review-runtime --ignore-scripts --no-audit --no-fund
+      - run: node tests/bank_usage_timeout_db.cjs

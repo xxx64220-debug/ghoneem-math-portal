@@ -57,6 +57,11 @@ async function main(){
  await db.query('update enrollments set payment_status=$3 where user_id=$1 and track_id=$2',[student,t,status]);ok(await scalar('select is_enrolled($1,$2)',[student,t]),'Permission separate from ledger');}
  }
  ok(await scalar('select jsonb_agg(to_jsonb(a) order by id) from attempts a').then(x=>JSON.stringify(x)===JSON.stringify(history)),'No history mutation');
+ if(process.env.BANK_USAGE_TIMEOUT_CHECK==='1'){
+  await db.exec('alter table profiles add column is_test boolean not null default false');
+  await db.exec(read('content-releases/20261030_bank_usage_timeout/before.sql'));
+  await require('./bank_usage_timeout_checks.cjs')({db,scalar,login,ok,admin,teacher,otherTeacher,student,outsider,tracks,qs,groups});
+ }
  // Real RLS identity and admin authorization, stale claims cannot bypass active profile.
  await login(admin);await db.exec('set role authenticated');
  const en=await scalar("select admin_course_enrollments('sat')");ok(en.items.length===2,'Admin enrollment listing');
