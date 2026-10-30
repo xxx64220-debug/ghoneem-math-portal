@@ -35,7 +35,7 @@ async function setup(page,context,{role='admin',existing=[],fail,readFailure=fal
    }
    // Never forward a mutation to the preview server.
    if(!['GET','HEAD'].includes(request.method())){audit.unexpected.push(request.method()+' '+url.href);return route.abort();}
-   return fixtureDocument(route,body=>deployedLayout?body.replace('<link rel="stylesheet" href="/portal-math-layout.css',Object.entries(deployed.styles).map(([name,css])=>`<style data-deployed-layout="${name}">${css}</style>`).join('\n')+'<link rel="stylesheet" href="/portal-math-layout.css'):body);
+   return fixtureDocument(route,body=>deployedLayout?body.replace('<link rel="stylesheet" href="/portal-math-layout.css',Object.entries(deployed.styles).map(([name,css])=>`<style data-deployed-layout="${name}">${css}</style>`).join('\n')+'<link rel="stylesheet" href="/portal-math-layout.css'):body,{localHttp:true});
   }
   if(url.href==='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js')return route.fulfill({contentType:'application/javascript',body:sdk()});
   if(url.hostname==='fonts.googleapis.com'||(url.hostname==='cdn.jsdelivr.net'&&url.pathname.startsWith('/npm/katex@0.18.2/dist/')))return route.fulfill({body:'',contentType:request.resourceType()==='script'?'application/javascript':'text/css'});
