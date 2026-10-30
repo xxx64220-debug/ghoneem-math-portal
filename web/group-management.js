@@ -52,9 +52,11 @@
   $('groupParent').onchange=()=>paint().catch(e=>{$('groupTrackFields').textContent=message(e);});await paint();
  }
  async function assign(group){
-  const [exams,assignments]=await Promise.all([getRows('exams',false,'*','','track_id',group.track_id),getRows('assignments',false,'*','','group_id',group.id)]);
-  const eligible=exams.filter(e=>e.track_id===group.track_id&&!assignments.some(a=>a.exam_id===e.id));if(!eligible.length)throw new Error('No unassigned exams in this group’s track. Existing assignments are retained.');
-  dialog('Assign exam · '+esc(group.name),select('groupAssignExam','Exam',eligible.map(e=>[e.id,e.title+(e.is_published?'':' · draft')]))+field('groupAssignOpen','Opens at (local time)','','datetime-local')+field('groupAssignClose','Closes at (optional)','','datetime-local')+'<p class="hint">This assignment applies only to the selected group. Publish the exam for students to open it.</p>',async()=>{const exam=eligible.find(e=>e.id===val('groupAssignExam'));if(!exam||exam.track_id!==group.track_id)throw new Error('Choose an exam from this group’s track.');const open=val('groupAssignOpen')?new Date(val('groupAssignOpen')).toISOString():null,close=val('groupAssignClose')?new Date(val('groupAssignClose')).toISOString():null;if(open&&close&&close<=open)throw new Error('Closing time must follow opening time.');await mutation('assignment.save',{exam_id:exam.id,group_id:group.id,user_id:null,open_at:open,close_at:close});},'Assign to this group');
+  const [exams,assignments,gs,roster,members]=await Promise.all([getRows('exams',false,'*','','track_id',group.track_id),getRows('assignments'),getRows('groups'),getRows('roster'),getRows('group_members')]);
+  const eligible=exams.filter(e=>e.track_id===group.track_id);if(!eligible.length)throw new Error('No exams in this group’s track. Create an exam first.');
+  const picker=ExamAssignments.picker({id:'groupAssignmentTargets',track:group.track_id,groups:gs,roster,members,selected:[group.id]});
+  dialog('Assign exam · '+esc(group.name),select('groupAssignExam','Exam',eligible.map(e=>[e.id,e.title+(e.is_published?'':' · draft')]))+picker.html+field('groupAssignOpen','Opens at (local time)','','datetime-local')+field('groupAssignClose','Closes at (optional)','','datetime-local')+'<p class="hint">This group starts selected. Clear groups to assign only to specific students. Existing assignments are kept and skipped. Publish the exam for students to open it.</p>',async()=>{const exam=eligible.find(e=>e.id===val('groupAssignExam'));if(!exam||exam.track_id!==group.track_id)throw new Error('Choose an exam from this group’s track.');const targets=picker.chosen(),times=ExamAssignments.dates('groupAssignOpen','groupAssignClose');await ExamAssignments.save(exam,targets,assignments,times);},'Assign exam');picker.wire();
  }
  window.GroupManager={open,assign};
 })();
+

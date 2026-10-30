@@ -38,7 +38,7 @@
  }
  async function prepare(mode,action,items,update){
   if(busy||!items.length)return;const initialScope=scope;
-  let body='',write;
+  let body='',write,wire=()=>{};
   if(mode==='accounts'){
    if(['enroll','pause'].includes(action)){
     if(items.some(r=>r.role!=='student'))throw new Error('Track access applies to students. Select student accounts only.');
@@ -49,11 +49,11 @@
    if(action==='category'){body=select('bulkCategory','Category',[['lesson_exam','Lesson exam'],['quiz','Quiz'],['full_exam','Full exam']]);write=()=>{const category=val('bulkCategory');return r=>mutation('exam.classify',{id:r.id,assessment_type:category});};}
    else if(action==='assign'){
     if(new Set(items.map(r=>r.track_id)).size!==1)throw new Error('Select exams from one track to assign them together.');
-    const track=items[0].track_id,[roster,groups,assignments]=await Promise.all([getRows('roster'),getRows('groups'),getRows('assignments')]);
-    const targets=[...groups.filter(g=>g.track_id===track).map(g=>['g:'+g.id,'Group: '+g.name]),...roster.filter(r=>r.role==='student'&&r.tracks.split(', ').includes(track)).map(r=>['u:'+r.user_id,'Student: '+name(r)])];
-    if(!targets.length)throw new Error('No eligible students or groups in this track.');
-    body=select('bulkTarget','Assign to',targets)+field('bulkOpen','Opens at (your device local time)','','datetime-local')+field('bulkClose','Closes at (optional)','','datetime-local')+'<p>Existing assignments to this target are kept and skipped. New assignments use the dates below.</p>';
-    write=()=>{const [type,id]=val('bulkTarget').split(':'),open=dateValue('bulkOpen'),close=dateValue('bulkClose');if(open&&close&&close<=open)throw new Error('Closing time must be after opening time.');return async r=>{if(assignments.some(a=>a.exam_id===r.id&&(type==='g'?a.group_id===id:a.user_id===id)))return 'skipped';await mutation('assignment.save',{exam_id:r.id,group_id:type==='g'?id:null,user_id:type==='u'?id:null,open_at:open,close_at:close});};};
+    const track=items[0].track_id,[roster,groups,assignments,members]=await Promise.all([getRows('roster'),getRows('groups'),getRows('assignments'),getRows('group_members')]);
+    const picker=ExamAssignments.picker({id:'bulkTargets',track,groups,roster,members});
+    body=picker.html+field('bulkOpen','Opens at (your device local time)','','datetime-local')+field('bulkClose','Closes at (optional)','','datetime-local')+'<p>Each selected exam is assigned to every selected student and group. Existing assignments are kept and skipped. New assignments use the dates below.</p>';
+    wire=picker.wire;
+    write=()=>{const targets=picker.chosen(),times=ExamAssignments.dates('bulkOpen','bulkClose');return r=>ExamAssignments.save(r,targets,assignments,times);};
    }else if(action==='review'){body='<p>Release worked answers for completed attempts. Exams with an open assignment window will be refused by the server.</p>';write=()=>r=>mutation('review.release',{exam_id:r.id});}
    else{body='<p>Students can open published exams when they also have an assignment.</p>';write=()=>r=>mutation('exam.save',{id:r.id,is_published:action==='publish'});}
   }else if(mode==='devices'){
@@ -88,7 +88,7 @@
    if(!remaining.length){$('bulkSave').disabled=true;$('bulkCancel').textContent='Close';$('bulkCancel').onclick=()=>editor.close();}
    else $('bulkCancel').onclick=()=>editor.close();
   };
-  editor.showModal();
+  editor.showModal();wire();
  }
  window.AdminBulk={mount,reset(){scope='';selected=new Map();}};
  // Page/search refresh retains selection; changing section or global track clears it.
