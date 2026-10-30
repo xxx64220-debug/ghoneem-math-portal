@@ -5,7 +5,7 @@ import {PGlite} from './device-runtime/node_modules/@electric-sql/pglite/dist/in
 
 const uid='10000000-0000-4000-8000-000000000001', other='10000000-0000-4000-8000-000000000002', aid='20000000-0000-4000-8000-000000000001', eid='30000000-0000-4000-8000-000000000001';
 const sid=n=>`40000000-0000-4000-8000-${String(n).padStart(12,'0')}`;
-async function fixture({legacy=false}={}){
+async function fixture({legacy=false,listHotfix=false}={}){
  const db=new PGlite();
  await db.exec(`
  create role anon; create role authenticated; create role service_role bypassrls;
@@ -45,6 +45,15 @@ async function fixture({legacy=false}={}){
  await db.exec('set check_function_bodies = false');
  await db.exec(readFileSync('supabase/sql/device_access_rpc_guards.sql','utf8'));
  await db.exec('set check_function_bodies = true');
+ if(listHotfix){
+  const oldRelease=readFileSync('security-releases/20261030-device-access/apply.sql','utf8');
+  const start=oldRelease.indexOf('create function public.portal_device_action(');
+  const end=oldRelease.indexOf('create function portal_private.claim_exam(',start);
+  assert.ok(start>=0&&end>start);
+  await db.exec(oldRelease.slice(start,end).replace('create function public.portal_device_action(','create or replace function public.portal_device_action('));
+  await db.exec(readFileSync('supabase/sql/device_access_list_fix.sql','utf8'));
+  await assert.rejects(()=>db.exec(readFileSync('supabase/sql/device_access_list_fix.sql','utf8')),/device_list_fix_precondition_failed/);
+ }
  const action=async(s,a,data={},user=uid)=>(await db.query('select portal_device_action($1,$2,$3,$4,$5) result',[user,s,a,JSON.stringify(data),'Test browser'])).rows[0].result;
  const reg=(s,t,user=uid)=>action(s,'register',{token:t.repeat(64),label:'Test browser'},user);
  const claim=(s,transfer=false)=>(db.query('select portal_private.claim_exam($1,$2,$3,$4)',[aid,uid,s,transfer]));
@@ -54,6 +63,29 @@ async function fixture({legacy=false}={}){
  });
  return {db,action,reg,claim,asUser};
 }
+
+for(const listHotfix of [false,true])test(`device lists support approved and pending students plus scoped administrator review${listHotfix?' after the deployed-function fix':''}`,async()=>{
+ const f=await fixture({listHotfix});try{
+  const approved=await f.reg(sid(1),'a'),pending=await f.reg(sid(2),'b');
+  const admin=await f.reg(sid(5),'c',other);
+  for(const session of [sid(1),sid(2)]){
+   const list=await f.action(session,'list');
+   assert.equal(list.approved,session===sid(1));
+   assert.deepEqual(new Set(list.devices.map(d=>d.id)),new Set([approved.browser_id,pending.browser_id]));
+   assert.ok(list.devices.every(d=>d.user_id===uid));
+   assert.ok(list.devices.every(d=>!('token_hash' in d)&&!('token' in d)&&!('session_id' in d)));
+   await assert.rejects(()=>f.action(session,'list',{admin:true}),/admin_required/);
+  }
+  const own=await f.action(sid(5),'list',{},other);
+  assert.deepEqual(own.devices.map(d=>d.id),[admin.browser_id]);
+  const all=await f.action(sid(5),'list',{admin:true},other);
+  assert.equal(all.devices.length,3);
+  assert.deepEqual(new Set(all.devices.map(d=>d.user_id)),new Set([uid,other]));
+  await f.db.query('insert into auth.sessions(id,user_id) values($1,$2)',[sid(6),other]);
+  await f.reg(sid(6),'d',other);
+  await assert.rejects(()=>f.action(sid(6),'list',{admin:true},other),/admin_required/);
+ }finally{await f.db.close();}
+});
 
 test('trusted browser survives login changes; pending sessions cannot read or save answers',async()=>{
  const f=await fixture();try{

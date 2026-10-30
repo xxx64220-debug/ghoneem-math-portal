@@ -181,11 +181,11 @@ begin
   end if;
   return jsonb_build_object('approved',approved_,'role',me.role,'current_browser',ds.browser_id,
    'devices',coalesce((select jsonb_agg(row_to_json(x) order by x.created_at desc) from (
-    select b.id,b.user_id,p.full_name,b.label,b.user_agent,b.status,b.created_at,b.last_seen,b.id=ds.browser_id as current,
+    select listed_browser.id,listed_browser.user_id,p.full_name,listed_browser.label,listed_browser.user_agent,listed_browser.status,listed_browser.created_at,listed_browser.last_seen,listed_browser.id=ds.browser_id as current,
     coalesce(dp.max_browsers,case when p.role in ('admin','instructor') then 5 else 2 end) max_browsers
-    from portal_private.trusted_browsers b join public.profiles p on p.id=b.user_id left join portal_private.device_policy dp on dp.user_id=b.user_id
-    where (target_user is null or b.user_id=target_user) and (b.status<>'revoked' or b.last_seen>now()-interval '30 days')
-    order by b.created_at desc limit 500) x),'[]'::jsonb));
+    from portal_private.trusted_browsers listed_browser join public.profiles p on p.id=listed_browser.user_id left join portal_private.device_policy dp on dp.user_id=listed_browser.user_id
+    where (target_user is null or listed_browser.user_id=target_user) and (listed_browser.status<>'revoked' or listed_browser.last_seen>now()-interval '30 days')
+    order by listed_browser.created_at desc limit 500) x),'[]'::jsonb));
  else raise exception 'unknown_action'; end if;
 end $$;
 revoke all on function public.portal_device_action(uuid,uuid,text,jsonb,text) from public,anon,authenticated;
