@@ -9,7 +9,7 @@ function setup(role='admin'){
  w.eval(read('admin.html').slice(read('admin.html').indexOf('const field='),read('admin.html').indexOf('function dialog(')).replace(/const (field|area|select|tracks|val|jval)=/g,'window.$1='));
  w.render=async()=>{};w.mutation=async(action,data)=>{calls.push({action,data});};w.sb={rpc:async(action,data)=>{calls.push({action,data});return {data:{}};}};w.getRows=async()=>[];
  w.$('editor').showModal=function(){this.open=true;};w.$('editor').close=function(){this.open=false;this.dispatchEvent(new w.Event('close'));};
- w.eval(read('admin-bulk.js'));
+ w.eval(read('exam-assignments.js'));w.eval(read('admin-bulk.js'));
  function mount(mode,rows){w.$('view').innerHTML='<div class="table-wrap"><table><thead><tr><th>Item</th></tr></thead><tbody>'+rows.map(()=>'<tr><td>Item</td></tr>').join('')+'</tbody></table></div>';w.AdminBulk.mount(mode,rows,w.$('view').querySelector('table'));}
  const query=s=>w.document.querySelector(s),choose=async action=>{query('[data-bulk-action]').value=action;query('[data-bulk-action]').dispatchEvent(new w.Event('change'));query('[data-bulk-apply]').click();await tick();};
  const pick=()=>query('[data-bulk-shown]').click();const submit=async()=>{w.$('bulkForm').dispatchEvent(new w.Event('submit',{cancelable:true}));await tick();};
@@ -34,8 +34,21 @@ test('bulk publish, unpublish, category and review use bounded existing staff ac
  for(const action of ['publish','unpublish','category','review']){const s=setup('instructor');s.mount('exams',[exam('1'),exam('2')]);s.pick();await s.choose(action);if(action==='category')s.w.$('bulkCategory').value='quiz';await s.submit();assert.equal(s.calls.length,2);assert(s.calls.every(x=>x.action===({publish:'exam.save',unpublish:'exam.save',category:'exam.classify',review:'review.release'})[action]));assert(s.query('[data-bulk-apply]').disabled);s.dom.window.close();}
 });
 test('assign keeps existing target assignments, validates dates and rejects mixed exam tracks',async()=>{
- const s=setup();s.w.getRows=async table=>({roster:[],groups:[{id:'g',track_id:'sat',name:'Group'}],assignments:[{exam_id:'1',group_id:'g'}]})[table];s.mount('exams',[exam('1'),exam('2')]);s.pick();await s.choose('assign');s.w.$('bulkOpen').value='2026-11-01T10:00';s.w.$('bulkClose').value='2026-10-31T10:00';await s.submit();assert.equal(s.calls.length,0);assert.match(s.w.$('bulkErrors').textContent,/after opening/);s.w.$('bulkClose').value='2026-11-02T10:00';await s.submit();assert.equal(s.calls.length,1);assert.equal(s.calls[0].data.exam_id,'2');assert.equal(s.calls[0].data.group_id,'g');assert.match(s.w.$('bulkProgress').textContent,/1 updated · 1 already assigned/);s.dom.window.close();
+ const s=setup();s.w.getRows=async table=>({roster:[],groups:[{id:'g',track_id:'sat',name:'Group'}],assignments:[{exam_id:'1',group_id:'g'}]})[table];s.mount('exams',[exam('1'),exam('2')]);s.pick();await s.choose('assign');s.query('[data-assignment-group="g"]').click();s.w.$('bulkOpen').value='2026-11-01T10:00';s.w.$('bulkClose').value='2026-10-31T10:00';await s.submit();assert.equal(s.calls.length,0);assert.match(s.w.$('bulkErrors').textContent,/after opening/);s.w.$('bulkClose').value='2026-11-02T10:00';await s.submit();assert.equal(s.calls.length,1);assert.equal(s.calls[0].data.exam_id,'2');assert.equal(s.calls[0].data.group_id,'g');assert.match(s.w.$('bulkProgress').textContent,/1 updated · 1 already assigned/);s.dom.window.close();
  const m=setup();m.mount('exams',[exam('1'),exam('2','est')]);m.pick();await m.choose('assign');assert.match(m.alerts[0],/one track/);assert.equal(m.calls.length,0);m.dom.window.close();
+});
+test('bulk assignment shares every selected exam with several groups and retries only failed targets',async()=>{
+ const s=setup();s.w.getRows=async table=>({roster:[],groups:[{id:'g1',track_id:'sat',name:'Sunday'},{id:'g2',track_id:'sat',name:'Wednesday'},{id:'other',track_id:'est',name:'EST'}],assignments:[{exam_id:'1',group_id:'g1'}]})[table];
+ let fail=true;s.w.mutation=async(action,data)=>{s.calls.push({action,data});if(data.exam_id==='2'&&data.group_id==='g2'&&fail)throw new Error('Temporary failure');};
+ s.mount('exams',[exam('1'),exam('2')]);s.pick();await s.choose('assign');assert.equal(s.query('[data-assignment-group="other"]'),null);
+ await s.submit();assert.match(s.w.$('bulkErrors').textContent,/Select at least one/);assert.equal(s.calls.length,0);
+ s.query('[data-assignment-all]').click();await s.submit();assert.deepEqual(s.calls.map(c=>c.data.exam_id+':'+c.data.group_id),['1:g2','2:g1','2:g2']);
+ assert.match(s.w.$('bulkErrors').textContent,/Wednesday: Temporary failure/);fail=false;await s.submit();
+ assert.deepEqual(s.calls.map(c=>c.data.exam_id+':'+c.data.group_id),['1:g2','2:g1','2:g2','2:g2']);s.dom.window.close();
+});
+test('bulk assigns every selected exam to several students with no group required',async()=>{
+ const s=setup();s.w.getRows=async table=>({roster:[{user_id:'u1',role:'student',tracks:'sat',full_name:'First'},{user_id:'u2',role:'student',tracks:'sat',full_name:'Second'}],groups:[],group_members:[],assignments:[{exam_id:'1',user_id:'u1',group_id:null}]})[table]||[];
+ s.mount('exams',[exam('1'),exam('2')]);s.pick();await s.choose('assign');s.query('[data-assignment-students-all]').click();await s.submit();assert.deepEqual(s.calls.map(c=>c.data.exam_id+':'+c.data.user_id),['1:u2','2:u1','2:u2']);assert(s.calls.every(c=>c.data.group_id===null));s.dom.window.close();
 });
 test('course edits preserve other fields and optimistic versions; partial retry never repeats successes',async()=>{
  const s=setup();const rows=['u1','u2'].map(user_id=>({user_id,track_id:'sat',full_name:user_id,status:'active',payment_status:'paid',starts_at:'2026-10-01T00:00:00Z',ends_at:'2026-12-01T00:00:00Z',course_label:'November',access_version:7}));let fail=true;
@@ -55,3 +68,4 @@ test('served bulk files and hook order match source; inline scripts remain parse
  for(const f of ['admin.html','admin-bulk.js','admin-bulk.css','portal-management.js','admin-bank.js'])assert.equal(read(f),fs.readFileSync('dist/'+f,'utf8'));
  const html=read('admin.html'),dom=new JSDOM(html);for(const script of dom.window.document.querySelectorAll('script:not([src])'))new(require('node:vm').Script)(script.textContent);assert.equal(dom.window.document.querySelectorAll('script[src*="admin-bulk.js"]').length,1);assert(html.indexOf('/portal-management.js')<html.indexOf('/admin-bulk.js'));dom.window.close();
 });
+

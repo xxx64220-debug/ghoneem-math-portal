@@ -54,7 +54,7 @@ jobs:
         run: |
           npm ci --prefix tests/passage-runtime --ignore-scripts --no-audit --no-fund
           node tests/sat_calculator.test.cjs
-          node --test tests/all_course_navigation.test.cjs tests/admin_bulk.test.cjs tests/group_console.test.cjs tests/group_management_ui.test.cjs tests/hardest_cycles_ui.test.cjs tests/navigation.test.cjs tests/portal_management_ui.test.cjs tests/student_groups.test.cjs tests/student_management_ui.test.cjs tests/verified_bank_version.test.cjs
+          node --test tests/all_course_navigation.test.cjs tests/admin_bulk.test.cjs tests/group_console.test.cjs tests/exam_assignments.test.cjs tests/group_management_ui.test.cjs tests/hardest_cycles_ui.test.cjs tests/navigation.test.cjs tests/portal_management_ui.test.cjs tests/student_groups.test.cjs tests/student_management_ui.test.cjs tests/verified_bank_version.test.cjs
 
       - name: Run source archive UI regression when its checked-in inputs exist
         run: |
@@ -74,6 +74,7 @@ jobs:
           python tests/june_remaining_review.py
           python tests/revision_contamination_review.py
           npm ci --prefix tests/june-review-runtime --ignore-scripts --no-audit --no-fund
+          node tests/exam_assignment_access_db.cjs
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/june_remaining_review_db.cjs
           PGLITE_MODULE="$GITHUB_WORKSPACE/tests/june-review-runtime/node_modules/@electric-sql/pglite" node tests/group_exam_evidence_db.cjs
 
@@ -437,4 +438,5 @@ jobs:
             exit 1
           fi
           echo "PASS: Final Revision representative release rerun was rejected"
+
 

@@ -580,36 +580,32 @@ async function exams(){
  $('examTrack').onchange=paint;$('examSearch').oninput=paint;$('examType').onchange=paint;$('examStatus').onchange=paint;$('examSort').onchange=paint;paint();
 }
 async function assignExam(ex,assignments){
- const [roster,gs]=await Promise.all([getRows('roster'),getRows('groups')]);
- const options=[...gs.filter(g=>g.track_id===ex.track_id).map(g=>['g:'+g.id,'Group: '+g.name]),...roster.filter(r=>r.role==='student'&&r.tracks.split(', ').includes(ex.track_id)).map(r=>['u:'+r.user_id,'Student: '+(r.full_name||r.email)])];
- if(!options.length){alert('Enrol a student or create a group in this track first.');return;}
+ const [roster,gs,members]=await Promise.all([getRows('roster'),getRows('groups'),getRows('group_members')]);
+ const picker=ExamAssignments.picker({id:'assignmentTargets',track:ex.track_id,groups:gs,roster,members});
  const existing=assignments.filter(a=>a.exam_id===ex.id);
- dialog('Assign '+esc(ex.title),select('atarget','Assign to',options)+field('aopen','Opens at (your local time)','','datetime-local')+field('aclose','Closes at (your local time; optional)','','datetime-local')+`<p class="hint">Leave times blank for a self-paced assignment. ${existing.length} assignment(s) already exist for this exam.</p>`,async()=>{
- const [type,id]=val('atarget').split(':');await mutation('assignment.save',{exam_id:ex.id,user_id:type==='u'?id:null,group_id:type==='g'?id:null,open_at:val('aopen')?new Date(val('aopen')).toISOString():null,close_at:val('aclose')?new Date(val('aclose')).toISOString():null});
- },'Assign exam');
+ dialog('Assign '+esc(ex.title),picker.html+field('aopen','Opens at (your local time)','','datetime-local')+field('aclose','Closes at (your local time; optional)','','datetime-local')+`<p class="hint">The same dates apply to each new assignment. Leave times blank for self-paced work. ${existing.length} existing assignment(s) will be kept and skipped.</p>`,async()=>{
+  const targets=picker.chosen(),times=ExamAssignments.dates('aopen','aclose');
+  await ExamAssignments.save(ex,targets,assignments,times);
+ },'Assign exam');picker.wire();
 }
 async function assignmentProgress(ex,assignments){
  const relevant=assignments.filter(a=>a.exam_id===ex.id);
  const [roster,members,attempts]=await Promise.all([getRows('roster'),getRows('group_members'),getRows('attempts',false,'user_id,exam_id,status,started_at,submitted_at','','exam_id',ex.id)]);
- const people=new Map(roster.map(r=>[r.user_id,r]));
- const entries=new Map();
- for(const assignment of relevant){
-  const ids=assignment.user_id?[assignment.user_id]:members.filter(m=>m.group_id===assignment.group_id).map(m=>m.user_id);
-  for(const id of ids){if(!people.has(id))continue;const list=entries.get(id)||[];list.push(assignment);entries.set(id,list);}
- }
+ const people=new Map(roster.filter(r=>!r.is_test).map(r=>[r.user_id,r]));
+ const recipients=ExamAssignments.recipients(relevant,[...people.values()],members);
  const attemptByUser=new Map();
  for(const attempt of attempts.filter(a=>a.exam_id===ex.id)){
   const prior=attemptByUser.get(attempt.user_id);
   if(!prior||new Date(attempt.started_at)>new Date(prior.started_at))attemptByUser.set(attempt.user_id,attempt);
  }
  const order={'Not started':0,'In progress':1,'Completed':2};
- const rows=[...entries].map(([id,as])=>{
-  const a=attemptByUser.get(id);
+ const rows=recipients.map(({person,targets})=>{
+  const a=attemptByUser.get(person.user_id);
   const state=!a?'Not started':a.status==='in_progress'?'In progress':'Completed';
-  const close=as.map(x=>x.close_at).filter(Boolean).sort()[0];
-  return {name:people.get(id).full_name||people.get(id).email,state,close};
+  const window=ExamAssignments.windowSummary(targets);
+  return {name:person.full_name||person.email,state,close:window.close,open:window.open,availability:window.state};
  }).sort((a,b)=>order[a.state]-order[b.state]||sortText(a.name,b.name));
- $('editor').innerHTML=`<h2>Assignment progress · ${esc(ex.title)}</h2><p class="hint" style="margin-bottom:14px">Current group members and directly assigned students. Starts on this exam count, including retakes.</p>${rows.length?wrapTable(`<table><thead><tr><th>Student</th><th>Status</th><th>Deadline</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.name)}</td><td><span class="pill ${r.state==='Completed'?'ok':r.state==='Not started'?'warn':''}">${r.state}</span></td><td>${r.close?esc(new Date(r.close).toLocaleString()):'No deadline'}</td></tr>`).join('')}</tbody></table>`):'<div class="empty">This exam has no current assigned students.</div>'}<div class="actions"><button class="btn-sm" id="progressClose">Close</button></div>`;
+ $('editor').innerHTML=`<h2>Assignment progress · ${esc(ex.title)}</h2><p class="hint" style="margin-bottom:14px">Each student appears once across groups and individual assignments. Availability uses current assignment windows; exam publication and course access still apply. Starts on this exam count, including retakes.</p>${rows.length?wrapTable(`<table><thead><tr><th>Student</th><th>Status</th><th>Assignment window</th><th>Deadline</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r.name)}</td><td><span class="pill ${r.state==='Completed'?'ok':r.state==='Not started'?'warn':''}">${r.state}</span></td><td>${esc(r.availability)}${r.availability==='Upcoming'&&r.open?'<br>'+esc(new Date(r.open).toLocaleString()):''}</td><td>${r.close?esc(new Date(r.close).toLocaleString()):'No deadline'}</td></tr>`).join('')}</tbody></table>`):'<div class="empty">This exam has no current assigned students.</div>'}<div class="actions"><button class="btn-sm" id="progressClose">Close</button></div>`;
  $('progressClose').onclick=()=>$('editor').close();$('editor').showModal();
 }
 async function students(){
@@ -682,9 +678,12 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 <link rel="stylesheet" href="/student-management.css?v=20261015">
 <script src="/student-management.js?v=20261015-groups"></script>
 <link rel="stylesheet" href="/group-management.css?v=20261015">
-<script src="/group-management.js?v=20261015-all-lessons"></script>
+<link rel="stylesheet" href="/exam-assignments.css?v=20261023-recipients">
+<script src="/exam-assignments.js?v=20261030-batch"></script>
+<script src="/group-management.js?v=20261022-students"></script>
 <link rel="stylesheet" href="/admin-bulk.css?v=20261015">
-<script src="/admin-bulk.js?v=20261015"></script>
+<script src="/admin-bulk.js?v=20261022-students"></script>
 </body>
 </html>
+
 
