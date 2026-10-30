@@ -21,8 +21,8 @@ Deno.serve(serve(async req=>{
   }
   const status=['pending','approved','rejected'].includes(b.status)?b.status:'pending';const offset=Number.isInteger(b.offset)&&b.offset>=0?Math.min(b.offset,100000):0;
   let q=db.from('student_registration_requests').select('id,user_id,username,full_name,phone,track_id,group_note,status,created_at,reviewed_at',{count:'exact'}).eq('status',status).order('created_at',{ascending:false}).order('id').range(offset,offset+49);
-  if(['username','full_name','password','track_id'].some(k=>typeof b[k]!=='string')||['phone','group_note'].some(k=>b[k]!==undefined&&typeof b[k]!=='string'))throw new ApiError('invalid_details',400);
- if(typeof b.track_id==='string'&&b.track_id)q=q.eq('track_id',b.track_id);
+  // Listing uses only filters; student credential validation belongs to submit.
+  if(typeof b.track_id==='string'&&b.track_id)q=q.eq('track_id',b.track_id);
   const {data,error,count}=await q;if(error)throw new ApiError('list_failed',503);return reply({items:data,total:count});
  }
  if(b.action!=='submit')throw new ApiError('invalid_request',400);

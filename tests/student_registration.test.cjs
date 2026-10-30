@@ -12,6 +12,37 @@ test('anonymous and students cannot list or review',async()=>{for(const action o
 test('invalid inputs, bots and rate limits fail before account creation',async()=>{for(const patch of [{password:'short'},{username:'bad@username'},{full_name:'X'},{website:'spam'},{password:'أ'.repeat(40)},{group_note:'x'.repeat(6500)}]){const s=edge();await assert.rejects(()=>s.call({...details,...patch}));assert(!s.calls.some(c=>c.create));}const s=edge({rate:false});await assert.rejects(()=>s.call(details),e=>e.status===429);assert(!s.calls.some(c=>c.create));await assert.rejects(()=>edge({authError:true}).call(details),/username_unavailable/);});
 test('retry keeps one account and cleanup does not delete a committed application',async()=>{const s=edge({prior:true});assert((await s.call(details)).data.submitted);assert(!s.calls.some(c=>c.create));const failed=edge({completeError:true});await assert.rejects(()=>failed.call(details),/registration_unavailable/);assert(failed.calls.some(c=>c.delete==='created-user'));const lost=edge({completeError:true,committed:true});assert((await lost.call(details)).data.submitted);assert(!lost.calls.some(c=>c.delete));});
 const tick=()=>new Promise(r=>setImmediate(r));
+test('administrators list registrations without supplying student credentials',async()=>{
+ for(const track of [undefined,'','sat'])for(const status of ['pending','approved','rejected']){
+  const s=edge(),result=await s.call({action:'list',status,offset:50,...(track===undefined?{}:{track_id:track})},'admin');
+  assert.equal(result.status,200);assert.equal(result.data.total,0);assert.equal(result.data.items.length,0);
+  assert.equal(s.calls.length,1);assert.equal(s.calls[0].table,'student_registration_requests');
+  assert.deepEqual(s.calls[0].filters,{status,...(track?{track_id:track}:{})});
+ }
+});
+test('registration queue renders through the real Edge handler with the browser list payload',async()=>{
+ const d=new JSDOM('<main id="view"></main>',{url:'https://portal.test/admin.html',runScripts:'outside-only'}),w=d.window,s=edge();
+ w.ST={view:'registrations',track:'',me:{id:'admin',role:'admin'},tracks:[{id:'sat',name:'SAT Math'}]};
+ w.$=id=>w.document.getElementById(id);w.esc=s=>String(s??'').replace(/[&<>\"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;'}[c]));w.val=id=>w.$(id).value;
+ w.select=(id,label,options)=>`<label>${label}<select id="${id}">${options.map(([key,text])=>`<option value="${key}">${text}</option>`).join('')}</select></label>`;
+ w.render=async()=>{};w.syncAdminNavigation=()=>{};
+ w.fn=async(name,{body})=>{assert.equal(name,'student-registration');const r=await s.call(body,'admin');return {ok:r.status===200,json:r.data};};
+ try{
+  w.eval(fs.readFileSync('web/registration-admin.js','utf8'));await w.render();
+  assert.equal(w.$('view').querySelector('[role="alert"]'),null);
+  assert.match(w.$('view').textContent,/Student registration requests/);
+  assert.match(w.$('view').textContent,/No pending registration requests/);
+  w.ST.track='sat';await w.render();assert.equal(s.calls.at(-1).filters.track_id,'sat');
+  assert.equal(w.$('view').querySelector('[role="alert"]'),null);
+ }finally{d.window.close();}
+});
+test('new submissions still require all student credential fields',async()=>{
+ for(const field of ['username','full_name','password','track_id']){
+  const body={...details};delete body[field];const s=edge();
+  await assert.rejects(()=>s.call(body),e=>e.status===400&&e.message==='invalid_details');
+  assert.equal(s.calls.length,0);
+ }
+});
 test('form checks confirmation, submits, clears passwords and stores only retry receipt',async()=>{const dom=new JSDOM(fs.readFileSync('web/register.html','utf8'),{url:'https://portal.test/register.html',runScripts:'outside-only'}),w=dom.window,calls=[];w.TextEncoder=TextEncoder;w.fetch=async(url,opts)=>{if(opts.method==='POST'){calls.push(JSON.parse(opts.body));return {ok:true,json:async()=>({submitted:true})}}return {ok:true,json:async()=>({tracks:[{id:'sat',name:'SAT Math'}]})}};w.eval(fs.readFileSync('web/registration.js','utf8'));await tick();const $=id=>w.document.getElementById(id);$('fullName').value='New Student';$('username').value='New.Student';$('password').value=details.password;$('confirmPassword').value='mismatch';$('course').value='sat';await $('registrationForm').onsubmit({preventDefault(){}});assert.equal(calls.length,0);assert.match($('feedback').textContent,/do not match/);$('confirmPassword').value=details.password;await $('registrationForm').onsubmit({preventDefault(){}});assert.equal(calls[0].username,'new.student');assert.equal($('password').value,'');assert.equal($('confirmPassword').value,'');assert($('registrationForm').hidden);assert(!$('success').hidden);assert(!w.sessionStorage.getItem('registration-retry').includes(details.password));dom.window.close();});
 test('registration source and served assets match',()=>{for(const dir of ['portal-static','dist'].filter(d=>fs.existsSync(d+'/admin.html')))for(const f of ['register.html','registration.js','registration.css','registration-admin.js','student-management.js','index.html','admin.html'])assert.equal(fs.readFileSync('web/'+f,'utf8'),fs.readFileSync(dir+'/'+f,'utf8'));assert.match(fs.readFileSync('web/index.html','utf8'),/href="\/register.html"/);});
 test('admin review escapes student data and saves course/group/dates in one operation',async()=>{
