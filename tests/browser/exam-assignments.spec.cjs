@@ -24,6 +24,9 @@ test('mixed recipients, overlap, search, paged roster, long names and scrolling'
  await page.getByRole('button',{name:'Select shown students',exact:true}).click();
  await search.fill('no-match');await expect(page.locator('[data-assignment-empty]')).toBeVisible();
  await search.fill('');await expect(page.locator(student(1))).toBeChecked();await expect(page.locator(student(1000))).toBeChecked();
+ await page.getByRole('button',{name:'Clear students',exact:true}).click();await expect(page.locator('[data-assignment-student]:checked')).toHaveCount(0);
+ await page.getByRole('button',{name:'Select all groups',exact:true}).click();await expect(page.locator('[data-assignment-group]:checked')).toHaveCount(3);
+ await page.getByRole('button',{name:'Clear groups',exact:true}).click();await expect(page.locator('[data-assignment-group]:checked')).toHaveCount(0);
  await page.locator(student(1104)).scrollIntoViewIfNeeded();await page.locator(student(1104)).check();
  expect(await page.locator('.assignment-student-list').evaluate(e=>e.scrollTop)).toBeGreaterThan(0);
  await fits(page);await page.screenshot({path:info.outputPath('long-student-list.png')});
@@ -35,6 +38,14 @@ test('mixed recipients, overlap, search, paged roster, long names and scrolling'
  await page.locator('#editSave').scrollIntoViewIfNeeded();await fits(page);
  await page.screenshot({path:info.outputPath('assignment-dates-actions.png')});
  await page.getByRole('button',{name:'Cancel',exact:true}).click();expect(a.calls).toEqual([]);await clean(a);
+});
+test('long recipient failures remain readable within the dialog and retry remains reachable',async({page,context},info)=>{
+ const a=await setup(page,context,{fail:()=> 'reject'});await page.locator(first).click();
+ await page.locator('[data-assignment-search]').fill('longstudentname');await page.locator(student(1104)).check();
+ await page.locator('#editSave').click();await expect(page.locator('#editError')).toContainText('Retry to finish');
+ await page.locator('#editError').scrollIntoViewIfNeeded();await fits(page);await page.screenshot({path:info.outputPath('long-recipient-failure.png')});
+ await expect(page.locator('#editSave')).toBeEnabled();a.fail=null;await page.locator('#editSave').click();await expect(page.locator('#editor')).not.toBeVisible();
+ expect(a.fixtures.assignments).toHaveLength(1);await clean(a);
 });
 test('empty recipients and reversed dates stay open; valid dates and existing records are preserved',async({page,context})=>{
  const existing={id:'existing',exam_id:'fixture-exam-1',group_id:'group-a',user_id:null,open_at:'2025-01-01T00:00:00Z',close_at:'2025-01-02T00:00:00Z'};

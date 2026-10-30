@@ -6,7 +6,7 @@ const deployed=require('./assignment-deployed-layout.json');
 function data(){
  const exams=[1,2].map(n=>({id:'fixture-exam-'+n,title:'Assignment browser fixture '+n,track_id:'est',assessment_type:'quiz',is_published:true,question_ids:['fixture-question'],duration_seconds:1200}));
  const roster=Array.from({length:1105},(_,i)=>({user_id:'student-'+i,full_name:'Student '+String(i).padStart(4,'0'),email:'student'+i+'@example.test',role:'student',status:'active',tracks:'est'}));
- roster[1104].full_name='LongStudentName'.repeat(12);roster[1104].email='long'.repeat(45)+'@example.test';
+ roster[1104].full_name='Student 1104 '+'LongStudentName'.repeat(12);roster[1104].email='long'.repeat(45)+'@example.test';
  roster.push({user_id:'other-track',full_name:'Other track',role:'student',status:'active',tracks:'sat'},{user_id:'suspended',full_name:'Suspended',role:'student',status:'suspended',tracks:'est'});
  const groups=[{id:'group-a',name:'Sunday fixture',track_id:'est',instructor_id:'fixture-teacher'},{id:'group-b',name:'Wednesday fixture',track_id:'est',instructor_id:'fixture-teacher'},{id:'other-teacher',name:'Other teacher fixture',track_id:'est',instructor_id:'someone-else'},{id:'other-track',name:'SAT fixture',track_id:'sat',instructor_id:'fixture-teacher'}];
  const group_members=[0,1,2].map(i=>({group_id:'group-a',user_id:'student-'+i})).concat([1,2,3].map(i=>({group_id:'group-b',user_id:'student-'+i})),roster.slice(4,1105).map(r=>({group_id:'other-teacher',user_id:r.user_id})));
