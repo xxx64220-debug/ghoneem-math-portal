@@ -32,7 +32,7 @@
   progress.textContent='Saving account details…';await mutation('user.update',{id:user_id,full_name:payload.full_name,status:payload.status});known.profile={...known.profile,full_name:payload.full_name,status:payload.status};return known;
  }
  let page=0,search='',filter='all',request=0,lastTrack=null;
- function tabs(current){return `<div class="student-admin-tabs"><button class="btn-sm ${current==='students'?'on':''}" data-student-tab="students" ${current==='students'?'aria-current="page"':''}>Accounts & groups</button><button class="btn-sm ${current==='subscriptions'?'on':''}" data-student-tab="subscriptions" ${current==='subscriptions'?'aria-current="page"':''}>Subscriptions & payments</button></div>`;}
+ function tabs(current){return `<div class="student-admin-tabs"><button class="btn-sm" data-student-tab="registrations">Registration requests</button><button class="btn-sm ${current==='students'?'on':''}" data-student-tab="students" ${current==='students'?'aria-current="page"':''}>Accounts & groups</button><button class="btn-sm ${current==='subscriptions'?'on':''}" data-student-tab="subscriptions" ${current==='subscriptions'?'aria-current="page"':''}>Subscriptions & payments</button></div>`;}
  function bindTabs(){document.querySelectorAll('[data-student-tab]').forEach(b=>b.onclick=()=>{ST.view=b.dataset.studentTab;render();});}
  const originalStudents=students,originalManage=manageUser;
  students=async function(){

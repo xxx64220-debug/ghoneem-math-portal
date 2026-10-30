@@ -22,3 +22,7 @@ verify_jwt = false
 # Authenticated user requests use requireUser; scheduled dispatch uses a private worker credential.
 [functions.portal-notifications]
 verify_jwt = false
+
+# Public submissions; list/review verify active administrator sessions.
+[functions.student-registration]
+verify_jwt = false

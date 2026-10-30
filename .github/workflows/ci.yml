@@ -45,6 +45,7 @@ jobs:
       - name: Run EST English passage client regressions
         run: |
           npm ci --prefix tests/english-runtime --ignore-scripts --no-audit --no-fund
+          node --test tests/student_registration.test.cjs tests/html_script_boundaries.test.cjs
           node --test tests/portal_math.test.cjs
           node --test tests/english_reading.test.cjs
           node --test tests/svg_figures.test.cjs
@@ -82,6 +83,7 @@ jobs:
         run: |
           node tests/portal_management_db.cjs
           node tests/group_isolation_db.cjs
+          node tests/student_registration_db.cjs
           node tests/hardest_cycles_db.cjs
 
       - name: Verify preserved SAT intake and private worked-page controls offline
