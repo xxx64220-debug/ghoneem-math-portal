@@ -46,6 +46,10 @@ verified, but authenticated flows on physical devices and Safari/Firefox remain
 unverified. Database, Edge boundary and DOM fixtures cover approval, revocation,
 session expiry, cross-account denial, exam transfer and answer preservation.
 
+A follow-up browser recovery test passed: Request approval again ends the current
+login before forgetting the approval token. A fresh sign-in remains subject to
+server approval. Its publication is recorded in the pull request receipt.
+
 Student answers, deadlines, grades and course content were not changed by rollout.
 Rollback requires the recorded previous Site and Edge Functions together with
 `rollback.sql`; preserve audit history and existing revocations.

@@ -28,6 +28,11 @@ async function setup(page,context,{visible=true,resourceFailure=false,noRetest=f
    ]}));
    return route.fulfill(examFailure?{status:503,json:{message:'Offline'}}:{json:{exam_id:args.p_exam,track_id:'est',students}});
   }
+  if(url.hostname==='wfhurjyouemahvkcfkdz.supabase.co'&&url.pathname==='/functions/v1/portal-devices'){
+   const body=JSON.parse(route.request().postData());
+   if(body.action!=='register'||!/^[a-f0-9]{64}$/.test(body.data.token)){unexpected.push('invalid-device-registration');return route.abort();}
+   return route.fulfill({json:{status:'approved',browser_id:'staff-browser-fixture',label:'Fixture browser'}});
+  }
   if(url.hostname==='wfhurjyouemahvkcfkdz.supabase.co'&&url.pathname==='/functions/v1/portal-controls'){
    const body=JSON.parse(route.request().postData());actions.push(body);
    if(body.action!=='revision.list'||body.data.track!=='est'){unexpected.push(body.action);return route.abort();}
@@ -59,7 +64,7 @@ test('group plan coordinates the saved seven-person class and opens existing les
  await page.evaluate(async()=>{ST.view='finalsDiagnosisAdmin';await render();});await page.locator('#finalsGroupView').click();
  await page.locator('[data-finals-retest]').first().click();await expect(page.locator('#examSearch')).toHaveValue(retest.title);await expect(page.locator('#examTable tbody tr')).toHaveCount(1);
  expect(audit.actions.every(x=>x.action==='revision.list')).toBe(true);expect(audit.errors).toEqual([]);expect(audit.unexpected).toEqual([]);
- expect(await page.evaluate(()=>[localStorage.length,sessionStorage.length])).toEqual([0,0]);
+ expect(await page.evaluate(()=>({keys:Object.keys(localStorage),token:localStorage.getItem('ghoneem-trusted-browser-v1'),sessionKeys:Object.keys(sessionStorage)}))).toEqual({keys:['ghoneem-trusted-browser-v1'],token:expect.stringMatching(/^[a-f0-9]{64}$/),sessionKeys:[]});
 });
 test('hidden revision and missing retest are disclosed without invented practice links',async({page,context})=>{
  const audit=await setup(page,context,{visible:false,noRetest:true});await page.locator('#finalsGroupView').click();
@@ -92,7 +97,7 @@ test('selected exam plans use scored misses, separate locked and missing student
  await page.locator('#finalsGroup summary').click();await page.locator('[data-finals-student="a"]').uncheck();await expect(plan).toContainText('6 students selected');
  await page.locator('#finalsEvidenceScope').selectOption('');await expect(plan.locator('.finals-cluster')).toHaveCount(2);await expect(page.locator('#finalsEvidenceHint')).toContainText('Historical responses');
  const reads=audit.actions.filter(x=>x.action==='staff_group_exam_evidence');expect(reads).toHaveLength(2);expect(reads[0].data.p_students).toEqual([...'abcdefg']);expect(reads[1].data.p_students).toEqual([...'bcdefg']);
- expect(audit.errors).toEqual([]);expect(audit.unexpected).toEqual([]);expect(await page.evaluate(()=>[localStorage.length,sessionStorage.length])).toEqual([0,0]);
+ expect(audit.errors).toEqual([]);expect(audit.unexpected).toEqual([]);expect(await page.evaluate(()=>({keys:Object.keys(localStorage),token:localStorage.getItem('ghoneem-trusted-browser-v1'),sessionKeys:Object.keys(sessionStorage)}))).toEqual({keys:['ghoneem-trusted-browser-v1'],token:expect.stringMatching(/^[a-f0-9]{64}$/),sessionKeys:[]});
 });
 test('failed exam read shows retry without silently showing overall clusters',async({page,context})=>{
  const audit=await setup(page,context,{examFailure:true});await page.locator('#finalsGroupView').click();await page.locator('#finalsEvidenceScope').selectOption('retest');
