@@ -26,6 +26,9 @@ pending browser shows a request code. The instructor should verify it with the
 student before approval. Student self-approvals are limited to two per day;
 new requests are limited to five per day. Requests older than seven days require
 administrator review. Sign out affects only the current browser's login session.
+Removed browsers can choose Request approval again. This ends the current login
+and forgets only the browser approval token; the next sign-in creates a pending
+request subject to the same limits and approval checks.
 
 ## Enforcement
 
