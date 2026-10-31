@@ -78,7 +78,7 @@ test(`SAT portal, exam navigation/timer/figures and calculator ${calculatorMode}
  await expect(page.locator('#qcard .stem')).toHaveText(questions[1].stem);
  await expect(page.locator('#qcard table')).toContainText('8');
  await page.locator('#gin').fill('4');
- await expect(page.locator('#progress')).toHaveText('2 of 2 answered');
+ await expect(page.locator('#progress')).toHaveText('2 of 2 answered · 1 flagged');
  await expect(page.locator('#nextBtn')).toBeDisabled();
  await page.locator('#prevBtn').click();
  await expect(page.locator('#qcard .stem')).toHaveText(questions[0].stem);

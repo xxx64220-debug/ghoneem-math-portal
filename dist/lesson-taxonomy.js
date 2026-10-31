@@ -31,7 +31,6 @@ const MATH_LESSONS = {
     "Polynomial division and remainder",
     "Functions and transformations",
     "Exponents, radicals and growth",
-    "Logarithms and exponentials",
     "Ratios, percentages and unit conversion",
     "Complex numbers",
     "Statistics and data analysis",
@@ -73,7 +72,15 @@ const MATH_LESSONS = {
     "Limits and continuity"
   ]
 };
+MATH_LESSONS.act2 = ["Algebraic expressions and equations", "Linear functions and slope", "Systems of equations", "Inequalities and absolute value", "Quadratics and polynomials", "Polynomial division and remainder", "Functions and transformations", "Exponents, radicals and growth", "Logarithms and exponentials", "Sequences", "Complex numbers", "Statistics and data analysis", "Probability and conditional probability", "Trigonometry", "Conic sections", "Matrices", "Vectors", "Limits and continuity", "Polar coordinates and parametric equations"];
+// Supplemental topics present in the supplied mixed practice papers. These do
+// not change the nineteen core course lesson exams or assert official coverage.
+const ACT2_SOURCE_LESSONS = ["Ratios, percentages and unit conversion", "Logic and sets", "Triangles and similarity", "Angles and polygons", "Circles", "Area and perimeter", "Volume and surface area"];
+MATH_LESSONS.act2.push(...ACT2_SOURCE_LESSONS);
 const MATH_LESSON_ALIASES = {
+  "polar coordinates and parametric equations": "Polar coordinates and parametric equations",
+  "polar coordinates": "Polar coordinates and parametric equations",
+  "parametric equations": "Polar coordinates and parametric equations",
   "ratios, rates, and proportions": "Ratios, percentages and unit conversion",
   "statistics: center and spread": "Statistics and data analysis",
   "exponents and radicals": "Exponents, radicals and growth",

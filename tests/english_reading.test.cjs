@@ -12,7 +12,7 @@ function setup(source=html){
  vm.runInContext(source.slice(source.indexOf('function ent(t)'),source.indexOf('const fmt =')),c);
  if(source.includes('function englishPassage'))vm.runInContext(source.slice(source.indexOf('function englishPassage'),source.indexOf('function renderQ')),c);
  vm.runInContext(source.slice(source.indexOf('function renderQ()'),source.indexOf('/* Lane A')),c);
- vm.runInContext(source.slice(source.indexOf('function paintReview('),source.indexOf('/* ---------------- figure rendering')),c);
+ vm.runInContext(source.slice(source.indexOf('function reviewBody('),source.indexOf('/* ---------------- figure rendering')),c);
  vm.runInContext(readFileSync('web/daily-challenge.js','utf8'),c);
  return c;
 }

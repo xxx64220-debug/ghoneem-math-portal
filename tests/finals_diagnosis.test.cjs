@@ -35,7 +35,7 @@ for(const failed of [false,true])test(`diagnosis survives notebook ${failed?'fai
  await buttons[0].onclick();assert.equal(c.DASH.view,'revision');assert.equal(c.REV.lesson,'Linear equations');assert.equal(c.REV.collection,'all');assert.equal(c.REV.level,'mixed');assert.equal(refreshes,1);assert.equal(paints,1);
 });
 
-const lessonContext={};vm.createContext(lessonContext);vm.runInContext(student.slice(student.indexOf('function finalsExamLessons'),student.indexOf('/* ===================== EST FINALS DIAGNOSIS')),lessonContext);
+const lessonContext={};vm.createContext(lessonContext);vm.runInContext(student.slice(student.indexOf('function finalsExamLessons'),student.indexOf('/* ===================== COURSE DIAGNOSIS')),lessonContext);
 test('exam study plan uses graded results, explicit lessons and distinct question IDs',()=>{
  const rows=lessonContext.finalsExamLessons([
   {id:'a',assets:{curriculum_lesson:'Circles'},is_correct:false,response:''},
@@ -67,7 +67,7 @@ test('student exam classification matches staff topic fallback and unclassified 
 
 function adminReport(fixtures){
  const view={innerHTML:''},button={},queries=[],exports=[];
- const c={document:{readyState:'complete',getElementById:id=>id==='view'?view:id==='finalsDiagnosisCsv'?button:null,querySelector:()=>null},setTimeout:fn=>fn(),ST:{view:'finalsDiagnosisAdmin'},render(){},syncAdminNavigation(){},csv:(rows,name)=>exports.push({rows,name}),q:table=>{
+ const c={document:{readyState:'complete',getElementById:id=>id==='view'?view:id==='finalsDiagnosisCsv'?button:null,querySelector:()=>null,querySelectorAll:()=>[]},setTimeout:fn=>fn(),ST:{view:'finalsDiagnosisAdmin'},render(){},syncAdminNavigation(){},csv:(rows,name)=>exports.push({rows,name}),sb:{rpc:async(name)=>{queries.push(name);return {data:{track_id:'est',students:(fixtures.roster||[]).filter(s=>s.tracks.split(',').map(x=>x.trim()).includes('est')).map(s=>({...s,latest:(fixtures.results_feed||[]).find(x=>x.user_id===s.user_id),lessons:(fixtures.student_by_lesson||[]).filter(x=>x.user_id===s.user_id).map(x=>({...x,seen:x.questions_seen}))}))}};}},q:table=>{
   queries.push(table);const query={eq:()=>query,order:()=>query,range:async(a,b)=>({data:(fixtures[table]||[]).slice(a,b+1)})};return query;
  }};
  vm.createContext(c);vm.runInContext(admin,c);return {c,view,button,queries,exports};
@@ -76,14 +76,14 @@ test('instructor CSV preserves enrolled roster, latest pending scores and eviden
  const f=adminReport({roster:[{user_id:'a',full_name:'=Student, "A"',tracks:'est, sat'},{user_id:'b',full_name:'No attempts',tracks:'est'},{user_id:'c',tracks:'est2'}],results_feed:[{user_id:'a',score:null,percent:0,time_used:0},{user_id:'a',score:9,total:10,percent:90}],student_by_lesson:[{user_id:'a',lesson:'Limited',questions_seen:2,percent:0},{user_id:'a',lesson:'Circles',questions_seen:3,percent:25}]});
  await f.c.render();assert(f.view.innerHTML.includes('Export CSV'));assert.equal(f.button.disabled,false);
  f.button.onclick();assert.equal(f.exports[0].name,'est-diagnosis');
- const rows=f.exports[0].rows;assert.equal(rows.length,2);assert.equal(rows[0].student,'=Student, "A"');assert.equal(rows[0].latest_score,'Awaiting grading');assert.equal(rows[0].percent,'');assert.equal(rows[0].time_seconds,0);assert.equal(rows[0].bottom_skills,'Circles 25%');assert.equal(rows[1].latest_score,'No completed EST I Math attempt');assert.equal(rows[1].bottom_skills,'More evidence needed');assert.equal(f.queries.length,3,'export requires no new data requests');
+ const rows=f.exports[0].rows;assert.equal(rows.length,2);assert.equal(rows[0].student,'=Student, "A"');assert.equal(rows[0].latest_score,'Awaiting grading');assert.equal(rows[0].percent,'');assert.equal(rows[0].time_seconds,0);assert.equal(rows[0].bottom_skills,'Circles 25%');assert.equal(rows[1].latest_score,'No completed EST I Math attempt');assert.equal(rows[1].bottom_skills,'More evidence needed');assert.deepEqual(f.queries,['staff_diagnosis'],'export reuses the complete scoped snapshot');
 });
 test('instructor CSV is disabled with an empty enrolled roster',async()=>{const f=adminReport({});await f.c.render();assert.equal(f.button.disabled,true);});
 test('instructor evidence and CSV include lessons beyond the first database page',async()=>{
  const lessons=Array.from({length:1001},(_,i)=>({user_id:'a',lesson:'Lesson '+i,questions_seen:3,percent:90}));
  lessons.push({user_id:'a',lesson:'Last page weakness',questions_seen:3,percent:10});
  const f=adminReport({roster:[{user_id:'a',full_name:'Student A',tracks:'est'}],student_by_lesson:lessons});
- await f.c.render();f.button.onclick();assert(f.view.innerHTML.includes('Last page weakness'));assert(f.exports[0].rows[0].bottom_skills.startsWith('Last page weakness 10%'));assert.equal(f.queries.filter(x=>x==='student_by_lesson').length,3);
+ await f.c.render();f.button.onclick();assert(f.view.innerHTML.includes('Last page weakness'));assert(f.exports[0].rows[0].bottom_skills.startsWith('Last page weakness 10%'));assert.deepEqual(f.queries,['staff_diagnosis']);
 });
 
 const {buildGroupPlan,weakSkills}=require('../web/hardest-questions.js');
@@ -105,7 +105,7 @@ test('invalid, limited, unclassified and other-track evidence cannot create grou
  const rows=[{lesson:'Null percent',questions_seen:9,percent:null},{lesson:'Blank percent',questions_seen:9,percent:''},{lesson:'Invalid',questions_seen:9,percent:'NaN'},{lesson:'Limited',questions_seen:2,percent:0},{lesson:'Negative',questions_seen:4,percent:-1},{lesson:'Too high',questions_seen:4,percent:101},{lesson:'',questions_seen:9,percent:0},{lesson:'Mixed / untagged',questions_seen:9,percent:0},{lesson:'EST II',questions_seen:9,percent:0,track_id:'est2'},{lesson:'Circles',questions_seen:3,percent:25},{lesson:'Circles',questions_seen:3,percent:25}];
  assert.deepEqual(weakSkills(rows),[{lesson:'Circles',questions_seen:3,percent:25}]);
  const plan=buildGroupPlan([...groupRoster,{user_id:'x',full_name:'Other track',tracks:'est2'},{user_id:'staff',role:'instructor',tracks:'est'}],rows.map(x=>({...x,user_id:'a'})),['a','x','staff']);
- assert.equal(plan.students.length,1);assert.equal(plan.insufficient.length,1);assert.equal(plan.clusters.length,0);assert.equal(plan.common.length,0);
+ assert.equal(plan.students.length,1);assert.equal(plan.insufficient.length,1);assert.equal(plan.clusters.length,0);assert.equal(plan.common.length,1,'one evidenced lesson can inform common counts but cannot create a cluster');
 });
 test('selection limits counts and leaves nonoverlapping and strong students separate',()=>{
  const rows=[...groupEvidence,{user_id:'g',lesson:'Quadratics',questions_seen:3,percent:59},{user_id:'g',lesson:'Functions',questions_seen:3,percent:60}];

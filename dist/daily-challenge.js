@@ -1,6 +1,9 @@
 // Daily checklist, five-question quiz and track-specific leaderboard.
 let DAILY_DRAFT = {};
 let DAILY_BUSY = false;
+let DAILY_REQUEST = 0;
+let DAILY_LOADING = false;
+const DAILY_COURSE_SCOPE = '00000000-0000-0000-0000-000000000000';
 
 async function refreshMistakes() {
   const track = ST.track?.id;
@@ -110,23 +113,39 @@ function wireDrill(){
   });
 }
 
-async function refreshDaily() {
+async function refreshDaily(group) {
   const track = ST.track?.id;
   if (!track) return;
+  const scope = group === undefined ? (DASH.daily?.track===track ? DASH.daily.scope_id : undefined) : group;
+  const request = ++DAILY_REQUEST;
+  DAILY_LOADING = true;
   try {
-    const { ok, json } = await fn('daily-challenge', { qs: `?track=${encodeURIComponent(track)}` });
-    if (ST.track?.id !== track) return;
+    const { ok, json } = await fn('daily-challenge', { qs: `?track=${encodeURIComponent(track)}${scope ? '&group_id='+encodeURIComponent(scope) : ''}` });
+    if (ST.track?.id !== track || request!==DAILY_REQUEST) return;
     if (!ok) throw new Error(friendly(json.error));
+    if (DASH.daily?.scope_id!==json.scope_id || DASH.daily?.date!==json.date) DAILY_DRAFT={};
     json.receivedAt = Date.now();
     DASH.daily = json;
     DASH.dailyError = '';
-    if (DASH.view === 'daily' && !DASH.searchTerm?.trim()) paintDashboardContent();
   } catch (error) {
-    if (ST.track?.id === track) {
-      DASH.dailyError = error.message;
-      if (DASH.view === 'daily' && !DASH.searchTerm?.trim()) paintDashboardContent();
+    if (ST.track?.id === track && request===DAILY_REQUEST) DASH.dailyError = error.message;
+  } finally {
+    if (request===DAILY_REQUEST) {
+      DAILY_LOADING=false;
+      if (ST.track?.id===track && DASH.view==='daily' && !DASH.searchTerm?.trim()) paintDashboardContent();
     }
   }
+}
+function dailyGroupSelector(d) {
+  const groups=d.groups||[];
+  if (!groups.length) return '';
+  return `<label class="daily-group-select" for="dailyGroup">Assigned group<select id="dailyGroup" ${DAILY_BUSY||DAILY_LOADING?'disabled':''}>${groups.map(g=>`<option value="${esc(g.id)}" ${g.id===d.scope_id?'selected':''}>${esc(g.name)}</option>`).join('')}</select></label><p class="dash-note">Scores, points, checklist and streak belong to the selected group. Complete a separate quiz for each assigned group.</p>`;
+}
+function dailyRequestContext() {
+ return {track:ST.track.id,scope:DASH.daily?.scope_id||DAILY_COURSE_SCOPE,date:DASH.daily?.date,request:DAILY_REQUEST};
+}
+function dailyContextCurrent(c) {
+ return c.track===ST.track?.id && c.scope===(DASH.daily?.scope_id||DAILY_COURSE_SCOPE) && c.date===DASH.daily?.date && c.request===DAILY_REQUEST;
 }
 
 
@@ -149,15 +168,16 @@ function streakPanel(d) {
     return `<li class="streak-day ${day.completed?'is-complete':''} ${day.today?'is-today':''}" aria-label="${esc(day.date)}: ${status}"><span>${esc(label)}</span><b aria-hidden="true">${day.completed?'✓':day.today?'○':'—'}</b><small>${day.today?'Today':status}</small></li>`;
   }).join('');
   const badges = [3,7,14,30].map(n => `<li class="streak-badge ${longest>=n?'is-earned':''}"><span aria-hidden="true">${longest>=n?'🏅':'◇'}</span> ${n} days <small>${longest>=n?'Earned':'Locked'}</small></li>`).join('');
-  return `<section class="dash-panel streak-panel" aria-labelledby="streak-title"><div class="streak-heading"><div><h2 id="streak-title">Your quiz streak</h2><p>${esc(ST.track?.theme?.label||d.track.toUpperCase())} · One completed quiz each day</p></div><div class="streak-best">Personal best <strong>${longest} ${longest===1?'day':'days'}</strong></div></div>
+  return `<section class="dash-panel streak-panel" aria-labelledby="streak-title"><div class="streak-heading"><div><h2 id="streak-title">Your quiz streak</h2><p>${esc(d.group_name||ST.track?.theme?.label||d.track.toUpperCase())} · One completed quiz each day</p></div><div class="streak-best">Personal best <strong>${longest} ${longest===1?'day':'days'}</strong></div></div>
     <div class="streak-summary"><div class="streak-count"><span aria-hidden="true">🔥</span><strong>${current}</strong><span>day streak</span></div><div><p class="streak-message" role="status">${message}</p><p class="streak-deadline">${d.completed?'Next quiz in':'Time left today:'} <b data-streak-countdown>${streakRemaining(d).label}</b> · Midnight Cairo time</p>${!d.completed?'<a class="dash-link" href="#daily-quiz">Complete today’s quiz →</a>':''}</div></div>
-    <ol class="streak-week" aria-label="Last seven days">${days}</ol><div class="streak-milestones"><h3>Streak badges</h3><p>${next?`${next-current} more consecutive ${next-current===1?'day':'days'} to the ${next}-day milestone.`:'30-day milestone reached. Keep your streak growing!'}</p><ul class="streak-badges">${badges}</ul></div><p class="dash-note">Any score counts after submitting all five answers. Missing a day resets your current streak; your best streak, earned badges and points stay. SAT and EST streaks are separate.</p></section>`;
+    <ol class="streak-week" aria-label="Last seven days">${days}</ol><div class="streak-milestones"><h3>Streak badges</h3><p>${next?`${next-current} more consecutive ${next-current===1?'day':'days'} to the ${next}-day milestone.`:'30-day milestone reached. Keep your streak growing!'}</p><ul class="streak-badges">${badges}</ul></div><p class="dash-note">Any score counts after submitting all five answers. Missing a day resets your current streak; your best streak, earned badges and points stay. Each assigned group has its own streak and points.</p></section>`;
 }
 
 function dailyPanel() {
   const d = DASH.daily;
   if (!d) return `<section class="dash-panel"><h2>Today's practice</h2><p class="dash-empty" role="status">${esc(DASH.dailyError || 'Loading your daily questions…')}</p>${DASH.dailyError ? '<button class="btn" data-daily-retry>Try again</button>' : ''}</section>`;
   const completed = d.completed;
+  if(DAILY_LOADING) return `<section class="dash-panel"><h2>Today’s practice</h2><p role="status">Loading this group’s quiz…</p></section>`;
   const checklist = [
     ['quiz', 'Finish the five-question quick quiz', 'One attempt per day; your answers are checked when you submit.'],
     ['focus', 'Practise a lesson to improve', 'Use your Lesson focus tab to pick a topic.'],
@@ -177,10 +197,12 @@ function dailyPanel() {
   }).join('');
   const board = (d.leaderboard||[]).map(row => `<tr ${row.rank===d.rank?'class="my-rank"':''}><td>${row.rank}</td><td>${esc(row.name)}</td><td>${row.points}</td><td>${row.completed}</td></tr>`).join('');
   return `<div class="daily-top"><div><h2>Today's practice</h2><p>${new Date(d.date+'T12:00:00').toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long',timeZone:'Africa/Cairo'})} · New questions every day at ${next} Cairo time</p></div><div class="daily-points"><strong>${d.points_total}</strong><span>total points · rank ${d.rank||'—'}</span></div></div>
+  ${dailyGroupSelector(d)}
+  ${DASH.dailyError?`<p role="alert">${esc(DASH.dailyError)}</p>`:''}
   ${d.group_name?`<p class="dash-note">${esc(d.group_name)} · ${esc(d.selection_mode)}</p>`:''}
   ${streakPanel(d)}
   <div class="dashboard-columns"><section class="dash-panel"><div class="dash-heading"><h2>Daily checklist</h2><span class="daily-tag">${Object.values(d.checklist).slice(0,3).filter(Boolean).length}/3 tasks</span></div><ul class="daily-tasks">${tasks}</ul><p class="dash-note">Quiz: 10 points for finishing + 10 per correct answer. Complete quizzes on consecutive days for a 5-point streak bonus. Finish your checklist for 5 more points.</p></section>
-  <section class="dash-panel"><h2>${esc(ST.track?.theme?.label||ST.track?.id?.toUpperCase())} leaderboard</h2><p class="dash-note">Points earned in daily practice. Student names appear as first name and last initial.</p><div class="student-table"><table><thead><tr><th>Rank</th><th>Student</th><th>Points</th><th>Days</th></tr></thead><tbody>${board}</tbody></table></div>${d.rank>10?`<p class="dash-note">Your rank: ${d.rank} · ${d.points_total} points</p>`:''}</section></div>
+  <section class="dash-panel"><h2>${esc(d.group_name||ST.track?.theme?.label||ST.track?.id?.toUpperCase())} leaderboard</h2><p class="dash-note">Points earned only in this group. Student names appear as first name and last initial.</p><div class="student-table"><table><thead><tr><th>Rank</th><th>Student</th><th>Points</th><th>Days</th></tr></thead><tbody>${board}</tbody></table></div>${d.rank>10?`<p class="dash-note">Your rank: ${d.rank} · ${d.points_total} points</p>`:''}</section></div>
   <section class="dash-panel" id="daily-quiz"><div class="dash-heading"><h2>Five-question quick quiz</h2><span class="daily-tag">${completed?`${d.score}/5 correct`:'One attempt today'}</span></div>${questions}${completed?'<p class="dash-notice">Great work. Tomorrow brings five new questions.</p>':`<button class="btn" data-daily-submit ${DAILY_BUSY?'disabled':''}>Submit answers</button><p class="dash-note">Answer all five before submitting. Your choices are final for today.</p>`}<p class="dash-note" id="daily-message" role="status"></p></section>`;
 }
 
@@ -190,34 +212,45 @@ function dailyMessage(message) {
 }
 
 function wireDaily() {
+  document.getElementById('dailyGroup')?.addEventListener('change',event=>{
+    if(DAILY_BUSY||DAILY_LOADING){event.target.value=DASH.daily.scope_id;return;}
+    const group=event.target.value;
+    DAILY_DRAFT={};DASH.dailyError='';DAILY_LOADING=true;paintDashboardContent();refreshDaily(group);
+  });
   document.querySelector('[data-daily-retry]')?.addEventListener('click', () => { DASH.dailyError=''; paintDashboard(); refreshDaily(); });
   document.querySelectorAll('[data-daily-answer]').forEach(radio => radio.addEventListener('change', event => {
     DAILY_DRAFT[event.target.dataset.dailyAnswer] = event.target.value;
   }));
   document.querySelectorAll('[data-daily-mark]').forEach(button => button.addEventListener('click', async () => {
     if (DAILY_BUSY) return;
+    const context=dailyRequestContext();
     DAILY_BUSY = true; button.disabled = true;
+    if(document.getElementById('dailyGroup'))document.getElementById('dailyGroup').disabled=true;
     try {
-      const {ok,json} = await fn('daily-challenge',{method:'POST',body:{track:ST.track.id,action:'mark',task:button.dataset.dailyMark}});
+      const {ok,json} = await fn('daily-challenge',{method:'POST',body:{track:context.track,group_id:context.scope,day:context.date,action:'mark',task:button.dataset.dailyMark}});
       if (!ok) throw new Error(friendly(json.error));
+      if(!dailyContextCurrent(context))return;
       json.receivedAt=Date.now(); DASH.daily=json; DAILY_BUSY=false; paintDashboard();
-    } catch (error) { button.disabled=false; dailyMessage(error.message); }
-    finally { DAILY_BUSY=false; }
+    } catch (error) { if(dailyContextCurrent(context)){button.disabled=false; dailyMessage(error.message);} }
+    finally { DAILY_BUSY=false; const group=document.getElementById('dailyGroup');if(group)group.disabled=DAILY_LOADING; }
   }));
   document.querySelector('[data-daily-submit]')?.addEventListener('click', async buttonEvent => {
     if (DAILY_BUSY) return;
     const questions = DASH.daily?.quiz||[];
     if (questions.some(q => !DAILY_DRAFT[q.id])) return dailyMessage('Choose an answer for all five questions.');
+    const context=dailyRequestContext();
     const submitButton=buttonEvent.currentTarget;
     DAILY_BUSY=true; submitButton.disabled=true;
+    if(document.getElementById('dailyGroup'))document.getElementById('dailyGroup').disabled=true;
     try {
       const answers=Object.fromEntries(questions.map(q => [q.id,DAILY_DRAFT[q.id]]));
-      const {ok,json}=await fn('daily-challenge',{method:'POST',body:{track:ST.track.id,action:'submit',answers}});
+      const {ok,json}=await fn('daily-challenge',{method:'POST',body:{track:context.track,group_id:context.scope,day:context.date,action:'submit',answers}});
       if (!ok) throw new Error(friendly(json.error));
+      if(!dailyContextCurrent(context))return;
       json.receivedAt=Date.now(); DASH.daily=json; DAILY_DRAFT={}; DAILY_BUSY=false; paintDashboard();
       document.getElementById('daily-quiz')?.scrollIntoView({behavior:'smooth'});
-    } catch(error) { submitButton.disabled=false; dailyMessage(error.message); }
-    finally { DAILY_BUSY=false; }
+    } catch(error) { if(dailyContextCurrent(context)){submitButton.disabled=false; dailyMessage(error.message);} }
+    finally { DAILY_BUSY=false; const group=document.getElementById('dailyGroup');if(group)group.disabled=DAILY_LOADING; }
   });
 }
 
@@ -230,9 +263,10 @@ function tickDailyStreak() {
   if (timer) timer.textContent = remaining.label;
   if (remaining.seconds === 0 && !DAILY_REFRESHING && !DAILY_BUSY) {
     DAILY_REFRESHING=true;
+    const scope=DASH.daily.scope_id;
     DAILY_DRAFT={}; DASH.daily=null;
     if (DASH.view==='daily' && !DASH.searchTerm?.trim()) paintDashboardContent();
-    refreshDaily().finally(() => { DAILY_REFRESHING=false; });
+    refreshDaily(scope).finally(() => { DAILY_REFRESHING=false; });
   }
 }
 setInterval(tickDailyStreak,1000);

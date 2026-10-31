@@ -6,6 +6,13 @@
 <meta http-equiv="Content-Security-Policy" content="base-uri 'none'; object-src 'none'; form-action 'self'; upgrade-insecure-requests">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Exam Portal — Abdelrahman Ghoneem</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="script" href="/revision-formulas.js?v=20261024-no-source-links" fetchpriority="low">
+<link rel="preload" as="script" href="/lesson-exam-catalog.js?v=20261030-compact" fetchpriority="low">
+<link rel="preload" as="script" href="/assessment-index.js?v=20261030" fetchpriority="low">
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/katex.min.css" integrity="sha384-qArEAQvOPs1o7K1iAybhs66g8nYTXVt4VLOQ3abu+OMLJyPNfaH4Wpko0X2epHJ+" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/katex.min.js" integrity="sha384-IHT6Yddb0KLCzZaxQ/so1j3xkJ8R6hOkCR06ma9NDHGn0Z4ClKcGtQ6qqsflRPxR" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/contrib/auto-render.min.js" integrity="sha384-bjyGPfbij8/NDKJhSGZNP/khQVgtHUE5exjm4Ydllo42FwIgYsdLO2lXGmRBf5Mz" crossorigin="anonymous"></script>
@@ -91,8 +98,12 @@ header.top .wrap{display:flex;align-items:center;gap:16px;height:62px}
   font:500 13px/1 'IBM Plex Mono',monospace;color:var(--muted)}
 .pal.answered{background:var(--navy);border-color:var(--navy);color:#fff}
 .pal.current{outline:2.5px solid var(--accent);outline-offset:1px}
-.pal.flagged::after{content:"";position:absolute;margin:-15px 0 0 11px;width:6px;height:6px;
-  border-radius:50%;background:var(--gold)}
+.pal.flagged{border:2px solid #8c5700;background:#fff0b5;color:#5c3900;box-shadow:0 0 0 2px #f5ce72;font-weight:700}
+.pal.flagged.answered{background:var(--navy);color:#fff;border-color:#e8b951}
+.pal.flagged::after{content:"⚑";position:absolute;top:-9px;right:-6px;width:18px;height:18px;display:grid;place-items:center;
+  border:1px solid #8c5700;border-radius:4px;background:#fff0b5;color:#5c3900;font:700 15px/1 sans-serif}
+#flagBtn.is-flagged{background:#ffe29a;color:#3e2900;border:2px solid #8c5700;box-shadow:0 0 0 3px #fff2ca;font-weight:700}
+.flag-notice{display:inline-block;padding:4px 9px;border-radius:5px;background:#fff0b5;color:#5c3900;font-size:13px;font-weight:700}
 
 .qcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 26px 22px;margin:14px 0}
 .qhead{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}
@@ -140,7 +151,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 .student-tabs{display:flex;gap:6px;overflow-x:auto;margin-bottom:26px;border-bottom:1px solid var(--line);padding-bottom:10px}.student-tab{padding:12px 16px;border-radius:8px;white-space:nowrap;font-size:15px;color:var(--muted)}.student-tab.active{background:var(--navy);color:white;font-weight:600}.student-tab span{font-size:12px;opacity:.8;margin-left:3px}.dashboard-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}.dash-stat{background:var(--navy);color:white;border-radius:12px;padding:20px;border-top:3px solid var(--gold)}.dash-stat span{display:block;color:#dce3ee;font-size:14px}.dash-stat strong{font-size:34px;font-family:Fraunces,Georgia,serif;display:block;margin-top:7px}.dashboard-columns{display:grid;grid-template-columns:1fr 1fr;gap:20px}.dash-panel{background:white;border:1px solid var(--line);padding:24px;border-radius:12px;margin-bottom:22px;min-width:0}.dash-panel h2{font:600 23px Fraunces,Georgia,serif;color:var(--navy);margin-bottom:12px}.dash-heading{display:flex;gap:12px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}.dash-link{color:var(--navy);font-size:14px;text-decoration:underline;text-underline-offset:4px}.dash-note{font-size:14px;color:var(--muted);line-height:1.6;margin-bottom:14px}.dash-empty{padding:25px 10px;color:var(--muted);line-height:1.7}.dash-notice{padding:16px 20px;border-left:4px solid var(--gold);background:#f5edce;font-size:15px;margin-bottom:22px}.score-trend{display:flex;gap:12px;height:200px;align-items:stretch;margin:20px 0}.trend-column{display:flex;flex:1;min-width:0;align-items:center;flex-direction:column;gap:6px}.trend-value{font-size:14px;font-weight:600;color:var(--navy)}.trend-track{height:140px;width:100%;max-width:40px;background:#edf0f5;display:flex;align-items:flex-end;border-radius:5px;overflow:hidden}.trend-track i{display:block;background:var(--navy);width:100%;border-top:4px solid var(--gold)}.trend-label{font-size:12px;color:var(--muted);white-space:nowrap}.lesson-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:22px}.lesson-card{border:1px solid var(--line);border-left:4px solid #8d98a8;border-radius:9px;padding:18px;margin-bottom:12px}.lesson-card.focus{border-left-color:#b0342c}.lesson-card.practice{border-left-color:#ad810a}.lesson-card.strong{border-left-color:#1f7a4d}.lesson-card-top{display:flex;gap:10px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}.lesson-card h3{font-size:16px;color:var(--navy);line-height:1.5;flex:1;min-width:130px}.priority-label{font-size:13px;font-weight:600;border-radius:5px;padding:4px 7px;background:#edf0f5}.focus .priority-label{background:#fbeceb;color:#94241e}.practice .priority-label{background:#fbf3d9;color:#745600}.strong .priority-label{background:#e7f2ec;color:#1a633f}.lesson-score{display:flex;align-items:baseline;gap:10px;margin-top:16px}.lesson-score strong{font-size:24px;color:var(--navy)}.lesson-score span,.lesson-card p{font-size:14px;color:var(--muted);line-height:1.6}.lesson-meter{height:7px;background:#edf0f5;border-radius:4px;overflow:hidden;margin:10px 0}.lesson-meter i{height:100%;display:block;background:var(--navy)}.priority-guide{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;margin:16px 0}.history-filter{font-size:14px;display:flex;gap:10px;align-items:center}.history-filter select{padding:9px;border:1px solid var(--line);border-radius:7px;background:white;font:inherit}.student-table{overflow-x:auto}.student-table table{width:100%;border-collapse:collapse;font-size:14px;text-align:left}.student-table th{padding:13px 12px;background:var(--navy);color:white;white-space:nowrap}.student-table td{padding:15px 12px;border-bottom:1px solid var(--line)}.history-detail{display:block;font-size:13px;color:var(--muted);margin-top:4px}.history-pager{display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:16px;font-size:14px}.dash-panel .exam-row:last-child{margin-bottom:0}.list{max-width:1200px!important}@media(max-width:850px){.dashboard-columns{grid-template-columns:1fr}.dashboard-stats{grid-template-columns:repeat(2,1fr)}.lesson-grid{grid-template-columns:1fr}}@media(max-width:500px){.dash-panel{padding:18px 14px}.dashboard-stats{gap:10px}.dash-stat{padding:16px 12px}.dash-stat strong{font-size:28px}.student-tab{padding:10px 12px}.score-trend{gap:6px}.trend-label{font-size:12px;white-space:normal}.lesson-card{padding:14px}.history-pager{flex-wrap:wrap}}
 
 .rev.excluded{border-left-color:#8793a3;background:#f2f4f7}.rev.excluded .tag{color:#48576b}
-.full-exam-intro{margin:0 0 18px}.full-exam-intro h2{margin:0 0 5px}.full-exam-intro p{margin:0;color:var(--muted)}.exam-pair{margin-bottom:16px}.module-row{padding-left:0;padding-right:0}.module-row:last-child{border-bottom:0}.pair-score{text-align:right}.pair-score span{display:block;color:var(--muted);font-size:13px}.pair-score strong{font-size:22px;color:var(--navy)}
+.full-exam-intro{margin:0 0 18px}.full-exam-intro h2{margin:0 0 5px}.full-exam-intro p{margin:0;color:var(--muted)}.exam-pair{margin-bottom:16px}.module-row{padding-left:0;padding-right:0}.module-row:last-child{border-bottom:0}.pair-score{text-align:right}.pair-score span{display:block;color:var(--muted);font-size:13px}.pair-score strong{font-size:22px;color:var(--navy)}.pair-score .btn{display:block;margin-top:8px}.review-module{margin-top:28px;scroll-margin-top:24px}.review-module>.dash-heading{padding:14px 0;border-bottom:2px solid var(--gold)}
 
 .stem,.choice-text,.review-choice>span,.rev .exp{white-space:pre-line;overflow-wrap:anywhere;line-height:1.75}
 .choice-text,.review-choice>span{min-width:0}.choice{line-height:1.65;min-height:48px}
@@ -193,7 +204,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 @media(max-width:760px){.formula-panel .formula-layout{grid-template-columns:1fr}.formula-lesson-list{position:static;max-height:240px;grid-template-columns:repeat(2,minmax(0,1fr))}.formula-lesson{padding:19px}}
 @media(max-width:560px){.formula-lesson-list{grid-template-columns:1fr}.formula-lesson{padding:16px}.formula-diagram-grid{grid-template-columns:1fr}.formula-key-point p{font-size:17px}}
 </style>
-<link rel="stylesheet" href="/daily-challenge.css">
+<link rel="stylesheet" href="/daily-challenge.css?v=20261015-group-scores">
 <link rel="stylesheet" href="/english-reading.css">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#14243E">
@@ -206,6 +217,8 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 <script defer src="/portal-install.js"></script>
 <script defer src="/portal-notifications.js"></script>
 <link rel="stylesheet" href="/portal-controls.css">
+<link rel="stylesheet" href="/portal-responsive.css?v=20261030-responsive">
+<link rel="stylesheet" href="/lesson-exams.css?v=20261030-compact">
 <link rel="stylesheet" href="/portal-math-layout.css?v=20261024-glyphs">
 <link rel="stylesheet" href="/portal-devices.css?v=20261030">
 <script src="/portal-devices.js?v=20261030"></script>
@@ -225,7 +238,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 <!-- LOGIN -->
 <section id="vLogin" class="login">
   <h1>Sign in</h1>
-  <p class="sub">Use the username and password your instructor gave you.</p>
+  <p class="sub">Sign in with your username and password.</p>
   <div class="field"><label for="u">Username or email</label><input id="u" autocomplete="username" spellcheck="false"></div>
   <div class="field"><label for="p">Password</label><input id="p" type="password" autocomplete="current-password"></div>
   <button class="btn" id="inBtn" style="width:100%;margin-top:8px">Sign in</button>
@@ -255,7 +268,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
     <div class="spacer"></div>
     <button type="button" class="btn-ghost hidden" id="satCalculatorToggle" aria-expanded="false" aria-controls="satCalculatorPanel">Calculator</button>
     <a class="btn-ghost hidden" id="satDesmos" href="https://www.desmos.com/testing/collegeboard/graphing" target="_blank" rel="noopener noreferrer" aria-label="Open official SAT Desmos graphing calculator in a new tab">SAT Desmos ↗</a>
-    <button class="btn-ghost" id="flagBtn">Flag</button>
+    <button class="btn-ghost" id="flagBtn" aria-pressed="false">⚑ Flag</button>
     <button class="btn btn-accent" id="finishBtn">Submit exam</button>
   </div></div>
   <aside id="satCalculatorPanel" hidden role="region" aria-labelledby="satCalculatorTitle">
@@ -285,10 +298,11 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 <script src="/portal-math.js?v=20261021-currency"></script>
 <script src="/sat-calculator-config.js"></script>
 <script src="/sat-calculator.js"></script>
-<script src="/daily-challenge.js"></script>
-<script src="/lesson-taxonomy.js"></script>
-<script src="/revision-formulas.js?v=20261012-all-groups"></script>
-<script src="/final-revision.js?v=20261012-all-groups"></script>
+<script src="/daily-challenge.js?v=20261015-group-scores"></script>
+<script src="/lesson-taxonomy.js?v=20261024-est1-no-logs"></script>
+<script src="/act2-course.js?v=20261023-act2"></script>
+<script src="/revision-formulas.js?v=20261024-no-source-links"></script>
+<script src="/final-revision.js?v=20261015-diagnosis-coherence-v2"></script>
 <script>
 /* ============================ CONFIG ============================ */
 const SB_URL = 'https://wfhurjyouemahvkcfkdz.supabase.co';
@@ -328,6 +342,9 @@ function math(el) {
   if (window.PortalMath) window.PortalMath.render(el);
 }
 const FRIENDLY = {
+  daily_group_not_assigned:'You are no longer assigned to this group. Reload Daily practice to choose an available group.',
+  daily_date_changed:'A new Cairo day has started. Refresh the quiz before submitting.',
+  invalid_group:'Choose an assigned group for this quiz.',
   exam_content_under_review: 'This exam is being checked by your instructor. Your saved results are safe; choose another exam for now.',
   question_content_under_review: 'This question is being checked. Return to practice and choose another set.',
   daily_content_under_review: 'Today’s quiz is being checked by your instructor. Your existing points are safe; try lesson practice for now.',
@@ -351,7 +368,7 @@ const FRIENDLY = {
   not_assigned_or_window_closed: 'This exam is not open for you right now.',
   not_enrolled_in_track: 'Practice access is unavailable or has ended. Your saved results remain available; contact your instructor to renew.',
   exam_not_published: 'This exam has not been released yet.',
-  account_suspended: 'This account is suspended. Contact your instructor.',
+  account_suspended: 'Your account is not active yet. If you just registered, wait for instructor approval. Otherwise, contact your instructor.',
   not_enough_topic_history: 'Complete at least three questions in a topic first, then we can identify your weakest topics.',
   not_enough_drill_questions: 'There are not enough ready questions in those topics yet. Try your mistake notebook for now.',
 };
@@ -383,7 +400,7 @@ async function boot() {
   if (ST.tracks.length === 0) {
     show('vTracks');
     $('trackGrid').innerHTML = `<p style="color:var(--muted)">No tracks are assigned to your account yet.
-      Ask your instructor to enrol you in SAT or EST.</p>`;
+      Ask your instructor to enrol you in a course.</p>`;
     return;
   }
   if (ST.tracks.length === 1) return openTrack(ST.tracks[0]);
@@ -426,7 +443,7 @@ async function openTrack(t){
   if(request!==dashboardRequest)return;
   if(!ok)throw new Error(friendly(json.error));
   DAILY_DRAFT={};DRILL_DRAFT={};
-  DASH={...DASH,access,revisionVisible:controls.json.revision_visible,view:access.practice_open?'daily':'history',daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyPage:0,historyType:'all',searchTerm:'',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],summary:json.dashboard?.summary||{}};
+  DASH={...DASH,access,revisionVisible:controls.json.revision_visible,view:access.practice_open?'daily':'history',daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyPage:0,historyType:'all',searchTerm:'',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],dailyGroups:json.dashboard?.daily_groups||[],repeatQuestions:json.dashboard?.repeat_questions??null,summary:json.dashboard?.summary||{}};
   paintDashboard();
   if(access.practice_open)refreshDaily();
  }catch(e){if(request===dashboardRequest){$('examList').innerHTML=`<div class="dash-empty" role="alert">${esc(e.message)}<br><button class="btn" id="retryDashboard">Try again</button></div>`;$('retryDashboard').onclick=()=>openTrack(t);}}
@@ -470,7 +487,7 @@ function wireFormulas(){
  document.querySelectorAll('[data-formula-lesson]').forEach(b=>b.onclick=()=>{FORMULAS.lesson=b.dataset.formulaLesson;paintDashboardContent();});
  document.querySelector('[data-reference-main]')?.addEventListener('click',()=>setDashboardView('overview'));
  const practice=document.querySelector('[data-formulas-to-questions]');
- if(practice){practice.disabled=DASH.access?.practice_open===false||(ST.track?.id!=='est_eng'&&DASH.revisionVisible===false);practice.onclick=()=>setDashboardView(ST.track?.id==='est_eng'?'drill':'revision');}
+ if(practice){practice.disabled=DASH.access?.practice_open===false||(!['est_eng','act2'].includes(ST.track?.id)&&DASH.revisionVisible===false);practice.onclick=()=>setDashboardView(ST.track?.id==='act2'?'lesson_exam':ST.track?.id==='est_eng'?'drill':'revision');}
 }
 function searchSection(){
  const term=DASH.searchTerm.trim().toLocaleLowerCase();
@@ -514,6 +531,8 @@ function moduleState(e){
 }
 function fullExamSection(){
  const modules=DASH.exams.filter(e=>e.assessment_type==='full_exam');
+ if(ST.track?.id==='act2')return `<div class="full-exam-intro"><h2>ACT 2 Math practice exams</h2><p>50 multiple-choice questions · 60 minutes · Use the answer labels shown with each question.</p><p class="dash-note">The course-bank papers mix Algebra II and Precalculus. The uploaded Practice Tests 01–10 preserve the supplied compilation’s order, diagrams, and four- or five-choice formats; their topic mix follows that source. These are practice papers, not newly verified official exam forms. Scores are raw totals. The review identifies printed source keys and any independently checked corrections.</p><p><a href="https://www.act.org/content/dam/act/unsecured/documents/2022/ACT-International-Subject-Test-Student-Guides.pdf" target="_blank" rel="noopener noreferrer">Official ACT Mathematics II guide</a></p></div><section class="dash-panel"><h2>Full practice papers</h2>${modules.length?modules.map(assessmentRow).join(''):'<div class="dash-empty">No full practice papers are assigned yet.</div>'}</section>`;
+
  if(ST.track?.id==='est'||ST.track?.id==='est2'){
   const est2=ST.track.id==='est2';
   const intro=est2
@@ -528,15 +547,16 @@ function fullExamSection(){
   if(rows.length>=2){pairs.push({code,rows:rows.slice(0,2)});singles.push(...rows.slice(2));}
   else singles.push(...rows);
  });
+ const hasOctoberRoutes=pairs.some(({code})=>/^sat-october-2026-paper-[12]-(easy|hard)$/.test(code));
  const pairHtml=pairs.map(({rows})=>{
   const m1=rows[0],m2=rows[1],s1=moduleState(m1),s2=moduleState(m2);
   const complete=s1.done&&s2.done&&s1.a.score!=null&&s2.a.score!=null;
   const title=(m1?.title||'SAT Practice Exam').replace(/\s+[—-]\s+Module\s+1$/i,'');
   const combined=complete?`${s1.a.score+s2.a.score}/${s1.a.total+s2.a.total}`:'—';
-  const row=(e,s,locked)=>`<div class="exam-row module-row"><div style="flex:1;min-width:170px"><h3>Module ${e.module_number}</h3><div class="meta">${e.questions} questions · 35 min${e.content_ready===false?' · Content under review':locked?' · Complete Module 1 first':''}</div></div>${s.done?`<span class="badge done">${s.a.score==null?'Awaiting grading':s.a.score+'/'+s.a.total}</span>`:''}<button class="btn" ${s.done?`data-review="${s.a.id}"`:`data-start="${e.id}"`} ${locked||(!s.done&&e.content_ready===false)||(!s.done&&!s.live&&!e.open)?'disabled':''}>${s.label}</button></div>`;
-  return `<article class="dash-panel exam-pair"><div class="dash-heading"><div><h2>${esc(title)}</h2><p class="dash-note">2 modules · 22 questions each · 35 minutes per module</p></div><div class="pair-score"><span>Combined</span><strong>${combined}</strong></div></div>${row(m1,s1,false)}${row(m2,s2,!s1.done)}</article>`;
+  const row=(e,s,locked)=>`<div class="exam-row module-row"><div style="flex:1;min-width:170px"><h3>Module ${e.module_number}</h3><div class="meta">${e.questions} questions · ${Math.round(e.duration_seconds/60)} min${e.content_ready===false?' · Content under review':locked?' · Complete Module 1 first':''}</div></div>${s.done?`<span class="badge done">${s.a.score==null?'Awaiting grading':s.a.score+'/'+s.a.total}</span>`:''}<button class="btn" ${s.done?`data-review="${s.a.id}"`:`data-start="${e.id}"`} ${locked||(!s.done&&e.content_ready===false)||(!s.done&&!s.live&&!e.open)?'disabled':''}>${s.label}</button></div>`;
+  return `<article class="dash-panel exam-pair"><div class="dash-heading"><div><h2>${esc(title)}</h2><p class="dash-note">2 modules · ${m1.questions} + ${m2.questions} questions · ${Math.round(m1.duration_seconds/60)} + ${Math.round(m2.duration_seconds/60)} minutes</p></div><div class="pair-score"><span>Combined</span><strong>${combined}</strong>${s1.done&&s2.done?`<button class="btn" data-review="${esc(s2.a.id)}">Review full exam</button>`:''}</div></div>${row(m1,s1,false)}${row(m2,s2,!s1.done)}</article>`;
  }).join('');
- return `<div class="full-exam-intro"><h2>SAT practice exams</h2><p>Each exam has two separately timed 35-minute modules. Complete Module 1 to unlock Module 2; your combined result is out of 44.</p></div>${pairHtml}${singles.length?`<section class="dash-panel"><h2>Other full exams</h2>${singles.map(assessmentRow).join('')}</section>`:''}${!pairs.length&&!singles.length?'<div class="dash-empty">No full exams are assigned yet.</div>':''}`;
+ return `<div class="full-exam-intro"><h2>SAT practice exams</h2><p>Standard mocks have two separately timed 35-minute modules with 22 questions each. Complete Module 1 to unlock Module 2. Uploaded source papers keep their original question counts; each exam shows its own total.</p>${hasOctoberRoutes?'<p class="dash-note">October 2026 trial papers: choose one Easy or Hard route per paper before starting. Each route is fixed; your score does not choose the next module. The two routes for the same paper share Module 1, so taking both repeats the baseline. These source papers use 35-minute practice timers and raw scores, without an official SAT scaled score.</p>':''}</div>${pairHtml}${singles.length?`<section class="dash-panel"><h2>Other full exams</h2>${singles.map(assessmentRow).join('')}</section>`:''}${!pairs.length&&!singles.length?'<div class="dash-empty">No full exams are assigned yet.</div>':''}`;
 }
 function historySection(){
  const rows=DASH.history.filter(h=>DASH.historyType==='all'||h.assessment_type===DASH.historyType);
@@ -613,11 +633,12 @@ function renderPalette() {
   $('palette').innerHTML = qs.map((q, i) =>
     `<button class="pal ${q.response != null && q.response !== '' ? 'answered' : ''}
       ${i === ST.idx ? 'current' : ''} ${ST.flags.has(q.id) ? 'flagged' : ''}"
-      data-i="${i}" style="position:relative">${i + 1}</button>`).join('');
+      data-i="${i}" aria-label="Question ${i+1}${q.response!=null&&q.response!==''?', answered':''}${ST.flags.has(q.id)?', flagged for review':''}" style="position:relative">${i + 1}</button>`).join('');
   $('palette').querySelectorAll('.pal').forEach(b =>
     b.onclick = () => { captureInput(); ST.idx = +b.dataset.i; renderQ(); renderPalette(); });
   const done = qs.filter(q => q.response != null && q.response !== '').length;
-  $('progress').textContent = `${done} of ${qs.length} answered`;
+  const flagCount=qs.filter(q=>ST.flags.has(q.id)).length;
+  $('progress').textContent = `${done} of ${qs.length} answered${flagCount?' · '+flagCount+' flagged':''}`;
 }
 
 // The English import stores an entire marked passage in assets.html, and
@@ -665,7 +686,7 @@ function renderQ() {
       <div class="gridin-hint">Fractions and decimals are both accepted — 3/4 or 0.75.</div>`;
   }
   $('qcard').innerHTML = `<div class="qhead"><span class="qnum">QUESTION ${ST.idx + 1}</span>
-    <span class="qnum" style="color:var(--accent)">${esc(q.topic || '')}</span></div>
+    <span class="qnum" style="color:var(--accent)">${esc(q.topic || '')}</span>${ST.flags.has(q.id)?'<span class="flag-notice">⚑ Flagged for review</span>':''}</div>
     ${ST.run.exam?.track_id==='est'?'<p class="dash-note" style="margin-bottom:14px"><a href="/exams/est-march-2026/reference.png" target="_blank" rel="noopener">Formula reference ↗</a></p>':''}
     ${readingQuestion(q,ST.run.exam?.track_id||ST.track?.id,body)}${reportButton(q.id,'exam question')}`;
   math($('qcard'));
@@ -678,7 +699,11 @@ function renderQ() {
   }
   $('prevBtn').disabled = ST.idx === 0;
   $('nextBtn').disabled = ST.idx === ST.run.questions.length - 1;
-  $('flagBtn').textContent = ST.flags.has(q.id) ? 'Unflag' : 'Flag';
+  const flagged=ST.flags.has(q.id);
+  $('flagBtn').textContent = flagged ? '⚑ Flagged' : '⚑ Flag';
+  $('flagBtn').classList.toggle('is-flagged',flagged);
+  $('flagBtn').setAttribute?.('aria-pressed',String(flagged));
+  $('flagBtn').setAttribute?.('aria-label',flagged?'Flagged for review. Activate to remove flag.':'Flag this question for review.');
 }
 
 /* Lane A — the answer goes straight to Postgres under RLS. No function call,
@@ -764,15 +789,9 @@ async function openReview(attemptId) {
   alert(friendly(json.error));
 }
 
-function paintReview(r,nextExamId=null) {
-  const s = r.attempt || r.score || {};
-  const scaled = s.scaled_score, raw = s.score, total = s.total;
-  let html = `<div class="review-menu"><button class="btn-ghost" id="reviewMainMenu">← Main menu</button>${reportButton('','exam review')}</div><div class="score">
-      <div class="lbl">${esc((r.exam && r.exam.title) || 'RESULT')}</div>
-      <div class="big">${scaled != null ? scaled : (raw != null ? raw + '/' + total : 'Awaiting grading')}</div>
-      <div class="raw">${scaled != null && raw != null ? `${raw} of ${total} correct` : ''}
-        ${s.status === 'expired' ? ' · time expired' : ''}</div></div>`;
-
+function reviewBody(r) {
+  const s=r.attempt||r.score||{},raw=s.score,total=s.total;
+  let html='';
   const excluded=(r.items||[]).filter(it=>it.correct?.void).length;
   if(excluded)html+=`<div class="locked">${r.items.length} questions were presented. ${excluded} defective questions are excluded; your score is based on ${total} valid questions.</div>`;
   if (!r.review_open) {
@@ -785,6 +804,23 @@ function paintReview(r,nextExamId=null) {
       ${it.type==='mcq'?`<div class="review-choices">${(it.choices||[]).map(c=>`<div class="review-choice"><b>${esc(c.key)}.</b><span>${esc(c.text)}</span></div>`).join('')}</div>`:''}
       <div class="ans"><div><b>Your answer:</b> ${esc(fmt(it.response)) || '<i>blank</i>'}</div><div><b>Correct:</b> ${esc(fmt(it.correct))}</div></div>
       ${it.explanation ? `<div class="exp">${esc(it.explanation)}</div>` : ''}`,`<div class="stem" style="margin:9px 0 0;font-size:16px">${esc(it.stem)}</div>`)}${reportButton(it.id||it.question_id,'exam review')}</div>`).join('');
+  }
+  return html;
+}
+function paintReview(r,nextExamId=null) {
+  const s = r.attempt || r.score || {};
+  const scaled = s.scaled_score, raw = s.score, total = s.total;
+  let html = `<div class="review-menu"><button class="btn-ghost" id="reviewMainMenu">← Main menu</button>${reportButton('','exam review')}</div><div class="score">
+      <div class="lbl">${esc((r.exam && r.exam.title) || 'RESULT')}</div>
+      <div class="big">${scaled != null ? scaled : (raw != null ? raw + '/' + total : 'Awaiting grading')}</div>
+      <div class="raw">${r.full_exam?'Full exam · Module 1 + Module 2':''}${scaled != null && raw != null ? `${raw} of ${total} correct` : ''}
+        ${s.status === 'expired' ? ' · time expired' : ''}</div></div>`;
+  if(r.full_exam&&Array.isArray(r.modules)){
+    html+=`<nav class="review-menu" aria-label="Exam modules">${r.modules.map(m=>`<a class="btn-ghost" href="#reviewModule${Number(m.module_number)}">Module ${Number(m.module_number)}</a>`).join('')}</nav>`;
+    html+=r.modules.map(m=>`<section class="review-module" id="reviewModule${Number(m.module_number)}" aria-labelledby="reviewModuleTitle${Number(m.module_number)}"><div class="dash-heading"><h2 id="reviewModuleTitle${Number(m.module_number)}">Module ${Number(m.module_number)}</h2><strong>${m.attempt?.score==null?'Awaiting grading':`${Number(m.attempt.score)}/${Number(m.attempt.total)}`}</strong></div>${reviewBody(m)}</section>`).join('');
+  }else{
+    if(r.full_exam_pending)html+='<p class="locked">Complete both modules to see your full exam result.</p>';
+    html+=reviewBody(r);
   }
   html += `<div class="nav" style="margin-top:22px">${nextExamId?'<button class="btn" id="nextModuleBtn">Start Module 2</button>':''}<button class="btn" id="backBtn">Back to exams</button></div>`;
   $('vReview').innerHTML = html;
@@ -898,13 +934,14 @@ const updateTopButton=()=>topButton.classList.toggle('show',window.scrollY>420);
 window.addEventListener('scroll',updateTopButton,{passive:true});
 topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 </script>
-<script src="/portal-controls.js?v=20261015-diagnosis-evidence"></script>
+<script src="/portal-controls.js?v=20261023-act2"></script>
 <script src="/exam-activity.js"></script>
-<link rel="stylesheet" href="/portal-navigation.css">
+<link rel="stylesheet" href="/portal-navigation.css?v=20261030-responsive">
 <script src="/portal-navigation.js?v=20261012-all-groups"></script>
 <link rel="stylesheet" href="/portal-management.css?v=20261010">
-<script src="/portal-management.js?v=20261015-feature-audit"></script>
+<script src="/portal-management.js?v=20261023-act2"></script>
+<script src="/lesson-exam-catalog.js?v=20261030-compact"></script>
+<script src="/assessment-index.js?v=20261030"></script>
+<script src="/lesson-exams.js?v=20261030-responsive"></script>
 </body>
 </html>
-
-

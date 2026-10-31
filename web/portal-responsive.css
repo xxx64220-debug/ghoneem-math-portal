@@ -1,0 +1,76 @@
+/* Keep the page within the viewport. Wide data and math scroll in their own panels. */
+html,body{min-width:0;width:100%}
+.wrap,#examList,#dashboardContent,#view{min-width:0}
+fieldset{min-width:0;max-width:100%}
+legend{max-width:100%;overflow-wrap:anywhere}
+.dashboard-stats>*,.dashboard-columns>*,.lesson-grid>*,.grid>*,
+.revision-filters>*,.revision-lessons>*,.group-cards>*,.finals-clusters>*{min-width:0}
+.dash-stat,.stat,.card,.dash-panel,.lesson-card,.group-card,.revision-lesson,
+.daily-top>div,.streak-heading>div,.exam-row>div,.management-toolbar>label{min-width:0;overflow-wrap:anywhere}
+.field select,.field input:not([type=checkbox]):not([type=radio]),.field textarea,
+.daily-group-select,.daily-group-select select{width:100%;min-width:0;max-width:100%}
+.daily-group-select{max-width:520px}
+.assessment-tools label,.history-filter{min-width:0;flex-wrap:wrap}
+.assessment-tools select,.history-filter select,.practice-mode select{min-width:0;max-width:100%}
+.table-wrap,.student-table,.fig,.fig-table{min-width:0;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+.stem,.daily-stem,.daily-solution,.mistake-explanation,.teaching-question,
+.builder-stem,.builder-choices li,.rev .exp,.choice-text,.daily-option>span,
+.review-choice>span{min-width:0;max-width:100%;overflow-x:auto;overflow-wrap:anywhere}
+.daily-question legend{display:flex;align-items:flex-start;gap:8px;width:100%}
+.daily-number{flex:0 0 27px;margin-right:0}
+.daily-stem{display:block;flex:1}
+.daily-tag{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.management-fieldset label,.group-member-list label,.control-question-list label{min-width:0;overflow-wrap:anywhere}
+.management-fieldset input[type=checkbox],.group-member-list input[type=checkbox],
+.control-question-list input[type=checkbox]{flex-shrink:0}
+dialog{max-width:calc(100% - 16px)}
+dialog form,dialog .field,dialog fieldset{min-width:0;max-width:100%}
+
+/* Account/device/install actions also need room at tablet widths. Keep the
+   exam toolbar's sticky offset correct when the masthead grows to two rows. */
+@media(max-width:900px){
+ header.top{position:static}
+ header.top .wrap{height:auto;min-height:62px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px}
+ header.top .wrap>*{min-width:0;max-width:100%}
+ header.top button{white-space:normal;overflow-wrap:anywhere}
+ .runbar{top:0}
+ .runbar .wrap{height:auto;min-height:58px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px;gap:8px}
+ .runbar .saving{order:3;flex:1 0 100%;min-height:18px}
+ .runbar button,.runbar a{min-width:0;max-width:100%;white-space:normal}
+}
+
+@media(max-width:850px){
+ .dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .dashboard-columns,.lesson-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:640px){
+ .wrap{padding-left:max(14px,env(safe-area-inset-left));padding-right:max(14px,env(safe-area-inset-right))}
+ .brand,.track-chip,.head h2{min-width:0;overflow-wrap:anywhere}
+ header.top .spacer,header.top .sp{display:none}
+ .student-tabs,.portal-navigation,.admin-section-nav{min-width:0;max-width:100%}
+ .student-tabs{overflow-x:auto;overscroll-behavior-x:contain}
+ .daily-top,.streak-heading{align-items:flex-start;flex-wrap:wrap}
+ .daily-top>div{max-width:100%}
+ .daily-points{flex-wrap:wrap;padding:12px 16px}
+ .history-filter,.assessment-tools label{width:100%;gap:8px}
+ .history-filter select,.assessment-tools select{flex:1;width:100%}
+ .practice-mode{min-width:0;flex-basis:100%}
+ .management-toolbar label{min-width:0}
+ .builder-heading,.builder-pagination{min-width:0;flex-wrap:wrap}
+ .controls-card .control-actions>button,.actions>button,.nav>button{min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}
+ .back-to-top{right:max(12px,env(safe-area-inset-right));bottom:max(12px,env(safe-area-inset-bottom))}
+}
+/* Readable controls avoid focus zoom on phones without disabling page zoom. */
+@media(max-width:700px){
+ .field input:not([type=checkbox]):not([type=radio]),.field select,.field textarea,
+ .portal-navigation select,.admin-section-nav select,.device-panel input,.device-panel select{
+  font-size:16px;
+ }
+ .device-panel button,.device-panel input,.device-panel select{min-height:44px}
+}
+@media(pointer:coarse){.pal{width:44px;height:44px}}
+@media(max-width:360px){
+ .dashboard-stats,.grid{grid-template-columns:minmax(0,1fr)}
+ .streak-week{gap:3px}
+ .streak-day{min-width:0;overflow-wrap:anywhere}
+}

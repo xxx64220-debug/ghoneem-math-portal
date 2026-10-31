@@ -14,7 +14,12 @@ nav.tabs .tab{font-size:14px;min-height:44px;padding:10px 12px}
  .portal-navigation select{width:100%}
  .student-tabs{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:thin;padding-bottom:8px}
  nav.tabs .wrap:first-child{display:none}
- nav.tabs .admin-section-nav{display:flex;padding:12px 14px;gap:10px}
+ nav.tabs .admin-section-nav{display:grid;grid-template-columns:minmax(0,1fr) auto;padding:12px 14px;gap:10px}
+ nav.tabs .admin-section-nav label{grid-column:1/-1;margin:0}
  nav.tabs .admin-section-nav select{min-height:46px;min-width:0;flex:1}
+}
+@media(max-width:400px){
+ .portal-navigation,nav.tabs .admin-section-nav{grid-template-columns:minmax(0,1fr)}
+ .portal-navigation button,nav.tabs .admin-section-nav button{width:100%}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

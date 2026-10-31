@@ -34,7 +34,16 @@ for(const track of ['sat','est','est2','est_eng'])test('closed practice preserve
  assert([...d.querySelectorAll('[data-diagnosis-revision], [data-go="drill"]')].every(b=>b.disabled));
  }finally{f.dom.window.close();}
 });
-test('staff reference script is loaded before its navigation extension',()=>{const admin=read('admin.html');assert(admin.includes('formula-reference.css'));assert(admin.indexOf('/lesson-taxonomy.js')<admin.indexOf('/revision-formulas.js'));assert(admin.indexOf('/revision-formulas.js')<admin.indexOf('hardest-questions.js'));assert(admin.includes('data-v="formulasAdmin"'));});
+test('staff reference script executes before its navigation extension',()=>{
+ const dom=new JSDOM(read('admin.html'));
+ try{
+  const doc=dom.window.document,scripts=[...doc.scripts].map(s=>(s.getAttribute('src')||'').split('?')[0]);
+  assert(doc.querySelector('link[href^="/formula-reference.css"]'));
+  assert(scripts.indexOf('/lesson-taxonomy.js')<scripts.indexOf('/revision-formulas.js'));
+  assert(scripts.indexOf('/revision-formulas.js')<scripts.indexOf('hardest-questions.js'));
+  assert(doc.querySelector('[data-v="formulasAdmin"]'));
+ }finally{dom.window.close();}
+});
 
 test('an unmatched diagnosed topic never silently displays another reference lesson',()=>{
  const f=student('sat');try{const html=f.w.revisionFormulaPanel({track:'sat',selectedLesson:'Unknown topic',standalone:true});assert.match(html,/No exact reference match/);assert.match(html,/<h3>Unknown topic<\/h3>/);}finally{f.dom.window.close();}
@@ -54,9 +63,11 @@ for(const track of ['sat','est','est2'])test('student bottom skills reject inval
   f.w.DASH.lessons=rows;f.w.setDashboardView('finalsDiagnosis');await new Promise(r=>setImmediate(r));
   const cards=[...f.w.document.querySelectorAll('.diagnosis-bottom .lesson-card')];
   assert.equal(cards.length,2);assert.match(cards[0].textContent,/Circles.*25%/s);assert.match(cards[1].textContent,/Functions.*50%/s);
-  const {weakSkills}=require('../web/hardest-questions.js');
+  // The hosted checkout is ESM; evaluate the browser/CommonJS wrapper directly.
+  const context={module:{exports:{}}};require('node:vm').runInNewContext(read('hardest-questions.js'),context);
+  const {weakSkills}=context.module.exports;
   const staff=weakSkills(rows.map(x=>({...x,questions_seen:x.seen})),{track});
-  assert.deepEqual(cards.map(x=>x.querySelector('[data-diagnosis-formulas]').dataset.diagnosisFormulas),staff.map(x=>x.lesson));
+  assert.deepEqual(cards.map(x=>x.querySelector('[data-diagnosis-formulas]').dataset.diagnosisFormulas),Array.from(staff,x=>x.lesson));
   assert.equal(rows[0].lesson,' Circles ','source data is preserved');
  }finally{f.dom.window.close();}
 });

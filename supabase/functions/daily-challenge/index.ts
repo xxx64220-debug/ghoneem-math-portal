@@ -13,6 +13,9 @@ Deno.serve(serve(async (req) => {
   const track = requestUrl ? requestUrl.searchParams.get("track") : payload?.track;
   if (!["sat", "est", "est2", "est_eng"].includes(track)) throw new ApiError("invalid_track", 400);
 
+  const group = requestUrl ? requestUrl.searchParams.get("group_id") : payload?.group_id;
+  if (group != null && (typeof group !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(group))) throw new ApiError("invalid_group",400);
+  if (payload?.day != null && (typeof payload.day!=="string" || payload.day!==new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Cairo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()))) throw new ApiError("daily_date_changed",409);
   const db = admin();
   let result;
   if (req.method === "GET" && requestUrl?.searchParams.get("view") === "notebook") {
@@ -22,7 +25,7 @@ Deno.serve(serve(async (req) => {
   } else if (req.method === "GET" && requestUrl?.searchParams.get("view") === "drill") {
     result = await db.rpc("practice_drill_state", { p_user: me.id, p_track: track });
   } else if (req.method === "GET") {
-    result = await db.rpc("daily_state", { p_user: me.id, p_track: track });
+    result = await db.rpc("daily_group_state", { p_user: me.id, p_track: track, p_group:group??null });
   } else if (payload?.action === "notebook_answer") {
     if (typeof payload.question_id !== "string" || typeof payload.answer !== "string") throw new ApiError("invalid_answer", 400);
     result = await db.rpc("practice_notebook_answer", { p_user: me.id, p_track: track, p_question: payload.question_id, p_answer: payload.answer });
@@ -35,12 +38,12 @@ Deno.serve(serve(async (req) => {
   } else if (payload?.action === "submit") {
     if (!payload.answers || typeof payload.answers !== "object" || Array.isArray(payload.answers))
       throw new ApiError("invalid_answers", 400);
-    result = await db.rpc("daily_submit", {
-      p_user: me.id, p_track: track, p_answers: payload.answers,
+    result = await db.rpc("daily_group_submit", {
+      p_user: me.id, p_track: track, p_answers: payload.answers, p_group:group??null, p_day:payload.day??null,
     });
   } else if (payload?.action === "mark" && ["focus", "review"].includes(payload.task)) {
-    result = await db.rpc("daily_mark", {
-      p_user: me.id, p_track: track, p_task: payload.task,
+    result = await db.rpc("daily_group_mark", {
+      p_user: me.id, p_track: track, p_task: payload.task, p_group:group??null, p_day:payload.day??null,
     });
   } else throw new ApiError("invalid_action", 400);
   if (result.error) throw sqlError(result.error);

@@ -62,7 +62,7 @@
     const lessons=new Map();
     for(const row of rows||[]){
       const lesson=String(row.lesson||'').trim(),seen=Number(row.questions_seen),percent=Number(row.percent);
-      if((row.track_id&&row.track_id!==track)||!lesson||['Mixed / untagged','Unclassified questions'].includes(lesson)||row.percent==null||String(row.percent).trim()===''||!Number.isFinite(percent)||percent<0||percent>100||!Number.isFinite(seen)||seen<3)continue;
+      if((row.track_id&&row.track_id!==track)||row.classified===false||!lesson||['Mixed / untagged','Unclassified questions'].includes(lesson)||row.percent==null||String(row.percent).trim()===''||!Number.isFinite(percent)||percent<0||percent>100||!Number.isFinite(seen)||seen<3)continue;
       if(exam&&(row.classified!==true||!Number.isInteger(row.missed)||row.missed<0||row.missed>seen))continue;
       const prior=lessons.get(lesson),item={lesson,questions_seen:seen,percent,...(exam?{missed:row.missed}: {})};
       if(!prior||seen>prior.questions_seen||(seen===prior.questions_seen&&percent<prior.percent))lessons.set(lesson,item);
@@ -95,7 +95,7 @@
       const shared=rankLessons(members).filter(x=>x.count===members.length).map(x=>x.lesson);
       clusters.push({anchor:anchor.lesson,students:members,shared});remaining=remaining.filter(x=>!ids.has(x.user_id));
     }
-    return {students:ordered,common:rankLessons(reliable),clusters,insufficient,individual:remaining,maintenance:reliable.filter(x=>!x.weak.length)};
+    return {students:ordered,common:rankLessons(ordered),clusters,insufficient,individual:remaining,maintenance:reliable.filter(x=>!x.weak.length)};
   }
   const api={create,weakSkills,buildGroupPlan};
   if(typeof module==='object'&&module.exports)module.exports=api;
@@ -103,15 +103,15 @@
 })(typeof globalThis!=='undefined'?globalThis:this);
 
 
-/* ================= EST FINALS DIAGNOSIS: ADMIN REPORT =================
-   Read-only, additive report built from existing results_feed and
-   student_by_lesson views. No grading or exam workflow is changed.
+/* ================= COURSE DIAGNOSIS: ADMIN REPORT =====================
+   Read-only report from the course / group scoped staff_diagnosis RPC,
+   sharing canonical distinct-question evidence with student Diagnosis.
    Error causes remain teacher-classified; per-question duration is not inferred.
 ====================================================================== */
 (function(){
  if(typeof document==='undefined')return;
  function escFinal(v){return String(v??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));}
- const TRACK_LABELS={sat:'SAT Math',est:'EST I Math',est2:'EST II Math',est_eng:'EST English'};
+ const TRACK_LABELS={sat:'SAT Math',est:'EST I Math',est2:'EST II Math',est_eng:'EST English',act2:'ACT 2 Math'};
  let diagnosisRequest=0,referenceSelection={track:null,lesson:''};
  function diagnosisTrack(){if(TRACK_LABELS[ST.track])return ST.track;const available=ST.tracks?.filter(t=>TRACK_LABELS[t.id]);return available?.length?(available.find(t=>t.id==='est')||available[0]).id:'est';}
  function diagnosisTrackChooser(track){
@@ -123,6 +123,7 @@
    const track=diagnosisTrack();if(referenceSelection.track!==track)referenceSelection={track,lesson:''};
    document.getElementById('view').innerHTML='<div class="control-bar">'+diagnosisTrackChooser(track)+'</div>'+revisionFormulaPanel({track,selectedLesson:referenceSelection.lesson,standalone:true});
    wireDiagnosisTrack();
+   const refresh=document.getElementById('finalsDiagnosisRefresh');if(refresh)refresh.onclick=()=>render();
    document.querySelectorAll('[data-formula-lesson]').forEach(b=>b.onclick=()=>{referenceSelection.lesson=b.dataset.formulaLesson;formulasAdmin();});
    document.querySelector('[data-reference-main]')?.addEventListener('click',()=>{ST.view='overview';render();});
    document.querySelector('[data-formulas-to-questions]')?.addEventListener('click',()=>{ST.track=track;ST.view='exams';render();});
@@ -146,19 +147,18 @@
    const result=i=>settled[i].status==='fulfilled'&&!settled[i].value?.error?settled[i].value:null;
    const groupData=result(0),memberData=result(1),examData=result(2),revision=result(3);
    const groups=(memberData?groupData?.data||[]:[]).filter(x=>x.track_id===track),members=memberData?.data||[];
-   const rosterIds=new Set(enrolled.map(x=>x.user_id));
+   const rosterIds=new Set(enrolled.filter(x=>x.practice_open!==false).map(x=>x.user_id));
    const groupIds=id=>[...new Set(members.filter(x=>x.group_id===id&&rosterIds.has(x.user_id)).map(x=>x.user_id))];
-   const seven=groups.filter(g=>groupIds(g.id).length===7);
-   const defaultGroup=groups.length===1&&groupIds(groups[0].id).length?groups[0].id:seven.length===1?seven[0].id:'';
-   let selected=new Set(defaultGroup?groupIds(defaultGroup):enrolled.length===7?enrolled.map(x=>x.user_id):[]);
+   const defaultGroup=groups.length===1&&groupIds(groups[0].id).length?groups[0].id:'';
+   let selected=new Set(defaultGroup?groupIds(defaultGroup):[]);
    const retest=(examData?.data||[]).find(x=>x.track_id===track&&/weakness|retest|diagnos|assessment/i.test(x.title)&&x.is_published);
    let scope='',examEvidence=null,examError='',examLoading=false,request=0;
    const assessments=(examData?.data||[]).filter(x=>x.track_id===track&&['full_exam','lesson_exam'].includes(x.assessment_type));
    panel.innerHTML='<div class="head"><h2>Group planning</h2><span class="pill">Read only</span></div>'+
      '<div class="control-bar"><div class="field"><label for="finalsEvidenceScope">Evidence scope</label><select id="finalsEvidenceScope"><option value="">Overall</option>'+assessments.map(e=>'<option value="'+escFinal(e.id)+'">'+escFinal(e.title)+' · '+(e.assessment_type==='full_exam'?'Full exam':'Lesson exam')+(assessments.filter(x=>x.title===e.title).length>1?' · '+escFinal(e.id.slice(0,8)):'')+'</option>').join('')+'</select></div><div class="field"><label for="finalsClass">Class</label><select id="finalsClass"><option value="">Choose students below</option>'+groups.map(g=>'<option value="'+escFinal(g.id)+'" '+(g.id===defaultGroup?'selected':'')+'>'+escFinal(g.name)+' · '+groupIds(g.id).length+' enrolled students</option>').join('')+'</select></div></div>'+
      (!groupData||!memberData?'<p class="msg">Saved class membership could not be loaded. Choose students below.</p>':'')+
-     '<details '+(!selected.size?'open':'')+'><summary>Choose students for this plan</summary><div class="finals-members">'+enrolled.map(s=>'<label><input type="checkbox" data-finals-student="'+escFinal(s.user_id)+'" '+(selected.has(s.user_id)?'checked':'')+'> '+escFinal(s.full_name||s.user_id)+'</label>').join('')+'</div></details>'+
-     '<p class="hint" id="finalsEvidenceHint">Uses up to three bottom lessons below 60% (the portal’s focus threshold), with at least three scored responses per lesson and two evidenced lessons per student. Historical responses can include retakes; these are not necessarily distinct questions. Shared-lesson clusters are suggestions, not ability labels. Error causes still require teacher review; individual question time is not reliably tracked.</p><div id="finalsGroupPlan" aria-live="polite"></div>';
+     '<details '+(!selected.size?'open':'')+'><summary>Choose students for this plan</summary><div class="finals-members">'+enrolled.filter(s=>s.practice_open!==false).map(s=>'<label><input type="checkbox" data-finals-student="'+escFinal(s.user_id)+'" '+(selected.has(s.user_id)?'checked':'')+'> '+escFinal(s.full_name||s.user_id)+'</label>').join('')+'</div></details>'+
+     '<p class="hint" id="finalsEvidenceHint"></p><div id="finalsGroupPlan" aria-live="polite"></div>';
    const target=document.getElementById('finalsGroupPlan');
    function revisionLink(lesson){
      if(track==='est_eng')return '<button type="button" class="btn-sm" data-finals-formulas="'+escFinal(lesson)+'">Review rules: '+escFinal(lesson)+'</button><span class="hint">Students can use Weak-topic drill and assigned English assessments for practice.</span>';
@@ -178,7 +178,7 @@
    const current=()=>ST.view==='finalsDiagnosisAdmin'&&document.getElementById('finalsGroup')===panel&&diagnosisTrack()===track;
    const sourceText=s=>{
      if(!scope)return '';
-     const states={missing:'No completed scored attempt for this exam',ungraded:'Completed attempt awaiting grading',locked:'Selected exam review is locked',available:'Selected exam evidence available'};
+     const states={missing:'No completed scored attempt for this exam',ungraded:'Completed attempt awaiting grading',no_responses:'No saved answers; complete a diagnostic',locked:'Selected exam review is locked',available:'Selected exam evidence available'};
      const x=s.source,a=x?.attempt;
      return '<p class="hint">'+escFinal(states[x?.state]||'Exam evidence unavailable')+(a?' · Attempt '+escFinal(a.attempt_no)+' · '+escFinal(a.submitted_at||'Date unavailable'):'')+'</p>';
    };
@@ -197,8 +197,8 @@
    }
    function paint(){
      document.getElementById('finalsEvidenceHint').textContent=scope?
-       'Uses the latest completed scored attempt for this exact exam. Locked reviews are not replaced by older attempts. Excluded and ungraded questions are omitted. Missed lessons rank by missed count, then accuracy and lesson name. Clusters still require two named lessons with three scored questions each; limited evidence stays separate. Error causes require teacher review; individual question time is not reliably tracked.':
-       'Uses up to three bottom lessons below 60% (the portal’s focus threshold), with at least three scored responses per lesson and two evidenced lessons per student. Historical responses can include retakes; these are not necessarily distinct questions. Shared-lesson clusters are suggestions, not ability labels. Error causes still require teacher review; individual question time is not reliably tracked.';
+       'Uses the latest completed attempt for this exact exam. Pending grades, locked reviews and attempts without saved answers are not replaced by older attempts. Held, excluded and ungraded questions are omitted. Missed lessons rank by missed count, then accuracy and lesson name. Clusters require two named lessons with three scored questions each; limited evidence stays separate. Error causes require teacher review; individual question time is not reliably tracked.':
+       'Uses the same latest reviewed result per distinct question as student Diagnosis. Focus lessons are below 60%, with at least three distinct scored questions per lesson and two evidenced lessons per student for clusters. Daily quiz scores are separate by group. Shared-lesson clusters are suggestions, not ability labels. Error causes require teacher review; individual question time is not reliably tracked.';
      if(!selected.size){target.innerHTML='<p class="empty">Choose the students in your class to build a plan.</p>';return;}
      if(examLoading){target.innerHTML='<p role="status">Loading selected exam evidence…</p>';return;}
      if(examError){target.innerHTML='<p role="alert">'+escFinal(examError)+'</p><button type="button" class="btn-sm" id="finalsExamRetry">Retry exam evidence</button>';document.getElementById('finalsExamRetry').onclick=loadScope;return;}
@@ -212,7 +212,7 @@
        (!plan.clusters.length?'<p class="hint">No shared weakness supports a cluster yet. Use individual lesson practice.</p>':'')+
        (plan.individual.length?'<section class="card"><h3>Individual lesson practice</h3><p class="hint">No shared cluster available within the three-cluster limit.</p><ul>'+plan.individual.map(s=>'<li><b>'+escFinal(s.name)+'</b>'+sourceText(s)+'<div class="control-actions">'+s.weak.map(x=>revisionLink(x.lesson)).join('')+'</div></li>').join('')+'</ul>'+retestLink()+'</section>':'')+
        (plan.maintenance.length?'<section class="card"><h3>Maintain and retest</h3><p>'+names(plan.maintenance)+'</p>'+plan.maintenance.map(sourceText).join('')+'<p class="hint">'+(scope?'No missed questions in the sufficiently evidenced named lessons. Check limited and unclassified evidence below.':'No evidenced bottom lesson is below 60%. Continue mixed practice.')+'</p>'+retestLink()+'</section>':'')+
-       (plan.insufficient.length?'<section class="card finals-insufficient"><h3>More evidence needed</h3><ul>'+plan.insufficient.map(s=>'<li><b>'+escFinal(s.name)+'</b> · '+s.evidence.length+' lessons with enough scored responses'+sourceText(s)+(s.evidence.length?' · observed: '+s.evidence.map(x=>escFinal(x.lesson)+' '+x.percent+'%').join('; '):'')+'</li>').join('')+'</ul><p class="hint">Keep these students out of weakness clusters until at least two lessons have three scored responses each. Use the existing retest for baseline evidence, then refresh this report.</p>'+retestLink()+'</section>':'')+
+       (plan.insufficient.length?'<section class="card finals-insufficient"><h3>More evidence needed</h3><ul>'+plan.insufficient.map(s=>'<li><b>'+escFinal(s.name)+'</b> · '+s.evidence.length+' lessons with enough scored questions'+sourceText(s)+(s.evidence.length?' · observed: '+s.evidence.map(x=>escFinal(x.lesson)+' '+x.percent+'%').join('; '):'')+'<div class="control-actions">'+s.weak.map(x=>revisionLink(x.lesson)).join('')+'</div></li>').join('')+'</ul><p class="hint">A lesson with three distinct questions can guide individual practice. Keep students out of shared clusters until two lessons have enough evidence. Use an assigned diagnostic or retest, then refresh this report.</p>'+retestLink()+'</section>':'')+
        (scope?'<section class="card"><h3>Selected exam evidence</h3><ul>'+plan.students.map(s=>'<li><b>'+escFinal(s.name)+'</b>'+sourceText(s)+(s.source.lessons||[]).map(x=>'<p>'+escFinal(x.lesson)+' · '+escFinal(x.correct)+'/'+escFinal(x.seen)+' correct · '+escFinal(x.missed)+' missed'+(x.blank?' · '+escFinal(x.blank)+' unanswered':'')+(x.seen<3?' · Limited evidence: fewer than 3 scored questions':'')+(!x.classified?' · Unclassified; teacher review required':'')+'</p>').join('')+'</li>').join('')+'</ul></section>':'');
      target.querySelectorAll('[data-finals-formulas]').forEach(b=>b.onclick=async()=>{ST.track=track;referenceSelection={track,lesson:b.dataset.finalsFormulas};ST.view='formulasAdmin';await render();});
      target.querySelectorAll('[data-finals-revision]').forEach(b=>b.onclick=async()=>{
@@ -231,34 +231,33 @@
    paint();
  }
  async function finalsDiagnosisAdmin(){
-   if(typeof q!=='function')return;
    const track=diagnosisTrack(),token=++diagnosisRequest;
-   const [{data:results,error:rErr},{data:lessons,error:lErr},{data:roster,error:sErr}]=await Promise.all([
-     finalRead(()=>q('results_feed').eq('track_id',track).order('submitted_at',{ascending:false}).order('attempt_id')),
-     finalRead(()=>q('student_by_lesson').eq('track_id',track).order('percent',{ascending:true}).order('user_id').order('lesson')),
-     finalRead(()=>q('roster').eq('role','student').order('full_name').order('user_id'))
-   ]);
-   if(rErr||lErr||sErr)throw (rErr||lErr||sErr);
+   const {data,error}=await sb.rpc('staff_diagnosis',{p_track:track});
+   if(error)throw error;
    if(ST.view!=='finalsDiagnosisAdmin'||token!==diagnosisRequest||diagnosisTrack()!==track)return;
-   const enrolled=(roster||[]).filter(s=>String(s.tracks||'').split(',').map(x=>x.trim()).includes(track));
+   if(data?.track_id!==track||!Array.isArray(data.students))throw new Error('Incomplete diagnosis evidence');
+   const enrolled=data.students.filter(s=>String(s.tracks||'').split(',').map(x=>x.trim()).includes(track));
+   const lessons=enrolled.flatMap(s=>(s.lessons||[]).map(x=>({...x,user_id:s.user_id,track_id:track,questions_seen:x.seen})));
    const latest=new Map();
-   for(const x of (results||[])){if(!latest.has(x.user_id))latest.set(x.user_id,x);}
+   for(const s of enrolled)if(s.latest)latest.set(s.user_id,s.latest);
    const byStudent=new Map();
    for(const x of (lessons||[])){const a=byStudent.get(x.user_id)||[];a.push(x);byStudent.set(x.user_id,a);}
    for(const [id,items] of byStudent)byStudent.set(id,HardestQuestions.weakSkills(items,{track}));
    const rows=enrolled.map(s=>{
-     const result=latest.get(s.user_id),skills=(byStudent.get(s.user_id)||[]).sort((a,b)=>Number(a.percent)-Number(b.percent)||Number(b.questions_seen)-Number(a.questions_seen)).slice(0,3);
-     const skillText=skills.length?skills.map(x=>escFinal(x.lesson)+' <b>'+x.percent+'%</b>').join('<br>'):'More evidence needed';
+     const result=latest.get(s.user_id),skills=(byStudent.get(s.user_id)||[]).filter(x=>x.percent<80).slice(0,3);
+     const skillText=skills.length?skills.map(x=>escFinal(x.lesson)+' <b>'+x.percent+'%</b><span class="hint"> · '+x.questions_seen+' distinct questions</span><br><button class="btn-sm" data-finals-formulas="'+escFinal(x.lesson)+'">'+(track==='est_eng'?'Review rules':'Review formulas')+'</button>').join('<br>'):(byStudent.get(s.user_id)||[]).length?'Assessed lessons are strong':'More evidence needed';
      const score=result?(result.score==null?'Awaiting grading':result.score+'/'+result.total+' · '+result.percent+'%'):'No completed '+TRACK_LABELS[track]+' attempt';
      const pace=result&&result.time_used!=null?Math.floor(result.time_used/60)+'m '+(result.time_used%60)+'s total':'—';
-     return '<tr><td><b>'+escFinal(s.full_name)+'</b></td><td>'+score+'</td><td>'+skillText+'</td><td><span class="pill warn">Classify</span><br><span class="hint">C/A/R/D/T/X</span></td><td><span class="hint">Individual question time not reliably tracked</span><br>'+pace+'</td><td><span class="pill">RPT review</span><br><span class="hint">Check Mistake Notebook / repeated patterns</span></td></tr>';
+     return '<tr><td><b>'+escFinal(s.full_name)+'</b>'+(s.practice_open===false?'<span class="hint"> · History only; practice access closed</span>':'')+'</td><td>'+score+(result?'<span class="history-detail">'+escFinal(result.title)+' · Attempt '+escFinal(result.attempt_no||1)+'</span>':'')+(result?.answered_count===0?'<span class="hint">No saved answers; complete a diagnostic</span>':'')+'</td><td>'+skillText+'</td><td><span class="pill warn">Classify</span><br><span class="hint">C/A/R/D/T/X</span></td><td><span class="hint">Individual question time not reliably tracked</span><br>'+pace+'</td><td>'+escFinal(s.repeat_questions||0)+' active repeat-error questions<br><span class="hint">Check Mistake Notebook / repeated patterns</span></td></tr>';
    }).join('');
-   document.getElementById('view').innerHTML='<div class="control-bar">'+diagnosisTrackChooser(track)+'</div><div class="head"><h2>Diagnosis</h2><div class="sp"></div><span class="pill">'+escFinal(TRACK_LABELS[track])+'</span><button class="btn-sm" id="finalsDiagnosisCsv">Export CSV</button></div><div class="control-actions"><button type="button" class="btn-sm" id="finalsStudentsView" aria-pressed="true">Student reports</button><button type="button" class="btn-sm" id="finalsGroupView" aria-pressed="false">Group planning</button></div><section id="finalsGroup" class="finals-group" hidden></section><section id="finalsIndividual">'+
-    '<div class="msg ok"><b>Study workflow:</b> Score → topic accuracy → classify the cause → identify the bottom 2–3 skills → repair → retest. Do not immediately reteach everything missed.</div>'+
+   document.getElementById('view').innerHTML='<div class="control-bar">'+diagnosisTrackChooser(track)+'</div><div class="head"><h2>Diagnosis</h2><div class="sp"></div><span class="pill">'+escFinal(TRACK_LABELS[track])+'</span><button class="btn-sm" id="finalsDiagnosisRefresh">Refresh diagnosis</button><button class="btn-sm" id="finalsDiagnosisCsv">Export CSV</button></div><div class="control-actions"><button type="button" class="btn-sm" id="finalsStudentsView" aria-pressed="true">Student reports</button><button type="button" class="btn-sm" id="finalsGroupView" aria-pressed="false">Group planning</button></div><section id="finalsGroup" class="finals-group" hidden></section><section id="finalsIndividual">'+
+    '<div class="msg ok"><b>Study workflow:</b> Score → topic accuracy → classify the cause → identify the bottom 2–3 skills → repair → retest. Do not immediately reteach everything missed.</div><p class="hint">Lesson ratings match student Diagnosis: latest reviewed, scored result per distinct question. At least 3 questions per lesson; focus below 60%, practise at 60–79%, strong at 80% or above. Held, excluded and ungraded questions and attempts without saved answers are omitted. Latest assessment scores are labelled separately from overall lesson evidence.</p>'+
     '<div class="card"><h2 style="font-size:18px;margin-bottom:10px">Error-code key</h2><p><b>C</b> — Concept &nbsp; <b>A</b> — '+(track==='est_eng'?'Grammar/application':'Algebra/calculation')+' &nbsp; <b>R</b> — Reading &nbsp; <b>D</b> — '+(track==='est_eng'?'Not applicable in English':'Calculator')+' &nbsp; <b>T</b> — Timing &nbsp; <b>X</b> — Careless &nbsp; <b>RPT</b> — Repeat mistake</p><p class="hint" style="margin-top:10px">C/A/R/D/T/X are not guessed automatically. Review the student work and classify the actual cause. Per-question “slow” flags are also not invented because the portal currently stores reliable whole-attempt time, not time-on-question.</p></div>'+
     '<div class="table-wrap"><table><thead><tr><th>Student</th><th>Score</th><th>Bottom 2–3 skills / topic accuracy</th><th>Error type</th><th>Slow questions / pacing</th><th>Repeat errors</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
-    (!rows?'<div class="empty">No '+escFinal(TRACK_LABELS[track])+' students are currently enrolled.</div>':'')+'</section>';
+    (!rows?'<div class="empty">No '+escFinal(TRACK_LABELS[track])+' students are currently enrolled.</div>':'')+'<h3>Daily quiz scores by group</h3><p class="hint">Recorded scores out of 5; separate from exam lesson accuracy. Earlier course quizzes retain their original label.</p><div class="table-wrap"><table><thead><tr><th>Student</th><th>Group</th><th>Latest quiz</th><th>Average</th><th>Completed</th></tr></thead><tbody>'+enrolled.flatMap(s=>(s.daily_groups||[]).map(g=>'<tr><td>'+escFinal(s.full_name)+'</td><td>'+escFinal(g.group_name)+'</td><td>'+escFinal(g.latest_score)+'/5 · '+escFinal(g.latest_day)+'</td><td>'+escFinal(g.average_score)+'/5</td><td>'+escFinal(g.completed)+'</td></tr>')).join('')+'</tbody></table></div>'+(!enrolled.some(s=>s.daily_groups?.length)?'<p class="empty">No completed daily quizzes in the accessible groups.</p>':'')+'</section>';
    wireDiagnosisTrack();
+   const refresh=document.getElementById('finalsDiagnosisRefresh');if(refresh)refresh.onclick=()=>render();
+   document.querySelectorAll('[data-finals-formulas]').forEach(b=>b.onclick=async()=>{ST.track=track;referenceSelection={track,lesson:b.dataset.finalsFormulas};ST.view='formulasAdmin';await render();});
    const groupButton=document.getElementById('finalsGroupView'),studentButton=document.getElementById('finalsStudentsView'),groupPanel=document.getElementById('finalsGroup'),studentPanel=document.getElementById('finalsIndividual');
    let groupLoaded=false;
    if(groupButton&&studentButton&&groupPanel&&studentPanel){
@@ -270,23 +269,35 @@
    exportButton.disabled=!enrolled.length;
    exportButton.onclick=()=>csv(enrolled.map(s=>{
      const result=latest.get(s.user_id);
-     const skills=(byStudent.get(s.user_id)||[]).slice(0,3);
+     const skills=(byStudent.get(s.user_id)||[]).filter(x=>x.percent<80).slice(0,3);
      return {
        student:s.full_name,
        latest_score:result?(result.score==null?'Awaiting grading':result.score+'/'+result.total):'No completed '+TRACK_LABELS[track]+' attempt',
        percent:result?.score!=null?(result.percent??''):'',
        time_seconds:result?.time_used??'',
-       bottom_skills:skills.length?skills.map(x=>x.lesson+' '+x.percent+'%').join(' | '):'More evidence needed',
+       bottom_skills:skills.length?skills.map(x=>x.lesson+' '+x.percent+'%').join(' | '):(byStudent.get(s.user_id)||[]).length?'Assessed lessons are strong':'More evidence needed',
+       evidence_basis:'Latest reviewed scored result per distinct question; 3 questions minimum per lesson',
+       latest_assessment:result?result.title+' · Attempt '+(result.attempt_no||1):'',
+       saved_answers:result?.answered_count??'',
+       daily_group_scores:(s.daily_groups||[]).map(g=>g.group_name+': '+g.latest_score+'/5 on '+g.latest_day+'; average '+g.average_score+'/5; '+g.completed+' completed').join(' | '),
        error_type:'Teacher review: C/A/R/D/T/X',
        pacing:'Individual question time not reliably tracked',
        repeat_errors:'Check Mistake Notebook / repeated patterns'
      };
    }),track+'-diagnosis');
  }
+ function diagnosisLoadError(error,track){
+   const timeout=error?.code==='57014'||/statement timeout|canceling statement/i.test(error?.message||'');
+   document.getElementById('view').innerHTML='<div class="control-bar">'+diagnosisTrackChooser(track)+'</div><div class="msg bad" role="alert">'+
+    (timeout?'Diagnosis took too long to load. Please try again.':'Could not load diagnosis: '+escFinal(error?.message||error))+
+    '</div><button type="button" class="btn-sm" id="finalsDiagnosisRetry">Retry diagnosis</button>';
+   wireDiagnosisTrack();
+   const retry=document.getElementById('finalsDiagnosisRetry');if(retry)retry.onclick=()=>render();
+ }
  function install(){
    if(typeof render!=='function'||typeof ST==='undefined')return;
    const oldRender=render;
-   render=async function(){if(ST.view==='formulasAdmin'){syncAdminNavigation?.();formulasAdmin();return;}if(ST.view==='finalsDiagnosisAdmin'){const track=diagnosisTrack(),token=diagnosisRequest+1;syncAdminNavigation?.();document.getElementById('view').innerHTML='<p class="hint">Loading diagnosis…</p>';try{await finalsDiagnosisAdmin();}catch(e){if(ST.view==='finalsDiagnosisAdmin'&&diagnosisTrack()===track&&diagnosisRequest===token)document.getElementById('view').innerHTML='<div class="msg bad">Could not load diagnosis: '+escFinal(e.message||e)+'</div>';}return;}return oldRender();};
+   render=async function(){if(ST.view==='formulasAdmin'){syncAdminNavigation?.();formulasAdmin();return;}if(ST.view==='finalsDiagnosisAdmin'){const track=diagnosisTrack(),token=diagnosisRequest+1;syncAdminNavigation?.();document.getElementById('view').innerHTML='<p class="hint">Loading diagnosis…</p>';try{await finalsDiagnosisAdmin();}catch(e){if(ST.view==='finalsDiagnosisAdmin'&&diagnosisTrack()===track&&diagnosisRequest===token)diagnosisLoadError(e,track);}return;}return oldRender();};
    const nav=document.querySelector('nav.tabs .wrap:not(.admin-section-nav)');
    if(nav&&!nav.querySelector('[data-v="finalsDiagnosisAdmin"]')){
      const b=document.createElement('button');b.className='tab';b.dataset.v='finalsDiagnosisAdmin';b.textContent='Diagnosis';

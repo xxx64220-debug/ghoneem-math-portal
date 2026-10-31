@@ -57,6 +57,11 @@ jobs:
           node tests/sat_calculator.test.cjs
           node --test tests/all_course_navigation.test.cjs tests/admin_bulk.test.cjs tests/group_console.test.cjs tests/exam_assignments.test.cjs tests/group_management_ui.test.cjs tests/hardest_cycles_ui.test.cjs tests/navigation.test.cjs tests/portal_management_ui.test.cjs tests/student_groups.test.cjs tests/student_management_ui.test.cjs tests/verified_bank_version.test.cjs
 
+      - name: Check reconciled production features
+        run: |
+          node --test tests/act2_course_ui.test.cjs tests/daily_group_scores_edge.test.cjs tests/daily_group_scores_ui.test.cjs tests/diagnosis_coherence_ui.test.cjs tests/exam_flags.test.cjs tests/lesson_exam_library.test.cjs tests/sat_full_review_ui.test.cjs
+          node tests/act2_collection_ui.cjs
+
       - name: Run source archive UI regression when its checked-in inputs exist
         run: |
           if [ -f content/est-september-2026/review-archive.json ] && [ -d dist ]; then
