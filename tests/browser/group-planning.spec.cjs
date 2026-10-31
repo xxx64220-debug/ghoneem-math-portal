@@ -53,6 +53,7 @@ async function openGroupPlan(page){
  await page.locator('#finalsGroupView').click();
  // Multiple groups require an explicit choice; never infer a class by its size.
  const chooser=page.locator('#finalsClass');
+ await expect(chooser).toBeVisible();
  if(await chooser.locator('option[value="seven"]').count() && !(await chooser.inputValue()))await chooser.selectOption('seven');
 }
 test('group plan coordinates the saved seven-person class and opens existing lesson and retest views without writes',async({page,context},testInfo)=>{
@@ -67,7 +68,7 @@ test('group plan coordinates the saved seven-person class and opens existing les
  await page.locator('#finalsStudentsView').click();await expect(page.locator('#finalsIndividual')).toBeVisible();await expect(page.locator('#finalsGroup')).toBeHidden();
  await expect(page.locator('#finalsIndividual')).toContainText('Individual question time not reliably tracked');
  await openGroupPlan(page);await expect(plan).toContainText('7 students selected');
- await page.locator('#finalsGroup summary').click();
+ if(!(await page.locator('#finalsGroup details').evaluate(el=>el.open)))await page.locator('#finalsGroup summary').click();
  await page.locator('[data-finals-student="a"]').uncheck();await expect(plan).toContainText('6 students selected');await expect(plan.locator('.finals-cluster')).toHaveCount(2);
  await page.locator('#finalsClass').selectOption('other');await expect(plan).toContainText('1 students selected');await expect(plan.locator('.finals-common')).toContainText('Circles · 1/1');
  await page.locator('#finalsClass').selectOption('seven');await expect(plan.locator('.finals-cluster')).toHaveCount(3);
@@ -105,7 +106,7 @@ test('selected exam plans use scored misses, separate locked and missing student
  await expect(plan).toContainText('Attempt 2');await expect(plan).toContainText('Limited evidence: fewer than 3');await expect(plan).toContainText('1 unanswered');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.screenshot({path:testInfo.outputPath('group-selected-exam.png'),fullPage:true});
- await page.locator('#finalsGroup summary').click();await page.locator('[data-finals-student="a"]').uncheck();await expect(plan).toContainText('6 students selected');
+ if(!(await page.locator('#finalsGroup details').evaluate(el=>el.open)))await page.locator('#finalsGroup summary').click();await page.locator('[data-finals-student="a"]').uncheck();await expect(plan).toContainText('6 students selected');
  await page.locator('#finalsEvidenceScope').selectOption('');await expect(plan.locator('.finals-cluster')).toHaveCount(2);await expect(page.locator('#finalsEvidenceHint')).toContainText('distinct scored questions');
  const reads=audit.actions.filter(x=>x.action==='staff_group_exam_evidence');expect(reads).toHaveLength(2);expect(reads[0].data.p_students).toEqual([...'abcdefg']);expect(reads[1].data.p_students).toEqual([...'bcdefg']);
  expect(audit.errors).toEqual([]);expect(audit.unexpected).toEqual([]);expect(await page.evaluate(()=>({keys:Object.keys(localStorage),token:localStorage.getItem('ghoneem-trusted-browser-v1'),sessionKeys:Object.keys(sessionStorage)}))).toEqual({keys:['ghoneem-trusted-browser-v1'],token:expect.stringMatching(/^[a-f0-9]{64}$/),sessionKeys:[]});
