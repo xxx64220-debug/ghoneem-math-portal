@@ -6,16 +6,16 @@ change an account's limit from 1 to 10. Existing valid, unrevoked sessions are
 grandfathered at rollout, with sufficient slots retained (up to 10). Stale device
 rows without a valid Auth session do not become trusted browsers.
 
-The first browser for an account without any browser history is approved after
-authentication. Additional browsers request approval. An approved browser owner
-or administrator must confirm their password and match the request code before
-approving. A full account must replace an old browser or receive an administrator
+Students signing in on a new browser can use an available slot within five minutes
+of authentication. Accounts with a revoked browser, existing pending requests
+for that browser, and additional staff browsers require administrator review.
+An administrator confirms their password on a trusted browser and matches the request code. A full account must replace an old browser or receive an administrator
 limit increase. Replacing a browser that controls an unfinished exam is refused.
 An explicit removal is available if access must stop immediately.
 
 Browser tokens are random 256-bit values in local storage. Only their SHA-256
 hashes are stored in the private registry. They never authenticate a user or
-replace a valid Supabase session. Clearing browser storage requires approval;
+replace a valid Supabase session. Clearing browser storage creates a new registration;
 IP addresses, browser versions, and fingerprint attributes are not identity
 proof. This reduces casual sharing; copied credentials or intentional cooperation
 cannot be completely prevented by a browser-based system.
@@ -23,9 +23,7 @@ cannot be completely prevented by a browser-based system.
 My devices is available beside Sign out. Administrators use the Devices section
 for searchable requests, per-account limits, replacements, and revocation. Each
 pending browser shows a request code. The instructor should verify it with the
-student before approval. Student self-approvals are limited to two per day;
-new requests are limited to five per day. Requests older than seven days require
-administrator review. Sign out affects only the current browser's login session.
+student before approval. New registrations are limited to five per day. A pending request stays pending until an administrator approves it. Sign out affects only the current browser's login session.
 Removed browsers can choose Request approval again. This ends the current login
 and forgets only the browser approval token; the next sign-in creates a pending
 request subject to the same limits and approval checks.
@@ -69,6 +67,8 @@ and Edge Function identity handling. Existing scoring functions are unchanged.
 The production build succeeds. Cloud-browser preview was unavailable because its
 connection to the managed preview URL was refused. Physical-device, Safari and
 Firefox behavior therefore remains unverified.
+
+The November 3 incremental release is in `security-releases/20261103-browser-slots/apply.sql`. It validates the prior deployed function before replacing it.
 
 ## Release and recovery
 
