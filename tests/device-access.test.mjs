@@ -146,3 +146,24 @@ test('stale authentication cannot transfer an exam and a different account canno
   await assert.rejects(()=>f.db.query('select portal_private.claim_exam($1,$2,$3,false)',[aid,other,sid(5)]),/attempt_not_found/);
  }finally{await f.db.close();}
 });
+
+test('slot policy admits a second student browser and holds replacements for admin review',async()=>{
+ const f=await fixture();
+ try {
+  const release=readFileSync('security-releases/20261103-browser-slots/apply.sql','utf8');
+  await f.db.exec(release.slice(release.indexOf('CREATE OR REPLACE FUNCTION')));
+  const first=await f.reg(sid(1),'a');
+  assert.equal((await f.reg(sid(2),'b')).status,'approved');
+  const extra=await f.reg(sid(3),'c');
+  assert.equal(extra.status,'pending');
+  await assert.rejects(f.action(sid(1),'approve',{id:extra.browser_id,replace_id:first.browser_id}),/admin_required/);
+  await f.action(sid(1),'revoke',{id:first.browser_id});
+  assert.equal((await f.reg(sid(3),'c')).status,'pending');
+  assert.equal((await f.reg(sid(4),'d')).status,'pending');
+  const state=await f.action(sid(2),'list');
+  assert.equal(state.devices[0].approved_count,1);
+  await f.reg(sid(5),'a',other);
+  await f.action(sid(5),'approve',{id:extra.browser_id},other);
+  assert.equal((await f.reg(sid(3),'c')).status,'approved');
+ } finally {await f.db.close();}
+});
