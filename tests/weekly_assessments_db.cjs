@@ -10,11 +10,13 @@ const timed=s=>s.replace(/\bnow\(\)/g,'public.weekly_test_now()');
 const run=()=>scalar('select portal_private.run_weekly_assessments()');
 const prep=(d='2026-11-03')=>scalar('select portal_private.prepare_weekly_assessment($1,$2)',[id(10),d]);
 async function main(){
+ // The expiry helper in 002_functions must use the same clock as attempt creation.
+ await db.exec(`create function public.weekly_test_now() returns timestamptz language sql stable as $select current_setting('test.clock')::timestamptz$;`);
+ await clock('2026-10-30T10:00:00Z');
  for(const f of ['tests/00_shim.sql','supabase/migrations/001_schema.sql','supabase/migrations/002_functions.sql','supabase/migrations/003_policies.sql','supabase/migrations/005_function_hardening.sql'])
-  await db.exec(read(f).replace(/create extension if not exists pgcrypto;/g,''));
+  await db.exec((f.endsWith('/002_functions.sql') ? timed(read(f)) : read(f)).replace(/create extension if not exists pgcrypto;/g,''));
  await db.exec(`
  insert into tracks(id,name) values('sat','SAT'),('est','EST');
- create function public.weekly_test_now() returns timestamptz language sql stable as $$select current_setting('test.clock')::timestamptz$$;
  alter table exams add column is_full_length boolean default false,add column assessment_type text default 'lesson_exam';
  alter table enrollments add column starts_at timestamptz,add column ends_at timestamptz;
  create table public.question_catalogue(question_id uuid primary key,reserve boolean default false);
