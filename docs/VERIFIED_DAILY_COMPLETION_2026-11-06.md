@@ -68,6 +68,12 @@ retry-button recovery, stale group responses, midnight refresh, automatic progre
 read-only student controls, instructor skip controls, assessment links and Cairo
 date selection. The production build and packaged asset/link checks pass.
 
-Live desktop/mobile browser interaction remains unverified: the preview service
-reported `http://terminal.local:4173/`, but the browser connection was refused.
-No real student's attempt was submitted for testing.
+Live publication succeeded as Site v153 and daily-challenge v7. The production
+sign-in page loads in the browser. Signed-in desktop/mobile interaction remains
+unverified because this browser has no authenticated portal session. No real
+student's attempt was submitted for testing.
+
+Targeted tests pass: 79 isolated PostgreSQL assertions and 31 UI/API tests.
+Another 50 assessment/assignment/math/client regressions pass. Browser fixtures
+exercise the production checklist code on desktop, tablet and mobile with an
+isolated synthetic API; these are distinct from signed-in production checks.
