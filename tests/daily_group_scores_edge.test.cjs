@@ -5,3 +5,11 @@ const c={URL,Intl,Date,ApiError,console,Deno:{serve(h){handler=h}},serve:h=>h,js
 function req(payload){return {method:'POST',url:'https://fixture.invalid',json:async()=>payload}}
 test('verified caller supplies identity, group is explicit, notebook remains unchanged',async()=>{const {handler,calls}=setup();await handler({method:'GET',url:'https://fixture.invalid/?track=sat&group_id='+group});assert.equal(calls[0].name,'daily_group_state');assert.equal(calls[0].args.p_user,'verified-student');assert.equal(calls[0].args.p_group,group);await handler(req({track:'sat',group_id:group,user_id:'attacker',action:'submit',answers:{}}));assert.equal(calls[1].name,'daily_group_submit');assert.equal(calls[1].args.p_user,'verified-student');assert.equal(calls[1].args.p_group,group);await handler({method:'GET',url:'https://fixture.invalid/?track=sat&view=notebook'});assert.equal(calls[2].name,'practice_notebook_state');assert.equal(calls[2].args.p_group,undefined)});
 test('invalid groups, stale dates and non-students fail before RPC',async()=>{const {handler,c,calls}=setup();await assert.rejects(()=>handler(req({track:'sat',group_id:'invalid',action:'submit',answers:{}})),/invalid_group/);await assert.rejects(()=>handler(req({track:'sat',group_id:group,day:'1900-01-01',action:'mark',task:'focus'})),/daily_date_changed/);c.requireUser=async()=>({id:'staff',role:'instructor'});await assert.rejects(()=>handler(req({track:'sat',action:'mark',task:'focus'})),/student_account_required/);assert.equal(calls.length,0)});
+
+test('legacy marking is rejected and quiz start uses only the authenticated identity',async()=>{
+ const {handler,calls}=setup();await assert.rejects(()=>handler(req({track:'sat',action:'mark',task:'focus'})),/automatic_completion_required/);
+ assert.equal(calls.length,0);
+ const day=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Cairo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+ await handler(req({track:'sat',group_id:group,day,action:'quiz_start',user_id:'someone-else'}));
+ assert.equal(calls[0].name,'daily_group_start');assert.equal(calls[0].args.p_user,'verified-student');
+});

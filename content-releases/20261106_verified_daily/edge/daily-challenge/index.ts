@@ -1,0 +1,50 @@
+import { admin, ApiError, json, requireUser, serve, sqlError } from "../_shared/http.ts";
+
+// The SQL routines own the date, frozen daily question set, grading and points.
+// Only a verified student JWT supplies the user ID; the browser never sees keys
+// until its one submission for the Cairo calendar day has been recorded.
+Deno.serve(serve(async (req) => {
+  if (req.method !== "GET" && req.method !== "POST")
+    throw new ApiError("method_not_allowed", 405);
+  const me = await requireUser(req);
+  if (me.role !== "student") throw new ApiError("student_account_required", 403);
+  const payload = req.method === "POST" ? await req.json().catch(() => ({})) : null;
+  const requestUrl = req.method === "GET" ? new URL(req.url) : null;
+  const track = requestUrl ? requestUrl.searchParams.get("track") : payload?.track;
+  if (!["sat", "est", "est2", "est_eng"].includes(track)) throw new ApiError("invalid_track", 400);
+
+  const group = requestUrl ? requestUrl.searchParams.get("group_id") : payload?.group_id;
+  if (group != null && (typeof group !== "string" || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(group))) throw new ApiError("invalid_group",400);
+  if (payload?.day != null && (typeof payload.day!=="string" || payload.day!==new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Cairo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date()))) throw new ApiError("daily_date_changed",409);
+  const db = admin();
+  let result;
+  if (req.method === "GET" && requestUrl?.searchParams.get("view") === "notebook") {
+    const offset = Number(requestUrl.searchParams.get("offset") ?? "0");
+    if (!Number.isSafeInteger(offset) || offset < 0 || offset > 10000) throw new ApiError("invalid_page", 400);
+    result = await db.rpc("practice_notebook_state", { p_user: me.id, p_track: track, p_offset: offset });
+  } else if (req.method === "GET" && requestUrl?.searchParams.get("view") === "drill") {
+    result = await db.rpc("practice_drill_state", { p_user: me.id, p_track: track });
+  } else if (req.method === "GET") {
+    result = await db.rpc("daily_group_state", { p_user: me.id, p_track: track, p_group:group??null });
+  } else if (payload?.action === "notebook_answer") {
+    if (typeof payload.question_id !== "string" || typeof payload.answer !== "string") throw new ApiError("invalid_answer", 400);
+    result = await db.rpc("practice_notebook_answer", { p_user: me.id, p_track: track, p_question: payload.question_id, p_answer: payload.answer });
+  } else if (payload?.action === "drill_start") {
+    result = await db.rpc("practice_drill_start", { p_user: me.id, p_track: track });
+  } else if (payload?.action === "drill_submit") {
+    if (typeof payload.drill_id !== "string" || !payload.answers || typeof payload.answers !== "object" || Array.isArray(payload.answers))
+      throw new ApiError("invalid_answers", 400);
+    result = await db.rpc("practice_drill_submit", { p_user: me.id, p_track: track, p_drill: payload.drill_id, p_answers: payload.answers });
+  } else if (payload?.action === "quiz_start") {
+    result = await db.rpc("daily_group_start", {p_user:me.id,p_track:track,p_group:group??null,p_day:payload.day??null});
+  } else if (payload?.action === "submit") {
+    if (!payload.answers || typeof payload.answers !== "object" || Array.isArray(payload.answers))
+      throw new ApiError("invalid_answers", 400);
+    result = await db.rpc("daily_group_submit", {
+      p_user: me.id, p_track: track, p_answers: payload.answers, p_group:group??null, p_day:payload.day??null,
+    });
+  } else if (payload?.action === "mark") {
+    throw new ApiError("automatic_completion_required", 403);  } else throw new ApiError("invalid_action", 400);
+  if (result.error) throw sqlError(result.error);
+  return json(result.data);
+}));

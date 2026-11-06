@@ -3,6 +3,7 @@ let DAILY_DRAFT = {};
 let DAILY_BUSY = false;
 let DAILY_REQUEST = 0;
 let DAILY_LOADING = false;
+let DAILY_STARTING = false;
 const DAILY_COURSE_SCOPE = '00000000-0000-0000-0000-000000000000';
 
 async function refreshMistakes() {
@@ -61,6 +62,7 @@ function wireMistakes() {
       const {ok,json}=await fn('daily-challenge',{method:'POST',body:{track,action:'notebook_answer',question_id:id,answer}});
       if(!ok)throw new Error(friendly(json.error));
       if(ST.track?.id!==track)return;
+      void refreshDaily();
       DASH.notebookFeedback={ [id]:json };
       const state=await fn('daily-challenge',{qs:`?track=${encodeURIComponent(track)}&view=notebook&offset=${DASH.mistakePage*25}`});
       if(!state.ok)throw new Error(friendly(state.json.error));
@@ -108,7 +110,7 @@ function wireDrill(){
     const button=event.currentTarget;button.disabled=true;
     try{const track=ST.track.id;const {ok,json}=await fn('daily-challenge',{method:'POST',body:{track,action:'drill_submit',drill_id:d.drill_id,answers:Object.fromEntries(qs.map(q=>[q.id,DRILL_DRAFT[q.id]]))}});
       if(!ok)throw new Error(friendly(json.error));if(ST.track?.id!==track)return;
-      DASH.drill=json;DRILL_DRAFT={};paintDashboard();
+      DASH.drill=json;DRILL_DRAFT={};void refreshDaily();paintDashboard();
     }catch(error){button.disabled=false;const msg=document.getElementById('drill-message');if(msg)msg.textContent=error.message;}
   });
 }
@@ -139,7 +141,7 @@ async function refreshDaily(group) {
 function dailyGroupSelector(d) {
   const groups=d.groups||[];
   if (!groups.length) return '';
-  return `<label class="daily-group-select" for="dailyGroup">Assigned group<select id="dailyGroup" ${DAILY_BUSY||DAILY_LOADING?'disabled':''}>${groups.map(g=>`<option value="${esc(g.id)}" ${g.id===d.scope_id?'selected':''}>${esc(g.name)}</option>`).join('')}</select></label><p class="dash-note">Scores, points, checklist and streak belong to the selected group. Complete a separate quiz for each assigned group.</p>`;
+  return `<label class="daily-group-select" for="dailyGroup">Assigned group<select id="dailyGroup" ${DAILY_BUSY||DAILY_LOADING?'disabled':''}>${groups.map(g=>`<option value="${esc(g.id)}" ${g.id===d.scope_id?'selected':''}>${esc(g.name)}</option>`).join('')}</select></label><p class="dash-note">Quiz scores, points and streak belong to the selected group. Complete a separate quiz for each group. Course drills and corrected mistakes can count toward each group’s checklist.</p>`;
 }
 function dailyRequestContext() {
  return {track:ST.track.id,scope:DASH.daily?.scope_id||DAILY_COURSE_SCOPE,date:DASH.daily?.date,request:DAILY_REQUEST};
@@ -180,13 +182,15 @@ function dailyPanel() {
   if(DAILY_LOADING) return `<section class="dash-panel"><h2>Today’s practice</h2><p role="status">Loading this group’s quiz…</p></section>`;
   const checklist = [
     ['quiz', 'Finish the five-question quick quiz', 'One attempt per day; your answers are checked when you submit.'],
-    ['focus', 'Practise a lesson to improve', 'Use your Lesson focus tab to pick a topic.'],
-    ['review', 'Review one past mistake', 'Open an exam in Exam history and check the worked solution.'],
+    ['focus', 'Submit lesson practice', 'Finish an assigned lesson exam for this group, or submit a weak-topic drill in this course. Opening a lesson does not count.'],
+    ['review', 'Correct one past mistake', 'Submit a correct answer in your course’s Mistake notebook. Viewing a solution does not count.'],
   ];
   const next = new Date(d.reset_at).toLocaleTimeString(undefined, {hour:'numeric',minute:'2-digit',timeZone:'Africa/Cairo'});
   const tasks = checklist.map(([id,label,description]) => {
-    const done = d.checklist[id];
-    return `<li class="daily-task ${done?'is-done':''}"><span class="daily-check" aria-hidden="true">${done?'✓':'○'}</span><div><strong>${label}</strong><p>${description}</p></div>${id==='quiz' ? (done ? '<span class="daily-tag">Done</span>' : '<a class="dash-link" href="#daily-quiz">Take quiz</a>') : `<button class="btn-ghost" data-daily-mark="${id}" ${done || DAILY_BUSY?'disabled':''}>${done?'Done':'Mark done'}</button>`}</li>`;
+    const status = d.activity_status?.[id] || (id==='quiz' && d.completed ? 'completed' : 'pending');
+    const done = status==='completed';
+    const destination = id==='focus' ? 'lesson_exam' : 'mistakes';
+    return `<li class="daily-task ${done?'is-done':''}"><span class="daily-check" aria-hidden="true">${done?'✓':'○'}</span><div><strong>${label}</strong><p>${description}</p><span class="daily-tag" data-daily-status="${id}">${done?'Completed automatically':status==='started'?'Started':'Pending'}</span></div>${done?'':id==='quiz'?'<a class="dash-link" href="#daily-quiz">Take quiz</a>':`<div class="daily-actions"><button class="btn-ghost" data-daily-open="${destination}">${id==='focus'?'Open lesson exams':'Open notebook'}</button>${id==='focus'?'<button class="btn-ghost" data-daily-open="drill">Open drill</button>':''}</div>`}</li>`;
   }).join('');
   const questions = (d.quiz || []).map((q,i) => {
     const chosen = completed ? q.answer?.submitted : DAILY_DRAFT[q.id];
@@ -201,7 +205,7 @@ function dailyPanel() {
   ${DASH.dailyError?`<p role="alert">${esc(DASH.dailyError)}</p>`:''}
   ${d.group_name?`<p class="dash-note">${esc(d.group_name)} · ${esc(d.selection_mode)}</p>`:''}
   ${streakPanel(d)}
-  <div class="dashboard-columns"><section class="dash-panel"><div class="dash-heading"><h2>Daily checklist</h2><span class="daily-tag">${Object.values(d.checklist).slice(0,3).filter(Boolean).length}/3 tasks</span></div><ul class="daily-tasks">${tasks}</ul><p class="dash-note">Quiz: 10 points for finishing + 10 per correct answer. Complete quizzes on consecutive days for a 5-point streak bonus. Finish your checklist for 5 more points.</p></section>
+  <div class="dashboard-columns"><section class="dash-panel"><div class="dash-heading"><h2>Daily checklist</h2><span class="daily-tag">${['quiz','focus','review'].filter(id=>d.activity_status?.[id]==='completed'||(id==='quiz'&&d.completed)).length}/3 tasks</span></div><ul class="daily-tasks">${tasks}</ul><p class="dash-note">Quiz: 10 points for finishing + 10 per correct answer. Complete quizzes on consecutive days for a 5-point streak bonus. Finish your checklist for 5 more points.</p></section>
   <section class="dash-panel"><h2>${esc(d.group_name||ST.track?.theme?.label||ST.track?.id?.toUpperCase())} leaderboard</h2><p class="dash-note">Points earned only in this group. Student names appear as first name and last initial.</p><div class="student-table"><table><thead><tr><th>Rank</th><th>Student</th><th>Points</th><th>Days</th></tr></thead><tbody>${board}</tbody></table></div>${d.rank>10?`<p class="dash-note">Your rank: ${d.rank} · ${d.points_total} points</p>`:''}</section></div>
   <section class="dash-panel" id="daily-quiz"><div class="dash-heading"><h2>Five-question quick quiz</h2><span class="daily-tag">${completed?`${d.score}/5 correct`:'One attempt today'}</span></div>${questions}${completed?'<p class="dash-notice">Great work. Tomorrow brings five new questions.</p>':`<button class="btn" data-daily-submit ${DAILY_BUSY?'disabled':''}>Submit answers</button><p class="dash-note">Answer all five before submitting. Your choices are final for today.</p>`}<p class="dash-note" id="daily-message" role="status"></p></section>`;
 }
@@ -220,19 +224,15 @@ function wireDaily() {
   document.querySelector('[data-daily-retry]')?.addEventListener('click', () => { DASH.dailyError=''; paintDashboard(); refreshDaily(); });
   document.querySelectorAll('[data-daily-answer]').forEach(radio => radio.addEventListener('change', event => {
     DAILY_DRAFT[event.target.dataset.dailyAnswer] = event.target.value;
+    if (!DAILY_STARTING && !DASH.daily.completed && DASH.daily.activity_status?.quiz !== 'started') {
+      const context=dailyRequestContext(); DAILY_STARTING=true;
+      void fn('daily-challenge',{method:'POST',body:{track:context.track,group_id:context.scope,day:context.date,action:'quiz_start'}})
+        .then(({ok})=>{if(ok&&dailyContextCurrent(context)&&!DASH.daily.completed){DASH.daily.activity_status={...DASH.daily.activity_status,quiz:'started'};const status=document.querySelector('[data-daily-status="quiz"]');if(status)status.textContent='Started';}})
+        .catch(()=>{}).finally(()=>{DAILY_STARTING=false;});
+    }
   }));
-  document.querySelectorAll('[data-daily-mark]').forEach(button => button.addEventListener('click', async () => {
-    if (DAILY_BUSY) return;
-    const context=dailyRequestContext();
-    DAILY_BUSY = true; button.disabled = true;
-    if(document.getElementById('dailyGroup'))document.getElementById('dailyGroup').disabled=true;
-    try {
-      const {ok,json} = await fn('daily-challenge',{method:'POST',body:{track:context.track,group_id:context.scope,day:context.date,action:'mark',task:button.dataset.dailyMark}});
-      if (!ok) throw new Error(friendly(json.error));
-      if(!dailyContextCurrent(context))return;
-      json.receivedAt=Date.now(); DASH.daily=json; DAILY_BUSY=false; paintDashboard();
-    } catch (error) { if(dailyContextCurrent(context)){button.disabled=false; dailyMessage(error.message);} }
-    finally { DAILY_BUSY=false; const group=document.getElementById('dailyGroup');if(group)group.disabled=DAILY_LOADING; }
+  document.querySelectorAll('[data-daily-open]').forEach(button => button.addEventListener('click', () => {
+    setDashboardView(button.dataset.dailyOpen);
   }));
   document.querySelector('[data-daily-submit]')?.addEventListener('click', async buttonEvent => {
     if (DAILY_BUSY) return;
@@ -249,8 +249,8 @@ function wireDaily() {
       if(!dailyContextCurrent(context))return;
       json.receivedAt=Date.now(); DASH.daily=json; DAILY_DRAFT={}; DAILY_BUSY=false; paintDashboard();
       document.getElementById('daily-quiz')?.scrollIntoView({behavior:'smooth'});
-    } catch(error) { if(dailyContextCurrent(context)){submitButton.disabled=false; dailyMessage(error.message);} }
-    finally { DAILY_BUSY=false; const group=document.getElementById('dailyGroup');if(group)group.disabled=DAILY_LOADING; }
+    } catch(error) { if(dailyContextCurrent(context)){submitButton.disabled=false; dailyMessage(error.message); await refreshDaily(context.scope);if(DASH.daily?.track===context.track&&!DASH.daily?.completed)dailyMessage(error.message);} }
+    finally { DAILY_BUSY=false; const group=document.getElementById('dailyGroup');if(group)group.disabled=DAILY_LOADING;const submit=document.querySelector('[data-daily-submit]');if(submit)submit.disabled=DAILY_LOADING; }
   });
 }
 
@@ -271,3 +271,5 @@ function tickDailyStreak() {
 }
 setInterval(tickDailyStreak,1000);
 document.addEventListener('visibilitychange',tickDailyStreak);
+
+document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&typeof DASH!=='undefined'&&DASH.view==='daily'&&!DAILY_BUSY&&!DAILY_LOADING)void refreshDaily();});

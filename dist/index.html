@@ -249,6 +249,8 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 <section id="vTracks" class="wrap chooser hidden">
   <h1>Choose your track</h1>
   <p class="sub">You are enrolled in the tracks below. Each keeps its own exams and results.</p>
+  <section id="chooserWeeklyObjective" class="dash-panel" hidden></section>
+  <section id="chooserObjective" class="dash-panel" hidden></section>
   <div class="tracks" id="trackGrid"></div>
 </section>
 
@@ -256,6 +258,8 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 <section id="vList" class="wrap list hidden">
   <h1 id="listTitle">Exams</h1>
   <p class="sub" style="color:var(--muted);margin:5px 0 24px" id="listSub"></p>
+  <section id="dashboardWeeklyObjective" class="dash-panel" hidden></section>
+  <section id="dashboardObjective" class="dash-panel" hidden></section>
   <div id="examList"></div>
 </section>
 
@@ -267,7 +271,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
     <span class="saving" id="saving"></span>
     <div class="spacer"></div>
     <button type="button" class="btn-ghost hidden" id="satCalculatorToggle" aria-expanded="false" aria-controls="satCalculatorPanel">Calculator</button>
-    <a class="btn-ghost hidden" id="satDesmos" href="https://www.desmos.com/testing/collegeboard/graphing" target="_blank" rel="noopener noreferrer" aria-label="Open official SAT Desmos graphing calculator in a new tab">SAT Desmos ↗</a>
+    <a class="btn-ghost hidden" id="satDesmos" href="https://www.desmos.com/testing/collegeboard/graphing" target="_blank" rel="noopener noreferrer" aria-label="Open official SAT Desmos graphing calculator in a new tab">SAT calculator ↗</a>
     <button class="btn-ghost" id="flagBtn" aria-pressed="false">⚑ Flag</button>
     <button class="btn btn-accent" id="finishBtn">Submit exam</button>
   </div></div>
@@ -298,7 +302,7 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 <script src="/portal-math.js?v=20261021-currency"></script>
 <script src="/sat-calculator-config.js"></script>
 <script src="/sat-calculator.js"></script>
-<script src="/daily-challenge.js?v=20261015-group-scores"></script>
+<script src="/daily-challenge.js?v=20261106-auto-20261015-group-scores"></script>
 <script src="/lesson-taxonomy.js?v=20261024-est1-no-logs"></script>
 <script src="/act2-course.js?v=20261023-act2"></script>
 <script src="/revision-formulas.js?v=20261024-no-source-links"></script>
@@ -318,11 +322,11 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;
 let ST = { tracks: [], track: null, run: null, idx: 0, flags: new Set(), timer: null };
 
 /* ---- call an Edge Function with the caller's JWT ---- */
-async function fn(name, { method = 'GET', body = null, qs = '', headers = {} } = {}) {
+async function fn(name, { method = 'GET', body = null, qs = '', headers = {}, signal } = {}) {
   const { data: { session } } = await sb.auth.getSession();
   if (!session) { show('vLogin'); throw new Error('signed_out'); }
   const res = await fetch(`${fnBase}/${name}${qs}`, {
-    method,
+    method, signal,
     headers: { 'Authorization': `Bearer ${session.access_token}`,
                'Content-Type': 'application/json', 'apikey': SB_KEY, ...headers },
     body: body ? JSON.stringify(body) : undefined,
@@ -331,7 +335,99 @@ async function fn(name, { method = 'GET', body = null, qs = '', headers = {} } =
   return { ok: res.ok, status: res.status, json };
 }
 
+let weeklyRefresh;
+async function displayWeeklyObjective(view, request) {
+  clearTimeout(weeklyRefresh);
+  const cards = [$('chooserWeeklyObjective'), $('dashboardWeeklyObjective')];
+  for (const card of cards) { card.hidden = true; card.replaceChildren(); }
+  const track = ST.tracks.find(t => t.id === 'est');
+  if (!track || !(view === 'vTracks' || (view === 'vList' && ST.track?.id === track.id))) return;
+  const card = cards[view === 'vTracks' ? 0 : 1];
+  try {
+    const {data: quiz, error} = await sb.rpc('my_alex_weekly_objective');
+    if (error || !quiz || request !== objectiveRequest) return;
+    const now = Date.now(), opens = Date.parse(quiz.open_at), closes = Date.parse(quiz.close_at);
+    const upcoming = now < opens && !quiz.resume;
+    if (now > closes && !quiz.resume && !quiz.completed) return;
+    const date = new Intl.DateTimeFormat('en-GB', {timeZone:'Africa/Cairo',weekday:'long',month:'short',day:'numeric'}).format(opens);
+    card.innerHTML = '<small>Today · Alex EST I</small><h2>' + esc(quiz.title) + '</h2><p>' +
+      esc(date) + ' · Start between 1:10 and 1:30 PM Cairo time. You have 20 minutes from your start.</p>' + (quiz.completed?'<p>Completed automatically from your submitted attempt.</p>':quiz.resume?'<p>Started — finish and submit to complete this objective.</p>':'<p>Pending</p>');
+    card.hidden = false;
+    const button = document.createElement('button');
+    button.type = 'button'; button.className = 'btn';
+    button.disabled = upcoming && !quiz.completed;
+    button.textContent = quiz.completed ? 'View quiz result' : upcoming ? 'Opens at 1:10 PM' : quiz.resume ? 'Resume algebra quiz' : 'Start algebra quiz';
+    card.append(button);
+    button.onclick = async () => {
+      button.disabled = true;
+      try {
+        if (view === 'vTracks') await openTrack(track);
+        if (ST.track?.id === track.id && !$('vList').classList.contains('hidden')) {if(quiz.completed)await openReview(quiz.attempt_id);else await startExam(quiz.id);}
+      } finally { button.disabled = false; }
+    };
+    if (!quiz.resume && !quiz.completed) weeklyRefresh = setTimeout(() => {
+      if (request === objectiveRequest) void displayWeeklyObjective(view, request);
+    }, Math.max(250, (upcoming ? opens : closes + 1) - now));
+  } catch { /* Other objectives remain available if this lookup fails. */ }
+}
+
+let objectiveRequest = 0;
+async function displayStudyObjective(view) {
+  const request = ++objectiveRequest;
+  void displayWeeklyObjective(view, request);
+  const chooser = $('chooserObjective'), dashboard = $('dashboardObjective');
+  if (!chooser || !dashboard) return;
+  for (const card of [chooser, dashboard]) { card.hidden = true; card.replaceChildren(); }
+  if (view !== 'vTracks' && view !== 'vList') return;
+  const tracks = ST.tracks.filter(t => ['sat','est'].includes(t.id) && (view === 'vTracks' || ST.track?.id === t.id));
+  if (!tracks.length) return;
+  const card = view === 'vTracks' ? chooser : dashboard;
+  card.hidden = false;
+  card.innerHTML = '<small>YOUR DAILY DIRECTION</small><h2>Today objectives</h2><p>Submit your linked assessments to complete your objectives automatically.</p><a class="btn-ghost" href="/study-plan.html' + (view === 'vList' ? '?track=' + encodeURIComponent(ST.track.id) : '') + '">Open my daily study plan →</a>';
+  if (view !== 'vList' || ST.track?.id === 'sat') { card.innerHTML += '<a class="btn-ghost" href="/sat-revision.html">November SAT revision →</a>'; }
+  const today = new Intl.DateTimeFormat('en-CA', {timeZone:'Africa/Cairo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  try {
+    const {data,error} = await sb.from('student_daily_objectives').select('title,time_budget,track_id').eq('study_date',today).in('track_id',tracks.map(t=>t.id));
+    if (error || request !== objectiveRequest) return;
+    for (const plan of data || []) {
+      const p = document.createElement('p');
+      p.textContent = (plan.track_id === 'sat' ? 'SAT Math · ' : 'EST I · ') + plan.title + ' · ' + plan.time_budget;
+      card.insertBefore(p,card.querySelector('a'));
+    }
+  } catch { /* The planner link remains available if a summary lookup fails. */ }
+}
+
+// Deep links select existing portal activities; they never start an attempt automatically.
+async function openStudyLink() {
+ const params = new URLSearchParams(location.search);
+ const track = ST.tracks.find(t => t.id === params.get('study_track'));
+ if (!track || !['sat','est'].includes(track.id)) return false;
+ await openTrack(track);
+ if (!$('dashboardContent')) return true;
+ const examId = params.get('study_exam');
+ if (examId) {
+   const exam = DASH.exams.find(e=>e.id===examId);
+   const card = document.createElement('section'); card.className='dash-panel';
+   card.innerHTML='<h2>Study plan assessment</h2><p></p>';
+   card.querySelector('p').textContent=exam?exam.title:'This assessment is not currently available in your assigned exam list. Contact your instructor.';
+   if (exam) {
+     const first = DASH.exams.find(e=>e.exam_set_code===exam.exam_set_code&&e.module_number===1);
+     const locked = exam.module_number===2&&first&&!moduleState(first).done;
+     card.insertAdjacentHTML('beforeend',assessmentRow(exam,{locked}));
+   }
+   $('dashboardContent').prepend(card);
+   wireDashboard();
+ } else if (DASH.access?.practice_open) {
+   const activity=params.get('study_activity');
+   if(activity==='practice') LessonExamLibrary.openObjective(params.get('study_lesson')||'');
+   else if(activity==='daily')setDashboardView('daily',params.get('study_group')||undefined);
+   else if(['mistakes','full_exam'].includes(activity)) setDashboardView(activity);
+ }
+ return true;
+}
+
 function show(id) {
+  void displayStudyObjective(id);
   ['vLogin','vTracks','vList','vRun','vReview'].forEach(v => $(v).classList.toggle('hidden', v !== id));
   $('top').classList.toggle('hidden', id === 'vLogin');
   $('switchBtn').classList.toggle('hidden', !(ST.tracks.length > 1 && id !== 'vTracks'));
@@ -347,6 +443,7 @@ const FRIENDLY = {
   invalid_group:'Choose an assigned group for this quiz.',
   exam_content_under_review: 'This exam is being checked by your instructor. Your saved results are safe; choose another exam for now.',
   question_content_under_review: 'This question is being checked. Return to practice and choose another set.',
+  automatic_completion_required: 'Complete the activity to earn this objective automatically.',
   daily_content_under_review: 'Today’s quiz is being checked by your instructor. Your existing points are safe; try lesson practice for now.',
   revision_hidden: 'Your instructor has hidden final revision for this track.',
   report_limit_try_later: 'You have sent several reports recently. Please try again later.',
@@ -376,14 +473,21 @@ const friendly = k => FRIENDLY[k] || 'Something went wrong. Try again, or tell y
 
 /* ============================ AUTH ============================ */
 $('inBtn').onclick = async () => {
+  if ($('inBtn').disabled) return;
   const u = $('u').value.trim().toLowerCase(), p = $('p').value;
   if (!u || !p) { $('loginErr').textContent = 'Enter your username and password.'; return; }
   $('inBtn').disabled = true; $('loginErr').textContent = '';
   const email = u.includes('@') ? u : `${u}@${EMAIL_DOMAIN}`;
-  const { error } = await sb.auth.signInWithPassword({ email, password: p });
-  $('inBtn').disabled = false;
-  if (error) { $('loginErr').textContent = friendly('invalid_login_credentials'); return; }
-  boot();
+  try {
+    const { error } = await sb.auth.signInWithPassword({ email, password: p });
+    if (error) {
+      $('loginErr').textContent = error.status === 429 ? 'Too many sign-in attempts. Please wait a few minutes before trying again.' : error.name === 'AuthRetryableFetchError' || error.status >= 500 ? 'Sign-in is temporarily unavailable. Check your connection and try again.' : friendly('invalid_login_credentials');
+      return;
+    }
+    $('p').value = ''; await boot();
+  } catch {
+    $('loginErr').textContent = 'Could not finish signing in. Check your connection and try again.';
+  } finally { $('inBtn').disabled = false; }
 };
 $('p').onkeydown = e => { if (e.key === 'Enter') $('inBtn').click(); };
 $('outBtn').onclick = async () => { await window.portalNotificationsBeforeLogout?.(); await sb.auth.signOut({scope:'local'}); location.reload(); };
@@ -403,6 +507,7 @@ async function boot() {
       Ask your instructor to enrol you in a course.</p>`;
     return;
   }
+  if (await openStudyLink()) return;
   if (ST.tracks.length === 1) return openTrack(ST.tracks[0]);
   renderTracks(); show('vTracks');
 }
@@ -435,7 +540,9 @@ async function openTrack(t){
  $('listSub').textContent='Your assessments, progress, and next steps.';
  show('vList');$('examList').innerHTML='<p class="dash-empty" role="status">Loading your progress…</p>';
  try{
-  const [{ok,json},controls,course]=await Promise.all([fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}`}),fn('portal-controls',{method:'POST',body:{action:'settings',data:{track:t.id}}}),sb.rpc('my_course_access')]);
+  const [report,controls,course]=await Promise.all([fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}`}),fn('portal-controls',{method:'POST',body:{action:'settings',data:{track:t.id}}}),sb.rpc('my_course_access')]);
+  let {ok,json}=report;
+  if(!ok){const fallback=await fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}&catalog_only=1`});if(fallback.ok){ok=true;json=fallback.json;}}
   if(course.error)throw new Error(course.error.message);
   const access=(course.data||[]).find(x=>x.track_id===t.id);
   if(!access)throw new Error('Course access is unavailable.');
@@ -443,22 +550,24 @@ async function openTrack(t){
   if(request!==dashboardRequest)return;
   if(!ok)throw new Error(friendly(json.error));
   DAILY_DRAFT={};DRILL_DRAFT={};
-  DASH={...DASH,access,revisionVisible:controls.json.revision_visible,view:access.practice_open?'daily':'history',daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyPage:0,historyType:'all',searchTerm:'',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],dailyGroups:json.dashboard?.daily_groups||[],repeatQuestions:json.dashboard?.repeat_questions??null,summary:json.dashboard?.summary||{}};
+  DASH={...DASH,access,progressUnavailable:!!json.dashboard_error,revisionVisible:controls.json.revision_visible,view:json.dashboard_error?(access.practice_open?'full_exam':'history'):(access.practice_open?'daily':'history'),daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyPage:0,historyType:'all',searchTerm:'',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],dailyGroups:json.dashboard?.daily_groups||[],repeatQuestions:json.dashboard?.repeat_questions??null,summary:json.dashboard?.summary||{}};
   paintDashboard();
-  if(access.practice_open)refreshDaily();
+  if(access.practice_open&&!DASH.progressUnavailable)refreshDaily();
  }catch(e){if(request===dashboardRequest){$('examList').innerHTML=`<div class="dash-empty" role="alert">${esc(e.message)}<br><button class="btn" id="retryDashboard">Try again</button></div>`;$('retryDashboard').onclick=()=>openTrack(t);}}
 }
-function setDashboardView(view){if(DASH.access?.practice_open===false&&!['history','overview','focus','full_exam','formulas','finalsDiagnosis'].includes(view))view='history';if(view==='revision'&&DASH.revisionVisible===false)return;DASH.view=view;DASH.searchTerm='';DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();if(view==='drill'&&!DASH.drill)refreshDrill();if(view==='revision'&&!REV.data)refreshRevision();}
+function setDashboardView(view,dailyGroup){if(DASH.access?.practice_open===false&&!['history','overview','focus','full_exam','formulas','finalsDiagnosis'].includes(view))view='history';if(view==='revision'&&DASH.revisionVisible===false)return;DASH.view=view;DASH.searchTerm='';DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();if(view==='drill'&&!DASH.drill)refreshDrill();if(view==='daily')void refreshDaily(dailyGroup);if(view==='revision'&&!REV.data)refreshRevision();}
 function paintDashboard(){
  const tabs=[['formulas',ST.track?.id==='est_eng'?'Rules reference':'Formulas'],...(['sat','est','est2'].includes(ST.track?.id)&&DASH.revisionVisible!==false?[['revision','Final revision']]:[]),['daily','Daily practice'],['mistakes','Mistake notebook'],['drill','Weak-topic drill'],['overview','My progress'],['lesson_exam','Lesson exams'],['quiz','Quizzes'],['full_exam','Full exams'],['history','Exam history'],['focus','Lesson focus']].filter(([id])=>DASH.access?.practice_open!==false||['history','overview','focus','formulas'].includes(id)||(id==='full_exam'&&DASH.access?.can_finish));
- $('examList').innerHTML=`<nav class="student-tabs" aria-label="Student dashboard">${tabs.map(([id,name])=>`<button class="student-tab ${id==='revision'?'revision-highlight':''} ${!DASH.searchTerm&&DASH.view===id?'active':''}" data-view="${id}" aria-current="${!DASH.searchTerm&&DASH.view===id?'page':'false'}">${name}${ASSESSMENTS[id]?` <span>${DASH.exams.filter(e=>e.assessment_type===id).length}</span>`:''}</button>`).join('')}</nav><div class="review-menu"><button class="btn-ghost" data-go="overview">Main menu</button>${reportButton('','dashboard')}</div><div class="dashboard-search"><label for="dashboardSearch">Find an exam or lesson</label><input type="search" id="dashboardSearch" autocomplete="off" placeholder="Search exams, results, or lessons" value="${esc(DASH.searchTerm||'')}"></div>${DASH.access?`<aside class="course-access-note" aria-label="Course access"><b>${esc(DASH.access.course_label||ST.track.name)}</b> · ${DASH.access.practice_open?'Practice access active':DASH.access.status==='paused'?'Practice access paused':DASH.access.starts_at&&new Date(DASH.access.starts_at)>new Date()?'Practice starts '+dateText(DASH.access.starts_at):'Practice access ended'}${DASH.access.ends_at?' · Ends '+esc(new Date(DASH.access.ends_at).toLocaleString('en-GB',{timeZone:'Africa/Cairo'}))+' Cairo':''}${!DASH.access.practice_open?'<p>Your saved results remain available. Contact your instructor to renew course access.</p>':''}${DASH.access.can_finish&&!DASH.access.practice_open?'<p>You can finish the exam already in progress through its deadline.</p>':''}</aside>`:''}<div id="dashboardContent" aria-live="polite"></div>`;
+ $('examList').innerHTML=`<nav class="student-tabs" aria-label="Student dashboard">${tabs.map(([id,name])=>`<button class="student-tab ${id==='revision'?'revision-highlight':''} ${!DASH.searchTerm&&DASH.view===id?'active':''}" data-view="${id}" aria-current="${!DASH.searchTerm&&DASH.view===id?'page':'false'}">${name}${ASSESSMENTS[id]?` <span>${DASH.exams.filter(e=>e.assessment_type===id).length}</span>`:''}</button>`).join('')}</nav><div class="review-menu"><button class="btn-ghost" data-go="overview">Main menu</button>${reportButton('','dashboard')}</div><div class="dashboard-search"><label for="dashboardSearch">Find an exam or lesson</label><input type="search" id="dashboardSearch" autocomplete="off" placeholder="Search exams, results, or lessons" value="${esc(DASH.searchTerm||'')}"></div>${DASH.access?`<aside class="course-access-note" aria-label="Course access"><b>${esc(DASH.access.course_label||ST.track.name)}</b> · ${DASH.access.practice_open?'Practice access active':DASH.access.status==='paused'?'Practice access paused':DASH.access.starts_at&&new Date(DASH.access.starts_at)>new Date()?'Practice starts '+dateText(DASH.access.starts_at):'Practice access ended'}${DASH.access.ends_at?' · Ends '+esc(new Date(DASH.access.ends_at).toLocaleString('en-GB',{timeZone:'Africa/Cairo'}))+' Cairo':''}${!DASH.access.practice_open?'<p>Your saved results remain available. Contact your instructor to renew course access.</p>':''}${DASH.access.can_finish&&!DASH.access.practice_open?'<p>You can finish the exam already in progress through its deadline.</p>':''}</aside>`:''}${DASH.progressUnavailable?progressUnavailablePanel():''}<div id="dashboardContent" aria-live="polite"></div>`;
  document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setDashboardView(b.dataset.view));
  $('dashboardSearch').oninput=e=>{DASH.searchTerm=e.target.value;document.querySelectorAll('[data-view]').forEach(b=>{const active=!DASH.searchTerm.trim()&&b.dataset.view===DASH.view;b.classList.toggle('active',active);b.setAttribute('aria-current',active?'page':'false');});paintDashboardContent();};
  paintDashboardContent();
 }
+function progressUnavailablePanel(){return '<aside class="dash-empty" role="status"><strong>Progress is temporarily unavailable.</strong><p>Your saved scores are unchanged. Assigned exams remain available.</p><button class="btn" data-retry-progress>Retry progress</button></aside>';}
 function paintDashboardContent(){
  const content=$('dashboardContent');
- if(DASH.searchTerm?.trim())content.innerHTML=searchSection();
+ if(DASH.progressUnavailable&&!DASH.searchTerm?.trim()&&['daily','overview','history','focus','finalsDiagnosis'].includes(DASH.view))content.innerHTML='<section class="dash-panel"><p>Progress data is unavailable. Use Retry progress above to load this section.</p></section>';
+ else if(DASH.searchTerm?.trim())content.innerHTML=searchSection();
  else if(DASH.view==='formulas')content.innerHTML=formulasPanel();
  else if(DASH.view==='revision')content.innerHTML=revisionPanel();
  else if(DASH.view==='daily')content.innerHTML=dailyPanel();
@@ -473,7 +582,8 @@ function paintDashboardContent(){
  wireDashboard();
  if(!DASH.searchTerm?.trim()&&DASH.view==='formulas')wireFormulas();
  if(!DASH.searchTerm?.trim()&&DASH.view==='revision')wireRevision();
- if(!DASH.searchTerm?.trim()&&DASH.view==='daily')wireDaily();
+ document.querySelectorAll('[data-retry-progress]').forEach(b=>b.onclick=()=>openTrack(ST.track));
+ if(!DASH.progressUnavailable&&!DASH.searchTerm?.trim()&&DASH.view==='daily')wireDaily();
  if(!DASH.searchTerm?.trim()&&DASH.view==='mistakes')wireMistakes();
  if(!DASH.searchTerm?.trim()&&DASH.view==='drill')wireDrill();
 }
@@ -562,7 +672,7 @@ function historySection(){
  const rows=DASH.history.filter(h=>DASH.historyType==='all'||h.assessment_type===DASH.historyType);
  const pages=Math.max(1,Math.ceil(rows.length/10));DASH.historyPage=Math.min(DASH.historyPage,pages-1);
  const slice=rows.slice(DASH.historyPage*10,DASH.historyPage*10+10);
- return `<section class="dash-panel"><div class="dash-heading"><h2>Exam history</h2><label class="history-filter">Show <select id="historyFilter">${[['all','All assessments'],...Object.entries(ASSESSMENTS)].map(([id,name])=>`<option value="${id}" ${DASH.historyType===id?'selected':''}>${name}</option>`).join('')}</select></label></div><p class="dash-note">Every completed attempt, including retakes and expired exams.</p>${slice.length?`<div class="student-table"><table><thead><tr><th>Assessment</th><th>Type</th><th>Date</th><th>Attempt</th><th>Score</th><th>Time</th><th></th></tr></thead><tbody>${slice.map(h=>`<tr><td><b>${esc(h.title)}</b>${h.status==='expired'?'<span class="history-detail">Time expired</span>':''}</td><td>${ASSESSMENTS[h.assessment_type]||'Lesson exams'}</td><td>${dateText(h.submitted_at)}</td><td>${h.attempt_no}</td><td><b>${h.score == null ? 'Awaiting grading' : h.score+'/'+h.total}</b><span class="history-detail">${percentText(h.percent)}${h.scaled_score!=null?' · scaled '+h.scaled_score:''}</span></td><td>${Math.floor((h.time_used||0)/60)}m ${(h.time_used||0)%60}s</td><td><button class="btn-ghost" data-review="${h.id}">${h.review_open?'Review':'View score'}</button>${!h.review_open?`<span class="history-detail">${h.review_unlocks_at?'Answers open '+dateText(h.review_unlocks_at):'Review pending'}</span>`:''}</td></tr>`).join('')}</tbody></table></div><div class="history-pager"><button class="btn-ghost" id="historyPrev" ${DASH.historyPage===0?'disabled':''}>Previous</button><span>Page ${DASH.historyPage+1} of ${pages} · ${rows.length} attempts</span><button class="btn-ghost" id="historyNext" ${DASH.historyPage>=pages-1?'disabled':''}>Next</button></div>`:'<div class="dash-empty">No completed attempts in this category yet.</div>'}</section>`;
+ return `<section class="dash-panel"><div class="dash-heading"><h2>Exam history</h2><label class="history-filter">Show <select id="historyFilter">${[['all','All assessments'],...Object.entries(ASSESSMENTS)].map(([id,name])=>`<option value="${id}" ${DASH.historyType===id?'selected':''}>${name}</option>`).join('')}</select></label></div><p class="dash-note">Every completed attempt, including retakes and expired exams.</p>${slice.length?`<div class="student-table"><table><thead><tr><th>Assessment</th><th>Type</th><th>Date</th><th>Attempt</th><th>Score</th><th>Time</th><th></th></tr></thead><tbody>${slice.map(h=>`<tr><td><b>${esc(h.title)}</b>${h.status==='expired'?'<span class="history-detail">Time expired</span>':''}</td><td>${ASSESSMENTS[h.assessment_type]||'Lesson exams'}</td><td>${dateText(h.submitted_at)}</td><td>${h.attempt_no}</td><td><b>${h.score == null ? 'Awaiting grading' : h.score+'/'+h.total}</b><span class="history-detail">${percentText(h.percent)}${h.scaled_score!=null?' · scaled '+h.scaled_score:''}</span></td><td>${h.time_used==null?'Unavailable':Math.floor(h.time_used/60)+'m '+h.time_used%60+'s'}</td><td><button class="btn-ghost" data-review="${h.id}">${h.review_open?'Review':'View score'}</button>${!h.review_open?`<span class="history-detail">${h.review_unlocks_at?'Answers open '+dateText(h.review_unlocks_at):'Review pending'}</span>`:''}</td></tr>`).join('')}</tbody></table></div><div class="history-pager"><button class="btn-ghost" id="historyPrev" ${DASH.historyPage===0?'disabled':''}>Previous</button><span>Page ${DASH.historyPage+1} of ${pages} · ${rows.length} attempts</span><button class="btn-ghost" id="historyNext" ${DASH.historyPage>=pages-1?'disabled':''}>Next</button></div>`:'<div class="dash-empty">No completed attempts in this category yet.</div>'}</section>`;
 }
 function lessonCard(l,compact=false){
  const [label,advice]=PRIORITIES[l.priority]||PRIORITIES.not_started;
@@ -593,7 +703,7 @@ async function startExam(examId, untimed=false, transfer=false) {
   }
   if (!ok) { alert(friendly(json.error)); return openTrack(ST.track); }
   json.exam.id=examId;
-  ST.run = json; ST.idx = 0; ST.flags = new Set(); ST.accessBlocked=false;
+  ST.run = json; ST.idx = 0; restoreExamFlags(); ST.accessBlocked=false;
   if(transfer){
     // Never replay an old queue over answers from the other browser, even if storage is full.
     ST.pendingRecovery=pending.size?JSON.stringify([...pending]):null;
@@ -613,6 +723,22 @@ async function startExam(examId, untimed=false, transfer=false) {
   }
   if(typeof startExamActivity==='function')startExamActivity(json);
 }
+
+// Review flags are scoped to one attempt and remembered on this browser.
+function examFlagsKey(){return ST.run?.attempt?.id?'exam-flags:'+ST.run.attempt.id:null;}
+function restoreExamFlags(){
+ ST.flags=new Set();const key=examFlagsKey();if(!key)return;
+ try{
+  const saved=JSON.parse(localStorage.getItem(key)||'[]');
+  const valid=new Set((ST.run.questions||[]).map(q=>q.id));
+  if(Array.isArray(saved))for(const id of saved.slice(0,200))if(typeof id==='string'&&valid.has(id))ST.flags.add(id);
+ }catch{}
+}
+function persistExamFlags(){
+ const key=examFlagsKey();if(!key)return;
+ try{if(ST.flags.size)localStorage.setItem(key,JSON.stringify([...ST.flags]));else localStorage.removeItem(key);}catch{}
+}
+function clearExamFlags(){const key=examFlagsKey();if(key)try{localStorage.removeItem(key);}catch{} ST.flags=new Set();}
 
 function startClock() {
   clearInterval(ST.timer);
@@ -758,6 +884,7 @@ $('nextBtn').onclick = () => { if (ST.idx < ST.run.questions.length - 1) { captu
 $('flagBtn').onclick = () => {
   const id = ST.run.questions[ST.idx].id;
   ST.flags.has(id) ? ST.flags.delete(id) : ST.flags.add(id);
+  persistExamFlags();
   renderQ(); renderPalette();
 };
 $('finishBtn').onclick = () => submitExam(false);
@@ -775,7 +902,7 @@ async function submitExam(auto) {
   if(ok||(status===409&&json.result)){
    const current=DASH.exams.find(e=>e.id===ST.run.exam.id);
    const next=current?.exam_set_code?DASH.exams.find(e=>e.exam_set_code===current.exam_set_code&&e.module_number===current.module_number+1):null;
-   if(typeof stopExamActivity==='function')stopExamActivity();clearInterval(ST.timer);pending.clear();persistPending();paintReview(ok?json:json.result,next?.id||null);ST.run=null;
+   if(typeof stopExamActivity==='function')stopExamActivity();clearInterval(ST.timer);pending.clear();persistPending();clearExamFlags();paintReview(ok?json:json.result,next?.id||null);ST.run=null;
   }else{alert(friendly(json.error));}
  }catch{$('saving').textContent='Submission not confirmed. Reconnect and press Submit again.';}
  finally{submitting=false;$('finishBtn').disabled=false;$('finishBtn').textContent='Submit exam';}
@@ -942,6 +1069,6 @@ topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 <script src="/portal-management.js?v=20261023-act2"></script>
 <script src="/lesson-exam-catalog.js?v=20261030-compact"></script>
 <script src="/assessment-index.js?v=20261030"></script>
-<script src="/lesson-exams.js?v=20261030-responsive"></script>
+<script src="/lesson-exams.js?v=20261102-objectives"></script>
 </body>
 </html>
