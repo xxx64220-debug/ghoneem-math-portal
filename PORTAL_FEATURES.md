@@ -1,5 +1,19 @@
 # Ghoneem Math Portal feature inventory
 
+## Production verification — 6 November 2026
+
+- **Hosted baseline:** Site 152, source `aa426c16569896839ce0b2197e6771ab32ee30b5`, deployment `appgdep_6aed073aa8648191a732fba8b077e868`. GitHub baseline `002aee59548b070bd5bdd6e9062e47110cb0a7c7` is a separate source history. Of 77 tracked GitHub `web/` files, 12 differ on the hosted source; the hosted checkout also tracks 1,525 additional `web/` files. Keep Site source as the deployment base until the changes and archives have been reconciled. Do not publish an older GitHub distribution over it.
+- **Study completion:** Site 152 contains the read-only progress UI. Live readback confirms `student_daily_objectives.lesson_exam_id`, the security-invoker `study_activity_completion` view, no anonymous SELECT grant, and no authenticated client write access to legacy progress. The view requires a matching course, student and linked assessment, a submitted or graded attempt, and saved answer evidence. Older source notes saying this change is unapplied are stale. Do not replay the SQL. Unlinked activities still need an explicit assessment link; an unavailable read must never count as complete.
+- **Alex Tuesday quiz:** The 10 November 10-question, 20-minute quiz is published and group-assigned; new starts open 13:10 and close 13:30 Cairo. The private-backed Today shortcut exists and anonymous execution is denied. Signed-in visibility during that opening window still needs a check.
+- **Calculator:** The hosted source uses the official external SAT Desmos link. The embedded adapter is disabled there, despite the approved configuration on GitHub. Preserve the working external link until embedding is verified on the live origin.
+- **Catalog:** Production audit **21122** records 19 SAT lesson/skill classifications and three title-only labels for the shorter EST sets (22Q, 20Q and 17Q). Readback found zero unclassified active SAT records by the review-queue criteria. The short sets retain their assignments, content and timers; matching 25-question Set 02 assessments already exist. Audit **21124** records independent arithmetic checks on eight MSET/notes grid-in items without answer-key changes. Another 150 records in that intake still lack that review marker.
+- **Checks:** Hosted source passed 25 targeted planner/auth/taxonomy client tests and 31 disposable PostgreSQL completion assertions. Asset manifest verification covered 4,968 assets and 111 local links with zero broken links, and confirmed staged MFA is not loaded. The homepage returned HTTP 200 with HSTS, CSP, nosniff and frame-denial headers. These checks do not replace signed-in validation, physical-device testing or a bank-wide mathematics review.
+- **Security decisions:** The MFA implementation remains staged; an owner-controlled authenticator and recovery pilot is required before enforcement. Leaked-password protection requires a supported plan and an Auth configuration decision. No new MFA enforcement or billing changes are included here.
+
+## Historical feature inventory — 15 October 2026
+
+The sections below describe the earlier reconciliation. Use the dated verification above for later deployment and feature differences.
+
 Checked October 15, 2026 (Cairo). The deployed Site and GitHub have separate source histories. This reconciliation preserves the current deployed functionality, records matching backend SQL and tests, and keeps the existing domain, database, audience and historical records.
 
 ## Students
