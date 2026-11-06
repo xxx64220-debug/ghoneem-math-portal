@@ -105,7 +105,15 @@
   });
   const resetButton=document.getElementById('lessonExamReset');if(resetButton)resetButton.onclick=()=>{Object.assign(state,{scope:'all',lesson:'',difficulty:'',query:'',pages:{},expanded:new Set()});paintDashboardContent();};
  }
- window.LessonExamLibrary={catalog,isNew,lessonFor,groups,units};
+ function openObjective(topic){
+  const track=ST.track.id;
+  const quizGroups=groups(DASH.exams,track,{type:'quiz',scope:'available'});
+  const type=topic && quizGroups.some(g=>g.lesson===topic) ? 'quiz' : 'lesson_exam';
+  const options=groups(DASH.exams,track,{type});
+  Object.assign(state,{track,type,scope:'all',lesson:options.some(g=>g.lesson===topic)?topic:'',query:'',difficulty:'',pages:{},expanded:new Set()});
+  setDashboardView(type);
+ }
+ window.LessonExamLibrary={catalog,isNew,lessonFor,groups,units,openObjective};
  if(typeof assessmentSection==='function'&&typeof DASH!=='undefined'){
   const section=assessmentSection;assessmentSection=function(type){return ['lesson_exam','quiz'].includes(type)?panel(type):section.apply(this,arguments);};
   const oldWire=wireDashboard;wireDashboard=function(){const result=oldWire.apply(this,arguments);wire();return result;};

@@ -1,6 +1,6 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 function setup(file){
- const nodes=new Map();function node(id){if(!nodes.has(id))nodes.set(id,{id,value:'',textContent:'',innerHTML:'',disabled:false,style:{},isConnected:true,classList:{toggle(){},contains(){return true},remove(){},add(){}},querySelectorAll(){return[]},close(){},showModal(){}});return nodes.get(id);}
+ const nodes=new Map();function node(id){if(!nodes.has(id))nodes.set(id,{id,value:'',textContent:'',innerHTML:'',disabled:false,style:{},isConnected:true,classList:{toggle(){},contains(){return true},remove(){},add(){}},querySelectorAll(){return[]},replaceChildren(...children){this.children=children;this.innerHTML='';this.textContent=''},close(){},showModal(){}});return nodes.get(id);}
  const ctx={console,Map,Set,Date,JSON,Promise,Number,String,Array,Object,Math,Error,RegExp,URL,Blob,TextEncoder,crypto:require('node:crypto').webcrypto,
  setInterval(){return 1},clearInterval(){},setTimeout(){},clearTimeout(){},location:{reload(){},href:''},alert(){},confirm(){return true},
  localStorage:{setItem(){},getItem(){return null}},document:{addEventListener(){},getElementById:node,querySelectorAll(){return[]},documentElement:{style:{setProperty(){}}}},window:{addEventListener(){},scrollTo(){}},

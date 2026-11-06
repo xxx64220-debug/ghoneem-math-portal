@@ -35,17 +35,16 @@ Deno.serve(serve(async (req) => {
     if (typeof payload.drill_id !== "string" || !payload.answers || typeof payload.answers !== "object" || Array.isArray(payload.answers))
       throw new ApiError("invalid_answers", 400);
     result = await db.rpc("practice_drill_submit", { p_user: me.id, p_track: track, p_drill: payload.drill_id, p_answers: payload.answers });
+  } else if (payload?.action === "quiz_start") {
+    result = await db.rpc("daily_group_start", {p_user:me.id,p_track:track,p_group:group??null,p_day:payload.day??null});
   } else if (payload?.action === "submit") {
     if (!payload.answers || typeof payload.answers !== "object" || Array.isArray(payload.answers))
       throw new ApiError("invalid_answers", 400);
     result = await db.rpc("daily_group_submit", {
       p_user: me.id, p_track: track, p_answers: payload.answers, p_group:group??null, p_day:payload.day??null,
     });
-  } else if (payload?.action === "mark" && ["focus", "review"].includes(payload.task)) {
-    result = await db.rpc("daily_group_mark", {
-      p_user: me.id, p_track: track, p_task: payload.task, p_group:group??null, p_day:payload.day??null,
-    });
-  } else throw new ApiError("invalid_action", 400);
+  } else if (payload?.action === "mark") {
+    throw new ApiError("automatic_completion_required", 403);  } else throw new ApiError("invalid_action", 400);
   if (result.error) throw sqlError(result.error);
   return json(result.data);
 }));

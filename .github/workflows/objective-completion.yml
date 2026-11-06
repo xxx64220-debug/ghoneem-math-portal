@@ -1,0 +1,27 @@
+name: Verified objective completion
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  completion:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install isolated test runtimes
+        run: |
+          npm ci --prefix tests/june-review-runtime --ignore-scripts --no-audit --no-fund
+          npm ci --prefix tests/device-runtime --ignore-scripts --no-audit --no-fund
+          npm ci --prefix tests/english-runtime --ignore-scripts --no-audit --no-fund
+      - name: Verify database evidence and access boundaries
+        run: |
+          node tests/verified_daily_activity_db.cjs
+          node tests/verified_study_completion_db.cjs
+          node tests/weekly_objective_completion_db.cjs
+      - name: Verify student, instructor and retry flows
+        run: node --test tests/daily_group_scores_ui.test.cjs tests/daily_group_scores_edge.test.cjs tests/study_planner_ui.test.cjs tests/student_objective.test.cjs tests/daily_streak.test.cjs

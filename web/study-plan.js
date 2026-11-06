@@ -1,0 +1,76 @@
+'use strict';
+const sb=supabase.createClient('https://wfhurjyouemahvkcfkdz.supabase.co','sb_publishable_FIUSELOTsAQaH8dQ6oF-ow_CcISJV5-');
+const $=id=>document.getElementById(id),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const today=()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Cairo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+let me,staff=false,groups=[],members=[],students=[],plans=[],progress=[],exams=[],history=false,request=0,loading=false,ready=false,editorTarget=null;
+async function rows(q){const {data,error}=await q;if(error)throw Error(error.message);return data||[];}
+async function pages(make,current=()=>true){
+ const result=[];
+ for(let offset=0;;offset+=500){
+  if(!current())throw Error('Selection changed');
+  const page=await rows(make().range(offset,offset+499));
+  if(!current())throw Error('Selection changed');
+  result.push(...page);
+  if(page.length<500)return result;
+ }
+}
+function message(s,error=false){$('message').textContent=s;$('message').className=error?'error':'';}
+function selectedUsers(){const g=$('group').value;return students.filter(s=>(!g||members.some(m=>m.group_id===g&&m.user_id===s.user_id))&&(!$('student').value||s.user_id===$('student').value));}
+function selectStudents(){const previous=$('student').value,g=$('group').value;const list=students.filter(s=>!g||members.some(m=>m.group_id===g&&m.user_id===s.user_id));$('student').innerHTML='<option value="">All selected students</option>'+list.map(s=>`<option value="${s.user_id}">${esc(s.full_name)}</option>`).join('');if(list.some(s=>s.user_id===previous))$('student').value=previous;}
+async function load(){const token=++request;loading=true;ready=false;plans=[];progress=[];$('edit').disabled=true;$('content').replaceChildren();message('Loading…');try{const track=$('track').value;
+ if(staff){const [gs,ms,es,ps]=await Promise.all([pages(()=>sb.from('groups').select('id,name,track_id').eq('track_id',track).order('id'),()=>token===request),pages(()=>sb.from('group_members').select('group_id,user_id').order('group_id').order('user_id'),()=>token===request),pages(()=>sb.from('enrollments').select('user_id').eq('track_id',track).order('user_id'),()=>token===request),pages(()=>sb.from('profiles').select('id,full_name,is_test').eq('role','student').order('id'),()=>token===request)]);if(token!==request)return;groups=gs;members=ms;students=es.map(e=>({...e,...ps.find(p=>p.id===e.user_id)})).filter(s=>s.id&&!s.is_test);const prior=$('group').value;$('group').innerHTML='<option value="">All groups</option>'+groups.map(g=>`<option value="${g.id}">${esc(g.name)}</option>`).join('');if(groups.some(g=>g.id===prior))$('group').value=prior;selectStudents();}
+ const date=$('date').value;const from=new Date(date+'T12:00:00Z');from.setUTCDate(from.getUTCDate()-30);const to=new Date(date+'T12:00:00Z');to.setUTCDate(to.getUTCDate()+30);
+ const [p,s]=await Promise.all([pages(()=>sb.from('student_daily_objectives').select('*').eq('track_id',track).gte('study_date',from.toISOString().slice(0,10)).lte('study_date',to.toISOString().slice(0,10)).order('study_date').order('user_id'),()=>token===request),pages(()=>sb.from('study_activity_completion').select('*').eq('track_id',track).gte('study_date',from.toISOString().slice(0,10)).lte('study_date',to.toISOString().slice(0,10)).order('study_date').order('user_id').order('activity'),()=>token===request)]);if(token!==request)return;plans=p;progress=s;loading=false;ready=true;render();message('Completion updates automatically after you submit the linked assessment. Reading or opening a page alone does not complete an activity.');return true;
+ }catch(e){if(token===request){message('Could not load the plan: '+e.message,true);$('content').replaceChildren();}}finally{if(token===request){loading=false;$('edit').disabled=!ready;}}}
+function evidence(p, activity) {
+ return progress.find(row => row.user_id === p.user_id && row.track_id === p.track_id &&
+   row.study_date === p.study_date && row.activity === activity);
+}
+function state(p, activity) {
+ return evidence(p, activity)?.status || 'unavailable';
+}
+const statusLabels = {
+ completed: 'Completed automatically',
+ in_progress: 'Started — awaiting submission',
+ skipped: 'Skipped by instructor',
+ pending: 'Awaiting submission',
+ needs_link: 'Assessment link needed',
+ unavailable: 'Progress unavailable'
+};
+function statusMarkup(p, activity) {
+ const row = evidence(p, activity);
+ const status = state(p, activity);
+ const timestamp = row?.submitted_at ? new Intl.DateTimeFormat('en-GB', {
+   timeZone: 'Africa/Cairo', day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'
+ }).format(new Date(row.submitted_at)) : '';
+ return '<strong class="activity-status">' + esc(statusLabels[status]) + '</strong>' +
+   (timestamp ? '<small>Submitted ' + esc(timestamp) + ' · Cairo</small>' : '') +
+   (status === 'needs_link' ? '<small>Your instructor needs to link an assessment to verify this activity.</small>' : '');
+}
+function relevant(){const ids=staff?selectedUsers().map(s=>s.user_id):[me.id];return plans.filter(p=>ids.includes(p.user_id));}
+function link(p,a){if(a==='practice'&&p.practice_source==='daily_quiz')return '/?'+new URLSearchParams({study_track:p.track_id,study_activity:'daily',study_group:p.practice_group_id||'00000000-0000-0000-0000-000000000000'});const id=p[a+'_exam_id'];const params=new URLSearchParams({study_track:p.track_id,study_activity:a==='lesson'?'practice':a==='retest'?'mistakes':p.destination,study_lesson:p.lesson});if(id)params.set('study_exam',id);return '/?'+params;}
+function render(){if(loading)return;const all=relevant(),day=all.filter(p=>p.study_date===$('date').value);$('dayTab').setAttribute('aria-pressed',!history);$('progressTab').setAttribute('aria-pressed',history);
+ if(history){const counts={completed:0,in_progress:0,pending:0,skipped:0,needs_link:0,unavailable:0};all.forEach(p=>['lesson','practice','retest'].forEach(a=>counts[state(p,a)]++));$('content').innerHTML=`<h2>Study progress</h2><p class="muted">${staff?'Selected students · ':''}30 days before and after the selected date. Submitted assessments determine completion. Awaiting submission includes future work. Reading and PDF tasks need an assessment link for verification.</p><div class="summary">${Object.entries(counts).map(([k,v])=>`<div><strong>${v}</strong>${esc(statusLabels[k])}</div>`).join('')}<div><strong>${all.length}</strong>planned student-days</div></div><div class="history"><table><thead><tr><th>Date</th>${staff?'<th>Student</th>':''}<th>Objective</th><th>Lesson</th><th>Practice</th><th>Retest</th></tr></thead><tbody>${all.map(p=>`<tr><td>${esc(p.study_date)}</td>${staff?`<td>${esc(students.find(s=>s.user_id===p.user_id)?.full_name||'Student')}</td>`:''}<td>${esc(p.title)}</td>${['lesson','practice','retest'].map(a=>`<td>${statusMarkup(p,a)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${!all.length?'<p>No objectives assigned in this date range.</p>':''}`;return;}
+ const missing=staff?selectedUsers().filter(s=>!day.some(p=>p.user_id===s.user_id)).length:0;
+ $('content').innerHTML=(missing?`<p class="muted">${missing} selected student(s) have no plan on this date. Unassigned work is not counted as pending.</p>`:'')+(day.length?day.map((p,i)=>`<section><div class="dayhead"><div><div class="eyebrow">${staff?esc(students.find(s=>s.user_id===p.user_id)?.full_name||'Student'):'YOUR DAILY FOCUS'} · ${esc(p.study_date)}</div><h2>${esc(p.title)}</h2><span class="muted">${esc(p.time_budget)}</span></div><span class="badge">${p.calculator_allowed?'Calculator allowed':'Check activity calculator rules'}</span></div><div class="cards">${['lesson','practice','retest'].map((a,j)=>`<article class="card ${state(p,a)}"><span class="step">0${j+1}</span><h3>${a==='lesson'?'Learn & review':a==='practice'?'Focused practice':'Retest & reflect'}</h3><b>${a==='lesson'?esc(p.lesson||'Recommended lesson'):a==='practice'?'Apply the lesson':'Check your understanding'}</b><p>${esc(a==='lesson'?p.instructions:a==='practice'?(p.practice_note||'Practise this lesson and review each mistake.'):(p.retest_note||'Revisit your mistakes and explain the corrected method.'))}</p><small>${p.calculator_allowed?'Calculator allowed':'Follow linked activity rules'}</small><a href="${esc(link(p,a))}">${a==='practice'&&p.practice_source==='daily_quiz'?'Open assigned Daily Quiz':p[a+'_exam_id']?'Open linked assessment':a==='lesson'?'Open lesson practice':'Open recommended practice'} →</a>${statusMarkup(p,a)}</article>`).join('')}</div></section>`).join(''):'<div class="empty"><h2>No objectives assigned for this day</h2><p>Your existing quizzes and exams are still available in the portal.</p><a href="/">Open portal →</a></div>');
+}
+async function edit(){if(loading||!ready)return;const token=request,track=$('track').value,date=$('date').value;try{const users=selectedUsers();if(!users.length)throw Error('Select at least one student.');const available=await pages(()=>sb.from('exams').select('id,title').eq('track_id',track).eq('is_published',true).order('title').order('id'),()=>token===request);if(token!==request)return;exams=available;editorTarget={track,date,users:users.map(s=>s.user_id)};const form=$('planForm');form.reset();form.elements.practice_group_id.innerHTML='<option value="">Earlier course quiz</option>'+groups.map(g=>`<option value="${g.id}">${esc(g.name)}</option>`).join('');const options='<option value="">No linked assessment — completion cannot be verified</option>'+exams.map(e=>`<option value="${e.id}">${esc(e.title)}</option>`).join('');form.elements.lesson_exam_id.innerHTML=options;form.elements.practice_exam_id.innerHTML=options;form.elements.retest_exam_id.innerHTML=options;const p=users.length===1?plans.find(p=>p.user_id===users[0].user_id&&p.study_date===$('date').value):null;if(p)for(const key of ['title','instructions','time_budget','lesson','practice_note','retest_note','lesson_exam_id','practice_exam_id','retest_exam_id','destination'])form.elements[key].value=p[key]||'';if(p){form.elements.calculator_allowed.checked=p.calculator_allowed;form.elements.practice_source.value=p.practice_source||'exam';form.elements.practice_group_id.value=p.practice_group_id||'';for(const a of ['lesson','practice','retest'])form.elements['skip_'+a].checked=(p.skipped_activities||[]).includes(a);}syncPracticeFields();$('target').textContent=`${$('date').value} · ${users.length===1?users[0].full_name:users.length+' students'}${users.length>1?' · Replaces objectives for this date, completion will be checked against the updated assessment links.':''}`;$('saveError').textContent='';$('editor').showModal();}catch(e){if(token===request)message(e.message,true);}}
+$('planForm').onsubmit=async e=>{e.preventDefault();$('save').disabled=true;try{if(!editorTarget)throw Error('Reopen the editor to select students.');const target=editorTarget;const f=e.target.elements,base={track_id:target.track,study_date:target.date,calculator_allowed:f.calculator_allowed.checked,practice_source:f.practice_source.value,practice_group_id:f.practice_source.value==='daily_quiz'?(f.practice_group_id.value||null):null,skipped_activities:['lesson','practice','retest'].filter(a=>f['skip_'+a].checked)};for(const k of ['title','instructions','time_budget','lesson','practice_note','retest_note','destination'])base[k]=f[k].value.trim();for(const k of ['lesson_exam_id','practice_exam_id','retest_exam_id'])base[k]=f[k].value||null;if(base.practice_source==='daily_quiz'){base.practice_exam_id=null;if(base.practice_group_id&&target.users.some(user=>!members.some(m=>m.user_id===user&&m.group_id===base.practice_group_id)))throw Error('Every selected student must belong to the Daily Quiz group.');}if(!base.title||!base.instructions||!base.time_budget)throw Error('Title, instructions and time budget are required.');const data=target.users.map(user_id=>({...base,user_id}));const saved=await rows(sb.from('student_daily_objectives').upsert(data,{onConflict:'user_id,study_date,track_id'}).select());if(saved.length!==data.length)throw Error('Not all updates were confirmed. Reload before retrying.');editorTarget=null;$('editor').close();const refreshed=await load();if(refreshed)message(`Objectives saved for ${data.length} student(s).`);}catch(e){$('saveError').textContent='Not saved: '+e.message;}finally{$('save').disabled=false;}};
+function syncPracticeFields(){const f=$('planForm').elements,quiz=f.practice_source.value==='daily_quiz';f.practice_group_id.closest('label').hidden=!quiz;f.practice_exam_id.closest('label').hidden=quiz;}
+$('planForm').elements.practice_source.onchange=syncPracticeFields;
+$('cancel').onclick=()=>{editorTarget=null;$('editor').close();};$('edit').onclick=edit;$('track').onchange=()=>{$('group').value='';$('student').value='';load();};$('group').onchange=()=>{selectStudents();render();};$('student').onchange=render;$('date').onchange=()=>{followToday=$('date').value===today();if($('date').value)load();};$('today').onclick=()=>{followToday=true;$('date').value=today();history=false;load();};$('dayTab').onclick=()=>{history=false;render();};$('progressTab').onclick=()=>{history=true;render();};
+
+let followToday=true;
+function refreshAfterReturn() {
+ if(followToday&&$('date').value!==today())$('date').value=today();
+ if (me && !loading && !$('editor').open && document.visibilityState === 'visible') void load();
+}
+window.addEventListener('pageshow', event => { if (event.persisted) refreshAfterReturn(); });
+document.addEventListener('visibilitychange', refreshAfterReturn);
+
+setInterval(()=>{if(me&&followToday&&$('date').value!==today())refreshAfterReturn();},30000);
+
+async function boot(){try{const {data:{user},error}=await sb.auth.getUser();if(error||!user){message('Sign in to the portal to view your daily study plan.');return;}me=user;
+ PortalDevices.configure({sb,fnBase:'https://wfhurjyouemahvkcfkdz.supabase.co/functions/v1',key:'sb_publishable_FIUSELOTsAQaH8dQ6oF-ow_CcISJV5-',resume:boot});if(!await PortalDevices.ensure())return;
+ const profile=(await rows(sb.from('profiles').select('role').eq('id',me.id)))[0];if(!profile)throw Error('Your account is not available.');staff=['admin','instructor'].includes(profile.role);for(const id of ['groupLabel','studentLabel','edit'])$(id).hidden=!staff;if(staff){$('back').href='/admin.html';$('back').textContent='← Instructor console';}else{const enrolled=await rows(sb.from('enrollments').select('track_id').eq('user_id',me.id).in('track_id',['sat','est']));$('track').innerHTML=enrolled.map(e=>`<option value="${e.track_id}">${e.track_id==='sat'?'SAT Math':'EST I Math'}</option>`).join('');if(!enrolled.length)throw Error('No SAT Math or EST I course is assigned.');}
+ const context=new URLSearchParams(location.search);const selectedTrack=context.get('track');if([...$('track').options].some(o=>o.value===selectedTrack))$('track').value=selectedTrack;$('date').value=today();$('workspace').hidden=false;await load();if(staff&&ready){const group=context.get('group'),student=context.get('student');if(groups.some(g=>g.id===group))$('group').value=group;selectStudents();if([...$('student').options].some(o=>o.value===student))$('student').value=student;render();}}catch(e){message(e.message,true);}}boot();

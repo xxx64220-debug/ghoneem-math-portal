@@ -24,7 +24,41 @@ test('out-of-order group reads and old-track submissions cannot replace current 
  for(const q of c.DASH.daily.quiz)vm.runInContext(`DAILY_DRAFT[${JSON.stringify(q.id)}]='A'`,c);c.paintDashboardContent();dom.window.document.querySelector('[data-daily-submit]').click();
  c.ST.track={id:'est'};c.DASH.daily={...state(),track:'est'};pending[2].resolve({ok:true,json:{...state(b),completed:true}});await flush();assert.equal(c.DASH.daily.track,'est');assert.equal(c.DASH.daily.completed,false);
 });
-test('mark checklist sends only the current group and failure keeps its results',async()=>{
- const {c,dom}=setup();c.fn=async(name,opts)=>{c.calls.push({name,opts});return {ok:false,json:{error:'temporary'}}};dom.window.document.querySelector('[data-daily-mark="focus"]').click();await flush();assert.equal(c.calls.at(-1).opts.body.group_id,a);assert.equal(c.DASH.daily.points_total,90);assert.match(dom.window.document.getElementById('daily-message').textContent,/temporary/);
+test('checklist cannot be claimed manually and navigation performs no completion write',()=>{
+ const {c,dom}=setup();c.setDashboardView=view=>c.opened=view;
+ assert.equal(dom.window.document.querySelectorAll('[data-daily-mark]').length,0);
+ dom.window.document.querySelector('[data-daily-open="lesson_exam"]').click();
+ assert.equal(c.opened,'lesson_exam');assert.equal(c.calls.length,0);
+ c.DASH.daily.activity_status={quiz:'pending',focus:'started',review:'completed'};
+ assert.match(c.dailyPanel(),/Started/);assert.match(c.dailyPanel(),/Completed automatically/);
+});
+test('failed submission reconciles committed server result without awarding a second score',async()=>{
+ const {c,dom}=setup();let submits=0;c.fn=async(name,opts)=>{
+  if(opts.method==='POST'){submits++;throw Error('connection interrupted');}
+  return {ok:true,json:{...state(a),completed:true,score:4,points_today:50}};
+ };
+ for(const q of c.DASH.daily.quiz)vm.runInContext(`DAILY_DRAFT[${JSON.stringify(q.id)}]='A'`,c);
+ dom.window.document.querySelector('[data-daily-submit]').click();await flush();
+ assert.equal(submits,1);assert.equal(c.DASH.daily.completed,true);assert.equal(c.DASH.daily.score,4);
+ assert.equal(dom.window.document.querySelectorAll('[data-daily-submit]').length,0);
 });
 test('group metadata is escaped and no quiz keys are exposed before completion',()=>{const {c}=setup();c.DASH.daily={...state(),group_name:'<script>bad</script>',groups:[{id:a,name:'<script>bad</script>'}]};assert.doesNotMatch(c.dailyPanel(),/<script>/);assert.match(c.dailyPanel(),/&lt;script&gt;/);assert.doesNotMatch(c.dailyPanel(),/Correct answer:/)});
+
+test('uncommitted submission failure preserves answers and restores retry',async()=>{
+ const {c,dom}=setup();c.fn=async(name,opts)=>opts.method==='POST'?{ok:false,json:{error:'temporary'}}:{ok:true,json:state(a)};
+ for(const q of c.DASH.daily.quiz)vm.runInContext(`DAILY_DRAFT[${JSON.stringify(q.id)}]='B'`,c);
+ dom.window.document.querySelector('[data-daily-submit]').click();await flush();
+ assert.equal(dom.window.document.querySelector('[data-daily-submit]').disabled,false);
+ assert.equal(vm.runInContext('Object.keys(DAILY_DRAFT).length',c),5);
+ assert.match(dom.window.document.getElementById('daily-message').textContent,/temporary/);
+});
+test('midnight rejection refreshes the group date without posting the old answers again',async()=>{
+ const {c,dom}=setup();let submits=0;c.fn=async(name,opts)=>{
+ if(opts.method==='POST'){submits++;return {ok:false,json:{error:'daily_date_changed'}};}
+ return {ok:true,json:{...state(a),date:'2026-10-16',reset_at:'2026-10-16T21:00:00Z'}};
+ };
+ for(const q of c.DASH.daily.quiz)vm.runInContext(`DAILY_DRAFT[${JSON.stringify(q.id)}]='A'`,c);
+ dom.window.document.querySelector('[data-daily-submit]').click();await flush();
+ assert.equal(submits,1);assert.equal(c.DASH.daily.date,'2026-10-16');assert.equal(vm.runInContext('Object.keys(DAILY_DRAFT).length',c),0);
+ assert.equal(c.DASH.daily.completed,false);
+});

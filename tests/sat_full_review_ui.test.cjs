@@ -1,6 +1,6 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 function client(){
- const nodes=new Map(),node=id=>{if(!nodes.has(id))nodes.set(id,{id,value:'',textContent:'',innerHTML:'',disabled:false,style:{},classList:{toggle(){},contains(){return true},remove(){},add(){}},querySelectorAll(){return[]}});return nodes.get(id);};
+ const nodes=new Map(),node=id=>{if(!nodes.has(id))nodes.set(id,{id,value:'',textContent:'',innerHTML:'',disabled:false,style:{},classList:{toggle(){},contains(){return true},remove(){},add(){}},querySelectorAll(){return[]},replaceChildren(...children){this.children=children;this.innerHTML='';this.textContent=''}});return nodes.get(id);};
  const c={console,Map,Set,Date,JSON,Promise,Number,String,Array,Object,Math,Error,RegExp,URL,crypto:require('node:crypto').webcrypto,setInterval(){},clearInterval(){},setTimeout(){},clearTimeout(){},alert(){},confirm(){return true},location:{},localStorage:{setItem(){},getItem(){return null}},document:{addEventListener(){},getElementById:node,querySelectorAll(){return[]}},window:{addEventListener(){},scrollTo(){}},supabase:{createClient:()=>({auth:{getSession:async()=>({data:{session:null}}),getUser:async()=>({data:{user:null}})}})}};
  vm.createContext(c);vm.runInContext(fs.readFileSync('web/index.html','utf8').split('<script>')[1].split('</script>')[0],c);
  vm.runInContext("ST.track={id:'sat'};readingQuestion=(it,track,after,stem)=>stem+after;reportButton=()=>'';",c);
