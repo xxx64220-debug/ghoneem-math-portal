@@ -52,7 +52,7 @@ test('student sees reference and diagnosis alongside daily destinations and can 
 });
 test('deployed management files match source and student history has no new-practice controls',()=>{
  for(const f of ['index.html','admin.html','portal-management.js','portal-management.css','daily-challenge.js'])assert.equal(fs.readFileSync('web/'+f,'utf8'),fs.readFileSync((PORTAL_STATIC + '/')+f,'utf8'));
- const html=fs.readFileSync('web/index.html','utf8');assert.match(html,/view:access.practice_open\?'daily':'history'/);assert.match(html,/if\(access.practice_open\)refreshDaily\(\)/);assert.match(html,/can_finish/);
+ const html=fs.readFileSync('web/index.html','utf8');const defaultView=html.match(/view:([^,]+),daily:null/)[1];for(const [practice_open,dashboard_error,expected] of [[true,false,'daily'],[false,false,'history'],[true,true,'full_exam'],[false,true,'history']])assert.equal(require('node:vm').runInNewContext(defaultView,{access:{practice_open},json:{dashboard_error}}),expected);assert.match(html,/if\(access.practice_open&&!DASH.progressUnavailable\)refreshDaily\(\)/);assert.match(html,/can_finish/);
  // Parse every inline script independently: markup injection must never terminate a script.
  for(const name of ['index.html','admin.html']){const dom=new JSDOM(fs.readFileSync('web/'+name,'utf8'));for(const script of dom.window.document.querySelectorAll('script:not([src])'))new(require('node:vm').Script)(script.textContent);dom.window.close();}
 });
