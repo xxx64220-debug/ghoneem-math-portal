@@ -7,7 +7,7 @@ import {PGlite} from './device-runtime/node_modules/@electric-sql/pglite/dist/in
 const read=p=>readFileSync(p,'utf8');
 const captured=JSON.parse(read('performance-releases/20261110-disk-io/functions-before.json'));
 const before=captured.find(x=>x.name==='portal_push_collect').definition;
-const migration=read('supabase/migrations/20261110164206_optimize_portal_push_collection.sql');
+const migration=read('supabase/migrations/20261110164655_optimize_portal_push_collection.sql');
 const id=n=>`00000000-0000-4000-8000-${String(n).padStart(12,'0')}`;
 
 test('collector preserves notification eligibility, idempotency, expiry and service-only access',async()=>{

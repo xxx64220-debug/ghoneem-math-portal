@@ -50,3 +50,12 @@ telemetry are not exposed by the available database connector. Historical
 temporary-file totals alone do not establish today's source. Avoid repeatedly
 materializing all query text for diagnostics; use
 `extensions.pg_stat_statements(false)` when only counters are needed.
+
+## Production application
+
+Applied November 10 at 16:46:55 UTC (18:46:55 Cairo), migration ledger
+`20261110164655_optimize_portal_push_collection`. The CLI-created source filename
+was aligned to this returned production version; no migration history was edited.
+Postflight verified the same 446 attempts and identical score/status digest,
+unchanged cron schedules, unchanged service-only ACL, and no new security-advisor
+findings. Collector definition hash: `5ab8c424e4f9d5f9de61ab5858395181`.
