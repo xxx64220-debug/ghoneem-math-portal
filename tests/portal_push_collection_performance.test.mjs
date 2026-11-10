@@ -37,6 +37,9 @@ test('collector preserves notification eligibility, idempotency, expiry and serv
   // The guarded upgrade must work on the exact inspected definition.
   await db.exec(migration);
   assert.equal((await db.query("select pg_get_functiondef('public.portal_push_collect()'::regprocedure) d")).rows[0].d,fresh);
+  await db.exec(read('performance-releases/20261110-disk-io/rollback.sql'));
+  assert.equal((await db.query("select pg_get_functiondef('public.portal_push_collect()'::regprocedure) d")).rows[0].d,before);
+  await db.exec(migration);
   await assert.rejects(()=>db.exec(migration),/Collector changed since inspection/);
   await db.exec(before.replace('public.portal_push_collect()','public.portal_push_collect_before()'));
   // Freeze now() for exact inclusive/exclusive access-window boundaries.
