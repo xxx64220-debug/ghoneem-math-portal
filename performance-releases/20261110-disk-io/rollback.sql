@@ -40,6 +40,6 @@ begin
  on conflict do nothing;
  end if;
  update portal_push_queue set status='failed',error='delivery_expired' where status in ('pending','sending') and created_at<now()-interval '24 hours';
-end $function$
+end $function$;
 
 commit;
