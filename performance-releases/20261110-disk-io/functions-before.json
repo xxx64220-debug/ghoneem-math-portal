@@ -1,0 +1,35 @@
+[
+  {
+    "acl": [
+      "postgres=X/postgres",
+      "service_role=X/postgres"
+    ],
+    "oid": "33660",
+    "name": "is_enrolled",
+    "owner": "postgres",
+    "schema": "public",
+    "definition": "CREATE OR REPLACE FUNCTION public.is_enrolled(p_user uuid, p_track text)\n RETURNS boolean\n LANGUAGE sql\n STABLE\n SET search_path TO ''\nAS $function$ SELECT portal_private.is_enrolled(p_user,p_track); $function$\n"
+  },
+  {
+    "acl": [
+      "postgres=X/postgres",
+      "service_role=X/postgres"
+    ],
+    "oid": "20774",
+    "name": "portal_push_collect",
+    "owner": "postgres",
+    "schema": "public",
+    "definition": "CREATE OR REPLACE FUNCTION public.portal_push_collect()\n RETURNS void\n LANGUAGE plpgsql\n SET search_path TO 'public'\nAS $function$\nbegin\n insert into portal_push_releases(exam_id) select id from exams where is_published on conflict do nothing;\n insert into portal_push_queue(subscription_id,event_key,kind,title,body,exam_id)\n select s.id,'exam:'||e.id,'exam','New practice is available',left(e.title,180),e.id\n from portal_push_subscriptions s join profiles p on p.id=s.user_id and p.status='active' and p.role='student'\n join enrollments en on en.user_id=s.user_id and public.is_enrolled(s.user_id,en.track_id)\n join exams e on e.track_id=en.track_id and e.is_published\n join portal_push_releases r on r.exam_id=e.id\n where s.exams and student_assignment_for(e.id,s.user_id) is not null\n and greatest(r.seen_at,coalesce((select max(greatest(a.created_at,a.open_at)) from assignments a where a.exam_id=e.id and (a.user_id=s.user_id or exists(select 1 from group_members gm where gm.group_id=a.group_id and gm.user_id=s.user_id))),r.seen_at))>=s.created_at\n and not exists(select 1 from attempts a where a.user_id=s.user_id and a.exam_id=e.id)\n on conflict do nothing;\n insert into portal_push_queue(subscription_id,event_key,kind,title,body,exam_id)\n select s.id,'result:'||a.id,'result','Your results are ready','Open the portal to view your results.',a.exam_id\n from portal_push_subscriptions s join profiles p on p.id=s.user_id and p.status='active'\n join attempts a on a.user_id=s.user_id join exams e on e.id=a.exam_id\n where s.results and a.status='graded' and a.submitted_at>=s.created_at\n and (a.review_unlocks_at is null or a.review_unlocks_at<=now())\n on conflict do nothing;\n -- Optional reminder, at 18:00 Cairo; one per device/day, never a backlog.\n if extract(hour from now() at time zone 'Africa/Cairo')=18 and extract(minute from now() at time zone 'Africa/Cairo')<10 then\n insert into portal_push_queue(subscription_id,event_key,kind,title,body)\n select s.id,'daily:'||(now() at time zone 'Africa/Cairo')::date,'reminder','Time for your daily practice','Open Ghoneem Math and complete your daily quiz.'\n from portal_push_subscriptions s join profiles p on p.id=s.user_id and p.status='active' and p.role='student'\n where s.reminders and exists(select 1 from enrollments e where e.user_id=s.user_id and is_enrolled(s.user_id,e.track_id))\n on conflict do nothing;\n end if;\n update portal_push_queue set status='failed',error='delivery_expired' where status in ('pending','sending') and created_at<now()-interval '24 hours';\nend $function$\n"
+  },
+  {
+    "acl": [
+      "postgres=X/postgres",
+      "service_role=X/postgres"
+    ],
+    "oid": "17818",
+    "name": "student_assignment_for",
+    "owner": "postgres",
+    "schema": "public",
+    "definition": "CREATE OR REPLACE FUNCTION public.student_assignment_for(p_exam uuid, p_user uuid)\n RETURNS uuid\n LANGUAGE sql\n STABLE SECURITY DEFINER\n SET search_path TO 'public'\nAS $function$\n  select a.id\n    from public.assignments a\n    join public.exams e on e.id = a.exam_id\n   where a.exam_id = p_exam\n     and e.is_published\n     and public.is_enrolled(p_user, e.track_id)\n     and (a.user_id = p_user\n          or exists (select 1 from public.group_members gm\n                      where gm.group_id = a.group_id and gm.user_id = p_user))\n     and (a.open_at  is null or now() >= a.open_at)\n     and (a.close_at is null or now() <= a.close_at)\n   order by a.close_at nulls last\n   limit 1;\n$function$\n"
+  }
+]
