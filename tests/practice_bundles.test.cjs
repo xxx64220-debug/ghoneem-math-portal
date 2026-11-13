@@ -10,3 +10,11 @@ test('edge rejects staff, malformed ids, oversized answers and unknown tracks be
 test('deployed static files match source, with no product QA bypass',()=>{for(const n of ['practice-bundles.html','practice-bundles.js','practice-bundles.css','bundle-core.js','bundle-figures.js','portal-connection.js','final-revision.js'])assert.equal(fs.readFileSync('web/'+n,'utf8'),fs.readFileSync(require('./public-artifact-dir.cjs')+'/'+n,'utf8'));assert(!fs.readFileSync('web/practice-bundles.js','utf8').includes('fixture'));});
 
 test('damaged local backups cannot replace valid saved answers',()=>{const b={revision:0,questions:[{id:'q'}],answers:{},position:0};for(const local of [{revision:0,position:0},{revision:0,position:-1,answers:{}},{revision:0,position:0,answers:{unknown:'A'}},{revision:0,position:0,answers:{q:42}}])assert.equal(C.recovery(b,local).kind,'invalid');});
+
+test('subtopic and whole-lesson selections form a union without double counting',()=>{
+ const rows=[{section:'Algebra',topic:'Systems',subtopic:'Substitution',difficulty:'hard',total:7,unseen:2},{section:'Algebra',topic:'Systems',subtopic:'Elimination',difficulty:'easy',total:8,unseen:5},{section:'Advanced Math',topic:'Quadratics',subtopic:'Roots',difficulty:'hard',total:9,unseen:6}];
+ const s={section:'',topics:[],subtopics:[{topic:'Systems',subtopic:'Substitution'}],difficulty:'mixed',exclude_answered:true};
+ assert.equal(C.available(rows,s),2);assert.equal(C.available(rows,{...s,topics:['Systems']}),7);assert.equal(C.available(rows,{...s,topics:['Quadratics']}),8);
+ assert.equal(C.available(rows,{...s,section:'Advanced Math'}),0);assert.equal(C.available(rows,{...s,difficulty:'easy'}),0);
+ assert.equal(C.available(rows,{...s,exclude_answered:false}),7);
+});

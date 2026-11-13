@@ -8,7 +8,7 @@
  let bundles=[];try{bundles=JSON.parse(sessionStorage.getItem('bundle-preview-data')||'[]');}catch{}
  const persist=()=>sessionStorage.setItem('bundle-preview-data',JSON.stringify(bundles));
  const copy=x=>JSON.parse(JSON.stringify(x));
- const fixture={failNextSave:false,delaySave:0,requests:[],bundles,conflictNextSave:false};window.BundleFixture=fixture;
+ const fixture={failNextSave:false,delaySave:0,requests:[],bundles,conflictNextSave:false,failCatalog:false};window.BundleFixture=fixture;
  window.supabase={createClient:()=>({auth:{getUser:async()=>({data:{user:{id:id(50)}}}),getSession:async()=>({data:{session:{access_token:'synthetic-test-session'}}})}})};
  window.PortalDevices={configure(){},ensure:async()=>true};
  window.fetch=async(input,opts={})=>{
@@ -29,8 +29,9 @@
    const existing=bundles.find(x=>x.request_id===p.request_id);if(existing)return reply(existing);
    const b={id:id(100+bundles.length),request_id:p.request_id,track_id:p.track,parent_id:p.parent_id||null,created_at:new Date().toISOString(),settings:p.parent_id?copy(bundles.find(x=>x.id===p.parent_id).settings):p.settings,questions:copy(qs),question_ids:qs.map(q=>q.id),revision:0,answers:{},position:0,completed_at:null,score:null};bundles.unshift(b);persist();return reply(b);
   }
+  if(p.view==='catalog'&&fixture.failCatalog)return reply({error:'catalog_failed'},503);
   if(p.view==='bundle')return reply(bundles.find(x=>x.id===p.id));
   if(p.view==='history')return reply({items:bundles.filter(x=>x.track_id===p.track).map(x=>({...x,total:2,answered:Object.values(x.answers).filter(Boolean).length}))});
-  return reply({track:p.track,topics:[{section:'Geometry',topic:'Triangles and similarity',difficulty:'medium',total:12,unseen:8},{section:'Geometry',topic:'Triangles and similarity',difficulty:'hard',total:10,unseen:7},{section:'Geometry',topic:'Circles',difficulty:'hard',total:8,unseen:4},{section:'Algebra',topic:'Systems of equations',difficulty:'easy',total:10,unseen:5}]});
+  return reply({track:p.track,subtopics_supported:p.track==='sat',topics:[{section:p.track==='sat'?'Geometry and Trigonometry':'Geometry',topic:'Triangles and similarity',subtopic:'Right triangles',difficulty:'medium',total:12,unseen:8},{section:p.track==='sat'?'Geometry and Trigonometry':'Geometry',topic:'Triangles and similarity',subtopic:'Similarity',difficulty:'hard',total:10,unseen:7},{section:p.track==='sat'?'Geometry and Trigonometry':'Geometry',topic:'Circles',subtopic:'General lesson practice',difficulty:'hard',total:8,unseen:4},{section:'Algebra',topic:'Systems of equations',subtopic:'Two linear equations',difficulty:'easy',total:10,unseen:5}]});
  };
 })();

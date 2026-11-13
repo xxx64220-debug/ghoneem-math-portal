@@ -1,0 +1,41 @@
+name: SAT topic bundle regression
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'web/**'
+      - 'dist/**'
+      - 'supabase/functions/practice-bundles/**'
+      - 'supabase/sql/practice_bundles.sql'
+      - 'supabase/sql/question_eligibility_cache.sql'
+      - 'supabase/sql/sat_bundle_hierarchy.sql'
+      - 'tests/**'
+      - '.github/workflows/sat-topic-bundles.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  isolated-regression:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Install pinned test dependencies
+        run: |
+          npm ci --prefix tests/device-runtime --ignore-scripts --no-audit --no-fund
+          npm ci --prefix tests/passage-runtime --ignore-scripts --no-audit --no-fund
+          npm ci --prefix tests/english-runtime --ignore-scripts --no-audit --no-fund
+      - name: Check bundle controls, authentication and mathematics
+        run: |
+          node --test tests/practice_bundles.test.cjs tests/practice_bundles_dom.test.cjs tests/practice_bundle_auth.test.cjs tests/final_revision.test.cjs tests/portal_math.test.cjs tests/practice_figures.test.cjs
+      - name: Check existing database behavior before and after upgrade
+        run: |
+          node tests/practice_bundles_db.cjs
+          SAT_HIERARCHY=1 node tests/practice_bundles_db.cjs
+          node tests/sat_bundle_hierarchy_db.cjs

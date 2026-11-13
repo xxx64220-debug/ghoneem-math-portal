@@ -28,3 +28,24 @@ test('stalled sign-in shows a retry message without exposing the workspace or cr
 test('review renders encoded units as text without accepting HTML from explanations',async()=>{const a=await app();try{await create(a);answer(a,'C');a.$('next').click();answer(a,'7');a.$('submit').click();await sleep(20);a.$('pause').click();await sleep(20);a.fixture.bundles[0].questions[1].explanation='Area = 9 m&sup2;, volume = 27 m&sup3;. &lt;img src=x onerror=alert(1)&gt;';a.$('historyList').querySelector('button').click();await sleep(20);assert.match(a.$('question').textContent,/9 m², volume = 27 m³/);assert.equal(a.$('question').querySelector('.explanation img'),null);assert.match(a.$('question').querySelector('.explanation').textContent,/<img src=x/);}finally{a.dom.window.close();}});
 
 test('changing courses preserves the selected track in the reload URL and API request',async()=>{const a=await app();try{a.$('course').value='est2';a.$('course').dispatchEvent(new a.w.Event('change'));await sleep(20);assert.equal(a.w.location.search,'?track=est2');assert.equal(a.fixture.requests.at(-1).track,'est2');assert.equal(a.$('course').value,'est2');}finally{a.dom.window.close();}});
+
+test('SAT has four domains with nested subtopics, accurate counts and explicit shortage handling',async()=>{
+ const a=await app();try{
+  assert.deepEqual([...a.$('section').options].map(x=>x.textContent),['All four domains','Algebra','Advanced Math','Problem-Solving and Data Analysis','Geometry and Trigonometry']);
+  a.$('section').value='Geometry and Trigonometry';a.$('section').dispatchEvent(new a.w.Event('change'));
+  const sub=a.$('lessonOptions').querySelector('[data-subtopic][value="Right triangles"]');assert(sub);sub.checked=true;sub.dispatchEvent(new a.w.Event('change',{bubbles:true}));
+  assert.match(a.$('availability').textContent,/8 eligible/);assert.equal(a.$('create').disabled,true);assert.equal(a.$('useAvailable').hidden,false);
+  a.$('useAvailable').click();assert.equal(a.$('count').value,'8');assert.equal(a.$('create').disabled,false);
+  a.$('exclude').checked=false;a.$('exclude').dispatchEvent(new a.w.Event('input'));assert.match(a.$('availability').textContent,/12 eligible/);
+  const lesson=sub.closest('.bundle-lesson').querySelector('[data-lesson]');lesson.checked=true;lesson.dispatchEvent(new a.w.Event('change',{bubbles:true}));assert.equal(sub.checked,false);assert.match(a.$('availability').textContent,/22 eligible/);
+  sub.checked=true;sub.dispatchEvent(new a.w.Event('change',{bubbles:true}));assert.equal(lesson.checked,false);
+  a.$('builderForm').dispatchEvent(new a.w.Event('submit',{cancelable:true}));await sleep(20);
+  const sent=a.fixture.requests.find(r=>r.action==='create').settings;assert.deepEqual(JSON.parse(JSON.stringify(sent.topics)),[]);assert.deepEqual(JSON.parse(JSON.stringify(sent.subtopics)),[{topic:'Triangles and similarity',subtopic:'Right triangles'}]);assert.equal(sent.exclude_answered,false);
+ }finally{a.dom.window.close();}
+});
+test('failed course catalogue cannot reuse old course counts or enable creation',async()=>{
+ const a=await app();try{a.fixture.failCatalog=true;a.$('course').value='est';a.$('course').dispatchEvent(new a.w.Event('change'));await sleep(20);a.$('exclude').dispatchEvent(new a.w.Event('input'));assert.equal(a.$('create').disabled,true);assert.equal(a.$('lessonOptions').children.length,0);assert.match(a.$('availability').textContent,/Refresh/);a.$('builderForm').dispatchEvent(new a.w.Event('submit',{cancelable:true}));await sleep(10);assert.equal(a.fixture.requests.filter(r=>r.action==='create').length,0);}finally{a.dom.window.close();}
+});
+test('refreshing counts preserves a selected subtopic and keyboard focus controls',async()=>{
+ const a=await app();try{const sub=a.$('lessonOptions').querySelector('[data-subtopic][value="Right triangles"]');sub.checked=true;sub.dispatchEvent(new a.w.Event('change',{bubbles:true}));a.$('refreshAvailability').click();await sleep(20);assert(a.$('lessonOptions').querySelector('[data-subtopic][value="Right triangles"]').checked);assert.match(a.$('availability').textContent,/8 eligible/);}finally{a.dom.window.close();}
+});
