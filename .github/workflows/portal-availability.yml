@@ -1,0 +1,26 @@
+name: Portal availability
+on:
+  schedule:
+    - cron: '7,22,37,52 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/portal-availability.yml'
+      - 'scripts/check-portal-availability.mjs'
+permissions:
+  contents: read
+concurrency:
+  group: portal-availability
+  cancel-in-progress: false
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Check portal, Auth and database
+        run: node scripts/check-portal-availability.mjs
