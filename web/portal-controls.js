@@ -104,14 +104,16 @@ function finalsExamLessons(items){
    if(!latest)return '—';
    const exam=(DASH.exams||[]).find(x=>x.id===latest.exam_id);
    if(!exam||!latest.time_used)return 'Recorded at exam level only';
-   const used=Math.round(Number(latest.time_used)/60),allowed=Math.round(Number(exam.duration_seconds||0)/60);
+   const seconds=Number(latest.time_used),duration=Number(exam.duration_seconds||0);
+   if(!Number.isFinite(seconds)||seconds<0||duration>0&&seconds>duration)return 'Elapsed record exceeds scheduled time or is unavailable; pacing needs review';
+   const used=Math.round(seconds/60),allowed=Math.round(duration/60);
    return allowed?used+'m / '+allowed+'m':'Recorded at exam level only';
  }
  function studyActions(lesson){
    const disabled=DASH.access?.practice_open===false;
-   const reference='<button class="btn-ghost" data-diagnosis-formulas="'+esc(lesson)+'">'+(ST.track?.id==='est_eng'?'Review rules':'Review formulas')+'</button>';
-   const practice=ST.track?.id==='act2'?'<button class="btn-ghost" data-go="lesson_exam" '+(disabled?'disabled':'')+'>Open lesson practice</button>':ST.track?.id==='est_eng'?'<button class="btn-ghost" data-go="drill" '+(disabled?'disabled':'')+'>Practise weak topics</button>':'<button class="btn-ghost" data-diagnosis-revision="'+esc(lesson)+'" '+(disabled||DASH.revisionVisible===false?'disabled':'')+'>Practise in Final Revision</button>';
-   return reference+practice;
+   const reference='<button class="btn-ghost" data-diagnosis-formulas="'+esc(lesson)+'">'+(['est_eng','sat_eng'].includes(ST.track?.id)?'Review rules':'Review formulas')+'</button>';
+   const practice=ST.track?.id==='act2'?'<button class="btn-ghost" data-go="lesson_exam" '+(disabled?'disabled':'')+'>Open lesson practice</button>':['est_eng','sat_eng'].includes(ST.track?.id)?'<button class="btn-ghost" data-go="drill" '+(disabled?'disabled':'')+'>Practise weak topics</button>':'<button class="btn-ghost" data-diagnosis-revision="'+esc(lesson)+'" '+(disabled||DASH.revisionVisible===false?'disabled':'')+'>Practise in Final Revision</button>';
+   return reference+practice+portalBundleLessonLink(lesson);
  }
  function finalsDiagnosisPanel(){
    const latest=finalsLatest(),bottom=finalsBottom();
@@ -122,7 +124,7 @@ function finalsExamLessons(items){
    const repeats=finalsLoading?'Loading…':repeatCount==null?'Open Mistake Notebook for repeat history':repeatCount+' active repeat-error question'+(repeatCount===1?'':'s');
    return '<section class="dash-panel finals-diagnosis"><div class="dash-heading"><h2>Diagnosis</h2><span class="badge">'+esc(ST.track?.name||ST.track?.id||'')+'</span></div>'+
     '<button class="btn-ghost" data-diagnosis-refresh '+(diagnosisRefreshing?'disabled':'')+'>'+(diagnosisRefreshing?'Refreshing…':'Refresh diagnosis')+'</button>'+(diagnosisRefreshError?'<p role="alert">'+esc(diagnosisRefreshError)+'</p>':'')+
-    '<p class="dash-note">Latest reviewed, scored result per distinct question. At least 3 questions support a lesson rating: focus below 60%, practise at 60–79%, strong at 80% or above. Held, excluded and ungraded questions and attempts without saved answers are omitted. Daily quiz scores stay separate by assigned group.</p>'+
+    '<p class="dash-note">Latest released exam or submitted bundle result per distinct question. Bundle practice informs lesson priorities; exam scores remain separate. At least 3 questions support a lesson rating: focus below 60%, practise at 60–79%, strong at 80% or above. Held, excluded and ungraded questions and attempts without saved answers are omitted. Daily quiz scores stay separate by assigned group.</p>'+
     '<div class="student-table"><table><thead><tr><th>Score</th><th>Topic accuracy</th><th>Error type</th><th>Slow questions</th><th>Repeat errors</th></tr></thead><tbody><tr>'+
     '<td><b>'+score+'</b><span class="history-detail">'+(latest?esc(latest.title)+' · Attempt '+esc(latest.attempt_no||1):'Complete a mock first')+'</span>'+(latest?.answered_count===0?'<span class="history-detail">No saved answers; complete a diagnostic</span>':'')+'</td>'+
     '<td>'+topics+'</td>'+
@@ -131,8 +133,8 @@ function finalsExamLessons(items){
     '<td><b>'+repeats+'</b><span class="history-detail">RPT = the same question/pattern keeps returning</span></td></tr></tbody></table></div>'+
     '<div class="diagnosis-bottom"><h3>Bottom skills to fix first</h3>'+(bottom.length?bottom.map((x,i)=>'<article class="lesson-card '+esc(x.priority)+'"><div class="lesson-card-top"><h3>'+(i+1)+'. '+esc(x.lesson)+'</h3><span class="priority-label">'+x.percent+'%</span></div><p>'+x.correct+'/'+x.seen+' distinct reviewed questions correct.'+(x.blank?' '+x.blank+' unanswered; check completion and pacing with your instructor.':'')+' Repair this skill, then retest with unseen mixed questions.</p>'+studyActions(x.lesson)+'</article>').join(''):'<div class="dash-empty">'+(enough?'Your sufficiently assessed lessons are strong. Maintain them with mixed practice.':'Complete enough reviewed questions to identify reliable bottom skills.')+'</div>')+'</div>'+
     finalsExamPanel()+
-    '<section><h3>Daily quiz scores by group</h3><p class="dash-note">Recorded scores out of 5. These short quizzes do not change your exam lesson ratings.</p>'+((DASH.dailyGroups||[]).length?'<div class="student-table"><table><thead><tr><th>Group</th><th>Latest quiz</th><th>Average</th><th>Completed</th></tr></thead><tbody>'+DASH.dailyGroups.map(x=>'<tr><td>'+esc(x.group_name)+'</td><td>'+esc(x.latest_score)+'/5 · '+esc(x.latest_day)+'</td><td>'+esc(x.average_score)+'/5</td><td>'+esc(x.completed)+'</td></tr>').join('')+'</tbody></table></div>':'<p class="dash-empty">No completed daily quizzes yet.</p>')+'</section>'+
-    '<div class="diagnosis-legend"><h3>Error codes</h3><p><b>C</b> — Concept &nbsp; <b>A</b> — '+(ST.track?.id==='est_eng'?'Grammar/application':'Algebra/calculation')+' &nbsp; <b>R</b> — Reading &nbsp; <b>D</b> — '+(ST.track?.id==='est_eng'?'Not applicable in English':'Calculator')+' &nbsp; <b>T</b> — Timing &nbsp; <b>X</b> — Careless &nbsp; <b>RPT</b> — Repeat mistake</p><p class="dash-note">C/A/R/D/T/X are intentionally teacher-classified after reviewing the work; the portal does not guess a cause from a wrong answer.</p></div>'+
+    '<section><h3>Daily quiz scores by group</h3><p class="dash-note">Recorded scores out of 5. These short quizzes do not change your lesson ratings.</p>'+((DASH.dailyGroups||[]).length?'<div class="student-table"><table><thead><tr><th>Group</th><th>Latest quiz</th><th>Average</th><th>Completed</th></tr></thead><tbody>'+DASH.dailyGroups.map(x=>'<tr><td>'+esc(x.group_name)+'</td><td>'+esc(x.latest_score)+'/5 · '+esc(x.latest_day)+'</td><td>'+esc(x.average_score)+'/5</td><td>'+esc(x.completed)+'</td></tr>').join('')+'</tbody></table></div>':'<p class="dash-empty">No completed daily quizzes yet.</p>')+'</section>'+
+    '<div class="diagnosis-legend"><h3>Error codes</h3><p><b>C</b> — Concept &nbsp; <b>A</b> — '+(['est_eng','sat_eng'].includes(ST.track?.id)?'Grammar/application':'Algebra/calculation')+' &nbsp; <b>R</b> — Reading &nbsp; <b>D</b> — '+(['est_eng','sat_eng'].includes(ST.track?.id)?'Not applicable in English':'Calculator')+' &nbsp; <b>T</b> — Timing &nbsp; <b>X</b> — Careless &nbsp; <b>RPT</b> — Repeat mistake</p><p class="dash-note">C/A/R/D/T/X are intentionally teacher-classified after reviewing the work; the portal does not guess a cause from a wrong answer.</p></div>'+
     '<div class="dash-notice"><strong>Study rule:</strong> Do not immediately reteach everything missed. Identify the bottom 2–3 skills, repair them, then retest.</div></section>';
  }
  async function refreshDiagnosis(){
@@ -158,14 +160,59 @@ function finalsExamLessons(items){
  }
  paintDashboard=function(){
    syncFinalsContext();basePaintDashboard();
-   if(!['sat','est','est2','est_eng','act2'].includes(ST.track?.id))return;
+   if(!['sat','est','est2','est_eng','act2','sat_eng'].includes(ST.track?.id))return;
    const nav=document.querySelector('.student-tabs');if(!nav||nav.querySelector('[data-view="finalsDiagnosis"]'))return;
    const b=document.createElement('button');b.className='student-tab '+(!DASH.searchTerm?.trim()&&DASH.view==='finalsDiagnosis'?'active':'');b.dataset.view='finalsDiagnosis';b.textContent='Diagnosis';b.setAttribute('aria-current',!DASH.searchTerm&&DASH.view==='finalsDiagnosis'?'page':'false');
    b.onclick=()=>setDashboardView('finalsDiagnosis');nav.insertBefore(b,nav.firstChild);
  };
  paintDashboardContent=function(){
-   syncFinalsContext();if(DASH.view!=='finalsDiagnosis'||DASH.searchTerm?.trim())return basePaintDashboardContent();
+   syncFinalsContext();if(DASH.progressUnavailable||DASH.view!=='finalsDiagnosis'||DASH.searchTerm?.trim())return basePaintDashboardContent();
    const content=document.getElementById('dashboardContent');if(!content)return;
    content.innerHTML=finalsDiagnosisPanel();wireDashboard();if(typeof math==='function')math(content);document.querySelectorAll('[data-diagnosis-refresh]').forEach(b=>b.onclick=refreshDiagnosis);document.querySelectorAll('[data-diagnosis-formulas]').forEach(b=>b.onclick=()=>{setDashboardView('formulas');if(typeof FORMULAS!=='undefined'){FORMULAS.lesson=b.dataset.diagnosisFormulas;paintDashboardContent();}});document.querySelectorAll('[data-diagnosis-revision]').forEach(b=>b.onclick=async()=>{if(DASH.revisionVisible===false||DASH.access?.practice_open===false)return;const lesson=b.dataset.diagnosisRevision,track=ST.track?.id;setDashboardView('revision');if(!REV.data||REV.track!==track||REV.loading)await refreshRevision();if(DASH.view!=='revision'||track!==ST.track?.id)return;REV.collection='all';REV.level='mixed';REV.scope='both';REV.source=['est','est2'].includes(track)?track:'both';REV.mode='questions';REV.session=null;REV.lesson=lesson;revisionPaint();});document.querySelectorAll('[data-diagnosis-exam]').forEach(b=>b.onclick=()=>loadFinalsExam(b.dataset.diagnosisExam));loadFinalsRepeats();
  };
+})();
+
+// Shared entry points for completed practice, existing diagnosis and notebook workflows.
+function portalBundleLessonLink(lesson){
+ if(document.documentElement?.dataset?.practiceBundlesEnabled!=='true'||DASH.access?.practice_open===false||!ST.track?.id)return '';
+ const params=new URLSearchParams({track:ST.track.id,lesson});
+ return '<a class="btn-ghost" href="/practice-bundles.html?'+esc(params.toString())+'">Build practice for this lesson</a>';
+}
+(function connectBundlePractice(){
+ if(typeof lessonCard==='function'){
+  const original=lessonCard;
+  lessonCard=function(l,compact){
+   const source=Number.isInteger(l.bundle_seen)?'<p class="dash-note">Evidence: '+l.exam_seen+' exam · '+l.bundle_seen+' bundle questions</p>':'';
+   return original(l,compact).replace('</article>',source+portalBundleLessonLink(l.lesson)+'</article>');
+  };
+ }
+ if(typeof focusSection==='function'){
+  const original=focusSection;
+  focusSection=function(){return original().replace('Based on your latest reviewed result for each question.','Based on your latest released exam or submitted bundle result for each question. Exam scores stay separate.');};
+ }
+ if(typeof mistakesPanel==='function'){
+  const original=mistakesPanel;
+  mistakesPanel=function(){
+   const container=document.createElement('div');container.innerHTML=original().replace('Wrong answers from reviewed exams and daily quizzes.','Wrong answers from reviewed exams, daily quizzes and submitted practice bundles.');
+   container.querySelectorAll('.mistake-card').forEach((card,i)=>{
+    const item=DASH.mistakes?.items?.[i];if(!item)return;
+    const lesson=item.assets?.curriculum_lesson?.trim()||item.topic;
+    if(lesson)card.insertAdjacentHTML('beforeend',portalBundleLessonLink(lesson));
+   });
+   return container.innerHTML;
+  };
+ }
+ // Separate practice deep links leave existing assignment/Today links unchanged.
+ if(typeof openStudyLink==='function'){
+  const original=openStudyLink;
+  openStudyLink=async function(){
+   const params=new URLSearchParams(location.search),view=params.get('practice_view');
+   if(!['focus','mistakes','finalsDiagnosis'].includes(view))return original.apply(this,arguments);
+   const track=ST.tracks.find(t=>t.id===params.get('practice_track'));
+   if(!track)return original.apply(this,arguments);
+   await openTrack(track);
+   if(ST.track?.id===track.id&&document.getElementById('dashboardContent'))setDashboardView(view);
+   return true;
+  };
+ }
 })();

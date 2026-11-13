@@ -1,8 +1,8 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),{JSDOM}=require('./passage-runtime/node_modules/jsdom');
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-async function app(enabled=true, stalledAuth=false){
+async function app(enabled=true, stalledAuth=false, query=''){
  const html=fs.readFileSync('web/practice-bundles.html','utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'');
- const dom=new JSDOM(html,{url:'https://fixture.invalid/practice-bundles.html',runScripts:'outside-only'}),w=dom.window;w.document.documentElement.dataset.practiceBundlesEnabled=String(enabled);w.confirm=()=>true;w.PortalMath={render(){}};
+ const dom=new JSDOM(html,{url:'https://fixture.invalid/practice-bundles.html'+query,runScripts:'outside-only'}),w=dom.window;w.document.documentElement.dataset.practiceBundlesEnabled=String(enabled);w.confirm=()=>true;w.PortalMath={render(){}};
  for(const f of ['tests/fixtures/bundle-browser-fixture.js','web/bundle-core.js','web/bundle-figures.js'])w.eval(fs.readFileSync(f,'utf8'));
  if(stalledAuth){const createClient=w.supabase.createClient;w.supabase.createClient=(...args)=>{const client=createClient(...args);client.auth.getUser=()=>new Promise(()=>{});return client;};const realTimeout=w.setTimeout.bind(w);w.setTimeout=(fn,ms,...args)=>realTimeout(fn,ms===20000?5:ms,...args);}
  w.eval(fs.readFileSync('web/practice-bundles.js','utf8'));
@@ -66,5 +66,30 @@ for(const track of ['est','est2','act2','est_eng','sat_eng'])test(track+' suppor
   a.$('builderForm').dispatchEvent(new a.w.Event('submit',{cancelable:true}));await sleep(20);
   const request=a.fixture.requests.find(r=>r.action==='create');assert.equal(request.track,track);
   assert.deepEqual(JSON.parse(JSON.stringify(request.settings.subtopics)),[{topic,subtopic}]);
+ }finally{a.dom.window.close();}
+});
+
+for(const track of ['sat','est','est2','act2','est_eng','sat_eng'])test('lesson deep link keeps selected course and never starts practice: '+track,async()=>{
+ const lesson=track.endsWith('_eng')?'Reading comprehension':'Triangles and similarity';
+ const a=await app(true,false,'?'+new URLSearchParams({track,lesson}));try{
+  assert.equal(a.$('course').value,track);const boxes=[...a.$('lessonOptions').querySelectorAll('[data-lesson]:checked')];
+  // Fixtures use course-specific labels; absent lessons must block broad practice.
+  if(boxes.length)assert.deepEqual(boxes.map(x=>x.value),[lesson]);else assert.equal(a.$('create').disabled,true);
+  assert.equal(a.fixture.bundles.length,0);
+ }finally{a.dom.window.close();}
+});
+test('unavailable lesson cannot silently become mixed practice',async()=>{
+ const a=await app(true,false,'?track=sat&lesson=Unavailable');try{
+  assert.equal(a.$('create').disabled,true);assert.match(a.$('message').textContent,/No eligible questions/);
+  a.$('create').click();await sleep(20);assert.equal(a.fixture.bundles.length,0);
+  a.$('refreshAvailability').click();await sleep(20);assert.equal(a.$('create').disabled,true);assert.match(a.$('availability').textContent,/0 eligible/);
+  a.$('lessonOptions').querySelector('[data-lesson]').click();assert.match(a.$('availability').textContent,/eligible questions remain/);
+ }finally{a.dom.window.close();}
+});
+test('only submitted bundles show course-scoped paths to lesson focus, mistakes and diagnosis',async()=>{
+ const a=await app();try{await create(a);assert.equal(a.$('practiceConnections').hidden,true);answer(a,'C');a.$('next').click();answer(a,'7');a.$('submit').click();await sleep(20);
+  assert.equal(a.$('practiceConnections').hidden,false);
+  assert.deepEqual([...a.$('practiceConnections').querySelectorAll('a')].map(x=>new URL(x.href).searchParams.get('practice_view')),['focus','mistakes','finalsDiagnosis']);
+  assert([...a.$('practiceConnections').querySelectorAll('a')].every(x=>new URL(x.href).searchParams.get('practice_track')==='sat'));
  }finally{a.dom.window.close();}
 });

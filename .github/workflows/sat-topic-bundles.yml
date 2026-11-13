@@ -10,6 +10,7 @@ on:
       - 'supabase/sql/practice_bundles.sql'
       - 'supabase/sql/question_eligibility_cache.sql'
       - 'supabase/sql/practice_bundle_hierarchy.sql'
+      - 'supabase/sql/practice_bundle_integration.sql'
       - 'tests/**'
       - '.github/workflows/sat-topic-bundles.yml'
   workflow_dispatch:
@@ -33,9 +34,10 @@ jobs:
           npm ci --prefix tests/english-runtime --ignore-scripts --no-audit --no-fund
       - name: Check bundle controls, authentication and mathematics
         run: |
-          node --test tests/practice_bundles.test.cjs tests/practice_bundles_dom.test.cjs tests/practice_bundle_auth.test.cjs tests/final_revision.test.cjs tests/portal_math.test.cjs tests/practice_figures.test.cjs
+          node --test tests/practice_bundles.test.cjs tests/practice_bundles_dom.test.cjs tests/practice_bundle_auth.test.cjs tests/practice_connections.test.cjs tests/finals_diagnosis.test.cjs tests/diagnosis_coherence_ui.test.cjs tests/final_revision.test.cjs tests/portal_math.test.cjs tests/practice_figures.test.cjs
       - name: Check existing database behavior before and after upgrade
         run: |
           node tests/practice_bundles_db.cjs
           BUNDLE_HIERARCHY=1 node tests/practice_bundles_db.cjs
           node tests/practice_bundle_hierarchy_db.cjs
+          node tests/practice_bundle_integration_db.cjs
