@@ -1,4 +1,4 @@
--- SAT hierarchy upgrade to the existing Practice Bundles service. NOT APPLIED.
+-- All-course hierarchy upgrade to the existing Practice Bundles service. NOT APPLIED.
 -- Existing exam, assignment, Today, revision and bundle records are read-only here.
 begin;
 do $guard$ begin
@@ -18,7 +18,7 @@ grant select on portal_private.bundle_subtopics to service_role;
 create function portal_private.refresh_bundle_subtopic() returns trigger
 language plpgsql security definer set search_path='' as $$
 begin
- if new.track_id='sat' then
+ if new.track_id in ('sat','est','est2','act2','est_eng','sat_eng') then
   insert into portal_private.bundle_subtopics(question_id,subtopic)
   values(new.id,nullif(nullif(left(btrim(new.assets->>'lesson_subtopic'),500),''),new.topic))
   on conflict(question_id) do update set subtopic=excluded.subtopic;
@@ -30,7 +30,7 @@ revoke all on function portal_private.refresh_bundle_subtopic() from public,anon
 create trigger refresh_bundle_subtopic after insert or update of id,track_id,topic,assets on public.questions
  for each row execute function portal_private.refresh_bundle_subtopic();
 insert into portal_private.bundle_subtopics(question_id,subtopic)
- select id,nullif(nullif(left(btrim(assets->>'lesson_subtopic'),500),''),topic) from public.questions where track_id='sat';
+ select id,nullif(nullif(left(btrim(assets->>'lesson_subtopic'),500),''),topic) from public.questions where track_id in ('sat','est','est2','act2','est_eng','sat_eng');
 
 create or replace function portal_private.bundle_section(p_track text,p_topic text) returns text
 language sql immutable set search_path='' as $$
@@ -82,10 +82,10 @@ declare items jsonb;
 begin
  perform portal_private.bundle_guard(p_user,p_track);
  select coalesce(jsonb_agg(to_jsonb(t) order by section,topic,subtopic,difficulty),'[]') into items from (
- select p.section,p.topic,p.difficulty,case when p_track='sat' then coalesce(s.subtopic,'General lesson practice') else null end as subtopic,count(*)::int as total,count(*) filter(where not answered)::int as unseen
+ select p.section,p.topic,p.difficulty,coalesce(s.subtopic,'General lesson practice') as subtopic,count(*)::int as total,count(*) filter(where not answered)::int as unseen
  from portal_private.bundle_pool(p_user,p_track) p left join portal_private.bundle_subtopics s on s.question_id=p.id
- group by p.section,p.topic,p.difficulty,case when p_track='sat' then coalesce(s.subtopic,'General lesson practice') else null end) t;
- return jsonb_build_object('track',p_track,'topics',items,'max_questions',100,'subtopics_supported',p_track='sat',
+ group by p.section,p.topic,p.difficulty,coalesce(s.subtopic,'General lesson practice')) t;
+ return jsonb_build_object('track',p_track,'topics',items,'max_questions',100,'subtopics_supported',true,
  'test_account',(select is_test from public.profiles where id=p_user),
  'account_name',(select full_name from public.profiles where id=p_user));
 end $$;
@@ -113,7 +113,7 @@ begin
   unseen_:=(p_settings->>'exclude_answered')::boolean;
   if jsonb_array_length(p_settings->'topics')>100 or exists(select 1 from jsonb_array_elements(p_settings->'topics') t where jsonb_typeof(t)<>'string') then raise exception 'invalid_topics'; end if;
   if jsonb_typeof(subtopics_) is distinct from 'array' then raise exception 'invalid_subtopics'; end if;
-  if jsonb_array_length(subtopics_)>500 or (p_track<>'sat' and jsonb_array_length(subtopics_)>0)
+  if jsonb_array_length(subtopics_)>500
    or exists(select 1 from jsonb_array_elements(subtopics_) x where jsonb_typeof(x)<>'object'
     or jsonb_typeof(x->'topic') is distinct from 'string' or jsonb_typeof(x->'subtopic') is distinct from 'string'
     or length(x->>'topic') not between 1 and 250 or length(x->>'subtopic') not between 1 and 500)

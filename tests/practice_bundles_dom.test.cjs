@@ -49,3 +49,22 @@ test('failed course catalogue cannot reuse old course counts or enable creation'
 test('refreshing counts preserves a selected subtopic and keyboard focus controls',async()=>{
  const a=await app();try{const sub=a.$('lessonOptions').querySelector('[data-subtopic][value="Right triangles"]');sub.checked=true;sub.dispatchEvent(new a.w.Event('change',{bubbles:true}));a.$('refreshAvailability').click();await sleep(20);assert(a.$('lessonOptions').querySelector('[data-subtopic][value="Right triangles"]').checked);assert.match(a.$('availability').textContent,/8 eligible/);}finally{a.dom.window.close();}
 });
+
+for(const track of ['est','est2','act2','est_eng','sat_eng'])test(track+' supports nested subtopics, shortages and course-specific requests',async()=>{
+ const a=await app();try{
+  a.$('course').value=track;a.$('course').dispatchEvent(new a.w.Event('change'));await sleep(20);
+  const english=track.endsWith('_eng'),topic=english?'SEC · Subject–verb agreement':'Triangles and similarity',subtopic=english?'Singular subjects':'Right triangles';
+  assert.equal(a.$('section').options[0].textContent,'All main topics');
+  assert(![...a.$('section').options].some(x=>x.textContent==='Geometry and Trigonometry'));
+  assert.match(a.$('topicNote').textContent,/individual subtopics/);
+  const sub=a.$('lessonOptions').querySelector('[data-subtopic][value="'+subtopic+'"]');assert(sub);sub.checked=true;sub.dispatchEvent(new a.w.Event('change',{bubbles:true}));
+  assert.match(a.$('availability').textContent,/8 eligible/);assert.equal(a.$('create').disabled,true);
+  a.$('useAvailable').click();assert.equal(a.$('count').value,'8');assert.equal(a.$('create').disabled,false);
+  a.$('difficulty').value='hard';a.$('difficulty').dispatchEvent(new a.w.Event('input'));assert.match(a.$('availability').textContent,/0 eligible/);assert.equal(a.$('create').disabled,true);
+  a.$('difficulty').value='medium';a.$('difficulty').dispatchEvent(new a.w.Event('input'));
+  a.$('exclude').checked=false;a.$('exclude').dispatchEvent(new a.w.Event('input'));assert.match(a.$('availability').textContent,/12 eligible/);
+  a.$('builderForm').dispatchEvent(new a.w.Event('submit',{cancelable:true}));await sleep(20);
+  const request=a.fixture.requests.find(r=>r.action==='create');assert.equal(request.track,track);
+  assert.deepEqual(JSON.parse(JSON.stringify(request.settings.subtopics)),[{topic,subtopic}]);
+ }finally{a.dom.window.close();}
+});

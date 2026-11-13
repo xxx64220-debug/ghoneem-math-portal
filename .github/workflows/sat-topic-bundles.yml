@@ -1,4 +1,4 @@
-name: SAT topic bundle regression
+name: All-course topic bundle regression
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
       - 'supabase/functions/practice-bundles/**'
       - 'supabase/sql/practice_bundles.sql'
       - 'supabase/sql/question_eligibility_cache.sql'
-      - 'supabase/sql/sat_bundle_hierarchy.sql'
+      - 'supabase/sql/practice_bundle_hierarchy.sql'
       - 'tests/**'
       - '.github/workflows/sat-topic-bundles.yml'
   workflow_dispatch:
@@ -37,5 +37,5 @@ jobs:
       - name: Check existing database behavior before and after upgrade
         run: |
           node tests/practice_bundles_db.cjs
-          SAT_HIERARCHY=1 node tests/practice_bundles_db.cjs
-          node tests/sat_bundle_hierarchy_db.cjs
+          BUNDLE_HIERARCHY=1 node tests/practice_bundles_db.cjs
+          node tests/practice_bundle_hierarchy_db.cjs

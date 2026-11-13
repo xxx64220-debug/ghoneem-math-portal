@@ -18,7 +18,11 @@ const call=(name,...args)=>one('select public.practice_bundle_'+name+'('+args.ma
  await db.exec(read('tests/fixtures/bundle-live-dependencies.sql'));
  await db.exec(read('supabase/sql/question_eligibility_cache.sql'));
  await db.exec(read('supabase/sql/practice_bundles.sql'));
- await db.exec(read('supabase/sql/sat_bundle_hierarchy.sql'));
+ for(const [ti,t] of tracks.entries())await db.query("insert into questions(id,track_id,topic,assets) values($1,$2,'Existing lesson',$3)",[id(80000+ti),t,JSON.stringify({lesson_subtopic:'Existing subtopic'})]);
+ await db.exec(read('supabase/sql/practice_bundle_hierarchy.sql'));
+ eq(await one("select count(*)::int from portal_private.bundle_subtopics where subtopic='Existing subtopic'"),6);
+ await db.query('delete from questions where id=any($1)',[tracks.map((_,i)=>id(80000+i))]);
+ eq(await one('select count(*)::int from portal_private.bundle_subtopics'),0);
  await db.query("insert into profiles(id,role,is_test) values($1,'student',true),($2,'student',true)",[u,other]);
  for(const t of tracks){await db.query('insert into tracks(id,name) values($1,$1)',[t]);await db.query('insert into enrollments(user_id,track_id) values($1,$2),($3,$2)',[u,t,other]);}
  const choices=JSON.stringify([{key:'A',text:'2'},{key:'B',text:'3'}]);
@@ -58,7 +62,7 @@ const call=(name,...args)=>one('select public.practice_bundle_'+name+'('+args.ma
  eq((await call('create',u,'sat',id(907),{...setting,subtopics:[{topic:topics[0],subtopic:'Missing tag'}],count:1},null)).available,0);
  // No clamping, invalid JSON and other-course subtopics fail before creating work.
  for(const [j,extra] of [{count:0},{count:101},{count:1.2},{subtopics:null},{subtopics:[42]},{subtopics:[{topic:topics[0]}]}].entries())await reject('select public.practice_bundle_create($1,$2,$3,$4,null)',[u,'sat',id(950+j),JSON.stringify({...setting,...extra})],/invalid_/);
- await reject('select public.practice_bundle_create($1,$2,$3,$4,null)',[u,'est',id(960),JSON.stringify({...setting,subtopics:[{topic:topics[0],subtopic:'First skill'}]})],/invalid_subtopics/);
+ await reject('select public.practice_bundle_create($1,$2,$3,$4,null)',[u,'est',id(960),JSON.stringify({...setting,subtopics:[{topic:topics[0],subtopic:42}]})],/invalid_subtopics/);
  // Metadata updates follow source edits; unknown or supplementary SAT topics stay out.
  await db.query('update questions set assets=assets||$2::jsonb where id=$1',[id(112),JSON.stringify({lesson_subtopic:'Updated skill'})]);
  eq(await one('select subtopic from portal_private.bundle_subtopics where question_id=$1',[id(112)]),'Updated skill');
@@ -71,8 +75,57 @@ const call=(name,...args)=>one('select public.practice_bundle_'+name+'('+args.ma
  await db.query('update questions set assets=assets||$2::jsonb where id=$1',[id(117),JSON.stringify({figure_required:true})]);
  eq((await call('catalog',u,'sat')).topics.reduce((n,r)=>n+r.total,0),115);
  const result=await call('create',u,'sat',id(961),{...setting,count:100},null);eq(result.question_ids.some(q=>[113,114,115,116,117].map(id).includes(q)),false);
- // All non-SAT sections retain their prior behavior.
- for(const t of tracks.filter(t=>t!=='sat')){eq(await one('select portal_private.bundle_section($1,$2)',[t,'Triangles and similarity']),t.endsWith('_eng')?'English skills':'Geometry');eq((await call('catalog',u,t)).subtopics_supported,false);}
+ // Non-SAT sections are preserved, now with nested subtopics too.
+ for(const t of tracks.filter(t=>t!=='sat')){eq(await one('select portal_private.bundle_section($1,$2)',[t,'Triangles and similarity']),t.endsWith('_eng')?'English skills':'Geometry');eq((await call('catalog',u,t)).subtopics_supported,true);}
+ // Identical controls work for every other course and every group, without
+ // weakening enrollment or sharing another student's answer history.
+ await db.exec('create table groups(id uuid primary key,track_id text);create table group_members(group_id uuid,user_id uuid);');
+ for(const [ti,t] of tracks.filter(t=>t!=='sat').entries()){
+  const learner=id(20000+ti*100),peer=id(20001+ti*100),qnum=30000+ti*100;
+  const lesson=t.endsWith('_eng')?'SEC · Subject–verb agreement':t==='act2'?'Matrices':'Triangles and similarity';
+  const section=t.endsWith('_eng')?'Standard English conventions':t==='act2'?'Additional mathematics':'Geometry';
+  const subtopic=t.endsWith('_eng')?'Singular subjects':t==='act2'?'Matrix operations':'Right triangles';
+  await db.query("insert into profiles(id,role,is_test) values($1,'student',true),($2,'student',true)",[learner,peer]);
+  await db.query('insert into enrollments(user_id,track_id) values($1,$3),($2,$3)',[learner,peer,t]);
+  await db.query('insert into groups values($1,$3),($2,$3)',[id(40000+ti*2),id(40001+ti*2),t]);
+  await db.query('insert into group_members values($1,$3),($2,$4),($2,$3)',[id(40000+ti*2),id(40001+ti*2),learner,peer]);
+  for(let i=0;i<12;i++){
+   const assets={verified_release:'fixture',...(i===10?{}:{lesson_subtopic:i<6||i===11?subtopic:'Other skill'}),...(i===11?{release_hold_reason:'review'}:{})};
+   await db.query('insert into questions values($1,$2,$3,$4,\'mcq\',\'Synthetic all-course question\',$5,$6)',[id(qnum+i),t,i===8||i===9?'Systems of equations':lesson,'medium',choices,JSON.stringify(assets)]);
+   await db.query('insert into question_keys values($1,\'"A"\',\'Worked solution\')',[id(qnum+i)]);
+  }
+  const focus={...setting,section,difficulty:'medium',subtopics:[{topic:lesson,subtopic}],count:6};
+  const cat=await call('catalog',learner,t),row=cat.topics.find(r=>r.topic===lesson&&r.subtopic===subtopic);
+  eq(cat.subtopics_supported,true);eq(row.section,section);eq(row.total,6);eq(row.unseen,6);
+  eq(cat.topics.reduce((n,r)=>n+r.total,0),11);
+  eq(cat.topics.some(r=>r.topic===lesson&&r.subtopic==='General lesson practice'&&r.total===1),true);
+  const created=await call('create',learner,t,id(50000+ti*10),focus,null);
+  eq([...created.question_ids].sort(),Array.from({length:6},(_,i)=>id(qnum+i)).sort());
+  eq(created.questions.every(q=>q.topic===lesson&&q.difficulty==='medium'),true);
+  await db.query('insert into attempts values($1,$2,77)',[id(60000+ti),learner]);
+  await db.query('insert into attempt_answers values($1,$2,\'"A"\')',[id(60000+ti),id(qnum)]);
+  await db.query('insert into practice_notebook values($1,$2,1)',[learner,id(qnum+1)]);
+  for(const [j,table] of ['daily_progress','practice_drills','revision_sessions'].entries())await db.query('insert into '+table+' values($1,$2)',[learner,JSON.stringify({[id(qnum+2+j)]:'B',[id(qnum+8)]:''})]);
+  await call('save',learner,t,created.id,0,{[id(qnum+5)]:'A'},0,false);
+  const after=await call('catalog',learner,t);
+  eq(after.topics.find(r=>r.topic===lesson&&r.subtopic===subtopic).unseen,0);
+  eq(after.topics.reduce((n,r)=>n+r.unseen,0),5);
+  const before=await one('select count(*)::int from practice_bundles');
+  eq((await call('create',learner,t,id(50001+ti*10),focus,null)).available,0);
+  eq(await one('select count(*)::int from practice_bundles'),before);
+  const peerBundle=await call('create',peer,t,id(50002+ti*10),focus,null);eq(peerBundle.questions.length,6);
+  eq((await call('create',learner,t,id(50003+ti*10),{...focus,exclude_answered:false},null)).questions.length,6);
+  await reject('select public.practice_bundle_catalog($1,$2)',[learner,'sat'],/not_enrolled/);
+  await reject('select public.practice_bundle_state($1,$2,$3)',[peer,t,created.id],/bundle_not_found/);
+  const answers=Object.fromEntries(created.question_ids.map(q=>[q,'A']));
+  eq((await call('save',learner,t,created.id,1,answers,0,true)).score,6);
+  const retake=await call('create',learner,t,id(50004+ti*10),{},created.id);
+  eq(retake.question_ids,created.question_ids);eq(retake.answers,{});
+  eq((await call('state',learner,t,created.id)).score,6);
+  eq(await one('select score from attempts where id=$1',[id(60000+ti)]),77);
+  await db.query('update questions set assets=assets||\'{"lesson_subtopic":"Updated course skill"}\'::jsonb where id=$1',[id(qnum+6)]);
+  eq((await call('catalog',learner,t)).topics.some(r=>r.subtopic==='Updated course skill'),true);
+ }
  // No writes to exam scores, and saved bundle snapshots/answers remain versioned.
  eq(await one('select score from attempts where id=$1',[id(1e4)]),88);
  eq((await call('state',u,'sat',b.id)).answers,{[bundleQuestion]:'A'});
@@ -80,6 +133,6 @@ const call=(name,...args)=>one('select public.practice_bundle_'+name+'('+args.ma
  for(const role of ['anon','authenticated']){await db.exec('set role '+role);await reject('select * from portal_private.bundle_subtopics',[],/permission denied/);await reject('select public.practice_bundle_catalog($1,$2)',[u,'sat'],/permission denied/);await db.exec('reset role');}
  await db.exec('set role service_role');eq((await call('catalog',u,'sat')).track,'sat');await db.exec('reset role');
  // Guard rejects accidental replay or later definition drift.
- await assert.rejects(()=>db.exec(read('supabase/sql/sat_bundle_hierarchy.sql')),/Changed since review/);checks++;
- await db.close();console.log(checks+' SAT hierarchy database assertions passed.');
+ await assert.rejects(()=>db.exec(read('supabase/sql/practice_bundle_hierarchy.sql')),/Changed since review/);checks++;
+ await db.close();console.log(checks+' all-course hierarchy database assertions passed.');
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -12,6 +12,11 @@ assert.doesNotMatch(run('revisionPanel()'),/data-revision-filter="(?:scope|sourc
 run("ST.track={id:'sat'}");assert.equal(run('revisionRows()[0].id'),'b');
 assert.match(run('revisionPanel()'),/data-revision-filter="source"/);
 assert.match(run('revisionPanel()'),/Final revision/);
+for(const track of ['sat','est','est2']){
+ run('ST.track={id:'+JSON.stringify(track)+'}');
+ assert.match(run('revisionPanel()'),new RegExp('/practice-bundles.html\\?track='+track+'"'));
+}
+run("ST.track={id:'sat'}");
 assert.match(run('revisionPanel()'),/data-revision-collection="priority" aria-pressed="true"/);
 run("REV.source='both';REV.collection='repeated'");
 assert.equal(run('revisionRows().length'),1);

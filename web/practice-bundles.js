@@ -57,7 +57,7 @@
    $('accountNotice').hidden=!data.test_account;$('accountNotice').textContent=data.test_account?'Test account · '+(data.account_name||'Portal test student'):'';
    const sections=track==='sat'&&subtopicsSupported?['Algebra','Advanced Math','Problem-Solving and Data Analysis','Geometry and Trigonometry']:[...new Set(rows.map(r=>r.section))].sort();
    $('section').innerHTML='<option value="">All '+(track==='sat'&&subtopicsSupported?'four domains':'main topics')+'</option>'+sections.map(s=>`<option>${esc(s)}</option>`).join('');
-   $('topicNote').textContent=track==='sat'&&subtopicsSupported?'Choose whole lessons or individual subtopics. With none selected, all lessons in the domain are included. Untagged questions appear under General lesson practice. Supplementary or unclassified bank lessons are outside these four domain bundles.':'Leave all unchecked to include every lesson in this topic.';
+   $('topicNote').textContent=track==='sat'&&subtopicsSupported?'Choose whole lessons or individual subtopics. With none selected, all lessons in the domain are included. Untagged questions appear under General lesson practice. Supplementary or unclassified bank lessons are outside these four domain bundles.':subtopicsSupported?'Choose whole lessons or individual subtopics. With none selected, all lessons in this topic are included. Untagged questions appear under General lesson practice.':'Leave all unchecked to include every lesson in this topic.';
    renderLessons();notify('Choose from the available questions in your course.');show('builder');
   }catch(e){if(token!==loadId)return;notify(e.message,true);$('retry').hidden=false;}
  }

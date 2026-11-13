@@ -1,65 +1,60 @@
-# SAT topic bundles — proposal awaiting approval
+# Topic bundles for all groups — proposal awaiting approval
 
-No production deployment, SQL mutation, rollout change, student attempt or score change was performed for this proposal.
+No production deployment, SQL mutation, rollout change, student attempt, score or enrollment change was performed for this proposal. This document retains its original filename so existing review links continue working.
 
-## Verified starting point
+## Scope and existing architecture
 
-The live Site was version 189. Its source HEAD was `a68ba44524226da1a6b24e4586c3e09757c8392a` when retrieved on 13 November 2026. GitHub main was `1237eb14a9bfe2268beacd8f9bd789707cf08c72` and lacked the already-hosted Practice Bundles files. The live database's bundle rollout flag was already enabled before this work. Final Revision matched between these sources.
+The current draft extends Practice Bundles to every enrolled student in all six supported courses. Group membership is not a feature gate: students in different groups or multiple groups use the same course workspace, while their answer history and progress remain personal. Existing enrollment, active-account, device and authentication checks stay authoritative.
 
-The existing bundle service already provides 1–100 questions, difficulty filtering, exact-ID repeat exclusion, autosave/resume, server grading, private answer snapshots, completed-result immutability and separate retakes. Building another session engine inside Final Revision would duplicate that current functionality. This proposal adds a SAT-only link from Final Revision to that same workspace and extends its controls.
-
-The draft PR contains two commits. The first preserves the already-hosted bundle source and its dependencies in GitHub, adapting static-file parity checks to this repository's `dist/` directory. It does not replace the main page or navigation. The second is the proposed enhancement. Review that second commit for the exact change from the current bundle implementation. The new workflow runs isolated tests only and has no production credentials or deployment step.
-
-## Exact changes from the current hosted source
-
-| Files | Proposed change |
+| Course | Main topic organization |
 |---|---|
-| `web/final-revision.js` and static copy | Add **Custom topic practice** for SAT, linking to the existing builder. The Final Revision runner, answers, explanation timing and saved progress remain intact. |
-| `web/practice-bundles.html`, `.js`, `.css`, `bundle-core.js` and static copies | Four SAT domains; whole-lesson and individual-subtopic checkboxes; counts beside each option; overall eligible count; refresh counts; explicit shortage explanation and **Use N available questions**. Keep the existing 1–100 range and difficulty control. |
-| `supabase/sql/sat_bundle_hierarchy.sql` | Guarded upgrade of four existing functions: section classification, eligible pool, catalogue and creation. Add private, trigger-maintained subtopic metadata, without reading diagram payloads on each catalogue request. No new grading endpoint. |
-| Tests and CI | Exercise domain/subtopic selection, exact counts, insufficiency, repeat exclusion, source eligibility, historical preservation, access control, DOM interaction and rendering. |
+| SAT Math | Algebra; Advanced Math; Problem-Solving and Data Analysis; Geometry and Trigonometry |
+| EST I Math and EST II Math | Existing Algebra, Advanced algebra, Geometry, Trigonometry, Statistics/probability/data and additional bank-topic sections |
+| ACT 2 Math | Existing mathematics sections, including Additional mathematics for matrices, vectors and related lessons |
+| EST English and SAT English | Existing reading, conventions, expression of ideas, craft/structure and English-skills sections |
 
-The four SAT domains are Algebra; Advanced Math; Problem-Solving and Data Analysis; Geometry and Trigonometry. The mapping uses existing canonical lesson labels plus explicitly mapped legacy aliases. Supplementary or unclassified lessons are excluded from these four-domain bundles; they are not deleted or reclassified in the bank. Other courses retain their existing sections.
+Every course supports whole lessons and nested subtopics, difficulty, 1–100 questions, exact eligible counts, and exclusion of previously answered questions. Only sections represented in the course's eligible bank are listed, except SAT's four fixed domain choices. Missing subtopic tags show **General lesson practice**. Tags are taken from `assets.lesson_subtopic`; no question content is guessed or relabeled.
 
-Subtopics use existing `assets.lesson_subtopic` metadata. Missing tags are shown as **General lesson practice**, not inferred from question text. Selecting a whole lesson includes all its subtopics; selecting individual subtopics clears that lesson's whole-lesson checkbox. Selections across lessons form a union. No checkboxes selected means the whole selected domain. Difficulty and exclusion apply to all selections.
+The initial source inspection found Site v189 at `a68ba44524226da1a6b24e4586c3e09757c8392a`, ahead of GitHub main `1237eb14a9bfe2268beacd8f9bd789707cf08c72`. Practice Bundles was already hosted and its database rollout enabled. The PR's first commit preserves that existing service and dependencies, adapting static copies to GitHub's `dist/`. Subsequent commits are the proposed hierarchy and all-course extension. The live catalogue definition still matched the reviewed hash when rechecked for this extension; the proposal metadata table did not exist.
 
-A catalogue failure now clears old course data and disables creation. Refresh retains chosen lessons/subtopics even when their count becomes zero. Counts are advisory until creation: the server repeats eligibility and history checks and returns an explicit shortage without creating a shorter/repeated bundle.
+## Proposed changes
 
-## Repeat exclusion evidence
+| Files | Result |
+|---|---|
+| `web/practice-bundles.html`, `.js`, `.css`, `bundle-core.js` and static copies | Nested lesson/subtopic controls; counts follow difficulty and repeat exclusion; refresh preserves selections, even at zero availability. Failed catalogue loads disable creation. |
+| `web/final-revision.js` and static copy | A course-specific **Custom topic practice** shortcut for SAT, EST I and EST II, the courses supported by Final Revision. The existing hosted global Practice Bundles navigation already serves all six courses. |
+| `supabase/sql/practice_bundle_hierarchy.sql` | Guarded upgrade of four existing functions and a private, trigger-maintained subtopic cache for all six courses. It supersedes the unapplied SAT-only proposal; do not apply both. |
+| Tests and `.github/workflows/sat-topic-bundles.yml` | All-course filtering, history, eligibility, isolation, saves, grades, rendering and enrollment regressions. The workflow runs tests only, with no production credentials or deployment step. |
 
-The existing `portal_private.bundle_answered(user)` queries saved nonblank answers in:
+Whole lessons and chosen subtopics form a union; domain and difficulty intersect that selection. Choosing a whole lesson clears its individual subtopic checkboxes. Choosing a subtopic clears its whole-lesson checkbox. No checkboxes means all lessons in the selected main topic.
 
-- Exam and assignment `attempt_answers`, owned through `attempts`.
-- Mistake notebook records with `tries > 0`.
-- Daily Quiz `daily_progress`.
-- `practice_drills`.
-- Final Revision `revision_sessions`.
-- Saved partial and completed `practice_bundles`.
+If fewer questions remain than requested, creation is disabled and **Use N available questions** offers an explicit count change. The server rechecks eligibility and history at creation and rejects a shortage without inserting a smaller bundle or repeating answers. SAT supplementary/unclassified topics remain outside the four-domain pool; other courses retain their existing topic coverage.
 
-There is no recent-session or row-count cutoff. Correct and incorrect answers both exclude the same question ID. Merely opening a question or leaving a blank does not count. Other students' answers do not affect eligibility. Similar ideas with different question IDs can still appear. Unsaved answers and erased historical records cannot be reconstructed; exclusion uses the portal's retained server history.
+## Repeat prevention and preservation
+
+The unchanged history query checks saved nonblank responses in exam/assignment attempts, notebook tries, Daily Quiz, drills, Final Revision, and partial/completed practice bundles. It has no recent-session limit. Correct and incorrect responses both exclude that exact question ID; blanks and other students' answers do not.
+
+Similar ideas with different IDs can still appear. Unsaved answers or erased history cannot be reconstructed. Existing grading, explanations, immutable completed results, retakes, autosave and resumption are reused. Exams, assignments, Today objectives, Daily Quiz points and historical scores are not rewritten. Access to a course still requires the existing active enrollment.
 
 ## Validation
 
-- **139 passing Node tests; 0 failures; 3 existing skipped baseline tests.** Coverage includes bundles, authentication, Final Revision, navigation, session recovery, mathematical rendering, diagrams, tables, calculator, assignments, Today objectives and study plans.
-- **71 existing database assertions passed** before the upgrade and again against the upgrade, spanning six courses, creation, saving, resumption, grading, retakes, owner isolation, key privacy, held content, deletion behavior and historical scores.
-- **50 new database assertions passed** for the hierarchy, union/intersection selection, all six history sources, blanks, tenant isolation, no duplicates, 100-question sets, exact shortage/no insert, malformed settings, metadata refresh, reserve/hold/missing-key/missing-figure eligibility, other courses and migration replay rejection.
-- Desktop browser fixture: selected Geometry and Trigonometry → Right triangles, observed 8 eligible against a request for 10 and disabled creation, then created a small fixture set; diagram/table/formula display and a 2/2 completed result were verified.
-- Mobile browser fixture: 390px iframe (375px content plus scrollbar), nested controls and counts worked; document scroll width equalled viewport width, with no horizontal overflow. This is responsive browser testing, not a physical Android/iOS device test.
-- `git diff --check` and changed-JavaScript syntax checks passed.
-- The reconciled GitHub package was retested independently: 32 focused Node tests passed without skips; the 71 baseline database checks, 71 post-upgrade checks and 50 hierarchy checks passed there too.
+- **37 focused Node tests passed with no skips**, including nested controls in every course, shortages, correct course/subtopic payloads, saved progress, auth, mathematical rendering and Final Revision shortcuts.
+- **71 existing database assertions passed against the expanded upgrade**, spanning six courses, grading, retakes, key privacy, holds, owner isolation, cache behavior and historical scores.
+- **162 hierarchy database assertions passed**: SAT domain selection plus all-course metadata backfill and updates, exact counts, six history sources in every added course, students in separate/multiple groups, enrollment restrictions, peer isolation, shortages without inserts, malformed settings, retakes, score preservation and migration replay rejection.
+- Browser fixture: switched through all six courses, checked course-specific section labels and nested subtopics, verified an English shortage and an EST II selected-subtopic count. No live practice request or student write was made.
+- Earlier unchanged-layout verification covered desktop and a 390px mobile viewport with no horizontal overflow. The earlier broader hosted-source regression passed 139 tests with three pre-existing skips. Those results are supplemental, not claims of new live validation.
+- Source/static parity, syntax checks and `git diff --check` passed. GitHub reruns are tracked on the current PR head.
 
-The three skips are pre-existing baseline expectations about unresolved-session login display (index/admin) and instructor-profile failure behavior. No new tests were skipped.
+All tests use synthetic users/questions in isolated PostgreSQL/WASM or browser fixtures. Authenticated staging/production testing of this unapplied upgrade remains outstanding.
 
-Database tests run in isolated PostgreSQL/WASM with synthetic users and questions. Browser tests used explicitly labeled synthetic account/data and made no live practice writes. The upgrade has not undergone authenticated staging/production testing because it remains unapplied pending approval.
+## Deploy only after approval
 
-## Deployment after approval
+1. Refresh the current hosted source and database hashes; reconcile concurrent work before changing production.
+2. Apply only `supabase/sql/practice_bundle_hierarchy.sql`. It checks the four reviewed function hashes and rejects drift/replay. Do not replay `practice_bundles.sql` or `question_eligibility_cache.sql`, which document the already-live baseline.
+3. Deploy the five changed frontend files and their static copies. No existing Edge Function redeployment, rollout toggle, enrollment edit or group-by-group setup is required.
+4. Check an enrolled test account's catalogue and selection in each relevant course, saved-answer exclusion, explanations and navigation; confirm ordinary exams, assignments and Today still behave as expected.
 
-1. Re-read the latest hosted source and current database function hashes. Reconcile any concurrent changes; do not overwrite newer Site work.
-2. Apply only `supabase/sql/sat_bundle_hierarchy.sql`. Its transaction checks the four reviewed function hashes and rejects replay/drift. Do **not** replay `practice_bundles.sql` or `question_eligibility_cache.sql`; those are existing baseline source, not upgrade scripts.
-3. Deploy the changed frontend files through the existing Site build. No new Edge Function deployment or rollout toggle is needed.
-4. Verify an enrolled test student's catalogue, selection, saved history and answer review; confirm counts against the server and inspect held-question behavior before broader use.
-
-Rollback: restore the four previous function definitions from `practice_bundles.sql` and restore the previous five frontend files (and static copies). Retain all practice records and the small metadata table/trigger; do not delete student work. No historical score recomputation is required.
+Rollback restores the previous four function definitions from `practice_bundles.sql` and the previous frontend files. Retain practice records and the small metadata cache/trigger; never delete or recompute historical student results.
 
 ## Reproduce
 
@@ -67,8 +62,8 @@ Rollback: restore the four previous function definitions from `practice_bundles.
 npm ci --prefix tests/device-runtime --ignore-scripts --no-audit --no-fund
 npm ci --prefix tests/passage-runtime --ignore-scripts --no-audit --no-fund
 npm ci --prefix tests/english-runtime --ignore-scripts --no-audit --no-fund
+node --test tests/practice_bundles.test.cjs tests/practice_bundles_dom.test.cjs tests/practice_bundle_auth.test.cjs tests/final_revision.test.cjs tests/portal_math.test.cjs tests/practice_figures.test.cjs
 node tests/practice_bundles_db.cjs
-SAT_HIERARCHY=1 node tests/practice_bundles_db.cjs
-node tests/sat_bundle_hierarchy_db.cjs
-node --test tests/practice_bundles.test.cjs tests/practice_bundles_dom.test.cjs tests/final_revision.test.cjs tests/auth_security.test.cjs tests/practice_bundle_auth.test.cjs tests/navigation.test.cjs tests/portal_math.test.cjs tests/practice_figures.test.cjs tests/session_restore.test.cjs tests/sat_calculator.test.cjs tests/exam_assignments.test.cjs tests/student_objective.test.cjs tests/study_planner_ui.test.cjs
+BUNDLE_HIERARCHY=1 node tests/practice_bundles_db.cjs
+node tests/practice_bundle_hierarchy_db.cjs
 ```

@@ -2,7 +2,7 @@
 const fs=require('node:fs'),assert=require('node:assert/strict'),{PGlite}=require(process.env.PGLITE_MODULE||'./device-runtime/node_modules/@electric-sql/pglite');
 const db=new PGlite(),id=n=>'00000000-0000-4000-8000-'+String(n).padStart(12,'0'),u=id(1),other=id(2),admin=id(3),tracks=['sat','est','est2','act2','est_eng','sat_eng'];let checks=0;
 const eq=(a,b)=>{assert.deepEqual(a,b);checks++;},read=p=>fs.readFileSync(p,'utf8'),one=async(q,a=[])=>Object.values((await db.query(q,a)).rows[0])[0],reject=async(q,a,re)=>{await assert.rejects(()=>db.query(q,a),re);checks++;};
-const call=(name,...args)=>{if(process.env.SAT_HIERARCHY&&name==='create'&&args[1]==='sat'&&args[3]?.section==='Geometry')args[3]={...args[3],section:'Geometry and Trigonometry'};return one('select public.practice_bundle_'+name+'('+args.map((_,i)=>'$'+(i+1)).join(',')+')',args.map(x=>typeof x==='object'&&x!==null?JSON.stringify(x):x));};
+const call=(name,...args)=>{if(process.env.BUNDLE_HIERARCHY&&name==='create'&&args[1]==='sat'&&args[3]?.section==='Geometry')args[3]={...args[3],section:'Geometry and Trigonometry'};return one('select public.practice_bundle_'+name+'('+args.map((_,i)=>'$'+(i+1)).join(',')+')',args.map(x=>typeof x==='object'&&x!==null?JSON.stringify(x):x));};
 (async()=>{
  await db.exec(`create schema portal_private;create schema extensions;
  create role anon;create role authenticated;create role service_role bypassrls;grant usage on schema public,portal_private to service_role;
@@ -18,7 +18,7 @@ const call=(name,...args)=>{if(process.env.SAT_HIERARCHY&&name==='create'&&args[
  await db.exec(read('tests/fixtures/bundle-live-dependencies.sql'));
  await db.exec(read('supabase/sql/question_eligibility_cache.sql'));
  await db.exec(read('supabase/sql/practice_bundles.sql'));
- if(process.env.SAT_HIERARCHY)await db.exec(read('supabase/sql/sat_bundle_hierarchy.sql'));
+ if(process.env.BUNDLE_HIERARCHY)await db.exec(read('supabase/sql/practice_bundle_hierarchy.sql'));
  await db.query("insert into profiles(id,role,status,is_test,full_name) values($1,'student','active',true,'Test learner'),($2,'student','active',true,'Other test learner'),($3,'admin','active',false,'Admin')",[u,other,admin]);
  for(const [ti,t] of tracks.entries()){
   await db.query('insert into tracks(id,name) values($1,$1)',[t]);await db.query('insert into enrollments(user_id,track_id) values($1,$2)',[u,t]);
@@ -42,7 +42,7 @@ const call=(name,...args)=>{if(process.env.SAT_HIERARCHY&&name==='create'&&args[
  eq((await call('save',u,'sat',b.id,0,answers,1,false)).revision,1); // lost-response retry
  await reject('select public.practice_bundle_save($1,$2,$3,0,$4,0,false)',[u,'sat',b.id,'{}'],/changed_elsewhere/);
  const resumed=await call('state',u,'sat',b.id);eq(resumed.answers,answers);eq(resumed.position,1);eq(resumed.completed_at,null);
- eq((await call('catalog',u,'sat')).topics.filter(x=>x.section===(process.env.SAT_HIERARCHY?'Geometry and Trigonometry':'Geometry')).reduce((n,r)=>n+r.unseen,0),5);
+ eq((await call('catalog',u,'sat')).topics.filter(x=>x.section===(process.env.BUNDLE_HIERARCHY?'Geometry and Trigonometry':'Geometry')).reduce((n,r)=>n+r.unseen,0),5);
  const shortage=await call('create',u,'sat',id(901),setting,null);eq(shortage.error,'not_enough_questions');eq(shortage.available,1);
  answers[b.question_ids[1]]='B';const complete=await call('save',u,'sat',b.id,1,answers,0,true);eq(complete.score,1);eq(complete.questions.every(q=>'correct'in q&&'explanation'in q),true);
  eq((await call('save',u,'sat',b.id,1,{},0,true)).score,1); // retry does not rewrite completed submission
