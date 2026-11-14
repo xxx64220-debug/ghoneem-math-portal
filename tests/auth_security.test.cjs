@@ -9,9 +9,9 @@ async function authFixture({user=true,role='student',status='active',session=tru
   globalThis[key] = () => ({
     auth:{getUser:async()=>{calls.push('verify-user');return {data:{user:user?{id:'verified-user',user_metadata:{role:'admin'}}:null},error:user?null:{message:'bad signature'}};}},
     from:table=>({select(){return this;},eq(column,value){calls.push([table,column,value]);return this;},async single(){return {data:profile?{id:'verified-user',role,status}:null,error:null};}}),
-    rpc:async(name,args)=>{calls.push([name,args]);return {error:revoked?{message:'session_revoked'}:null};}
+    rpc:async(name,args)=>{calls.push([name,args]);return {error:revoked&&name==='portal_session'?{message:'session_revoked'}:null};}
   });
-  const source = fs.readFileSync('supabase/functions/_shared/http.ts','utf8')
+  const source = fs.readFileSync(process.env.PORTAL_AUTH_TEST_HELPER||'supabase/functions/_shared/http.ts','utf8')
     .replace(/^import .*from .*;$/m,`const createClient = globalThis.${key};`)
     .replaceAll('Deno.env.get','(() => undefined)');
   const api = await import('data:text/javascript;base64,'+Buffer.from(stripTypeScriptTypes(source)).toString('base64'));

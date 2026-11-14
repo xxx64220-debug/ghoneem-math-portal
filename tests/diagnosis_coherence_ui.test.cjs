@@ -77,3 +77,13 @@ test('late instructor timeout cannot overwrite a different course',async()=>{
   assert.equal(w.document.getElementById('view').textContent,'SAT report');
  }finally{dom.window.close();}
 });
+
+test('excessive elapsed records are not presented as reliable pacing',()=>{
+ const f=student();try{f.w.DASH.history=[{id:'old',exam_id:'e',score:0,total:25,percent:0,time_used:2364780}];f.w.DASH.exams=[{id:'e',duration_seconds:2400}];f.w.paintDashboardContent();
+ assert.match(f.d.body.textContent,/pacing needs review/);assert.doesNotMatch(f.d.body.textContent,/39413m/);
+ f.w.DASH.history[0].time_used=1200;f.w.paintDashboardContent();assert.match(f.d.body.textContent,/20m \/ 40m/);
+ }finally{f.dom.window.close();}
+});
+test('SAT English diagnosis uses rules and weak-topic practice labels',()=>{
+ const f=student('sat_eng');try{assert(f.d.querySelector('[data-diagnosis-formulas]'));assert.match(f.d.body.textContent,/Review rules/);assert.match(f.d.body.textContent,/Practise weak topics/);assert.equal(f.d.querySelector('[data-diagnosis-revision]'),null);}finally{f.dom.window.close();}
+});
