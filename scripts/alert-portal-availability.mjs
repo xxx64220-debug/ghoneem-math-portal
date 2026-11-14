@@ -4,9 +4,11 @@ import {pathToFileURL} from 'node:url';
 import {SERVICES, REPOSITORY, RECIPIENT, isTimestamp, validateReport, outcome} from './run-portal-availability.mjs';
 
 const BOT = 'github-actions[bot]';
-const prefix = (name, testMode = false) => `<!-- portal-availability:v1:${testMode ? 'test:' : ''}${name} `;
-const recoveryPrefix = (number, testMode = false) => `<!-- portal-availability-recovery:v1:${testMode ? 'test:' : ''}${number} `;
-const title = (name, testMode = false) => `[Availability${testMode ? ' TEST' : ''}] ${SERVICES[name]}`;
+const scope = context => context.testMode ? `test:${context.run_id}:${context.attempt}:` : '';
+const prefix = (name, context) => `<!-- portal-availability:v1:${scope(context)}${name} `;
+const recoveryPrefix = (number, context) => `<!-- portal-availability-recovery:v1:${scope(context)}${number} `;
+const title = (name, context) => `[Availability${context.testMode ? ' TEST' : ''}] ${SERVICES[name]}${context.testMode ? ` (run ${context.run_id}, attempt ${context.attempt})` : ''}`;
+const issueList = '/issues?state=all&sort=created&direction=desc';
 
 function parseMarker(body, marker) {
   if (!body?.startsWith(marker)) return null;
@@ -37,7 +39,7 @@ function evidence(service, report) {
     `Confirmation (UTC): ${report.checked_at} — ${outcome(service.checks[1])}`].join('\n');
 }
 export function failureBody(service, report, context) {
-  return [prefix(service.name, context.testMode) + JSON.stringify(markerData(report, context)) + ' -->',
+  return [prefix(service.name, context) + JSON.stringify(markerData(report, context)) + ' -->',
     `@${context.recipient} — ${context.testMode ? '**TEST ONLY: simulated failure; production services were not interrupted.**' : 'confirmed availability-check failure.'}`, '',
     evidence(service, report), '', `[Workflow run](${context.url})`, '',
     'The same service failed two bounded read-only probes with a 5-second pause between rounds. This is evidence from the GitHub runner; it does not establish impact for every user.',
@@ -45,7 +47,7 @@ export function failureBody(service, report, context) {
     'No credentials, response bodies or student records are included.'].join('\n');
 }
 export function recoveryBody(issue, service, report, context) {
-  return [recoveryPrefix(issue.number, context.testMode) + JSON.stringify(markerData(report, context)) + ' -->',
+  return [recoveryPrefix(issue.number, context) + JSON.stringify(markerData(report, context)) + ' -->',
     `@${context.recipient} — ${context.testMode ? '**TEST ONLY: simulated recovery; notification test complete.**' : '**recovered** in both confirmation probes.'}`, '',
     evidence(service, report), '', `[Recovery workflow run](${context.url})`, '',
     'Recovery time is when the monitor observed healthy responses, not the exact end of user impact.'].join('\n');
@@ -63,9 +65,9 @@ export function githubClient({token, repository = REPOSITORY, fetchImpl = fetch,
     const timer = setTimeout(() => controller.abort(), timeoutMs);
     try {
       const response = await fetchImpl(`https://api.github.com/repos/${repository}${suffix}`, {
-        method, redirect: 'error', signal: controller.signal,
+        method, redirect: 'error', cache: 'no-store', signal: controller.signal,
         headers: {Authorization: `Bearer ${token}`, Accept: 'application/vnd.github+json',
-          'X-GitHub-Api-Version': '2026-03-10', 'Content-Type': 'application/json'},
+          'X-GitHub-Api-Version': '2026-03-10', 'Content-Type': 'application/json', 'Cache-Control': 'no-cache'},
         ...(body === undefined ? {} : {body: JSON.stringify(body)}),
       });
       if (!response.ok) throw new Error(`GitHub API HTTP ${response.status}`);
@@ -89,30 +91,45 @@ async function listAll(request, suffix) {
   throw new Error('Incident history exceeds pagination bound; no further alerts changed');
 }
 
-export async function reconcile({report: input, context: inputContext, request, enabled = false}) {
+async function visibleAfterWrite(check, pause) {
+  for (const delay of [0, 1000, 2000, 4000, 8000]) {
+    if (delay) await pause(delay);
+    if (await check()) return;
+  }
+  throw new Error('GitHub write is not yet visible; no repeat write attempted');
+}
+
+export async function reconcile({report: input, context: inputContext, request, enabled = false,
+  pause = ms => new Promise(resolve => setTimeout(resolve, ms))}) {
   if (!enabled) return ['External alerts disabled; no GitHub API calls made.'];
   const context = runContext(inputContext);
   const report = validateReport(input);
-  const issues = await listAll(request, '/issues?state=all&creator=github-actions%5Bbot%5D&sort=created&direction=desc');
+  // Filter authors locally: the creator-filtered listing may lag new bot writes.
+  const issues = await listAll(request, issueList);
   const notes = [];
   for (const service of report.services) {
     if (service.state === 'unconfirmed') { notes.push(`${service.name}: unconfirmed; unchanged`); continue; }
     const matching = issues.filter(issue => !issue.pull_request && issue.user?.login === BOT &&
-      (issue.body?.startsWith(prefix(service.name, context.testMode)) || issue.title === title(service.name, context.testMode)))
+      (issue.body?.startsWith(prefix(service.name, context)) || issue.title === title(service.name, context)))
       .sort((a, b) => b.number - a.number);
     if (matching.filter(issue => issue.state === 'open').length > 1) {
       throw new Error('Multiple open incidents for one service; manual review required');
     }
-    const latest = matching[0];
+    let latest = matching[0];
     let incident, recovered;
     if (latest) {
-      incident = parseMarker(latest.body, prefix(service.name, context.testMode));
+      // A collection can lag a close; get the known issue's current state directly.
+      latest = await request('GET', `/issues/${latest.number}`);
+      incident = parseMarker(latest.body, prefix(service.name, context));
       if (!incident || !Number.isSafeInteger(latest.number) || !['open', 'closed'].includes(latest.state)) {
         throw new Error('Incident state is damaged; refusing to create duplicate alerts');
       }
       const comments = await listAll(request, `/issues/${latest.number}/comments`);
+      if (Number.isInteger(latest.comments) && comments.length < latest.comments) {
+        throw new Error('Comment history is not yet visible; refusing duplicate notification');
+      }
       recovered = comments.filter(comment => comment.user?.login === BOT)
-        .map(comment => parseMarker(comment.body, recoveryPrefix(latest.number, context.testMode))).find(Boolean);
+        .map(comment => parseMarker(comment.body, recoveryPrefix(latest.number, context))).find(Boolean);
       const newestTime = recovered?.checked_at ?? incident.checked_at;
       if (Date.parse(report.checked_at) < Date.parse(newestTime) ||
           (recovered && report.checked_at === newestTime && service.state === 'failed')) {
@@ -126,13 +143,25 @@ export async function reconcile({report: input, context: inputContext, request, 
         notes.push(`${service.name}: existing incident #${latest.number}; no repeated mention`);
       } else {
         if (latest?.state === 'open') await request('PATCH', `/issues/${latest.number}`, {state: 'closed', state_reason: 'completed'});
-        const created = await request('POST', '/issues', {title: title(service.name, context.testMode), body: failureBody(service, report, context)});
+        const created = await request('POST', '/issues', {title: title(service.name, context), body: failureBody(service, report, context)});
+        // Return only once the next reconciliation can observe the committed write.
+        await visibleAfterWrite(async () => (await listAll(request, issueList))
+          .some(issue => issue.number === created.number && issue.user?.login === BOT &&
+            issue.body?.startsWith(prefix(service.name, context))), pause);
         notes.push(`${service.name}: opened incident #${created.number}`);
       }
     } else if (latest) {
       // Comment before closing. Lost responses reconcile from this marker next run.
-      if (!recovered) await request('POST', `/issues/${latest.number}/comments`, {body: recoveryBody(latest, service, report, context)});
-      if (latest.state === 'open') await request('PATCH', `/issues/${latest.number}`, {state: 'closed', state_reason: 'completed'});
+      if (!recovered) {
+        const created = await request('POST', `/issues/${latest.number}/comments`, {body: recoveryBody(latest, service, report, context)});
+        await visibleAfterWrite(async () => (await listAll(request, `/issues/${latest.number}/comments`))
+          .some(comment => comment.id === created.id && comment.user?.login === BOT &&
+            comment.body?.startsWith(recoveryPrefix(latest.number, context))), pause);
+      }
+      if (latest.state === 'open') {
+        await request('PATCH', `/issues/${latest.number}`, {state: 'closed', state_reason: 'completed'});
+        await visibleAfterWrite(async () => (await request('GET', `/issues/${latest.number}`)).state === 'closed', pause);
+      }
       notes.push(`${service.name}: recovered; incident #${latest.number} closed`);
     } else notes.push(`${service.name}: healthy; no incident`);
   }

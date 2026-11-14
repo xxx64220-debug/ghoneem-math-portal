@@ -20,7 +20,15 @@ A recovery adds one mention/comment and closes the issue. A later failure starts
 a new incident. Simultaneous failures can open three issues, one per service.
 
 State comes from bot-authored issue/comment markers, not a cache or search index.
-Pagination and serialized workflow execution prevent duplicate incident creation.
+The first live synthetic drill found a duplicate when the immediate bot-filtered
+issue listing did not reveal the new write. The notifier now lists repository
+issues without that author filter, disables HTTP caching, filters authors locally,
+and waits for bounded readback after each creation/recovery before returning.
+Known incidents are read directly so a stale collection cannot repeat closure.
+An incomplete comment history or a write still invisible after readback stops
+processing without retrying the mutation. Tests cover delayed issue/comment
+visibility and stale collection state. Pagination and serialized workflow
+execution also protect incident creation.
 A lost POST response is never retried blindly: the next run reads GitHub state.
 Recovery is recorded before closure so an interrupted close can resume. A manually
 closed unresolved incident is reopened without a new mention. Do not delete or
@@ -60,7 +68,8 @@ An explicitly tagged deployment commit containing
 `[availability-alert-delivery-test]` also requests a one-time drill on that push.
 Ordinary pushes and schedules do not run the drill. The drill repeats both the
 failure and recovery report to verify zero additional writes, then closes the test
-issue. Test and production incident namespaces are disjoint. Offline tests do not
+issue. Each delivery drill uses its own run/attempt namespace; test and production
+incidents are disjoint. Offline tests do not
 certify delivery; successful API calls do not prove email/mobile receipt.
 
 ## Workflow changes
