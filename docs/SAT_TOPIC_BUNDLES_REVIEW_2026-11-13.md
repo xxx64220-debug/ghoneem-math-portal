@@ -1,3 +1,5 @@
+> Released on November 14 as Site **v192** after the user authorized publication if ready. [Final release checks, migration and live test](../content-releases/20261114_bundle_integration/REVIEW.md). The proposal below is retained as the historical review record.
+
 # Topic bundles for all groups — proposal awaiting approval
 
 No production deployment, SQL migration, rollout change, new student attempt, answer submission, score change or enrollment edit was performed for this proposal. This document retains its original filename so existing review links continue working.
