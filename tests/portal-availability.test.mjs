@@ -34,6 +34,8 @@ function fakeGitHub(initial = []) {
     let result;
     if (method === 'GET') {
       const match = url.pathname.match(/^\/issues\/(\d+)\/comments$/);
+      const direct = url.pathname.match(/^\/issues\/(\d+)$/);
+      if (direct) return structuredClone({...issues.find(issue => issue.number === Number(direct[1])), comments: (comments.get(Number(direct[1])) ?? []).length});
       const list = match ? (comments.get(Number(match[1])) ?? []) : [...issues].sort((a, b) => b.number - a.number);
       const page = Number(url.searchParams.get('page') ?? 1);
       result = structuredClone(list.slice((page - 1) * 100, page * 100));
@@ -307,4 +309,48 @@ test('synthetic issue creation lost response is reconciled safely by a repeat dr
   await assert.rejects(testDelivery(input)); await testDelivery(input);
   assert.equal(db.issues.length, 1); assert.equal(db.comments.get(1).length, 1);
   assert.equal(db.issues[0].state, 'closed');
+});
+test('new issue visibility lag is polled without a second creation', async () => {
+  const db = fakeGitHub(); let lag = 2; const pauses = [];
+  const request = async (method, path, body) => {
+    const result = await db.request(method, path, body);
+    if (method === 'GET' && path.startsWith('/issues?') && db.issues.length && lag-- > 0) return [];
+    return result;
+  };
+  const input = {request, pause: async ms => { pauses.push(ms); }};
+  await apply(db, fixture({auth: 503}), input); await apply(db, fixture({auth: 503}), input);
+  assert.equal(db.issues.length, 1); assert.equal(db.writes().length, 1); assert.deepEqual(pauses, [1000, 2000]);
+});
+test('indefinitely invisible creation stops without retrying the write', async () => {
+  const db = fakeGitHub(); const request = async (method, path, body) => {
+    const result = await db.request(method, path, body);
+    return method === 'GET' && path.startsWith('/issues?') ? [] : result;
+  };
+  await assert.rejects(apply(db, fixture({auth: 503}), {request, pause: async () => {}}), /not yet visible/);
+  assert.equal(db.issues.length, 1); assert.equal(db.writes().length, 1);
+});
+test('a stale collection cannot repeat closure after direct issue readback', async () => {
+  const db = fakeGitHub(); await apply(db, fixture({auth: 503})); await apply(db, fixture({}, {}, 60));
+  const request = async (method, path, body) => {
+    const result = await db.request(method, path, body);
+    return method === 'GET' && path.startsWith('/issues?') ? result.map(issue => ({...issue, state: 'open'})) : result;
+  };
+  const before = db.writes().length; await apply(db, fixture({}, {}, 120), {request});
+  assert.equal(db.writes().length, before);
+});
+test('recovery comment visibility lag cannot cause repeated mentions', async () => {
+  const db = fakeGitHub(); await apply(db, fixture({auth: 503})); let lag = 2;
+  const request = async (method, path, body) => {
+    const result = await db.request(method, path, body);
+    if (method === 'GET' && path.includes('/comments?') && db.comments.get(1)?.length && lag-- > 0) return [];
+    return result;
+  };
+  await apply(db, fixture({}, {}, 60), {request, pause: async () => {}});
+  assert.equal(db.comments.get(1).length, 1); assert.equal(db.issues[0].state, 'closed');
+});
+test('incomplete comment listing fails closed before duplicate recovery writes', async () => {
+  const db = fakeGitHub(); await apply(db, fixture({auth: 503})); await apply(db, fixture({}, {}, 60));
+  const request = async (method, path, body) => path.includes('/comments?') ? [] : db.request(method, path, body);
+  const before = db.writes().length;
+  await assert.rejects(apply(db, fixture({}, {}, 120), {request}), /Comment history/); assert.equal(db.writes().length, before);
 });
