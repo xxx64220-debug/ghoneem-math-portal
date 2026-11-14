@@ -1,0 +1,512 @@
+[
+  {
+    "id": "03818053-21ae-53d7-87cc-9b5ce3bb9612",
+    "topic": "Quadratics and polynomials",
+    "lesson": "Quadratics and polynomials",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "596b02435dd4a4eba454e1e913e96750",
+    "key_hash": "69aa8a00c4726fead898883da8073e71",
+    "revision_hash": "0b5618c85319e5253e9333940b28be0e"
+  },
+  {
+    "id": "0618392d-2b42-5fde-b802-86ee42266ad2",
+    "topic": "Linear functions and slope",
+    "lesson": "Linear functions and slope",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "7053e9d0ab524d59ee227bfbe2b7d67f",
+    "key_hash": "3dbc4d5fd09feee49285a82ad48843e1",
+    "revision_hash": "74d9215e564bd59a22d3397fe9cc268c"
+  },
+  {
+    "id": "08891f95-057c-59d1-9834-196b8872ba10",
+    "topic": "Statistics and data analysis",
+    "lesson": "Statistics and data analysis",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "dfb91b20fa4e1c5f396a255e99824da8",
+    "key_hash": "2b9454ad85c53c4988c2231d588be2c8",
+    "revision_hash": "5a612e94264eed41b53a70145d40bcaa"
+  },
+  {
+    "id": "0a7f6aa6-59d6-561c-bc76-45f3199090b2",
+    "topic": "Algebraic expressions and equations",
+    "lesson": "Algebraic expressions and equations",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "f1bcb0c4e000df34a3781406610145a9",
+    "key_hash": "5107697a5fa61225076cdd06ca494f2c",
+    "revision_hash": "24e0dd96af4f7b7089609d15e32d22fc"
+  },
+  {
+    "id": "0ace3ea9-c93c-52d3-921f-afd2ac360441",
+    "topic": "Algebraic expressions and equations",
+    "lesson": "Algebraic expressions and equations",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "e6fb52848cc3dd30a2cb5da73cfcd4f4",
+    "key_hash": "cfd2d37b8bbe8f386b36d3ed5b53ece3",
+    "revision_hash": "e96562738abcfa7d6521dc9ab2f9c373"
+  },
+  {
+    "id": "0b91fdbe-5af3-5264-99a6-f9552975c6ce",
+    "topic": "Ratios, percentages and unit conversion",
+    "lesson": "Ratios, percentages and unit conversion",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "037243d77761ba8d91972bbd0de136fc",
+    "key_hash": "76c2447ef01e988245d7c9ede781e876",
+    "revision_hash": "a6fcbcc9b177b9e13e1766fd022bbb9b"
+  },
+  {
+    "id": "0bae8b61-9a89-513b-b1fc-a2846e06cb83",
+    "topic": "Statistics and data analysis",
+    "lesson": "Statistics and data analysis",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "ccc8c67675e97af13a0b00e48cf8cc6c",
+    "key_hash": "99e3e7d7cce447cb72c099034739b302",
+    "revision_hash": "49be250522b3051bb0f1065fa2ed411b"
+  },
+  {
+    "id": "1421d157-3c56-b762-181e-f0a58ed434ab",
+    "topic": "Area and perimeter",
+    "lesson": "Area and perimeter",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "c4381d7ea1d99a20eac8e2e1b502fdf0",
+    "key_hash": "127e3d20e99c067ca4444b41ed2b1da1",
+    "revision_hash": "cb4dc3ca3dac1c0ebc2c3107f71778c4"
+  },
+  {
+    "id": "1c2d4b54-2316-57a1-95f4-b0539cfdeb89",
+    "topic": "Statistics and data analysis",
+    "lesson": "Statistics and data analysis",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "4d8d09149bd1d0d58fb363d9ac4153dc",
+    "key_hash": "cb9514a340f1640869b2930fed12d2a2",
+    "revision_hash": "7efee6f4dcfaa0cdca219a9953080682"
+  },
+  {
+    "id": "2574795c-0842-5799-a7a6-9f318be55de6",
+    "topic": "Angles and lines",
+    "lesson": "Angles and lines",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "ba3d8f3f514865d1ed192af82276ced0",
+    "key_hash": "7bedd9957343396934e42bbd6685919f",
+    "revision_hash": "373f47baabbfcebf333c4946b8055db9"
+  },
+  {
+    "id": "2c290960-7d8d-52f1-83e7-28b77efab0d0",
+    "topic": "Quadratics and polynomials",
+    "lesson": "Quadratics and polynomials",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "8876eddc2b9add76e9d63f7ae119ccc1",
+    "key_hash": "117f0a0a46c0526df7aab3c2f3eac87d",
+    "revision_hash": "f514337649d5ff701dde92f03a72524e"
+  },
+  {
+    "id": "38b3ea7c-1a64-5d12-8944-dedd2448b7c9",
+    "topic": "Trigonometry",
+    "lesson": "Trigonometry",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "8077c1b574b185c4bcef14242316cc01",
+    "key_hash": "619f9bdfba17a3e3a350792c73103696",
+    "revision_hash": "3163a81932ae03d0fcab941eaaccdd37"
+  },
+  {
+    "id": "38d27545-acab-51b6-8a5a-e5552566ff8c",
+    "topic": "Inequalities and absolute value",
+    "lesson": "Inequalities and absolute value",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "41f128d025f4904a65ff4bd6f4847400",
+    "key_hash": "e2ce37778ca1dd07a5632872a454f884",
+    "revision_hash": "5801ea9ae2923199fd27012a7118aa3a"
+  },
+  {
+    "id": "3e2bc80b-981a-d354-02aa-44631fea3b1f",
+    "topic": "Probability and conditional probability",
+    "lesson": "Probability and conditional probability",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "b4ec8654be6f322f55cbc339aedb91c9",
+    "key_hash": "368e38a6779773542edcce8f4d6e980f",
+    "revision_hash": "958ce579d661b2996d6a28dbc41774e0"
+  },
+  {
+    "id": "44bddf08-7b19-5222-acb5-5eaa9d5789d7",
+    "topic": "Circles",
+    "lesson": "Circles",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "de17d9937bfb369c380a926e7d12a96c",
+    "key_hash": "42f5bf23cffab2ca39cae7d917532c3d",
+    "revision_hash": "44fe1fc36ab0fd288042dec3bc4b6784"
+  },
+  {
+    "id": "50e6b02e-8110-5edc-9901-a2334c661b00",
+    "topic": "Inequalities and absolute value",
+    "lesson": "Inequalities and absolute value",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "1d5e3abcb84ebcbf39ca82d89ed723eb",
+    "key_hash": "b507b7a957fd04a66ca27213098f5ae6",
+    "revision_hash": "224bf03e3ea743d3cd8c9243a17dec82"
+  },
+  {
+    "id": "5a009f08-8d79-5e3c-ab80-f0ef9293e8f4",
+    "topic": "Ratios, percentages and unit conversion",
+    "lesson": "Ratios, percentages and unit conversion",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "59831d9d0a6277ed0b7816165d986d8c",
+    "key_hash": "20ab382188910bffd6c996df93e3cc8b",
+    "revision_hash": "b2f34ee372ec4b19fc499951af139a66"
+  },
+  {
+    "id": "5b49ca69-bdf0-5859-b0c5-c8d1b68ccb9f",
+    "topic": "Probability and conditional probability",
+    "lesson": "Probability and conditional probability",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "ce5a0c7448d427d09085aff612bbccad",
+    "key_hash": "8f80b7428ffa30e2f087944fd62bfe50",
+    "revision_hash": "dc3af2b105ec3536846f79217874ff85"
+  },
+  {
+    "id": "5f4ca3bd-0e52-0bda-3d3f-e3014ec756f7",
+    "topic": "Circles",
+    "lesson": "Circles",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "43620fa87304dba82bbc3b11c1700383",
+    "key_hash": "b8b29f937fa17ab5f58216dfadfa45de",
+    "revision_hash": "8d971c7a76e91e2f11afafdc4dd47f80"
+  },
+  {
+    "id": "667dc458-fe0d-f2b9-f1bc-a03a3bfa160c",
+    "topic": "Volume and surface area",
+    "lesson": "Volume and surface area",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "b361f6c36029272ab0ef14858ead247f",
+    "key_hash": "5bdb7401a33d39125d3a334f2d63998e",
+    "revision_hash": "ad79655b683ef9999df3fe47aa2ec248"
+  },
+  {
+    "id": "6d447263-bd26-830b-0738-472440cbff86",
+    "topic": "Ratios, percentages and unit conversion",
+    "lesson": "Ratios, percentages and unit conversion",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "135b21e6c9bd29a914469a663b269fbc",
+    "key_hash": "b62e98db9b3ba39ee62b84d1bdc4a3ce",
+    "revision_hash": "99e4d89f61f7b8cfaeada47b29d5035f"
+  },
+  {
+    "id": "6e930c36-ca49-5463-a3a9-2f2fc6293fc9",
+    "topic": "Quadratics and polynomials",
+    "lesson": "Quadratics and polynomials",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "4a3503b20cad0c985d4b29b9ef648764",
+    "key_hash": "5a3c5816a7a7b084c39d3a3ea262a46f",
+    "revision_hash": "97414241b7a2ae4f9e758a8dea972b47"
+  },
+  {
+    "id": "7c755041-bd5f-55f7-86e7-66a21b1b0bf0",
+    "topic": "Linear functions and slope",
+    "lesson": "Linear functions and slope",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "e0884eeb60a83091871091d7f1346085",
+    "key_hash": "c18743ac50c38d339ac26177b5b99c04",
+    "revision_hash": "d19846fc08a18d576cca9de36ac90147"
+  },
+  {
+    "id": "7ce68034-e562-5907-bf5b-bda76957a603",
+    "topic": "Linear functions and slope",
+    "lesson": "Linear functions and slope",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "70343e39b93500a9f405980e3acafc1f",
+    "key_hash": "63846ab1991cd15a3d60f356f74f7b59",
+    "revision_hash": "7aeaf27f0465fabe65108d363847fe89"
+  },
+  {
+    "id": "7d81f146-e068-5834-bf6e-72c2f910578a",
+    "topic": "Linear functions and slope",
+    "lesson": "Linear functions and slope",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "a5bb700efd2dafeda345076e2a956690",
+    "key_hash": "9af9598ab0930261367558e4e42dcf6d",
+    "revision_hash": "9f999d333b7b81893c10376a072870a0"
+  },
+  {
+    "id": "89b9d931-78ff-1908-d159-a4da187929a2",
+    "topic": "Quadratics and polynomials",
+    "lesson": "Quadratics and polynomials",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "7668a6abcaec31d8e8a0a6f069b75729",
+    "key_hash": "85abe991ea6a1b7167feff4861d4af5b",
+    "revision_hash": "e298337ccef2165ddbe912f35ad99f17"
+  },
+  {
+    "id": "8b79f97d-7d46-5542-be2b-5083826a7317",
+    "topic": "Circles",
+    "lesson": "Circles",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "6a85d10c7f96cfa985bda2cdf819fec4",
+    "key_hash": "e9c0717e8ce68b4d2617138590d96918",
+    "revision_hash": "2a26e42161f0183135c3d8ddd4aee590"
+  },
+  {
+    "id": "8eacfa6a-2a85-53db-97ac-00de54a9e121",
+    "topic": "Quadratics and polynomials",
+    "lesson": "Quadratics and polynomials",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "813ea485af03a3791b47b0bc0ca9afa6",
+    "key_hash": "12966e6c3460215af1f6ede856b3fed1",
+    "revision_hash": "5734b90c2011d1b0df8cc6867088433c"
+  },
+  {
+    "id": "93628e9e-dbd9-5dde-af49-b12de63a7652",
+    "topic": "Inequalities and absolute value",
+    "lesson": "Inequalities and absolute value",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "a06185ca2dfcd17cb7053a392de788c3",
+    "key_hash": "089c9f8d4067e0af249119e2bfe0c0b5",
+    "revision_hash": "5c376f5ee5cef09e8566606b7e1c0fa2"
+  },
+  {
+    "id": "97e14662-6707-58fb-84f6-6eeedb723ee1",
+    "topic": "Ratios, percentages and unit conversion",
+    "lesson": "Ratios, percentages and unit conversion",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "3c66d25a5cb4d2d5409b3bcbe7ec8b6f",
+    "key_hash": "c1158cf08db3909944a71bc9abcec551",
+    "revision_hash": "d4053df7c7aa5b803ed2c0ec44769fef"
+  },
+  {
+    "id": "9aba70e9-d636-555a-8e53-0c361fd36bbc",
+    "topic": "Systems of equations",
+    "lesson": "Systems of equations",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "e92512da8a2ea86d61e4cffdbcb1c5ea",
+    "key_hash": "69fea793e52c0fabb78d90ecdb136483",
+    "revision_hash": "a8e5d95b1d19509e51897a8381678214"
+  },
+  {
+    "id": "9af03690-37ae-5815-b5d2-39055ade1862",
+    "topic": "Linear functions and slope",
+    "lesson": "Linear functions and slope",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "ac7357a9ea2382f8ee1349348eadd67a",
+    "key_hash": "61a4773639045c49418a9d8f24bdb3f7",
+    "revision_hash": "fb1ab6e9b80933bd588951aaba604a2f"
+  },
+  {
+    "id": "b18f2a3d-941e-5ee7-92f4-f883d6c69473",
+    "topic": "Triangles and similarity",
+    "lesson": "Triangles and similarity",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "ffc8f69e831f33359db7d42ef4b33a84",
+    "key_hash": "e433163e311c3a7f9ac983b4e5dc9741",
+    "revision_hash": "0682fdfb7270b68540e3b69213a49536"
+  },
+  {
+    "id": "b5cab5fe-90bb-7330-e7ab-90df92ce2433",
+    "topic": "Linear functions and slope",
+    "lesson": "Linear functions and slope",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "aed6919946cd981df57af0401f3a6545",
+    "key_hash": "20e0450d47fe70d22ca8961d6ae8caed",
+    "revision_hash": "57ffa709f49cf4675c8b2d2836de140c"
+  },
+  {
+    "id": "bb03ca3f-d198-5757-a43f-ef82b32d33c6",
+    "topic": "Ratios, percentages and unit conversion",
+    "lesson": "Ratios, percentages and unit conversion",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "06be036e3e073f2decba30fc90bdbf07",
+    "key_hash": "cefe5bfd8af77f2ab67680a098a2f7f1",
+    "revision_hash": "1a1cee53a44ec0c75744e4779692f351"
+  },
+  {
+    "id": "c8750f4c-38d7-5dd7-885a-ebf5fef38bc6",
+    "topic": "Linear functions and slope",
+    "lesson": "Linear functions and slope",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "724086f55c4764beb7af863fde86ca5b",
+    "key_hash": "9115b4d477347cb546da9919a3ba2e2b",
+    "revision_hash": "a9fbd798718360cdf083a8562b2ee520"
+  },
+  {
+    "id": "cbb63b35-7612-59dd-8a69-84fc1a3e6e4b",
+    "topic": "Linear functions and slope",
+    "lesson": "Linear functions and slope",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "ae7d68ae2943d2cb2df73b6c4b9647a3",
+    "key_hash": "08528b79ebe9312e24bd5c963119fabb",
+    "revision_hash": "ae60a8faef558869af1dbb1d707c4801"
+  },
+  {
+    "id": "ceb217e8-f4a6-2b49-429d-19923993b3b5",
+    "topic": "Algebraic expressions and equations",
+    "lesson": "Algebraic expressions and equations",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "27579a9271132ca6a4c070ac436b8913",
+    "key_hash": "10cd176ec9999e2b8dae89a4e24e0438",
+    "revision_hash": "b4df88bc5f5c15fc366a12032a7149b2"
+  },
+  {
+    "id": "d0b7375e-b2ee-548d-a0ec-6fd637299d6f",
+    "topic": "Systems of equations",
+    "lesson": "Systems of equations",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "e33ce9cfcefff28e01899bb4c61b88aa",
+    "key_hash": "503584b1edc88913e69845ac439c97d4",
+    "revision_hash": "0ecd76cb1d3b99dde41f5ed3cae502b5"
+  },
+  {
+    "id": "d293bb24-b634-b3dd-1ad3-2b39d9352c79",
+    "topic": "Exponents, radicals and growth",
+    "lesson": "Exponents, radicals and growth",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "1d63b1864ad8f62fbb5e9cbed825419a",
+    "key_hash": "5729f87374d2669c6a10f0c8bf54b00a",
+    "revision_hash": "36ec8e50e987ab5c70defa2409b86ae1"
+  },
+  {
+    "id": "d65fd706-b296-58db-8f18-c0bd9a99ab0f",
+    "topic": "Quadratics and polynomials",
+    "lesson": "Quadratics and polynomials",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "57af7af9255d51450159d1b1f65423b2",
+    "key_hash": "9b594d9a1a47fe6a9547cc55e5414a01",
+    "revision_hash": "c7ab9d01e511a0dcf9253742f6297e71"
+  },
+  {
+    "id": "d7f378d1-a495-5d76-abfc-aa8e5429fe6a",
+    "topic": "Linear functions and slope",
+    "lesson": "Linear functions and slope",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "a8e25262fbc25a59e136dc7bdb3a7ab7",
+    "key_hash": "73da7d1db8a0e00f71c4c4e33e8b0782",
+    "revision_hash": "291aa62d51a71aea3aa708ff5726f265"
+  },
+  {
+    "id": "dd8711a1-6ca8-5154-8531-986dee79c0c3",
+    "topic": "Linear functions and slope",
+    "lesson": "Linear functions and slope",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "c384f9bc9250543c9ab2aea9f8144056",
+    "key_hash": "9a784d0238e136623f94b970b2db7219",
+    "revision_hash": "6df45aa93345f52ef857106be5d8e668"
+  },
+  {
+    "id": "df2132af-840a-501e-9268-3a64a7d75791",
+    "topic": "Circles",
+    "lesson": "Circles",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "d91736eacfb0c78ac0db3fc5bc9831dc",
+    "key_hash": "e506dd4098b2942ffeab58b1da264bb2",
+    "revision_hash": "e957e3538af2ca101d1d22aaf9f02b4c"
+  },
+  {
+    "id": "e91e6310-e9be-e772-97cf-8e17f7c98934",
+    "topic": "Exponents, radicals and growth",
+    "lesson": "Exponents, radicals and growth",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "92daf56f8328e609b215fe9eb87f111a",
+    "key_hash": "21a5418c514916c5658625d66382bfe7",
+    "revision_hash": "ae8177b0c54850cc9fb5ebcdd62c5e8f"
+  },
+  {
+    "id": "ed362c08-1a82-5b56-be44-044737f550e7",
+    "topic": "Linear functions and slope",
+    "lesson": "Linear functions and slope",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "9d14361b992e20e48a14a6ac5aaffb43",
+    "key_hash": "e6edbe82b3cd09f78f98966fdd0bfad5",
+    "revision_hash": "d4e62a7115d80b73f74b5ab9e27644d8"
+  },
+  {
+    "id": "ed76ef45-9030-5378-b804-4c4650a634ea",
+    "topic": "Statistics and data analysis",
+    "lesson": "Statistics and data analysis",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "500570552af1f9181eaa12e8f1e279f3",
+    "key_hash": "3b8cddf1da15d28e234c067c2f6fcf7e",
+    "revision_hash": "55464cb0303bc16a0969af98534d8a24"
+  },
+  {
+    "id": "f071a174-ffa8-5c12-b7d7-45d4c9dec57f",
+    "topic": "Statistics and data analysis",
+    "lesson": "Statistics and data analysis",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "9aabccc1968711f6d16ae031599dfda1",
+    "key_hash": "5defac4a090af0169abaece3ede3d062",
+    "revision_hash": "ec55d46215db40cf7afb0f0415dbf025"
+  },
+  {
+    "id": "f14c0dd5-f032-5544-a208-d3a0ae563e4f",
+    "topic": "Inequalities and absolute value",
+    "lesson": "Inequalities and absolute value",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "92f9c4943f1b24099935f6d8804bc40e",
+    "key_hash": "b40d56153b628831554678f7fbd956fa",
+    "revision_hash": "e4058d4ccf80a43a53279bc77584e53c"
+  },
+  {
+    "id": "f5d0090b-a4f8-52f2-9a11-f494df25aee0",
+    "topic": "Functions and transformations",
+    "lesson": "Functions and transformations",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "b414d000803491770d5b179d409ad165",
+    "key_hash": "3eec911bc13082bc00ca49215dee5151",
+    "revision_hash": "7b8b9a45a43002cffd26cf7d91457f20"
+  },
+  {
+    "id": "fbfde5f6-db3c-5d52-86c1-63a21d3454ba",
+    "topic": "Quadratics and polynomials",
+    "lesson": "Quadratics and polynomials",
+    "active": true,
+    "fingerprint_matches": true,
+    "question_hash": "7e714d23007afec153e289666787a5b7",
+    "key_hash": "e90309574f01c754d01e44361b319e4b",
+    "revision_hash": "36d744d15c90dd924e8aab69a5ced993"
+  }
+]
