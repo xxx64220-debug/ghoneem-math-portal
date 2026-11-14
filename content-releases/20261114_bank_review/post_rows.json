@@ -1,0 +1,3355 @@
+[
+  {
+    "id": "03818053-21ae-53d7-87cc-9b5ce3bb9612",
+    "track_id": "sat",
+    "stem": "If $(15x+34)(-8x+3)=ax^2+bx+c$, what is b?",
+    "choices": [],
+    "metadata": {
+      "code": "PANDA-CH02-E1-Q04",
+      "paper": "College Panda SAT Math Advanced Guide & Workbook",
+      "source_page": 29,
+      "source_number": 4,
+      "source_sha256": "a6e7dcdb5eb34a88aff2163723015305c2700e26bdde7ce8e6242136a65593b8",
+      "content_review": {
+        "method": "Read original scanned prompt and worked answer; independently verified algebra",
+        "status": "verified",
+        "source_fidelity": "Math transcription and source question image for all exercises"
+      },
+      "figure_caption": "Original College Panda Chapter 2 Exercise 1 Question 4",
+      "source_chapter": 2,
+      "lesson_subtopic": "Algebraic expressions",
+      "source_exercise": 1,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Algebraic expressions",
+      "source_library_file_id": "libfile_d6167ab9f44881919492feff68ef28d4",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": [
+      "-227"
+    ],
+    "explanation": "The x terms are 15x·3=45x and 34·(−8x)=−272x, giving b=−227.",
+    "row_hash": "596b02435dd4a4eba454e1e913e96750",
+    "key_hash": "69aa8a00c4726fead898883da8073e71"
+  },
+  {
+    "id": "0618392d-2b42-5fde-b802-86ee42266ad2",
+    "track_id": "sat",
+    "stem": "Line k passes through $(1,5)$ and is perpendicular to $y=\\frac12x+3$. Which equation defines k?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$y=-2x+3$"
+      },
+      {
+        "key": "B",
+        "text": "$y=-2x+7$"
+      },
+      {
+        "key": "C",
+        "text": "$y=-\\frac12x+\\frac{11}2$"
+      },
+      {
+        "key": "D",
+        "text": "$y=\\frac12x+\\frac92$"
+      }
+    ],
+    "metadata": {
+      "code": "PANDA-CH06-E1-Q10",
+      "paper": "College Panda SAT Math Advanced Guide & Workbook",
+      "source_page": 78,
+      "source_number": 10,
+      "source_sha256": "a6e7dcdb5eb34a88aff2163723015305c2700e26bdde7ce8e6242136a65593b8",
+      "content_review": {
+        "method": "Read original scanned prompt and worked answer; independently verified algebra",
+        "status": "verified",
+        "source_fidelity": "Math transcription and source question image for all exercises"
+      },
+      "figure_caption": "Original College Panda Chapter 6 Exercise 1 Question 10",
+      "source_chapter": 6,
+      "lesson_subtopic": "Linear equations and functions",
+      "source_exercise": 1,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Linear equations and functions",
+      "source_library_file_id": "libfile_d6167ab9f44881919492feff68ef28d4",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The perpendicular slope is −2. Substituting (1,5) into y=−2x+b gives b=7.",
+    "row_hash": "7053e9d0ab524d59ee227bfbe2b7d67f",
+    "key_hash": "3dbc4d5fd09feee49285a82ad48843e1"
+  },
+  {
+    "id": "0828b97c-3414-534e-8ed4-db26d79079a8",
+    "track_id": "act2",
+    "stem": "Ted’s first five scores were 70, 70, 80, 70, and 80. Two more scores, 90 and 95, are added to the same data set. How do the mean and median change?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Mean increases by 5; median stays the same"
+      },
+      {
+        "key": "B",
+        "text": "Mean increases by 37/7; median increases by 10"
+      },
+      {
+        "key": "C",
+        "text": "Mean increases by 10; median increases by 37/7"
+      },
+      {
+        "key": "D",
+        "text": "Mean increases by 37/7; median stays the same"
+      }
+    ],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Statistics and data analysis",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "Replace defective options with instructor-authored choices, including the exact changes.",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_ids_adapted": [
+        "9b45a010-891a-5c72-aeb0-4346e6f82c3f"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "B",
+    "explanation": "The original sum is 370, so the mean is 74 and median 70. The new sum is 555, so the mean is 555/7 and its increase is 555/7 − 74 = 37/7. The sorted seven scores have median 80, an increase of 10.",
+    "row_hash": "87156507b0cad39f52e8ed243322a827",
+    "key_hash": "8975ef9da30f09c07e71a850069d0d74"
+  },
+  {
+    "id": "08891f95-057c-59d1-9834-196b8872ba10",
+    "track_id": "sat",
+    "stem": "College Panda Chapter 23, Reading Data, Exercise 1, Question 5. Read the original problem shown below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": ""
+      },
+      {
+        "key": "B",
+        "text": ""
+      },
+      {
+        "key": "C",
+        "text": ""
+      },
+      {
+        "key": "D",
+        "text": ""
+      }
+    ],
+    "metadata": {
+      "code": "PANDA-CH23-E1-Q05",
+      "paper": "College Panda SAT Math Advanced Guide & Workbook",
+      "source_page": 269,
+      "solution_page": 401,
+      "source_number": 5,
+      "source_sha256": "a6e7dcdb5eb34a88aff2163723015305c2700e26bdde7ce8e6242136a65593b8",
+      "content_review": {
+        "method": "Original numbered question panel and boxed worked answer independently read",
+        "status": "verified",
+        "source_fidelity": "Original question and choices are reproduced as a scanned image; worked-answer page is attached"
+      },
+      "figure_caption": "Original College Panda Chapter 23, Exercise 1, Question 5",
+      "source_chapter": 23,
+      "lesson_subtopic": "Reading Data",
+      "source_exercise": 1,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Statistics and data analysis",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Reading Data",
+      "source_library_file_id": "libfile_d6167ab9f44881919492feff68ef28d4",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The lowest point on the scatterplot represents the least sleep, about 5.5 hours. Its age coordinate is about 39 years; the closest listed age is 40, choice B.",
+    "row_hash": "dfb91b20fa4e1c5f396a255e99824da8",
+    "key_hash": "2b9454ad85c53c4988c2231d588be2c8"
+  },
+  {
+    "id": "0a7f6aa6-59d6-561c-bc76-45f3199090b2",
+    "track_id": "sat",
+    "stem": "A cab costs \\(\\$4.75\\) for the first mile and \\(\\$3.50\\) for each additional mile. For x miles total fare \\(\\$24\\), which equation?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$3.50x−4.75=24$"
+      },
+      {
+        "key": "B",
+        "text": "$8.25x−3.50=24$"
+      },
+      {
+        "key": "C",
+        "text": "$3.50x+1.25=24$"
+      },
+      {
+        "key": "D",
+        "text": "$3.50x+4.75=24$"
+      }
+    ],
+    "metadata": {
+      "code": "PANDA-CH11-E1-Q11",
+      "paper": "College Panda SAT Math Advanced Guide & Workbook",
+      "source_page": 131,
+      "source_number": 11,
+      "source_sha256": "a6e7dcdb5eb34a88aff2163723015305c2700e26bdde7ce8e6242136a65593b8",
+      "content_review": {
+        "method": "Read original scanned prompt and worked answer; independently verified algebra",
+        "status": "verified",
+        "source_fidelity": "Math transcription and source question image for all exercises"
+      },
+      "figure_caption": "Original College Panda Chapter 11 Exercise 1 Question 11",
+      "source_chapter": 11,
+      "lesson_subtopic": "Word problems",
+      "source_exercise": 1,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Algebraic expressions and equations",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Word problems",
+      "source_library_file_id": "libfile_d6167ab9f44881919492feff68ef28d4",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Fare is 4.75+3.50(x−1)=3.50x+1.25.",
+    "row_hash": "f1bcb0c4e000df34a3781406610145a9",
+    "key_hash": "5107697a5fa61225076cdd06ca494f2c"
+  },
+  {
+    "id": "0ace3ea9-c93c-52d3-921f-afd2ac360441",
+    "track_id": "sat",
+    "stem": "A hose fills 1/3 tub per minute and an open drain empties 2/11 tub per minute. Which equation gives fill time t?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$t/3−2/11=1$"
+      },
+      {
+        "key": "B",
+        "text": "$1/3−2/11=1/t$"
+      },
+      {
+        "key": "C",
+        "text": "$t/3+2/11=1$"
+      },
+      {
+        "key": "D",
+        "text": "$1/3+2/11=1/t$"
+      }
+    ],
+    "metadata": {
+      "code": "PANDA-CH11-E2-Q08",
+      "paper": "College Panda SAT Math Advanced Guide & Workbook",
+      "source_page": 134,
+      "source_number": 8,
+      "source_sha256": "a6e7dcdb5eb34a88aff2163723015305c2700e26bdde7ce8e6242136a65593b8",
+      "content_review": {
+        "method": "Read original scanned prompt and worked answer; independently verified algebra",
+        "status": "verified",
+        "source_fidelity": "Math transcription and source question image for all exercises"
+      },
+      "figure_caption": "Original College Panda Chapter 11 Exercise 2 Question 8",
+      "source_chapter": 11,
+      "lesson_subtopic": "Word problems",
+      "source_exercise": 2,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Algebraic expressions and equations",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Word problems",
+      "source_library_file_id": "libfile_d6167ab9f44881919492feff68ef28d4",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Net rate equals 1/t tub per minute; subtract drain rate from hose rate.",
+    "row_hash": "e6fb52848cc3dd30a2cb5da73cfcd4f4",
+    "key_hash": "cfd2d37b8bbe8f386b36d3ed5b53ece3"
+  },
+  {
+    "id": "0b91fdbe-5af3-5264-99a6-f9552975c6ce",
+    "track_id": "sat",
+    "stem": "What is the result of increasing 150 by 300%?",
+    "choices": [],
+    "metadata": {
+      "code": "PANDA-CH08-E1-Q06",
+      "paper": "College Panda SAT Math Advanced Guide & Workbook",
+      "source_page": 100,
+      "source_number": 6,
+      "source_sha256": "a6e7dcdb5eb34a88aff2163723015305c2700e26bdde7ce8e6242136a65593b8",
+      "content_review": {
+        "method": "Read original scanned prompt and worked answer; independently verified algebra",
+        "status": "verified",
+        "source_fidelity": "Math transcription and source question image for all exercises"
+      },
+      "figure_caption": "Original College Panda Chapter 8 Exercise 1 Question 6",
+      "source_chapter": 8,
+      "lesson_subtopic": "Percentages",
+      "source_exercise": 1,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Percentages",
+      "source_library_file_id": "libfile_d6167ab9f44881919492feff68ef28d4",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": [
+      "600"
+    ],
+    "explanation": "Add 300% of 150: 150(1+3)=600.",
+    "row_hash": "037243d77761ba8d91972bbd0de136fc",
+    "key_hash": "76c2447ef01e988245d7c9ede781e876"
+  },
+  {
+    "id": "0bae8b61-9a89-513b-b1fc-a2846e06cb83",
+    "track_id": "sat",
+    "stem": "Data set A contains 8, 11, 12, 15, 21, 27. Data set B contains 9, 12, 13, 16, 22, h. If A has a greater standard deviation than B, which values of h are possible?  I. 23     II. 28     III. 29",
+    "choices": [
+      {
+        "key": "A",
+        "text": "I only"
+      },
+      {
+        "key": "B",
+        "text": "II only"
+      },
+      {
+        "key": "C",
+        "text": "III only"
+      },
+      {
+        "key": "D",
+        "text": "II or III"
+      }
+    ],
+    "metadata": {
+      "skill": "Compare standard deviations",
+      "source": "DSAT Classified",
+      "source_code": "DSAT-CLASS-261102-9",
+      "source_file": "Dsat Classified _261102_163016.pdf",
+      "source_page": 9,
+      "lesson_subtopic": "Compare standard deviations",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Statistics and data analysis",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "A",
+    "explanation": "At h = 28, B is A shifted up by 1, so the spreads match. Lowering the largest value to 23 reduces spread. Raising it to 29 increases spread.",
+    "row_hash": "ccc8c67675e97af13a0b00e48cf8cc6c",
+    "key_hash": "99e3e7d7cce447cb72c099034739b302"
+  },
+  {
+    "id": "1115c92c-eca5-5c40-b42f-f782066e4eff",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\n4. A 20 m ladder makes a 65-degree angle with ground. Find height.",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D56-P021-Q004",
+      "source_page": 21,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "d05c92726a6d8b23e3596a43a7f69f8ffe93617bc9b457c02fd7c258f8c78efb",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "Chapter 12: Triangles and Trigonometry",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "ACT_Math_2_Complete_Course_Eng_Abdelrahman_Ghoneem.pdf",
+      "source_question": 4,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D56-P021-Q004",
+      "source_document_id": "act2-20261029-d05c92726a6d8b23",
+      "source_question_id": "ACT2-IMPORT-20261030-D56-P021-Q004",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "The exact answer is irrational, the source does not state rounding, and the numeric grader cannot fairly accept an unstated precision.",
+      "source_image_sha256": "1a8802fffd1e76fe2dfaaf159d88fad3eba2cb577f2495bf889ed3a029c3134e",
+      "answer_review_status": "blocked",
+      "classification_status": "reviewed",
+      "replacement_question_id": "8939b729-8bd1-51df-8977-55604d2a2685",
+      "replacement_review_note": "Add explicit nearest-hundredth precision and the right-triangle setting.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "The exact answer is irrational, the source does not state rounding, and the numeric grader cannot fairly accept an unstated precision."
+    },
+    "explanation": "$h=20\\sin65^\\circ\\approx18.12616$ m.",
+    "row_hash": "7eeed4a38fab0834c73f7f94472220d4",
+    "key_hash": "70694322e3de99b6c8d019bcaa8280f3"
+  },
+  {
+    "id": "1421d157-3c56-b762-181e-f0a58ed434ab",
+    "track_id": "sat",
+    "stem": "A semicircle with center O and diameter NP sits outside rectangle NQRS along side NQ. Point P is the midpoint of NQ. If PO = 52 feet and NS = 18 feet, the combined area is aπ + b square feet, where a and b are integers. What is a − b?",
+    "choices": [],
+    "metadata": {
+      "skill": "Composite area of a rectangle and semicircle",
+      "source": "DSAT Classified",
+      "source_code": "DSAT-CLASS-261102-4",
+      "source_file": "Dsat Classified _261102_163016.pdf",
+      "source_page": 4,
+      "lesson_subtopic": "Composite area of a rectangle and semicircle",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Area and perimeter",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "-2392",
+    "explanation": "NP = 104 and NQ = 208. The semicircle contributes 1352π square feet and the rectangle contributes 3744, so a − b = −2392.",
+    "row_hash": "c4381d7ea1d99a20eac8e2e1b502fdf0",
+    "key_hash": "127e3d20e99c067ca4444b41ed2b1da1"
+  },
+  {
+    "id": "1840ed87-8e41-51f1-8ded-51622e9abc33",
+    "track_id": "act2",
+    "stem": "Write z = 4(cos 60° + i sin 60°) in rectangular form.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$2+2\\sqrt3\\,i$"
+      },
+      {
+        "key": "B",
+        "text": "$2\\sqrt3+2i$"
+      },
+      {
+        "key": "C",
+        "text": "$4+i$"
+      },
+      {
+        "key": "D",
+        "text": "$2-2\\sqrt3\\,i$"
+      }
+    ],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Complex numbers",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "Explicitly specify degrees; the original omitted the angle unit.",
+      "curriculum_lesson": "Complex numbers",
+      "source_ids_adapted": [
+        "e79575f2-6d3f-55d4-a583-f6b42f9f949e"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "A",
+    "explanation": "Using cos 60° = 1/2 and sin 60° = √3/2 gives z = 2 + 2√3 i.",
+    "row_hash": "223f54dd2dd9a84b0d0f1f1a7d3ae87c",
+    "key_hash": "85984893183b38433f2dd9dc6eceb7a8"
+  },
+  {
+    "id": "1c2d4b54-2316-57a1-95f4-b0539cfdeb89",
+    "track_id": "sat",
+    "stem": "A line of best fit for tomato seeds germinated y versus seeds planted x passes near (0,0) and (500,350). What does its slope mean?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Seeds planted rise by 70 each 100 days"
+      },
+      {
+        "key": "B",
+        "text": "Seeds planted rise by 350 each 100 days"
+      },
+      {
+        "key": "C",
+        "text": "Seeds germinated rise by about 70 per 100 additional seeds planted"
+      },
+      {
+        "key": "D",
+        "text": "Seeds germinated rise by about 350 per 100 additional seeds planted"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M1-Q15",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 69,
+      "source_module": 1,
+      "source_number": 15,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "display_repair": "Unrelated cover image removed after visual inspection.",
+      "figure_required": false,
+      "lesson_subtopic": "Scatterplots and models",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "curriculum_lesson": "Statistics and data analysis",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "lesson_original_topic": "Scatterplots and models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The slope is about 350/500=0.7 germinated seed per planted seed, or 70 for every additional 100 planted.",
+    "row_hash": "4d8d09149bd1d0d58fb363d9ac4153dc",
+    "key_hash": "cb9514a340f1640869b2930fed12d2a2"
+  },
+  {
+    "id": "2574795c-0842-5799-a7a6-9f318be55de6",
+    "track_id": "sat",
+    "stem": "Lines AB and CD are parallel, and segments AD and BC intersect at E. Ray AU extends AB to the left, and ray CV extends CD to the left. If ∠UAE = 115° and ∠VCE = 118°, what is the measure of ∠BED, in degrees?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "53"
+      },
+      {
+        "key": "B",
+        "text": "62"
+      },
+      {
+        "key": "C",
+        "text": "127"
+      },
+      {
+        "key": "D",
+        "text": "143"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M2-Q17",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 93,
+      "source_module": 2,
+      "source_number": 17,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_origin": "instructor_adaptation",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "display_repair": "Unrelated cover image removed after visual inspection.",
+      "figure_required": true,
+      "lesson_subtopic": "Parallel lines",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "adaptation_reason": "Explicit instructor diagram defines the two exterior angles and the requested angle; it is not claimed to be a recovered source image.",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "source_original_stem": "In the diagram AB∥CD, AD and BC cross at E. If y=115° and z=118°, find x.",
+      "lesson_original_topic": "Parallel lines",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The angle between AD and a rightward horizontal ray is 180° − 115° = 65°. The angle between BC and a rightward horizontal ray is 180° − 118° = 62°. These two angles make ∠BED, so its measure is 65° + 62° = 127°, choice C.",
+    "row_hash": "96924711de6bcfb1c71b2b7db93a0338",
+    "key_hash": "7bedd9957343396934e42bbd6685919f"
+  },
+  {
+    "id": "2c290960-7d8d-52f1-83e7-28b77efab0d0",
+    "track_id": "est",
+    "stem": "EST I Math — March 2026 · Question 13. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "metadata": {
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 13, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 5,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "answer_review": "2026-09-30-independent-current-stem-review",
+      "lesson_subtopic": "Factor theorem",
+      "source_question": 13,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Polynomial factors",
+      "lesson_taxonomy_version": "20260929",
+      "mathematical_review_scope": "Original source crop visually checked in this audit; algebra, counts, units and plotted values independently recomputed. Image-backed question retains original choices unless an explicit repair is recorded."
+    },
+    "correct": "B",
+    "explanation": "By the factor theorem, P(5) = 0, P(−4) = 0, and P(−2/3) = 0, so choices A, C, and D are factors. P(2) = −576, so x − 2 is not a factor.",
+    "row_hash": "8876eddc2b9add76e9d63f7ae119ccc1",
+    "key_hash": "117f0a0a46c0526df7aab3c2f3eac87d"
+  },
+  {
+    "id": "2da9d842-d0a0-5b81-a3e7-831e75a4f515",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\n4. Solve log_3(x-1)+log_3(x+1)=2.",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D56-P030-Q004",
+      "source_page": 30,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "d05c92726a6d8b23e3596a43a7f69f8ffe93617bc9b457c02fd7c258f8c78efb",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "Chapter 18: ACT Strategy and Mixed Review",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "ACT_Math_2_Complete_Course_Eng_Abdelrahman_Ghoneem.pdf",
+      "source_question": 4,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D56-P030-Q004",
+      "source_document_id": "act2-20261029-d05c92726a6d8b23",
+      "source_question_id": "ACT2-IMPORT-20261030-D56-P030-Q004",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "The exact answer is irrational, the source does not state rounding, and the numeric grader cannot fairly accept an unstated precision.",
+      "source_image_sha256": "4fc38fca1f00b628e6642b0dd3898d9a80d7a8a67713dd0df909d0d0243435e9",
+      "answer_review_status": "blocked",
+      "classification_status": "reviewed",
+      "replacement_question_id": "408891c1-3d35-5197-8b59-dc5a2976bce0",
+      "replacement_review_note": "Provide instructor-authored exact-answer choices so no unstated rounding is required.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "The exact answer is irrational, the source does not state rounding, and the numeric grader cannot fairly accept an unstated precision."
+    },
+    "explanation": "The domain is x>1. Combine logs to get $x^2-1=9$. Only $x=\\sqrt{10}$ satisfies the domain.",
+    "row_hash": "cfb68bb2ed5ce39e68221d9bff89eed8",
+    "key_hash": "4ccb7eb3f8ffe4a5effbcd6e0d08ee35"
+  },
+  {
+    "id": "38b3ea7c-1a64-5d12-8944-dedd2448b7c9",
+    "track_id": "sat",
+    "stem": "In right triangle RST, angle T is 90° and tan R = 140/171. An acute angle X in a similar right triangle is equal to angle S. What is sin X?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "140/311"
+      },
+      {
+        "key": "B",
+        "text": "140/221"
+      },
+      {
+        "key": "C",
+        "text": "171/221"
+      },
+      {
+        "key": "D",
+        "text": "171/311"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M1-Q20",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 74,
+      "source_module": 1,
+      "source_number": 20,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_origin": "instructor_adaptation",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "display_repair": "Unrelated cover image removed after visual inspection.",
+      "figure_required": false,
+      "lesson_subtopic": "Right triangles",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "adaptation_reason": "Explicit instructor clarification supplies the right angle and angle correspondence missing from the unrelated image.",
+      "curriculum_lesson": "Trigonometry",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "source_original_stem": "Triangles RST and XYZ are similar, with XY parallel to TS. Given tan R=140/171, find sin X.",
+      "lesson_original_topic": "Right triangles",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Take ST = 140 and RT = 171. The hypotenuse is √(140² + 171²) = 221. Since X = S, sin X = RT/RS = 171/221, choice C.",
+    "row_hash": "8077c1b574b185c4bcef14242316cc01",
+    "key_hash": "619f9bdfba17a3e3a350792c73103696"
+  },
+  {
+    "id": "38d27545-acab-51b6-8a5a-e5552566ff8c",
+    "track_id": "sat",
+    "stem": "If $|3x+9|=156$, what is the positive value of x+3?",
+    "choices": [],
+    "metadata": {
+      "code": "PANDA-CH04-E1-Q07",
+      "paper": "College Panda SAT Math Advanced Guide & Workbook",
+      "source_page": 52,
+      "source_number": 7,
+      "source_sha256": "a6e7dcdb5eb34a88aff2163723015305c2700e26bdde7ce8e6242136a65593b8",
+      "content_review": {
+        "method": "Read original scanned prompt and worked answer; independently verified algebra",
+        "status": "verified",
+        "source_fidelity": "Math transcription and source question image for all exercises"
+      },
+      "figure_caption": "Original College Panda Chapter 4 Exercise 1 Question 7",
+      "source_chapter": 4,
+      "lesson_subtopic": "Other types of equation questions",
+      "source_exercise": 1,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Other types of equation questions",
+      "source_library_file_id": "libfile_d6167ab9f44881919492feff68ef28d4",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": [
+      "52"
+    ],
+    "explanation": "3|x+3|=156, so |x+3|=52 and the positive value is 52.",
+    "row_hash": "e0bfd52ed420ec180d7cbcd8458e1472",
+    "key_hash": "e2ce37778ca1dd07a5632872a454f884"
+  },
+  {
+    "id": "3cae9561-7bf7-525b-98ac-d5bcdaf42b5f",
+    "track_id": "act2",
+    "stem": "A circle has a diameter of 11 inches. What is its exact circumference?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$11\\pi$ inches"
+      },
+      {
+        "key": "B",
+        "text": "$22\\pi$ inches"
+      },
+      {
+        "key": "C",
+        "text": "$121\\pi$ inches"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{11\\pi}{2}$ inches"
+      }
+    ],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Circles",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "Supply exact-answer choices for an unsupported irrational numeric response.",
+      "curriculum_lesson": "Circles",
+      "source_ids_adapted": [
+        "a66e7923-397b-5cd5-995c-04205246199d"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "A",
+    "explanation": "Circumference is π times diameter, so C = 11π inches.",
+    "row_hash": "93f1bd07ea0d06c000fa5be17f19df5d",
+    "key_hash": "1eefc4f8816c210cec6b08eb53298425"
+  },
+  {
+    "id": "3e2bc80b-981a-d354-02aa-44631fea3b1f",
+    "track_id": "sat",
+    "stem": "A bin contains Flames and Sharks T-shirts. One shirt is selected at random. Given that it is a Flames shirt, what is the probability that it is medium?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.20"
+      },
+      {
+        "key": "B",
+        "text": "0.22"
+      },
+      {
+        "key": "C",
+        "text": "0.39"
+      },
+      {
+        "key": "D",
+        "text": "0.5"
+      }
+    ],
+    "metadata": {
+      "skill": "Conditional probability from a two-way table",
+      "source": "DSAT Classified",
+      "source_code": "DSAT-CLASS-261102-10",
+      "source_file": "Dsat Classified _261102_163016.pdf",
+      "source_page": 10,
+      "lesson_subtopic": "Conditional probability from a two-way table",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Probability and conditional probability",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "D",
+    "explanation": "Of the 44 Flames shirts, 22 are medium, so the conditional probability is 22/44 = 0.5.",
+    "row_hash": "b4ec8654be6f322f55cbc339aedb91c9",
+    "key_hash": "368e38a6779773542edcce8f4d6e980f"
+  },
+  {
+    "id": "408891c1-3d35-5197-8b59-dc5a2976bce0",
+    "track_id": "act2",
+    "stem": "For real x, solve $\\log_3(x-1)+\\log_3(x+1)=2$.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$-\\sqrt{10}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\sqrt{10}$"
+      },
+      {
+        "key": "C",
+        "text": "10"
+      },
+      {
+        "key": "D",
+        "text": "3"
+      }
+    ],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Logarithms and exponentials",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "Provide instructor-authored exact-answer choices so no unstated rounding is required.",
+      "curriculum_lesson": "Logarithms and exponentials",
+      "source_ids_adapted": [
+        "2da9d842-d0a0-5b81-a3e7-831e75a4f515"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "B",
+    "explanation": "The domain requires x > 1. Combining logarithms gives $\\log_3(x^2-1)=2$, so x² − 1 = 9 and x = ±√10. Only √10 satisfies the domain.",
+    "row_hash": "cf15ae95df47f148d699f94b63894d54",
+    "key_hash": "597cf5c6613e21ae96a94d71e3647709"
+  },
+  {
+    "id": "4236b337-2e07-522f-aee7-58ea04c01fd7",
+    "track_id": "act2",
+    "stem": "A car tire of radius 14 inches rolls without slipping for 1 mile. How many rotations does it make, rounded to the nearest whole number? Use 1 mile = 5,280 feet.",
+    "choices": [],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Circles",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "Add explicit whole-number rounding; do not silently substitute π = 22/7.",
+      "curriculum_lesson": "Circles",
+      "source_ids_adapted": [
+        "a7e0c938-c48b-50d8-88b3-8388c07f0560"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "720",
+    "explanation": "One mile is 5,280 × 12 = 63,360 inches. One rotation covers 2π(14) = 28π inches. Thus the number of rotations is 63,360/(28π) ≈ 720.288, which rounds to 720.",
+    "row_hash": "edba879e1422f53f1f5bc7613f7c9d0d",
+    "key_hash": "9908dac9ded890057f252763debe345d"
+  },
+  {
+    "id": "44bddf08-7b19-5222-acb5-5eaa9d5789d7",
+    "track_id": "sat",
+    "stem": "College Panda Chapter 19, Circles, Exercise 2, Question 17. Read the original problem shown below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": ""
+      },
+      {
+        "key": "B",
+        "text": ""
+      },
+      {
+        "key": "C",
+        "text": ""
+      },
+      {
+        "key": "D",
+        "text": ""
+      }
+    ],
+    "metadata": {
+      "code": "PANDA-CH19-E2-Q17",
+      "paper": "College Panda SAT Math Advanced Guide & Workbook",
+      "source_page": 237,
+      "solution_page": 390,
+      "source_number": 17,
+      "source_sha256": "a6e7dcdb5eb34a88aff2163723015305c2700e26bdde7ce8e6242136a65593b8",
+      "content_review": {
+        "method": "Original numbered question panel and boxed worked answer independently read",
+        "status": "verified",
+        "source_fidelity": "Original question and choices are reproduced as a scanned image; worked-answer page is attached"
+      },
+      "figure_caption": "Original College Panda Chapter 19, Exercise 2, Question 17",
+      "source_chapter": 19,
+      "lesson_subtopic": "Circles",
+      "source_exercise": 2,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Circles",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Circles",
+      "source_library_file_id": "libfile_d6167ab9f44881919492feff68ef28d4",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "The radius DE has squared length (4√10)² + (34 − 16)² = 160 + 324 = 484, so DE = DF = 22. DF is horizontal and the perpendicular height from E to DF is 18. The triangle area is ½ × 22 × 18 = 198 square units, choice A.",
+    "row_hash": "de17d9937bfb369c380a926e7d12a96c",
+    "key_hash": "42f5bf23cffab2ca39cae7d917532c3d"
+  },
+  {
+    "id": "4a6bf68a-0db8-57eb-a159-7142ddc2aac7",
+    "track_id": "act2",
+    "stem": "What is the measure, in degrees, of each interior angle of a regular octagon?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "135"
+      },
+      {
+        "key": "B",
+        "text": "180"
+      },
+      {
+        "key": "C",
+        "text": "160"
+      },
+      {
+        "key": "D",
+        "text": "45"
+      }
+    ],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Angles and polygons",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "Add the necessary regularity condition omitted by the source.",
+      "curriculum_lesson": "Angles and polygons",
+      "source_ids_adapted": [
+        "fddc7217-091d-5eb2-9649-52643c66cac0"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "A",
+    "explanation": "The interior-angle sum is (8 − 2) × 180° = 1080°. In a regular octagon all eight angles are equal, so each is 1080°/8 = 135°.",
+    "row_hash": "933a219db487f95ecff7a1fa04bdbaf6",
+    "key_hash": "56ffb98afbc2a9e82d52fa5f9e9f4a41"
+  },
+  {
+    "id": "50e6b02e-8110-5edc-9901-a2334c661b00",
+    "track_id": "est",
+    "stem": "EST I Math — March 2026 · Question 43. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "metadata": {
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 43, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 12,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "answer_review": "2026-09-30-independent-current-stem-review",
+      "lesson_subtopic": "Solving quadratic inequalities from a graph",
+      "source_question": 43,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Function inequalities",
+      "lesson_taxonomy_version": "20260929",
+      "mathematical_review_scope": "Original source crop visually checked in this audit; algebra, counts, units and plotted values independently recomputed. Image-backed question retains original choices unless an explicit repair is recorded."
+    },
+    "correct": "D",
+    "explanation": "The graph of g is above y = 3 between x = −3 and x = −1. The strict inequality excludes both endpoints, giving (−3,−1).",
+    "row_hash": "1d5e3abcb84ebcbf39ca82d89ed723eb",
+    "key_hash": "b507b7a957fd04a66ca27213098f5ae6"
+  },
+  {
+    "id": "5a009f08-8d79-5e3c-ab80-f0ef9293e8f4",
+    "track_id": "est",
+    "stem": "EST I Math — March 2026 · Question 5. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "metadata": {
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 5, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 4,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "answer_review": "2026-09-30-independent-current-stem-review",
+      "lesson_subtopic": "Discounted unit rates",
+      "source_question": 5,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Percentages",
+      "lesson_taxonomy_version": "20260929",
+      "mathematical_review_scope": "Original source crop visually checked in this audit; algebra, counts, units and plotted values independently recomputed. Image-backed question retains original choices unless an explicit repair is recorded."
+    },
+    "correct": "B",
+    "explanation": "Original monthly Jeep rent = 239,400/(19 × 12) = USD 1,050. After a 20% discount: 1,050 × 0.80 = USD 840.",
+    "row_hash": "59831d9d0a6277ed0b7816165d986d8c",
+    "key_hash": "20ab382188910bffd6c996df93e3cc8b"
+  },
+  {
+    "id": "5b49ca69-bdf0-5859-b0c5-c8d1b68ccb9f",
+    "track_id": "sat",
+    "stem": "Ice-cream orders: vanilla with sprinkles 20 and vanilla without sprinkles 30. Given that an order is vanilla, what is the probability it has sprinkles?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0.08"
+      },
+      {
+        "key": "B",
+        "text": "0.13"
+      },
+      {
+        "key": "C",
+        "text": "0.25"
+      },
+      {
+        "key": "D",
+        "text": "0.40"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M1-Q16",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 70,
+      "source_module": 1,
+      "source_number": 16,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "display_repair": "Unrelated cover image removed after visual inspection.",
+      "figure_required": false,
+      "lesson_subtopic": "Conditional probability",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "curriculum_lesson": "Probability and conditional probability",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "lesson_original_topic": "Conditional probability",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "Restrict the sample space to 20+30=50 vanilla orders: 20/50=0.40.",
+    "row_hash": "ce5a0c7448d427d09085aff612bbccad",
+    "key_hash": "8f80b7428ffa30e2f087944fd62bfe50"
+  },
+  {
+    "id": "5f4ca3bd-0e52-0bda-3d3f-e3014ec756f7",
+    "track_id": "sat",
+    "stem": "Points Q, R, and S lie on a circle with center C. Diameter QS is 76 millimeters long. What is the length of radius CR, in millimeters?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "152"
+      },
+      {
+        "key": "B",
+        "text": "76"
+      },
+      {
+        "key": "C",
+        "text": "38"
+      },
+      {
+        "key": "D",
+        "text": "19"
+      }
+    ],
+    "metadata": {
+      "skill": "Radius from diameter",
+      "source": "DSAT Classified",
+      "source_code": "DSAT-CLASS-261102-3",
+      "source_file": "Dsat Classified _261102_163016.pdf",
+      "source_page": 3,
+      "lesson_subtopic": "Radius from diameter",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Circles",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "C",
+    "explanation": "A radius is half a diameter, so CR = 76 ÷ 2 = 38.",
+    "row_hash": "43620fa87304dba82bbc3b11c1700383",
+    "key_hash": "b8b29f937fa17ab5f58216dfadfa45de"
+  },
+  {
+    "id": "667dc458-fe0d-f2b9-f1bc-a03a3bfa160c",
+    "track_id": "sat",
+    "stem": "A right square pyramid has a height of 9 centimeters. Each base edge is 7/3 times the height. What is the volume of the pyramid, in cubic centimeters?",
+    "choices": [],
+    "metadata": {
+      "skill": "Volume of a square pyramid",
+      "source": "DSAT Classified",
+      "source_code": "DSAT-CLASS-261102-11",
+      "source_file": "Dsat Classified _261102_163016.pdf",
+      "source_page": 11,
+      "lesson_subtopic": "Volume of a square pyramid",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Volume and surface area",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "1323",
+    "explanation": "The base edge is 21 cm. The volume is (1/3)(21²)(9) = 1323 cubic centimeters.",
+    "row_hash": "b361f6c36029272ab0ef14858ead247f",
+    "key_hash": "5bdb7401a33d39125d3a334f2d63998e"
+  },
+  {
+    "id": "675a3178-810f-5531-8d6b-6497f8e7783d",
+    "track_id": "act2",
+    "stem": "Which is the positive solution of 6x² − 7x − 3 = 0?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−1/3"
+      },
+      {
+        "key": "B",
+        "text": "3/2"
+      },
+      {
+        "key": "C",
+        "text": "−3/2"
+      },
+      {
+        "key": "D",
+        "text": "1/3"
+      }
+    ],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Quadratics and polynomials",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "Add “positive” to remove the source’s two-correct-choice ambiguity.",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "source_ids_adapted": [
+        "9b4f5a2d-27d7-5210-922a-31e2556e7130"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "B",
+    "explanation": "Factor as (3x + 1)(2x − 3) = 0. The roots are −1/3 and 3/2; only 3/2 is positive.",
+    "row_hash": "0de411b9fe537e62cd9284fd32f60ff7",
+    "key_hash": "b4fadbf36257158bb3ad219641469a62"
+  },
+  {
+    "id": "6d447263-bd26-830b-0738-472440cbff86",
+    "track_id": "sat",
+    "stem": "An object’s speed increases at 1.1 meters per second squared. What is this rate in miles per minute squared, rounded to the nearest tenth? Use 1 mile = 1,609 meters.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "0"
+      },
+      {
+        "key": "B",
+        "text": "2.5"
+      },
+      {
+        "key": "C",
+        "text": "29.5"
+      },
+      {
+        "key": "D",
+        "text": "1,542.7"
+      }
+    ],
+    "metadata": {
+      "skill": "Convert acceleration units",
+      "source": "DSAT Classified",
+      "source_code": "DSAT-CLASS-261102-7",
+      "source_file": "Dsat Classified _261102_163016.pdf",
+      "source_page": 7,
+      "lesson_subtopic": "Convert acceleration units",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "B",
+    "explanation": "Multiply by 60² and divide by 1609. The result, about 2.461, rounds to 2.5.",
+    "row_hash": "135b21e6c9bd29a914469a663b269fbc",
+    "key_hash": "b62e98db9b3ba39ee62b84d1bdc4a3ce"
+  },
+  {
+    "id": "6e930c36-ca49-5463-a3a9-2f2fc6293fc9",
+    "track_id": "sat",
+    "stem": "For integer p,w, 4x²−px+w=−85 has exactly one real solution. Which listed w is impossible?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−21"
+      },
+      {
+        "key": "B",
+        "text": "15"
+      },
+      {
+        "key": "C",
+        "text": "64"
+      },
+      {
+        "key": "D",
+        "text": "315"
+      }
+    ],
+    "metadata": {
+      "code": "MARCHUS26-M2-Q22",
+      "paper": "SAT March US Version C",
+      "source_page": 98,
+      "source_module": 2,
+      "source_number": 22,
+      "source_sha256": "a486567d62181cdf7a8979987e82c690e2fc5f54cebc9d4a0d20014bcde163fd",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 2 Question 22",
+      "lesson_subtopic": "Discriminant",
+      "source_pdf_name": "SAT March US Version B @DSATaz_260428_214855.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "ba5a06b7d91b589625e479ebc05207825509c516f88aee369e134a8eeb1ce345",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Discriminant",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The zero discriminant condition yields p²=16(w+85), so w+85 must be a perfect square. 64+85=149 is not.",
+    "row_hash": "4a3503b20cad0c985d4b29b9ef648764",
+    "key_hash": "5a3c5816a7a7b084c39d3a3ea262a46f"
+  },
+  {
+    "id": "771caf47-a5b8-508f-8b51-b6a4cf225aa8",
+    "track_id": "act2",
+    "stem": "All of the following numbers are greater than 1/2 EXCEPT:",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$\\frac{101}{200}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\frac{17}{33}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\frac7{12}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac25$"
+      }
+    ],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Ratios, percentages and unit conversion",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "Replace 600/1000 with the explicitly instructor-authored 2/5 option. Both defective copies link to this single adaptation.",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "source_ids_adapted": [
+        "b6763c00-7ba0-5573-a0ce-4434dd00d24c",
+        "c0edf793-69ae-51f1-9c63-00444e743f84"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "D",
+    "explanation": "101/200 > 1/2 because 202 > 200; 17/33 > 1/2 because 34 > 33; 7/12 > 1/2 because 14 > 12. But 2/5 = 0.4 < 1/2. Thus only D is an exception.",
+    "row_hash": "82af67d8452b1d7c4656e680acf89343",
+    "key_hash": "4375e0aa9257ea1390c6669cce85bf1b"
+  },
+  {
+    "id": "7c755041-bd5f-55f7-86e7-66a21b1b0bf0",
+    "track_id": "sat",
+    "stem": "The equation 12x+8=k(6x+8)+6x has exactly one solution. Which k cannot work?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "−1"
+      },
+      {
+        "key": "B",
+        "text": "0"
+      },
+      {
+        "key": "C",
+        "text": "1"
+      },
+      {
+        "key": "D",
+        "text": "2"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M1-Q14",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 68,
+      "source_module": 1,
+      "source_number": 14,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 1 Question 14",
+      "lesson_subtopic": "Linear equations",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Linear equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "At k=1, both sides are identical for every x. For other listed values the slopes differ, yielding one solution.",
+    "row_hash": "e0884eeb60a83091871091d7f1346085",
+    "key_hash": "c18743ac50c38d339ac26177b5b99c04"
+  },
+  {
+    "id": "7ce68034-e562-5907-bf5b-bda76957a603",
+    "track_id": "sat",
+    "stem": "A line has slope −1/6 and passes through (0,8). Which equation represents it?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "y=−x/6−8"
+      },
+      {
+        "key": "B",
+        "text": "y=−x/6+8"
+      },
+      {
+        "key": "C",
+        "text": "y=x/6−8"
+      },
+      {
+        "key": "D",
+        "text": "y=x/6+8"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M2-Q01",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 77,
+      "source_module": 2,
+      "source_number": 1,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 2 Question 1",
+      "lesson_subtopic": "Linear functions",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Linear functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "Slope-intercept form is y=mx+b, with m=−1/6 and b=8.",
+    "row_hash": "70343e39b93500a9f405980e3acafc1f",
+    "key_hash": "63846ab1991cd15a3d60f356f74f7b59"
+  },
+  {
+    "id": "7d81f146-e068-5834-bf6e-72c2f910578a",
+    "track_id": "est",
+    "stem": "EST I Math — March 2026 · Question 33. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "metadata": {
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 33, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 9,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "answer_review": "2026-09-30-independent-current-stem-review",
+      "lesson_subtopic": "Equivalent expressions from an equation",
+      "source_question": 33,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Linear equations",
+      "lesson_taxonomy_version": "20260929",
+      "mathematical_review_scope": "Original source crop visually checked; independent algebra, probability, units and diagram calculations. Existing source images retained."
+    },
+    "correct": "D",
+    "explanation": "3x − 7 = 20 gives x = 9. Therefore 2x = 18.",
+    "row_hash": "a5bb700efd2dafeda345076e2a956690",
+    "key_hash": "9af9598ab0930261367558e4e42dcf6d"
+  },
+  {
+    "id": "8939b729-8bd1-51df-8977-55604d2a2685",
+    "track_id": "act2",
+    "stem": "A 20-meter ladder rests against a vertical wall on level ground. The ladder makes an angle of 65° with the ground. How high up the wall does it reach, in meters? Round to the nearest hundredth.",
+    "choices": [],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Trigonometry",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "Add explicit nearest-hundredth precision and the right-triangle setting.",
+      "curriculum_lesson": "Trigonometry",
+      "source_ids_adapted": [
+        "1115c92c-eca5-5c40-b42f-f782066e4eff"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "18.13",
+    "explanation": "The ladder is the hypotenuse. Its vertical height is 20 sin 65° ≈ 18.12616 meters, which rounds to 18.13 meters.",
+    "row_hash": "4da937eb43df8b11001de790f7213dbd",
+    "key_hash": "ed4145a63b7a07b7b68d4b476ec9fd52"
+  },
+  {
+    "id": "89b9d931-78ff-1908-d159-a4da187929a2",
+    "track_id": "sat",
+    "stem": "The equations y = 9 and y = −(x − 9)² + 8 are graphed in the xy-plane. At how many points do their graphs intersect?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Exactly one"
+      },
+      {
+        "key": "B",
+        "text": "Exactly two"
+      },
+      {
+        "key": "C",
+        "text": "Infinitely many"
+      },
+      {
+        "key": "D",
+        "text": "Zero"
+      }
+    ],
+    "metadata": {
+      "skill": "Count line-parabola intersections",
+      "source": "DSAT Classified",
+      "source_code": "DSAT-CLASS-261102-1",
+      "source_file": "Dsat Classified _261102_163016.pdf",
+      "source_page": 1,
+      "lesson_subtopic": "Count line-parabola intersections",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "D",
+    "explanation": "The parabola has a maximum y-value of 8, below the line y = 9.",
+    "row_hash": "7668a6abcaec31d8e8a0a6f069b75729",
+    "key_hash": "85abe991ea6a1b7167feff4861d4af5b"
+  },
+  {
+    "id": "8b79f97d-7d46-5542-be2b-5083826a7317",
+    "track_id": "sat",
+    "stem": "College Panda Chapter 19, Circles, Exercise 2, Question 13. Read the original problem shown below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": ""
+      },
+      {
+        "key": "B",
+        "text": ""
+      },
+      {
+        "key": "C",
+        "text": ""
+      },
+      {
+        "key": "D",
+        "text": ""
+      }
+    ],
+    "metadata": {
+      "code": "PANDA-CH19-E2-Q13",
+      "paper": "College Panda SAT Math Advanced Guide & Workbook",
+      "source_page": 237,
+      "solution_page": 389,
+      "source_number": 13,
+      "source_sha256": "a6e7dcdb5eb34a88aff2163723015305c2700e26bdde7ce8e6242136a65593b8",
+      "content_review": {
+        "method": "Original numbered question panel and boxed worked answer independently read",
+        "status": "verified",
+        "source_fidelity": "Original question and choices are reproduced as a scanned image; worked-answer page is attached"
+      },
+      "figure_caption": "Original College Panda Chapter 19, Exercise 2, Question 13",
+      "source_chapter": 19,
+      "lesson_subtopic": "Circles",
+      "source_exercise": 2,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Circles",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Circles",
+      "source_library_file_id": "libfile_d6167ab9f44881919492feff68ef28d4",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The radius is 12. Substituting (8,27) gives (8 − h)² + (27 − k)² = 144, so |27 − k| ≤ 12 and 15 ≤ k ≤ 39. Only 39 is listed in this interval. It works with h = 8, so the answer is C.",
+    "row_hash": "6a85d10c7f96cfa985bda2cdf819fec4",
+    "key_hash": "e9c0717e8ce68b4d2617138590d96918"
+  },
+  {
+    "id": "8eacfa6a-2a85-53db-97ac-00de54a9e121",
+    "track_id": "sat",
+    "stem": "What is the sum of the solutions of x²−15x+12=0?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "15"
+      },
+      {
+        "key": "B",
+        "text": "12"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "0"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M1-Q07",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 61,
+      "source_module": 1,
+      "source_number": 7,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 1 Question 7",
+      "lesson_subtopic": "Quadratic equations",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Quadratic equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "By the sum-of-roots formula, the sum is −(−15)/1=15.",
+    "row_hash": "813ea485af03a3791b47b0bc0ca9afa6",
+    "key_hash": "12966e6c3460215af1f6ede856b3fed1"
+  },
+  {
+    "id": "93628e9e-dbd9-5dde-af49-b12de63a7652",
+    "track_id": "est",
+    "stem": "EST I Math — March 2026 · Question 30. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "metadata": {
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 30, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 9,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "answer_review": "2026-09-30-independent-current-stem-review",
+      "lesson_subtopic": "Compound inequalities and integer solutions",
+      "source_question": 30,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Linear inequalities",
+      "lesson_taxonomy_version": "20260929",
+      "mathematical_review_scope": "Original source crop visually checked; independent algebra, probability, units and diagram calculations. Existing source images retained."
+    },
+    "correct": "A",
+    "explanation": "3x − 4 ≤ 1 gives x ≤ 5/3. The greatest positive integer satisfying this is 1.",
+    "row_hash": "a06185ca2dfcd17cb7053a392de788c3",
+    "key_hash": "089c9f8d4067e0af249119e2bfe0c0b5"
+  },
+  {
+    "id": "93b5da55-a8b7-58f0-a38c-4e4fc3d1fcb1",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\n36.\nFind and compare the mean and median of the following numbers:\n75 70 80 70 80 90 95 70 70 75 80 80 90 95",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D20-P015-Q036",
+      "source_page": 15,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "8ce5beb14b467975033df76f60552d85ae78e7737822f804ea070cccad9569d2",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "Scanned questions",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "test_6.pdf",
+      "source_question": 36,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D20-P015-Q036",
+      "source_document_id": "act2-20261029-8ce5beb14b467975",
+      "source_question_id": "ACT2-IMPORT-20261030-D20-P015-Q036",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "The prompt requests both a mean and median and a comparison, which cannot be graded as a unique scalar numeric response.",
+      "source_image_sha256": "a4a30463cef0637aa626d2d635743dc207361809f46be5f35629cee5825a6b58",
+      "answer_review_status": "blocked",
+      "classification_status": "reviewed",
+      "replacement_question_id": "c7f7ee46-421c-5022-ba22-5c9ae0c1b5b6",
+      "replacement_review_note": "Convert the unsupported descriptive response to a single multiple-choice comparison.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "The prompt requests both a mean and median and a comparison, which cannot be graded as a unique scalar numeric response."
+    },
+    "explanation": "The prompt requests both a mean and median and a comparison, which cannot be graded as a unique scalar numeric response.",
+    "row_hash": "6b4e8ee493f792d7a3999384442c27c3",
+    "key_hash": "31d3e30c1158809990c426ccdb761956"
+  },
+  {
+    "id": "97e14662-6707-58fb-84f6-6eeedb723ee1",
+    "track_id": "est",
+    "stem": "EST I Math — March 2026 · Question 14. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "metadata": {
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 14, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 5,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "answer_review": "2026-09-30-independent-current-stem-review",
+      "lesson_subtopic": "Simple interest",
+      "source_question": 14,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Simple interest",
+      "lesson_taxonomy_version": "20260929",
+      "mathematical_review_scope": "Original source crop visually checked; independent algebra, probability, units and diagram calculations. Existing source images retained."
+    },
+    "correct": "B",
+    "explanation": "Simple interest = principal × annual rate × years = 4,500 × 0.02 × 2 = USD 180.",
+    "row_hash": "3c66d25a5cb4d2d5409b3bcbe7ec8b6f",
+    "key_hash": "c1158cf08db3909944a71bc9abcec551"
+  },
+  {
+    "id": "98cb24bf-e675-5d2e-a4c0-bd834cbbc0f2",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\n3. Find c if a=7,b=10,C=60 degrees.",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D56-P021-Q003",
+      "source_page": 21,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "d05c92726a6d8b23e3596a43a7f69f8ffe93617bc9b457c02fd7c258f8c78efb",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "Chapter 12: Triangles and Trigonometry",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "ACT_Math_2_Complete_Course_Eng_Abdelrahman_Ghoneem.pdf",
+      "source_question": 3,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D56-P021-Q003",
+      "source_document_id": "act2-20261029-d05c92726a6d8b23",
+      "source_question_id": "ACT2-IMPORT-20261030-D56-P021-Q003",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "The exact answer is irrational, the source does not state rounding, and the numeric grader cannot fairly accept an unstated precision.",
+      "source_image_sha256": "1e28f04cd3852787b1139ddb9777750d26ea3f839e90dea7ba142fc6462115ac",
+      "answer_review_status": "blocked",
+      "classification_status": "reviewed",
+      "replacement_question_id": "cb2bb778-72a0-5a82-9020-f02afd4a2f9f",
+      "replacement_review_note": "State the side convention and add exact-answer choices.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "The exact answer is irrational, the source does not state rounding, and the numeric grader cannot fairly accept an unstated precision."
+    },
+    "explanation": "Cosine rule gives $c^2=49+100-140\\cos60^\\circ=79$, so $c=\\sqrt{79}\\approx8.88819$.",
+    "row_hash": "29f6904146d95a743d7f18d1290b2f39",
+    "key_hash": "1a1dbfbd4b92f5ba957e4be3118abd25"
+  },
+  {
+    "id": "9aba70e9-d636-555a-8e53-0c361fd36bbc",
+    "track_id": "sat",
+    "stem": "An artist makes 14 bowls and vases using 48 pounds of clay. Bowls use 3 pounds each; vases use 5. How many vases?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "3"
+      },
+      {
+        "key": "B",
+        "text": "6"
+      },
+      {
+        "key": "C",
+        "text": "8"
+      },
+      {
+        "key": "D",
+        "text": "11"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M2-Q06",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 82,
+      "source_module": 2,
+      "source_number": 6,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 2 Question 6",
+      "lesson_subtopic": "Linear systems",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Systems of equations",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Linear systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Let v be the number of vases. Then 3(14−v)+5v=48, so v=3.",
+    "row_hash": "e92512da8a2ea86d61e4cffdbcb1c5ea",
+    "key_hash": "69fea793e52c0fabb78d90ecdb136483"
+  },
+  {
+    "id": "9af03690-37ae-5815-b5d2-39055ade1862",
+    "track_id": "sat",
+    "stem": "If −3x+6rx=42 has no solution, find r.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "1/7"
+      },
+      {
+        "key": "B",
+        "text": "1/2"
+      },
+      {
+        "key": "C",
+        "text": "2"
+      },
+      {
+        "key": "D",
+        "text": "7"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M2-Q03",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 79,
+      "source_module": 2,
+      "source_number": 3,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 2 Question 3",
+      "lesson_subtopic": "Linear equations",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Linear equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "No solution requires the coefficient of x to vanish: −3+6r=0, giving r=1/2, while 42 remains nonzero.",
+    "row_hash": "ac7357a9ea2382f8ee1349348eadd67a",
+    "key_hash": "61a4773639045c49418a9d8f24bdb3f7"
+  },
+  {
+    "id": "9b45a010-891a-5c72-aeb0-4346e6f82c3f",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\n22. Here are ted’s 5 scores prior to tutoring\n\n   Test 1  Test 2   Test 3  Test 4   Test 5\n  70    70     80     70     80\n Here are his 2 scores after tutoring\n\n    Test 6  Test 7\n   90    95\n\n By how much did the median and the mean change after tutoring\n\n      a) The median remained the same. The mean increased by 5\n     b) The median increased by 5. The mean remained the same\n      c) The median and the mean both increased by 5\n     d) The median and the mean both remained the same",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D27-P010-Q022",
+      "source_page": 10,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "8683cb4f8aea48b100dedf728e98c8f0760d9d26b98c30754cc6cd2419bd0620",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "main",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "extra_practice_2.pdf",
+      "source_question": 22,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D27-P010-Q022",
+      "source_document_id": "act2-20261029-8683cb4f8aea48b1",
+      "source_question_id": "ACT2-IMPORT-20261030-D27-P010-Q022",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "Original scores70,70,80,70,80 have mean74 and median70. Adding90,95 gives mean555/7≈79.29 and median80. No printed option gives these changes.",
+      "source_image_sha256": "04ea6ee668fcdb7a26f5f047c86a4c2aaf17ce4595a9dcf4c0376aa075c918ca",
+      "answer_review_status": "blocked",
+      "classification_status": "reviewed",
+      "replacement_question_id": "0828b97c-3414-534e-8ed4-db26d79079a8",
+      "replacement_review_note": "Replace defective options with instructor-authored choices, including the exact changes.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "Original scores70,70,80,70,80 have mean74 and median70. Adding90,95 gives mean555/7≈79.29 and median80. No printed option gives these changes."
+    },
+    "explanation": "Original scores70,70,80,70,80 have mean74 and median70. Adding90,95 gives mean555/7≈79.29 and median80. No printed option gives these changes.",
+    "row_hash": "4b3ba48cbd3cc11f2444f9488ee0123d",
+    "key_hash": "5a209e4386cdae0eb8e7a52afb239499"
+  },
+  {
+    "id": "9b4f5a2d-27d7-5210-922a-31e2556e7130",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\n18  Which is a solution of 6x2-7x-3=0?\n   F. -1/3\n  G. 3/2\n  H. -3/2\n   J. 1/3",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D53-P006-Q018",
+      "source_page": 6,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "bbfa79ceb8b0646c6507793311b5bb19aa18178d19c0b60a8cfe9969a3987d4b",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "main",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "ACT_2_Math_Parallel_Test_Eng_Abdelrahman_Ghoneem.pdf",
+      "source_question": 18,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D53-P006-Q018",
+      "source_document_id": "act2-20261029-bbfa79ceb8b0646c",
+      "source_question_id": "ACT2-IMPORT-20261030-D53-P006-Q018",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "Two correct options in a single-answer question.",
+      "source_image_sha256": "b9cd49dc564beec2ac921ae4810af4685aa3327f4ce25d7e67c5ce331cb52cc6",
+      "answer_review_status": "blocked",
+      "classification_status": "reviewed",
+      "replacement_question_id": "675a3178-810f-5531-8d6b-6497f8e7783d",
+      "replacement_review_note": "Add “positive” to remove the source’s two-correct-choice ambiguity.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "Two correct options in a single-answer question."
+    },
+    "explanation": "Factor $(3x+1)(2x-3)=0$. Both -1/3 (F) and 3/2 (G) are correct.",
+    "row_hash": "03ccc17ae167be5a9d911963088618f5",
+    "key_hash": "26b25e688178cdb9a57f95318cd3b7fa"
+  },
+  {
+    "id": "a66e7923-397b-5cd5-995c-04205246199d",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\n35.\nAcircle has a diameter of 11 inches. What is the circumference of\nthat circle?",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D20-P015-Q035",
+      "source_page": 15,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "8ce5beb14b467975033df76f60552d85ae78e7737822f804ea070cccad9569d2",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "Scanned questions",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "test_6.pdf",
+      "source_question": 35,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D20-P015-Q035",
+      "source_document_id": "act2-20261029-8ce5beb14b467975",
+      "source_question_id": "ACT2-IMPORT-20261030-D20-P015-Q035",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "Exact circumference is irrational and the source supplies neither choices nor a rounding instruction.",
+      "source_image_sha256": "69579d2ad3810c2ceda64402f2d0e74025438969a65b480533fd4664f821d2c7",
+      "answer_review_status": "blocked",
+      "classification_status": "reviewed",
+      "replacement_question_id": "3cae9561-7bf7-525b-98ac-d5bcdaf42b5f",
+      "replacement_review_note": "Supply exact-answer choices for an unsupported irrational numeric response.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "Exact circumference is irrational and the source supplies neither choices nor a rounding instruction."
+    },
+    "explanation": "The circumference is $\\pi d=11\\pi$ inches.",
+    "row_hash": "52e015d18a85f1d2d461a9d445c9c536",
+    "key_hash": "1d000660fdbb2ce09ca0da9dc2981a37"
+  },
+  {
+    "id": "a7e0c938-c48b-50d8-88b3-8388c07f0560",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\nQ27) A car travels 1 mile and has a tire with a radius of\n14 inches. How many times will the tire rotate to\ncover the entire distance? (1 mile = 5280 ft.)\n  a) 60\n  b) 61\n  c) 720\n  d) 721",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D16-P012-Q027",
+      "source_page": 12,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "6de69c197cf86a897d7a634756c98e110be1e0377ca5511c896d57b377d40b7e",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "main",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "November_test_1_.pdf",
+      "source_question": 27,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D16-P012-Q027",
+      "source_document_id": "act2-20261029-6de69c197cf86a89",
+      "source_question_id": "ACT2-IMPORT-20261030-D16-P012-Q027",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "Exact rotations are 63360/(28π)=720.288... . No listed answer is exact, and the prompt does not specify whole completed rotations, rounding, or π=22/7; preserve the earlier hold.",
+      "source_image_sha256": "4d9ed54324a17530f136f6ef6fc80efe03f63fb0cd43d83340b9eed794e214f3",
+      "answer_review_status": "blocked",
+      "classification_status": "pending",
+      "replacement_question_id": "4236b337-2e07-522f-aee7-58ea04c01fd7",
+      "replacement_review_note": "Add explicit whole-number rounding; do not silently substitute π = 22/7.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "Exact rotations are 63360/(28π)=720.288... . No listed answer is exact, and the prompt does not specify whole completed rotations, rounding, or π=22/7; preserve the earlier hold."
+    },
+    "explanation": "Exact rotations are 63360/(28π)=720.288... . No listed answer is exact, and the prompt does not specify whole completed rotations, rounding, or π=22/7; preserve the earlier hold.",
+    "row_hash": "6a55892d57c96c3681699c71f2d083b0",
+    "key_hash": "ff49c49e679b4bcb83c34d45156548db"
+  },
+  {
+    "id": "b18f2a3d-941e-5ee7-92f4-f883d6c69473",
+    "track_id": "sat",
+    "stem": "A right triangle has perpendicular legs of lengths 9 cm and 4 cm. Find its area in square centimeters.",
+    "choices": [],
+    "metadata": {
+      "code": "ELITEMAY26-M2-Q02",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 78,
+      "source_module": 2,
+      "source_number": 2,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "display_repair": "Unrelated cover image removed after visual inspection.",
+      "figure_required": false,
+      "lesson_subtopic": "Triangle area",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "curriculum_lesson": "Triangles and similarity",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "lesson_original_topic": "Triangle area",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": [
+      "18"
+    ],
+    "explanation": "Area=(1/2)·9·4=18 square centimeters.",
+    "row_hash": "ffc8f69e831f33359db7d42ef4b33a84",
+    "key_hash": "e433163e311c3a7f9ac983b4e5dc9741"
+  },
+  {
+    "id": "b5a5f8a4-5298-5c01-bbc0-4459b3f92ac4",
+    "track_id": "act2",
+    "stem": "A circle has a diameter of 17 units. What is its exact area?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$17\\pi$"
+      },
+      {
+        "key": "B",
+        "text": "$\\frac{289\\pi}{4}$"
+      },
+      {
+        "key": "C",
+        "text": "$289\\pi$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{17\\pi}{2}$"
+      }
+    ],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Circles",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "Supply exact-answer choices instead of assuming an unstated decimal precision.",
+      "curriculum_lesson": "Circles",
+      "source_ids_adapted": [
+        "d0ffb261-513f-551b-88c4-9b6845e98178"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "B",
+    "explanation": "The radius is 17/2. Area = π(17/2)² = 289π/4 square units.",
+    "row_hash": "0af9718d38f0d26fde83b438e32229cb",
+    "key_hash": "d33d1beac7d2b4e714c68939022a4862"
+  },
+  {
+    "id": "b5cab5fe-90bb-7330-e7ab-90df92ce2433",
+    "track_id": "sat",
+    "stem": "A moving truck costs $195 for the first hour and $75 for each additional hour, plus the cost of gas. For x ≥ 1 hours and a gas cost of w dollars, which equation gives the total cost y in dollars?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "y = 195 + 75(x − 1) + w"
+      },
+      {
+        "key": "B",
+        "text": "y = 195 + 75x + w"
+      },
+      {
+        "key": "C",
+        "text": "y = 195 + 75 + w"
+      },
+      {
+        "key": "D",
+        "text": "y = 75(x − 1) + w"
+      }
+    ],
+    "metadata": {
+      "skill": "Model a base charge and additional hours",
+      "source": "DSAT Classified",
+      "source_code": "DSAT-CLASS-261102-2",
+      "source_file": "Dsat Classified _261102_163016.pdf",
+      "source_page": 2,
+      "lesson_subtopic": "Model a base charge and additional hours",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "A",
+    "explanation": "After the first hour there are x − 1 additional hours. Add their cost to $195 and the gas charge.",
+    "row_hash": "aed6919946cd981df57af0401f3a6545",
+    "key_hash": "20e0450d47fe70d22ca8961d6ae8caed"
+  },
+  {
+    "id": "b6763c00-7ba0-5573-a0ce-4434dd00d24c",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\n35\n                            1\nAll of the following are greater than\n                            2\nEXCEPT.\n   101                    17\nA)                       B)\n   200                    33\n   7                      600\nC)                     D)\n   12                     1000",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D52-P008-Q035",
+      "source_page": 8,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "f3cf174006b05721d3fc1b0044ba85687772172b2293d74c9c3bbe2936ef0d8a",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "main",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "ACT2_PART_II_----Dr.AHMED_HASSAN----.pdf",
+      "source_question": 35,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D52-P008-Q035",
+      "source_document_id": "act2-20261029-f3cf174006b05721",
+      "source_question_id": "ACT2-IMPORT-20261030-D52-P008-Q035",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "All four choices exceed1/2:101/200=0.505,17/33≈0.515,7/12≈0.583,600/1000=0.6. The requested exception does not exist.",
+      "source_image_sha256": "be842af396baa086adac2cb78eb30e5b86b5bcfc684183cd59b8700771f2b82c",
+      "answer_review_status": "blocked",
+      "classification_status": "reviewed",
+      "replacement_question_id": "771caf47-a5b8-508f-8b51-b6a4cf225aa8",
+      "replacement_review_note": "Replace 600/1000 with the explicitly instructor-authored 2/5 option. Both defective copies link to this single adaptation.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "All four choices exceed1/2:101/200=0.505,17/33≈0.515,7/12≈0.583,600/1000=0.6. The requested exception does not exist."
+    },
+    "explanation": "All four choices exceed1/2:101/200=0.505,17/33≈0.515,7/12≈0.583,600/1000=0.6. The requested exception does not exist.",
+    "row_hash": "2539f195cc9a7eb90b82b8381ec7ffed",
+    "key_hash": "4b46cecee0bf07da067113f641f7cdf5"
+  },
+  {
+    "id": "bb03ca3f-d198-5757-a43f-ef82b32d33c6",
+    "track_id": "est",
+    "stem": "EST I Math — March 2026 · Question 3. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "metadata": {
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 3, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 3,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "answer_review": "2026-09-30-independent-current-stem-review",
+      "lesson_subtopic": "Rates from data tables",
+      "source_question": 3,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Ratios, percentages and unit conversion",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Rates and tables",
+      "lesson_taxonomy_version": "20260929",
+      "mathematical_review_scope": "Original source crop checked; independently recomputed current algebra and diagram result. Defective and ambiguous records excluded from this certified batch."
+    },
+    "correct": "D",
+    "explanation": "The Hyundai revenue covers 14 cars for 12 months. Monthly rent per car = 134,400/(14 × 12) = USD 800.",
+    "row_hash": "06be036e3e073f2decba30fc90bdbf07",
+    "key_hash": "cefe5bfd8af77f2ab67680a098a2f7f1"
+  },
+  {
+    "id": "c0edf793-69ae-51f1-9c63-00444e743f84",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\n1\n[42] All of the following are greater than   EXCEPT:\n                                  2\n\n\n       101\n    A.\n       200\n      17\n    B.\n       33\n       7\n    C.\n      12\n       600\n    E.\n      1000",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D19-P010-Q042",
+      "source_page": 10,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "474c9aadbdaf56602e24979c884110d928a53a4471d38abd79cbf7de3e84154b",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "main",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "test_1.pdf",
+      "source_question": 42,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D19-P010-Q042",
+      "source_document_id": "act2-20261029-474c9aadbdaf5660",
+      "source_question_id": "ACT2-IMPORT-20261030-D19-P010-Q042",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "All four listed fractions are greater than 1/2:101/200,17/33,7/12,and 600/1000. There is no exception and no correct option.",
+      "source_image_sha256": "03750eefb0b6cfe70062112b89fb7b2ca7b2ee85fa0f41cda6116928b1a369b1",
+      "answer_review_status": "blocked",
+      "classification_status": "pending",
+      "replacement_question_id": "771caf47-a5b8-508f-8b51-b6a4cf225aa8",
+      "replacement_review_note": "Replace 600/1000 with the explicitly instructor-authored 2/5 option. Both defective copies link to this single adaptation.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "All four listed fractions are greater than 1/2:101/200,17/33,7/12,and 600/1000. There is no exception and no correct option."
+    },
+    "explanation": "All four listed fractions are greater than 1/2:101/200,17/33,7/12,and 600/1000. There is no exception and no correct option.",
+    "row_hash": "26da410ef442fdf44cc0d5229d2ab5b2",
+    "key_hash": "9ce1401adb5427b24fc513513914f5b4"
+  },
+  {
+    "id": "c7f7ee46-421c-5022-ba22-5c9ae0c1b5b6",
+    "track_id": "act2",
+    "stem": "The data set is 75, 70, 80, 70, 80, 90, 95, 70, 70, 75, 80, 80, 90, 95. Which statement correctly compares its mean and median?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "The mean is less than the median"
+      },
+      {
+        "key": "B",
+        "text": "The mean equals the median"
+      },
+      {
+        "key": "C",
+        "text": "The mean is greater than the median"
+      },
+      {
+        "key": "D",
+        "text": "The mean and median cannot be determined"
+      }
+    ],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Statistics and data analysis",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "Convert the unsupported descriptive response to a single multiple-choice comparison.",
+      "curriculum_lesson": "Statistics and data analysis",
+      "source_ids_adapted": [
+        "93b5da55-a8b7-58f0-a38c-4e4fc3d1fcb1"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "B",
+    "explanation": "The sum is 1120 and there are 14 values, so the mean is 80. The seventh and eighth sorted values are both 80, so the median is also 80.",
+    "row_hash": "5d89f0b4e5e533fba520fbb111f24691",
+    "key_hash": "7490edbeaaf356c079a389e76f41dbfa"
+  },
+  {
+    "id": "c8750f4c-38d7-5dd7-885a-ebf5fef38bc6",
+    "track_id": "sat",
+    "stem": "A line crossing the axes near (0,−4) and (2,0) satisfies ax+by=32. What are the signs of a and b?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "a<0 and b<0"
+      },
+      {
+        "key": "B",
+        "text": "a<0 and b>0"
+      },
+      {
+        "key": "C",
+        "text": "a>0 and b<0"
+      },
+      {
+        "key": "D",
+        "text": "a>0 and b>0"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M2-Q11",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 87,
+      "source_module": 2,
+      "source_number": 11,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "display_repair": "Unrelated cover image removed after visual inspection.",
+      "figure_required": false,
+      "lesson_subtopic": "Graphing lines",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "lesson_original_topic": "Graphing lines",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "At the positive x-intercept, a=32/x>0. At the negative y-intercept, b=32/y<0.",
+    "row_hash": "724086f55c4764beb7af863fde86ca5b",
+    "key_hash": "9115b4d477347cb546da9919a3ba2e2b"
+  },
+  {
+    "id": "cb2bb778-72a0-5a82-9020-f02afd4a2f9f",
+    "track_id": "act2",
+    "stem": "In triangle ABC, sides a = 7 and b = 10 are opposite angles A and B. The included angle C is 60°. What is the exact length of side c, opposite C?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$\\sqrt{79}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\sqrt{149}$"
+      },
+      {
+        "key": "C",
+        "text": "17"
+      },
+      {
+        "key": "D",
+        "text": "3"
+      }
+    ],
+    "metadata": {
+      "source": "Ghoneem Math — reviewed instructor adaptation",
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Trigonometry",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "adaptation_reason": "State the side convention and add exact-answer choices.",
+      "curriculum_lesson": "Trigonometry",
+      "source_ids_adapted": [
+        "98cb24bf-e675-5d2e-a4c0-bd834cbbc0f2"
+      ],
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "A",
+    "explanation": "By the cosine rule, c² = 7² + 10² − 2(7)(10) cos 60° = 149 − 70 = 79. Since c is a length, c = √79.",
+    "row_hash": "a6367d1573206689150eb381a7f52655",
+    "key_hash": "f3651ec39429a48746c84b2dfaf58d7d"
+  },
+  {
+    "id": "cbb63b35-7612-59dd-8a69-84fc1a3e6e4b",
+    "track_id": "sat",
+    "stem": "Which equation gives the line through (23,0) and (23,23)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "x=23"
+      },
+      {
+        "key": "B",
+        "text": "x=0"
+      },
+      {
+        "key": "C",
+        "text": "y=23"
+      },
+      {
+        "key": "D",
+        "text": "y=0"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M2-Q08",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 84,
+      "source_module": 2,
+      "source_number": 8,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 2 Question 8",
+      "lesson_subtopic": "Vertical lines",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Vertical lines",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Both points have x-coordinate 23, so the line is vertical: x=23.",
+    "row_hash": "ae7d68ae2943d2cb2df73b6c4b9647a3",
+    "key_hash": "08528b79ebe9312e24bd5c963119fabb"
+  },
+  {
+    "id": "ceb217e8-f4a6-2b49-429d-19923993b3b5",
+    "track_id": "sat",
+    "stem": "Positive numbers x, y, and z satisfy 1/(5xy) + xyz = 1/(4yz). Which expression is equivalent to y?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(5x − 4z)/(20x²z²)"
+      },
+      {
+        "key": "B",
+        "text": "√[(5x − 4z)/(20x²z²)]"
+      },
+      {
+        "key": "C",
+        "text": "1/(4xz² − 5x²z)"
+      },
+      {
+        "key": "D",
+        "text": "√[1/(4xz² − 5x²z)]"
+      }
+    ],
+    "metadata": {
+      "skill": "Rearrange a rational equation",
+      "source": "DSAT Classified",
+      "source_code": "DSAT-CLASS-261102-6",
+      "source_file": "Dsat Classified _261102_163016.pdf",
+      "source_page": 6,
+      "lesson_subtopic": "Rearrange a rational equation",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Algebraic expressions and equations",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "B",
+    "explanation": "Multiply by 20xyz to obtain 4z + 20x²y²z² = 5x. Isolate y² and take its positive square root.",
+    "row_hash": "27579a9271132ca6a4c070ac436b8913",
+    "key_hash": "10cd176ec9999e2b8dae89a4e24e0438"
+  },
+  {
+    "id": "d0b7375e-b2ee-548d-a0ec-6fd637299d6f",
+    "track_id": "sat",
+    "stem": "Where do −9x+y=17 and 9x+y=17 intersect?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(0,17)"
+      },
+      {
+        "key": "B",
+        "text": "(0,9)"
+      },
+      {
+        "key": "C",
+        "text": "(9,0)"
+      },
+      {
+        "key": "D",
+        "text": "(17,0)"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M1-Q03",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 57,
+      "source_module": 1,
+      "source_number": 3,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 1 Question 3",
+      "lesson_subtopic": "Linear systems",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Systems of equations",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Linear systems",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "A",
+    "explanation": "Subtracting gives 18x=0. Then y=17.",
+    "row_hash": "e33ce9cfcefff28e01899bb4c61b88aa",
+    "key_hash": "503584b1edc88913e69845ac439c97d4"
+  },
+  {
+    "id": "d0ffb261-513f-551b-88c4-9b6845e98178",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\nFind the area of a circle with a diameter of 17:",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D20-P018-Q044",
+      "source_page": 18,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "8ce5beb14b467975033df76f60552d85ae78e7737822f804ea070cccad9569d2",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "Scanned questions",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "test_6.pdf",
+      "source_question": 44,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D20-P018-Q044",
+      "source_document_id": "act2-20261029-8ce5beb14b467975",
+      "source_question_id": "ACT2-IMPORT-20261030-D20-P018-Q044",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "Exact area is irrational and the source gives no answer choices or rounding instructions.",
+      "source_image_sha256": "2220eadfff0d3cd2f7ab3d492673fa3e6cf6c7b358f5db1b848a7a400a446c1c",
+      "answer_review_status": "blocked",
+      "classification_status": "reviewed",
+      "replacement_question_id": "b5a5f8a4-5298-5c01-bbc0-4459b3f92ac4",
+      "replacement_review_note": "Supply exact-answer choices instead of assuming an unstated decimal precision.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "Exact area is irrational and the source gives no answer choices or rounding instructions."
+    },
+    "explanation": "The area is $\\pi(17/2)^2=289\\pi/4$.",
+    "row_hash": "58de9893478487afe3416c728ced0183",
+    "key_hash": "ac2d139d1f2d1a64b5256b0e566f6381"
+  },
+  {
+    "id": "d155cd26-9e65-58a5-ac5b-26a21eba28e2",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\nQ44) if the radius and height of a cylinder are in the\nration of 5:7 and its volume is 550 cm3, then its radius\nis equal to?\n  a) 5\n  b) 6\n  c) 7\n  d) 10",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D16-P019-Q044",
+      "source_page": 19,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "6de69c197cf86a897d7a634756c98e110be1e0377ca5511c896d57b377d40b7e",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "main",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "November_test_1_.pdf",
+      "source_question": 44,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D16-P019-Q044",
+      "source_document_id": "act2-20261029-6de69c197cf86a89",
+      "source_question_id": "ACT2-IMPORT-20261030-D16-P019-Q044",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "With h=7 r/5, volume 550 gives r=(2750/(7π))^(1/3), approximately 5.00067, not exactly 5. No π approximation or rounding is specified; preserve the source hold.",
+      "source_image_sha256": "bfafa1cc4638899c0570bbe8100a21d9b2b0dc6ee44eea7dc53ea5ecc6c93ae6",
+      "answer_review_status": "blocked",
+      "classification_status": "pending",
+      "replacement_question_id": "015afa55-5485-5f8e-8925-5d6abe52776f",
+      "replacement_review_note": "Existing live version explicitly specifies π = 22/7, giving radius 5 exactly. Reuse that version rather than creating a second rounding adaptation.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "With h=7 r/5, volume 550 gives r=(2750/(7π))^(1/3), approximately 5.00067, not exactly 5. No π approximation or rounding is specified; preserve the source hold."
+    },
+    "explanation": "With h=7 r/5, volume 550 gives r=(2750/(7π))^(1/3), approximately 5.00067, not exactly 5. No π approximation or rounding is specified; preserve the source hold.",
+    "row_hash": "5ac5e3e56d57d65001708623cd357c80",
+    "key_hash": "e87d4149ece35ec7b5cf7ba3c3042ff2"
+  },
+  {
+    "id": "d293bb24-b634-b3dd-1ad3-2b39d9352c79",
+    "track_id": "sat",
+    "stem": "For a positive constant k, f(x) = k(1.84)ˣ increases by p% each time x increases by 1. Which function increases by p% each time x increases by 4?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "g(x) = k[(1.84)ˣ]^(1/4)"
+      },
+      {
+        "key": "B",
+        "text": "g(x) = k[(1.84)ˣ]⁴"
+      },
+      {
+        "key": "C",
+        "text": "g(x) = k(1.84)^(x − 4)"
+      },
+      {
+        "key": "D",
+        "text": "g(x) = k(1.84)^(x + 4)"
+      }
+    ],
+    "metadata": {
+      "skill": "Convert the interval of exponential growth",
+      "source": "DSAT Classified",
+      "source_code": "DSAT-CLASS-261102-8",
+      "source_file": "Dsat Classified _261102_163016.pdf",
+      "source_page": 8,
+      "lesson_subtopic": "Convert the interval of exponential growth",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "A",
+    "explanation": "The exponent x/4 increases by 1 when x increases by 4, multiplying the output by 1.84.",
+    "row_hash": "1d63b1864ad8f62fbb5e9cbed825419a",
+    "key_hash": "5729f87374d2669c6a10f0c8bf54b00a"
+  },
+  {
+    "id": "d65fd706-b296-58db-8f18-c0bd9a99ab0f",
+    "track_id": "sat",
+    "stem": "A quadratic y=36x²−bx−120 has zeros at x=−5/9 and x=6. Find b.",
+    "choices": [],
+    "metadata": {
+      "code": "ELITEMAY26-M2-Q10",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 86,
+      "source_module": 2,
+      "source_number": 10,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "display_repair": "Unrelated cover image removed after visual inspection.",
+      "figure_required": false,
+      "lesson_subtopic": "Quadratics",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Quadratics",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": [
+      "196"
+    ],
+    "explanation": "The sum of roots is 6−5/9=49/9, equal to b/36, hence b=196.",
+    "row_hash": "57af7af9255d51450159d1b1f65423b2",
+    "key_hash": "9b594d9a1a47fe6a9547cc55e5414a01"
+  },
+  {
+    "id": "d7f378d1-a495-5d76-abfc-aa8e5429fe6a",
+    "track_id": "sat",
+    "stem": "If x/2+17=17(x/2), what is x/2?",
+    "choices": [],
+    "metadata": {
+      "code": "ELITEMAY26-M1-Q10",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 64,
+      "source_module": 1,
+      "source_number": 10,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 1 Question 10",
+      "lesson_subtopic": "Linear equations",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Linear equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": [
+      "17/16"
+    ],
+    "explanation": "Write u=x/2. Then u+17=17u, so 16u=17 and u=17/16.",
+    "row_hash": "a8e25262fbc25a59e136dc7bdb3a7ab7",
+    "key_hash": "73da7d1db8a0e00f71c4c4e33e8b0782"
+  },
+  {
+    "id": "dd8711a1-6ca8-5154-8531-986dee79c0c3",
+    "track_id": "sat",
+    "stem": "If 5+2(11−x)/9=3(11−x)+5, find 11+x.",
+    "choices": [],
+    "metadata": {
+      "code": "ELITEMAY26-M2-Q15",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 91,
+      "source_module": 2,
+      "source_number": 15,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 2 Question 15",
+      "lesson_subtopic": "Linear equations",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Linear equations",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": [
+      "22"
+    ],
+    "explanation": "Subtract 5 and put u=11−x: 2u/9=3u implies u=0. Thus x=11 and 11+x=22.",
+    "row_hash": "c384f9bc9250543c9ab2aea9f8144056",
+    "key_hash": "9a784d0238e136623f94b970b2db7219"
+  },
+  {
+    "id": "df2132af-840a-501e-9268-3a64a7d75791",
+    "track_id": "sat",
+    "stem": "A circle has center O and radius 1/6. The central angle AOC is 90°, and B lies on the minor arc from A to C. What is the length of arc ABC?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "$\\frac{\\pi}{2}$"
+      },
+      {
+        "key": "B",
+        "text": "$\\frac{\\pi}{4}$"
+      },
+      {
+        "key": "C",
+        "text": "$\\frac{\\pi}{8}$"
+      },
+      {
+        "key": "D",
+        "text": "$\\frac{\\pi}{12}$"
+      }
+    ],
+    "metadata": {
+      "source": "MSET014",
+      "source_idea": "The circle above has center O and radius OC = 1 6. What is the length of arc ABC?",
+      "source_page": 19,
+      "source_text": "Question 38.\nO\nC\nB\nA\n[Tg:@abusat 760] The circle above has center O and radius OC = 1\n6. What is the\nlength of arc ABC?\nA) π\n2\nB) π\n4\nC) π\n8\nD) π\n12",
+      "source_number": 38,
+      "content_origin": "instructor_adaptation",
+      "figure_required": false,
+      "lesson_subtopic": "Circles",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "sat-20261102-msets-notes",
+      "adaptation_reason": "Explicit instructor clarification adds the omitted 90° central angle. The existing accepted answer D is unchanged.",
+      "curriculum_lesson": "Circles",
+      "bank_review_release": "20261114-bank-review",
+      "source_original_stem": "Solve question 38 from MSET014 shown below."
+    },
+    "correct": "D",
+    "explanation": "The minor arc is one quarter of the circumference: (90/360) × 2π × (1/6) = π/12, choice D. This clarified instructor version explicitly states the right angle omitted from the original source.",
+    "row_hash": "d91736eacfb0c78ac0db3fc5bc9831dc",
+    "key_hash": "e506dd4098b2942ffeab58b1da264bb2"
+  },
+  {
+    "id": "e79575f2-6d3f-55d4-a583-f6b42f9f949e",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\n34. If z=4(cos60+i sin60), rectangular form is\n\nA 2+2sqrt3 i B 2sqrt3+2i C 4+ i D 2-2sqrt3 i",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D56-P039-Q034",
+      "source_page": 39,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "d05c92726a6d8b23e3596a43a7f69f8ffe93617bc9b457c02fd7c258f8c78efb",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "Practice Test 2",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "ACT_Math_2_Complete_Course_Eng_Abdelrahman_Ghoneem.pdf",
+      "source_question": 34,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D56-P039-Q034",
+      "source_document_id": "act2-20261029-d05c92726a6d8b23",
+      "source_question_id": "ACT2-IMPORT-20261030-D56-P039-Q034",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "Angle unit is missing; confirm degrees or explicitly correct before scoring.",
+      "source_image_sha256": "76fd2734b8fefdd669ddafdcf3f34463286b41b2e3d1f81729ee233544fd3f50",
+      "answer_review_status": "blocked",
+      "classification_status": "reviewed",
+      "replacement_question_id": "1840ed87-8e41-51f1-8ded-51622e9abc33",
+      "replacement_review_note": "Explicitly specify degrees; the original omitted the angle unit.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "Angle unit is missing; confirm degrees or explicitly correct before scoring."
+    },
+    "explanation": "If 60 degrees is intended, z=4(1/2+i sqrt3/2)=2+2sqrt3 i (A). The source omits the degree unit, and 60 radians gives no listed option.",
+    "row_hash": "7da99625e52a61070b3c1afd7736f0dd",
+    "key_hash": "d4a3ae70ec87813f0263be442102adab"
+  },
+  {
+    "id": "e91e6310-e9be-e772-97cf-8e17f7c98934",
+    "track_id": "sat",
+    "stem": "A population of bacteria doubles every hour. The function f(t) = 34,000 · 2ᵗ gives the number of bacteria t hours after the initial measurement. What does 34,000 represent?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "The number of bacteria at the initial measurement"
+      },
+      {
+        "key": "B",
+        "text": "The number of hours it takes the population to double"
+      },
+      {
+        "key": "C",
+        "text": "The number of bacteria one hour after the initial measurement"
+      },
+      {
+        "key": "D",
+        "text": "The number of times the population doubles in one hour"
+      }
+    ],
+    "metadata": {
+      "skill": "Interpret the initial value of an exponential model",
+      "source": "DSAT Classified",
+      "source_code": "DSAT-CLASS-261102-5",
+      "source_file": "Dsat Classified _261102_163016.pdf",
+      "source_page": 5,
+      "lesson_subtopic": "Interpret the initial value of an exponential model",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Exponents, radicals and growth",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved"
+    },
+    "correct": "A",
+    "explanation": "At t = 0 the factor 2ᵗ equals 1, so f(0) = 34,000.",
+    "row_hash": "92daf56f8328e609b215fe9eb87f111a",
+    "key_hash": "21a5418c514916c5658625d66382bfe7"
+  },
+  {
+    "id": "ed362c08-1a82-5b56-be44-044737f550e7",
+    "track_id": "sat",
+    "stem": "A linear model of copper resistivity, in nanoohm-meters, against temperature, in kelvins, passes through approximately (0,0) and (1000,60). Which rate statement is correct?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Rises 3/5 nanoohm-meters per 100 kelvins"
+      },
+      {
+        "key": "B",
+        "text": "Rises 6 nanoohm-meters per 100 kelvins"
+      },
+      {
+        "key": "C",
+        "text": "At 100 kelvins it is 10 nanoohm-meters"
+      },
+      {
+        "key": "D",
+        "text": "From 200 to 400 kelvins it falls 12 nanoohm-meters"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M2-Q14",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 90,
+      "source_module": 2,
+      "source_number": 14,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "display_repair": "Unrelated cover image removed after visual inspection.",
+      "figure_required": false,
+      "lesson_subtopic": "Linear models",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Linear functions and slope",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Linear models",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "B",
+    "explanation": "The slope is 60/1000=0.06 per kelvin, equivalent to 6 nanoohm-meters per 100 kelvins.",
+    "row_hash": "9d14361b992e20e48a14a6ac5aaffb43",
+    "key_hash": "e6edbe82b3cd09f78f98966fdd0bfad5"
+  },
+  {
+    "id": "ed76ef45-9030-5378-b804-4c4650a634ea",
+    "track_id": "sat",
+    "stem": "College Panda Chapter 25, Statistics I, Exercise 1, Question 14. Read the original problem shown below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": ""
+      },
+      {
+        "key": "B",
+        "text": ""
+      },
+      {
+        "key": "C",
+        "text": ""
+      },
+      {
+        "key": "D",
+        "text": ""
+      }
+    ],
+    "metadata": {
+      "code": "PANDA-CH25-E1-Q14",
+      "paper": "College Panda SAT Math Advanced Guide & Workbook",
+      "source_page": 292,
+      "solution_page": 407,
+      "source_number": 14,
+      "source_sha256": "a6e7dcdb5eb34a88aff2163723015305c2700e26bdde7ce8e6242136a65593b8",
+      "content_review": {
+        "method": "Original numbered question panel and boxed worked answer independently read",
+        "status": "verified",
+        "source_fidelity": "Original question and choices are reproduced as a scanned image; worked-answer page is attached"
+      },
+      "figure_caption": "Original College Panda Chapter 25, Exercise 1, Question 14",
+      "source_chapter": 25,
+      "lesson_subtopic": "Statistics I",
+      "source_exercise": 1,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Statistics and data analysis",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Statistics I",
+      "source_library_file_id": "libfile_d6167ab9f44881919492feff68ef28d4",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "The original mean is (91 + 96 + 88 + 91 + 84)/5 = 90. Adding 100 makes the mean 550/6 ≈ 91.67, an increase. The sorted data become 84, 88, 91, 91, 96, 100; both the old median and new median are 91. Thus C is correct.",
+    "row_hash": "500570552af1f9181eaa12e8f1e279f3",
+    "key_hash": "3b8cddf1da15d28e234c067c2f6fcf7e"
+  },
+  {
+    "id": "f071a174-ffa8-5c12-b7d7-45d4c9dec57f",
+    "track_id": "sat",
+    "stem": "College Panda Chapter 26, Statistics II, Exercise 1, Question 13. Read the original problem shown below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": ""
+      },
+      {
+        "key": "B",
+        "text": ""
+      },
+      {
+        "key": "C",
+        "text": ""
+      },
+      {
+        "key": "D",
+        "text": ""
+      }
+    ],
+    "metadata": {
+      "code": "PANDA-CH26-E1-Q13",
+      "paper": "College Panda SAT Math Advanced Guide & Workbook",
+      "source_page": 307,
+      "solution_page": 411,
+      "source_number": 13,
+      "source_sha256": "a6e7dcdb5eb34a88aff2163723015305c2700e26bdde7ce8e6242136a65593b8",
+      "content_review": {
+        "method": "Original numbered question panel and boxed worked answer independently read",
+        "status": "verified",
+        "source_fidelity": "Original question and choices are reproduced as a scanned image; worked-answer page is attached"
+      },
+      "figure_caption": "Original College Panda Chapter 26, Exercise 1, Question 13",
+      "source_chapter": 26,
+      "lesson_subtopic": "Statistics II",
+      "source_exercise": 1,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Statistics and data analysis",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Statistics II",
+      "source_library_file_id": "libfile_d6167ab9f44881919492feff68ef28d4",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "A sample mean of 7 minutes with margin of error 2 minutes gives the plausible interval 7 ± 2, or 5 to 9 minutes, for the population mean. It does not describe every individual wait or rule out all population means outside the interval. Therefore C is the appropriate conclusion.",
+    "row_hash": "9aabccc1968711f6d16ae031599dfda1",
+    "key_hash": "5defac4a090af0169abaece3ede3d062"
+  },
+  {
+    "id": "f14c0dd5-f032-5544-a208-d3a0ae563e4f",
+    "track_id": "est",
+    "stem": "EST I Math — March 2026 · Question 19. Select the answer from the original question below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "Select A"
+      },
+      {
+        "key": "B",
+        "text": "Select B"
+      },
+      {
+        "key": "C",
+        "text": "Select C"
+      },
+      {
+        "key": "D",
+        "text": "Select D"
+      }
+    ],
+    "metadata": {
+      "source": "EST I Math March 2026",
+      "image_alt": "Original EST I Math March 2026 question 19, including all answer choices and any shared information.",
+      "reference": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/reference.png",
+      "source_page": 7,
+      "instructions": "https://ghoneem-exam-portal.xxx64220.chatgpt.site/exams/est-march-2026/instructions.png",
+      "answer_review": "2026-09-30-independent-current-stem-review",
+      "lesson_subtopic": "Solving absolute value equations",
+      "source_question": 19,
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Inequalities and absolute value",
+      "bank_review_release": "20261114-bank-review",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Absolute value equations",
+      "lesson_taxonomy_version": "20260929",
+      "mathematical_review_scope": "Original source crop checked; independently recomputed current algebra and diagram result. Defective and ambiguous records excluded from this certified batch."
+    },
+    "correct": "C",
+    "explanation": "|3x − 5| + 1 = 2 gives |3x − 5| = 1, so x = 2 or x = 4/3. The listed solution is x = 2.",
+    "row_hash": "92f9c4943f1b24099935f6d8804bc40e",
+    "key_hash": "b40d56153b628831554678f7fbd956fa"
+  },
+  {
+    "id": "f5d0090b-a4f8-52f2-9a11-f494df25aee0",
+    "track_id": "sat",
+    "stem": "For positive a and b, what is the x-intercept of y=(33−x)/(ax+b)?",
+    "choices": [
+      {
+        "key": "A",
+        "text": "(−b/a,0)"
+      },
+      {
+        "key": "B",
+        "text": "(0,33/b)"
+      },
+      {
+        "key": "C",
+        "text": "(0,−33)"
+      },
+      {
+        "key": "D",
+        "text": "(33,0)"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M2-Q09",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 85,
+      "source_module": 2,
+      "source_number": 9,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 2 Question 9",
+      "lesson_subtopic": "Rational functions",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Functions and transformations",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Rational functions",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "D",
+    "explanation": "At x=33 the numerator vanishes and the positive denominator is nonzero.",
+    "row_hash": "b414d000803491770d5b179d409ad165",
+    "key_hash": "3eec911bc13082bc00ca49215dee5151"
+  },
+  {
+    "id": "fbfde5f6-db3c-5d52-86c1-63a21d3454ba",
+    "track_id": "sat",
+    "stem": "Simplify (8x⁴+x²)+(x⁴+10x²).",
+    "choices": [
+      {
+        "key": "A",
+        "text": "9x⁸+11x⁴"
+      },
+      {
+        "key": "B",
+        "text": "8x¹⁶+10x⁴"
+      },
+      {
+        "key": "C",
+        "text": "9x⁴+11x²"
+      },
+      {
+        "key": "D",
+        "text": "10x⁸+8x⁶"
+      }
+    ],
+    "metadata": {
+      "code": "ELITEMAY26-M1-Q09",
+      "paper": "Elite Practice X6 May Edition",
+      "source_page": 63,
+      "source_module": 1,
+      "source_number": 9,
+      "source_sha256": "664f00c14f03c1482d2368ab90c2f3ddccee42c6a3ec2962431bb5c521535a0f",
+      "content_review": {
+        "method": "Original image read; answer independently solved; distractors and required visuals checked",
+        "status": "verified",
+        "source_fidelity": "Concise accessible transcription; original visual included where required"
+      },
+      "figure_caption": "Original source diagram or table, Module 1 Question 9",
+      "lesson_subtopic": "Polynomials",
+      "source_pdf_name": "ElitePracticeX6 (May Edition) @EliteXSAT_260605_182638.pdf",
+      "bank_review_date": "2026-11-14",
+      "verified_release": "20261114-bank-review",
+      "curriculum_lesson": "Quadratics and polynomials",
+      "bank_review_release": "20261114-bank-review",
+      "source_image_sha256": "9822bf06a544dee5888355cab260a99f03efec412abe0f520645c0ecd2ccb53b",
+      "answer_review_status": "independently_solved",
+      "lesson_original_topic": "Polynomials",
+      "lesson_taxonomy_version": "20260929"
+    },
+    "correct": "C",
+    "explanation": "Add like terms: (8+1)x⁴+(1+10)x²=9x⁴+11x².",
+    "row_hash": "7e714d23007afec153e289666787a5b7",
+    "key_hash": "e90309574f01c754d01e44361b319e4b"
+  },
+  {
+    "id": "fddc7217-091d-5eb2-9649-52643c66cac0",
+    "track_id": "act2",
+    "stem": "Source question awaiting verification. Open the original image for complete notation, graphs and tables.\n\nQuestion 11/ 13\n\nWhat is the value of each interior angle in a octagon?                               180  A. 135                       In4180          13\n   B. 180\n   C. 160\n  D. 45",
+    "choices": [],
+    "metadata": {
+      "source_code": "ACT2-IMPORT-20261030-D39-P006-Q011",
+      "source_page": 6,
+      "import_batch": "20261030-act2-question-import",
+      "review_batch": "20261030-act2-completed-review",
+      "source_sha256": "4e96d3ca747ba7e54185377e4f64ec912b0e4ada4435fd0af317cc2ed0dd033f",
+      "content_origin": "source_image_review",
+      "content_review": {
+        "method": "Source image extracted; no unverified key released.",
+        "status": "pending"
+      },
+      "source_section": "main",
+      "figure_required": false,
+      "lesson_subtopic": "Needs classification",
+      "source_document": "M1_questions_.pdf",
+      "source_question": 11,
+      "bank_review_date": "2026-11-14",
+      "difficulty_basis": "Unassessed; medium is only the required schema placeholder.",
+      "source_archive_id": "ACT2-IMPORT-20261030-D39-P006-Q011",
+      "source_document_id": "act2-20261029-4e96d3ca747ba7e5",
+      "source_question_id": "ACT2-IMPORT-20261030-D39-P006-Q011",
+      "bank_review_release": "20261114-bank-review",
+      "release_hold_reason": "The source asks for each interior angle of an octagon without stating it is regular or equiangular. An arbitrary octagon has no uniquely determined individual angle. 135° requires an unstated condition.",
+      "source_image_sha256": "a281ada2a10fae946f3de2fc1dfb00b10cfbb6937e0cf205f125a39598d8e897",
+      "answer_review_status": "blocked",
+      "classification_status": "reviewed",
+      "replacement_question_id": "4a6bf68a-0db8-57eb-a159-7142ddc2aac7",
+      "replacement_review_note": "Add the necessary regularity condition omitted by the source.",
+      "replacement_review_release": "20261114-bank-review"
+    },
+    "correct": {
+      "void": true,
+      "reason": "The source asks for each interior angle of an octagon without stating it is regular or equiangular. An arbitrary octagon has no uniquely determined individual angle. 135° requires an unstated condition."
+    },
+    "explanation": "The source asks for each interior angle of an octagon without stating it is regular or equiangular. An arbitrary octagon has no uniquely determined individual angle. 135° requires an unstated condition.",
+    "row_hash": "59d2a391bee2e1cdfc74968476b47d4d",
+    "key_hash": "bbb71caa41425235eb3621773d6be5dd"
+  }
+]

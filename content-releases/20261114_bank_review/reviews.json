@@ -1,0 +1,82 @@
+[
+  {
+    "track_id": "act2",
+    "review_status": "blocked",
+    "count": 234
+  },
+  {
+    "track_id": "act2",
+    "review_status": "duplicate",
+    "count": 263
+  },
+  {
+    "track_id": "act2",
+    "review_status": "duplicate_candidate",
+    "count": 7
+  },
+  {
+    "track_id": "act2",
+    "review_status": "ready",
+    "count": 1376
+  },
+  {
+    "track_id": "est",
+    "review_status": "defective_choices",
+    "count": 5
+  },
+  {
+    "track_id": "est",
+    "review_status": "duplicate",
+    "count": 94
+  },
+  {
+    "track_id": "est",
+    "review_status": "excluded",
+    "count": 10
+  },
+  {
+    "track_id": "est",
+    "review_status": "needs_source_reconstruction",
+    "count": 9
+  },
+  {
+    "track_id": "est",
+    "review_status": "needs_source_repair",
+    "count": 8
+  },
+  {
+    "track_id": "est",
+    "review_status": "not_a_question",
+    "count": 61
+  },
+  {
+    "track_id": "est",
+    "review_status": "partial_multi_question",
+    "count": 345
+  },
+  {
+    "track_id": "est",
+    "review_status": "ready",
+    "count": 820
+  },
+  {
+    "track_id": "est",
+    "review_status": "worked_missing_choice",
+    "count": 2
+  },
+  {
+    "track_id": "est2",
+    "review_status": "excluded",
+    "count": 13
+  },
+  {
+    "track_id": "est2",
+    "review_status": "needs_source_reconstruction",
+    "count": 3
+  },
+  {
+    "track_id": "est2",
+    "review_status": "ready",
+    "count": 16
+  }
+]

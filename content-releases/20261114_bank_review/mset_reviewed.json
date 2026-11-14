@@ -1,0 +1,42 @@
+[
+  {
+    "id": "df2132af-840a-501e-9268-3a64a7d75791",
+    "track_id": "sat",
+    "topic": "Circles",
+    "type": "mcq",
+    "stem": "Solve question 38 from MSET014 shown below.",
+    "choices": [
+      {
+        "key": "A",
+        "text": "A"
+      },
+      {
+        "key": "B",
+        "text": "B"
+      },
+      {
+        "key": "C",
+        "text": "C"
+      },
+      {
+        "key": "D",
+        "text": "D"
+      }
+    ],
+    "metadata": {
+      "source": "MSET014",
+      "source_idea": "The circle above has center O and radius OC = 1 6. What is the length of arc ABC?",
+      "source_page": 19,
+      "source_text": "Question 38.\nO\nC\nB\nA\n[Tg:@abusat 760] The circle above has center O and radius OC = 1\n6. What is the\nlength of arc ABC?\nA) π\n2\nB) π\n4\nC) π\n8\nD) π\n12",
+      "source_number": 38,
+      "content_origin": "user_supplied_practice",
+      "lesson_subtopic": "Circles",
+      "verified_release": "sat-20261102-msets-notes",
+      "curriculum_lesson": "Circles"
+    },
+    "correct": "D",
+    "explanation": "Source answer sheet: D",
+    "row_hash": "18e1f2c417ad1211e003af60ae0b7f60",
+    "key_hash": "e0063181c909649bc45e88023f8c8653"
+  }
+]

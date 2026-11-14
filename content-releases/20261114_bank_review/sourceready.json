@@ -1,0 +1,23 @@
+[
+  {
+    "track_id": "est2",
+    "review_status": "ready",
+    "items": 16,
+    "without_question": 0,
+    "bank_not_eligible": 0
+  },
+  {
+    "track_id": "est",
+    "review_status": "ready",
+    "items": 820,
+    "without_question": 0,
+    "bank_not_eligible": 4
+  },
+  {
+    "track_id": "act2",
+    "review_status": "ready",
+    "items": 1376,
+    "without_question": 0,
+    "bank_not_eligible": 0
+  }
+]

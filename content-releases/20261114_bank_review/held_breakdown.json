@@ -1,0 +1,57 @@
+[
+  {
+    "track_id": "act2",
+    "category": "duplicate",
+    "count": 39
+  },
+  {
+    "track_id": "act2",
+    "category": "original_with_reviewed_replacement",
+    "count": 113
+  },
+  {
+    "track_id": "act2",
+    "category": "unresolved_source_or_content",
+    "count": 144
+  },
+  {
+    "track_id": "est",
+    "category": "duplicate",
+    "count": 133
+  },
+  {
+    "track_id": "est",
+    "category": "instructor_exclusion",
+    "count": 687
+  },
+  {
+    "track_id": "est",
+    "category": "original_with_reviewed_replacement",
+    "count": 26
+  },
+  {
+    "track_id": "est",
+    "category": "unresolved_source_or_content",
+    "count": 13
+  },
+  {
+    "track_id": "est2",
+    "category": "instructor_exclusion",
+    "count": 199
+  },
+  {
+    "track_id": "est2",
+    "category": "original_with_reviewed_replacement",
+    "count": 13
+  },
+  {
+    "track_id": "sat",
+    "category": "duplicate",
+    "count": 28
+  },
+  {
+    "track_id": "sat",
+    "category": "original_with_reviewed_replacement",
+    "count": 16
+  }
+]

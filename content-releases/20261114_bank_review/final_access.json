@@ -1,0 +1,44 @@
+[
+  {
+    "track_id": "act2",
+    "total": 2725,
+    "eligible": 2429,
+    "practice_available": 2429,
+    "eligible_unreleased": 0
+  },
+  {
+    "track_id": "est",
+    "total": 3965,
+    "eligible": 3106,
+    "practice_available": 3106,
+    "eligible_unreleased": 0
+  },
+  {
+    "track_id": "est_eng",
+    "total": 390,
+    "eligible": 390,
+    "practice_available": 390,
+    "eligible_unreleased": 0
+  },
+  {
+    "track_id": "est2",
+    "total": 2337,
+    "eligible": 2125,
+    "practice_available": 2125,
+    "eligible_unreleased": 0
+  },
+  {
+    "track_id": "sat",
+    "total": 2802,
+    "eligible": 2758,
+    "practice_available": 2758,
+    "eligible_unreleased": 0
+  },
+  {
+    "track_id": "sat_eng",
+    "total": 8,
+    "eligible": 8,
+    "practice_available": 8,
+    "eligible_unreleased": 0
+  }
+]

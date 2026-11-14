@@ -1,0 +1,1055 @@
+[
+  {
+    "sources": [
+      "074ada07-ac7e-53b6-adf6-0f9d4b5baf9d"
+    ],
+    "topic": "Logarithms and exponentials",
+    "stem": "For real x ≠ 0, y > 0, and z > 0, which expression equals $\\ln\\left(\\frac{x^2\\sqrt y}{z}\\right)$?",
+    "choices": [
+      "$2\\ln|x|+\\frac12\\ln y-\\ln z$",
+      "$2\\ln|x|+2\\ln y-\\ln z$",
+      "$\\ln|x|+\\frac12\\ln y-\\ln z$",
+      "$2\\ln|x|+\\frac12\\ln y+\\ln z$"
+    ],
+    "correct": "A",
+    "explanation": "The quotient rule subtracts ln z. The power rules give ln(x²) = 2 ln|x| and ln(√y) = ½ ln y. The absolute value is necessary because x may be negative."
+  },
+  {
+    "sources": [
+      "09ecb437-4fe7-557d-80f8-dcd74efcc638"
+    ],
+    "topic": "Functions and transformations",
+    "stem": "What is the real domain of $h(x)=\\frac{\\sqrt{5-x}}{x+2}$?",
+    "choices": [
+      "x < 5",
+      "x ≥ 5 and x ≠ −2",
+      "All real x except −2",
+      "x ≤ 5 and x ≠ −2"
+    ],
+    "correct": "D",
+    "explanation": "The square root requires 5 − x ≥ 0, or x ≤ 5. The denominator must be nonzero, so x ≠ −2. The endpoint x = 5 is allowed."
+  },
+  {
+    "sources": [
+      "0eea2617-8e7a-50e6-98da-152f0ba6399b"
+    ],
+    "topic": "Rational expressions",
+    "stem": "What are the vertical and horizontal asymptotes of $y=\\frac{2x+1}{x-3}$?",
+    "choices": [
+      "x = 3 and y = 1/2",
+      "x = −1/2 and y = 3",
+      "x = 3 and y = 2",
+      "x = −3 and y = 2"
+    ],
+    "correct": "C",
+    "explanation": "At x = 3 the denominator is zero and numerator is 7, so x = 3 is a vertical asymptote. Equal polynomial degrees give horizontal asymptote y = 2/1 = 2."
+  },
+  {
+    "sources": [
+      "1598aea2-88e9-57a6-91d4-c0fb8006ccc7",
+      "6cb27c03-9ab5-5513-ab59-b2554829b6f7"
+    ],
+    "topic": "Inequalities and absolute value",
+    "stem": "What is the complete real solution set of $2|x-4|=9$?",
+    "choices": [
+      "$\\{-5,13\\}$",
+      "$\\{-\\frac12,\\frac{17}2\\}$",
+      "$\\{\\frac12,\\frac{17}2\\}$",
+      "$\\{-\\frac12,\\frac92\\}$"
+    ],
+    "correct": "B",
+    "explanation": "Divide by 2: |x − 4| = 9/2. Thus x = 4 ± 9/2, giving −1/2 and 17/2."
+  },
+  {
+    "sources": [
+      "16b328b4-5d7c-5bc5-bef8-72bc866070cd"
+    ],
+    "topic": "Complex numbers",
+    "stem": "For $i^2=-1$, what is $i^{37}$?",
+    "choices": [
+      "i",
+      "−i",
+      "1",
+      "−1"
+    ],
+    "correct": "A",
+    "explanation": "Powers of i repeat every four powers. Since 37 = 4(9) + 1, i³⁷ = (i⁴)⁹i = i."
+  },
+  {
+    "sources": [
+      "172ad291-1971-5b92-80b0-8e96aaa0840b"
+    ],
+    "topic": "Functions and transformations",
+    "stem": "The function y = 2x − 4 has domain {−4, 0, 6}. What is its range?",
+    "choices": [
+      "{−8, 0, 12}",
+      "{−12, 0, 8}",
+      "{−4, 0, 6}",
+      "{−12, −4, 8}"
+    ],
+    "correct": "D",
+    "explanation": "Evaluate each input: 2(−4) − 4 = −12; 2(0) − 4 = −4; 2(6) − 4 = 8."
+  },
+  {
+    "sources": [
+      "17976d6c-2ce8-5351-ab19-3ebc0e121401"
+    ],
+    "topic": "Circles",
+    "stem": "Which equation represents a circle with center (−2,5) and radius 4?",
+    "choices": [
+      "(x + 2)² + (y − 5)² = 4",
+      "(x − 2)² + (y − 5)² = 4",
+      "(x + 2)² + (y − 5)² = 16",
+      "(x − 2)² + (y + 5)² = 16"
+    ],
+    "correct": "C",
+    "explanation": "A circle with center (h,k) and radius r satisfies (x − h)² + (y − k)² = r². Substituting h = −2, k = 5, and r = 4 gives choice A."
+  },
+  {
+    "sources": [
+      "26abc145-8b08-53fb-adc9-a7f97337dd01"
+    ],
+    "topic": "Matrices",
+    "stem": "What is $\\begin{pmatrix}2&1\\\\-3&4\\end{pmatrix}+\\begin{pmatrix}5&-2\\\\1&6\\end{pmatrix}$?",
+    "choices": [
+      "$\\begin{pmatrix}-3&3\\\\-4&-2\\end{pmatrix}$",
+      "$\\begin{pmatrix}7&-1\\\\-2&10\\end{pmatrix}$",
+      "$\\begin{pmatrix}7&3\\\\-4&10\\end{pmatrix}$",
+      "$\\begin{pmatrix}10&-2\\\\-3&24\\end{pmatrix}$"
+    ],
+    "correct": "B",
+    "explanation": "Add corresponding entries: 2 + 5 = 7, 1 − 2 = −1, −3 + 1 = −2, and 4 + 6 = 10."
+  },
+  {
+    "sources": [
+      "28077444-a86b-578f-a01d-d683174a6783"
+    ],
+    "topic": "Systems of equations",
+    "stem": "Which ordered pair (x,y) solves 2x + y = 11 and x − y = 1?",
+    "choices": [
+      "(4,3)",
+      "(3,4)",
+      "(5,1)",
+      "(4,−3)"
+    ],
+    "correct": "A",
+    "explanation": "Adding the equations gives 3x = 12, so x = 4. Then y = x − 1 = 3. Both original equations are satisfied."
+  },
+  {
+    "sources": [
+      "296355c1-7527-5138-9fc7-817c0fd90602"
+    ],
+    "topic": "Rational expressions",
+    "stem": "The graph of $y=\\frac{x^2-4}{x-2}$ has a removable discontinuity. At which point is the hole?",
+    "choices": [
+      "(−2,0)",
+      "(2,0)",
+      "(−2,4)",
+      "(2,4)"
+    ],
+    "correct": "D",
+    "explanation": "For x ≠ 2, factor and cancel to obtain y = x + 2. The excluded input x = 2 would give y = 4, so the hole is (2,4)."
+  },
+  {
+    "sources": [
+      "29abef4e-6d2b-598b-b3d7-8547eb71669f"
+    ],
+    "topic": "Exponents and radicals",
+    "stem": "Which expression equals $\\sqrt{72}$ in simplest radical form?",
+    "choices": [
+      "$3\\sqrt2$",
+      "36",
+      "$6\\sqrt2$",
+      "$8\\sqrt3$"
+    ],
+    "correct": "C",
+    "explanation": "Since 72 = 36 × 2, √72 = √36 × √2 = 6√2. The radicand 2 has no perfect-square factor greater than 1."
+  },
+  {
+    "sources": [
+      "2c17ac10-8a80-5b26-a542-0a3a88b7a70f"
+    ],
+    "topic": "Matrices",
+    "stem": "What is the inverse of $\\begin{pmatrix}3&1\\\\2&1\\end{pmatrix}$?",
+    "choices": [
+      "$\\begin{pmatrix}-1&1\\\\2&-3\\end{pmatrix}$",
+      "$\\begin{pmatrix}1&-1\\\\-2&3\\end{pmatrix}$",
+      "$\\begin{pmatrix}1&1\\\\2&3\\end{pmatrix}$",
+      "$\\begin{pmatrix}3&-1\\\\-2&1\\end{pmatrix}$"
+    ],
+    "correct": "B",
+    "explanation": "The determinant is 3(1) − 1(2) = 1. The inverse is 1/determinant times the matrix obtained by swapping diagonal entries and negating off-diagonal entries, giving A."
+  },
+  {
+    "sources": [
+      "317d7cf1-2ca9-50fb-bfdf-74d0d07fc006"
+    ],
+    "topic": "Quadratics and polynomials",
+    "stem": "What is the vertex of y = 2(x − 4)² − 7?",
+    "choices": [
+      "(4,−7)",
+      "(−4,−7)",
+      "(4,7)",
+      "(2,−7)"
+    ],
+    "correct": "A",
+    "explanation": "In y = a(x − h)² + k, the vertex is (h,k). Here h = 4 and k = −7."
+  },
+  {
+    "sources": [
+      "36341e49-d169-59ba-8f93-ca0c9a8867ee"
+    ],
+    "topic": "Inequalities and absolute value",
+    "stem": "What is the complete solution set of |2x − 7| = 9?",
+    "choices": [
+      "{1,8}",
+      "{−8,1}",
+      "{−1,1}",
+      "{−1,8}"
+    ],
+    "correct": "D",
+    "explanation": "Set 2x − 7 = 9 or 2x − 7 = −9. These give x = 8 or x = −1."
+  },
+  {
+    "sources": [
+      "38daac79-8b25-5a6e-924d-71c29e92e8f5"
+    ],
+    "topic": "Rational expressions",
+    "stem": "A car travels 180 km at v km/h, then travels the same distance back at (v + 20) km/h, where v > 0. Which expression gives its total travel time in hours?",
+    "choices": [
+      "$\\frac{180}{v}+\\frac{180}{20}$",
+      "$180v+180(v+20)$",
+      "$\\frac{180}{v}+\\frac{180}{v+20}$",
+      "$\\frac{360}{2v+20}$"
+    ],
+    "correct": "C",
+    "explanation": "For each leg, time = distance/speed. Add the outbound time 180/v and return time 180/(v + 20)."
+  },
+  {
+    "sources": [
+      "3ba6f5a2-9de0-5bd8-a70d-e37763fd5bad"
+    ],
+    "topic": "Systems of equations",
+    "stem": "Which ordered pair (x,y) solves 3x + 4 = −4y and x + 2y = 2?",
+    "choices": [
+      "(2,0)",
+      "(−8,5)",
+      "(8,−3)",
+      "(−4,3)"
+    ],
+    "correct": "B",
+    "explanation": "From x + 2y = 2, x = 2 − 2y. Substitute into 3x + 4 = −4y: 10 − 6y = −4y, so y = 5 and x = −8."
+  },
+  {
+    "sources": [
+      "3ec0a5f0-2e42-53d5-9bf6-2e27b9b2985d"
+    ],
+    "topic": "Systems of equations",
+    "stem": "The lines ax + 3y = 6 and 3x + 7y = −b intersect at (7,−4). What are a and b?",
+    "choices": [
+      "a = 18/7, b = 7",
+      "a = −18/7, b = 7",
+      "a = 18/7, b = −7",
+      "a = 6/7, b = 49"
+    ],
+    "correct": "A",
+    "explanation": "Substitute the intersection: 7a − 12 = 6 gives a = 18/7. Also 21 − 28 = −b gives b = 7."
+  },
+  {
+    "sources": [
+      "3f396c88-1a15-5528-a80d-4b6908ef651d"
+    ],
+    "topic": "Volume and surface area",
+    "stem": "A cylinder has radius 4 units and height 9 units. What is its exact volume?",
+    "choices": [
+      "$36\\pi$",
+      "$72\\pi$",
+      "$324\\pi$",
+      "$144\\pi$"
+    ],
+    "correct": "D",
+    "explanation": "Cylinder volume is πr²h = π(4²)(9) = 144π cubic units."
+  },
+  {
+    "sources": [
+      "451f180f-a518-5d02-bca5-5abe6f0be0a6"
+    ],
+    "topic": "Quadratics and polynomials",
+    "stem": "Which is the complete factorization of 25x² − 121?",
+    "choices": [
+      "(5x − 11)²",
+      "(5x + 11)²",
+      "(5x − 11)(5x + 11)",
+      "(25x − 11)(x + 11)"
+    ],
+    "correct": "C",
+    "explanation": "This is the difference of squares (5x)² − 11², which factors as (5x − 11)(5x + 11)."
+  },
+  {
+    "sources": [
+      "46097bfa-1393-513b-bb2a-502cd7452b48"
+    ],
+    "topic": "Coordinate geometry",
+    "stem": "What is the midpoint of the segment with endpoints (−3,7) and (5,−1)?",
+    "choices": [
+      "(−1,−3)",
+      "(1,3)",
+      "(4,−4)",
+      "(2,6)"
+    ],
+    "correct": "B",
+    "explanation": "Average the x-coordinates and y-coordinates separately: ((−3 + 5)/2, (7 − 1)/2) = (1,3)."
+  },
+  {
+    "sources": [
+      "4820eb3d-0cd3-5071-a436-6d0bfdd740c3"
+    ],
+    "topic": "Exponents and radicals",
+    "stem": "For x > 0, which expression equals $\\sqrt[3]{x^5}$?",
+    "choices": [
+      "$x^{5/3}$",
+      "$x^{3/5}$",
+      "$x^{15}$",
+      "$x^2$"
+    ],
+    "correct": "A",
+    "explanation": "A cube root is a power of 1/3. Thus (x⁵)^(1/3) = x^(5/3). The explicit positive domain avoids differing conventions for fractional powers."
+  },
+  {
+    "sources": [
+      "48c8b9b8-0a69-5c22-807c-42fb0ee01676"
+    ],
+    "topic": "Linear functions and slope",
+    "stem": "Which equation has slope −2 and y-intercept 7?",
+    "choices": [
+      "y = 2x + 7",
+      "y = −2x − 7",
+      "y = 7x − 2",
+      "y = −2x + 7"
+    ],
+    "correct": "D",
+    "explanation": "In y = mx + b, the slope is m and y-intercept is b. Substitute m = −2 and b = 7."
+  },
+  {
+    "sources": [
+      "49104dc3-4932-5524-93e7-84085561b37e"
+    ],
+    "topic": "Rational expressions",
+    "stem": "What is the complete real solution set of $\\frac1x+\\frac1{x+2}=\\frac34$?",
+    "choices": [
+      "$\\{\\frac43,2\\}$",
+      "$\\{-4,2\\}$",
+      "$\\{-\\frac43,2\\}$",
+      "$\\{-2,0\\}$"
+    ],
+    "correct": "C",
+    "explanation": "The domain excludes x = 0 and x = −2. Multiplying by 4x(x + 2) gives 3x² − 2x − 8 = 0, or (3x + 4)(x − 2) = 0. Both −4/3 and 2 are allowed."
+  },
+  {
+    "sources": [
+      "59256413-ae79-52e9-9dd6-20dc9f415907"
+    ],
+    "topic": "Complex numbers",
+    "stem": "What are the solutions of x² + 4x + 13 = 0?",
+    "choices": [
+      "−4 ± 13i",
+      "−2 ± 3i",
+      "2 ± 3i",
+      "−2 ± 3"
+    ],
+    "correct": "B",
+    "explanation": "Completing the square gives (x + 2)² = −9. Therefore x + 2 = ±3i and x = −2 ± 3i."
+  },
+  {
+    "sources": [
+      "59721de1-67ec-5876-a650-5b4aa2b300d6"
+    ],
+    "topic": "Systems of equations",
+    "stem": "Which ordered pair (x,y) solves x + y = 9 and 2x − y = 6?",
+    "choices": [
+      "(5,4)",
+      "(4,5)",
+      "(3,6)",
+      "(6,3)"
+    ],
+    "correct": "A",
+    "explanation": "Adding gives 3x = 15, so x = 5. Then y = 9 − 5 = 4."
+  },
+  {
+    "sources": [
+      "5f033576-cad3-5794-a034-bfb20c353a99"
+    ],
+    "topic": "Complex numbers",
+    "stem": "Which expression equals $\\frac{3+2i}{1-i}$?",
+    "choices": [
+      "$\\frac52+\\frac12i$",
+      "$\\frac12-\\frac52i$",
+      "$3+2i$",
+      "$\\frac12+\\frac52i$"
+    ],
+    "correct": "D",
+    "explanation": "Multiply numerator and denominator by 1 + i. The denominator is 2; the numerator is 3 + 5i + 2i² = 1 + 5i. Divide by 2."
+  },
+  {
+    "sources": [
+      "5f17833f-59b6-5a32-aae1-633a7b94b22b"
+    ],
+    "topic": "Functions and transformations",
+    "stem": "Which sequence of transformations takes y = f(x) to y = −2f(x + 3) + 5?",
+    "choices": [
+      "Shift left 3; compress vertically by 1/2; shift up 5",
+      "Shift left 3; stretch vertically by 2 and reflect across the y-axis; shift down 5",
+      "Shift left 3; stretch vertically by 2 and reflect across the x-axis; shift up 5",
+      "Shift right 3; stretch vertically by 2 and reflect across the x-axis; shift up 5"
+    ],
+    "correct": "C",
+    "explanation": "The x + 3 shifts left 3. Multiplication by −2 stretches vertical distances by 2 and reflects across the x-axis. The final +5 shifts the result up 5."
+  },
+  {
+    "sources": [
+      "6037be14-ef15-5157-97d8-02acb6ed343a"
+    ],
+    "topic": "Conic sections",
+    "stem": "Which conic is represented by 4x² − 9y² = 36?",
+    "choices": [
+      "Circle",
+      "Hyperbola",
+      "Ellipse",
+      "Parabola"
+    ],
+    "correct": "B",
+    "explanation": "Dividing by 36 gives x²/9 − y²/4 = 1. The squared terms have opposite signs, so the conic is a hyperbola."
+  },
+  {
+    "sources": [
+      "61a51dd3-cf3c-5b42-98bb-01fd84509e3e"
+    ],
+    "topic": "Quadratics and polynomials",
+    "stem": "What is the complete solution set of 2x² − 7x + 3 = 0?",
+    "choices": [
+      "{1/2,3}",
+      "{−1/2,−3}",
+      "{1,3/2}",
+      "{−1/2,3}"
+    ],
+    "correct": "A",
+    "explanation": "Factor as (2x − 1)(x − 3) = 0. Thus x = 1/2 or x = 3."
+  },
+  {
+    "sources": [
+      "61c9e3fb-22bc-5c8d-9901-d94ffcee5ea2"
+    ],
+    "topic": "Circles",
+    "stem": "What are the center and radius of x² + y² − 6x + 8y − 11 = 0?",
+    "choices": [
+      "Center (−3,4), radius 6",
+      "Center (3,−4), radius 36",
+      "Center (3,4), radius 6",
+      "Center (3,−4), radius 6"
+    ],
+    "correct": "D",
+    "explanation": "Complete the squares: (x − 3)² + (y + 4)² = 11 + 9 + 16 = 36. The center is (3,−4) and radius √36 = 6."
+  },
+  {
+    "sources": [
+      "69b73d1b-f316-59f3-8eaf-799f8e00226f"
+    ],
+    "topic": "Coordinate geometry",
+    "stem": "Point (2,3) is reflected across the y-axis, then across the x-axis. What is the resulting point?",
+    "choices": [
+      "(2,−3)",
+      "(3,2)",
+      "(−2,−3)",
+      "(−2,3)"
+    ],
+    "correct": "C",
+    "explanation": "The first reflection changes x to −2, producing (−2,3). The second changes y to −3, producing (−2,−3)."
+  },
+  {
+    "sources": [
+      "6b29ba68-ed8f-5d95-8f94-3a747dc9884b"
+    ],
+    "topic": "Functions and transformations",
+    "stem": "What is the inverse of f(x) = (x + 5)/3?",
+    "choices": [
+      "f⁻¹(x) = (3 − x)/5",
+      "f⁻¹(x) = 3x − 5",
+      "f⁻¹(x) = 3x + 5",
+      "f⁻¹(x) = (x − 5)/3"
+    ],
+    "correct": "B",
+    "explanation": "Let y = (x + 5)/3. Then 3y = x + 5, so x = 3y − 5. Interchange x and y to obtain the inverse."
+  },
+  {
+    "sources": [
+      "6c698a69-c0ab-5b1a-b503-43b48529cfb2"
+    ],
+    "topic": "Triangles and similarity",
+    "stem": "A 30°–60°–90° triangle has short leg 7. What are its hypotenuse and long leg, respectively?",
+    "choices": [
+      "$14,\\ 7\\sqrt3$",
+      "$7\\sqrt3,\\ 14$",
+      "$14,\\ 7\\sqrt2$",
+      "$7,\\ 14$"
+    ],
+    "correct": "A",
+    "explanation": "The side ratio short : long : hypotenuse is 1 : √3 : 2. Multiplying by 7 gives hypotenuse 14 and long leg 7√3."
+  },
+  {
+    "sources": [
+      "737364bf-2739-5a73-b908-50a94bc81ddd"
+    ],
+    "topic": "Ratios, percentages and unit conversion",
+    "stem": "Sarah invests $5,000 at a simple annual interest rate of 3%. Which expression gives the interest earned, in dollars, after t years?",
+    "choices": [
+      "5000 + 150t",
+      "5000(1.03)ᵗ",
+      "150(1.03)ᵗ",
+      "150t"
+    ],
+    "correct": "D",
+    "explanation": "Simple interest is principal × annual rate × time: 5000 × 0.03 × t = 150t. The question asks for interest, not the total account balance."
+  },
+  {
+    "sources": [
+      "7e911655-761e-5421-adf0-fcb38a8d2152"
+    ],
+    "topic": "Area and perimeter",
+    "stem": "A rectangle has perimeter 80 units and width w units, where 0 < w < 40. Which expression gives its area?",
+    "choices": [
+      "40w",
+      "2w(40 − w)",
+      "w(40 − w)",
+      "w(80 − w)"
+    ],
+    "correct": "C",
+    "explanation": "From 2(length + width) = 80, length = 40 − w. Area is length × width = w(40 − w)."
+  },
+  {
+    "sources": [
+      "7f518a2a-d7b8-5640-9702-bbcaaa987992"
+    ],
+    "topic": "Trigonometry",
+    "stem": "For y = −3 cos(4x) + 2, with x measured in radians, what are the amplitude and period?",
+    "choices": [
+      "$2,\\ \\pi/2$",
+      "$3,\\ \\pi/2$",
+      "$-3,\\ \\pi/2$",
+      "$3,\\ 8\\pi$"
+    ],
+    "correct": "B",
+    "explanation": "The amplitude is the absolute value of −3, which is 3. Period is 2π/|4| = π/2. The vertical shift does not change either quantity."
+  },
+  {
+    "sources": [
+      "84d52170-2e92-51ec-a620-42197786d56a"
+    ],
+    "topic": "Exponents and radicals",
+    "stem": "For nonzero x and y, which expression equals $\\frac{6x^3y^{-2}}{3x^{-1}y}$?",
+    "choices": [
+      "$\\frac{2x^4}{y^3}$",
+      "$\\frac{2x^2}{y}$",
+      "$2x^4y^3$",
+      "$\\frac{3x^4}{y^3}$"
+    ],
+    "correct": "A",
+    "explanation": "Divide coefficients to get 2. Subtract exponents when dividing: x^(3 − (−1)) = x⁴ and y^(−2 − 1) = y⁻³. Therefore the result is 2x⁴/y³."
+  },
+  {
+    "sources": [
+      "89153e97-2b10-59c9-8e19-494a3f97c1b8"
+    ],
+    "topic": "Rational expressions",
+    "stem": "For x ≠ 3 and x ≠ −2, which expression equals $\\frac{x^2-9}{x^2-x-6}$?",
+    "choices": [
+      "$\\frac{x-3}{x+2}$",
+      "$\\frac{x+3}{x-2}$",
+      "$x+3$",
+      "$\\frac{x+3}{x+2}$"
+    ],
+    "correct": "D",
+    "explanation": "Factor the numerator as (x − 3)(x + 3) and denominator as (x − 3)(x + 2). Cancel the common factor while retaining both original domain exclusions."
+  },
+  {
+    "sources": [
+      "8b343527-1eac-5295-925b-1dfc4d2730a3"
+    ],
+    "topic": "Quadratics and polynomials",
+    "stem": "Which is the complete factorization of x³ − 4x² − x + 4?",
+    "choices": [
+      "(x − 4)(x − 1)²",
+      "(x − 4)(x² + 1)",
+      "(x − 4)(x − 1)(x + 1)",
+      "(x + 4)(x − 1)(x + 1)"
+    ],
+    "correct": "C",
+    "explanation": "Group terms: x²(x − 4) − (x − 4) = (x − 4)(x² − 1). Factor the difference of squares."
+  },
+  {
+    "sources": [
+      "8b8cfb7a-6df2-5ee6-a045-80a1ef7a79af"
+    ],
+    "topic": "Angles and polygons",
+    "stem": "A simple polygon has an interior-angle sum of 540°. How many sides does it have?",
+    "choices": [
+      "8",
+      "5",
+      "4",
+      "6"
+    ],
+    "correct": "B",
+    "explanation": "For n sides, the sum is (n − 2)180°. Solving (n − 2)180 = 540 gives n = 5."
+  },
+  {
+    "sources": [
+      "90f77567-6ac9-5fcb-829b-82cfb02c298a"
+    ],
+    "topic": "Coordinate geometry",
+    "stem": "What is the reflection of (6,−2) across the line y = x?",
+    "choices": [
+      "(−2,6)",
+      "(2,−6)",
+      "(−6,2)",
+      "(6,2)"
+    ],
+    "correct": "A",
+    "explanation": "Reflection across y = x interchanges the coordinates: (x,y) becomes (y,x)."
+  },
+  {
+    "sources": [
+      "967c3d8b-4109-5b7a-9c45-1b287d076018"
+    ],
+    "topic": "Conic sections",
+    "stem": "What are the vertices on the major axis of $\\frac{x^2}{25}+\\frac{y^2}{9}=1$?",
+    "choices": [
+      "(0,−5) and (0,5)",
+      "(−3,0) and (3,0)",
+      "(−4,0) and (4,0)",
+      "(−5,0) and (5,0)"
+    ],
+    "correct": "D",
+    "explanation": "The larger denominator is 25 beneath x², so the major axis is horizontal and semimajor length is √25 = 5. The center is (0,0), giving vertices (±5,0)."
+  },
+  {
+    "sources": [
+      "9a06ec43-8291-520f-b1e8-0b6657539920"
+    ],
+    "topic": "Inequalities and absolute value",
+    "stem": "What is the solution set of −3 ≤ 2x + 5 < 11?",
+    "choices": [
+      "−8 ≤ x < 6",
+      "−1 ≤ x < 8",
+      "−4 ≤ x < 3",
+      "−4 < x ≤ 3"
+    ],
+    "correct": "C",
+    "explanation": "Subtract 5 throughout: −8 ≤ 2x < 6. Divide throughout by positive 2, retaining the inequality directions and endpoint types."
+  },
+  {
+    "sources": [
+      "9dff9f8a-d5d3-548f-9436-909b22aa29a2"
+    ],
+    "topic": "Trigonometry",
+    "stem": "In a right triangle, the side opposite acute angle θ is 9 and the hypotenuse is 15. What are sin θ and cos θ, respectively?",
+    "choices": [
+      "5/3 and 5/4",
+      "3/5 and 4/5",
+      "4/5 and 3/5",
+      "3/5 and 5/4"
+    ],
+    "correct": "B",
+    "explanation": "The adjacent side is √(15² − 9²) = 12. Thus sin θ = 9/15 = 3/5 and cos θ = 12/15 = 4/5."
+  },
+  {
+    "sources": [
+      "9fcd9239-7ac9-5e0c-9251-e69e7f973de5"
+    ],
+    "topic": "Quadratics and polynomials",
+    "stem": "Which is the vertex form of y = x² − 6x + 5?",
+    "choices": [
+      "y = (x − 3)² − 4",
+      "y = (x + 3)² − 4",
+      "y = (x − 3)² + 5",
+      "y = (x − 6)² − 31"
+    ],
+    "correct": "A",
+    "explanation": "Complete the square: x² − 6x + 5 = (x² − 6x + 9) − 4 = (x − 3)² − 4."
+  },
+  {
+    "sources": [
+      "a77b0768-4443-5d3d-aa74-b8f53201f661"
+    ],
+    "topic": "Quadratics and polynomials",
+    "stem": "Which is the complete factorization of x² − 7x + 12?",
+    "choices": [
+      "(x + 3)(x + 4)",
+      "(x − 2)(x − 6)",
+      "(x + 3)(x − 4)",
+      "(x − 3)(x − 4)"
+    ],
+    "correct": "D",
+    "explanation": "The numbers −3 and −4 multiply to 12 and add to −7, so the factorization is (x − 3)(x − 4)."
+  },
+  {
+    "sources": [
+      "a9517d0e-8c62-5ce3-853c-065976dca334"
+    ],
+    "topic": "Trigonometry",
+    "stem": "What are all solutions of sin x = 1/2 in the interval 0 ≤ x < 2π, with x in radians?",
+    "choices": [
+      "$\\pi/3,\\ 2\\pi/3$",
+      "$5\\pi/6,\\ 11\\pi/6$",
+      "$\\pi/6,\\ 5\\pi/6$",
+      "$\\pi/6,\\ 7\\pi/6$"
+    ],
+    "correct": "C",
+    "explanation": "The reference angle is π/6. Sine is positive in Quadrants I and II, so the solutions are π/6 and π − π/6 = 5π/6."
+  },
+  {
+    "sources": [
+      "abe5dbb4-442a-5d6e-950b-c57b4f43944f"
+    ],
+    "topic": "Logic",
+    "stem": "Which statement is the converse of “If Chris uses toothpaste X, then Chris does not get cavities”?",
+    "choices": [
+      "If Chris uses toothpaste X, then Chris gets cavities",
+      "If Chris does not get cavities, then Chris uses toothpaste X",
+      "If Chris does not use toothpaste X, then Chris gets cavities",
+      "If Chris gets cavities, then Chris does not use toothpaste X"
+    ],
+    "correct": "B",
+    "explanation": "The converse of “if P, then Q” is “if Q, then P.” Interchange the hypothesis and conclusion without negating either. This asks about logical form, not the truth of the converse."
+  },
+  {
+    "sources": [
+      "abf3a097-3ae1-56da-99ef-12337dd810a9"
+    ],
+    "topic": "Quadratics and polynomials",
+    "stem": "A 4 m by 6 m rectangular garden is surrounded on all sides by a sidewalk of uniform width w. The combined garden-and-sidewalk area is 40 m². What is the exact positive width w?",
+    "choices": [
+      "$\\frac{\\sqrt{41}-5}{2}$",
+      "$\\frac{\\sqrt{41}+5}{2}$",
+      "$\\sqrt{41}-5$",
+      "$\\frac{\\sqrt{41}-10}{2}$"
+    ],
+    "correct": "A",
+    "explanation": "The outer dimensions are 4 + 2w and 6 + 2w. Their product equals 40, so w² + 5w − 4 = 0. The quadratic formula gives (−5 ± √41)/2. Only (√41 − 5)/2 is positive."
+  },
+  {
+    "sources": [
+      "cb5328b0-077c-5913-80b3-a38f57a9f966"
+    ],
+    "topic": "Circles",
+    "stem": "Which equation describes a circle centered at (2,−3) with radius 5?",
+    "choices": [
+      "(x + 2)² + (y − 3)² = 25",
+      "(x − 2)² + (y + 3)² = 5",
+      "(x − 2)² + (y − 3)² = 25",
+      "(x − 2)² + (y + 3)² = 25"
+    ],
+    "correct": "D",
+    "explanation": "Use (x − h)² + (y − k)² = r² with h = 2, k = −3, and r = 5."
+  },
+  {
+    "sources": [
+      "d4fabad7-80c7-5751-8297-f0e25fe17be4"
+    ],
+    "topic": "Linear functions and slope",
+    "stem": "Which equation represents the line through (2,5) with slope −3?",
+    "choices": [
+      "y = 3x − 1",
+      "y = −3x + 5",
+      "y = −3x + 11",
+      "y = −3x − 1"
+    ],
+    "correct": "C",
+    "explanation": "Point-slope form gives y − 5 = −3(x − 2). Expanding gives y = −3x + 11."
+  },
+  {
+    "sources": [
+      "dc91cd5c-f2db-56e1-843d-40c3885626f4"
+    ],
+    "topic": "Quadratics and polynomials",
+    "stem": "Which quadratic polynomial has roots 2 and −5 and leading coefficient 3?",
+    "choices": [
+      "3x² + 9x + 30",
+      "3x² + 9x − 30",
+      "3x² − 9x − 30",
+      "x² + 3x − 10"
+    ],
+    "correct": "B",
+    "explanation": "The polynomial is 3(x − 2)(x + 5) = 3(x² + 3x − 10) = 3x² + 9x − 30."
+  },
+  {
+    "sources": [
+      "dde56c95-4d24-50a6-9fd0-9e867f49e16c"
+    ],
+    "topic": "Logarithms and exponentials",
+    "stem": "A population initially has 500 members and increases by 6% each year. Which function gives its population after t years?",
+    "choices": [
+      "P(t) = 500(1.06)ᵗ",
+      "P(t) = 500(0.06)ᵗ",
+      "P(t) = 500 + 6t",
+      "P(t) = 500(0.94)ᵗ"
+    ],
+    "correct": "A",
+    "explanation": "A 6% annual increase multiplies the previous population by 1.06 each year. Starting at 500 gives P(t) = 500(1.06)ᵗ."
+  },
+  {
+    "sources": [
+      "de4a2e58-5250-542d-8ca1-133cdfc3a22e"
+    ],
+    "topic": "Functions and transformations",
+    "stem": "What are the domain and range of y = |x| + 1?",
+    "choices": [
+      "Domain: x ≥ 0; range: y ≥ 1",
+      "Domain: all real numbers; range: y > 1",
+      "Domain: x ≥ 1; range: all real numbers",
+      "Domain: all real numbers; range: y ≥ 1"
+    ],
+    "correct": "D",
+    "explanation": "Absolute value is defined for every real x and is always nonnegative. Its minimum is 0 at x = 0, so y has minimum 1 and no upper bound."
+  },
+  {
+    "sources": [
+      "e6c907a4-339c-575b-a5ec-d9cb4bedea4f"
+    ],
+    "topic": "Exponents and radicals",
+    "stem": "Which expression equals $\\frac5{2+\\sqrt3}$ and has a rational denominator?",
+    "choices": [
+      "$5-2\\sqrt3$",
+      "$\\frac{10-5\\sqrt3}{7}$",
+      "$10-5\\sqrt3$",
+      "$10+5\\sqrt3$"
+    ],
+    "correct": "C",
+    "explanation": "Multiply numerator and denominator by 2 − √3. The denominator becomes 4 − 3 = 1, leaving 5(2 − √3) = 10 − 5√3."
+  },
+  {
+    "sources": [
+      "e81728fa-0bfe-500a-b95c-b6a596921bac"
+    ],
+    "topic": "Rational expressions",
+    "stem": "For x ≠ 3, which expression equals $\\frac{x^2-9}{x-3}$?",
+    "choices": [
+      "x + 9",
+      "x + 3",
+      "x − 3",
+      "x² + 3"
+    ],
+    "correct": "B",
+    "explanation": "Factor x² − 9 = (x − 3)(x + 3). Since x ≠ 3, cancel x − 3 to obtain x + 3."
+  },
+  {
+    "sources": [
+      "ec0b80b3-e678-57ca-b685-9f71dd1510b9"
+    ],
+    "topic": "Inequalities and absolute value",
+    "stem": "Which inequality has the same solution set as x + 8 ≥ 7 + 2x?",
+    "choices": [
+      "x ≤ 1",
+      "x ≥ 1",
+      "x ≤ −1",
+      "x ≥ −1"
+    ],
+    "correct": "A",
+    "explanation": "Subtract x + 7 from both sides to obtain 1 ≥ x, which is x ≤ 1. Equality at x = 1 is included."
+  },
+  {
+    "sources": [
+      "ed1dcc2d-a539-533b-82a8-53b453cd19f7"
+    ],
+    "topic": "Statistics and data analysis",
+    "stem": "What are the mean and median, respectively, of 3, 5, 5, 7, and 10?",
+    "choices": [
+      "5 and 6",
+      "6 and 6",
+      "5 and 5",
+      "6 and 5"
+    ],
+    "correct": "D",
+    "explanation": "The sum is 30, so the mean is 30/5 = 6. The third value in the sorted list is 5, so the median is 5."
+  },
+  {
+    "sources": [
+      "f8d3bf78-537b-594e-bc5c-f4bef8bf23a6"
+    ],
+    "topic": "Matrices",
+    "stem": "What is $\\begin{pmatrix}1&2\\\\0&3\\end{pmatrix}\\begin{pmatrix}4&1\\\\-2&5\\end{pmatrix}$?",
+    "choices": [
+      "$\\begin{pmatrix}0&9\\\\-6&15\\end{pmatrix}$",
+      "$\\begin{pmatrix}4&11\\\\-6&15\\end{pmatrix}$",
+      "$\\begin{pmatrix}0&11\\\\-6&15\\end{pmatrix}$",
+      "$\\begin{pmatrix}4&2\\\\0&15\\end{pmatrix}$"
+    ],
+    "correct": "C",
+    "explanation": "Multiply rows by columns: top-left 1(4) + 2(−2) = 0; top-right 1(1) + 2(5) = 11; bottom-left 0(4) + 3(−2) = −6; bottom-right 0(1) + 3(5) = 15."
+  },
+  {
+    "sources": [
+      "31ddb28a-8c1d-5808-bccc-f47d68f96c41",
+      "ae11aecb-8844-5bdf-9dec-7f21b4c25fad"
+    ],
+    "topic": "Inequalities and absolute value",
+    "stem": "Which inequality describes exactly the solution set of −3x + 7 < 16?",
+    "choices": [
+      "x > −9",
+      "x > −3",
+      "x < −3",
+      "x < −9"
+    ],
+    "correct": "B",
+    "explanation": "Subtract 7: −3x < 9. Divide by −3 and reverse the inequality to get x > −3. Although x > −9 follows from the solution, it includes extra values and is not the exact solution set."
+  },
+  {
+    "sources": [
+      "3eff8a14-c778-5c68-b2d6-c4eda2007af4"
+    ],
+    "topic": "Inequalities and absolute value",
+    "stem": "A craft shop spends less than $360 on bracelet and necklace kits. Each bracelet kit costs $6 and each necklace kit costs $12. It buys at least 8 more bracelet kits than necklace kits. Which purchase satisfies both conditions?",
+    "choices": [
+      "28 bracelet kits and 22 necklace kits",
+      "30 bracelet kits and 18 necklace kits",
+      "20 bracelet kits and 15 necklace kits",
+      "30 bracelet kits and 10 necklace kits"
+    ],
+    "correct": "D",
+    "explanation": "For D, cost = 6(30) + 12(10) = 300, which is less than 360; the difference is 20, which is at least 8. A and B exceed the budget. C meets the budget but its difference is only 5. The options are explicitly corrected instructor choices."
+  },
+  {
+    "sources": [
+      "6dc9e13a-f3bd-5f3a-a2cf-c9f11660f0cb",
+      "f452b8ea-1e95-5d3b-ada2-a4b7aa48a75e"
+    ],
+    "topic": "Inequalities and absolute value",
+    "stem": "What is the complete real solution set of $\\left|\\frac{2-x}{7}\\right|=\\left|\\frac{x+3}{5}\\right|$?",
+    "choices": [
+      "$\\{-\\frac{11}{12}\\}$",
+      "$\\{\\frac{11}{12},\\frac{31}{2}\\}$",
+      "$\\{-\\frac{11}{12},\\frac{11}{6}\\}$",
+      "$\\{-\\frac{11}{12},-\\frac{31}{2}\\}$"
+    ],
+    "correct": "D",
+    "explanation": "Equal absolute values mean the quantities are equal or opposite. From 5(2 − x) = 7(x + 3), x = −11/12. From 5(2 − x) = −7(x + 3), x = −31/2. Both must be included."
+  },
+  {
+    "sources": [
+      "7e080c5c-2b38-577d-bc87-d25a193c5a3e"
+    ],
+    "topic": "Functions and transformations",
+    "stem": "Which function has x-intercept (−1,0) and horizontal asymptote y = −3?",
+    "choices": [
+      "$f(x)=\\frac{3(x+1)}{x+2}$",
+      "$f(x)=\\frac{-3(x+2)}{x+1}$",
+      "$f(x)=\\frac{-3(x+1)}{x+2}$",
+      "$f(x)=\\frac{-3(x-1)}{x+2}$"
+    ],
+    "correct": "C",
+    "explanation": "For A, x = −1 makes the numerator zero and leaves denominator 1, so the intercept is (−1,0). The ratio of leading coefficients is −3, giving horizontal asymptote y = −3. The other options fail at least one condition."
+  },
+  {
+    "sources": [
+      "7f8050b5-15b3-5463-8676-bbb0257a27ee"
+    ],
+    "topic": "Statistics and data analysis",
+    "stem": "Dan’s first five scores are 70, 80, 80, 70, and 75. The scores 90 and 95 are added to form one cumulative seven-score data set. Relative to the original five scores, how do its mean and median change?",
+    "choices": [
+      "Both increase by 10",
+      "Both increase by 5",
+      "The mean increases by 5 and the median stays the same",
+      "The mean stays the same and the median increases by 5"
+    ],
+    "correct": "B",
+    "explanation": "The original sum is 375, mean 75, and median 75. The new sum is 560, mean 560/7 = 80, and median 80. Both increase by 5. The cumulative interpretation is explicitly stated."
+  },
+  {
+    "sources": [
+      "810b6716-8724-5d85-81c4-5006f1f97ef5"
+    ],
+    "topic": "Quadratics and polynomials",
+    "stem": "What is the complete real solution set of 2x² − 15 = −6?",
+    "choices": [
+      "$\\{-\\frac{3\\sqrt2}{2},\\frac{3\\sqrt2}{2}\\}$",
+      "$\\{-\\sqrt3,\\sqrt3\\}$",
+      "$\\{-\\sqrt6,\\sqrt6\\}$",
+      "{−6,6}"
+    ],
+    "correct": "A",
+    "explanation": "Add 15 and divide by 2 to obtain x² = 9/2. Thus x = ±√(9/2) = ±3√2/2. These corrected choices include both roots."
+  },
+  {
+    "sources": [
+      "8bcc0c58-4a45-5c07-8295-5f9e8197a447"
+    ],
+    "topic": "Exponents and radicals",
+    "stem": "For nonzero x and y, which expression equals $\\frac{x^{16}y^9+x^6y^2}{x^2y^2}$?",
+    "choices": [
+      "$x^{14}y^7+x^4y$",
+      "$x^8y^7+x^3$",
+      "$x^{18}y^{11}+x^8y^4$",
+      "$x^{14}y^7+x^4$"
+    ],
+    "correct": "D",
+    "explanation": "Divide each numerator term by x²y². Subtracting exponents gives x¹⁴y⁷ and x⁴, respectively. The second term has no remaining factor of y."
+  },
+  {
+    "sources": [
+      "a085f287-90e7-5005-9f88-1f77549cb994"
+    ],
+    "topic": "Exponents and radicals",
+    "stem": "For x ≠ 0 and y > 0, which expression equals $\\frac{2x^2y}{x\\sqrt y}$?",
+    "choices": [
+      "$\\frac{2x}{\\sqrt y}$",
+      "$2xy$",
+      "$2x\\sqrt y$",
+      "$2x^2\\sqrt y$"
+    ],
+    "correct": "C",
+    "explanation": "Cancel one factor of x. Since y/√y = √y for y > 0, the expression becomes 2x√y. The choices are corrected so only one is equivalent on the stated domain."
+  },
+  {
+    "sources": [
+      "aacba8d8-0f1e-5a41-b7bc-f4b401e9bd24"
+    ],
+    "topic": "Exponents and radicals",
+    "stem": "Which expression equals $\\frac{\\sqrt{15}}{\\sqrt2}$?",
+    "choices": [
+      "$\\frac{15}{2}$",
+      "$\\frac{\\sqrt{30}}2$",
+      "$\\frac{\\sqrt{15}}2$",
+      "$\\sqrt{30}$"
+    ],
+    "correct": "B",
+    "explanation": "Multiply numerator and denominator by √2 to get √30/2. The source’s second equivalent option has been replaced with an explicit instructor-authored distractor."
+  },
+  {
+    "sources": [
+      "af2c2124-569a-56d4-9b36-a22cf8f089cd"
+    ],
+    "topic": "Systems of equations",
+    "stem": "A cabinet contains 15 plates. Each has diameter 7 inches or 12 inches, and the sum of the 15 diameters is 140 inches. Let x count the 7-inch plates and y count the 12-inch plates. Which system models this situation?",
+    "choices": [
+      "x + y = 15; 7x + 12y = 140",
+      "x + y = 140; 7x + 12y = 15",
+      "x + y = 15; 12x + 7y = 140",
+      "7x + y = 15; x + 12y = 140"
+    ],
+    "correct": "A",
+    "explanation": "The plate count gives x + y = 15. Summing diameters gives 7x + 12y = 140. These equations have the valid integer solution x = 8, y = 7. This instructor adaptation explicitly corrects the impossible printed total of 14 inches to 140 inches."
+  },
+  {
+    "sources": [
+      "ec6acdfa-1dab-561f-ab3a-fd7a542c2ea6"
+    ],
+    "topic": "Systems of equations",
+    "stem": "For a nonzero real constant a, which ordered pair (x,y) solves x + ay = 2 and 3x − 2ay = 6?",
+    "choices": [
+      "(0,2/a)",
+      "(−2,0)",
+      "(2,2/a)",
+      "(2,0)"
+    ],
+    "correct": "D",
+    "explanation": "Multiply the first equation by 3 and subtract the second: 5ay = 0. Since a ≠ 0, y = 0, and then x = 2. The nonzero condition is explicitly added to exclude the infinitely-many-solutions case a = 0."
+  }
+]
