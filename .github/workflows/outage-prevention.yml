@@ -1,0 +1,35 @@
+name: Outage prevention
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/outage-prevention.yml'
+      - 'database-releases/20261115_outage_prevention/**'
+      - 'supabase/migrations/20261115175643_portal_outage_prevention.sql'
+      - 'tests/outage_prevention.test.cjs'
+      - 'tests/outage-prevention-fixture.sql'
+      - 'tests/device-runtime/package*.json'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/outage-prevention.yml'
+      - 'database-releases/20261115_outage_prevention/**'
+      - 'supabase/migrations/20261115175643_portal_outage_prevention.sql'
+      - 'tests/outage_prevention.test.cjs'
+      - 'tests/outage-prevention-fixture.sql'
+      - 'tests/device-runtime/package*.json'
+permissions:
+  contents: read
+jobs:
+  authorization-and-job-limits:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm ci --prefix tests/device-runtime --ignore-scripts --no-audit --no-fund
+      - run: node --test tests/outage_prevention.test.cjs

@@ -1,0 +1,48 @@
+-- Synthetic rows only. Helpers model ownership, course/group access, deadlines,
+-- review locks and browser state; production helper functions are never changed.
+create role anon;
+create role authenticated;
+create role service_role;
+create schema auth;
+create schema portal_private;
+create schema cron;
+create schema net;
+create function auth.uid() returns uuid language plpgsql stable as $$
+begin return nullif(current_setting('request.jwt.claim.sub',true),'')::uuid; end $$;
+create table profiles(id uuid primary key,role text,status text);
+create table tracks(id text primary key);
+create table instructor_tracks(user_id uuid,track_id text);
+create table enrollments(user_id uuid,track_id text,status text);
+create table groups(id uuid primary key,track_id text,instructor_id uuid);
+create table group_members(group_id uuid,user_id uuid);
+create table exams(id uuid primary key,track_id text,is_published boolean);
+create table assignments(id uuid primary key,exam_id uuid,group_id uuid,user_id uuid);
+create table attempts(id uuid primary key,user_id uuid,exam_id uuid,status text,deadline_at timestamptz,review_unlocks_at timestamptz);
+create table attempt_answers(attempt_id uuid,question_id uuid,response text,primary key(attempt_id,question_id));
+create table attempt_results(attempt_id uuid,question_id uuid,is_correct boolean);
+create table retake_grants(id uuid primary key,user_id uuid,exam_id uuid);
+create table device_sessions(id uuid primary key,user_id uuid,label text);
+create table daily_progress(id uuid primary key,user_id uuid,track_id text,quiz_group_id uuid);
+create function portal_private.current_session_allowed() returns boolean language sql stable as $$select coalesce(nullif(current_setting('test.session_allowed',true),''),'true')::boolean$$;
+create function portal_private.is_admin() returns boolean language sql stable security definer set search_path=pg_catalog,public as $$select exists(select 1 from profiles where id=auth.uid() and role='admin' and status='active')$$;
+create function portal_private.staff_can_touch_track(t text) returns boolean language sql stable security definer set search_path=pg_catalog,public as $$select portal_private.is_admin() or exists(select 1 from instructor_tracks i join profiles p on p.id=i.user_id where i.user_id=auth.uid() and i.track_id=t and p.role='instructor' and p.status='active')$$;
+create function portal_private.staff_can_read_student(u uuid) returns boolean language sql stable security definer set search_path=pg_catalog,public as $$select portal_private.is_admin() or exists(select 1 from group_members gm join groups g on g.id=gm.group_id where gm.user_id=u and g.instructor_id=auth.uid() and portal_private.staff_can_touch_track(g.track_id))$$;
+create function portal_private.is_enrolled(u uuid,t text) returns boolean language sql stable security definer set search_path=pg_catalog,public as $$select exists(select 1 from enrollments e join profiles p on p.id=e.user_id where e.user_id=u and e.track_id=t and e.status='active' and p.status='active')$$;
+create function course_history_access(u uuid,t text) returns boolean language sql stable security definer set search_path=pg_catalog,public as $$select exists(select 1 from enrollments where user_id=u and track_id=t)$$;
+create function portal_private.exam_track(e uuid) returns text language sql stable security definer set search_path=pg_catalog,public as $$select track_id from exams where id=e$$;
+create function portal_private.in_group(g uuid,u uuid) returns boolean language sql stable security definer set search_path=pg_catalog,public as $$select exists(select 1 from group_members where group_id=g and user_id=u)$$;
+create function portal_private.exam_assigned_to(e uuid,u uuid) returns boolean language sql stable security definer set search_path=pg_catalog,public as $$select exists(select 1 from assignments where exam_id=e and (user_id=u or portal_private.in_group(group_id,u)))$$;
+create function portal_private.attempt_is_mine(a uuid,u uuid) returns boolean language sql stable security definer set search_path=pg_catalog,public as $$select exists(select 1 from attempts where id=a and user_id=u)$$;
+create function portal_private.attempt_live_for(a uuid,u uuid) returns boolean language sql stable security definer set search_path=pg_catalog,public as $$select portal_private.current_session_allowed() and exists(select 1 from attempts where id=a and user_id=u and status='in_progress' and deadline_at>now())$$;
+create function portal_private.attempt_review_open(a uuid,u uuid) returns boolean language sql stable security definer set search_path=pg_catalog,public as $$select exists(select 1 from attempts where id=a and user_id=u and status in ('graded','expired') and (review_unlocks_at is null or review_unlocks_at<=now()))$$;
+create function portal_private.staff_can_read_attempt(a uuid) returns boolean language sql stable security definer set search_path=pg_catalog,public as $$select exists(select 1 from attempts where id=a and portal_private.staff_can_read_student(user_id) and portal_private.staff_can_touch_track(portal_private.exam_track(exam_id)))$$;
+grant usage on schema public,auth,portal_private to authenticated;
+grant select,insert,update,delete on all tables in schema public to authenticated;
+create table cron.job(jobid bigint primary key,jobname text unique,schedule text,command text,database text,username text,active boolean);
+create function cron.alter_job(job_id bigint,schedule text default null,command text default null,database text default null,username text default null,active boolean default null) returns void language sql as $$update cron.job set schedule=coalesce($2,schedule),command=coalesce($3,command),database=coalesce($4,database),username=coalesce($5,username),active=coalesce($6,active) where jobid=$1$$;
+create table test_job_settings(name text,statement_timeout text,lock_timeout text,idle_timeout text);
+create function public.sweep_expired_attempts() returns integer language plpgsql as $$begin insert into test_job_settings values('sweep',current_setting('statement_timeout'),current_setting('lock_timeout'),current_setting('idle_in_transaction_session_timeout'));return 0;end$$;
+create function portal_private.run_weekly_assessments() returns jsonb language plpgsql as $$begin insert into test_job_settings values('weekly',current_setting('statement_timeout'),current_setting('lock_timeout'),current_setting('idle_in_transaction_session_timeout'));return '[]'::jsonb;end$$;
+create table public.portal_push_config(id boolean,worker_secret text);
+insert into portal_push_config values(true,'synthetic-worker-secret');
+create function net.http_post(url text,headers jsonb,body jsonb,timeout_milliseconds integer) returns bigint language plpgsql as $$begin insert into test_job_settings values('push',current_setting('statement_timeout'),current_setting('lock_timeout'),current_setting('idle_in_transaction_session_timeout'));return 1;end$$;

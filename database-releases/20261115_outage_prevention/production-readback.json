@@ -1,0 +1,82 @@
+{
+  "cron_after": [{"jobname":"sweep-expired-attempts","succeeded":4,"failed":0,"last_finished":"2026-11-15 18:00:00.260154+00","max_seconds":"0.057"},{"jobname":"portal-push-delivery","succeeded":4,"failed":0,"last_finished":"2026-11-15 18:00:00.268542+00","max_seconds":"0.066"},{"jobname":"portal-weekly-algebra-assessments","succeeded":1,"failed":0,"last_finished":"2026-11-15 18:00:00.435879+00","max_seconds":"0.196"}],
+  "availability": {"version":1,"samples":[{"checked_at":"2026-11-15T17:58:26.303Z","checks":[{"name":"portal","ok":true,"elapsed_ms":7068,"status":200},{"name":"auth","ok":true,"elapsed_ms":6396,"status":200},{"name":"database","ok":true,"elapsed_ms":6399,"status":401,"expected_access_denied":true}]},{"checked_at":"2026-11-15T17:58:36.814Z","checks":[{"name":"portal","ok":true,"elapsed_ms":3400,"status":200},{"name":"auth","ok":true,"elapsed_ms":5055,"status":200},{"name":"database","ok":true,"elapsed_ms":5506,"status":401,"expected_access_denied":true}]}],"checked_at":"2026-11-15T17:58:36.814Z","services":[{"name":"portal","state":"healthy","checks":[{"name":"portal","ok":true,"elapsed_ms":7068,"status":200},{"name":"portal","ok":true,"elapsed_ms":3400,"status":200}]},{"name":"auth","state":"healthy","checks":[{"name":"auth","ok":true,"elapsed_ms":6396,"status":200},{"name":"auth","ok":true,"elapsed_ms":5055,"status":200}]},{"name":"database","state":"healthy","checks":[{"name":"database","ok":true,"elapsed_ms":6399,"status":401,"expected_access_denied":true},{"name":"database","ok":true,"elapsed_ms":5506,"status":401,"expected_access_denied":true}]}],"ok":true},
+  "availability_unit_tests": {"passed":45,"failed":0},
+  "project": "wfhurjyouemahvkcfkdz",
+  "migration": "20261115175643_portal_outage_prevention",
+  "applied": true,
+  "policy_count": 16,
+  "policy_exact_predicate_equivalence": true,
+  "policies": [
+    "assignments.assignments_read",
+    "attempt_answers.answers_insert_live",
+    "attempt_answers.answers_read",
+    "attempt_answers.answers_update_live",
+    "attempt_results.results_read",
+    "attempts.attempts_read",
+    "daily_progress.daily_progress_staff_read",
+    "device_sessions.devices_own",
+    "enrollments.enrollments_read",
+    "exams.exams_read",
+    "group_members.group_members_read",
+    "groups.groups_read",
+    "instructor_tracks.instructor_tracks_read",
+    "profiles.profiles_self_read",
+    "retake_grants.retakes_read",
+    "tracks.tracks_read"
+  ],
+  "advisor_after": {
+    "performance": [
+      {
+        "name": "unindexed_foreign_keys",
+        "count": 21,
+        "level": "INFO"
+      },
+      {
+        "name": "no_primary_key",
+        "count": 1,
+        "level": "INFO"
+      },
+      {
+        "name": "unused_index",
+        "count": 9,
+        "level": "INFO"
+      },
+      {
+        "name": "multiple_permissive_policies",
+        "count": 13,
+        "level": "WARN"
+      }
+    ],
+    "security": [
+      {
+        "name": "rls_enabled_no_policy",
+        "count": 20,
+        "level": "INFO"
+      },
+      {
+        "name": "auth_leaked_password_protection",
+        "count": 1,
+        "level": "WARN"
+      }
+    ],
+    "health": []
+  },
+  "business_data_after": {
+    "checked_at": "2026-11-15 17:57:01.570798+00",
+    "attempts_count": 470,
+    "attempts_digest": "67969611f8a6a66e2ab46e3fd9f1be37",
+    "answers_count": 5874,
+    "answers_digest": "b3e302d0b4c584b7fd78dc6c49327631",
+    "assignments_count": 1398,
+    "assignments_digest": "d3c20a22fc50f449c3f538e394838e63",
+    "objectives_count": 1120,
+    "weekly_schedules_count": 1
+  },
+  "local_tests": {
+    "passed": 13,
+    "failed": 0,
+    "read_authorization_combinations": 224,
+    "rollback": true
+  }
+}
