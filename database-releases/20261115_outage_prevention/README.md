@@ -41,6 +41,8 @@ Free/Nano still has up to 0.5 GB RAM. These changes reduce avoidable work; they 
 
 The current database reports PostgreSQL 17.6.1.166. Plan a supported version upgrade separately with extension compatibility checks, backup/restore verification and a maintenance window. Do not combine an untested engine upgrade with incident recovery.
 
+At 18:02 UTC, the refreshed dashboard still showed swap use and 1.1 GB of committed memory in its last-30-minute report. It also displayed **“Your project is about to deplete its Disk IO Budget”**, with a 6 MB/s baseline after depletion. Detailed disk charts were unavailable, so the banner establishes a capacity warning, not the exact depletion time or triggering query. This additional finding reinforces the need for resource headroom; increasing RAM can reduce swapping and improve cache headroom but does not guarantee sufficient disk throughput under every workload.
+
 No indexes were dropped based on short post-restart statistics, no private tables were opened to silence advisor notices, no cron history or student records were deleted, and no automatic database restart loop was added.
 
 ## Rollback and release discipline
