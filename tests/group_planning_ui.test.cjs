@@ -16,7 +16,9 @@ async function report({failure=false,visible=true,ready=true,delay=null,rpc=null
  }};return query;};
  w.portalControl=async(action,data)=>{actions.push({action,data});if(failure)throw new Error('Offline');return {visible,items:['Circles','Linear equations','Statistics'].map(lesson=>({lesson,active:true,ready}))};};
  w.sb={rpc:async(name,data)=>{if(name==='staff_diagnosis'){reads.push(name);return {data:{track_id:data.p_track,students:fixtures.roster.map(s=>({...s,tracks:data.p_track,lessons:fixtures.student_by_lesson.filter(x=>x.user_id===s.user_id).map(x=>({...x,seen:x.questions_seen}))}))}};}actions.push({action:name,data});return rpc?rpc(name,data):{data:{exam_id:data.p_exam,track_id:track,students:[]}};}};
- w.eval(source);await new Promise(resolve=>w.setTimeout(resolve,10));await w.render();
+ const initialRender=w.render;w.eval(source);
+ for(let tries=0;w.render===initialRender&&tries<100;tries++)await new Promise(resolve=>w.setTimeout(resolve,5));
+ assert.notEqual(w.render,initialRender,'diagnosis installs before tests invoke it');await w.render();
  return {dom,w,reads,actions,open:()=>w.document.getElementById('finalsGroupView').onclick()};
 }
 test('group view switches, selects the real class and only reads evidence and resources',async()=>{

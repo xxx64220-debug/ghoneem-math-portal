@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-practice-bundles-enabled="true">
 <head>
 <meta charset="utf-8">
 <meta name="referrer" content="no-referrer">
@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="script" href="/revision-formulas.js?v=20261024-no-source-links" fetchpriority="low">
-<link rel="preload" as="script" href="/lesson-exam-catalog.js?v=20261030-compact" fetchpriority="low">
-<link rel="preload" as="script" href="/assessment-index.js?v=20261030" fetchpriority="low">
+<link rel="preload" as="script" href="/revision-formulas.js?v=20261114-ui" fetchpriority="low">
+<link rel="preload" as="script" href="/lesson-exam-catalog.js?v=20261114-ui" fetchpriority="low">
+<link rel="preload" as="script" href="/assessment-index.js?v=20261114-ui" fetchpriority="low">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/katex.min.css" integrity="sha384-qArEAQvOPs1o7K1iAybhs66g8nYTXVt4VLOQ3abu+OMLJyPNfaH4Wpko0X2epHJ+" crossorigin="anonymous">
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.18.2/dist/katex.min.js" integrity="sha384-IHT6Yddb0KLCzZaxQ/so1j3xkJ8R6hOkCR06ma9NDHGn0Z4ClKcGtQ6qqsflRPxR" crossorigin="anonymous"></script>
@@ -100,8 +100,7 @@ header.top .wrap{display:flex;align-items:center;gap:16px;height:62px}
 .pal.current{outline:2.5px solid var(--accent);outline-offset:1px}
 .pal.flagged{border:2px solid #8c5700;background:#fff0b5;color:#5c3900;box-shadow:0 0 0 2px #f5ce72;font-weight:700}
 .pal.flagged.answered{background:var(--navy);color:#fff;border-color:#e8b951}
-.pal.flagged::after{content:"⚑";position:absolute;top:-9px;right:-6px;width:18px;height:18px;display:grid;place-items:center;
-  border:1px solid #8c5700;border-radius:4px;background:#fff0b5;color:#5c3900;font:700 15px/1 sans-serif}
+
 #flagBtn.is-flagged{background:#ffe29a;color:#3e2900;border:2px solid #8c5700;box-shadow:0 0 0 3px #fff2ca;font-weight:700}
 .flag-notice{display:inline-block;padding:4px 9px;border-radius:5px;background:#fff0b5;color:#5c3900;font-size:13px;font-weight:700}
 
@@ -203,9 +202,11 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 .formula-panel .review-menu{display:flex;gap:8px;flex-wrap:wrap}
 @media(max-width:760px){.formula-panel .formula-layout{grid-template-columns:1fr}.formula-lesson-list{position:static;max-height:240px;grid-template-columns:repeat(2,minmax(0,1fr))}.formula-lesson{padding:19px}}
 @media(max-width:560px){.formula-lesson-list{grid-template-columns:1fr}.formula-lesson{padding:16px}.formula-diagram-grid{grid-template-columns:1fr}.formula-key-point p{font-size:17px}}
+.assigned-daily-panel{border:2px solid #aa8425;background:#fffbef}.assigned-daily-panel>small{font-weight:700;color:#745600;letter-spacing:1px}
 </style>
-<link rel="stylesheet" href="/daily-challenge.css?v=20261015-group-scores">
-<link rel="stylesheet" href="/english-reading.css">
+<link rel="stylesheet" href="/daily-challenge.css?v=20261114-ui">
+<link rel="stylesheet" href="/english-reading.css?v=20261114-ui">
+<link rel="stylesheet" href="/vocabulary.css?v=20261114-ui">
 <link rel="manifest" href="/manifest.webmanifest">
 <meta name="theme-color" content="#14243E">
 <meta name="mobile-web-app-capable" content="yes">
@@ -214,15 +215,15 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/portal-192.png">
-<script defer src="/portal-install.js"></script>
-<script defer src="/portal-notifications.js"></script>
-<link rel="stylesheet" href="/portal-controls.css">
-<link rel="stylesheet" href="/portal-responsive.css?v=20261030-responsive">
-<link rel="stylesheet" href="/lesson-exams.css?v=20261030-compact">
-<link rel="stylesheet" href="/portal-math-layout.css?v=20261024-glyphs">
-<link rel="stylesheet" href="/portal-devices.css?v=20261030">
-<script src="/portal-devices.js?v=20261030"></script>
-</head>
+<script defer src="/portal-install.js?v=20261114-ui"></script>
+<script defer src="/portal-notifications.js?v=20261114-ui"></script>
+<link rel="stylesheet" href="/portal-controls.css?v=20261114-ui">
+<link rel="stylesheet" href="/lesson-exams.css?v=20261114-ui">
+<link rel="stylesheet" href="/portal-math-layout.css?v=20261114-ui">
+<link rel="stylesheet" href="/portal-devices.css?v=20261114-ui">
+<script src="/portal-devices.js?v=20261114-ui"></script>
+<script src="/portal-session.js?v=20261114-ui"></script>
+<script src="/portal-connection.js?v=20261114-ui"></script><script src="/portal-return.js?v=20261114-ui"></script><meta name="description" content="Ghoneem Math Portal: lessons, practice, assessments and progress for SAT, EST and ACT students."></head>
 <body>
 
 <header class="top hidden" id="top">
@@ -236,7 +237,14 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 </header>
 
 <!-- LOGIN -->
-<section id="vLogin" class="login">
+<section id="vSession" class="login" aria-label="Restoring portal access">
+  <h1>Opening your portal</h1>
+  <p id="sessionMessage" role="status" aria-live="polite">Checking your sign-in…</p>
+  <button class="btn" id="sessionRetry" hidden>Try again</button>
+  <noscript>JavaScript is needed to restore your sign-in. Enable it, then reopen the portal.</noscript>
+</section>
+
+<section id="vLogin" class="login hidden">
   <h1>Sign in</h1>
   <p class="sub">Sign in with your username and password.</p>
   <div class="field"><label for="u">Username or email</label><input id="u" autocomplete="username" spellcheck="false"></div>
@@ -247,11 +255,12 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 
 <!-- TRACK CHOOSER -->
 <section id="vTracks" class="wrap chooser hidden">
-  <h1>Choose your track</h1>
-  <p class="sub">You are enrolled in the tracks below. Each keeps its own exams and results.</p>
+  <h1>My learning home</h1>
+  <p class="sub">Choose a course for lessons, practice, exams and results. Open your daily plan for today’s assigned work.</p>
+  <nav class="portal-start-links" aria-label="Start here"><a id="practiceBundlesShortcut" class="portal-shortcut" href="/practice-bundles.html" hidden style="display:none"><strong>Practice bundles</strong><small>Choose topics, save progress &amp; retry</small></a><a class="portal-shortcut" href="/checkpoint.html?mode=assessments"><strong>Progress &amp; corrections</strong><small>Existing assessments &amp; saved practice</small></a><a class="portal-shortcut" href="#trackGrid"><strong>My courses</strong><small>Lessons, quizzes, exams &amp; progress</small></a><a id="chooserPlanShortcut" class="portal-shortcut" href="/study-plan.html" hidden><strong>Today &amp; calendar</strong><small>Daily objectives &amp; upcoming work</small></a></nav>
   <section id="chooserWeeklyObjective" class="dash-panel" hidden></section>
-  <section id="chooserObjective" class="dash-panel" hidden></section>
   <div class="tracks" id="trackGrid"></div>
+  <section id="chooserObjective" class="dash-panel" hidden></section>
 </section>
 
 <!-- EXAM LIST -->
@@ -265,30 +274,31 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 
 <!-- RUNNER -->
 <div id="vRun" class="hidden">
-<p id="examActivityNotice" class="dash-notice" hidden role="status" style="max-width:1120px;margin:16px auto;padding:16px"></p>
-  <div class="runbar"><div class="wrap">
-    <span class="clock" id="clock">--:--</span>
-    <span class="saving" id="saving"></span>
-    <div class="spacer"></div>
-    <button type="button" class="btn-ghost hidden" id="satCalculatorToggle" aria-expanded="false" aria-controls="satCalculatorPanel">Calculator</button>
-    <a class="btn-ghost hidden" id="satDesmos" href="https://www.desmos.com/testing/collegeboard/graphing" target="_blank" rel="noopener noreferrer" aria-label="Open official SAT Desmos graphing calculator in a new tab">SAT calculator ↗</a>
-    <button class="btn-ghost" id="flagBtn" aria-pressed="false">⚑ Flag</button>
-    <button class="btn btn-accent" id="finishBtn">Submit exam</button>
+  <div class="runbar exam-bar" role="toolbar" aria-label="Exam controls"><div class="wrap">
+    <div class="exam-time-save"><span class="clock" id="clock" role="timer" aria-live="off" aria-label="Time remaining">--:--</span><span class="saving" id="saving" aria-live="polite"></span></div>
+    <button id="questionJump" aria-haspopup="dialog" aria-label="Open question list">Questions ▾</button>
+    <button class="btn-ghost" id="flagBtn" aria-pressed="false" aria-label="Flag question for review"><svg class="flag-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3v18"/><path class="flag-cloth" d="M5 4h13l-3 5 3 5H5z"/></svg></button>
+    <button type="button" class="btn-ghost hidden" id="satCalculatorToggle" aria-label="Desmos calculator" aria-expanded="false" aria-controls="satCalculatorPanel"><span class="exam-tool-label">Desmos</span><span class="exam-tool-short" aria-hidden="true">Calc</span></button>
+    <button type="button" id="referenceBtn" hidden aria-label="SAT reference sheet" aria-haspopup="dialog"><span class="exam-tool-label">Reference</span><span class="exam-tool-short" aria-hidden="true">Ref</span></button>
+    <button id="examMore" aria-label="More exam options" aria-haspopup="dialog">⋯</button>
   </div></div>
-  <aside id="satCalculatorPanel" hidden role="region" aria-labelledby="satCalculatorTitle">
-    <div class="calculator-toolbar"><strong id="satCalculatorTitle">Graphing calculator</strong><button type="button" id="satCalculatorSize" class="btn-ghost" aria-label="Enlarge calculator" aria-pressed="false">Enlarge</button><button type="button" id="satCalculatorClose" class="btn-ghost">Close calculator</button></div>
-    <p id="satCalculatorStatus" role="status">Use the official SAT calculator link above while the in-exam calculator is unavailable.</p>
+  <p id="offlineNotice" class="exam-offline" role="status" hidden>Offline — answers will save when you’re back. Keep this page open.</p>
+  <p id="examAnnouncements" class="sr-only" aria-live="polite"></p>
+  <aside id="satCalculatorPanel" hidden role="dialog" aria-modal="false" aria-labelledby="satCalculatorTitle">
+    <div class="calculator-toolbar"><strong id="satCalculatorTitle" tabindex="0" aria-label="Move SAT Desmos window using arrow keys">SAT Desmos<small>Drag to move</small></strong><button type="button" id="satCalculatorSize" class="btn-ghost" aria-label="Enlarge calculator" aria-pressed="false">Enlarge</button><button type="button" id="satCalculatorClose" class="btn-ghost" aria-label="Close calculator">×</button></div>
     <div id="satCalculatorHost"></div>
+    <div class="calculator-help"><p id="satCalculatorStatus" role="status">Your calculations stay here when you close and reopen this window.</p><button type="button" id="satCalculatorRetry" class="btn-ghost" hidden title="Reload Desmos and clear its current calculations">Reload</button></div>
   </aside>
   <div class="wrap">
-    <div class="palette" id="palette"></div>
+    <nav class="palette" id="palette" aria-label="Questions"></nav>
     <div class="qcard" id="qcard"></div>
-    <div class="nav">
+    <button class="btn" id="finishBtn" hidden>Review &amp; submit</button>
+    <div class="nav exam-footer">
       <button class="btn-ghost" id="prevBtn">Previous</button>
-      <button class="btn-ghost" id="nextBtn">Next</button>
-      <div class="spacer"></div>
+      <button class="btn" id="nextBtn">Next</button>
       <span class="saving" id="progress"></span>
     </div>
+    <p id="examActivityNotice" class="dash-note" hidden role="status" style="margin:40px 0 10px"></p>
   </div>
 </div>
 
@@ -298,15 +308,14 @@ body{font-size:16px}.field label,.meta,.btn-ghost,.saving{font-size:14px}.exam-r
 <footer class="pg"><b>Abdelrahman Ghoneem</b> &nbsp;|&nbsp; 01116004434</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js" integrity="sha384-K0oxqktRvaThvYgGL4G+OK2Ih6VS6Uyu7j3+7WJgp/uWM0Yv6Xi4YEiw0BB+mPfi" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/sat-calculator.css">
-<script src="/portal-math.js?v=20261021-currency"></script>
-<script src="/sat-calculator-config.js"></script>
-<script src="/sat-calculator.js"></script>
-<script src="/daily-challenge.js?v=20261106-auto-20261015-group-scores"></script>
-<script src="/lesson-taxonomy.js?v=20261024-est1-no-logs"></script>
-<script src="/act2-course.js?v=20261023-act2"></script>
-<script src="/revision-formulas.js?v=20261024-no-source-links"></script>
-<script src="/final-revision.js?v=20261015-diagnosis-coherence-v2"></script>
+<link rel="stylesheet" href="/sat-calculator.css?v=20261115-popup">
+<script src="/portal-math.js?v=20261114-ui"></script>
+<script src="/sat-calculator.js?v=20261115-popup"></script>
+<script src="/daily-challenge.js?v=20261114-ui"></script>
+<script src="/lesson-taxonomy.js?v=20261114-ui"></script>
+<script src="/act2-course.js?v=20261114-ui"></script>
+<script src="/revision-formulas.js?v=20261114-ui"></script>
+<script src="/final-revision.js?v=20261114-ui"></script>
 <script>
 /* ============================ CONFIG ============================ */
 const SB_URL = 'https://wfhurjyouemahvkcfkdz.supabase.co';
@@ -314,9 +323,10 @@ const SB_KEY = 'sb_publishable_FIUSELOTsAQaH8dQ6oF-ow_CcISJV5-';
 const EMAIL_DOMAIN = 'students.ghoneem-math.com';
 /* ================================================================ */
 
-const sb = supabase.createClient(SB_URL, SB_KEY);
+const sb = supabase.createClient(SB_URL, SB_KEY,globalThis.PortalConnection?.options(SB_URL));
 const fnBase = SB_URL + '/functions/v1';
 const $ = id => document.getElementById(id);
+const FLAG_ICON = '<svg class="flag-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 3v18"/><path class="flag-cloth" d="M5 4h13l-3 5 3 5H5z"/></svg>';
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
 let ST = { tracks: [], track: null, run: null, idx: 0, flags: new Set(), timer: null };
@@ -349,14 +359,16 @@ async function displayWeeklyObjective(view, request) {
     const now = Date.now(), opens = Date.parse(quiz.open_at), closes = Date.parse(quiz.close_at);
     const upcoming = now < opens && !quiz.resume;
     if (now > closes && !quiz.resume && !quiz.completed) return;
-    const date = new Intl.DateTimeFormat('en-GB', {timeZone:'Africa/Cairo',weekday:'long',month:'short',day:'numeric'}).format(opens);
-    card.innerHTML = '<small>Today · Alex EST I</small><h2>' + esc(quiz.title) + '</h2><p>' +
-      esc(date) + ' · Start between 1:10 and 1:30 PM Cairo time. You have 20 minutes from your start.</p>' + (quiz.completed?'<p>Completed automatically from your submitted attempt.</p>':quiz.resume?'<p>Started — finish and submit to complete this objective.</p>':'<p>Pending</p>');
+    const date = new Intl.DateTimeFormat('en-GB', {timeZone:'Africa/Cairo',weekday:'short',month:'short',day:'numeric'}).format(opens);
+    const cairoDay = value => new Intl.DateTimeFormat('en-CA', {timeZone:'Africa/Cairo',year:'numeric',month:'2-digit',day:'2-digit'}).format(value);
+    const period = cairoDay(opens) === cairoDay(now) ? 'Today' : upcoming ? 'Upcoming' : 'Weekly assessment';
+    card.innerHTML = '<small>' + period + ' · Alex EST I</small><h2>' + 'Algebra quiz' + '</h2><p>' +
+      esc(date) + ' · opens 1:10–1:30 PM Cairo · 10 questions · 20 min</p>' + (quiz.completed?'<p>Completed automatically from your submitted attempt.</p>':quiz.resume?'<p>Started — finish and submit to complete this objective.</p>':'');
     card.hidden = false;
     const button = document.createElement('button');
     button.type = 'button'; button.className = 'btn';
     button.disabled = upcoming && !quiz.completed;
-    button.textContent = quiz.completed ? 'View quiz result' : upcoming ? 'Opens at 1:10 PM' : quiz.resume ? 'Resume algebra quiz' : 'Start algebra quiz';
+    button.textContent = quiz.completed ? 'View quiz result' : upcoming ? 'Opens in '+Math.floor((opens-now)/86400000)+' d '+Math.floor((opens-now)%86400000/3600000)+' h '+Math.floor((opens-now)%3600000/60000)+' min' : quiz.resume ? 'Resume algebra quiz' : 'Start algebra quiz';
     card.append(button);
     button.onclick = async () => {
       button.disabled = true;
@@ -367,11 +379,12 @@ async function displayWeeklyObjective(view, request) {
     };
     if (!quiz.resume && !quiz.completed) weeklyRefresh = setTimeout(() => {
       if (request === objectiveRequest) void displayWeeklyObjective(view, request);
-    }, Math.max(250, (upcoming ? opens : closes + 1) - now));
+    }, Math.max(250, Math.min(60000,(upcoming ? opens : closes + 1) - now)));
   } catch { /* Other objectives remain available if this lookup fails. */ }
 }
 
 let objectiveRequest = 0;
+let objectiveStudyDate = null;
 async function displayStudyObjective(view) {
   const request = ++objectiveRequest;
   void displayWeeklyObjective(view, request);
@@ -379,57 +392,149 @@ async function displayStudyObjective(view) {
   if (!chooser || !dashboard) return;
   for (const card of [chooser, dashboard]) { card.hidden = true; card.replaceChildren(); }
   if (view !== 'vTracks' && view !== 'vList') return;
-  const tracks = ST.tracks.filter(t => ['sat','est'].includes(t.id) && (view === 'vTracks' || ST.track?.id === t.id));
+  const tracks = ST.tracks.filter(t => ['sat','est','est2','act2'].includes(t.id) && (view === 'vTracks' || ST.track?.id === t.id));
   if (!tracks.length) return;
   const card = view === 'vTracks' ? chooser : dashboard;
-  card.hidden = false;
-  card.innerHTML = '<small>YOUR DAILY DIRECTION</small><h2>Today objectives</h2><p>Submit your linked assessments to complete your objectives automatically.</p><a class="btn-ghost" href="/study-plan.html' + (view === 'vList' ? '?track=' + encodeURIComponent(ST.track.id) : '') + '">Open my daily study plan →</a>';
-  if (view !== 'vList' || ST.track?.id === 'sat') { card.innerHTML += '<a class="btn-ghost" href="/sat-revision.html">November SAT revision →</a>'; }
-  const today = new Intl.DateTimeFormat('en-CA', {timeZone:'Africa/Cairo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  const studyDate = new Intl.DateTimeFormat('en-CA', {timeZone:'Africa/Cairo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  objectiveStudyDate = studyDate;
+  const node=(tag,cls,text)=>{const el=document.createElement(tag);if(cls)el.className=cls;if(text)el.textContent=text;return el;};
+  const link=(title,href,cls='today-link')=>{const a=node('a',cls,title);a.href=href;return a;};
+  const names={sat:'SAT Math',est:'EST I Math',est2:'EST II Math',act2:'ACT2 Math'};
+  card.hidden = false;card.classList.add('today-summary');
+  const heading=node('div','today-heading');heading.append(node('h2','','Today'),node('small','',new Intl.DateTimeFormat('en-GB',{weekday:'short',day:'numeric',month:'short',timeZone:'Africa/Cairo'}).format(new Date())));card.append(heading);
+  const status=node('p','today-status','Checking today’s work…');status.setAttribute('role','status');card.append(status);
+  const tasks=node('div','today-tasks');card.append(tasks);
+  const actions=node('div','today-actions');actions.append(link('Open daily plan','/study-plan.html'+(view==='vList'?'?track='+encodeURIComponent(ST.track.id):''),'today-link today-primary'));card.append(actions);
+  const details=node('details','today-details');details.append(node('summary','','Course plans & details'));card.append(details);
+  const resources=node('div','today-courses');details.append(resources);
+  const groups=new Map();
+  for(const track of tracks){
+    const row=node('section','today-course');row.append(node('h3','',names[track.id]));
+    const links=node('div','today-course-actions');links.append(link('Study plan','/study-plan.html?track='+track.id));
+    if(['sat','est','est2'].includes(track.id))links.append(link('Revision guide',track.id==='sat'?'/sat-revision.html':'/est-revision.html?track='+track.id));
+    row.append(links);const group=node('p','today-group');group.hidden=true;row.append(group);groups.set(track.id,group);resources.append(row);
+  }
+  const evidenceDetails=node('div','today-evidence');details.append(evidenceDetails);
+  details.append(node('p','today-note','Completion updates after you submit the linked assessment.'));
   try {
-    const {data,error} = await sb.from('student_daily_objectives').select('title,time_budget,track_id').eq('study_date',today).in('track_id',tracks.map(t=>t.id));
-    if (error || request !== objectiveRequest) return;
-    for (const plan of data || []) {
-      const p = document.createElement('p');
-      p.textContent = (plan.track_id === 'sat' ? 'SAT Math · ' : 'EST I · ') + plan.title + ' · ' + plan.time_budget;
-      card.insertBefore(p,card.querySelector('a'));
+    const ids=tracks.map(t=>t.id);
+    const [objectiveResult,completionResult,membershipResult] = await Promise.all([
+      sb.from('student_daily_objectives').select('user_id,study_date,title,instructions,time_budget,track_id,calculator_allowed,lesson_exam_id,practice_exam_id,retest_exam_id,practice_source,practice_group_id,skipped_activities').eq('study_date',studyDate).in('track_id',ids),
+      sb.from('study_activity_completion').select('user_id,track_id,study_date,activity,status,submitted_at').eq('study_date',studyDate).in('track_id',ids),
+      sb.from('group_members').select('user_id,groups(id,name,track_id)').in('groups.track_id',ids)
+    ]);
+    if(request!==objectiveRequest)return;
+    if(membershipResult.error)evidenceDetails.append(node('p','today-note','Group membership could not be verified.'));
+    else for(const track of tracks){const names=[...new Set((membershipResult.data||[]).map(m=>m.groups).filter(g=>g?.track_id===track.id).map(g=>g.name))];if(names.length){const group=groups.get(track.id);group.textContent='Groups: '+names.join(' · ');group.hidden=false;}}
+    if(objectiveResult.error){status.textContent='Today’s work could not be loaded. Open your daily plan to retry.';return;}
+    const labels={completed:'Completed automatically',in_progress:'Started — awaiting submission',pending:'Awaiting submission',skipped:'Skipped by instructor',needs_link:'Assessment link needed',unavailable:'Progress unavailable'};
+    const plans=objectiveResult.data||[];
+    status.textContent=plans.length?plans.length+' assigned '+(plans.length===1?'objective':'objectives')+' today.':'No tasks assigned today. Your courses are ready to use.';
+    for (const plan of plans) {
+      const item=node('article','today-task');item.append(node('small','today-course-name',names[plan.track_id]||plan.track_id),node('h3','',plan.title));
+      const record=node('section','today-record');record.append(node('h3','',(names[plan.track_id]||plan.track_id)+' · '+plan.title));
+      const groupLine=(plan.instructions||'').split('\n').find(line=>line.startsWith('Group: ')||line.startsWith('Personal plan: '));
+      record.append(node('p','today-note',[groupLine,plan.time_budget,plan.calculator_allowed?'Calculator allowed':'Follow activity calculator rules'].filter(Boolean).join(' · ')));
+      const states=[];
+      for(const activity of ['lesson','practice','retest']){
+        const evidence=!completionResult.error&&(completionResult.data||[]).find(row=>row.user_id===plan.user_id&&row.track_id===plan.track_id&&row.study_date===studyDate&&row.activity===activity);
+        const state=evidence?.status||'unavailable';
+        if(!(plan.skipped_activities||[]).includes(activity))states.push(state);
+        const submitted=state==='completed'&&evidence.submitted_at?' · Submitted '+new Date(evidence.submitted_at).toLocaleString('en-GB',{timeZone:'Africa/Cairo'})+' Cairo':'';
+        record.append(node('p','today-note',({lesson:'Lesson',practice:'Practice',retest:'Retest'}[activity])+': '+(labels[state]||labels.unavailable)+submitted));
+      }
+      let summary=states.length?states.filter(s=>s==='completed').length+'/'+states.length+' activities complete':'No tasks required';
+      if(states.includes('unavailable'))summary='Progress unavailable';else if(states.includes('needs_link'))summary='Assessment link needed';
+      item.append(node('p','today-task-status',summary));
+      const activityLinks=node('div','today-activity-links');
+      let primary=false;
+      for(const activity of ['lesson','practice','retest']){
+        if((plan.skipped_activities||[]).includes(activity))continue;
+        const daily=activity==='practice'&&plan.practice_source==='daily_quiz';
+        const exam=plan[activity+'_exam_id'];
+        const evidence=!completionResult.error&&(completionResult.data||[]).find(row=>row.user_id===plan.user_id&&row.track_id===plan.track_id&&row.study_date===studyDate&&row.activity===activity);
+        const label={lesson:'Lesson check',practice:'Practice',retest:'Retest'}[activity];
+        if(!exam&&!daily){activityLinks.append(node('span','today-note',label+' · Assessment link needed'));continue;}
+        const params=new URLSearchParams({study_track:plan.track_id,study_date:studyDate,study_activity:daily?'daily':'practice',study_task:activity});
+        if(daily)params.set('study_group',plan.practice_group_id||'00000000-0000-0000-0000-000000000000');
+        else params.set('study_exam',exam);
+        const completed=evidence?.status==='completed',highlight=!primary&&!completed;
+        const action=link((completed?'Review ':evidence?.status==='in_progress'?'Resume ':'Open ')+label+' →','/?'+params,'today-link'+(highlight?' btn-primary':''));
+        action.setAttribute('aria-label',(completed?'Review':'Open assigned daily task')+' — '+label+' — '+plan.title);
+        activityLinks.append(action);if(highlight)primary=true;
+      }
+      item.append(activityLinks);
+      if(!activityLinks.querySelector('a'))item.append(link('View objective details →','/study-plan.html?'+new URLSearchParams({track:plan.track_id,date:studyDate})));
+      tasks.append(item);evidenceDetails.append(record);
     }
-  } catch { /* The planner link remains available if a summary lookup fails. */ }
+  } catch { if(request===objectiveRequest)status.textContent='Today’s work could not be loaded. Open your daily plan to retry.'; }
 }
+
+// Refresh submitted evidence when returning from another page or after a Cairo date rollover.
+// Never rebuild a running exam, review or an inactive dashboard.
+function refreshTodayObjective() {
+  if (ST.run || document.visibilityState !== 'visible') return;
+  const view = ['vTracks','vList'].find(id => !$(id).classList.contains('hidden'));
+  if (view) void displayStudyObjective(view);
+}
+document.addEventListener('visibilitychange', refreshTodayObjective);
+window.addEventListener('pageshow', event => { if (event.persisted) refreshTodayObjective(); });
+setInterval(() => {
+  const date = new Intl.DateTimeFormat('en-CA', {timeZone:'Africa/Cairo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  if (objectiveStudyDate && date !== objectiveStudyDate) refreshTodayObjective();
+}, 60000);
 
 // Deep links select existing portal activities; they never start an attempt automatically.
 async function openStudyLink() {
  const params = new URLSearchParams(location.search);
  const track = ST.tracks.find(t => t.id === params.get('study_track'));
- if (!track || !['sat','est'].includes(track.id)) return false;
- await openTrack(track);
- if (!$('dashboardContent')) return true;
- const examId = params.get('study_exam');
- if (examId) {
-   const exam = DASH.exams.find(e=>e.id===examId);
-   const card = document.createElement('section'); card.className='dash-panel';
-   card.innerHTML='<h2>Study plan assessment</h2><p></p>';
-   card.querySelector('p').textContent=exam?exam.title:'This assessment is not currently available in your assigned exam list. Contact your instructor.';
-   if (exam) {
-     const first = DASH.exams.find(e=>e.exam_set_code===exam.exam_set_code&&e.module_number===1);
-     const locked = exam.module_number===2&&first&&!moduleState(first).done;
-     card.insertAdjacentHTML('beforeend',assessmentRow(exam,{locked}));
-   }
-   $('dashboardContent').prepend(card);
-   wireDashboard();
- } else if (DASH.access?.practice_open) {
-   const activity=params.get('study_activity');
-   if(activity==='practice') LessonExamLibrary.openObjective(params.get('study_lesson')||'');
-   else if(activity==='daily')setDashboardView('daily',params.get('study_group')||undefined);
-   else if(['mistakes','full_exam'].includes(activity)) setDashboardView(activity);
+ if (!track) return false;
+ const examId=params.get('study_exam'),activity=params.get('study_activity');
+ // Load the catalog without launching an unrelated Daily Quiz request. That
+ // late response used to replace the assigned task immediately after opening it.
+ await openTrack(track,examId?'full_exam':'assignments');
+ if(ST.track&&ST.track.id!==track.id)return true;
+ if (!$('dashboardContent')) {
+   const retry=$('retryDashboard');if(retry)retry.onclick=()=>openStudyLink();
+   return true;
  }
+ if (examId) {
+   DASH.linkedTask={examId,track:track.id,date:params.get('study_date')||'',activity:params.get('study_task')||''};
+   DASH.view='assigned_task';DASH.searchTerm='';
+   paintDashboard();
+ } else {
+   if(['overview','history','focus','finalsDiagnosis','assignments','full_exam'].includes(activity)){setDashboardView(activity);return true;}
+   if(!DASH.access?.practice_open)return true;
+   if(activity==='practice') LessonExamLibrary.openObjective(params.get('study_lesson')||'');
+   else if(activity==='daily'){
+     DASH.dailyTarget={date:params.get('study_date')||'',group:params.get('study_group')||''};
+     setDashboardView('daily',params.get('study_group')||undefined,true);
+   }
+   else if(['retakes','mistakes','quiz','lesson_exam','drill','revision','vocabulary','formulas'].includes(activity)) setDashboardView(activity);
+ }
+ const content=$('dashboardContent');if(content){content.tabIndex=-1;content.focus?.({preventScroll:true});content.scrollIntoView?.({block:'start',behavior:'auto'});}
  return true;
+}
+function assignedTaskPanel(){
+ const task=DASH.linkedTask;if(!task)return '';
+ const exam=DASH.exams.find(e=>e.id===task.examId);
+ const params=new URLSearchParams({track:task.track,view:'today'});
+ if(/^\d{4}-\d{2}-\d{2}$/.test(task.date))params.set('date',task.date);
+ let row='';
+ if(exam){
+  const first=exam.exam_set_code&&DASH.exams.find(e=>e.exam_set_code===exam.exam_set_code&&e.module_number===1);
+  const locked=exam.module_number===2&&(!first||!moduleState(first).done);
+  row=assessmentRow(exam,{locked});
+ }
+ return '<section class="dash-panel assigned-daily-panel"><small>ASSIGNED DAILY TASK</small><h2>'+esc(({lesson:'Lesson check',practice:'Focused practice',retest:'Retest'}[task.activity])||'Your daily objective assessment')+'</h2><p>'+esc(exam?exam.title:'This assessment is not currently available in your assigned exam list. Contact your instructor.')+'</p>'+row+'<p class="dash-note">Submit this exact assessment to complete the linked objective. Other quizzes on the same topic do not count automatically.</p><a class="dash-link" href="/study-plan.html?'+esc(params)+'">Back to daily objectives →</a></section>';
 }
 
 function show(id) {
+  document.body.classList.toggle('in-exam',id==='vRun');
+  if(id!=='vRun')window.ExamExperience?.stop();
   void displayStudyObjective(id);
-  ['vLogin','vTracks','vList','vRun','vReview'].forEach(v => $(v).classList.toggle('hidden', v !== id));
-  $('top').classList.toggle('hidden', id === 'vLogin');
+  ['vSession','vLogin','vTracks','vList','vRun','vReview'].forEach(v => $(v).classList.toggle('hidden', v !== id));
+  $('top').classList.toggle('hidden', id === 'vLogin' || id === 'vSession');
   $('switchBtn').classList.toggle('hidden', !(ST.tracks.length > 1 && id !== 'vTracks'));
   $('chip').classList.toggle('hidden', !ST.track || id === 'vTracks');
   window.scrollTo(0, 0);
@@ -491,14 +596,22 @@ $('inBtn').onclick = async () => {
 };
 $('p').onkeydown = e => { if (e.key === 'Enter') $('inBtn').click(); };
 $('outBtn').onclick = async () => { await window.portalNotificationsBeforeLogout?.(); await sb.auth.signOut({scope:'local'}); location.reload(); };
-$('switchBtn').onclick = () => { if(ST.run){alert('Finish your current exam before switching tracks.');return;} ST.track = null; renderTracks(); show('vTracks'); };
+$('switchBtn').onclick = () => { if(ST.run){alert('Finish your current exam before switching tracks.');return;} dashboardRequest++; ST.track = null; renderTracks(); show('vTracks'); };
 
 /* ======================== TRACK CHOOSER ======================== */
-async function boot() {
+function boot() {
+  return PortalSession.restore({auth: sb.auth, enter: loadPortal, showLogin: () => show('vLogin'), canRestore: () => !ST.run});
+}
+async function loadPortal() {
   PortalDevices.configure({sb,fnBase,key:SB_KEY,resume:boot});
   if(!await PortalDevices.ensure())return;
-  const { ok, json } = await fn('me-tracks');
-  if (!ok) { show('vLogin'); $('loginErr').textContent = friendly(json.error); return; }
+  const { ok, status, json } = await fn('me-tracks');
+  if (!ok) {
+    if (status === 401) { show('vLogin'); $('loginErr').textContent = friendly(json.error); }
+    else PortalSession.failure();
+    return;
+  }
+  const continuation=window.PortalReturn?.target();if(continuation){location.href=continuation;return;}
   if(json.role==='admin'||json.role==='instructor'){ location.href='/admin.html'; return; }
   ST.tracks = json.tracks || [];
   if (ST.tracks.length === 0) {
@@ -514,15 +627,34 @@ async function boot() {
 function renderTracks() {
   $('trackGrid').innerHTML = ST.tracks.map((t, i) => {
     const accent = (t.theme && t.theme.accent) || '#C9A227';
-    return `<button class="track-card" data-i="${i}" style="--tc:${esc(accent)}">
+    return `<article class="track-card" style="--tc:${esc(accent)}" aria-labelledby="courseTitle${i}">
       <div class="code">${esc((t.theme && t.theme.label) || t.id.toUpperCase())}</div>
-      <h2>${esc(t.name)}</h2>
+      <h2 id="courseTitle${i}"><button type="button" class="track-open" data-i="${i}" aria-label="Open ${esc(t.name)}">${esc(t.name)} <span aria-hidden="true">→</span></button></h2>
       <div class="meta">${t.exams_available} exam${t.exams_available === 1 ? '' : 's'} available
         &nbsp;·&nbsp; ${t.attempts_done} taken</div>
-      <div class="go">Open</div></button>`;
+      <nav class="track-actions" aria-label="${esc(t.name)} shortcuts"><button type="button" data-i="${i}" data-course-view="mistakes" data-notebook-count="${esc(t.id)}" hidden>Mistake notebook</button>${[['assignments','Assignments'],['retakes','Retakes'],['full_exam','Exams'],['quiz','Quizzes'],['lesson_exam','Lessons']].map(([view,label])=>`<button type="button" ${['assignments','retakes'].includes(view)?'hidden':''} data-i="${i}" data-course-view="${view}" aria-label="${label} — ${esc(t.name)}">${label}</button>`).join('')}</nav></article>`;
   }).join('');
-  $('trackGrid').querySelectorAll('.track-card').forEach(b =>
-    b.onclick = () => openTrack(ST.tracks[+b.dataset.i]));
+  $('trackGrid').querySelectorAll('button[data-i]').forEach(b =>
+    b.onclick = () => openTrack(ST.tracks[+b.dataset.i], b.dataset.courseView));
+  void loadCourseCounts();void loadNotebookCounts();
+}
+
+
+async function loadNotebookCounts(){
+ await Promise.allSettled(ST.tracks.filter(t=>t.id!=='sat_eng').map(async t=>{
+  try{const {ok,json}=await fn('daily-challenge',{qs:'?track='+encodeURIComponent(t.id)+'&view=notebook&offset=0'});if(!ok)return;
+  document.querySelectorAll('[data-notebook-count="'+t.id+'"]').forEach(b=>{b.hidden=false;b.textContent='Mistake notebook · '+(json.due_count??json.remaining??0)+' due today';});
+  }catch{}
+ }));
+}
+async function loadCourseCounts(){
+ const grid=$('trackGrid');
+ await Promise.allSettled(ST.tracks.map(async(t,i)=>{try{
+  const {ok,json}=await fn('me-tracks',{qs:'?track='+encodeURIComponent(t.id)+'&catalog_only=1'});if(!ok)return;
+  const exams=json.exams||[],ready=e=>e.content_ready!==false&&(e.last?.status==='in_progress'||e.open)&&(e.module_number!==2||!e.exam_set_code||exams.some(m=>m.exam_set_code===e.exam_set_code&&m.module_number===1&&m.last&&m.last.status!=='in_progress'));
+  const counts={assignments:exams.filter(e=>(!e.last||e.last.status==='in_progress')&&ready(e)).length,retakes:exams.filter(e=>e.assessment_type!=='lesson_exam'&&e.retake_available&&e.last&&e.last.status!=='in_progress'&&ready(e)).length};
+  for(const [view,count] of Object.entries(counts)){const button=grid.querySelector(`[data-i="${i}"][data-course-view="${view}"]`);if(button){button.hidden=count===0;button.classList.toggle('has-work',count>0);button.textContent=(view==='assignments'?'Assignments':'Retakes')+' · '+count;}}
+ }catch{}}));
 }
 
 /* ========================== EXAM LIST ========================== */
@@ -531,18 +663,30 @@ const ASSESSMENTS={lesson_exam:'Lesson exams',quiz:'Quizzes',full_exam:'Full exa
 const PRIORITIES={focus:['Focus first','Review the lesson, then work through another assigned assessment.'],practice:['Keep practising','Revisit mistakes and practise the question types you missed.'],strong:['Strong','Keep this lesson fresh with occasional mixed practice.'],more_evidence:['More practice needed to assess','Complete more questions before relying on a lesson rating.'],not_started:['Not assessed yet','Complete an assigned assessment to see your progress.']};
 let DASH={view:'overview',exams:[],history:[],lessons:[],summary:{},mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyType:'all',historyPage:0,examSort:'title',searchTerm:''};
 let dashboardRequest=0;
-const dateText=t=>t?new Date(t).toLocaleDateString(undefined,{day:'numeric',month:'short',year:'numeric'}):'—';
+const dateText=t=>t?new Intl.DateTimeFormat('en-GB',{weekday:'short',day:'numeric',month:'short',timeZone:'Africa/Cairo'}).format(new Date(t)):'—';
 const percentText=v=>v==null?'—':`${v}%`;
-async function openTrack(t){
+async function openTrack(t,initialView){
  const request=++dashboardRequest;
- ST.track=t;resetRevision(t.id);document.documentElement.style.setProperty('--accent',t.theme?.accent||'#C9A227');
+ // Bound dashboard reads so a stalled progress query cannot indefinitely hide assessments.
+ const read=(load,timeout=15000)=>{
+  const controller=new AbortController();let timer;
+  return Promise.race([Promise.resolve().then(()=>load(controller.signal)),new Promise((_,reject)=>{
+   timer=setTimeout(()=>{controller.abort();reject(new Error('Loading took too long. Check your connection and try again.'));},timeout);
+  })]).finally(()=>clearTimeout(timer));
+ };
+ const loadReport=async()=>{
+  try{return await read(signal=>fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}`,signal}),8000);}
+  catch(error){if(error.message==='signed_out')throw error;return {ok:false,json:{error:error.message}};}
+ };
+ ST.track=t;DASH.view='loading';DASH.linkedTask=null;DASH.dailyTarget=null;resetRevision(t.id);document.documentElement.style.setProperty('--accent',t.theme?.accent||'#C9A227');
  $('chip').textContent=t.theme?.label||t.id.toUpperCase();$('listTitle').textContent=t.name;
  $('listSub').textContent='Your assessments, progress, and next steps.';
  show('vList');$('examList').innerHTML='<p class="dash-empty" role="status">Loading your progress…</p>';
  try{
-  const [report,controls,course]=await Promise.all([fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}`}),fn('portal-controls',{method:'POST',body:{action:'settings',data:{track:t.id}}}),sb.rpc('my_course_access')]);
+  const [report,controls,course]=await Promise.all([loadReport(),read(signal=>fn('portal-controls',{method:'POST',body:{action:'settings',data:{track:t.id}},signal})),read(()=>sb.rpc('my_course_access'))]);
+  if(request!==dashboardRequest)return;
   let {ok,json}=report;
-  if(!ok){const fallback=await fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}&catalog_only=1`});if(fallback.ok){ok=true;json=fallback.json;}}
+  if(!ok){const fallback=await read(signal=>fn('me-tracks',{qs:`?track=${encodeURIComponent(t.id)}&catalog_only=1`,signal}));if(fallback.ok){ok=true;json=fallback.json;}}
   if(course.error)throw new Error(course.error.message);
   const access=(course.data||[]).find(x=>x.track_id===t.id);
   if(!access)throw new Error('Course access is unavailable.');
@@ -550,15 +694,17 @@ async function openTrack(t){
   if(request!==dashboardRequest)return;
   if(!ok)throw new Error(friendly(json.error));
   DAILY_DRAFT={};DRILL_DRAFT={};
-  DASH={...DASH,access,progressUnavailable:!!json.dashboard_error,revisionVisible:controls.json.revision_visible,view:json.dashboard_error?(access.practice_open?'full_exam':'history'):(access.practice_open?'daily':'history'),daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyPage:0,historyType:'all',searchTerm:'',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],dailyGroups:json.dashboard?.daily_groups||[],repeatQuestions:json.dashboard?.repeat_questions??null,summary:json.dashboard?.summary||{}};
+  DASH={...DASH,access,progressUnavailable:!!json.dashboard_error,revisionVisible:controls.json.revision_visible,view:json.dashboard_error?(access.practice_open?'full_exam':'history'):(access.practice_open?(t.id==='sat_eng'?'vocabulary':'daily'):'history'),daily:null,dailyError:'',mistakes:null,mistakesError:'',mistakesLoading:false,mistakePage:0,notebookFeedback:{},drill:null,drillError:'',historyPage:0,historyType:'all',searchTerm:'',exams:json.exams||[],history:json.dashboard?.history||[],lessons:json.dashboard?.lessons||[],dailyGroups:json.dashboard?.daily_groups||[],repeatQuestions:json.dashboard?.repeat_questions??null,summary:json.dashboard?.summary||{}};
+  if(['assignments','retakes','full_exam','quiz','lesson_exam'].includes(initialView)&&(access.practice_open||(['assignments','full_exam'].includes(initialView)&&access.can_finish)))DASH.view=initialView;
   paintDashboard();
-  if(access.practice_open&&!DASH.progressUnavailable)refreshDaily();
- }catch(e){if(request===dashboardRequest){$('examList').innerHTML=`<div class="dash-empty" role="alert">${esc(e.message)}<br><button class="btn" id="retryDashboard">Try again</button></div>`;$('retryDashboard').onclick=()=>openTrack(t);}}
+  if(initialView&&DASH.view===initialView){const content=$('dashboardContent');if(content){content.tabIndex=-1;content.focus?.({preventScroll:true});content.scrollIntoView?.({block:'start',behavior:'auto'});}}
+  if(DASH.view==='daily'&&access.practice_open&&!DASH.progressUnavailable&&t.id!=='sat_eng')refreshDaily();
+ }catch(e){if(request===dashboardRequest){$('examList').innerHTML=`<div class="dash-empty" role="alert">${esc(e.message)}<br><button class="btn" id="retryDashboard">Try again</button></div>`;$('retryDashboard').onclick=()=>openTrack(t,initialView);}}
 }
-function setDashboardView(view,dailyGroup){if(DASH.access?.practice_open===false&&!['history','overview','focus','full_exam','formulas','finalsDiagnosis'].includes(view))view='history';if(view==='revision'&&DASH.revisionVisible===false)return;DASH.view=view;DASH.searchTerm='';DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();if(view==='drill'&&!DASH.drill)refreshDrill();if(view==='daily')void refreshDaily(dailyGroup);if(view==='revision'&&!REV.data)refreshRevision();}
+function setDashboardView(view,dailyGroup,retainTask=false){if(!retainTask)DASH.dailyTarget=null;if(DASH.access?.practice_open===false&&!['assignments','history','overview','focus','full_exam','formulas','finalsDiagnosis'].includes(view))view='history';if(view==='revision'&&DASH.revisionVisible===false)return;DASH.view=view;DASH.searchTerm='';DASH.historyPage=0;paintDashboard();if(view==='mistakes'&&!DASH.mistakes&&!DASH.mistakesLoading)refreshMistakes();if(view==='drill'&&!DASH.drill)refreshDrill();if(view==='daily')void refreshDaily(dailyGroup);if(view==='revision'&&!REV.data)refreshRevision();}
 function paintDashboard(){
- const tabs=[['formulas',ST.track?.id==='est_eng'?'Rules reference':'Formulas'],...(['sat','est','est2'].includes(ST.track?.id)&&DASH.revisionVisible!==false?[['revision','Final revision']]:[]),['daily','Daily practice'],['mistakes','Mistake notebook'],['drill','Weak-topic drill'],['overview','My progress'],['lesson_exam','Lesson exams'],['quiz','Quizzes'],['full_exam','Full exams'],['history','Exam history'],['focus','Lesson focus']].filter(([id])=>DASH.access?.practice_open!==false||['history','overview','focus','formulas'].includes(id)||(id==='full_exam'&&DASH.access?.can_finish));
- $('examList').innerHTML=`<nav class="student-tabs" aria-label="Student dashboard">${tabs.map(([id,name])=>`<button class="student-tab ${id==='revision'?'revision-highlight':''} ${!DASH.searchTerm&&DASH.view===id?'active':''}" data-view="${id}" aria-current="${!DASH.searchTerm&&DASH.view===id?'page':'false'}">${name}${ASSESSMENTS[id]?` <span>${DASH.exams.filter(e=>e.assessment_type===id).length}</span>`:''}</button>`).join('')}</nav><div class="review-menu"><button class="btn-ghost" data-go="overview">Main menu</button>${reportButton('','dashboard')}</div><div class="dashboard-search"><label for="dashboardSearch">Find an exam or lesson</label><input type="search" id="dashboardSearch" autocomplete="off" placeholder="Search exams, results, or lessons" value="${esc(DASH.searchTerm||'')}"></div>${DASH.access?`<aside class="course-access-note" aria-label="Course access"><b>${esc(DASH.access.course_label||ST.track.name)}</b> · ${DASH.access.practice_open?'Practice access active':DASH.access.status==='paused'?'Practice access paused':DASH.access.starts_at&&new Date(DASH.access.starts_at)>new Date()?'Practice starts '+dateText(DASH.access.starts_at):'Practice access ended'}${DASH.access.ends_at?' · Ends '+esc(new Date(DASH.access.ends_at).toLocaleString('en-GB',{timeZone:'Africa/Cairo'}))+' Cairo':''}${!DASH.access.practice_open?'<p>Your saved results remain available. Contact your instructor to renew course access.</p>':''}${DASH.access.can_finish&&!DASH.access.practice_open?'<p>You can finish the exam already in progress through its deadline.</p>':''}</aside>`:''}${DASH.progressUnavailable?progressUnavailablePanel():''}<div id="dashboardContent" aria-live="polite"></div>`;
+ const tabs=[['assignments','Assignments'],['retakes','Retakes'],...(['est_eng','sat_eng'].includes(ST.track?.id)?[['vocabulary','Vocabulary self-test']]:[]),['formulas',ST.track?.id==='est_eng'?'Rules reference':'Formulas'],...(['sat','est','est2'].includes(ST.track?.id)&&DASH.revisionVisible!==false?[['revision','Final revision']]:[]),['daily','Daily practice'],['mistakes','Mistake notebook'],['drill','Weak-topic drill'],['overview','My progress'],['lesson_exam','Lesson exams'],['quiz','Quizzes'],['full_exam','Full exams'],['history','Exam history'],['focus','Lesson focus']].filter(([id])=>(ST.track?.id!=='sat_eng'||['assignments','retakes','vocabulary','overview','lesson_exam','quiz','full_exam','history','focus'].includes(id))&&(DASH.access?.practice_open!==false||['history','overview','focus','formulas'].includes(id)||(['assignments','full_exam'].includes(id)&&DASH.access?.can_finish)));
+ $('examList').innerHTML=`<nav class="student-tabs" aria-label="Student dashboard">${tabs.map(([id,name])=>`<button class="student-tab ${id==='revision'?'revision-highlight':''} ${!DASH.searchTerm&&DASH.view===id?'active':''}" data-view="${id}" aria-current="${!DASH.searchTerm&&DASH.view===id?'page':'false'}">${name}${ASSESSMENTS[id]?` <span>${DASH.exams.filter(e=>e.assessment_type===id).length}</span>`:''}</button>`).join('')}</nav><div class="review-menu"><button class="btn-ghost" data-go="overview">My progress</button>${reportButton('','dashboard')}</div><div class="dashboard-search"><label for="dashboardSearch">Find an exam or lesson</label><input type="search" id="dashboardSearch" autocomplete="off" placeholder="Search exams, results, or lessons" value="${esc(DASH.searchTerm||'')}"></div>${DASH.access?`<aside class="course-access-note" aria-label="Course access"><b>${esc(DASH.access.course_label||ST.track.name)}</b> · ${DASH.access.practice_open?'Practice access active':DASH.access.status==='paused'?'Practice access paused':DASH.access.starts_at&&new Date(DASH.access.starts_at)>new Date()?'Practice starts '+dateText(DASH.access.starts_at):'Practice access ended'}${DASH.access.ends_at?' · Ends '+esc(new Date(DASH.access.ends_at).toLocaleString('en-GB',{timeZone:'Africa/Cairo'}))+' Cairo':''}${!DASH.access.practice_open?'<p>Your saved results remain available. Contact your instructor to renew course access.</p>':''}${DASH.access.can_finish&&!DASH.access.practice_open?'<p>You can finish the exam already in progress through its deadline.</p>':''}</aside>`:''}${DASH.progressUnavailable?progressUnavailablePanel():''}<div id="dashboardContent" aria-live="polite"></div>`;
  document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>setDashboardView(b.dataset.view));
  $('dashboardSearch').oninput=e=>{DASH.searchTerm=e.target.value;document.querySelectorAll('[data-view]').forEach(b=>{const active=!DASH.searchTerm.trim()&&b.dataset.view===DASH.view;b.classList.toggle('active',active);b.setAttribute('aria-current',active?'page':'false');});paintDashboardContent();};
  paintDashboardContent();
@@ -566,8 +712,11 @@ function paintDashboard(){
 function progressUnavailablePanel(){return '<aside class="dash-empty" role="status"><strong>Progress is temporarily unavailable.</strong><p>Your saved scores are unchanged. Assigned exams remain available.</p><button class="btn" data-retry-progress>Retry progress</button></aside>';}
 function paintDashboardContent(){
  const content=$('dashboardContent');
- if(DASH.progressUnavailable&&!DASH.searchTerm?.trim()&&['daily','overview','history','focus','finalsDiagnosis'].includes(DASH.view))content.innerHTML='<section class="dash-panel"><p>Progress data is unavailable. Use Retry progress above to load this section.</p></section>';
+ if(DASH.view==='assigned_task'&&!DASH.searchTerm?.trim())content.innerHTML=assignedTaskPanel();
+ else if(DASH.progressUnavailable&&!DASH.searchTerm?.trim()&&['daily','overview','history','focus','finalsDiagnosis'].includes(DASH.view))content.innerHTML='<section class="dash-panel"><p>Progress data is unavailable. Use Retry progress above to load this section.</p></section>';
  else if(DASH.searchTerm?.trim())content.innerHTML=searchSection();
+ else if(['assignments','retakes'].includes(DASH.view))content.innerHTML=StudentWork.panel(DASH.view);
+ else if(DASH.view==='vocabulary')content.innerHTML=vocabularyPanel();
  else if(DASH.view==='formulas')content.innerHTML=formulasPanel();
  else if(DASH.view==='revision')content.innerHTML=revisionPanel();
  else if(DASH.view==='daily')content.innerHTML=dailyPanel();
@@ -580,6 +729,8 @@ function paintDashboardContent(){
  else content.innerHTML=focusSection();
  math(content);
  wireDashboard();
+ if(typeof StudentWork!=='undefined')StudentWork.wire();
+ if(!DASH.searchTerm?.trim()&&DASH.view==='vocabulary')wireVocabulary();
  if(!DASH.searchTerm?.trim()&&DASH.view==='formulas')wireFormulas();
  if(!DASH.searchTerm?.trim()&&DASH.view==='revision')wireRevision();
  document.querySelectorAll('[data-retry-progress]').forEach(b=>b.onclick=()=>openTrack(ST.track));
@@ -605,13 +756,19 @@ function searchSection(){
  const results=DASH.history.filter(h=>`${h.title} ${ASSESSMENTS[h.assessment_type]||''}`.toLocaleLowerCase().includes(term));
  const lessons=DASH.lessons.filter(l=>l.lesson.toLocaleLowerCase().includes(term));
  const total=exams.length+results.length+lessons.length;
- return `<section class="dash-panel search-results"><div class="dash-heading"><h2>Search results</h2><span class="dash-note">${total} match${total===1?'':'es'}</span></div>${!total?'<div class="dash-empty">No matching exams, results, or lessons in this track.</div>':''}${exams.length?`<h3>Assigned exams (${exams.length})</h3>${exams.map(e=>{const first=DASH.exams.find(m=>m.exam_set_code&&m.exam_set_code===e.exam_set_code&&m.module_number===1);return assessmentRow(e,{locked:e.module_number===2&&first&&!moduleState(first).done});}).join('')}`:''}${results.length?`<h3>Past results (${results.length})</h3>${results.slice(0,20).map(h=>`<div class="search-history"><span><strong>${esc(h.title)}</strong><span class="history-detail">${dateText(h.submitted_at)} · ${h.score==null?'Awaiting grading':`${h.score}/${h.total}`}</span></span><button class="btn-ghost" data-review="${esc(h.id)}">${h.review_open?'Review':'View score'}</button></div>`).join('')}${results.length>20?'<p class="dash-note">Showing the first 20 results. Use Exam history for all attempts.</p>':''}`:''}${lessons.length?`<h3>Lesson focus (${lessons.length})</h3><div class="lesson-grid">${lessons.map(l=>lessonCard(l,true)).join('')}</div>`:''}</section>`;
+ return `<section class="dash-panel search-results"><div class="dash-heading"><h2>Search results</h2><span class="dash-note">${total} match${total===1?'':'es'}</span></div>${!total?'<div class="dash-empty">No matching exams, results, or lessons in this track.</div>':''}${exams.length?`<h3>Assigned exams (${exams.length})</h3>${exams.map(e=>{const first=DASH.exams.find(m=>m.exam_set_code&&m.exam_set_code===e.exam_set_code&&m.module_number===1);return assessmentRow(e,{locked:e.module_number===2&&first&&!moduleState(first).done});}).join('')}`:''}${results.length?`<h3>Past results (${results.length})</h3>${results.slice(0,20).map(h=>`<div class="search-history"><span><strong>${esc(displayTitle(h.title))}</strong><span class="history-detail">${dateText(h.submitted_at)} · ${h.score==null?'Awaiting grading':`${h.score}/${h.total}`}</span></span><button class="btn-ghost" data-review="${esc(h.id)}">${h.review_open?'Review':'View score'}</button></div>`).join('')}${results.length>20?'<p class="dash-note">Showing the first 20 results. Use Exam history for all attempts.</p>':''}`:''}${lessons.length?`<h3>Lesson focus (${lessons.length})</h3><div class="lesson-grid">${lessons.map(l=>lessonCard(l,true)).join('')}</div>`:''}</section>`;
 }
+function displayTitle(value){
+ const clean=String(value||'').replace(/\s*[—–-]\s*[0-9a-f]{6,}$/i,'').trim();
+ const matches=(DASH.exams||[]).filter(e=>String(e.title||'').replace(/\s*[—–-]\s*[0-9a-f]{6,}$/i,'').trim()===clean);
+ const pos=matches.findIndex(e=>e.title===value);return matches.length>1&&pos>=0?clean+' · Set '+(pos+1):clean;
+}
+function scoreClass(pct){return pct==null?'none':pct>=70?'ok':pct>=40?'warn':'bad';}
 function dashboardOverview(){
  const s=DASH.summary,live=DASH.exams.filter(e=>e.last?.status==='in_progress');
  const available=DASH.exams.filter(e=>e.open&&(!e.last||e.retake_available));
  const priorities=DASH.lessons.filter(l=>['focus','practice'].includes(l.priority)).slice(0,3);
- return `${['sat','est','est2'].includes(ST.track?.id)&&DASH.revisionVisible!==false?'<section class="dash-notice"><strong>Final revision</strong> · Practise '+(ST.track?.id==='est'?'EST I':ST.track?.id==='est2'?'EST II':'SAT and EST I')+' questions by lesson or difficulty. <button class="dash-link" data-go="revision">Open revision</button></section>':''}<div class="dashboard-stats"><div class="dash-stat"><span>Completed attempts</span><strong>${s.completed||0}</strong></div><div class="dash-stat"><span>Average score</span><strong>${percentText(s.average_percent)}</strong></div><div class="dash-stat"><span>Best score</span><strong>${percentText(s.best_percent)}</strong></div><div class="dash-stat"><span>Lessons to focus on</span><strong>${s.lessons_to_focus||0}</strong></div></div>
+ return `${['sat','est','est2'].includes(ST.track?.id)&&DASH.revisionVisible!==false?'<section class="dash-notice"><strong>Final revision</strong> · Practise '+(ST.track?.id==='est'?'EST I':ST.track?.id==='est2'?'EST II':'SAT and EST I')+' questions by lesson or difficulty. <button class="dash-link" data-go="revision">Open revision</button></section>':''}<div class="dashboard-stats"><div class="dash-stat"><span>Completed attempts</span><strong>${s.completed||0}</strong></div><div class="dash-stat"><span>Recent score</span><strong>${percentText(DASH.history.find(h=>h.percent!=null)?.percent)}</strong></div><div class="dash-stat"><span>Best score</span><strong>${percentText(s.best_percent)}</strong></div><div class="dash-stat"><span>Focus next</span>${priorities.length?`<ul>${priorities.map(l=>`<li><a href="/practice-bundles.html?${esc(new URLSearchParams({track:ST.track.id,lesson:l.lesson}).toString())}">${esc(l.lesson)}</a></li>`).join('')}</ul>`:'<p>Complete practice to find your priorities.</p>'}${(s.lessons_to_focus||0)>3?`<button class="dash-link" data-go="focus">+${s.lessons_to_focus-3} more</button>`:''}</div></div>
  ${live.length?`<section class="dash-panel"><h2>Continue your exam</h2>${live.map(assessmentRow).join('')}</section>`:''}
  <div class="dashboard-columns"><section class="dash-panel"><div class="dash-heading"><h2>Your score trend</h2><button class="dash-link" data-go="history">All results →</button></div>${scoreTrend()}<p class="dash-note">Raw scores as percentages. Different assessments vary in difficulty; retakes are included.</p></section>
  <section class="dash-panel"><div class="dash-heading"><h2>What to work on next</h2><button class="dash-link" data-go="focus">All lessons →</button></div>${priorities.length?priorities.map(l=>lessonCard(l,true)).join(''):`<div class="dash-empty">${!s.completed?'Complete your first assessment to get personal lesson priorities.':DASH.lessons.some(l=>l.priority==='strong')?'Your assessed lessons are looking strong. Keep practising and check the full lesson list.':'More reviewed questions are needed before we can identify your priorities.'}</div>`}</section></div>
@@ -619,17 +776,62 @@ function dashboardOverview(){
  <section class="dash-panel"><h2>Ready to take</h2>${available.length?available.slice(0,5).map(assessmentRow).join(''):'<p class="dash-empty">No new assessments are open right now. You can review your history or check the assessment tabs.</p>'}</section>`;
 }
 function scoreTrend(){
- const rows=DASH.history.filter(h=>h.percent!=null).slice(0,8).reverse();
+ const rows=DASH.history.filter(h=>h.percent!=null).slice(0,10).reverse();
  if(!rows.length)return '<div class="dash-empty">Your score trend will appear after your first completed assessment.</div>';
- return `<div class="score-trend" aria-label="Recent assessment scores">${rows.map(h=>`<button class="trend-column" data-review="${h.id}" aria-label="${esc(h.title)}, attempt ${h.attempt_no}, ${h.percent}%"><span class="trend-value">${h.percent}%</span><span class="trend-track"><i style="height:${Math.max(2,Math.min(100,h.percent))}%"></i></span><span class="trend-label">${esc(new Date(h.submitted_at).toLocaleDateString(undefined,{day:'numeric',month:'short'}))}</span></button>`).join('')}</div>`;
+ const x=i=>50+i*(490/Math.max(1,rows.length-1)),y=h=>170-Math.max(0,Math.min(100,Number(h.percent)))*1.5;
+ const pts=rows.map((h,i)=>`${x(i)},${y(h)}`).join(' ');
+ return `<div class="trend-scroll"><div class="trend-chart"><svg viewBox="0 0 580 190" preserveAspectRatio="none" aria-hidden="true">${[0,25,50,75,100].map(v=>`<line x1="40" x2="555" y1="${170-v*1.5}" y2="${170-v*1.5}" stroke="#e6e3dc"/><text x="3" y="${174-v*1.5}">${v}%</text>`).join('')}<polyline points="${pts}" fill="none" stroke="#14243e" stroke-width="2.5"/></svg>${rows.map((h,i)=>`<button class="trend-point" style="left:${x(i)/580*100}%;--point-y:${y(h)}px" data-trend="${esc(h.id)}" aria-label="${esc(displayTitle(h.title))}, attempt ${h.attempt_no}, ${h.percent}%, ${dateText(h.submitted_at)}"><span>${esc(new Date(h.submitted_at).toLocaleDateString('en-GB',{day:'2-digit',month:'2-digit',timeZone:'Africa/Cairo'}))}</span></button>`).join('')}</div></div><p class="trend-detail" id="trendDetail" aria-live="polite">Tap a point for the exam, score and date.</p>`;
 }
 function assessmentRow(e,options={}){
  const a=e.last,live=a?.status==='in_progress',done=a&&!live;
- const locked=options?.locked===true,underReview=e.content_ready===false;
- const label=done?'Review':underReview?'Under review':live?'Resume':locked?'Complete Module 1':'Start';
+ const first=e.module_number===2&&e.exam_set_code?DASH.exams.find(m=>m.exam_set_code===e.exam_set_code&&m.module_number===1):null;
+ const locked=options?.locked===true||(e.module_number===2&&!!e.exam_set_code&&(!first?.last||first.last.status==='in_progress')),underReview=e.content_ready===false;
+ const courseAllowed=DASH.access?.practice_open!==false||(live&&DASH.access?.can_finish===true);
+ const label=done?'Review':!courseAllowed?'Access unavailable':underReview?'Under review':live?'Resume':locked?'Complete Module 1':'Start';
  const practice=e.assessment_type==='lesson_exam';
- const score=done?`<span class="badge done">${a.score == null ? 'Awaiting grading' : a.score+'/'+a.total}</span>`:'';
- return `<div class="exam-row"><div style="flex:1;min-width:170px"><h3>${esc(e.title)}</h3><div class="meta">${e.questions} questions · ${live&&a.untimed?'No time limit':Math.round(e.duration_seconds/60)+' min'}${practice?' · Repeatable':''}${underReview?' · Content under review':!e.open&&!live?' · Not open':''}${done?' · Completed':''}</div></div>${score}${practice&&!live&&e.open&&!underReview?`<label class="practice-mode">Timer<select data-timer="${e.id}" aria-label="Timer for ${esc(e.title)}"><option value="untimed">No time limit</option><option value="timed">Timed (${Math.round(e.duration_seconds/60)} min)</option></select></label>`:''}<button class="btn" ${done?`data-review="${a.id}"`:`data-start="${e.id}"`} ${(!done&&underReview)||(!done&&!live&&locked)||(!done&&!live&&!e.open)?'disabled':''}>${label}</button>${done&&(practice||e.retake_available)&&e.open&&!underReview?`<button class="btn" data-start="${e.id}">${practice?'Practice again':'Start retake'}</button>`:''}</div>`;
+ const score=done?`<span class="badge done chip ${scoreClass(a.score==null?null:100*a.score/a.total)}">${a.score == null ? 'Awaiting grading' : a.score+'/'+a.total}</span>`:'';
+ return `<div class="exam-row"><div style="flex:1;min-width:170px"><h3>${esc(displayTitle(e.title))}</h3><div class="meta">${e.questions} questions · ${live&&a.untimed?'No time limit':Math.round(e.duration_seconds/60)+' min'}${practice?' · Repeatable':''}${underReview?' · Content under review':!e.open&&!live?' · Not open':''}${done?' · Completed':''}</div></div>${score}${courseAllowed&&!locked&&practice&&!live&&e.open&&!underReview?`<label class="practice-mode">Timer<select data-timer="${e.id}" aria-label="Timer for ${esc(displayTitle(e.title))}"><option value="untimed">No time limit</option><option value="timed">Timed (${Math.round(e.duration_seconds/60)} min)</option></select></label>`:''}<button class="btn" ${done?`data-review="${a.id}"`:`data-start="${e.id}"`} ${!done&&(!courseAllowed||underReview||(!live&&(locked||!e.open)))?'disabled':''}>${label}</button>${courseAllowed&&!locked&&done&&(practice||e.retake_available)&&e.open&&!underReview?`<button class="btn" data-start="${e.id}">${practice?'Practice again':'Start retake'}</button>`:''}</div>`;
+}
+let VOCABULARY={track:null,page:0,difficulty:'all',mode:'practice'};
+function vocabularyCatalog(){return (window.GhoneemVocabularyCatalog||[]).filter(e=>e.track_id===ST.track?.id);}
+function vocabularySets(){
+ if(!['est_eng','sat_eng'].includes(ST.track?.id))return [];
+ const metadata=new Map(vocabularyCatalog().map(e=>[e.id,e]));
+ // Catalog metadata describes original content; only server-authorized exams can be started.
+ return (DASH.exams||[]).filter(e=>metadata.has(e.id)&&(!e.track_id||e.track_id===ST.track.id))
+  .map(e=>({...e,vocabulary:metadata.get(e.id)}))
+  .sort((a,b)=>Number(b.last?.status==='in_progress')-Number(a.last?.status==='in_progress')||Number(b.open)-Number(a.open)||['easy','medium','hard'].indexOf(a.vocabulary.difficulty)-['easy','medium','hard'].indexOf(b.vocabulary.difficulty));
+}
+function vocabularyHistory(){
+ const ids=new Set(vocabularyCatalog().map(e=>e.id));
+ return (DASH.history||[]).filter(h=>ids.has(h.exam_id)&&(!h.track_id||h.track_id===ST.track?.id))
+  .slice().sort((a,b)=>String(b.submitted_at||'').localeCompare(String(a.submitted_at||''))||Number(b.attempt_no)-Number(a.attempt_no));
+}
+function vocabularyPanel(){
+ const track=ST.track?.id;
+ if(!['est_eng','sat_eng'].includes(track))return '<section class="dash-panel"><p>Vocabulary practice is available inside an English course.</p></section>';
+ if(VOCABULARY.track!==track)VOCABULARY={track,page:0,difficulty:'all',mode:'practice'};
+ const catalog=vocabularyCatalog(),all=vocabularySets(),history=DASH.progressUnavailable?[]:vocabularyHistory();
+ const filtered=all.filter(e=>VOCABULARY.difficulty==='all'||e.vocabulary.difficulty===VOCABULARY.difficulty);
+ const latest=new Map();history.forEach(h=>{if(h.score!=null&&h.total>0&&!latest.has(h.exam_id))latest.set(h.exam_id,h);});
+ const scored=[...latest.values()],correct=scored.reduce((n,h)=>n+Number(h.score),0),total=scored.reduce((n,h)=>n+Number(h.total),0);
+ const completed=new Set(history.filter(h=>h.submitted_at).map(h=>h.exam_id));
+ let entries=filtered;
+ if(VOCABULARY.mode==='review')entries=catalog.filter(e=>VOCABULARY.difficulty==='all'||e.difficulty===VOCABULARY.difficulty).map(e=>({meta:e,last:latest.get(e.id)})).filter(e=>e.last&&e.last.score<e.last.total);
+ if(VOCABULARY.mode==='progress')entries=catalog.filter(e=>VOCABULARY.difficulty==='all'||e.difficulty===VOCABULARY.difficulty).filter(e=>all.some(a=>a.id===e.id)||history.some(h=>h.exam_id===e.id));
+ const pageSize=5,pages=Math.max(1,Math.ceil(entries.length/pageSize));VOCABULARY.page=Math.max(0,Math.min(VOCABULARY.page,pages-1));
+ const visible=entries.slice(VOCABULARY.page*pageSize,(VOCABULARY.page+1)*pageSize);
+ let body='';
+ if(DASH.progressUnavailable&&VOCABULARY.mode!=='practice')body='<p class="dash-empty">Progress is unavailable. Use Retry progress above; your saved results are unchanged.</p>';
+ else if(VOCABULARY.mode==='practice')body=visible.map(e=>`<article class="vocab-set"><span class="badge">${esc(e.vocabulary.difficulty)} · Original practice</span>${assessmentRow(e)}</article>`).join('')||'<p class="dash-empty">No original vocabulary sets match this selection. If none are assigned yet, your instructor can add them to your English group.</p>';
+ else if(VOCABULARY.mode==='review')body=visible.map(({meta,last})=>`<article class="vocab-set"><h3>${esc(meta.title)}</h3><p>${Number(last.total)-Number(last.score)} incorrect or unanswered · Latest scored attempt ${Number(last.score)}/${Number(last.total)}</p><button class="btn" data-vocab-review="${esc(last.id)}" ${last.review_open?'':'disabled'}>${last.review_open?'Review mistakes':'Answers not released yet'}</button></article>`).join('')||'<p class="dash-empty">No mistakes to review in the latest scored attempts for this selection. Submit a practice set to build your review history.</p>';
+ else body=visible.map(meta=>{const attempts=history.filter(h=>h.exam_id===meta.id),scores=attempts.filter(h=>h.score!=null&&h.total>0),last=attempts[0],best=scores.length?Math.round(Math.max(...scores.map(h=>100*h.score/h.total))):null;return `<article class="vocab-set"><h3>${esc(meta.title)}</h3><p>${attempts.length} submitted attempt${attempts.length===1?'':'s'} · Latest: ${!last?'Not started':last.score==null?'Awaiting grading':Number(last.score)+'/'+Number(last.total)} · Best: ${best==null?'—':best+'%'}</p>${last?`<button class="btn-ghost" data-review="${esc(last.id)}">${last.review_open?'Review latest attempt':'View latest result'}</button>`:''}</article>`;}).join('')||'<p class="dash-empty">Your progress appears after a set is assigned or submitted.</p>';
+ return `<section class="dash-panel vocabulary-workspace"><div class="dash-heading"><div><span class="vocab-kicker">READ · REASON · REVIEW</span><h2>${track==='sat_eng'?'SAT':'EST'} English · Vocabulary</h2></div><span class="badge">Original questions</span></div><p>Use the whole sentence to choose a precise meaning. Explain the context clue, then check your reasoning after submission.</p><div class="vocab-stats"><div><strong>${DASH.progressUnavailable?'—':completed.size}</strong><span>Sets submitted</span></div><div><strong>${DASH.progressUnavailable||!total?'—':Math.round(100*correct/total)+'%'}</strong><span>Latest scored accuracy</span></div><div><strong>${DASH.progressUnavailable?'—':history.length}</strong><span>Saved attempts</span></div></div><p class="dash-note">Accuracy uses the latest scored attempt per original set, including timed-out attempts. Difficulty is a practice estimate; results are not an official SAT or EST score.</p><nav class="vocab-modes" aria-label="Vocabulary activity">${[['practice','Practise'],['review','Review mistakes'],['progress','Progress']].map(([id,label])=>`<button class="btn-ghost" data-vocab-mode="${id}" aria-pressed="${VOCABULARY.mode===id}">${label}</button>`).join('')}</nav><div class="vocab-filters" role="group" aria-label="Vocabulary difficulty">${['all','easy','medium','hard'].map(d=>`<button class="btn-ghost" data-vocab-difficulty="${d}" aria-pressed="${VOCABULARY.difficulty===d}">${d==='all'?'All levels':d[0].toUpperCase()+d.slice(1)}</button>`).join('')}</div>${VOCABULARY.mode==='practice'?'<p class="dash-note">Six questions per set · 8-minute self-check or untimed practice · Explanations after submission. These short checks are not full examination simulations.</p>':''}${body}${entries.length>pageSize?`<div class="history-pager"><button class="btn-ghost" data-vocab-page="${VOCABULARY.page-1}" ${VOCABULARY.page===0?'disabled':''}>Previous</button><span>Page ${VOCABULARY.page+1} of ${pages}</span><button class="btn-ghost" data-vocab-page="${VOCABULARY.page+1}" ${VOCABULARY.page+1>=pages?'disabled':''}>Next</button></div>`:''}<p class="dash-note"><button class="dash-link" data-go="lesson_exam">Other assigned English assessments →</button> Earlier scores and assignments remain in your course history.</p></section>`;
+}
+function wireVocabulary(){
+ document.querySelectorAll('[data-vocab-page]').forEach(b=>b.onclick=()=>{VOCABULARY.page=Number(b.dataset.vocabPage);paintDashboardContent();});
+ for(const [attr,key] of [['mode','mode'],['difficulty','difficulty']])document.querySelectorAll('[data-vocab-'+attr+']').forEach(b=>b.onclick=()=>{VOCABULARY[key]=b.getAttribute('data-vocab-'+attr);VOCABULARY.page=0;paintDashboardContent();document.querySelector('[data-vocab-'+attr+'="'+VOCABULARY[key]+'"]')?.focus();});
+ document.querySelectorAll('[data-vocab-review]').forEach(b=>b.onclick=()=>openReview(b.dataset.vocabReview,true));
 }
 function assessmentSection(type){
  const rows=DASH.exams.filter(e=>e.assessment_type===type).sort((a,b)=>DASH.examSort==='questions'?b.questions-a.questions:DASH.examSort==='status'?Number(b.open)-Number(a.open)||String(a.title).localeCompare(String(b.title)):String(a.title).localeCompare(String(b.title),undefined,{numeric:true,sensitivity:'base'}));
@@ -641,6 +843,10 @@ function moduleState(e){
 }
 function fullExamSection(){
  const modules=DASH.exams.filter(e=>e.assessment_type==='full_exam');
+ if(['sat_eng','est_eng'].includes(ST.track?.id)){
+  const name=ST.track.id==='sat_eng'?'SAT English':'EST English';
+  return `<div class="full-exam-intro"><h2>${name} practice exams</h2><p>Each assigned paper shows its own question count and time limit. Follow the reading and writing instructions in your assessment.</p><p class="dash-note">For linked modules, complete Module 1 before starting Module 2.</p></div><section class="dash-panel"><h2>Assigned English papers</h2>${modules.length?modules.map(e=>assessmentRow(e)).join(''):'<div class="dash-empty">No full English papers are assigned yet. Vocabulary self-tests are available from All learning tools.</div>'}</section>`;
+ }
  if(ST.track?.id==='act2')return `<div class="full-exam-intro"><h2>ACT 2 Math practice exams</h2><p>50 multiple-choice questions · 60 minutes · Use the answer labels shown with each question.</p><p class="dash-note">The course-bank papers mix Algebra II and Precalculus. The uploaded Practice Tests 01–10 preserve the supplied compilation’s order, diagrams, and four- or five-choice formats; their topic mix follows that source. These are practice papers, not newly verified official exam forms. Scores are raw totals. The review identifies printed source keys and any independently checked corrections.</p><p><a href="https://www.act.org/content/dam/act/unsecured/documents/2022/ACT-International-Subject-Test-Student-Guides.pdf" target="_blank" rel="noopener noreferrer">Official ACT Mathematics II guide</a></p></div><section class="dash-panel"><h2>Full practice papers</h2>${modules.length?modules.map(assessmentRow).join(''):'<div class="dash-empty">No full practice papers are assigned yet.</div>'}</section>`;
 
  if(ST.track?.id==='est'||ST.track?.id==='est2'){
@@ -662,33 +868,35 @@ function fullExamSection(){
   const m1=rows[0],m2=rows[1],s1=moduleState(m1),s2=moduleState(m2);
   const complete=s1.done&&s2.done&&s1.a.score!=null&&s2.a.score!=null;
   const title=(m1?.title||'SAT Practice Exam').replace(/\s+[—-]\s+Module\s+1$/i,'');
-  const combined=complete?`${s1.a.score+s2.a.score}/${s1.a.total+s2.a.total}`:'—';
-  const row=(e,s,locked)=>`<div class="exam-row module-row"><div style="flex:1;min-width:170px"><h3>Module ${e.module_number}</h3><div class="meta">${e.questions} questions · ${Math.round(e.duration_seconds/60)} min${e.content_ready===false?' · Content under review':locked?' · Complete Module 1 first':''}</div></div>${s.done?`<span class="badge done">${s.a.score==null?'Awaiting grading':s.a.score+'/'+s.a.total}</span>`:''}<button class="btn" ${s.done?`data-review="${s.a.id}"`:`data-start="${e.id}"`} ${locked||(!s.done&&e.content_ready===false)||(!s.done&&!s.live&&!e.open)?'disabled':''}>${s.label}</button></div>`;
-  return `<article class="dash-panel exam-pair"><div class="dash-heading"><div><h2>${esc(title)}</h2><p class="dash-note">2 modules · ${m1.questions} + ${m2.questions} questions · ${Math.round(m1.duration_seconds/60)} + ${Math.round(m2.duration_seconds/60)} minutes</p></div><div class="pair-score"><span>Combined</span><strong>${combined}</strong>${s1.done&&s2.done?`<button class="btn" data-review="${esc(s2.a.id)}">Review full exam</button>`:''}</div></div>${row(m1,s1,false)}${row(m2,s2,!s1.done)}</article>`;
+  const combined=complete?`${s1.a.score+s2.a.score}/${s1.a.total+s2.a.total}`:s1.done||s2.done?'Incomplete':'Not started';
+  const row=(e,s,locked)=>`<div class="exam-row module-row"><div style="flex:1;min-width:170px"><h3>Module ${e.module_number}</h3><div class="meta">${e.questions} questions · ${Math.round(e.duration_seconds/60)} min${e.content_ready===false?' · Content under review':locked?' · Complete Module 1 first':''}</div></div>${s.done?`<span class="badge done chip ${scoreClass(s.a.score==null?null:100*s.a.score/s.a.total)}">${s.a.score==null?'Awaiting grading':s.a.score+'/'+s.a.total}</span>`:''}<button class="btn" ${s.done?`data-review="${s.a.id}"`:`data-start="${e.id}"`} ${(!s.done&&DASH.access?.practice_open===false&&!(s.live&&DASH.access?.can_finish))||(!s.done&&!s.live&&locked)||(!s.done&&e.content_ready===false)||(!s.done&&!s.live&&!e.open)?'disabled':''}>${!s.done&&DASH.access?.practice_open===false&&!(s.live&&DASH.access?.can_finish)?'Access unavailable':s.label}</button></div>`;
+  return `<article class="dash-panel exam-pair"><div class="dash-heading"><div><h2>${esc(title)}</h2><p class="dash-note">2 modules · ${m1.questions} + ${m2.questions} questions · ${Math.round(m1.duration_seconds/60)} + ${Math.round(m2.duration_seconds/60)} minutes</p></div><div class="pair-score"><span>Combined</span><strong class="chip ${scoreClass(complete?100*(s1.a.score+s2.a.score)/(s1.a.total+s2.a.total):null)}">${combined}</strong>${s1.done&&s2.done?`<button class="btn" data-review="${esc(s2.a.id)}">Review full exam</button>`:''}</div></div>${row(m1,s1,false)}${row(m2,s2,!s1.done)}</article>`;
  }).join('');
- return `<div class="full-exam-intro"><h2>SAT practice exams</h2><p>Standard mocks have two separately timed 35-minute modules with 22 questions each. Complete Module 1 to unlock Module 2. Uploaded source papers keep their original question counts; each exam shows its own total.</p>${hasOctoberRoutes?'<p class="dash-note">October 2026 trial papers: choose one Easy or Hard route per paper before starting. Each route is fixed; your score does not choose the next module. The two routes for the same paper share Module 1, so taking both repeats the baseline. These source papers use 35-minute practice timers and raw scores, without an official SAT scaled score.</p>':''}</div>${pairHtml}${singles.length?`<section class="dash-panel"><h2>Other full exams</h2>${singles.map(assessmentRow).join('')}</section>`:''}${!pairs.length&&!singles.length?'<div class="dash-empty">No full exams are assigned yet.</div>':''}`;
+ return `<div class="full-exam-intro"><h2>SAT practice exams</h2><p>Two 35-minute modules · 22 questions each. Finish Module 1 to unlock Module 2.</p><details class="about"><summary>About source papers and scores</summary><p>Uploaded papers keep their original question counts, shown on each exam. Scores are raw, not SAT-scaled.</p></details>${hasOctoberRoutes?'<details class="about"><summary>About the October 2026 trial papers</summary><p>Choose Easy or Hard before starting; the route is fixed. Both routes share Module 1. Scores are raw, not SAT-scaled.</p></details>':''}</div>${pairHtml}${singles.length?`<section class="dash-panel"><h2>Other full exams</h2>${singles.map(assessmentRow).join('')}</section>`:''}${!pairs.length&&!singles.length?'<div class="dash-empty">No full exams are assigned yet.</div>':''}`;
 }
 function historySection(){
  const rows=DASH.history.filter(h=>DASH.historyType==='all'||h.assessment_type===DASH.historyType);
  const pages=Math.max(1,Math.ceil(rows.length/10));DASH.historyPage=Math.min(DASH.historyPage,pages-1);
  const slice=rows.slice(DASH.historyPage*10,DASH.historyPage*10+10);
- return `<section class="dash-panel"><div class="dash-heading"><h2>Exam history</h2><label class="history-filter">Show <select id="historyFilter">${[['all','All assessments'],...Object.entries(ASSESSMENTS)].map(([id,name])=>`<option value="${id}" ${DASH.historyType===id?'selected':''}>${name}</option>`).join('')}</select></label></div><p class="dash-note">Every completed attempt, including retakes and expired exams.</p>${slice.length?`<div class="student-table"><table><thead><tr><th>Assessment</th><th>Type</th><th>Date</th><th>Attempt</th><th>Score</th><th>Time</th><th></th></tr></thead><tbody>${slice.map(h=>`<tr><td><b>${esc(h.title)}</b>${h.status==='expired'?'<span class="history-detail">Time expired</span>':''}</td><td>${ASSESSMENTS[h.assessment_type]||'Lesson exams'}</td><td>${dateText(h.submitted_at)}</td><td>${h.attempt_no}</td><td><b>${h.score == null ? 'Awaiting grading' : h.score+'/'+h.total}</b><span class="history-detail">${percentText(h.percent)}${h.scaled_score!=null?' · scaled '+h.scaled_score:''}</span></td><td>${h.time_used==null?'Unavailable':Math.floor(h.time_used/60)+'m '+h.time_used%60+'s'}</td><td><button class="btn-ghost" data-review="${h.id}">${h.review_open?'Review':'View score'}</button>${!h.review_open?`<span class="history-detail">${h.review_unlocks_at?'Answers open '+dateText(h.review_unlocks_at):'Review pending'}</span>`:''}</td></tr>`).join('')}</tbody></table></div><div class="history-pager"><button class="btn-ghost" id="historyPrev" ${DASH.historyPage===0?'disabled':''}>Previous</button><span>Page ${DASH.historyPage+1} of ${pages} · ${rows.length} attempts</span><button class="btn-ghost" id="historyNext" ${DASH.historyPage>=pages-1?'disabled':''}>Next</button></div>`:'<div class="dash-empty">No completed attempts in this category yet.</div>'}</section>`;
+ return `<section class="dash-panel"><div class="dash-heading"><h2>Exam history</h2><label class="history-filter">Show <select id="historyFilter">${[['all','All assessments'],...Object.entries(ASSESSMENTS)].map(([id,name])=>`<option value="${id}" ${DASH.historyType===id?'selected':''}>${name}</option>`).join('')}</select></label></div><p class="dash-note">Every completed attempt, including retakes and expired exams.</p>${slice.length?`<div class="student-table"><table><thead><tr><th>Assessment</th><th>Type</th><th>Date</th><th>Attempt</th><th>Score</th><th>Time</th><th></th></tr></thead><tbody>${slice.map(h=>`<tr><td><b>${esc(displayTitle(h.title))}</b>${h.status==='expired'?'<span class="history-detail">Time expired</span>':''}</td><td>${ASSESSMENTS[h.assessment_type]||'Lesson exams'}</td><td>${dateText(h.submitted_at)}</td><td>${h.attempt_no}</td><td><b>${h.score == null ? 'Awaiting grading' : h.score+'/'+h.total}</b><span class="history-detail">${percentText(h.percent)}${h.scaled_score!=null?' · scaled '+h.scaled_score:''}</span></td><td>${h.time_used==null?'Unavailable':Math.floor(h.time_used/60)+'m '+h.time_used%60+'s'}</td><td><button class="btn-ghost" data-review="${h.id}">${h.review_open?'Review':'View score'}</button>${!h.review_open?`<span class="history-detail">${h.review_unlocks_at?'Answers open '+dateText(h.review_unlocks_at):'Review pending'}</span>`:''}</td></tr>`).join('')}</tbody></table></div><div class="history-pager"><button class="btn-ghost" id="historyPrev" ${DASH.historyPage===0?'disabled':''}>Previous</button><span>Page ${DASH.historyPage+1} of ${pages} · ${rows.length} attempts</span><button class="btn-ghost" id="historyNext" ${DASH.historyPage>=pages-1?'disabled':''}>Next</button></div>`:'<div class="dash-empty">No completed attempts in this category yet.</div>'}</section>`;
 }
 function lessonCard(l,compact=false){
  const [label,advice]=PRIORITIES[l.priority]||PRIORITIES.not_started;
- return `<article class="lesson-card ${esc(l.priority)}"><div class="lesson-card-top"><h3>${esc(l.lesson)}</h3><span class="priority-label">${label}</span></div><div class="lesson-score"><strong>${percentText(l.percent)}</strong><span>${l.correct}/${l.seen} distinct questions correct</span></div><div class="lesson-meter" role="meter" aria-label="${esc(l.lesson)} accuracy" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${l.percent||0}"><i style="width:${l.percent||0}%"></i></div>${!compact?`<p>${advice}</p>${l.last_practiced?`<span class="dash-note">Last reviewed practice: ${dateText(l.last_practiced)}</span>`:''}`:''}</article>`;
+ return `<article class="lesson-card ${esc(l.priority)}"><div class="lesson-card-top"><h3>${esc(l.lesson)}</h3><span class="priority-label">${label}</span></div><div class="lesson-score"><strong>${percentText(l.percent)}</strong><span>${l.correct} of ${l.seen} correct</span></div><div class="lesson-meter" role="meter" aria-label="${esc(l.lesson)} accuracy" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${l.percent||0}"><i style="width:${l.percent||0}%"></i></div>${!compact?`<p>${advice}</p>${l.last_practiced?`<span class="dash-note">Last reviewed practice: ${dateText(l.last_practiced)}</span>`:''}`:''}</article>`;
 }
 function focusSection(){
  return `<section class="dash-panel"><h2>Lesson focus</h2><p class="dash-note">Based on your latest reviewed result for each question. Repeating the same question does not increase the evidence count.</p><div class="priority-guide"><span><b>Focus first</b> · below 60%</span><span><b>Keep practising</b> · 60–79%</span><span><b>Strong</b> · 80% and above</span></div><p class="dash-note">A rating needs at least 3 distinct reviewed questions. These are practice indicators, not predicted exam scores.</p>${DASH.lessons.length?`<div class="lesson-grid">${DASH.lessons.map(l=>lessonCard(l)).join('')}</div>`:'<div class="dash-empty">Your lesson list will appear when your instructor assigns an assessment.</div>'}</section>`;
 }
 function wireDashboard(){
+ document.querySelectorAll('[data-trend]').forEach(b=>b.onclick=()=>{const h=DASH.history.find(x=>x.id===b.dataset.trend);if(h)$('trendDetail').innerHTML=`${esc(displayTitle(h.title))} · attempt ${h.attempt_no} · ${h.score}/${h.total} (${h.percent}%) · ${dateText(h.submitted_at)} <button class="dash-link" data-trend-review>Review result →</button>`;const r=$('trendDetail')?.querySelector('[data-trend-review]');if(r)r.onclick=()=>openReview(h.id);});
+ const repaint=(focusId='dashboardContent')=>{paintDashboard();const target=$(focusId);if(target){if(focusId==='dashboardContent')target.tabIndex=-1;target.focus({preventScroll:true});target.scrollIntoView?.({block:'start',behavior:'auto'});}};
  document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>setDashboardView(b.dataset.go));
  document.querySelectorAll('[data-review]').forEach(b=>b.onclick=()=>openReview(b.dataset.review));
- document.querySelectorAll('[data-start]').forEach(b=>b.onclick=async()=>{b.disabled=true;try{await startExam(b.dataset.start,document.querySelector(`[data-timer="${b.dataset.start}"]`)?.value==='untimed');}finally{b.disabled=false;}});
- if($('historyFilter'))$('historyFilter').onchange=e=>{DASH.historyType=e.target.value;DASH.historyPage=0;paintDashboard();};
- if($('assessmentSort'))$('assessmentSort').onchange=e=>{DASH.examSort=e.target.value;paintDashboard();};
- if($('historyPrev'))$('historyPrev').onclick=()=>{DASH.historyPage--;paintDashboard();};
- if($('historyNext'))$('historyNext').onclick=()=>{DASH.historyPage++;paintDashboard();};
+ document.querySelectorAll('[data-start]').forEach(b=>b.onclick=async()=>{b.disabled=true;try{await startExam(b.dataset.start,document.querySelector(`[data-timer="${b.dataset.start}"]`)?.value==='untimed');}catch{alert('Could not open the assessment. Check your connection and try again.');}finally{b.disabled=false;}});
+ if($('historyFilter'))$('historyFilter').onchange=e=>{DASH.historyType=e.target.value;DASH.historyPage=0;repaint('historyFilter');};
+ if($('assessmentSort'))$('assessmentSort').onchange=e=>{DASH.examSort=e.target.value;repaint('assessmentSort');};
+ if($('historyPrev'))$('historyPrev').onclick=()=>{DASH.historyPage--;repaint();};
+ if($('historyNext'))$('historyNext').onclick=()=>{DASH.historyPage++;repaint();};
 }
 
 
@@ -705,17 +913,19 @@ async function startExam(examId, untimed=false, transfer=false) {
   json.exam.id=examId;
   ST.run = json; ST.idx = 0; restoreExamFlags(); ST.accessBlocked=false;
   if(transfer){
+    ST.flags.clear();persistExamFlags();
     // Never replay an old queue over answers from the other browser, even if storage is full.
     ST.pendingRecovery=pending.size?JSON.stringify([...pending]):null;
     try{ST.pendingRecovery=localStorage.getItem(pendingKey())||ST.pendingRecovery;if(ST.pendingRecovery){localStorage.setItem(pendingKey()+'-before-transfer-'+Date.now(),ST.pendingRecovery);localStorage.removeItem(pendingKey());}}catch{}
     pending.clear();
   }
-  $('satDesmos').classList.toggle('hidden',json.exam.track_id!=='sat');
   window.SatCalculator.start(json.exam.track_id==='sat');
   // Server time is authoritative; measure the offset once and count from it.
   ST.skew = new Date(json.attempt.server_now).getTime() - Date.now();
   if(!transfer)restorePending();
-  startClock(); renderPalette(); renderQ(); show('vRun');
+  if(!pending.size)$('saving').textContent=navigator.onLine===false?'Saved on this device':'Saved ✓';
+  window.ExamExperience?.start(json,transfer);
+  startClock(); renderPalette(); renderQ(); show('vRun');window.ExamExperience?.question(ST.run?.questions[ST.idx]?.id);
   document.getElementById('deviceTransferNotice')?.remove();
   if(transfer&&ST.pendingRecovery&&ST.pendingRecovery!=='[]'){
     const notice=document.createElement('div');notice.id='deviceTransferNotice';notice.className='msg';notice.textContent='Earlier unsynced answers on this browser were kept separately to protect the answers you transferred. ';
@@ -742,14 +952,15 @@ function clearExamFlags(){const key=examFlagsKey();if(key)try{localStorage.remov
 
 function startClock() {
   clearInterval(ST.timer);
-  if(ST.run.attempt.deadline_at==='infinity'){ $('clock').textContent='No time limit';$('clock').classList.remove('warn');return; }
+  $('clock').classList.toggle('untimed',ST.run.attempt.deadline_at==='infinity');
+  if(ST.run.attempt.deadline_at==='infinity'){ $('clock').textContent='Untimed';$('clock').classList.remove('warn');return; }
   const dl = new Date(ST.run.attempt.deadline_at).getTime();
   const tick = () => {
     const left = Math.floor((dl - (Date.now() + ST.skew)) / 1000);
     if (left <= 0) { clearInterval(ST.timer); $('clock').textContent = '00:00'; return submitExam(true); }
     const h = Math.floor(left / 3600), m = Math.floor(left % 3600 / 60), s = left % 60;
     $('clock').textContent = (h ? h + ':' : '') + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
-    $('clock').classList.toggle('warn', left < 300);
+    $('clock').classList.toggle('warn', left <= 300);window.ExamExperience?.timer(left);
   };
   tick(); ST.timer = setInterval(tick, 1000);
 }
@@ -759,7 +970,7 @@ function renderPalette() {
   $('palette').innerHTML = qs.map((q, i) =>
     `<button class="pal ${q.response != null && q.response !== '' ? 'answered' : ''}
       ${i === ST.idx ? 'current' : ''} ${ST.flags.has(q.id) ? 'flagged' : ''}"
-      data-i="${i}" aria-label="Question ${i+1}${q.response!=null&&q.response!==''?', answered':''}${ST.flags.has(q.id)?', flagged for review':''}" style="position:relative">${i + 1}</button>`).join('');
+      data-i="${i}" aria-label="Question ${i+1}${q.response!=null&&q.response!==''?', answered':', unanswered'}${ST.flags.has(q.id)?', flagged for review':''}" style="position:relative">${i + 1}${ST.flags.has(q.id)?FLAG_ICON:''}</button>`).join('');
   $('palette').querySelectorAll('.pal').forEach(b =>
     b.onclick = () => { captureInput(); ST.idx = +b.dataset.i; renderQ(); renderPalette(); });
   const done = qs.filter(q => q.response != null && q.response !== '').length;
@@ -804,32 +1015,32 @@ function renderQ() {
   const q = ST.run.questions[ST.idx];
   let body;
   if (q.type === 'mcq') {
-    body = (q.choices || []).map(c => `<button class="choice ${q.response === c.key ? 'sel' : ''}"
-      data-k="${esc(c.key)}"><span class="k">${esc(c.key)}</span><span class="choice-text">${esc(c.text)}</span></button>`).join('');
+    body = (q.choices || []).map(c => {const eliminated=window.ExamExperience?.isEliminated(q.id,c.key);return `<div class="choice-row ${eliminated?'is-eliminated':''}"><button class="choice ${q.response === c.key ? 'sel' : ''}" aria-pressed="${q.response===c.key}" data-k="${esc(c.key)}"><span class="k">${esc(c.key)}</span><span class="choice-text">${esc(c.text)}</span></button><button type="button" class="eliminate-option" data-eliminate="${esc(c.key)}" aria-pressed="${!!eliminated}" aria-label="${eliminated?'Restore':'Eliminate'} option ${esc(c.key)}">abc</button></div>`;}).join('');
   } else {
-    body = `<input class="gridin" id="gin" inputmode="text" autocomplete="off"
+    body = `<label class="sr-only" for="gin">Your answer</label><input class="gridin" id="gin" inputmode="decimal" autocomplete="off"
       placeholder="Your answer" value="${esc(q.response ?? '')}">
       <div class="gridin-hint">Fractions and decimals are both accepted — 3/4 or 0.75.</div>`;
   }
-  $('qcard').innerHTML = `<div class="qhead"><span class="qnum">QUESTION ${ST.idx + 1}</span>
-    <span class="qnum" style="color:var(--accent)">${esc(q.topic || '')}</span>${ST.flags.has(q.id)?'<span class="flag-notice">⚑ Flagged for review</span>':''}</div>
+  $('qcard').innerHTML = `<div class="qhead q-meta"><strong>Question ${ST.idx + 1}</strong> · <span class="q-topic">${esc(q.assets?.lesson_subtopic || q.topic || '')}</span>${ST.flags.has(q.id)?'<span class="flag-notice">'+FLAG_ICON+'Flagged for review</span>':''}</div>
     ${ST.run.exam?.track_id==='est'?'<p class="dash-note" style="margin-bottom:14px"><a href="/exams/est-march-2026/reference.png" target="_blank" rel="noopener">Formula reference ↗</a></p>':''}
     ${readingQuestion(q,ST.run.exam?.track_id||ST.track?.id,body)}${reportButton(q.id,'exam question')}`;
   math($('qcard'));
 
   $('qcard').querySelectorAll('.choice').forEach(b =>
-    b.onclick = () => save(q, b.dataset.k));
+    b.onclick = () => {window.ExamExperience?.select(q.id,b.dataset.k);save(q, b.dataset.k);});
+  $('qcard').querySelectorAll('[data-eliminate]').forEach(b=>b.onclick=()=>window.ExamExperience?.eliminate(q.id,b.dataset.eliminate));
   const gin = $('gin');
   if (gin) {
     gin.oninput = () => save(q, gin.value.trim());
   }
   $('prevBtn').disabled = ST.idx === 0;
-  $('nextBtn').disabled = ST.idx === ST.run.questions.length - 1;
+  $('nextBtn').disabled = false;
+  $('nextBtn').textContent=ST.idx===ST.run.questions.length-1?'Review & submit':'Next';
   const flagged=ST.flags.has(q.id);
-  $('flagBtn').textContent = flagged ? '⚑ Flagged' : '⚑ Flag';
   $('flagBtn').classList.toggle('is-flagged',flagged);
   $('flagBtn').setAttribute?.('aria-pressed',String(flagged));
   $('flagBtn').setAttribute?.('aria-label',flagged?'Flagged for review. Activate to remove flag.':'Flag this question for review.');
+  window.ExamExperience?.question(q.id);
 }
 
 /* Lane A — the answer goes straight to Postgres under RLS. No function call,
@@ -868,11 +1079,11 @@ async function flushAnswers(){
        ST.accessBlocked=true;
        $('saving').textContent='Saving paused: this browser no longer has exam access. Your unsynced answers are kept here. ';
        const retry=document.createElement('button');retry.className='btn-ghost';retry.textContent='Resume securely';retry.onclick=()=>startExam(ST.run.exam.id,ST.run.attempt.deadline_at==='infinity');$('saving').append(retry);
-     }else $('saving').textContent='Not synced — retrying when connected';
+     }else { $('saving').textContent='Saved on this device';if($('offlineNotice')){$('offlineNotice').hidden=false;$('offlineNotice').textContent='Connection interrupted — answers will save when you’re back. Keep this page open.';} }
      return false;
     }
   }
-  $('saving').textContent='All answers saved';return true;
+  $('saving').textContent='Saved ✓';if($('offlineNotice'))$('offlineNotice').hidden=true;return true;
  })();
  try{return await flushing;}finally{flushing=null;}
 }
@@ -880,24 +1091,26 @@ setInterval(()=>{if(ST.run&&!submitting&&!$('vRun').classList.contains('hidden')
 window.addEventListener('online',()=>flushAnswers());
 
 $('prevBtn').onclick = () => { if (ST.idx > 0) { captureInput(); ST.idx--; renderQ(); renderPalette(); } };
-$('nextBtn').onclick = () => { if (ST.idx < ST.run.questions.length - 1) { captureInput(); ST.idx++; renderQ(); renderPalette(); } };
+$('nextBtn').onclick = () => { if (ST.idx < ST.run.questions.length - 1) { captureInput(); ST.idx++; renderQ(); renderPalette();window.scrollTo(0,0); }else if(window.ExamExperience)window.ExamExperience.review();else submitExam(false); };
 $('flagBtn').onclick = () => {
   const id = ST.run.questions[ST.idx].id;
   ST.flags.has(id) ? ST.flags.delete(id) : ST.flags.add(id);
-  persistExamFlags();
+  persistExamFlags();window.ExamExperience?.flag(id);
   renderQ(); renderPalette();
 };
 $('finishBtn').onclick = () => submitExam(false);
 
-async function submitExam(auto) {
+async function submitExam(auto,confirmed=false) {
  if(submitting||!ST.run||ST.accessBlocked)return;
  captureInput();
  const blank=ST.run.questions.filter(q=>q.response==null||q.response==='').length;
- if(!auto&&!confirm(blank?`${blank} question(s) are blank. Submit your exam?`:'Submit your exam? You cannot change answers afterwards.'))return;
+ if(!auto&&!confirmed&&window.ExamExperience){window.ExamExperience.review();return;}
+ if(!auto&&!confirmed&&!confirm(blank?`${blank} question(s) are blank. Submit your exam?`:'Submit your exam? You cannot change answers afterwards.'))return;
  submitting=true;$('finishBtn').disabled=true;$('finishBtn').textContent='Submitting…';
  try{
   const saved=await flushAnswers();
   if(!saved&&!auto){alert('Some answers have not synced. Keep this page open and reconnect before submitting.');return;}
+  window.ExamExperience?.accrue();if(!auto&&window.ExamExperience)await Promise.race([window.ExamExperience.flush(),new Promise(resolve=>setTimeout(resolve,1500))]);
   const {ok,status,json}=await fn('submit-attempt',{method:'POST',body:{attempt_id:ST.run.attempt.id},headers:{'Idempotency-Key':ST.run.attempt.id}});
   if(ok||(status===409&&json.result)){
    const current=DASH.exams.find(e=>e.id===ST.run.exam.id);
@@ -909,14 +1122,14 @@ async function submitExam(auto) {
 }
 
 /* ============================ REVIEW ============================ */
-async function openReview(attemptId) {
+async function openReview(attemptId, mistakesOnly=false) {
   const { ok, json } = await fn('attempt-review',
     { qs: `?attempt_id=${encodeURIComponent(attemptId)}` });
-  if (ok) return paintReview(json);
+  if (ok) return paintReview(json,null,mistakesOnly);
   alert(friendly(json.error));
 }
 
-function reviewBody(r) {
+function reviewBody(r, mistakesOnly=false) {
   const s=r.attempt||r.score||{},raw=s.score,total=s.total;
   let html='';
   const excluded=(r.items||[]).filter(it=>it.correct?.void).length;
@@ -925,33 +1138,42 @@ function reviewBody(r) {
     html += `<div class="locked">${raw == null ? '<b>Submission saved.</b> Awaiting a verified answer key; your answers are recorded and no mark has been assigned.' : '<b>Answers open later.</b> Your score is recorded.'}
       ${s.review_unlocks_at?`Worked answers unlock on ${esc(new Date(s.review_unlocks_at).toLocaleString())}.`:'Your instructor controls when worked answers are released.'}</div>`;
   } else {
-    html += (r.items || []).map((it, i) => `<div class="rev ${it.correct?.void ? 'excluded' : it.is_correct ? 'right' : 'wrong'}">
+    const items=(r.items||[]).map((it,i)=>({it,i})).filter(({it})=>!mistakesOnly||(!it.is_correct&&!it.correct?.void));
+    if(mistakesOnly&&!items.length)html+='<p class="dash-empty">No incorrect or unanswered questions in this attempt.</p>';
+    html += items.map(({it, i}) => `<div class="rev ${it.correct?.void ? 'excluded' : it.is_correct ? 'right' : 'wrong'}">
       <span class="tag">${i + 1} · ${it.correct?.void ? 'EXCLUDED FROM SCORING' : it.is_correct ? 'CORRECT' : 'INCORRECT'}</span>
       ${readingQuestion(it,r.exam?.track_id||ST.track?.id,`
       ${it.type==='mcq'?`<div class="review-choices">${(it.choices||[]).map(c=>`<div class="review-choice"><b>${esc(c.key)}.</b><span>${esc(c.text)}</span></div>`).join('')}</div>`:''}
       <div class="ans"><div><b>Your answer:</b> ${esc(fmt(it.response)) || '<i>blank</i>'}</div><div><b>Correct:</b> ${esc(fmt(it.correct))}</div></div>
-      ${it.explanation ? `<div class="exp">${esc(it.explanation)}</div>` : ''}`,`<div class="stem" style="margin:9px 0 0;font-size:16px">${esc(it.stem)}</div>`)}${reportButton(it.id||it.question_id,'exam review')}</div>`).join('');
+      ${it.explanation ? `<details class="worked-solution"><summary>Show solution</summary><div class="exp">${esc(it.explanation)}</div></details>` : ''}`,`<div class="stem" style="margin:9px 0 0;font-size:16px">${esc(it.stem)}</div>`)}${reportButton(it.id||it.question_id,'exam review')}</div>`).join('');
   }
   return html;
 }
-function paintReview(r,nextExamId=null) {
+function paintReview(r,nextExamId=null,mistakesOnly=false) {
+  const englishReview=!r.full_exam&&r.review_open&&['sat_eng','est_eng'].includes(r.exam?.track_id||ST.track?.id);
+  mistakesOnly=englishReview&&mistakesOnly;
   const s = r.attempt || r.score || {};
   const scaled = s.scaled_score, raw = s.score, total = s.total;
   let html = `<div class="review-menu"><button class="btn-ghost" id="reviewMainMenu">← Main menu</button>${reportButton('','exam review')}</div><div class="score">
-      <div class="lbl">${esc((r.exam && r.exam.title) || 'RESULT')}</div>
+      <div class="lbl">${esc(displayTitle((r.exam && r.exam.title) || 'RESULT'))}</div>
       <div class="big">${scaled != null ? scaled : (raw != null ? raw + '/' + total : 'Awaiting grading')}</div>
       <div class="raw">${r.full_exam?'Full exam · Module 1 + Module 2':''}${scaled != null && raw != null ? `${raw} of ${total} correct` : ''}
         ${s.status === 'expired' ? ' · time expired' : ''}</div></div>`;
   if(r.full_exam&&Array.isArray(r.modules)){
     html+=`<nav class="review-menu" aria-label="Exam modules">${r.modules.map(m=>`<a class="btn-ghost" href="#reviewModule${Number(m.module_number)}">Module ${Number(m.module_number)}</a>`).join('')}</nav>`;
-    html+=r.modules.map(m=>`<section class="review-module" id="reviewModule${Number(m.module_number)}" aria-labelledby="reviewModuleTitle${Number(m.module_number)}"><div class="dash-heading"><h2 id="reviewModuleTitle${Number(m.module_number)}">Module ${Number(m.module_number)}</h2><strong>${m.attempt?.score==null?'Awaiting grading':`${Number(m.attempt.score)}/${Number(m.attempt.total)}`}</strong></div>${reviewBody(m)}</section>`).join('');
+    html+=r.modules.map(m=>`<section class="review-module" id="reviewModule${Number(m.module_number)}" aria-labelledby="reviewModuleTitle${Number(m.module_number)}"><div class="dash-heading"><h2 id="reviewModuleTitle${Number(m.module_number)}">Module ${Number(m.module_number)}</h2><strong>${m.attempt?.score==null?'Awaiting grading':`${Number(m.attempt.score)}/${Number(m.attempt.total)}`}</strong></div>${reviewBody(m)}<div id="reviewTiming${Number(m.module_number)}"></div></section>`).join('');
   }else{
     if(r.full_exam_pending)html+='<p class="locked">Complete both modules to see your full exam result.</p>';
-    html+=reviewBody(r);
+    if(englishReview)html+=`<div class="review-menu"><button class="btn-ghost" id="reviewMistakesToggle" aria-pressed="${mistakesOnly}">${mistakesOnly?'Show all questions':'Show only mistakes'}</button><span class="dash-note">${mistakesOnly?'Incorrect and unanswered questions':'All reviewed questions'}</span></div>`;
+    html+=reviewBody(r,mistakesOnly);
   }
   html += `<div class="nav" style="margin-top:22px">${nextExamId?'<button class="btn" id="nextModuleBtn">Start Module 2</button>':''}<button class="btn" id="backBtn">Back to exams</button></div>`;
+  html+='<div id="reviewTiming"></div>';
   $('vReview').innerHTML = html;
+  if(!r.full_exam)window.ExamExperience?.timing(s.id||s.attempt_id,r.items,$('reviewTiming'));
+  else for(const m of r.modules||[])window.ExamExperience?.timing(m.attempt?.id||m.attempt?.attempt_id,m.items,$('reviewTiming'+Number(m.module_number)));
   math($('vReview'));
+  if($('reviewMistakesToggle'))$('reviewMistakesToggle').onclick=()=>paintReview(r,nextExamId,!mistakesOnly);
   $('backBtn').onclick = () => openTrack(ST.track);
   $('reviewMainMenu').onclick = async () => {await openTrack(ST.track);setDashboardView('overview');};
   if($('nextModuleBtn'))$('nextModuleBtn').onclick=()=>startExam(nextExamId);
@@ -1049,26 +1271,34 @@ const fmt = v => v?.void ? 'Excluded from scoring' : Array.isArray(v) ? v.join('
 window.addEventListener('beforeunload', e => {
   if (ST.run && !$('vRun').classList.contains('hidden')) { e.preventDefault(); e.returnValue = ''; }
 });
-window.addEventListener('DOMContentLoaded',async () => {
-  const { data: { session } } = await sb.auth.getSession();
-  session ? boot() : show('vLogin');
+$('sessionRetry').onclick = () => PortalSession.retry(boot);
+window.addEventListener('DOMContentLoaded', boot);
+// A cached login/error view may predate a sign-in in another portal page.
+// Do not rebuild a loaded dashboard or interrupt an active examination.
+window.addEventListener('pageshow', event => {
+  if (event.persisted && PortalSession.waiting()) void boot();
 });
 </script>
 <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">↑</button>
 <script>
 const topButton=document.getElementById('backToTop');
-const updateTopButton=()=>topButton.classList.toggle('show',window.scrollY>420);
+let lastTopScroll=window.scrollY;
+const updateTopButton=()=>{const y=window.scrollY;topButton.classList.toggle('show',y>window.innerHeight&&y<lastTopScroll&&!document.body.classList.contains('in-exam'));lastTopScroll=y;};
 window.addEventListener('scroll',updateTopButton,{passive:true});
 topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 </script>
-<script src="/portal-controls.js?v=20261023-act2"></script>
-<script src="/exam-activity.js"></script>
-<link rel="stylesheet" href="/portal-navigation.css?v=20261030-responsive">
-<script src="/portal-navigation.js?v=20261012-all-groups"></script>
-<link rel="stylesheet" href="/portal-management.css?v=20261010">
-<script src="/portal-management.js?v=20261023-act2"></script>
-<script src="/lesson-exam-catalog.js?v=20261030-compact"></script>
-<script src="/assessment-index.js?v=20261030"></script>
-<script src="/lesson-exams.js?v=20261102-objectives"></script>
-</body>
+<script src="/portal-controls.js?v=20261114-ui"></script>
+<script src="/exam-activity.js?v=20261114-ui"></script>
+<link rel="stylesheet" href="/portal-navigation.css?v=20261114-ui">
+<link rel="stylesheet" href="/portal-management.css?v=20261114-ui">
+<link rel="stylesheet" href="/portal-responsive.css?v=20261114-ui">
+<script src="/portal-management.js?v=20261114-ui"></script>
+<script src="/lesson-exam-catalog.js?v=20261114-ui"></script>
+<script src="/assessment-index.js?v=20261114-ui"></script>
+<script src="/vocabulary-catalog.js?v=20261114-ui"></script>
+<script src="/lesson-exams.js?v=20261114-ui"></script>
+<script src="/student-work.js?v=20261114-ui"></script>
+<script src="/portal-navigation.js?v=20261114-ui"></script>
+<link rel="stylesheet" href="/exam-experience.css?v=20261115-fixes"><script src="/exam-experience.js?v=20261115-fixes"></script>
+<link rel="stylesheet" href="/portal-ui.css?v=20261114-ui"><script src="/portal-ui.js?v=20261114-ui"></script></body>
 </html>

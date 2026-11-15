@@ -13,6 +13,7 @@ function setup(source=html){
  if(source.includes('function englishPassage'))vm.runInContext(source.slice(source.indexOf('function englishPassage'),source.indexOf('function renderQ')),c);
  vm.runInContext(source.slice(source.indexOf('function renderQ()'),source.indexOf('/* Lane A')),c);
  vm.runInContext(source.slice(source.indexOf('function reviewBody('),source.indexOf('/* ---------------- figure rendering')),c);
+ vm.runInContext(html.slice(html.indexOf('function displayTitle('),html.indexOf('function dashboardOverview(')),c);
  vm.runInContext(readFileSync('web/daily-challenge.js','utf8'),c);
  return c;
 }
@@ -32,7 +33,7 @@ test('real import shape preserves paragraphs, annotations, illustration and answ
  doc.querySelector('[data-k="B"]').click();assert.equal(c.ST.run.questions[0].response,'B');
  assert.equal(doc.querySelector('.est-passage [style]'),null);
 });
-test('uncertain boundaries stay unsplit and all math tracks retain original exam markup',()=>{
+test('uncertain boundaries stay unsplit and all math tracks retain original exam content',()=>{
  const c=setup();
  for(const assets of [null,{html:'<p>Unmarked long passage?</p>'},{html:'<div class="est-passage">Passage</div><p>Other context</p>'},{html:'Extra text<div class="est-passage">Passage</div>'}]){
   const q={...question,assets};assert.equal(c.englishPassage(q,'est_eng'),'');
@@ -41,7 +42,8 @@ test('uncertain boundaries stay unsplit and all math tracks retain original exam
  const before=setup(original);
  for(const track of ['sat','est','est2']){
   for(const ctx of [c,before]){ctx.ST.run.exam.track_id=track;ctx.ST.track.id=track;ctx.ST.run.questions=[structuredClone(question)];ctx.renderQ();}
-  assert.equal(c.document.getElementById('qcard').innerHTML,before.document.getElementById('qcard').innerHTML);
+  for(const selector of ['.stem','.english-passage'])assert.equal(c.document.querySelector(selector)?.innerHTML,before.document.querySelector(selector)?.innerHTML);
+  assert.deepEqual([...c.document.querySelectorAll('.choice')].map(x=>[x.dataset.k,x.textContent]),[...before.document.querySelectorAll('.choice')].map(x=>[x.dataset.k,x.textContent]));
   assert.equal(c.englishPassage(question,track),'');
  }
 });
@@ -65,3 +67,4 @@ test('deployed copies and responsive styles stay consistent',()=>{
  for(const file of ['index.html','daily-challenge.js','english-reading.css'])assert.equal(readFileSync('web/'+file,'utf8'),readFileSync('dist/'+file,'utf8'));
  const css=readFileSync('web/english-reading.css','utf8');assert.match(css,/max-width:65ch/);assert.match(css,/@media\(max-width:850px\)/);assert.match(css,/max-height:none;overflow:visible/);
 });
+

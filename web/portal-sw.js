@@ -1,8 +1,14 @@
-/* Network-only. Never cache questions, sessions, exam attempts or API responses.
-   No skipWaiting/clients.claim/reload: an update cannot interrupt an open exam. */
+/* Cache only a public offline shell. Never cache accounts, answers, questions or APIs.
+   No skipWaiting/clients.claim/reload: updates cannot interrupt an open exam. */
+const SHELL_CACHE='ghoneem-shell-20261114-ui';
+const SHELL_FILES=['/offline.html','/portal-ui.css?v=20261114-ui','/icons/portal-192.png','/icons/portal-512.png'];
+self.addEventListener('install',event=>event.waitUntil(caches.open(SHELL_CACHE).then(cache=>cache.addAll(SHELL_FILES))));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('ghoneem-shell-')&&key!==SHELL_CACHE).map(key=>caches.delete(key))))));
 self.addEventListener('fetch',event=>{
-  if(event.request.method!=='GET'||event.request.mode!=='navigate'||new URL(event.request.url).origin!==self.location.origin)return;
-  event.respondWith(fetch(event.request).catch(()=>new Response('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ghoneem Math — connection needed</title></head><body style="font:18px/1.6 system-ui;padding:32px;color:#14243e"><h1>You’re offline</h1><p>Reconnect to the internet, then reload the portal. Exams and saving answers require a connection.</p><p><a href="/">Try again</a></p></body></html>',{status:503,headers:{'Content-Type':'text/html;charset=utf-8','Cache-Control':'no-store'}})));
+ const request=event.request,url=new URL(request.url);
+ if(request.method!=='GET'||url.origin!==self.location.origin)return;
+ if(request.mode==='navigate')event.respondWith(fetch(request).catch(async()=>await caches.match('/offline.html')||new Response('Reconnect to open Ghoneem Math.',{status:503,headers:{'Content-Type':'text/plain'}})));
+ else if(SHELL_FILES.includes(url.pathname+url.search))event.respondWith(fetch(request).catch(()=>caches.match(request)));
 });
 
 self.addEventListener('push',event=>{

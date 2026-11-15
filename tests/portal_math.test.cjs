@@ -80,6 +80,7 @@ test('all student exam tracks, review, daily practice, notebook and drills use t
  vm.runInContext(html.slice(html.indexOf('function renderQ()'),html.indexOf('/* Lane A')),c);
  const reviewStart=html.includes('function reviewBody(')?html.indexOf('function reviewBody('):html.indexOf('function paintReview(');
  vm.runInContext(html.slice(reviewStart,html.indexOf('/* ---------------- figure rendering')),c);
+ vm.runInContext(html.slice(html.indexOf('function displayTitle('),html.indexOf('function dashboardOverview(')),c);
  vm.runInContext(read('web/daily-challenge.js'),c);
  const question={id:'screenshot',type:'mcq',topic:'Percentages',stem:screenshot,assets:{},choices:[{key:'A',text:'$11'},{key:'B',text:'$33'},{key:'C',text:'$4'},{key:'D',text:'$66'}]};
  for(const track of ['sat','est','est2']){
@@ -112,7 +113,7 @@ test('staff bank previews and instructor answer reveal retain readable prices',a
 
 test('both pages load the same helper before application code, and its packaged copy matches',()=>{
  for(const path of ['web/index.html','web/admin.html']){
-  const page=read(path);assert.match(page,/<script src="\/portal-math\.js\?v=20261021-currency"><\/script>/);
+  const page=read(path);assert.match(page,/<script src="\/portal-math\.js\?v=20261114-ui"><\/script>/);
   assert.ok(page.indexOf('/portal-math.js')<page.indexOf('const SB_URL'));
  }
  if(fs.existsSync('portal-static'))assert.equal(read('web/portal-math.js'),read('portal-static/portal-math.js'));
@@ -121,3 +122,4 @@ test('both pages load the same helper before application code, and its packaged 
   assert.doesNotMatch(read('web/'+file),/renderMathInElement\s*\(/,file+' must use the shared renderer');
  }
 });
+

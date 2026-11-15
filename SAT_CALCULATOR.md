@@ -1,11 +1,20 @@
-# SAT calculator deployment — 16 October 2026
+# SAT Desmos calculator — 15 November 2026
 
-The supported Desmos v1.12 GraphingCalculator API is loaded lazily only when both productionAuthorized=true and a nonempty project key are configured in web/sat-calculator-config.js (and matching dist file). Production defaults to disabled. No demonstration key is included. API failure preserves the official College Board calculator link.
+SAT attempts open the official College Board calculator in a floating window on the same question page: https://www.desmos.com/testing/collegeboard/graphing
 
-Activation requires the portal owner to verify a Desmos production usage arrangement covering https://math.portal.ghoneem.com, obtain the corresponding production API key via https://www.desmos.com/my-api, and record that authorization before configuring and redeploying. A key alone does not prove licensing. A general API calculator must not be described as the exact College Board test configuration.
+The desktop window supports dragging, keyboard movement, resizing and enlargement. On phones it opens below the question in a compact popup, with an Enlarge button. Close/reopen and question changes retain the same frame and expressions; a new attempt resets it. Reload is explicit and stays inside the popup. There is no separate-tab action.
 
-Inspection: no production Desmos key or authorization record found in repository or hosted source; Sites runtime environment is empty. This does not establish whether a separate off-platform contract exists.
+The frame is created only on first use. It receives no user, question or attempt identifiers, suppresses its referrer, and cannot open popups or navigate the parent. Calculator use does not write answers, change deadlines or submit an attempt. Non-SAT attempts cannot open it. Escape works on the portal controls; keyboard events inside the third-party frame cannot propagate to the portal.
 
-Panel controls never modify exam state or call backend APIs. The calculator persists while hidden and during question navigation, and is destroyed at the next attempt. Nothing is stored in student records. Desktop supports native pointer resizing and keyboard-accessible Enlarge/Reduce; tablet/mobile use a stacked, vertically resizable panel. Close and Escape restore focus to the opener. Desmos accessibility settings retain their defaults.
+This is a practical website integration, not the Desmos API. A cross-origin frame limits resizing/configuration control and prevents reliable inspection of calculator readiness or expressions. Network errors offer an in-page reload. Desmos or browser policy changes could affect embedding.
 
-Browser regression coverage: default-off, authorized synthetic SDK, failed SDK loading; desktop/tablet/mobile sizing; open/close/Escape; expression, answer and navigation persistence; deadline countdown continuity. All API calls in these tests are mocked; they do not certify actual Desmos availability or licensing.
+For a supported integration with more control, use an appropriately licensed Desmos API key and the matching SAT configuration. Desmos currently offers personal, Starter and Enterprise plans with different permissions. Select the appropriate plan before enabling the API; do not reuse a demo/trial key for production. The legacy `sat-calculator-config.js` remains disabled and is not loaded by the page. No key was purchased or enabled in this release.
+
+Official references checked 15 November 2026:
+
+- https://www.desmos.com/partners
+- https://www.desmos.com/my-api
+- https://help.desmos.com/hc/en-us/articles/49078363315725-API-Plans-for-Commercial-Use
+- https://www.desmos.com/api/v1.12/docs/index.html
+
+See `docs/ui-refresh/DESMOS_POPUP.md` and `docs/ui-refresh/FLAG_PLANNER_FIX.md` for implementation verification and limitations.

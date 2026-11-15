@@ -14,7 +14,7 @@ test('queued reminders and announcements recheck effective course access',async(
  assert.match(edge,/reminders&&await hasCurrentCourseAccess\(s.user_id\)/);
  assert.match(edge,/await hasCurrentCourseAccess\(s.user_id,c.track_id\)/);
 });
-function setup(tabs=[]){const handlers={},shown=[],opened=[];const self={location:{origin:'https://math.portal.ghoneem.com'},addEventListener:(n,f)=>handlers[n]=f,registration:{showNotification:async(t,o)=>shown.push({t,o})},clients:{matchAll:async()=>tabs,openWindow:async(u)=>opened.push(u)}};vm.runInNewContext(sw,{self,URL,Response,fetch:async()=>{throw Error('offline');}});return {handlers,shown,opened};}
+function setup(tabs=[]){const handlers={},shown=[],opened=[];const self={location:{origin:'https://math.portal.ghoneem.com'},addEventListener:(n,f)=>handlers[n]=f,registration:{showNotification:async(t,o)=>shown.push({t,o})},clients:{matchAll:async()=>tabs,openWindow:async(u)=>opened.push(u)}};vm.runInNewContext(sw,{self,URL,Response,caches:{match:async()=>null},fetch:async()=>{throw Error('offline');}});return {handlers,shown,opened};}
 test('push uses plain text and fixed safe navigation, never server supplied URL',async()=>{const s=setup();let wait;s.handlers.push({data:{json:()=>({title:'Test',body:'Hi',url:'https://evil.example'})},waitUntil:p=>wait=p});await wait;assert.equal(s.shown[0].o.data.url,'/');});
 test('notification click focuses ongoing exam without navigation',async()=>{let focused=false;const s=setup([{url:'https://math.portal.ghoneem.com/?exam=123',focus:async()=>{focused=true;}}]);let wait;s.handlers.notificationclick({notification:{close(){}},waitUntil:p=>wait=p});await wait;assert.ok(focused);assert.equal(s.opened.length,0);});
 test('closed portal opens home on tap',async()=>{const s=setup();let wait;s.handlers.notificationclick({notification:{close(){}},waitUntil:p=>wait=p});await wait;assert.deepEqual(s.opened,['/']);});
@@ -134,3 +134,4 @@ test('the scheduler SQL keeps one-minute dispatch and reads its credential from 
  assert.match(schedule,/body:='\{"action":"dispatch"\}'::jsonb/);
  assert.doesNotMatch(schedule,/Bearer |service_role|sb_secret_/);
 });
+

@@ -15,7 +15,7 @@ for(const track of ['sat','est','est2','act2','est_eng','sat_eng'])test('lesson 
    assert.equal(url.pathname,'/practice-bundles.html');assert.equal(url.searchParams.get('track'),track);assert.equal(url.searchParams.get('lesson'),'Triangles & similarity');
   }
   assert.match(a.w.mistakesPanel(),/data-notebook-submit="q"/,'existing correction control preserved');
-  assert.match(a.w.lessonCard({lesson:'X',exam_seen:3,bundle_seen:2}),/3 exam · 2 bundle/);
+  assert.match(a.w.lessonCard({lesson:'X',exam_seen:3,bundle_seen:2}),/Based on 5 questions you’ve answered/);
   a.w.DASH.access.practice_open=false;assert.equal(a.w.portalBundleLessonLink('X'),'','historical-only enrollment cannot start practice');
  }finally{a.dom.window.close();}
 });
@@ -27,3 +27,4 @@ test('Today links and unavailable courses retain the existing access path',async
   const a=app('sat',query);try{assert.equal(await a.w.openStudyLink(),'original');assert.deepEqual(a.opened,[]);assert.equal(a.delegated,1);}finally{a.dom.window.close();}
  }
 });
+

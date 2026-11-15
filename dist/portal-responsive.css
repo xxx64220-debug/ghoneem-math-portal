@@ -74,3 +74,63 @@ dialog form,dialog .field,dialog fieldset{min-width:0;max-width:100%}
  .streak-week{gap:3px}
  .streak-day{min-width:0;overflow-wrap:anywhere}
 }
+
+/* Shared final layer, also used by the planner, revision and family pages.
+   Constrain the content itself; never hide page overflow or disable zoom. */
+main,form,dialog,section,article,nav,aside{min-width:0}
+input,select,textarea{min-width:0;max-width:100%;box-sizing:border-box}
+button,.btn,.btn-ghost,.portal-shortcut{max-width:100%;overflow-wrap:anywhere}
+.tablewrap,.td-scroll,.history{min-width:0;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+.formgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.formgrid>*,.td-filters>*,.td-cards>*,.cards>*,.overview-strip>*,.coverage>*{min-width:0}
+.toolbar label,.td-filters label,.overview-strip,.calendar-agenda,.planner-resources,
+.coverage-check,.portal-tools-heading h2{overflow-wrap:anywhere}
+dialog{box-sizing:border-box;max-height:calc(100dvh - 24px);overscroll-behavior:contain}
+dialog .actions{flex-wrap:wrap}
+dialog .actions>button{min-width:0;white-space:normal}
+.portal-tools-heading{flex-wrap:wrap}
+.portal-tools-heading h2{flex:1;min-width:0}
+.portal-tool,.portal-shortcut,.portal-resource-links>a{min-width:0;overflow-wrap:anywhere}
+header.top .brand{min-width:0;max-width:100%;flex-shrink:1;overflow-wrap:anywhere}
+header.top select{max-width:100%}
+/* A wrapped masthead has no fixed height: only the exam controls stick. */
+body:has(#vRun:not(.hidden)) header.top{position:static}
+body:has(#vRun:not(.hidden)) .runbar{top:0}
+.runbar .wrap{height:auto;min-height:54px;flex-wrap:wrap;padding-top:8px;padding-bottom:8px}
+.runbar .wrap>*{min-width:0;max-width:100%}
+.qhead{flex-wrap:wrap}
+.qhead .badge{line-height:1.5;white-space:normal}
+
+@media(max-width:900px){
+ .lesson-exam-tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .td-cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media(max-width:700px){
+ header.top .wrap{display:flex;flex-wrap:wrap;align-items:center}
+ header.top .brand{flex-basis:100%;max-width:none}
+ header.top #trackSel{flex:1;min-width:0!important}
+ .portal-section-picker select,.portal-tool-search input,.admin-section-nav select,
+ input:not([type=checkbox]):not([type=radio]),select,textarea{font-size:16px}
+ .formgrid{grid-template-columns:minmax(0,1fr)}
+ .td-cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .lesson-exam-tools,.lesson-exam-tools:has(>label:nth-child(3):last-child){grid-template-columns:minmax(0,1fr)}
+ dialog{max-width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}
+ dialog .actions>button{flex:1 1 130px;min-height:44px}
+ .bulk-toolbar select{min-width:0;max-width:100%}
+ .management-toolbar label{min-width:0;max-width:100%}
+ .portal-start-links,.student-work-shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .runbar .wrap{gap:8px}
+ .runbar .spacer{display:none}
+ .runbar .clock{margin-right:auto;flex-shrink:0}
+ .runbar button{min-height:44px;padding:9px 12px}
+ .pal{width:44px;height:44px;flex-shrink:0}
+}
+@media(max-width:380px){
+ .student-work-shortcuts,.portal-start-links{grid-template-columns:minmax(0,1fr)}
+ .portal-primary{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .today-course-actions{grid-template-columns:minmax(0,1fr)}
+ .portal-tools-heading h2{font-size:19px}
+}
+@media(max-height:500px) and (orientation:landscape){
+ .runbar{position:static}
+}

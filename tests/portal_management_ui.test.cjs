@@ -2,6 +2,16 @@ const PORTAL_STATIC=require('./public-artifact-dir.cjs');
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs');
 const {JSDOM}=require('./english-runtime/node_modules/jsdom');const source=fs.readFileSync('web/portal-management.js','utf8');
 const flush=()=>new Promise(r=>setImmediate(r));
+test('skip link follows the visible student view and focuses its content',async()=>{
+ const ids=['vSession','vLogin','vTracks','vList','vRun','vReview'];
+ const dom=new JSDOM(ids.map(id=>`<section id="${id}" class="${id==='vTracks'?'':'hidden'}">${id==='vList'?'<div id="examList"></div>':''}</section>`).join(''),{runScripts:'outside-only'}),w=dom.window;
+ w.eval(source);const skip=w.document.querySelector('.portal-skip-link');assert.equal(skip.getAttribute('href'),'#vTracks');skip.click();assert.equal(w.document.activeElement.id,'vTracks');
+ for(const next of ['vList','vRun','vReview','vLogin']){
+  ids.forEach(id=>w.document.getElementById(id).classList.toggle('hidden',id!==next));await flush();
+  assert.equal(skip.getAttribute('href'),'#'+next);skip.click();assert.equal(w.document.activeElement.id,next);
+ }
+ dom.window.close();
+});
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function setup(role='admin',lessonOptions){
  const dom=new JSDOM('<nav id="tabs"><div class="wrap"></div></nav><select id="adminSection"></select><main id="app"><div id="view"></div></main><dialog id="editor"></dialog>',{runScripts:'outside-only',url:'https://local.test'}),w=dom.window,calls=[];let save;
@@ -45,14 +55,14 @@ test('student sees reference and diagnosis alongside daily destinations and can 
  w.ST={track:{id:'sat',name:'SAT'}};w.DASH={view:'daily'};w.esc=esc;w.scrollTo=()=>{};
  w.paintDashboard=()=>{w.document.getElementById('examList').innerHTML='<nav class="student-tabs">'+['daily','formulas','finalsDiagnosis','revision','mistakes','full_exam','overview','history','focus'].map(x=>`<button data-view="${x}">${x}</button>`).join('')+'</nav>';};w.setDashboardView=v=>{w.DASH.view=v;w.paintDashboard();};
  w.eval(fs.readFileSync('web/portal-navigation.js','utf8'));w.eval(source);w.paintDashboard();
- assert.equal([...w.document.querySelectorAll('.student-tabs button')].filter(b=>!b.hidden).length,7);
+ assert.equal([...w.document.querySelectorAll('.student-tabs button')].filter(b=>!b.hidden).length,9);
  assert(!w.document.querySelector('[data-view="formulas"]').hidden);assert(!w.document.querySelector('[data-view="finalsDiagnosis"]').hidden);
- assert.equal(w.document.querySelector('[data-view="daily"]').textContent,'Today');assert(w.document.querySelector('#studentSection option[value="history"]'));
+ assert.equal(w.document.querySelector('[data-view="daily"]').firstChild.textContent,'Daily quiz');assert(w.document.querySelector('#studentSection option[value="history"]'));
  w.setDashboardView('history');assert(!w.document.querySelector('[data-view="history"]').hidden);assert.equal(w.document.querySelector('#studentSection').value,'history');assert(w.document.querySelector('.portal-skip-link'));dom.window.close();
 });
 test('deployed management files match source and student history has no new-practice controls',()=>{
  for(const f of ['index.html','admin.html','portal-management.js','portal-management.css','daily-challenge.js'])assert.equal(fs.readFileSync('web/'+f,'utf8'),fs.readFileSync((PORTAL_STATIC + '/')+f,'utf8'));
- const html=fs.readFileSync('web/index.html','utf8');const defaultView=html.match(/view:([^,]+),daily:null/)[1];for(const [practice_open,dashboard_error,expected] of [[true,false,'daily'],[false,false,'history'],[true,true,'full_exam'],[false,true,'history']])assert.equal(require('node:vm').runInNewContext(defaultView,{access:{practice_open},json:{dashboard_error}}),expected);assert.match(html,/if\(access.practice_open&&!DASH.progressUnavailable\)refreshDaily\(\)/);assert.match(html,/can_finish/);
+ const html=fs.readFileSync('web/index.html','utf8');assert.match(html,/access.practice_open\?\(t.id==='sat_eng'\?'vocabulary':'daily'\):'history'/);assert.match(html,/if\(DASH.view==='daily'&&access.practice_open&&!DASH.progressUnavailable&&t.id!=='sat_eng'\)refreshDaily\(\)/);assert.match(html,/can_finish/);
  // Parse every inline script independently: markup injection must never terminate a script.
  for(const name of ['index.html','admin.html']){const dom=new JSDOM(fs.readFileSync('web/'+name,'utf8'));for(const script of dom.window.document.querySelectorAll('script:not([src])'))new(require('node:vm').Script)(script.textContent);dom.window.close();}
 });
