@@ -17,7 +17,7 @@ assert.match(html,/aria-label="2026-09-14: To do"/);
 assert.match(context.streakPanel({...d,completed:true}),/Streak secured for today/);
 assert.match(context.streakPanel({...d,streak:{...d.streak,current:0}}),/start your streak/);
 assert.equal(context.streakPanel({...d,streak:null}),'');
-assert.match(context.mistakesPanel(),/No mistakes to practise right now/);
+assert.match(context.mistakesPanel(),/No retries due right now/);
 context.DASH.mistakes={remaining:1,mastered:0,items:[{id:'q1',type:'mcq',streak:1,topic:'Algebra',stem:'Solve x &lt; 3',choices:[{key:'A',text:'1'},{key:'B',text:'4'}]}]};
 const mistakes=context.mistakesPanel();
 assert.match(mistakes,/Mistake notebook/);
@@ -29,3 +29,4 @@ context.DASH.drill={drill_id:'d1',topics:['Algebra'],completed:false,questions:[
 assert.match(context.drillPanel(),/Submit drill/);
 assert.doesNotMatch(context.drillPanel(),/Correct answer:/);
 console.log('PASS: timer clock offset/expiry, active/completed/new streak, earned badges and accessible day labels');
+

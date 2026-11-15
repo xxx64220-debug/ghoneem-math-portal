@@ -1,7 +1,7 @@
 const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
 function client(){
  const nodes=new Map(),node=id=>{if(!nodes.has(id))nodes.set(id,{id,value:'',textContent:'',innerHTML:'',disabled:false,style:{},classList:{toggle(){},contains(){return true},remove(){},add(){}},querySelectorAll(){return[]},replaceChildren(...children){this.children=children;this.innerHTML='';this.textContent=''}});return nodes.get(id);};
- const c={console,Map,Set,Date,JSON,Promise,Number,String,Array,Object,Math,Error,RegExp,URL,crypto:require('node:crypto').webcrypto,setInterval(){},clearInterval(){},setTimeout(){},clearTimeout(){},alert(){},confirm(){return true},location:{},localStorage:{setItem(){},getItem(){return null}},document:{addEventListener(){},getElementById:node,querySelectorAll(){return[]}},window:{addEventListener(){},scrollTo(){}},supabase:{createClient:()=>({auth:{getSession:async()=>({data:{session:null}}),getUser:async()=>({data:{user:null}})}})}};
+ const c={console,Map,Set,Date,JSON,Promise,Number,String,Array,Object,Math,Error,RegExp,URL,crypto:require('node:crypto').webcrypto,setInterval(){},clearInterval(){},setTimeout(){},clearTimeout(){},alert(){},confirm(){return true},location:{},localStorage:{setItem(){},getItem(){return null}},document:{body:{classList:{toggle(){}}},addEventListener(){},getElementById:node,querySelectorAll(){return[]}},window:{addEventListener(){},scrollTo(){}},supabase:{createClient:()=>({auth:{getSession:async()=>({data:{session:null}}),getUser:async()=>({data:{user:null}})}})}};
  vm.createContext(c);vm.runInContext(fs.readFileSync('web/index.html','utf8').split('<script>')[1].split('</script>')[0],c);
  vm.runInContext("ST.track={id:'sat'};readingQuestion=(it,track,after,stem)=>stem+after;reportButton=()=>'';",c);
  return {c,node,run:s=>vm.runInContext(s,c)};
@@ -38,10 +38,11 @@ test('October source routes keep their actual counts and explain the shared fixe
   f.run('DASH.exams=routeRows');const html=f.run('fullExamSection()');
   assert.ok(html.includes(`${counts[0]} + ${counts[1]} questions`));
   assert.ok(html.includes(`${counts[0]+counts[1]-2}/${counts[0]+counts[1]}`));
-  assert.match(html,/35 \+ 35 minutes/);assert.match(html,/choose one Easy or Hard route/);
-  assert.match(html,/your score does not choose the next module/);assert.match(html,/share Module 1/);
-  assert.match(html,/without an official SAT scaled score/);
+  assert.match(html,/35 \+ 35 minutes/);assert.match(html,/Choose Easy or Hard before starting/);
+  assert.match(html,/the route is fixed/);assert.match(html,/share Module 1/);
+  assert.match(html,/Scores are raw, not SAT-scaled/);
  }
  f.run("DASH.exams=[1,2].map(n=>({id:'standard-'+n,title:'SAT standard — Module '+n,assessment_type:'full_exam',exam_set_code:'standard',module_number:n,questions:22,duration_seconds:2100,open:true}));");
- const standard=f.run('fullExamSection()');assert.doesNotMatch(standard,/choose one Easy or Hard route/);assert.match(standard,/22 \+ 22 questions/);
+ const standard=f.run('fullExamSection()');assert.doesNotMatch(standard,/Choose Easy or Hard before starting/);assert.match(standard,/22 \+ 22 questions/);
 });
+

@@ -7,7 +7,7 @@ function setup(track='est',type='lesson_exam'){
  c.setTimeout=fn=>{timers.set(++timerId,fn);return timerId;};c.clearTimeout=id=>timers.delete(id);
  c.flushSearch=()=>{for(const [id,fn]of [...timers]){timers.delete(id);fn();}};
  Object.assign(c,{ST:{track:{id:track,name:track}},DASH:{view:type,access:{practice_open:true},exams:[]},ASSESSMENTS:{full_exam:'Full exams'},esc:s=>String(s??'').replace(/[&<>"']/g,s=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s])),math(){},$:id=>c.document.getElementById(id),startExam:async(id,untimed)=>starts.push({id,untimed}),openReview:id=>reviews.push(id)});
- const html=read('web/index.html');vm.runInContext(html.slice(html.indexOf('function assessmentRow('),html.indexOf('function moduleState(')),c);
+ const html=read('web/index.html');vm.runInContext(html.slice(html.indexOf('function displayTitle('),html.indexOf('function dashboardOverview(')),c);vm.runInContext(html.slice(html.indexOf('function assessmentRow('),html.indexOf('function moduleState(')),c);
  c.wireDashboard=()=>{c.document.querySelectorAll('[data-start]').forEach(b=>b.onclick=()=>c.startExam(b.dataset.start,c.document.querySelector(`[data-timer="${b.dataset.start}"]`)?.value==='untimed'));c.document.querySelectorAll('[data-review]').forEach(b=>b.onclick=()=>c.openReview(b.dataset.review));};
  c.paintDashboardContent=()=>{c.document.getElementById('dashboardContent').innerHTML=c.assessmentSection(c.DASH.view);c.wireDashboard();};
  c.paintDashboard=()=>{c.document.getElementById('examList').innerHTML='<nav class="student-tabs">'+(c.DASH.access.practice_open?'<button data-view="lesson_exam" hidden>Lesson exams</button>':'')+'</nav><div id="dashboardContent"></div>';c.paintDashboardContent();};
@@ -77,7 +77,7 @@ test('public index covers only display metadata and both served source copies ma
  const {c,dom}=setup();assert.equal(c.GhoneemAssessmentIndex.length,776);assert.equal(c.GhoneemAssessmentIndex.filter(e=>e.same_set_as).length,2);assert.equal(c.GhoneemLessonCatalog.length,154);
  for(const e of [...c.GhoneemAssessmentIndex,...c.GhoneemLessonCatalog])for(const k of ['question_ids','stem','correct','explanation','question_hash','key_hash','user_id','group_id','attempts'])assert.equal(k in e,false);
  for(const f of ['index.html','admin.html','lesson-exams.js','lesson-exams.css','lesson-exam-catalog.js','assessment-index.js'])assert.equal(read('web/'+f),read(require('./public-artifact-dir.cjs')+'/'+f));
- assert.match(read('web/index.html'),/assessment-index.js\?v=20261030/);assert.match(read('web/admin.html'),/new_lessons/);dom.window.close();
+ assert.match(read('web/index.html'),/assessment-index.js\?v=20261114-ui/);assert.match(read('web/admin.html'),/new_lessons/);dom.window.close();
 });
 test('rapid search input renders only the final value and keeps focus and start actions',()=>{
  const {c,dom,starts}=setup('sat','quiz');c.paintDashboard();const search=c.document.getElementById('lessonExamSearch');search.focus();

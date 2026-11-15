@@ -3,7 +3,7 @@ function setup(file){
  const nodes=new Map();function node(id){if(!nodes.has(id))nodes.set(id,{id,value:'',textContent:'',innerHTML:'',disabled:false,style:{},isConnected:true,classList:{toggle(){},contains(){return true},remove(){},add(){}},querySelectorAll(){return[]},replaceChildren(...children){this.children=children;this.innerHTML='';this.textContent=''},close(){},showModal(){}});return nodes.get(id);}
  const ctx={console,Map,Set,Date,JSON,Promise,Number,String,Array,Object,Math,Error,RegExp,URL,Blob,TextEncoder,crypto:require('node:crypto').webcrypto,
  setInterval(){return 1},clearInterval(){},setTimeout(){},clearTimeout(){},location:{reload(){},href:''},alert(){},confirm(){return true},
- localStorage:{setItem(){},getItem(){return null}},document:{addEventListener(){},getElementById:node,querySelectorAll(){return[]},documentElement:{style:{setProperty(){}}}},window:{addEventListener(){},scrollTo(){}},
+ localStorage:{setItem(){},getItem(){return null}},document:{body:{classList:{toggle(){}}},addEventListener(){},getElementById:node,querySelectorAll(){return[]},documentElement:{style:{setProperty(){}}}},window:{addEventListener(){},scrollTo(){}},
  supabase:{createClient(){return {auth:{async getSession(){return {data:{session:null}}},async getUser(){return {data:{user:null}}}}}}}};
  vm.createContext(ctx);if(file.includes('admin')){for(const module of ['web/hardest-questions.js','web/exam-assignments.js'])new vm.Script(fs.readFileSync(module,'utf8')).runInContext(ctx);ctx.ExamAssignments=ctx.window.ExamAssignments;}const code=fs.readFileSync(file,'utf8').split('<script>')[1].split('</script>')[0];new vm.Script(code).runInContext(ctx);for(const module of file.includes('admin')?['web/act2-collection.js','web/exam-builder.js','web/admin-bank.js']:['web/portal-controls.js'])new vm.Script(fs.readFileSync(module,'utf8')).runInContext(ctx);return ctx;
 }
@@ -115,7 +115,7 @@ function setup(file){
  // Untimed practice must not schedule auto-submit; repeat controls remain lesson-only.
  c.clockIntervals=0;c.setInterval=()=>{c.clockIntervals++;return 1};
  vm.runInContext("ST.run={attempt:{deadline_at:'infinity'}};startClock()",c);
- assert.equal(c.document.getElementById('clock').textContent,'No time limit');
+ assert.equal(c.document.getElementById('clock').textContent,'Untimed');
  assert.equal(c.clockIntervals,0,'untimed mode must not schedule a countdown');
  const repeatRow=vm.runInContext("assessmentRow({id:'lesson-repeat',title:'Lesson',assessment_type:'lesson_exam',duration_seconds:600,questions:2,open:true,last:{id:'done',status:'graded',score:1,total:2}})",c);
  assert.match(repeatRow,/Practice again/);assert.match(repeatRow,/No time limit/);assert.match(repeatRow,/Timed \(10 min\)/);
@@ -141,3 +141,4 @@ function setup(file){
  assert.match(a.document.getElementById('editor').innerHTML,/&lt;Student Two&gt;/);
  console.log('PASS: clients initialize, EST source archive is integrated into the selectable question bank, autosave preserves changes, assessment categories stay separate, history filters/page counts work, and lesson titles are escaped.');
 })().catch(e=>{console.error(e);process.exitCode=1});
+
