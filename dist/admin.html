@@ -9,8 +9,8 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="script" href="/revision-formulas.js?v=20261024-no-source-links" fetchpriority="low">
-<link rel="preload" as="script" href="/lesson-exam-catalog.js?v=20261024-est1-no-logs" fetchpriority="low">
+<link rel="preload" as="script" href="/revision-formulas.js?v=20261114-ui" fetchpriority="low">
+<link rel="preload" as="script" href="/lesson-exam-catalog.js?v=20261114-ui" fetchpriority="low">
 
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -102,17 +102,17 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icons/portal-192.png">
-<script defer src="/portal-install.js"></script>
-<script defer src="/portal-notifications.js"></script>
-<link rel="stylesheet" href="/exam-builder.css">
-<link rel="stylesheet" href="/portal-controls.css?v=20261004-group">
-<link rel="stylesheet" href="/admin-bank.css?v=20261005">
-<link rel="stylesheet" href="/portal-responsive.css?v=20261030-responsive">
-<link rel="stylesheet" href="/lesson-exams.css?v=20261021">
-<link rel="stylesheet" href="/portal-math-layout.css?v=20261024-glyphs">
-<link rel="stylesheet" href="/portal-devices.css?v=20261030">
-<script src="/portal-devices.js?v=20261030"></script>
-</head>
+<script defer src="/portal-install.js?v=20261114-ui"></script>
+<script defer src="/portal-notifications.js?v=20261114-ui"></script>
+<link rel="stylesheet" href="/exam-builder.css?v=20261114-ui">
+<link rel="stylesheet" href="/portal-controls.css?v=20261114-ui">
+<link rel="stylesheet" href="/admin-bank.css?v=20261114-ui">
+<link rel="stylesheet" href="/lesson-exams.css?v=20261114-ui">
+<link rel="stylesheet" href="/portal-math-layout.css?v=20261114-ui">
+<link rel="stylesheet" href="/portal-devices.css?v=20261114-ui">
+<script src="/portal-devices.js?v=20261114-ui"></script>
+<script src="/portal-session.js?v=20261114-ui"></script>
+<script src="/portal-connection.js?v=20261114-ui"></script><meta name="description" content="Ghoneem Math Portal: lessons, practice, assessments and progress for SAT, EST and ACT students."><script src="/question-topic-audit.js?v=20261114-ui"></script></head>
 <body>
 
 <header class="top hidden" id="top"><div class="wrap">
@@ -123,7 +123,7 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 </div></header>
 
 <nav class="tabs hidden" id="tabs"><div class="wrap">
-  <button class="tab on" data-v="overview">Overview</button>
+  <a class="tab" href="/study-plan.html">Daily study plans</a><a class="tab" href="/checkpoint.html?mode=assessments">Progress &amp; corrections</a><a class="tab" href="/sat-revision.html">December SAT revision</a><a class="tab" href="/est-revision.html?track=est">December EST I revision</a><a class="tab" href="/est-revision.html?track=est2">December EST II revision</a><button class="tab on" data-v="overview">Overview</button>
   <button class="tab" data-v="formulasAdmin">Formulas / rules</button><button class="tab" data-v="quizAdmin">Daily quizzes</button><button class="tab" data-v="revisionAdmin">Final revision</button><button class="tab" data-v="reportsAdmin">Reports</button><button class="tab" data-v="integrityAdmin">Exam activity</button>
   <button class="tab" data-v="students">Students</button>
   <button class="tab" data-v="results">Results</button>
@@ -132,13 +132,20 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
   <button class="tab" data-v="exams">Exams & assignments</button><button class="tab" data-v="bank">Question bank</button><button class="tab" data-v="groups">Groups</button><button class="tab" data-v="devices">Devices</button><button class="tab" data-v="audit">Audit log</button><button class="tab" data-v="notifications">Notifications</button>
 </div><div class="wrap admin-section-nav"><label for="adminSection">Go to section</label><select id="adminSection"><optgroup label="Teaching"><option value="overview">Overview</option><option value="formulasAdmin">Formulas / rules</option><option value="quizAdmin">Daily quizzes</option><option value="revisionAdmin">Final revision</option><option value="reportsAdmin">Reports</option><option value="integrityAdmin">Exam activity</option><option value="exams">Exams &amp; assignments</option><option value="bank">Question bank</option></optgroup><optgroup label="Students"><option value="students">Students</option><option value="results">Results</option><option value="lessons">Class heatmap</option><option value="questions">Hardest questions</option><option value="groups">Groups</option></optgroup><optgroup label="Settings"><option value="devices">Devices</option><option value="audit">Audit log</option><option value="notifications">Notifications</option></optgroup></select></div></nav>
 
-<section id="vLogin" class="login">
+<section id="vSession" class="login" aria-label="Restoring portal access">
+  <h1>Opening your portal</h1>
+  <p id="sessionMessage" role="status" aria-live="polite">Checking your sign-in…</p>
+  <button class="btn" id="sessionRetry" hidden>Try again</button>
+  <noscript>JavaScript is needed to restore your sign-in. Enable it, then reopen the portal.</noscript>
+</section>
+
+<section id="vLogin" class="login hidden">
   <h1 style="font-size:28px;margin-bottom:5px">Instructor sign in</h1>
   <p class="hint" style="margin-bottom:22px">Staff accounts only.</p>
   <div class="field"><label for="em">Email</label><input id="em" autocomplete="username"></div>
   <div class="field"><label for="pw">Password</label><input id="pw" type="password" autocomplete="current-password"></div>
   <button class="btn" id="inBtn" style="width:100%;margin-top:6px">Sign in</button>
-  <div class="err" id="loginErr" role="alert"></div><a href="/" style="display:block;margin-top:20px">Student sign in →</a>
+  <div class="err" id="loginErr" role="alert"></div><a href="/" style="display:block;margin-top:20px">Back to student portal →</a>
 </section>
 
 <main class="wrap hidden" id="app"><div id="view"></div></main>
@@ -147,12 +154,12 @@ main.wrap{padding-top:24px;padding-bottom:64px}#view{min-width:0}.table-wrap{wid
 
 <dialog id="editor"></dialog>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.50.0/dist/umd/supabase.js" integrity="sha384-K0oxqktRvaThvYgGL4G+OK2Ih6VS6Uyu7j3+7WJgp/uWM0Yv6Xi4YEiw0BB+mPfi" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/formula-reference.css?v=20261012">
-<script src="/portal-math.js?v=20261021-currency"></script>
-<script src="/lesson-taxonomy.js?v=20261024-est1-no-logs"></script>
-<script src="/act2-course.js?v=20261023-act2"></script>
-<script src="/revision-formulas.js?v=20261024-no-source-links"></script>
-<script src="hardest-questions.js?v=20261015-diagnosis-timeout-v3"></script>
+<link rel="stylesheet" href="/formula-reference.css?v=20261114-ui">
+<script src="/portal-math.js?v=20261114-ui"></script>
+<script src="/lesson-taxonomy.js?v=20261114-ui"></script>
+<script src="/act2-course.js?v=20261114-ui"></script>
+<script src="/revision-formulas.js?v=20261114-ui"></script>
+<script src="hardest-questions.js?v=20261114-ui"></script>
 <script>
 /* ============================ CONFIG ============================ */
 const SB_URL = 'https://wfhurjyouemahvkcfkdz.supabase.co';
@@ -160,7 +167,7 @@ const SB_KEY = 'sb_publishable_FIUSELOTsAQaH8dQ6oF-ow_CcISJV5-';
 const EMAIL_DOMAIN = 'students.ghoneem-math.com';
 /* ================================================================ */
 
-const sb = supabase.createClient(SB_URL, SB_KEY);
+const sb = supabase.createClient(SB_URL, SB_KEY,globalThis.PortalConnection?.options(SB_URL));
 const hardestReport = HardestQuestions.create(sb);
 let hardestRequest = 0;
 let hardestCycle = 'current';
@@ -170,10 +177,10 @@ const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;
 let ST = { view:'overview', track:'', tracks:[], me:null };
 const sortText=(a,b)=>String(a??'').localeCompare(String(b??''),undefined,{numeric:true,sensitivity:'base'});
 
-async function fn(name, { method='POST', body=null } = {}) {
+async function fn(name, { method='POST', body=null, signal } = {}) {
   const { data:{ session } } = await sb.auth.getSession();
   if (!session) { show(false); throw new Error('signed_out'); }
-  const res = await fetch(`${fnBase}/${name}`, { method,
+  const res = await fetch(`${fnBase}/${name}`, { method, signal,
     headers:{ Authorization:`Bearer ${session.access_token}`,
               'Content-Type':'application/json', apikey:SB_KEY },
     body: body ? JSON.stringify(body) : undefined });
@@ -184,13 +191,14 @@ async function fn(name, { method='POST', body=null } = {}) {
 const q = (v) => sb.from(v).select('*').throwOnError();
 
 function show(inApp){
+  $('vSession').classList.add('hidden');
   $('vLogin').classList.toggle('hidden', inApp);
   $('app').classList.toggle('hidden', !inApp);
   $('top').classList.toggle('hidden', !inApp);
   $('tabs').classList.toggle('hidden', !inApp);
 }
-function bar(p){
-  const c = p < 50 ? 'low' : p < 75 ? 'mid' : '';
+function bar(p,low=50,mid=75){
+  const c = p < low ? 'low' : p < mid ? 'mid' : '';
   return `<div class="bar"><i class="${c}" style="width:${Math.max(2,p||0)}%"></i></div>`;
 }
 const pct = p => p==null ? '—' : p+'%';
@@ -198,24 +206,42 @@ const when = t => t ? new Date(t).toLocaleDateString(undefined,{day:'numeric',mo
 
 /* ---------------- auth ---------------- */
 $('inBtn').onclick = async () => {
+  if ($('inBtn').disabled) return;
+  const email=$('em').value.trim(), password=$('pw').value;
+  if (!email || !password) { $('loginErr').textContent = 'Enter your email and password.'; return; }
   $('inBtn').disabled = true; $('loginErr').textContent = '';
-  const { error } = await sb.auth.signInWithPassword({ email:$('em').value.trim(), password:$('pw').value });
-  $('inBtn').disabled = false;
-  if (error) { $('loginErr').textContent = 'Those details did not work.'; return; }
-  boot();
+  try {
+    const { error } = await sb.auth.signInWithPassword({ email, password });
+    if (error) {
+      $('loginErr').textContent = error.status === 429 ? 'Too many sign-in attempts. Please wait a few minutes before trying again.' : error.name === 'AuthRetryableFetchError' || error.status >= 500 ? 'Sign-in is temporarily unavailable. Check your connection and try again.' : 'Those details did not work.';
+      return;
+    }
+    $('pw').value = ''; await boot();
+  } catch {
+    $('loginErr').textContent = 'Could not finish signing in. Check your connection and try again.';
+  } finally { $('inBtn').disabled = false; }
 };
 $('pw').onkeydown = e => { if (e.key==='Enter') $('inBtn').click(); };
 $('outBtn').onclick = async () => { hardestRequest++; hardestReport.clear(); await window.portalNotificationsBeforeLogout?.(); await sb.auth.signOut({scope:'local'}); location.reload(); };
 
-async function boot(){
+function boot() {
+  return PortalSession.restore({auth: sb.auth, enter: loadPortal, showLogin: () => show(false)});
+}
+async function loadPortal() {
   PortalDevices.configure({sb,fnBase,key:SB_KEY,resume:boot});
   if(!await PortalDevices.ensure())return;
-  const { data:{ user } } = await sb.auth.getUser();
+  const { data:{ user }, error:userError } = await sb.auth.getUser();
+  if(userError)throw userError;
   if(!user){show(false);return;}
-  const { data:prof } = await sb.from('profiles').select('id,full_name,role,status').eq('id',user.id).single();
-  if (!prof || prof.status!=='active' || (prof.role !== 'admin' && prof.role !== 'instructor')) {
+  const { data:prof, error:profileError } = await sb.from('profiles').select('id,full_name,role,status').eq('id',user.id).single();
+  if(profileError)throw profileError;
+  if (!prof || prof.status!=='active') {
     $('loginErr').textContent = 'This console is for staff accounts only.';
-    await sb.auth.signOut({scope:'local'}); return;
+    await sb.auth.signOut({scope:'local'}); show(false); return;
+  }
+  if (prof.role !== 'admin' && prof.role !== 'instructor') {
+    $('loginErr').textContent = 'This console is for staff accounts only. Your student session is still active; return to the student portal.';
+    show(false); return;
   }
   ST.me = prof;
   document.querySelector('[data-v=notifications]').hidden = prof.role !== 'admin';
@@ -225,12 +251,27 @@ async function boot(){
   $('trackSel').innerHTML = `<option value="">All tracks</option>` +
     ST.tracks.map(t=>`<option value="${t.id}">${esc(t.name)}</option>`).join('');
   $('trackSel').onchange = e => { ST.track = e.target.value; render(); };
-  document.querySelectorAll('.tab').forEach(b => b.onclick = () => {
+  document.querySelectorAll('.tab[data-v]').forEach(b => b.onclick = () => {
     ST.view = b.dataset.v;syncAdminNavigation();
     document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on', x===b));
     render();
   });
+  applyPlannerDestination();
   show(true); render();
+}
+
+// Navigation hints only: staff authentication and original view handlers remain authoritative.
+function applyPlannerDestination(){
+ const params=new URLSearchParams(location.search),section=params.get('section'),track=params.get('track');
+ if(!['admin','instructor'].includes(ST.me?.role))return;
+ const allowed=['teachingDashboard','exams','quizAdmin','results'];
+ const control=[...document.querySelectorAll('[data-v]')].find(b=>b.dataset.v===section);
+ if(!allowed.includes(section)||!control||control.hidden||control.disabled)return;
+ if(track&&!ST.tracks.some(t=>t.id===track))return;
+ if(track){ST.track=track;$('trackSel').value=track;}
+ ST.view=section;
+ params.delete('section');params.delete('track');
+ history.replaceState(null,'',location.pathname+(params.size?'?'+params:'')+location.hash);
 }
 
 
@@ -371,26 +412,41 @@ async function retake(userId, examId, examTitle, who){
   alert(ok ? `Retake granted to ${who}.` : (json.error || 'Could not grant the retake.'));
 }
 
+let heatmapRequest=0;
 async function lessons(){
-  const d=await getRows('student_by_lesson',true);
-  const rows = (d||[]).filter(r=>r.questions_seen>=2);
+  const token=++heatmapRequest,track=ST.track,host=$('view');
+  const current=()=>token===heatmapRequest&&ST.track===track&&ST.view==='lessons'&&$('view')===host;
+  const reviewed=['sat','est','est2','est_eng'].includes(track);
+  let d,roster=[];
+  try {
+    if(reviewed){
+      const {data,error}=await sb.rpc('staff_diagnosis',{p_track:track});
+      if(error)throw error;
+      if(data?.track_id!==track||!Array.isArray(data.students))throw Error('Incomplete diagnosis evidence');
+      const students=data.students.filter(s=>!s.is_test);
+      roster=students.map(s=>[s.user_id,s.full_name]);
+      d=students.flatMap(s=>(s.lessons||[]).filter(l=>l.classified!==false&&Number.isFinite(Number(l.seen))&&Number(l.seen)>=3&&l.correct!=null&&Number.isFinite(Number(l.correct))&&Number(l.correct)>=0&&Number(l.correct)<=Number(l.seen)).map(l=>({user_id:s.user_id,full_name:s.full_name,track_id:track,lesson:l.lesson,correct:Number(l.correct),questions_seen:Number(l.seen),percent:Math.round(100*Number(l.correct)/Number(l.seen))})));
+    }else d=await getRows('student_by_lesson',true);
+  } catch(e){if(current())host.innerHTML='<div class="msg bad" role="alert">Class heatmap could not load. '+esc(e.message||e)+'. No alternative evidence has been substituted.</div>';return;}
+  if(!current())return;
+  const rows=(d||[]).filter(r=>r.questions_seen>=(reviewed?3:2));
   const topics=[...new Set(rows.map(r=>r.lesson))].sort((a,b)=>{
     const rate=t=>{const rr=rows.filter(r=>r.lesson===t);return rr.reduce((n,r)=>n+Number(r.correct),0)/rr.reduce((n,r)=>n+Number(r.questions_seen),0)};
     return rate(a)-rate(b)||sortText(a,b);
   });
-  const students=[...new Map(rows.map(r=>[r.user_id,[r.user_id,r.full_name]])).values()].sort((a,b)=>sortText(a[1],b[1]));
+  const students=[...new Map((reviewed?roster:rows.map(r=>[r.user_id,r.full_name])).map(s=>[s[0],s])).values()].sort((a,b)=>sortText(a[1],b[1]));
   const lookup=new Map(rows.map(r=>[r.user_id+'|'+r.lesson,r]));
-  const heat=students.length?wrapTable(`<table class="heatmap"><thead><tr><th>Student</th>${topics.map(t=>`<th>${esc(t)}</th>`).join('')}</tr></thead><tbody>${students.map(([id,name])=>`<tr><td>${esc(name)}</td>${topics.map(t=>{const x=lookup.get(id+'|'+t);return x?`<td class="${x.percent<50?'heat-low':x.percent<75?'heat-mid':'heat-high'}" title="${x.correct}/${x.questions_seen} correct">${x.percent}% <small>(${x.questions_seen})</small></td>`:'<td class="hint">—</td>';}).join('')}</tr>`).join('')}</tbody></table>`):'<div class="empty">Not enough attempts yet.</div>';
+  const heat=students.length&&topics.length?wrapTable(`<table class="heatmap"><thead><tr><th>Student</th>${topics.map(t=>`<th>${esc(t)}</th>`).join('')}</tr></thead><tbody>${students.map(([id,name])=>`<tr><td>${esc(name)}</td>${topics.map(t=>{const x=lookup.get(id+'|'+t);return x?`<td class="${x.percent<(reviewed?60:50)?'heat-low':x.percent<(reviewed?80:75)?'heat-mid':'heat-high'}" title="${x.correct}/${x.questions_seen} correct">${x.percent}% <small>(${x.questions_seen})</small></td>`:'<td class="hint">—</td>';}).join('')}</tr>`).join('')}</tbody></table>`):'<div class="empty">Not enough attempts yet.</div>';
   $('view').innerHTML = `
     <div class="head"><h2>Class topic heatmap</h2><div class="sp"></div>
       <button class="btn-sm" id="csvBtn">Export CSV</button></div>
-    <p class="hint" style="margin-bottom:12px">Topics run from weakest to strongest across the class. Each cell shows accuracy and question count; — means fewer than two attempts. Scroll sideways on a phone.</p>
+    <p class="hint" style="margin-bottom:12px">${reviewed?'Matches Diagnosis: latest reviewed, scored result per distinct question. Held, excluded and ungraded questions and attempts without saved answers are omitted. At least three questions per lesson; — means insufficient evidence, not zero accuracy. Focus below 60%; practise below 80%.':'Historical attempt aggregate: includes unanswered results and can differ from Diagnosis. Select SAT Math or an EST course for the reviewed-question heatmap. — means fewer than two recorded question results.'} Topics run from weakest to strongest. Scroll sideways on a phone.</p>
     ${heat}
     <h2 style="font-size:19px;margin:24px 0 12px">Student detail</h2>
     ${rows.length ? wrapTable(`<table><tr><th>Student</th><th>Lesson</th><th>Correct</th><th></th></tr>` +
       rows.map(r=>`<tr><td>${esc(r.full_name)}</td><td>${esc(r.lesson)}</td>
         <td class="num">${r.correct}/${r.questions_seen}</td>
-        <td style="width:130px">${bar(r.percent)}</td></tr>`).join('') + `</table>`)
+        <td style="width:130px">${bar(r.percent,reviewed?60:50,reviewed?80:75)}</td></tr>`).join('') + `</table>`)
       : `<div class="empty">Not enough attempts yet.</div>`}`;
   $('csvBtn').onclick = () => csv(rows, 'weak-lessons');
 }
@@ -569,7 +625,7 @@ async function editQuestion(x={}){
 }
 function importQuestions(){
  dialog('Import a question bank',select('it','Track',tracks(),ST.track)+`<p class="hint">Upload a JSON array with up to 500 questions. Each needs stem, type, correct, and choices for multiple choice. Math questions must include topic using a lesson name from the Add question list. Optional: difficulty, explanation, assets. All questions are checked before any are imported.</p><a href="/question-bank-example.json" download>Download an example</a><div class="field" style="margin-top:16px"><label for="ifile">Question-bank file</label><input id="ifile" type="file" accept=".json,application/json" required></div>`,async()=>{
- const file=$('ifile').files[0];if(!file)throw new Error('Choose a file.');if(file.size>5000000)throw new Error('File must be below 5 MB.');const body=JSON.parse(await file.text());await mutation('question.import',{track_id:val('it'),questions:(Array.isArray(body)?body:body.questions).map(q=>normalizeQuestionLesson(val('it'),q))});
+ const file=$('ifile').files[0];if(!file)throw new Error('Choose a file.');if(file.size>5000000)throw new Error('File must be below 5 MB.');const body=JSON.parse(await file.text()),items=Array.isArray(body)?body:body.questions;if(!Array.isArray(items))throw new Error('Supply a question array.');const findings=QuestionTopicAudit.audit(items,Array.isArray(body)?{}:body,value=>canonicalMathLesson(val('it'),value));if(findings.length)throw new Error('Review topic tags before importing: '+findings.slice(0,12).map(x=>'Question '+x.question+': '+x.reason).join(' '));await mutation('question.import',{track_id:val('it'),questions:(Array.isArray(body)?body:body.questions).map(q=>normalizeQuestionLesson(val('it'),q))});
  },'Validate & import');
 }
 async function exams(){
@@ -668,37 +724,43 @@ async function audit(){
  $('view').innerHTML=`<div class="head"><h2>Audit log</h2><div class="sp"></div><button class="btn-sm" id="auditCsv">Export CSV</button></div>${wrapTable(`<table><tr><th>Time</th><th>Action</th><th>Actor</th><th>Target</th></tr>${rows.map(a=>`<tr><td>${esc(new Date(a.at).toLocaleString())}</td><td>${esc(a.action)}</td><td class="hint">${esc(a.actor_id)}</td><td class="hint">${esc(a.target_id)}</td></tr>`).join('')}</table>`)}`;$('auditCsv').onclick=()=>csv(rows,'audit-log');
 }
 
-window.addEventListener('DOMContentLoaded',async () => {
-  const { data:{ session } } = await sb.auth.getSession();
-  session ? boot() : show(false);
+$('sessionRetry').onclick = () => PortalSession.retry(boot);
+window.addEventListener('DOMContentLoaded', boot);
+// A cached login/error view may predate a sign-in in another portal page.
+// Do not rebuild a loaded dashboard or interrupt an active examination.
+window.addEventListener('pageshow', event => {
+  if (event.persisted && PortalSession.waiting()) void boot();
 });
 const topButton=$('backToTop');
 const updateTopButton=()=>topButton.classList.toggle('show',window.scrollY>420);
 window.addEventListener('scroll',updateTopButton,{passive:true});
 topButton.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
 </script>
-<script src="/est-source-review.js"></script>
-<script src="/act2-collection.js"></script>
-<script src="/instructor-practice.js"></script>
-<script src="/exam-builder.js"></script>
-<script src="/verified-bank-version.js?v=20261013"></script>
-<script src="/admin-bank.js?v=20261015"></script>
-<script src="/admin-controls.js?v=20261015-group-scores"></script>
-<script src="/admin-exam-activity.js"></script>
-<link rel="stylesheet" href="/portal-navigation.css?v=20261030-responsive">
-<script src="/portal-navigation.js"></script>
-<link rel="stylesheet" href="/portal-management.css?v=20261010">
-<script src="/portal-management.js?v=20261023-act2"></script>
-<link rel="stylesheet" href="/student-management.css?v=20261015">
-<script src="/student-management.js?v=20261015-groups"></script>
-<link rel="stylesheet" href="/group-management.css?v=20261015">
-<link rel="stylesheet" href="/exam-assignments.css?v=20261030-browser">
-<script src="/exam-assignments.js?v=20261030-batch"></script>
-<script src="/group-management.js?v=20261022-students"></script>
-<link rel="stylesheet" href="/admin-bulk.css?v=20261015">
-<script src="/admin-bulk.js?v=20261022-students"></script>
-<script src="/lesson-exam-catalog.js?v=20261024-est1-no-logs"></script>
-<script src="/lesson-exams.js?v=20261030-responsive"></script>
-<script src="/registration-admin.js?v=20261030-secure"></script>
-</body>
+<script src="/est-source-review.js?v=20261114-ui"></script>
+<script src="/act2-collection.js?v=20261114-ui"></script>
+<script src="/instructor-practice.js?v=20261114-ui"></script>
+<script src="/exam-builder.js?v=20261114-ui"></script>
+<script src="/verified-bank-version.js?v=20261114-ui"></script>
+<script src="/admin-bank.js?v=20261114-ui"></script>
+<script src="/admin-controls.js?v=20261114-ui"></script>
+<script src="/admin-exam-activity.js?v=20261114-ui"></script>
+<link rel="stylesheet" href="/portal-navigation.css?v=20261114-ui">
+<link rel="stylesheet" href="/portal-management.css?v=20261114-ui">
+<script src="/portal-management.js?v=20261114-ui"></script>
+<link rel="stylesheet" href="/student-management.css?v=20261114-ui">
+<script src="/student-management.js?v=20261114-ui"></script>
+<link rel="stylesheet" href="/group-management.css?v=20261114-ui">
+<link rel="stylesheet" href="/exam-assignments.css?v=20261114-ui">
+<script src="/exam-assignments.js?v=20261114-ui"></script>
+<script src="/group-management.js?v=20261114-ui"></script>
+<link rel="stylesheet" href="/admin-bulk.css?v=20261114-ui">
+<script src="/admin-bulk.js?v=20261114-ui"></script>
+<script src="/lesson-exam-catalog.js?v=20261114-ui"></script>
+<script src="/lesson-exams.js?v=20261114-ui"></script>
+<script src="/registration-admin.js?v=20261114-ui"></script>
+<link rel="stylesheet" href="/teaching-dashboard.css?v=20261114-ui">
+<link rel="stylesheet" href="/portal-responsive.css?v=20261114-ui">
+<script src="/weekly-report.js?v=20261114-ui"></script><script src="/teaching-dashboard.js?v=20261114-ui"></script>
+<script src="/portal-navigation.js?v=20261114-ui"></script>
+<link rel="stylesheet" href="/portal-ui.css?v=20261114-ui"><script src="/portal-ui.js?v=20261114-ui"></script></body>
 </html>

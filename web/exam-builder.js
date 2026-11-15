@@ -186,4 +186,3 @@ async function editExam(x = {}, initialQuestionIds = []) {
   };
   topics();paint();
 }
-

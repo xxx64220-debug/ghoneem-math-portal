@@ -81,20 +81,12 @@
   window.AdminBulk?.mount('reserve',data.items,el('view').querySelector('table'));
   pager(bankPage,data.total,p=>{bankPage=p;render();});
  }
- // Keep the requested reference and diagnosis tabs visible with daily destinations.
- if(typeof paintDashboard==='function'&&el('examList')){
-  const paint=paintDashboard;paintDashboard=function(){const result=paint.apply(this,arguments);
-   const primary=new Map([['daily','Today'],['formulas',ST.track?.id==='est_eng'?'Rules reference':ST.track?.id==='act2'?'Formulas & materials':'Formulas'],['finalsDiagnosis','Diagnosis'],['revision','Practice'],['mistakes','My mistakes'],['full_exam','Exams'],['overview','Progress']]);
-   if(!document.querySelector('[data-view="revision"]'))primary.set('lesson_exam','Practice');
-   document.querySelectorAll('.student-tabs [data-view]').forEach(b=>{const id=b.dataset.view;
-    if(primary.has(id)){b.childNodes[0].textContent=primary.get(id);b.hidden=false;}
-    else b.hidden=id!==DASH.view;
-   });
-   const select=el('studentSection');if(select)select.querySelectorAll('option').forEach(o=>{if(primary.has(o.value))o.textContent=primary.get(o.value);});
-   const location=el('navigationLocation');if(location&&select)location.textContent=ST.track.name+' / '+select.selectedOptions[0].textContent;
-   return result;
-  };
- }
  // Accessible destinations and predictable focus, on both staff and student pages.
- const target=el('app')||el('examList');if(target){target.tabIndex=-1;const skip=document.createElement('a');skip.href='#'+target.id;skip.className='portal-skip-link';skip.textContent='Skip to main content';document.body.prepend(skip);}
+ const target=el('app')||el('examList');if(target){
+  const skip=document.createElement('a');skip.className='portal-skip-link';skip.textContent='Skip to main content';document.body.prepend(skip);
+  const views=['vRun','vReview','vList','vTracks','app','vLogin','vSession'].map(el).filter(Boolean);
+  const syncSkip=()=>{const current=views.find(v=>!v.hidden&&!v.classList.contains('hidden'))||target;current.tabIndex=-1;skip.href='#'+current.id;return current;};
+  skip.onclick=e=>{e.preventDefault();const current=syncSkip();current.focus({preventScroll:true});current.scrollIntoView?.({block:'start'});};
+  const observer=new MutationObserver(syncSkip);views.forEach(v=>observer.observe(v,{attributes:true,attributeFilter:['class','hidden']}));syncSkip();
+ }
 })();

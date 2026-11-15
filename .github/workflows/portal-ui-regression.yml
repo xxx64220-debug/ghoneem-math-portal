@@ -1,0 +1,24 @@
+name: Portal UI regressions
+
+on:
+  pull_request:
+    branches: [main]
+    paths: ['web/**', 'dist/**', 'tests/**', '.github/workflows/portal-ui-regression.yml']
+  push:
+    branches: [main]
+    paths: ['web/**', 'dist/**', 'tests/**', '.github/workflows/portal-ui-regression.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  portal-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci --prefix tests/english-runtime --ignore-scripts --no-audit --no-fund
+      - run: npm ci --prefix tests/passage-runtime --ignore-scripts --no-audit --no-fund
+      - run: node --test --test-force-exit tests/exam_flags.test.cjs tests/study_planner_ui.test.cjs tests/planner_workspace.test.cjs tests/ui_refresh.test.cjs tests/unified_portal_tasks.test.cjs tests/sat_calculator.test.cjs

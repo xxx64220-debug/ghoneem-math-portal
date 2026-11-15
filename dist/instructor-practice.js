@@ -89,4 +89,3 @@ async function openTeachingExam(exam){
  };paint();$('editor').onclose=()=>$('editor').classList.remove('teaching');$('editor').showModal();
  }catch(e){alert('Could not open instructor practice: '+e.message);}
 }
-

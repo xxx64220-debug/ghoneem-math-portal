@@ -176,13 +176,13 @@ function finalsExamLessons(items){
 function portalBundleLessonLink(lesson){
  if(document.documentElement?.dataset?.practiceBundlesEnabled!=='true'||DASH.access?.practice_open===false||!ST.track?.id)return '';
  const params=new URLSearchParams({track:ST.track.id,lesson});
- return '<a class="btn-ghost" href="/practice-bundles.html?'+esc(params.toString())+'">Build practice for this lesson</a>';
+ return '<a class="btn-secondary" href="/practice-bundles.html?'+esc(params.toString())+'">Practise this lesson</a>';
 }
 (function connectBundlePractice(){
  if(typeof lessonCard==='function'){
   const original=lessonCard;
   lessonCard=function(l,compact){
-   const source=Number.isInteger(l.bundle_seen)?'<p class="dash-note">Evidence: '+l.exam_seen+' exam · '+l.bundle_seen+' bundle questions</p>':'';
+   const source=Number.isInteger(l.bundle_seen)?'<p class="dash-note">Based on '+(l.seen??(l.exam_seen+l.bundle_seen))+' questions you’ve answered</p>':'';
    return original(l,compact).replace('</article>',source+portalBundleLessonLink(l.lesson)+'</article>');
   };
  }

@@ -32,15 +32,15 @@ function mistakesPanel() {
   if (DASH.mistakesError)
     return `<section class="dash-panel"><h2>Mistake notebook</h2><p class="dash-empty" role="alert">${esc(DASH.mistakesError)}</p><button class="btn" data-mistakes-retry>Try again</button></section>`;
   const items = DASH.mistakes?.items || [];
-  const mastered=Object.values(DASH.notebookFeedback||{}).find(value=>value.mastered);
+  const latestFeedback=Object.values(DASH.notebookFeedback||{}).at(-1);
   const cards = items.map((item,index) => {
     const feedback=DASH.notebookFeedback?.[item.id];
     const choices=(item.choices||[]).map(c=>`<label class="daily-option"><input type="radio" name="notebook-${esc(item.id)}" value="${esc(c.key)}"><span><b>${esc(c.key)}.</b> ${esc(c.text)}</span></label>`).join('');
-    if (typeof englishPassage==='function' && englishPassage(item,ST.track?.id)) return `<article class="mistake-card"><p class="mistake-meta">${esc(item.topic||'Practice question')} · ${item.streak}/2 correct in a row</p>${readingQuestion(item,ST.track.id,`<div class="daily-options">${choices}</div><button class="btn" data-notebook-submit="${esc(item.id)}">Check answer</button>${feedback?`<div class="mistake-explanation" role="status"><b>${feedback.correct?'Correct':'Try again'}</b><p>${esc(feedback.explanation||'')}</p><p>${feedback.mastered?'Mastered — two correct in a row.':`${feedback.streak}/2 correct in a row`}</p></div>`:''}`)}${typeof reportButton==='function'?reportButton(item.id,'mistake notebook'):''}</article>`;
-    return `<article class="mistake-card"><div class="dash-heading"><p class="mistake-meta">${esc(item.topic||'Practice question')}</p><span class="daily-tag">${item.streak}/2 correct in a row</span></div><h3>${esc(item.stem)}</h3>${figure(item.assets)}${typeof reportButton==='function'?reportButton(item.id,'mistake notebook'):''}<div class="daily-options">${item.type==='mcq'?choices:`<label class="field">Your answer<input class="gridin" data-notebook-text="${esc(item.id)}" autocomplete="off"></label>`}</div><button class="btn" data-notebook-submit="${esc(item.id)}">Check answer</button>${feedback?`<div class="mistake-explanation" role="status"><b>${feedback.correct?'Correct':'Try again'}</b><p>${esc(feedback.explanation||'')}</p><p>${feedback.mastered?'Mastered — two correct in a row.':`${feedback.streak}/2 correct in a row`}</p></div>`:''}</article>`;
+    if (typeof englishPassage==='function' && englishPassage(item,ST.track?.id)) return `<article class="mistake-card"><p class="mistake-meta">${esc(item.topic||'Practice question')} · ${item.streak}/2 correct in a row</p>${readingQuestion(item,ST.track.id,`<div class="daily-options">${choices}</div><button class="btn" data-notebook-submit="${esc(item.id)}" ${feedback?'disabled':''}>Check answer</button>${feedback?`<div class="mistake-explanation" role="status"><b>${feedback.correct?'Correct':'Try again'}</b><p>${esc(feedback.explanation||'')}</p><p>${feedback.mastered?'Mastered — two correct in a row.':`${feedback.streak}/2 correct in a row`}</p></div>`:''}`)}${typeof reportButton==='function'?reportButton(item.id,'mistake notebook'):''}</article>`;
+    return `<article class="mistake-card"><div class="dash-heading"><p class="mistake-meta">${esc(item.topic||'Practice question')}</p><span class="daily-tag">${item.streak}/2 correct in a row</span></div><h3>${esc(item.stem)}</h3>${figure(item.assets)}${typeof reportButton==='function'?reportButton(item.id,'mistake notebook'):''}<div class="daily-options">${item.type==='mcq'?choices:`<label class="field">Your answer<input class="gridin" data-notebook-text="${esc(item.id)}" autocomplete="off"></label>`}</div><button class="btn" data-notebook-submit="${esc(item.id)}" ${feedback?'disabled':''}>Check answer</button>${feedback?`<div class="mistake-explanation" role="status"><b>${feedback.correct?'Correct':'Try again'}</b><p>${esc(feedback.explanation||'')}</p><p>${feedback.mastered?'Mastered — two correct in a row.':`${feedback.streak}/2 correct in a row`}</p></div>`:''}</article>`;
   }).join('');
-  const pages=Math.max(1,Math.ceil((DASH.mistakes.remaining||0)/25));
-  return `<section class="dash-panel"><div class="dash-heading"><div><h2>Mistake notebook</h2><p class="dash-note">Wrong answers from reviewed exams and daily quizzes. Answer each one correctly twice in a row to master it; a wrong try resets the count.</p></div><span class="daily-tag">${DASH.mistakes.remaining} to practise · ${DASH.mistakes.mastered} mastered</span></div>${mastered?`<p class="dash-notice" role="status">Question mastered — two correct answers in a row. ${esc(mastered.explanation||'')}</p>`:''}${items.length?cards:'<div class="dash-empty">No mistakes to practise right now.</div>'}${pages>1?`<div class="history-pager"><button class="btn-ghost" data-notebook-page="prev" ${DASH.mistakePage===0?'disabled':''}>Previous</button><span>Page ${DASH.mistakePage+1} of ${pages}</span><button class="btn-ghost" data-notebook-page="next" ${DASH.mistakePage>=pages-1?'disabled':''}>Next</button></div>`:''}</section>`;
+  const pages=Math.max(1,Math.ceil((DASH.mistakes.due_count??DASH.mistakes.remaining??0)/25));
+  return `<section class="dash-panel"><div class="dash-heading"><div><h2>Mistake notebook</h2><p class="dash-note">Wrong answers from released exams, quizzes and bundles return after 1, 3 and 7 days. Two correct retries in a row master a question; a wrong retry resets the streak.</p></div><span class="daily-tag">${DASH.mistakes.due_count??DASH.mistakes.remaining} due today · ${DASH.mistakes.remaining} to practise · ${DASH.mistakes.mastered} mastered</span></div>${latestFeedback?`<div class="dash-notice" role="status"><b>${latestFeedback.mastered?'Question mastered — two correct answers in a row.':latestFeedback.correct?'Correct — retry saved.':'Retry saved — review the solution before your next retry.'}</b><p>${esc(latestFeedback.explanation||'')}</p></div>`:''}${items.length?cards:`<div class="dash-empty">No retries due right now.${DASH.mistakes.next_due_at?' Next retry: '+dateText(DASH.mistakes.next_due_at)+'.':''}</div>`}${pages>1?`<div class="history-pager"><button class="btn-ghost" data-notebook-page="prev" ${DASH.mistakePage===0?'disabled':''}>Previous</button><span>Page ${DASH.mistakePage+1} of ${pages}</span><button class="btn-ghost" data-notebook-page="next" ${DASH.mistakePage>=pages-1?'disabled':''}>Next</button></div>`:''}</section>`;
 }
 
 function wireMistakes() {
@@ -64,6 +64,7 @@ function wireMistakes() {
       if(ST.track?.id!==track)return;
       void refreshDaily();
       DASH.notebookFeedback={ [id]:json };
+      if(json.next_due_at&&!json.mastered){DASH.notebookFeedback[id].explanation=(json.explanation||'')+' Next retry: '+dateText(json.next_due_at)+'.';}
       const state=await fn('daily-challenge',{qs:`?track=${encodeURIComponent(track)}&view=notebook&offset=${DASH.mistakePage*25}`});
       if(!state.ok)throw new Error(friendly(state.json.error));
       DASH.mistakes=state.json;
@@ -118,7 +119,7 @@ function wireDrill(){
 async function refreshDaily(group) {
   const track = ST.track?.id;
   if (!track) return;
-  const scope = group === undefined ? (DASH.daily?.track===track ? DASH.daily.scope_id : undefined) : group;
+  const scope = group === undefined ? (DASH.dailyTarget?.group || (DASH.daily?.track===track ? DASH.daily.scope_id : undefined)) : group;
   const request = ++DAILY_REQUEST;
   DAILY_LOADING = true;
   try {
@@ -134,12 +135,13 @@ async function refreshDaily(group) {
   } finally {
     if (request===DAILY_REQUEST) {
       DAILY_LOADING=false;
-      if (ST.track?.id===track && DASH.view==='daily' && !DASH.searchTerm?.trim()) paintDashboardContent();
+      if (ST.track?.id===track && DASH.view==='daily' && !DASH.searchTerm?.trim() && document.getElementById('dashboardContent')) paintDashboardContent();
     }
   }
 }
 function dailyGroupSelector(d) {
   const groups=d.groups||[];
+  if(DASH.dailyTarget?.group)return '<p class="dash-note">Assigned quiz · '+esc(d.group_name||'Your group')+'</p>';
   if (!groups.length) return '';
   return `<label class="daily-group-select" for="dailyGroup">Assigned group<select id="dailyGroup" ${DAILY_BUSY||DAILY_LOADING?'disabled':''}>${groups.map(g=>`<option value="${esc(g.id)}" ${g.id===d.scope_id?'selected':''}>${esc(g.name)}</option>`).join('')}</select></label><p class="dash-note">Quiz scores, points and streak belong to the selected group. Complete a separate quiz for each group. Course drills and corrected mistakes can count toward each group’s checklist.</p>`;
 }
@@ -177,6 +179,12 @@ function streakPanel(d) {
 
 function dailyPanel() {
   const d = DASH.daily;
+  const target=DASH.dailyTarget;
+  const currentDay=new Intl.DateTimeFormat('en-CA',{timeZone:'Africa/Cairo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  if(target&&((target.date&&target.date!==currentDay)||(d&&target.group&&d.scope_id!==target.group))){
+    const params=new URLSearchParams({track:ST.track.id,view:'today'});if(target.date)params.set('date',target.date);
+    return '<section class="dash-panel"><h2>Assigned Daily Quiz</h2><p role="status">'+(target.date&&target.date!==currentDay?'This task is for '+esc(target.date)+'. Daily Quizzes are available only on their Cairo date. Today’s quiz will not complete that dated task.':'The assigned group’s quiz could not be loaded. Please return to the objective or retry.')+'</p><a class="dash-link" href="/study-plan.html?'+esc(params)+'">Back to this objective →</a></section>';
+  }
   if (!d) return `<section class="dash-panel"><h2>Today's practice</h2><p class="dash-empty" role="status">${esc(DASH.dailyError || 'Loading your daily questions…')}</p>${DASH.dailyError ? '<button class="btn" data-daily-retry>Try again</button>' : ''}</section>`;
   const completed = d.completed;
   if(DAILY_LOADING) return `<section class="dash-panel"><h2>Today’s practice</h2><p role="status">Loading this group’s quiz…</p></section>`;
@@ -189,8 +197,9 @@ function dailyPanel() {
   const tasks = checklist.map(([id,label,description]) => {
     const status = d.activity_status?.[id] || (id==='quiz' && d.completed ? 'completed' : 'pending');
     const done = status==='completed';
+    const noRetryDue = id==='review' && !done && DASH.mistakes?.due_count===0;
     const destination = id==='focus' ? 'lesson_exam' : 'mistakes';
-    return `<li class="daily-task ${done?'is-done':''}"><span class="daily-check" aria-hidden="true">${done?'✓':'○'}</span><div><strong>${label}</strong><p>${description}</p><span class="daily-tag" data-daily-status="${id}">${done?'Completed automatically':status==='started'?'Started':'Pending'}</span></div>${done?'':id==='quiz'?'<a class="dash-link" href="#daily-quiz">Take quiz</a>':`<div class="daily-actions"><button class="btn-ghost" data-daily-open="${destination}">${id==='focus'?'Open lesson exams':'Open notebook'}</button>${id==='focus'?'<button class="btn-ghost" data-daily-open="drill">Open drill</button>':''}</div>`}</li>`;
+    return `<li class="daily-task ${done?'is-done':''}"><span class="daily-check" aria-hidden="true">${done?'✓':'○'}</span><div><strong>${label}</strong><p>${noRetryDue?'No retry is due yet. Return on the date shown in your notebook; your quiz streak is unaffected.':description}</p><span class="daily-tag" data-daily-status="${id}">${done?'Completed automatically':noRetryDue?'No retry due':status==='started'?'Started':'Pending'}</span></div>${done?'':id==='quiz'?'<a class="dash-link" href="#daily-quiz">Take quiz</a>':`<div class="daily-actions"><button class="btn-ghost" data-daily-open="${destination}">${id==='focus'?'Open lesson exams':'Open notebook'}</button>${id==='focus'?'<button class="btn-ghost" data-daily-open="drill">Open drill</button>':''}</div>`}</li>`;
   }).join('');
   const questions = (d.quiz || []).map((q,i) => {
     const chosen = completed ? q.answer?.submitted : DAILY_DRAFT[q.id];
@@ -265,7 +274,7 @@ function tickDailyStreak() {
     DAILY_REFRESHING=true;
     const scope=DASH.daily.scope_id;
     DAILY_DRAFT={}; DASH.daily=null;
-    if (DASH.view==='daily' && !DASH.searchTerm?.trim()) paintDashboardContent();
+    if (DASH.view==='daily' && !DASH.searchTerm?.trim() && document.getElementById('dashboardContent')) paintDashboardContent();
     refreshDaily(scope).finally(() => { DAILY_REFRESHING=false; });
   }
 }

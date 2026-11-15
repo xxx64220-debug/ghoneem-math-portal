@@ -1,0 +1,16 @@
+.vocabulary-workspace{max-width:100%;overflow-wrap:anywhere}
+.vocab-kicker{font-size:.75rem;letter-spacing:.13em;font-weight:700;color:var(--muted)}
+.vocab-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0 12px}
+.vocab-stats>div{padding:16px;background:#f3f5f7;border-radius:10px;border:1px solid #e0e5eb}
+.vocab-stats strong{display:block;font-size:1.7rem;color:var(--navy);line-height:1.3}
+.vocab-stats span{font-size:.86rem;color:var(--muted)}
+.vocab-modes,.vocab-filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.vocab-modes button,.vocab-filters button{min-height:44px}
+.vocab-modes button[aria-pressed=true]{background:var(--navy);color:white}
+.vocab-filters button[aria-pressed=true]{border-color:var(--navy);background:#eef1f5;color:var(--navy);font-weight:700}
+.vocab-set{border-top:1px solid #e0e5eb;padding:18px 0}
+.vocab-set>.badge{text-transform:capitalize}
+.vocab-set h3{margin:8px 0;font-size:1.05rem}
+.vocab-set .exam-row{border:0;margin:4px 0;padding:8px 0}
+.vocabulary-workspace button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@media(max-width:520px){.vocab-stats{gap:6px}.vocab-stats>div{padding:10px 8px}.vocab-stats strong{font-size:1.35rem}.vocab-stats span{font-size:.75rem}.vocab-set .exam-row{flex-wrap:wrap}.vocab-set .exam-row>div{flex-basis:100%!important;min-width:0!important}.vocab-modes{gap:6px}.vocab-modes button{flex:1;padding:9px 7px;font-size:.85rem}}
