@@ -1,0 +1,29 @@
+[
+  {
+    "jobid": 1,
+    "jobname": "sweep-expired-attempts",
+    "schedule": "* * * * *",
+    "command": "select public.sweep_expired_attempts()",
+    "database": "postgres",
+    "username": "postgres",
+    "active": true
+  },
+  {
+    "jobid": 2,
+    "jobname": "portal-push-delivery",
+    "schedule": "* * * * *",
+    "command": "\n select net.http_post(\n  url:='https://wfhurjyouemahvkcfkdz.supabase.co/functions/v1/portal-notifications',\n  headers:=jsonb_build_object('Content-Type','application/json','x-portal-worker',(select worker_secret from public.portal_push_config where id)),\n  body:='{\"action\":\"dispatch\"}'::jsonb,timeout_milliseconds:=120000\n );\n",
+    "database": "postgres",
+    "username": "postgres",
+    "active": true
+  },
+  {
+    "jobid": 3,
+    "jobname": "portal-weekly-algebra-assessments",
+    "schedule": "*/5 * * * *",
+    "command": "select portal_private.run_weekly_assessments();",
+    "database": "postgres",
+    "username": "postgres",
+    "active": true
+  }
+]

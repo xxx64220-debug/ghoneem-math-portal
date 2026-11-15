@@ -12,6 +12,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/portal-availability.yml'
+      - 'supabase/migrations/**'
+      - 'database-releases/**'
       - 'scripts/check-portal-availability.mjs'
       - 'scripts/run-portal-availability.mjs'
       - 'scripts/alert-portal-availability.mjs'
@@ -21,6 +23,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/portal-availability.yml'
+      - 'supabase/migrations/**'
+      - 'database-releases/**'
       - 'scripts/check-portal-availability.mjs'
       - 'scripts/run-portal-availability.mjs'
       - 'scripts/alert-portal-availability.mjs'
