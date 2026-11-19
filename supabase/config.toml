@@ -26,3 +26,7 @@ verify_jwt = false
 # Public submissions; list/review verify active administrator sessions.
 [functions.student-registration]
 verify_jwt = false
+
+# Public reset requests; administrator review and link issuance authenticate in-handler.
+[functions.password-recovery]
+verify_jwt = false
