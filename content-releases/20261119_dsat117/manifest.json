@@ -1,0 +1,559 @@
+{
+  "source_name": "117 DSAT V2 Full @DSATaz_261119_184909.pdf",
+  "source_sha256": "9d6f71a1b55f12d08cbec5502790bc4d4495d914151eb365e3655a4c8d1b4696",
+  "source_pages": 69,
+  "track": "sat",
+  "math_question_positions": 66,
+  "entries": [
+    {
+      "source_code": "DSAT117-M1-01",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 1,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-02",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 2,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-03",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 3,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-04",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 4,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-05",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 5,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-06",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 6,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-07",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 7,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-08",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 8,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-09",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 9,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-10",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 10,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-11",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 11,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-12",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 12,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-13",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 13,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-14",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 14,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-15",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 15,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-16",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 16,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-17",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 17,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-18",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 18,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-19",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 19,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-20",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 20,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-21",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 21,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M1-22",
+      "module": "M1",
+      "source_difficulty": "baseline",
+      "source_number": 22,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-01",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 1,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-02",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 2,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-03",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 3,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-04",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 4,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-05",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 5,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-06",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 6,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-07",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 7,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-08",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 8,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-09",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 9,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-10",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 10,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-11",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 11,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-12",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 12,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-13",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 13,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-14",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 14,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-15",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 15,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-16",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 16,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-17",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 17,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-18",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 18,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-19",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 19,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-20",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 20,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-21",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 21,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2E-22",
+      "module": "M2E",
+      "source_difficulty": "easy",
+      "source_number": 22,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-01",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 1,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-02",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 2,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-03",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 3,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-04",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 4,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-05",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 5,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-06",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 6,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-07",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 7,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-08",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 8,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-09",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 9,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-10",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 10,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-11",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 11,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-12",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 12,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-13",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 13,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-14",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 14,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-15",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 15,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-16",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 16,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-17",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 17,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-18",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 18,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-19",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 19,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-20",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 20,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-21",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 21,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    },
+    {
+      "source_code": "DSAT117-M2H-22",
+      "module": "M2H",
+      "source_difficulty": "hard",
+      "source_number": 22,
+      "review_status": "held",
+      "reason": "Question text, figure, solution, and key require independent verification before bank import."
+    }
+  ],
+  "draft_exams": [
+    {
+      "title": "DSAT 117 V2 Math \u2014 baseline + easy",
+      "modules": [
+        "M1",
+        "M2E"
+      ],
+      "question_count": 44,
+      "duration_minutes_per_module": 35,
+      "status": "blocked_pending_question_review"
+    },
+    {
+      "title": "DSAT 117 V2 Math \u2014 baseline + hard",
+      "modules": [
+        "M1",
+        "M2H"
+      ],
+      "question_count": 44,
+      "duration_minutes_per_module": 35,
+      "status": "blocked_pending_question_review"
+    }
+  ]
+}
