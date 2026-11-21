@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-21",
+  "timezone": "Africa/Cairo",
+  "pr": 68,
+  "reviewed_head": "40a22a67be2402a9636a28184821057813b09047",
+  "base": "4f1f8384b433964dcb0c25f96ac3159324c5e6a3",
+  "live_version": 205,
+  "live_source_commit": "8755fae18144f054cedcc7ad4561517752f03213",
+  "deployment": "appgdep_6b008d0a20ac819195f9d7cdde5704a0",
+  "live_url": "https://math.portal.ghoneem.com/",
+  "live_html_sha256": "69843ca25107c785ff98f1f68ad61d2840de379df80022edbfcb603034b7d660",
+  "live_recheck_matches": true,
+  "draft_html_sha256": "9af935a4445e8c033fcb3699b8d84966a9ebe0b59e11e0c71369ad3ad08d3af9",
+  "live_overlay_html_sha256": "565f14709952145f7bb70ed1ef5bccfa1442d64b247e5a20d9a311596657b7eb",
+  "assets": {
+    "portal-controls.css": "238ed6423c805fe6e52eb02d7f63b23fd74a5aab3659292942605898f3061358",
+    "portal-responsive.css": "a79667938d231a6d6c7b1f210147d52c59fbd22fdae399e9d43f12183c4486b2",
+    "portal-ui.css": "27c373955689191e49a10fda15eba6ea79ac1c3adee065007f7ff9544a038181",
+    "sat-calculator.css": "61d3967f4e175a5f6cb7cd847263eb54a769a8e086367e008b1b59f3c5bf370c",
+    "english-reading.css": "68d2e96a1d3a3bda6d3266f6b7b23ab098b0b330695197882f1c723d3a015bcc",
+    "lesson-exams.css": "36dc0a49cadb419134c9cc8b57edc78631fc0acb8db3d9b1a1bdc8e5667ddc4d",
+    "portal-math-layout.css": "0c45fcba3f23eea74bf8ee31fcd06c29dfaa745dc5c360fc7df1b5d1d9927d1b",
+    "vocabulary.css": "53e956f1a1d4f9edb298981173c93473ca3044e86d626f77624e195c801774e6",
+    "portal-navigation.css": "f8de9b578ae8e9f27171838ae910ef30e816b86ac76c0647edb90e4b62b19e41",
+    "exam-experience.css": "5b80052db9d0fd5f12ec28290db728c6df3eb2745d08f43697fb5fb903539ce4",
+    "daily-challenge.css": "99cd3acb616349a8eb2df393b92f21bcfd26fd1ca0b28386212bab01ecc39f42",
+    "portal-devices.css": "819f7cb87bf58e0338b92d559d7cc21be738e5e7b13f44207e9eb876becfbb40",
+    "portal-management.css": "a652edb1a68407d85f757b32b0c17d4ec40e7e4cf2c9edd0f6e7b763b946c641"
+  },
+  "public_http_sample": {
+    "http_status": 200,
+    "ttfb_seconds": 6.246191,
+    "total_seconds": 6.343819,
+    "bytes": 134599,
+    "caveat": "One executor-side request; includes proxy/network overhead; not authenticated exam-list latency."
+  }
+}

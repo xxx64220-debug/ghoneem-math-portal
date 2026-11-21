@@ -64,7 +64,7 @@ jobs:
 
       - name: Check reconciled production features
         run: |
-          node --test tests/act2_course_ui.test.cjs tests/daily_group_scores_edge.test.cjs tests/daily_group_scores_ui.test.cjs tests/diagnosis_coherence_ui.test.cjs tests/exam_flags.test.cjs tests/lesson_exam_library.test.cjs tests/sat_full_review_ui.test.cjs
+          node --test tests/act2_course_ui.test.cjs tests/daily_group_scores_edge.test.cjs tests/daily_group_scores_ui.test.cjs tests/diagnosis_coherence_ui.test.cjs tests/exam_flags.test.cjs tests/lesson_exam_library.test.cjs tests/sat_full_review_ui.test.cjs tests/full_exam_grid.test.cjs
           node tests/act2_collection_ui.cjs
 
       - name: Run source archive UI regression when its checked-in inputs exist

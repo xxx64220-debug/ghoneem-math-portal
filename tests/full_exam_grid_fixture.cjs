@@ -1,0 +1,12 @@
+// Synthetic display records only: no student data or network calls.
+function examFixtures(track='sat', stress=false) {
+ const exam=(id,title,extra={})=>({id,title,track_id:track,assessment_type:'full_exam',questions:track==='sat'?22:track==='est2'?40:50,duration_seconds:track==='sat'?2100:track==='est'?4500:3600,open:true,...extra});
+ const done=(id,score=19)=>({id,status:'graded',score,total:22});
+ if(track!=='sat')return [exam('paper10','Practice Paper 10'),exam('paper2','Practice Paper 2'),exam('resume','Practice Paper 30',{open:false,last:{id:'resume-attempt',status:'in_progress'}}),exam('held','Practice Paper 4 — Content being reviewed',{content_ready:false}),exam('closed','Practice Paper 5 — Opens later',{open:false}),exam('complete','Practice Paper 6 — Completed, retake available',{retake_available:true,last:{...done('complete-attempt',track==='est2'?30:40),total:track==='est2'?40:50}}),exam('long','Practice Paper 7 — Geometry, Statistics and Data Analysis with a deliberately long title to check wrapping'),exam('word','Practice Paper 8 — '+ 'UnbrokenTitle'.repeat(6)),exam('pending','Practice Paper 9 — Awaiting grading',{last:{...done('pending-attempt',null),total:track==='est2'?40:50}})];
+ const pair=(n,title,extras=[{},{}])=>[1,2].map((m,i)=>exam('p'+n+'m'+m,title+' — Module '+m,{exam_set_code:'pair'+n,module_number:m,...extras[i]}));
+ const rows=[...pair(10,'SAT Practice 10'),...pair(2,'SAT Practice 2'),...pair(30,'SAT Practice 30 — In progress',[{last:done('a30m1')},{open:false,last:{id:'a30m2',status:'in_progress'}}]),...pair(4,'SAT Practice 4 — Complete',[{last:done('a4m1')},{last:done('a4m2',18)}]),...pair(5,'SAT Practice 5 — Awaiting grading',[{last:done('a5m1',null)},{last:done('a5m2',null)}]),...pair(6,'SAT Practice 6 — Content held',[{content_ready:false},{content_ready:false}]),...pair(7,'SAT Practice 7 — Long title covering Quadratic Functions, Geometry, Statistics and Data Analysis'),...pair(8,'SAT Practice 8 — '+'LongUnbrokenTitle'.repeat(5)),exam('single10','SAT Single Paper 10'),exam('single2','SAT Single Paper 2'),exam('orphan','SAT Unpaired Paper 40 — Resume',{exam_set_code:'missing-partner',module_number:1,last:{id:'orphan-attempt',status:'in_progress'}})];
+ if(stress)for(let i=100;i<400;i++)rows.push(...pair(i,'SAT Practice '+i));
+ return rows;
+}
+function extract(html,start,end){const a=html.indexOf(start),b=html.indexOf(end,a);if(a<0||b<0)throw Error('Missing source boundary '+start);return html.slice(a,b);}
+module.exports={examFixtures,extract};
