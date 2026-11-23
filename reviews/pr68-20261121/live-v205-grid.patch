@@ -1,0 +1,56 @@
+--- a/index.html
++++ b/index.html
+@@ -170,6 +170,8 @@
+ .full-exam-grid>.exam-row,.full-exam-grid>.exam-pair{aspect-ratio:1;min-width:0;margin:0;padding:14px;overflow-wrap:anywhere}
+ .full-exam-grid>.exam-row{display:flex;flex-flow:column nowrap;align-items:flex-start;gap:8px}
+ .exam-tile-copy{flex:1;min-width:0}
++/* Override the legacy mobile row basis when the copy is in a column tile. */
++.full-exam-grid>.exam-row>.exam-tile-copy{flex-basis:auto!important}
+ .full-exam-grid>.exam-row>.btn,.paired-exams .pair-score>.btn{width:100%}
+ .full-exam-grid .btn{min-height:44px;padding:8px;white-space:normal}
+ .full-exam-grid .btn:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+@@ -825,7 +827,7 @@
+  const practice=e.assessment_type==='lesson_exam';
+  const tile=options?.tile===true;
+  const score=done?`<span class="badge done chip ${scoreClass(a.score==null?null:100*a.score/a.total)}">${a.score == null ? 'Awaiting grading' : a.score+'/'+a.total}</span>`:'';
+- return `<div class="exam-row"><div ${tile?'class="exam-tile-copy"':'style="flex:1;min-width:170px"'}><h3>${esc(displayTitle(e.title))}</h3><div class="meta">${e.questions} questions · ${live&&a.untimed?'No time limit':Math.round(e.duration_seconds/60)+' min'}${practice?' · Repeatable':''}${underReview?' · Content under review':!e.open&&!live?' · Not open':''}${done?' · Completed':''}</div></div>${score}${courseAllowed&&!locked&&practice&&!live&&e.open&&!underReview?`<label class="practice-mode">Timer<select data-timer="${e.id}" aria-label="Timer for ${esc(displayTitle(e.title))}"><option value="untimed">No time limit</option><option value="timed">Timed (${Math.round(e.duration_seconds/60)} min)</option></select></label>`:''}<button class="btn" ${done?`data-review="${a.id}"`:`data-start="${e.id}"`} ${!done&&(!courseAllowed||underReview||(!live&&(locked||!e.open)))?'disabled':''}>${label}</button>${courseAllowed&&!locked&&done&&(practice||e.retake_available)&&e.open&&!underReview?`<button class="btn" data-start="${e.id}">${practice?'Practice again':'Start retake'}</button>`:''}</div>`;
++ return `<div class="exam-row"><div ${tile?'class="exam-tile-copy"':'style="flex:1;min-width:170px"'}><h3>${esc(displayTitle(e.title))}</h3><div class="meta">${e.questions} questions · ${live&&a.untimed?'No time limit':Math.round(e.duration_seconds/60)+' min'}${practice?' · Repeatable':''}${underReview?' · Content under review':!e.open&&!live?' · Not open':''}${done?' · Completed':''}</div></div>${score}${courseAllowed&&!locked&&practice&&!live&&e.open&&!underReview?`<label class="practice-mode">Timer<select data-timer="${e.id}" aria-label="Timer for ${esc(displayTitle(e.title))}"><option value="untimed">No time limit</option><option value="timed">Timed (${Math.round(e.duration_seconds/60)} min)</option></select></label>`:''}<button class="btn" aria-label="${esc(label+': '+displayTitle(e.title))}" ${done?`data-review="${a.id}"`:`data-start="${e.id}"`} ${!done&&(!courseAllowed||underReview||(!live&&(locked||!e.open)))?'disabled':''}>${label}</button>${courseAllowed&&!locked&&done&&(practice||e.retake_available)&&e.open&&!underReview?`<button class="btn" aria-label="${esc((practice?'Practice again':'Start retake')+': '+displayTitle(e.title))}" data-start="${e.id}">${practice?'Practice again':'Start retake'}</button>`:''}</div>`;
+ }
+ let VOCABULARY={track:null,page:0,difficulty:'all',mode:'practice'};
+ function vocabularyCatalog(){return (window.GhoneemVocabularyCatalog||[]).filter(e=>e.track_id===ST.track?.id);}
+@@ -883,10 +885,12 @@
+  return `<section class="dash-panel" aria-labelledby="novemberPracticeTitle"><h2 id="novemberPracticeTitle">November 2026 SAT Math practice</h2><p>10 questions · 20-minute practice timer or untimed · Calculator allowed.</p><p class="dash-note">Original Perfect1600 questions modeled on student reports from November 7. This short set is not the official exam or a full two-module simulation. Answers and worked explanations appear after submission.</p>${assessmentRow(exam)}<p><a href="/worksheets/november-2026-sat-math.pdf" target="_blank" rel="noopener">Open the printable Math worksheet (PDF)</a></p><details class="about"><summary>Sources and other November collections</summary><p>The worksheet retains Perfect1600's attribution. Source questions 11–20 appear as questions 1–10 online.</p><ul><li><a href="https://perfect1600.com/free-sat-practice-pdfs" target="_blank" rel="noopener noreferrer">Perfect1600 free practice PDF</a></li><li><a href="https://thetestadvantage.com/blog/november-2026-international-sat-math-answers-reddit" target="_blank" rel="noopener noreferrer">Student recollections and discussion</a> · Unverified recall.</li><li><a href="https://thetestadvantage.com/test/dsat-math-november-2026-question-bank" target="_blank" rel="noopener noreferrer">The Test Advantage November question bank</a> · Paid collection; not imported.</li><li><a href="https://allsatpapers.com/blogs/sat_qas/november-2026-digital-sat-overview-comparison" target="_blank" rel="noopener noreferrer">AllSATPapers November collections</a> · Source provenance unverified; not imported.</li></ul></details></section>`;
+ }
+ function fullExamSection(){
+- const compareTitles=(a,b)=>String(a).localeCompare(String(b),undefined,{numeric:true,sensitivity:'base'});
++ const titleOrder=new Intl.Collator(undefined,{numeric:true,sensitivity:'base'});
++ const compareTitles=(a,b)=>titleOrder.compare(String(a),String(b));
+  const isInProgress=e=>e.last?.status==='in_progress';
++ const compareExams=(a,b)=>Number(isInProgress(b))-Number(isInProgress(a))||compareTitles(a.title,b.title);
+  const modules=DASH.exams.filter(e=>e.assessment_type==='full_exam')
+-  .sort((a,b)=>Number(isInProgress(b))-Number(isInProgress(a))||compareTitles(a.title,b.title));
++  .sort(compareExams);
+  const tiles=rows=>`<div class="full-exam-grid">${rows.map(e=>assessmentRow(e,{tile:true})).join('')}</div>`;
+  if(['sat_eng','est_eng'].includes(ST.track?.id)){
+   const name=ST.track.id==='sat_eng'?'SAT English':'EST English';
+@@ -908,6 +912,7 @@
+   if(rows.length>=2){pairs.push({code,rows:rows.slice(0,2)});singles.push(...rows.slice(2));}
+   else singles.push(...rows);
+  });
++ singles.sort(compareExams);
+  const hasOctoberRoutes=pairs.some(({code})=>/^sat-october-2026-paper-[12]-(easy|hard)$/.test(code));
+  pairs.sort((a,b)=>Number(b.rows.some(isInProgress))-Number(a.rows.some(isInProgress))
+   ||compareTitles(a.rows[0].title,b.rows[0].title));
+@@ -915,9 +920,9 @@
+   const m1=rows[0],m2=rows[1],s1=moduleState(m1),s2=moduleState(m2);
+   const complete=s1.done&&s2.done&&s1.a.score!=null&&s2.a.score!=null;
+   const title=(m1?.title||'SAT Practice Exam').replace(/\s+[—-]\s+Module\s+1$/i,'');
+-  const combined=complete?`${s1.a.score+s2.a.score}/${s1.a.total+s2.a.total}`:s1.done||s2.done?'Incomplete':'Not started';
+-  const row=(e,s,locked)=>`<div class="exam-row module-row"><div><h3>Module ${e.module_number}</h3><div class="meta">${e.questions} questions · ${Math.round(e.duration_seconds/60)} min${e.content_ready===false?' · Content under review':locked?' · Complete Module 1 first':''}</div></div>${s.done?`<span class="badge done chip ${scoreClass(s.a.score==null?null:100*s.a.score/s.a.total)}">${s.a.score==null?'Awaiting grading':s.a.score+'/'+s.a.total}</span>`:''}<button class="btn" ${s.done?`data-review="${s.a.id}"`:`data-start="${e.id}"`} ${(!s.done&&DASH.access?.practice_open===false&&!(s.live&&DASH.access?.can_finish))||(!s.done&&!s.live&&locked)||(!s.done&&e.content_ready===false)||(!s.done&&!s.live&&!e.open)?'disabled':''}>${!s.done&&DASH.access?.practice_open===false&&!(s.live&&DASH.access?.can_finish)?'Access unavailable':s.label}</button></div>`;
+-  return `<article class="dash-panel exam-pair"><div><h2>${esc(title)}</h2><p class="dash-note">2 modules · ${m1.questions} + ${m2.questions} questions · ${Math.round(m1.duration_seconds/60)} + ${Math.round(m2.duration_seconds/60)} minutes</p></div>${row(m1,s1,false)}${row(m2,s2,!s1.done)}<div class="pair-score"><span>Combined</span><strong class="chip ${scoreClass(complete?100*(s1.a.score+s2.a.score)/(s1.a.total+s2.a.total):null)}">${combined}</strong>${s1.done&&s2.done?`<button class="btn" data-review="${esc(s2.a.id)}">Review full exam</button>`:''}</div></article>`;
++  const combined=complete?`${s1.a.score+s2.a.score}/${s1.a.total+s2.a.total}`:s1.done&&s2.done?'Awaiting grading':s1.done||s2.done?'Incomplete':'Not started';
++  const row=(e,s,locked)=>`<div class="exam-row module-row"><div><h3>Module ${e.module_number}</h3><div class="meta">${e.questions} questions · ${Math.round(e.duration_seconds/60)} min${e.content_ready===false?' · Content under review':locked?' · Complete Module 1 first':''}</div></div>${s.done?`<span class="badge done chip ${scoreClass(s.a.score==null?null:100*s.a.score/s.a.total)}">${s.a.score==null?'Awaiting grading':s.a.score+'/'+s.a.total}</span>`:''}<button class="btn" aria-label="${esc((!s.done&&DASH.access?.practice_open===false&&!(s.live&&DASH.access?.can_finish)?'Access unavailable':s.label)+': '+e.title)}" ${s.done?`data-review="${s.a.id}"`:`data-start="${e.id}"`} ${(!s.done&&DASH.access?.practice_open===false&&!(s.live&&DASH.access?.can_finish))||(!s.done&&!s.live&&locked)||(!s.done&&e.content_ready===false)||(!s.done&&!s.live&&!e.open)?'disabled':''}>${!s.done&&DASH.access?.practice_open===false&&!(s.live&&DASH.access?.can_finish)?'Access unavailable':s.label}</button></div>`;
++  return `<article class="dash-panel exam-pair"><div><h2>${esc(title)}</h2><p class="dash-note">2 modules · ${m1.questions} + ${m2.questions} questions · ${Math.round(m1.duration_seconds/60)} + ${Math.round(m2.duration_seconds/60)} minutes</p></div>${row(m1,s1,false)}${row(m2,s2,!s1.done)}<div class="pair-score"><span>Combined</span><strong class="chip ${scoreClass(complete?100*(s1.a.score+s2.a.score)/(s1.a.total+s2.a.total):null)}">${combined}</strong>${s1.done&&s2.done?`<button class="btn" aria-label="${esc('Review full exam: '+title)}" data-review="${esc(s2.a.id)}">Review full exam</button>`:''}</div></article>`;
+  }).join('');
+  return `${novemberSATPractice()}<div class="full-exam-intro"><h2>SAT practice exams</h2><p>Two 35-minute modules · 22 questions each. Finish Module 1 to unlock Module 2.</p><details class="about"><summary>About source papers and scores</summary><p>Uploaded papers keep their original question counts, shown on each exam. Scores are raw, not SAT-scaled.</p></details>${hasOctoberRoutes?'<details class="about"><summary>About the October 2026 trial papers</summary><p>Choose Easy or Hard before starting; the route is fixed. Both routes share Module 1. Scores are raw, not SAT-scaled.</p></details>':''}</div>${pairs.length?`<div class="full-exam-grid paired-exams">${pairHtml}</div>`:''}${singles.length?`<section class="dash-panel"><h2>Other full exams</h2>${tiles(singles)}</section>`:''}${!pairs.length&&!singles.length?'<div class="dash-empty">No full exams are assigned yet.</div>':''}`;
+ }

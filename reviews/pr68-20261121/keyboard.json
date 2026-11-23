@@ -1,0 +1,9 @@
+{
+  "keyboard1": {
+    "label": "Resume: SAT Practice 30 — In progress — Module 2",
+    "focusVisible": true,
+    "outline": "rgb(20, 36, 62) solid 2px"
+  },
+  "action1": "Fixture start/resume: p30m2; untimed: false",
+  "keyboard2": "Review: SAT Practice 4 — Complete — Module 1"
+}
