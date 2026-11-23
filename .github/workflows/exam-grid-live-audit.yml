@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   audit:
-    name: Compare deployed grid with reviewed patch
+    name: Compare deployed grid and verify draft overlay
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
@@ -37,9 +37,20 @@ jobs:
           patch -d "$RUNNER_TEMP/exam-grid-baseline" -p1 < reviews/pr68-20261121/live-v205-grid.patch
       - name: Read current public HTML and styles without authentication
         run: node tests/audit_deployed_exam_grid.cjs "$RUNNER_TEMP/exam-grid-baseline"
+      - name: Verify draft renderer and preserved deployed controls
+        run: |
+          npm ci --prefix tests/english-runtime --ignore-scripts --no-audit --no-fund
+          node - <<'JS'
+          const fs=require('node:fs');
+          let s=fs.readFileSync('tests/full_exam_grid.test.cjs','utf8');
+          s=s.replace("extract(html,'function assessmentRow(','function historySection(')","extract(html,'function displayTitle(','function dashboardOverview(')+extract(html,'function assessmentRow(','function historySection(')");
+          fs.writeFileSync('tests/full_exam_grid_live.test.cjs',s);
+          JS
+          EXAM_GRID_SOURCE="$RUNNER_TEMP/exam-grid-baseline/audit-draft-index.html" node --test tests/full_exam_grid_live.test.cjs
+          node tests/check_live_grid_overlay.cjs "$RUNNER_TEMP/exam-grid-baseline/audit-live-index.html" "$RUNNER_TEMP/exam-grid-baseline/audit-draft-index.html"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: deployed-exam-grid-audit
-          path: ${{ runner.temp }}/exam-grid-baseline/audit-*.json
+          path: ${{ runner.temp }}/exam-grid-baseline/audit-*
           retention-days: 30

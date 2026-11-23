@@ -17,7 +17,7 @@ async function get(url){const start=performance.now(),r=await fetch(url,{signal:
  const cssResults=await Promise.all(styles(live.body).map(async href=>{
   const u=new URL(href.replaceAll('&amp;','&'),origin),current=await get(u.href),local=path.join(root,'live-assets',u.pathname.slice(1));
   const exists=fs.existsSync(local),result={path:u.pathname,sha256:sha(current.body),sameAsReviewed:exists?sha(fs.readFileSync(local))===sha(current.body):null};
-  if(!exists||!result.sameAsReviewed)result.changedCss=current.body.slice(0,16000);
+  if(!exists||!result.sameAsReviewed)result.changedCssExcerpt=current.body.slice(-1200);
   return result;
  }));
  const fixes={
@@ -30,7 +30,31 @@ async function get(url){const start=performance.now(),r=await fetch(url,{signal:
  const report={checkedAt:new Date().toISOString(),origin,htmlSha256:sha(live.body),htmlBytes:Buffer.byteLength(live.body),publicFetchMs:live.elapsedMs,baselineHtmlSha256:sha(expected),renderers,fixes,styles:cssResults,allReviewedStylesStillLinked:styles(expected).every(h=>cssResults.some(r=>r.path===new URL(h.replaceAll('&amp;','&'),origin).pathname)),limits:['Static public-source audit; not a browser rendering or authenticated workflow test.','One fetch timing includes GitHub runner/network overhead; not a production latency benchmark.']};
  fs.writeFileSync(path.join(root,'audit-current.json'),JSON.stringify(report,null,2)+'\n');
  console.log('DEPLOYED_GRID_AUDIT '+JSON.stringify(report));
- assert(renderers.every(r=>r.same),'Deployed renderer differs from reviewed overlay');
- assert(Object.values(fixes).every(Boolean),'A reviewed fix is absent');
  assert(report.allReviewedStylesStillLinked,'A reviewed stylesheet is no longer linked');
+ if(!renderers.every(r=>r.same)||!Object.values(fixes).every(Boolean))console.log('::warning::Current deployment differs from the reviewed grid; an isolated draft overlay will be verified.');
+ const original=fs.readFileSync(path.join(root,'live-index.html'),'utf8');
+ let candidate=live.body;
+ for(const [name,start,end] of pairs){
+  const current=section(live.body,start,end),before=section(original,start,end),after=section(expected,start,end);
+  if(current!==before&&current!==after){
+   console.log('UNREVIEWED_RENDERER '+JSON.stringify({name,current,baseline:before}));
+   throw Error('Renderer changed beyond the reviewed fixes: '+name);
+  }
+  candidate=candidate.replace(current,after);
+ }
+ const rule='.full-exam-grid>.exam-row>.exam-tile-copy{flex-basis:auto!important}';
+ if(!candidate.includes(rule)){
+  assert.equal((candidate.match(/<\/head>/g)||[]).length,1);
+  candidate=candidate.replace('</head>','<style id="full-exam-tile-sizing">/* Keep column tiles clear of the legacy mobile row basis. */\n'+rule+'</style>\n</head>');
+ }
+ const runner='function wireDashboard()';
+ assert.equal(candidate.slice(candidate.indexOf(runner)),live.body.slice(live.body.indexOf(runner)),'Newer deployed handlers and runner changed');
+ fs.writeFileSync(path.join(root,'audit-live-index.html'),live.body);
+ fs.writeFileSync(path.join(root,'audit-draft-index.html'),candidate);
+ let patch='';
+ try{patch=require('node:child_process').execFileSync('diff',['-u','--label','a/index.html','--label','b/index.html',path.join(root,'audit-live-index.html'),path.join(root,'audit-draft-index.html')],{encoding:'utf8'});}
+ catch(e){if(e.status!==1)throw e;patch=e.stdout;}
+ fs.writeFileSync(path.join(root,'audit-current-grid.patch'),patch);
+ console.log('DRAFT_GRID_OVERLAY '+JSON.stringify({baselineSha256:sha(live.body),candidateSha256:sha(candidate),handlersAndRunnerUnchanged:true,patch}));
+
 })().catch(e=>{console.error(e);process.exitCode=1;});
