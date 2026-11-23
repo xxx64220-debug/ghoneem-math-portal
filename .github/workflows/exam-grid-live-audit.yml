@@ -6,6 +6,9 @@ on:
     paths:
       - '.github/workflows/exam-grid-live-audit.yml'
       - 'tests/audit_deployed_exam_grid.cjs'
+      - 'tests/full_exam_grid*'
+      - 'tests/check_live_grid_overlay.cjs'
+      - 'reviews/pr68-20261121/live-v205-*'
 
 permissions:
   contents: read

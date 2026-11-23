@@ -1,0 +1,102 @@
+{
+  "checkedAt": "2026-11-23T05:53:25.107Z",
+  "origin": "https://math.portal.ghoneem.com",
+  "htmlSha256": "0e79bcc9ae50166caf13ea13b3a53a2b81980f782ee3ddbb13f9797066da368e",
+  "htmlBytes": 129616,
+  "publicFetchMs": 465,
+  "baselineHtmlSha256": "565f14709952145f7bb70ed1ef5bccfa1442d64b247e5a20d9a311596657b7eb",
+  "renderers": [
+    {
+      "name": "assessmentRow",
+      "same": false,
+      "expectedSha256": "9aa046a22d698b23ae5753005ad9852cde111633ec96dba4699fdc7fbfb599ed",
+      "currentSha256": "4f6dc8402f924614abaa42c6dedfb60e038138c80cb812e266d2a3f936e6468d"
+    },
+    {
+      "name": "fullExamSection",
+      "same": false,
+      "expectedSha256": "2acbddba3020dba548370529975176e3d8fa4892723245085986f7f59bc5eccb",
+      "currentSha256": "fc192e43997c88eb2cd838b5830c1ac8a1ab0455f0915c9a69cd1ac9427f77e3"
+    }
+  ],
+  "fixes": {
+    "mobileFlexBasis": false,
+    "sortedUnpairedModules": false,
+    "naturalComparator": false,
+    "pendingCombinedGrade": false,
+    "fullReviewAccessibleName": false
+  },
+  "styles": [
+    {
+      "path": "/daily-challenge.css",
+      "sha256": "1782c76a2d064e5aa2f5099c66e497aff4c3c93467edfedb6877851cb7030c61",
+      "sameAsReviewed": false,
+      "changedCssExcerpt": "e:none;padding:0;margin:14px 0;display:grid;gap:8px}.mistake-choice{border:1px solid var(--line);border-radius:8px;padding:10px 12px;line-height:1.5}.mistake-choice.is-submitted{border-color:#b0342c;background:#fbeceb}.mistake-choice.is-correct{border-color:#1f7a4d;background:#e7f2ec}.mistake-choice span{float:right;font-size:13px;font-weight:600}.mistake-explanation{border-left:3px solid var(--gold);background:#f8f5e9;padding:13px 15px;border-radius:6px}.mistake-explanation p{margin:6px 0 0;line-height:1.65}@media(max-width:600px){.mistake-card{padding:16px 13px}.mistake-choice span{float:none;display:block;margin-top:4px}}\n\n.daily-group-select{display:flex;flex-direction:column;gap:8px;max-width:520px;font-weight:600;margin:16px 0}.daily-group-select select{padding:12px;border:1px solid var(--line);border-radius:8px;background:white;font:inherit;min-height:44px;width:100%}\n\n.daily-task .daily-actions{flex:0 1 160px;display:flex;flex-direction:column;gap:8px}.daily-actions button{min-height:44px;white-space:normal}.daily-task .daily-tag{display:inline-block;white-space:normal}@media(max-width:600px){.daily-task .daily-actions{flex-basis:100%;margin-left:38px;align-items:stretch}}\n"
+    },
+    {
+      "path": "/english-reading.css",
+      "sha256": "68d2e96a1d3a3bda6d3266f6b7b23ab098b0b330695197882f1c723d3a015bcc",
+      "sameAsReviewed": true
+    },
+    {
+      "path": "/vocabulary.css",
+      "sha256": "53e956f1a1d4f9edb298981173c93473ca3044e86d626f77624e195c801774e6",
+      "sameAsReviewed": true
+    },
+    {
+      "path": "/portal-controls.css",
+      "sha256": "238ed6423c805fe6e52eb02d7f63b23fd74a5aab3659292942605898f3061358",
+      "sameAsReviewed": true
+    },
+    {
+      "path": "/lesson-exams.css",
+      "sha256": "36dc0a49cadb419134c9cc8b57edc78631fc0acb8db3d9b1a1bdc8e5667ddc4d",
+      "sameAsReviewed": true
+    },
+    {
+      "path": "/portal-math-layout.css",
+      "sha256": "0c45fcba3f23eea74bf8ee31fcd06c29dfaa745dc5c360fc7df1b5d1d9927d1b",
+      "sameAsReviewed": true
+    },
+    {
+      "path": "/portal-devices.css",
+      "sha256": "819f7cb87bf58e0338b92d559d7cc21be738e5e7b13f44207e9eb876becfbb40",
+      "sameAsReviewed": true
+    },
+    {
+      "path": "/sat-calculator.css",
+      "sha256": "61d3967f4e175a5f6cb7cd847263eb54a769a8e086367e008b1b59f3c5bf370c",
+      "sameAsReviewed": true
+    },
+    {
+      "path": "/portal-navigation.css",
+      "sha256": "f8de9b578ae8e9f27171838ae910ef30e816b86ac76c0647edb90e4b62b19e41",
+      "sameAsReviewed": true
+    },
+    {
+      "path": "/portal-management.css",
+      "sha256": "a652edb1a68407d85f757b32b0c17d4ec40e7e4cf2c9edd0f6e7b763b946c641",
+      "sameAsReviewed": true
+    },
+    {
+      "path": "/portal-responsive.css",
+      "sha256": "a79667938d231a6d6c7b1f210147d52c59fbd22fdae399e9d43f12183c4486b2",
+      "sameAsReviewed": true
+    },
+    {
+      "path": "/exam-experience.css",
+      "sha256": "5b80052db9d0fd5f12ec28290db728c6df3eb2745d08f43697fb5fb903539ce4",
+      "sameAsReviewed": true
+    },
+    {
+      "path": "/portal-ui.css",
+      "sha256": "27c373955689191e49a10fda15eba6ea79ac1c3adee065007f7ff9544a038181",
+      "sameAsReviewed": true
+    }
+  ],
+  "allReviewedStylesStillLinked": true,
+  "limits": [
+    "Static public-source audit; not a browser rendering or authenticated workflow test.",
+    "One fetch timing includes GitHub runner/network overhead; not a production latency benchmark."
+  ]
+}

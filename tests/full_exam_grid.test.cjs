@@ -58,4 +58,4 @@ test('unsafe title text stays text in headings and accessible button names',()=>
 test('empty course catalogues show an empty state without controls',()=>{
  for(const track of ['sat','est','est2','act2']){const f=setup(track,[]);assert.match(f.doc.querySelector('main').textContent,/No full/);assert.equal(f.doc.querySelectorAll('button').length,0);f.dom.window.close();}
 });
-test('source and deployed artifact copies match',()=>{if(!process.env.EXAM_GRID_SOURCE)assert.equal(fs.readFileSync('web/index.html','utf8'),fs.readFileSync('dist/index.html','utf8'));});
+test('source and deployed artifact copies match',{skip:!!process.env.EXAM_GRID_SOURCE},()=>{assert.equal(fs.readFileSync('web/index.html','utf8'),fs.readFileSync('dist/index.html','utf8'));});
